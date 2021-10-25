@@ -7,7 +7,7 @@
 
 // Root
 :root {
-	font-size: var(--#{$CSS_VAR_PFX}base-fz);
+	font-size: var(--#{$CSS_VAR_PFX}base-font-size);
 
 	@if $SUPPORT_SMOOTH_SCROLL {
 		@media (prefers-reduced-motion: no-preference) {
@@ -34,14 +34,82 @@ body {
 }
 
 // Reset
+// hr: default, dots, short
 hr {
 	margin: 1em 0;
-	opacity: 0.8;
+	opacity: 0.5;
 	color: currentColor;
 	background-color: currentColor;
 	border: none;
 }
 
 hr:not([size]) {
-	height: 3px;
+	height: 0.18em;
+}
+
+hr.dots {
+	line-height: 1;
+	display: block;
+	height: auto;
+	padding: 2em;
+	text-align: center;
+	background: transparent;
+}
+
+hr.dots:before {
+	content: "‌•••";
+	letter-spacing: 1.4em;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+hr.short {
+	width: 9em;
+	margin: 3em auto;
+}
+
+// Typography
+%heading {
+	margin-top: 0;
+	margin-bottom: var(--#{$CSS_VAR_PFX}heading-mb);
+	font-family: var(--#{$CSS_VAR_PFX}heading-font-family, --#{$CSS_VAR_PFX}primary-font-family);
+	font-style: var(--#{$CSS_VAR_PFX}heading-font-style);
+	font-weight: var(--#{$CSS_VAR_PFX}heading-font-weight);
+	color: var(--#{$CSS_VAR_PFX}heading-color);
+}
+
+h1 {
+	@extend %heading;
+	font-size: 3.5em;
+	line-height: var(--#{$CSS_VAR_PFX}small-line-height);
+}
+
+h2 {
+	@extend %heading;
+	font-size: 3em;
+	line-height: var(--#{$CSS_VAR_PFX}small-line-height);
+}
+
+h3 {
+	@extend %heading;
+	font-size: 2.35em;
+	line-height: var(--#{$CSS_VAR_PFX}small-line-height);
+}
+
+h4 {
+	@extend %heading;
+	font-size: 2em;
+	line-height: var(--#{$CSS_VAR_PFX}base-line-height);
+}
+
+h5 {
+	@extend %heading;
+	font-size: 1.65em;
+	line-height: var(--#{$CSS_VAR_PFX}base-line-height);
+}
+
+h6 {
+	@extend %heading;
+	font-size: 1.35em;
+	line-height: var(--#{$CSS_VAR_PFX}base-line-height);
 }

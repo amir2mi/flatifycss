@@ -50,9 +50,14 @@ $CODE_FONT_FAMILY: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "
 
 $BASE_LINE_HEIGHT: 1.5 !default;
 $SMALL_LINE_HEIGHT: 1.2 !default;
-$LARGE_LINE_HEIGHT: 1.85 !default;
+$LARGE_LINE_HEIGHT: 1.8 !default;
 
 $BODY_TEXT_ALIGN: left !default;
 @if $IS_RTL {
 	$BODY_TEXT_ALIGN: right !default;
 }
+
+$HEADING_MARGIN_BOTTOM: 0.5em;
+$HEADING_FONT_STYLE: normal;
+$HEADING_FONT_WEIGHT: bold;
+$HEADING_COLOR: currentColor;
