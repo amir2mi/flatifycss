@@ -1,0 +1,47 @@
+// Document
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+// Root
+:root {
+	font-size: var(--#{$CSS_VAR_PFX}base-fz);
+
+	@if $SUPPORT_SMOOTH_SCROLL {
+		@media (prefers-reduced-motion: no-preference) {
+			scroll-behavior: smooth;
+		}
+	}
+}
+
+// Body
+body {
+	margin: 0;
+	font-family: var(--#{$CSS_VAR_PFX}primary-font-family);
+	line-height: var(--#{$CSS_VAR_PFX}base-line-height);
+	text-align: var(--#{$CSS_VAR_PFX}body-text-align);
+	color: var(--#{$CSS_VAR_PFX}txt-color);
+	background-color: var(--#{$CSS_VAR_PFX}bg-color);
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: var(--#{$CSS_VAR_PFX}tap-highlight-color);
+	text-rendering: optimizeLegibility;
+
+	@if $IS_RTL {
+		direction: rtl;
+	}
+}
+
+// Reset
+hr {
+	margin: 1em 0;
+	opacity: 0.8;
+	color: currentColor;
+	background-color: currentColor;
+	border: none;
+}
+
+hr:not([size]) {
+	height: 3px;
+}

@@ -1,26 +1,75 @@
+:root {
+  --flatify__base-font-size: 16px;
+  --flatify__primary-font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --flatify__heading-font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --flatify__code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  --flatify__base-line-height: 1.5;
+  --flatify__small-line-height: 1.2;
+  --flatify__large-line-height: 1.85;
+  --flatify__body-text-align: left;
+  --flatify__bg-color: #ffffff;
+  --flatify__bg-color-dark: #dae4ed;
+  --flatify__bg-color-darker: #c4d2df;
+  --flatify__txt-color: #64636b;
+  --flatify__txt-color-light: #8d9099;
+  --flatify__txt-color-dark: #46444c;
+  --flatify__blue: #0dabdb;
+  --flatify__blue-light: #55bfe1;
+  --flatify__blue-dark: #1290b8;
+  --flatify__green: #36c742;
+  --flatify__green-light: #6fd17e;
+  --flatify__green-dark: #33a63e;
+  --flatify__yellow: #f5bc00;
+  --flatify__yellow-light: #ecca53;
+  --flatify__yellow-dark: #cc9e09;
+  --flatify__orange: #ff9600;
+  --flatify__orange-light: #f2b153;
+  --flatify__orange-dark: #d47f09;
+  --flatify__red: #f04848;
+  --flatify__red-light: #e87f82;
+  --flatify__red-dark: #c84143;
+  --flatify__purple: #ce82ff;
+  --flatify__purple-light: #d2a4f9;
+  --flatify__purple-dark: #ad6fd5;
+  --flatify__accent-color: #0dabdb;
+  --flatify__tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: var(--flatify__base-fz);
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
-  background: #55bfe1;
-  background: #0dabdb;
-  background: #1290b8;
-  background: #6fd17e;
-  background: #36c742;
-  background: #33a63e;
-  background: #ecca53;
-  background: #f5bc00;
-  background: #cc9e09;
-  background: #f2b153;
-  background: #ff9600;
-  background: #d47f09;
-  background: #e87f82;
-  background: #f04848;
-  background: #c84143;
-  background: #d2a4f9;
-  background: #ce82ff;
-  background: #ad6fd5;
-  background: #ffffff;
-  background: #dae4ed;
-  background: #c4d2df;
-  background: #8d9099;
-  background: #64636b;
-  background: #46444c;
+  margin: 0;
+  font-family: var(--flatify__primary-font-family);
+  line-height: var(--flatify__base-line-height);
+  text-align: var(--flatify__body-text-align);
+  color: var(--flatify__txt-color);
+  background-color: var(--flatify__bg-color);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: var(--flatify__tap-highlight-color);
+  text-rendering: optimizeLegibility;
+}
+
+hr {
+  margin: 1em 0;
+  opacity: 0.8;
+  color: currentColor;
+  background-color: currentColor;
+  border: none;
+}
+
+hr:not([size]) {
+  height: 3px;
 }
