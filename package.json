@@ -1,26 +1,33 @@
 {
-  "name": "flatifycss",
-  "version": "0.1.0",
-  "description": " Modern flat design framework for the web. ",
-  "main": "index.html",
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amir2mi/FlatifyCSS.git"
-  },
-  "keywords": [
-    "['css'",
-    "'front-end'",
-    "'flat'",
-    "'flat",
-    "css']"
-  ],
-  "author": "Amir M. Mohamadi",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/amir2mi/FlatifyCSS/issues"
-  },
-  "homepage": "https://github.com/amir2mi/FlatifyCSS#readme"
+	"name": "flatifycss",
+	"version": "0.1.0",
+	"description": " Modern flat design framework for the web. ",
+	"main": "index.html",
+	"scripts": {
+		"sass": "sass scss/main.scss dist/flatify.css --no-source-map -w",
+		"prefixed": "postcss --use autoprefixer -o dist/flatify-prefixed.css dist/flatify.css --no-map"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/amir2mi/FlatifyCSS.git"
+	},
+	"keywords": [
+		"css",
+		"flat",
+		"front-end"
+	],
+	"author": "Amir M. Mohamadi",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/amir2mi/FlatifyCSS/issues"
+	},
+	"homepage": "https://github.com/amir2mi/FlatifyCSS#readme",
+	"dependencies": {
+		"autoprefixer": "^10.3.7",
+		"node-sass": "^6.0.1"
+	},
+	"devDependencies": {
+		"postcss": "^8.3.11",
+		"postcss-cli": "^9.0.1"
+	}
 }
