@@ -1,0 +1,34 @@
+// Variables: for customizing appearance and functionality.
+
+// *** Colors
+$bg-color: #ffffff;
+$bg-color-dark: #dae4ed;
+$bg-color-darker: #c4d2df;
+
+$text-color: #64636b;
+$text-color-light: tint($text-color, 35%);
+$text-color-dark: shade($text-color, 50%);
+
+$blue: #0dabdb;
+$blue-light: tint($blue, 35%);
+$blue-dark: shade($blue, 20%);
+
+$green: #36c742;
+$green-light: tint($green, 35%);
+$green-dark: shade($green, 20%);
+
+$yellow: #f5bc00;
+$yellow-light: tint($yellow, 35%);
+$yellow-dark: shade($yellow, 20%);
+
+$orange: #ff9600;
+$orange-light: tint($orange, 35%);
+$orange-dark: shade($orange, 20%);
+
+$red: #f04848;
+$red-light: tint($red, 35%);
+$red-dark: shade($red, 20%);
+
+$purple: #ce82ff;
+$purple-light: tint($purple, 35%);
+$purple-dark: shade($purple, 20%);

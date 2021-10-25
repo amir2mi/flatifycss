@@ -1,0 +1,37 @@
+@import "func";
+@import "var";
+@import "root";
+
+body {
+	background: $blue-light;
+	background: $blue;
+	background: $blue-dark;
+
+	background: $green-light;
+	background: $green;
+	background: $green-dark;
+
+	background: $yellow-light;
+	background: $yellow;
+	background: $yellow-dark;
+
+	background: $orange-light;
+	background: $orange;
+	background: $orange-dark;
+
+	background: $red-light;
+	background: $red;
+	background: $red-dark;
+
+	background: $purple-light;
+	background: $purple;
+	background: $purple-dark;
+
+	background: $bg-color;
+	background: $bg-color-dark;
+	background: $bg-color-darker;
+
+	background: $text-color-light;
+	background: $text-color;
+	background: $text-color-dark;
+}
