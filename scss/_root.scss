@@ -1,4 +1,5 @@
 :root {
+	// CSS Variable naming: [prefix][usecase or element name][__state (hover, active, ...)]
 	// *** Typography
 	--#{$CSS_VAR_PFX}base-font-size: #{$BASE_FONT_SIZE};
 
@@ -20,6 +21,10 @@
 	--#{$CSS_VAR_PFX}heading-mb: #{$HEADING_MARGIN_BOTTOM};
 
 	--#{$CSS_VAR_PFX}paragraph-mb: #{$PARAGRAPH_MARGIN_BOTTOM};
+
+	--#{$CSS_VAR_PFX}link-decoration: #{$LINK_DECORATION};
+	--#{$CSS_VAR_PFX}link-decoration__hover: #{$LINK_DECORATION_HOVER};
+	--#{$CSS_VAR_PFX}link-decoration__focus: #{$LINK_DECORATION_FOCUS};
 
 	// *** Colors
 	--#{$CSS_VAR_PFX}bg-color: #{$BG_COLOR};
@@ -57,5 +62,15 @@
 	--#{$CSS_VAR_PFX}purple-dark: #{$PURPLE_DARK};
 
 	--#{$CSS_VAR_PFX}accent-color: #{$ACCENT_COLOR};
+	--#{$CSS_VAR_PFX}accent-color-light: #{$ACCENT_COLOR_LIGHT};
+	--#{$CSS_VAR_PFX}accent-color-dark: #{$ACCENT_COLOR_DARK};
+
 	--#{$CSS_VAR_PFX}tap-highlight-color: #{$TAP_HIGHLIGHT_COLOR};
+
+	--#{$CSS_VAR_PFX}link-color: #{$LINK_COLOR};
+	--#{$CSS_VAR_PFX}link-color__hover: #{$LINK_COLOR_HOVER};
+	--#{$CSS_VAR_PFX}link-color__focus: #{$LINK_COLOR_FOCUS};
+
+	// *** Motion
+	--#{$CSS_VAR_PFX}simple-transition: #{$SIMPLE_TRANSITION};
 }

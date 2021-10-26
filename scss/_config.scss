@@ -2,8 +2,6 @@
 // add a prefix before CSS variables to prevent unwanted conflicts.
 $CSS_VAR_PFX: flatify__ !default;
 $SUPPORT_LTR: true !default;
-$SUPPORT_SMOOTH_SCROLL: true !default;
-$TAP_HIGHLIGHT_COLOR: transparent !default;
 
 // *** Colors: accent color, background color, text color, palette
 $BG_COLOR: #ffffff !default;
@@ -39,8 +37,21 @@ $PURPLE: #ce82ff !default;
 $PURPLE_LIGHT: tint($PURPLE, 35%) !default;
 $PURPLE_DARK: shade($PURPLE, 20%) !default;
 
-$ACCENT_COLOR: $BLUE !default;
 $HEADING_COLOR: currentColor !default;
+
+$ACCENT_COLOR: $BLUE !default;
+$ACCENT_COLOR_LIGHT: $BLUE_LIGHT !default;
+$ACCENT_COLOR_DARK: $BLUE_DARK !default;
+
+$LINK_COLOR: $ACCENT_COLOR !default;
+$LINK_COLOR_HOVER: $ACCENT_COLOR_LIGHT !default;
+$LINK_COLOR_FOCUS: $ACCENT_COLOR_DARK !default;
+
+$TAP_HIGHLIGHT_COLOR: transparent !default;
+
+// *** Motion: animations, transitions
+$SUPPORT_SMOOTH_SCROLL: true !default;
+$SIMPLE_TRANSITION: 0.18s ease-in-out; // without specifying properties
 
 // *** Typography: font size, font family, line height
 $BASE_FONT_SIZE: 16px !default;
@@ -64,3 +75,7 @@ $HEADING_FONT_STYLE: normal !default;
 $HEADING_FONT_WEIGHT: bold !default;
 
 $PARAGRAPH_MARGIN_BOTTOM: 2em !default;
+
+$LINK_DECORATION: none;
+$LINK_DECORATION_HOVER: underline 2px currentColor;
+$LINK_DECORATION_FOCUS: none;
