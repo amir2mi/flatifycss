@@ -1,7 +1,7 @@
 // *** General
 // add a prefix before CSS variables to prevent unwanted conflicts.
 $CSS_VAR_PFX: flatify__ !default;
-$IS_RTL: false !default;
+$SUPPORT_RTL: false !default;
 $SUPPORT_SMOOTH_SCROLL: true !default;
 $TAP_HIGHLIGHT_COLOR: transparent !default;
 
@@ -10,19 +10,19 @@ $BG_COLOR: #ffffff !default;
 $BG_COLOR_DARK: #dae4ed !default;
 $BG_COLOR_DARKER: #c4d2df !default;
 
-$TXT_COLOR: #64636b !default;
+$TXT_COLOR: #4b4b4b !default;
 $TXT_COLOR_LIGHT: tint($TXT_COLOR, 35%) !default;
-$TXT_COLOR_DARK: shade($TXT_COLOR, 50%) !default;
+$TXT_COLOR_DARK: shade($TXT_COLOR, 75%) !default;
 
-$BLUE: #0dabdb !default;
+$BLUE: #1cb0f6 !default;
 $BLUE_LIGHT: tint($BLUE, 35%) !default;
 $BLUE_DARK: shade($BLUE, 20%) !default;
 
-$GREEN: #36c742 !default;
+$GREEN: #58cc02 !default;
 $GREEN_LIGHT: tint($GREEN, 35%) !default;
 $GREEN_DARK: shade($GREEN, 20%) !default;
 
-$YELLOW: #f5bc00 !default;
+$YELLOW: #ffc800 !default;
 $YELLOW_LIGHT: tint($YELLOW, 35%) !default;
 $YELLOW_DARK: shade($YELLOW, 20%) !default;
 
@@ -30,7 +30,7 @@ $ORANGE: #ff9600 !default;
 $ORANGE_LIGHT: tint($ORANGE, 35%) !default;
 $ORANGE_DARK: shade($ORANGE, 20%) !default;
 
-$RED: #f04848 !default;
+$RED: #ff4b4b !default;
 $RED_LIGHT: tint($RED, 35%) !default;
 $RED_DARK: shade($RED, 20%) !default;
 
@@ -39,6 +39,7 @@ $PURPLE_LIGHT: tint($PURPLE, 35%) !default;
 $PURPLE_DARK: shade($PURPLE, 20%) !default;
 
 $ACCENT_COLOR: $BLUE !default;
+$HEADING_COLOR: currentColor !default;
 
 // *** Typography: font size, font family, line height
 $BASE_FONT_SIZE: 16px !default;
@@ -52,12 +53,8 @@ $BASE_LINE_HEIGHT: 1.5 !default;
 $SMALL_LINE_HEIGHT: 1.2 !default;
 $LARGE_LINE_HEIGHT: 1.8 !default;
 
-$BODY_TEXT_ALIGN: left !default;
-@if $IS_RTL {
-	$BODY_TEXT_ALIGN: right !default;
-}
+$BODY_TEXT_ALIGN: initial !default;
 
-$HEADING_MARGIN_BOTTOM: 0.5em;
-$HEADING_FONT_STYLE: normal;
-$HEADING_FONT_WEIGHT: bold;
-$HEADING_COLOR: currentColor;
+$HEADING_MARGIN_BOTTOM: 0.5em !default;
+$HEADING_FONT_STYLE: normal !default;
+$HEADING_FONT_WEIGHT: bold !default;
