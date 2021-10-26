@@ -1,11 +1,11 @@
-// Document
+// *** Document
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 }
 
-// Root
+// *** Root
 :root {
 	font-size: var(--#{$CSS_VAR_PFX}base-font-size);
 
@@ -16,7 +16,7 @@
 	}
 }
 
-// Body
+// *** Body
 body {
 	margin: 0;
 	font-family: var(--#{$CSS_VAR_PFX}primary-font-family);
@@ -28,12 +28,12 @@ body {
 	-webkit-tap-highlight-color: var(--#{$CSS_VAR_PFX}tap-highlight-color);
 	text-rendering: optimizeLegibility;
 
-	@if $SUPPORT_RTL {
+	@if not $SUPPORT_LTR {
 		direction: rtl;
 	}
 }
 
-// Reset
+// *** Reset
 // hr: default, dots, short
 hr {
 	margin: 1em 0;
@@ -41,34 +41,34 @@ hr {
 	color: currentColor;
 	background-color: currentColor;
 	border: none;
+
+	&:not([size]) {
+		height: 0.18em;
+	}
+
+	&.dots {
+		line-height: 1;
+		display: block;
+		height: auto;
+		padding: 2em;
+		text-align: center;
+		background: transparent;
+
+		&:before {
+			content: "‌•••";
+			letter-spacing: 1.4em;
+			font-size: 1.4em;
+			font-weight: bold;
+		}
+	}
+
+	&.short {
+		width: 9em;
+		margin: 3em auto;
+	}
 }
 
-hr:not([size]) {
-	height: 0.18em;
-}
-
-hr.dots {
-	line-height: 1;
-	display: block;
-	height: auto;
-	padding: 2em;
-	text-align: center;
-	background: transparent;
-}
-
-hr.dots:before {
-	content: "‌•••";
-	letter-spacing: 1.4em;
-	font-size: 1.4em;
-	font-weight: bold;
-}
-
-hr.short {
-	width: 9em;
-	margin: 3em auto;
-}
-
-// Typography
+// *** Typography
 %heading {
 	margin-top: 0;
 	margin-bottom: var(--#{$CSS_VAR_PFX}heading-mb);
@@ -112,4 +112,111 @@ h6 {
 	@extend %heading;
 	font-size: 1.35em;
 	line-height: var(--#{$CSS_VAR_PFX}base-line-height);
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: var(--#{$CSS_VAR_PFX}paragraph-mb);
+
+	// last p in the parent should not have margin e.g. the paragraph in a button
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+abbr[title] {
+	cursor: help;
+	text-decoration: var(--#{$CSS_VAR_PFX}txt-color-light) underline dotted 0.125em;
+	text-decoration-skip-ink: none;
+}
+
+address {
+	margin-bottom: 1em;
+	font-style: normal;
+	line-height: inherit;
+}
+
+// *** Lists
+ol,
+ul {
+	padding-left: 2em;
+}
+
+ol,
+ul,
+dl {
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+	margin-bottom: 0;
+}
+
+dt {
+	font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+}
+
+dd {
+	margin-bottom: 0.5em;
+	margin-left: 0;
+}
+
+blockquote {
+	padding: 0.75em 1.25em;
+	margin: 0 0 var(--#{$CSS_VAR_PFX}paragraph-mb);
+	border-radius: 0.25em;
+
+	@if $SUPPORT_LTR {
+		border-left: 0.5em solid var(--#{$CSS_VAR_PFX}accent-color);
+	} @else {
+		border-right: 0.32em solid var(--#{$CSS_VAR_PFX}accent-color);
+	}
+}
+
+// *** Text formatting
+b,
+strong {
+	font-weight: var(--#{$CSS_VAR_PFX}bold-font-weight);
+}
+
+mark {
+	color: var(--#{$CSS_VAR_PFX}text-color-darker);
+
+	&:not(.inline) {
+		border-radius: 0.38em;
+		padding: 0 0.32em;
+		background: var(--#{$CSS_VAR_PFX}yellow-light);
+	}
+
+	&.inline {
+		position: relative;
+		white-space: nowrap;
+		margin: 0 0.32em;
+		background: transparent;
+
+		&:before {
+			content: " ";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			background: var(--#{$CSS_VAR_PFX}yellow-light);
+			border-radius: 0.38em;
+			opacity: 0.9;
+
+			@if $SUPPORT_LTR {
+				transform: rotate(-2deg) scale(1.05, 0.9) skew(-10deg);
+			} @else {
+				transform: rotate(2deg) scale(1.05, 0.9) skew(10deg);
+			}
+		}
+	}
+
+	// color: var(--#{$CSS_VAR_PFX}txt-color-inverted);
 }

@@ -1,18 +1,19 @@
 // *** General
 // add a prefix before CSS variables to prevent unwanted conflicts.
 $CSS_VAR_PFX: flatify__ !default;
-$SUPPORT_RTL: false !default;
+$SUPPORT_LTR: true !default;
 $SUPPORT_SMOOTH_SCROLL: true !default;
 $TAP_HIGHLIGHT_COLOR: transparent !default;
 
 // *** Colors: accent color, background color, text color, palette
 $BG_COLOR: #ffffff !default;
-$BG_COLOR_DARK: #dae4ed !default;
-$BG_COLOR_DARKER: #c4d2df !default;
+$BG_COLOR_2: #f1f4f7 !default;
+$BG_COLOR_3: #e7ebee !default;
 
-$TXT_COLOR: #4b4b4b !default;
+$TXT_COLOR: #485a69 !default;
 $TXT_COLOR_LIGHT: tint($TXT_COLOR, 35%) !default;
 $TXT_COLOR_DARK: shade($TXT_COLOR, 75%) !default;
+$TXT_COLOR_INVERTED: $BG_COLOR_2 !default;
 
 $BLUE: #1cb0f6 !default;
 $BLUE_LIGHT: tint($BLUE, 35%) !default;
@@ -22,7 +23,7 @@ $GREEN: #58cc02 !default;
 $GREEN_LIGHT: tint($GREEN, 35%) !default;
 $GREEN_DARK: shade($GREEN, 20%) !default;
 
-$YELLOW: #ffc800 !default;
+$YELLOW: #ffde00 !default;
 $YELLOW_LIGHT: tint($YELLOW, 35%) !default;
 $YELLOW_DARK: shade($YELLOW, 20%) !default;
 
@@ -53,8 +54,13 @@ $BASE_LINE_HEIGHT: 1.5 !default;
 $SMALL_LINE_HEIGHT: 1.2 !default;
 $LARGE_LINE_HEIGHT: 1.8 !default;
 
+$MEDIUM_FONT_WEIGHT: 500 !default;
+$BOLD_FONT_WEIGHT: 700 !default;
+
 $BODY_TEXT_ALIGN: initial !default;
 
 $HEADING_MARGIN_BOTTOM: 0.5em !default;
 $HEADING_FONT_STYLE: normal !default;
 $HEADING_FONT_WEIGHT: bold !default;
+
+$PARAGRAPH_MARGIN_BOTTOM: 2em !default;

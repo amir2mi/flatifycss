@@ -1,4 +1,4 @@
-// Flex box
+// *** Flex box
 // Center align children with flex
 .flex-center {
 	display: flex;
@@ -24,4 +24,11 @@
 .flex-column-center-y {
 	display: flex;
 	justify-content: center;
+}
+
+// *** Typography
+// though justify is not a good practice for text align, but with hyphens became better.
+.text-align-fill {
+	hyphens: auto;
+	text-align: justify;
 }

@@ -1,5 +1,5 @@
 :root {
-	// Typography
+	// *** Typography
 	--#{$CSS_VAR_PFX}base-font-size: #{$BASE_FONT_SIZE};
 
 	--#{$CSS_VAR_PFX}primary-font-family: #{$PRIMARY_FONT_FAMILY};
@@ -10,20 +10,26 @@
 	--#{$CSS_VAR_PFX}small-line-height: #{$SMALL_LINE_HEIGHT};
 	--#{$CSS_VAR_PFX}large-line-height: #{$LARGE_LINE_HEIGHT};
 
+	--#{$CSS_VAR_PFX}medium-font-weight: #{$MEDIUM_FONT_WEIGHT};
+	--#{$CSS_VAR_PFX}bold-font-weight: #{$BOLD_FONT_WEIGHT};
+
 	--#{$CSS_VAR_PFX}body-text-align: #{$BODY_TEXT_ALIGN};
 
-	--#{$CSS_VAR_PFX}heading-mb: #{$HEADING_MARGIN_BOTTOM};
 	--#{$CSS_VAR_PFX}heading-font-style: #{$HEADING_FONT_STYLE};
 	--#{$CSS_VAR_PFX}heading-font-weight: #{$HEADING_FONT_WEIGHT};
+	--#{$CSS_VAR_PFX}heading-mb: #{$HEADING_MARGIN_BOTTOM};
 
-	// Colors
+	--#{$CSS_VAR_PFX}paragraph-mb: #{$PARAGRAPH_MARGIN_BOTTOM};
+
+	// *** Colors
 	--#{$CSS_VAR_PFX}bg-color: #{$BG_COLOR};
-	--#{$CSS_VAR_PFX}bg-color-dark: #{$BG_COLOR_DARK};
-	--#{$CSS_VAR_PFX}bg-color-darker: #{$BG_COLOR_DARKER};
+	--#{$CSS_VAR_PFX}bg-color-dark: #{$BG_COLOR_2};
+	--#{$CSS_VAR_PFX}bg-color-darker: #{$BG_COLOR_3};
 
 	--#{$CSS_VAR_PFX}txt-color: #{$TXT_COLOR};
 	--#{$CSS_VAR_PFX}txt-color-light: #{$TXT_COLOR_LIGHT};
 	--#{$CSS_VAR_PFX}txt-color-dark: #{$TXT_COLOR_DARK};
+	--#{$CSS_VAR_PFX}txt-color-inverted: #{$TXT_COLOR_INVERTED};
 	--#{$CSS_VAR_PFX}heading-color: #{$HEADING_COLOR};
 
 	--#{$CSS_VAR_PFX}blue: #{$BLUE};
