@@ -344,5 +344,258 @@ kbd {
 		background: transparent;
 		border: none;
 		box-shadow: none;
+		transform: none !important;
 	}
+}
+
+// Media
+figure {
+	margin: 0 0 1em;
+}
+
+img,
+svg {
+	vertical-align: middle;
+}
+
+// Table
+
+table {
+	$table_radius: 1em;
+	$table_border: 0.18em solid var(--#{$CSS_VAR_PFX}bg-color-darker);
+
+	display: table;
+	table-layout: fixed;
+	caption-side: bottom;
+	width: 100%;
+
+	td,
+	th {
+		padding: 0.64em 1em;
+	}
+
+	thead {
+		td,
+		th {
+			background: var(--#{$CSS_VAR_PFX}bg-color-dark);
+		}
+	}
+
+	&:not(.bordered) {
+		border-collapse: collapse;
+	}
+
+	&.bordered:not(.horizontal) {
+		border-spacing: 0;
+
+		tr:first-child {
+			th,
+			td {
+				border-top: $table_border;
+			}
+		}
+
+		td,
+		th {
+			@if $SUPPORT_LTR {
+				border-left: $table_border;
+
+				&:last-child {
+					border-right: $table_border;
+				}
+			} @else {
+				border-right: $table_border;
+
+				&:last-child {
+					border-left: $table_border;
+				}
+			}
+		}
+
+		td,
+		th {
+			border-bottom: $table_border;
+		}
+
+		thead + tbody tr {
+			td,
+			th {
+				border-top: none !important;
+			}
+		}
+	}
+
+	&.horizontal {
+		tr {
+			flex-basis: 100%;
+			white-space: nowrap;
+		}
+		thead {
+			@if $SUPPORT_LTR {
+				float: left;
+			} @else {
+				float: right;
+			}
+
+			td,
+			th {
+				display: block;
+			}
+		}
+		tbody {
+			display: flex;
+			overflow-x: auto;
+
+			tr {
+				display: inline-block;
+			}
+			td,
+			th {
+				display: block;
+			}
+		}
+
+		&.bordered {
+			border-spacing: 0;
+			thead {
+				tr {
+					display: block;
+					@if $SUPPORT_LTR {
+						border-right: $table_border;
+					} @else {
+						border-left: $table_border;
+					}
+				}
+				td,
+				th {
+					@if $SUPPORT_LTR {
+						border-left: $table_border;
+					} @else {
+						border-right: $table_border;
+					}
+				}
+			}
+			tbody {
+				th,
+				td {
+					@if $SUPPORT_LTR {
+						border-right: $table_border;
+					} @else {
+						border-left: $table_border;
+					}
+				}
+			}
+			td,
+			th {
+				border-top: $table_border;
+				&:last-child {
+					border-bottom: $table_border;
+				}
+			}
+		}
+
+		// horizontal border radius
+		@if $SUPPORT_LTR {
+			thead tr {
+				th,
+				td {
+					&:first-child {
+						border-top-left-radius: $table_radius;
+					}
+					&:last-child {
+						border-bottom-left-radius: $table_radius;
+					}
+				}
+			}
+			tbody tr:last-child {
+				th,
+				td {
+					&:first-child {
+						border-top-right-radius: $table_radius;
+					}
+					&:last-child {
+						border-bottom-right-radius: $table_radius;
+					}
+				}
+			}
+		} @else {
+			thead tr {
+				th,
+				td {
+					&:first-child {
+						border-top-right-radius: $table_radius;
+					}
+					&:last-child {
+						border-bottom-right-radius: $table_radius;
+					}
+				}
+			}
+			tbody tr:last-child {
+				th,
+				td {
+					&:first-child {
+						border-top-left-radius: $table_radius;
+					}
+					&:last-child {
+						border-bottom-left-radius: $table_radius;
+					}
+				}
+			}
+		}
+	}
+
+	// vertical border radius
+	&:not(.horizontal) {
+		@if $SUPPORT_LTR {
+			tr:last-child {
+				th {
+					&:first-child {
+						border-top-left-radius: $table_radius;
+					}
+					&:last-child {
+						border-top-right-radius: $table_radius;
+					}
+				}
+				td {
+					&:first-child {
+						border-bottom-left-radius: $table_radius;
+					}
+					&:last-child {
+						border-bottom-right-radius: $table_radius;
+					}
+				}
+			}
+		} @else {
+			tr:last-child {
+				th {
+					&:first-child {
+						border-top-right-radius: $table_radius;
+					}
+					&:last-child {
+						border-top-left-radius: $table_radius;
+					}
+				}
+				td {
+					&:first-child {
+						border-bottom-right-radius: $table_radius;
+					}
+					&:last-child {
+						border-bottom-left-radius: $table_radius;
+					}
+				}
+			}
+		}
+	}
+}
+
+caption {
+	font-size: 0.9em;
+	padding: 0.75em 0;
+	opacity: 0.8;
+}
+
+th {
+	font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+	text-align: inherit;
+	text-align: -webkit-match-parent;
 }
