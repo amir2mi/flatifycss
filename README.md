@@ -1,3 +1,3 @@
 # FlatifyCSS
-Modern flat design framework for the web — inspired by Duolingo design system and based on Bootstrap.
+Modern flat design framework for the web — inspired by Duolingo design system and based on Bootstrap. \n
 Work on progress.
