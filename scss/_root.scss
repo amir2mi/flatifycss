@@ -1,7 +1,10 @@
 :root {
 	// CSS Variable naming: [prefix][usecase or element name][__state (hover, active, ...)]
 	// *** Typography
-	--#{$CSS_VAR_PFX}base-font-size: #{$BASE_FONT_SIZE};
+	--#{$CSS_VAR_PFX}max-font-size: #{$MAX_FONT_SIZE};
+	--#{$CSS_VAR_PFX}min-font-size: #{$MIN_FONT_SIZE};
+	--#{$CSS_VAR_PFX}max-font-size-with-unit: #{$MAX_FONT_SIZE + px};
+	--#{$CSS_VAR_PFX}min-font-size-with-unit: #{$MIN_FONT_SIZE + px};
 
 	--#{$CSS_VAR_PFX}primary-font-family: #{$PRIMARY_FONT_FAMILY};
 	--#{$CSS_VAR_PFX}heading-font-family: #{$HEADING_FONT_FAMILY};

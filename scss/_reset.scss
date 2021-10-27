@@ -7,7 +7,17 @@
 
 // *** Root
 :root {
-	font-size: var(--#{$CSS_VAR_PFX}base-font-size);
+	@media (max-width: 575.98px) {
+		font-size: var(--#{$CSS_VAR_PFX}min-font-size-with-unit);
+	}
+
+	@media (min-width: 576px) and (max-width: 1200px) {
+		font-size: #{"calc( var(--#{$CSS_VAR_PFX}min-font-size-with-unit) + ( var(--#{$CSS_VAR_PFX}max-font-size) - var(--#{$CSS_VAR_PFX}min-font-size) ) * ( ( 100vw - 575px ) / ( 1200 - 575 ) ) )"};
+	}
+
+	@media (min-width: 1200px) {
+		font-size: var(--#{$CSS_VAR_PFX}max-font-size-with-unit);
+	}
 
 	@if $SUPPORT_SMOOTH_SCROLL {
 		@media (prefers-reduced-motion: no-preference) {

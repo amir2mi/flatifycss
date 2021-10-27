@@ -1,6 +1,9 @@
 @charset "UTF-8";
 :root {
-  --flatify__base-font-size: 16px;
+  --flatify__max-font-size: 18;
+  --flatify__min-font-size: 14;
+  --flatify__max-font-size-with-unit: 18px;
+  --flatify__min-font-size-with-unit: 14px;
   --flatify__primary-font-family: Varela Round, sans-serif;
   --flatify__heading-font-family: Varela Round, sans-serif;
   --flatify__code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
@@ -59,8 +62,20 @@
   box-sizing: border-box;
 }
 
-:root {
-  font-size: var(--flatify__base-font-size);
+@media (max-width: 575.98px) {
+  :root {
+    font-size: var(--flatify__min-font-size-with-unit);
+  }
+}
+@media (min-width: 576px) and (max-width: 1200px) {
+  :root {
+    font-size: calc( var(--flatify__min-font-size-with-unit) + ( var(--flatify__max-font-size) - var(--flatify__min-font-size) ) * ( ( 100vw - 575px ) / ( 1200 - 575 ) ) );
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    font-size: var(--flatify__max-font-size-with-unit);
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
   :root {
@@ -78,7 +93,6 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: var(--flatify__tap-highlight-color);
   text-rendering: optimizeLegibility;
-  direction: rtl;
 }
 
 hr {
@@ -204,7 +218,7 @@ blockquote {
   border-radius: 0.25em;
   border-style: solid;
   border-color: var(--flatify__accent-color);
-  border-width: 0 0.5em 0 0;
+  border-width: 0 0 0 0.5em;
 }
 blockquote:not(.large) {
   font-size: 1em;
@@ -262,7 +276,7 @@ mark.inline:before {
   background: var(--flatify__yellow-light);
   border-radius: 0.38em;
   opacity: 0.9;
-  transform: rotate(3deg) scale(1.05, 0.9) skew(10deg);
+  transform: rotate(-3deg) scale(1.05, 0.9) skew(-10deg);
 }
 
 sub,
@@ -387,11 +401,11 @@ table.bordered:not(.horizontal) tr:first-child td {
 }
 table.bordered:not(.horizontal) td,
 table.bordered:not(.horizontal) th {
-  border-right: 0.18em solid var(--flatify__bg-color-darker);
+  border-left: 0.18em solid var(--flatify__bg-color-darker);
 }
 table.bordered:not(.horizontal) td:last-child,
 table.bordered:not(.horizontal) th:last-child {
-  border-left: 0.18em solid var(--flatify__bg-color-darker);
+  border-right: 0.18em solid var(--flatify__bg-color-darker);
 }
 table.bordered:not(.horizontal) td,
 table.bordered:not(.horizontal) th {
@@ -406,7 +420,7 @@ table.horizontal tr {
   white-space: nowrap;
 }
 table.horizontal thead {
-  float: right;
+  float: left;
 }
 table.horizontal thead td,
 table.horizontal thead th {
@@ -428,15 +442,15 @@ table.horizontal.bordered {
 }
 table.horizontal.bordered thead tr {
   display: block;
-  border-left: 0.18em solid var(--flatify__bg-color-darker);
+  border-right: 0.18em solid var(--flatify__bg-color-darker);
 }
 table.horizontal.bordered thead td,
 table.horizontal.bordered thead th {
-  border-right: 0.18em solid var(--flatify__bg-color-darker);
+  border-left: 0.18em solid var(--flatify__bg-color-darker);
 }
 table.horizontal.bordered tbody th,
 table.horizontal.bordered tbody td {
-  border-left: 0.18em solid var(--flatify__bg-color-darker);
+  border-right: 0.18em solid var(--flatify__bg-color-darker);
 }
 table.horizontal.bordered td,
 table.horizontal.bordered th {
@@ -448,31 +462,31 @@ table.horizontal.bordered th:last-child {
 }
 table.horizontal thead tr th:first-child,
 table.horizontal thead tr td:first-child {
-  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
 }
 table.horizontal thead tr th:last-child,
 table.horizontal thead tr td:last-child {
-  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
 }
 table.horizontal tbody tr:last-child th:first-child,
 table.horizontal tbody tr:last-child td:first-child {
-  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
 }
 table.horizontal tbody tr:last-child th:last-child,
 table.horizontal tbody tr:last-child td:last-child {
-  border-bottom-left-radius: 1em;
-}
-table:not(.horizontal) tr:last-child th:first-child {
-  border-top-right-radius: 1em;
-}
-table:not(.horizontal) tr:last-child th:last-child {
-  border-top-left-radius: 1em;
-}
-table:not(.horizontal) tr:last-child td:first-child {
   border-bottom-right-radius: 1em;
 }
-table:not(.horizontal) tr:last-child td:last-child {
+table:not(.horizontal) tr:last-child th:first-child {
+  border-top-left-radius: 1em;
+}
+table:not(.horizontal) tr:last-child th:last-child {
+  border-top-right-radius: 1em;
+}
+table:not(.horizontal) tr:last-child td:first-child {
   border-bottom-left-radius: 1em;
+}
+table:not(.horizontal) tr:last-child td:last-child {
+  border-bottom-right-radius: 1em;
 }
 
 caption {
@@ -521,3 +535,4 @@ th {
 .centered {
   text-align: center;
 }
+/*# sourceMappingURL=../maps/flatify-noprefix.css.map */

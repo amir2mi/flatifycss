@@ -1,7 +1,7 @@
 // *** General
 // add a prefix before CSS variables to prevent unwanted conflicts.
 $CSS_VAR_PFX: flatify__ !default;
-$SUPPORT_LTR: false !default;
+$SUPPORT_LTR: true !default;
 
 // *** Colors: accent color, background color, text color, palette
 $BG_COLOR: #ffffff !default;
@@ -54,7 +54,8 @@ $SUPPORT_SMOOTH_SCROLL: true !default;
 $SIMPLE_TRANSITION: 0.18s ease-in-out; // without specifying properties
 
 // *** Typography: font size, font family, line height
-$BASE_FONT_SIZE: 16px !default;
+$MAX_FONT_SIZE: 18 !default; // Must be without unit
+$MIN_FONT_SIZE: 14 !default; // Must be without unit
 
 // $PRIMARY_FONT_FAMILY: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
 // 	"Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
