@@ -12,7 +12,7 @@ const config = {
 	onBrokenMarkdownLinks: "warn",
 	favicon: "img/favicon.ico",
 	url: "https://amir2mi.github.io",
-	baseUrl: "/flatifycss/docs/",
+	baseUrl: "/FlatifyCSS/",
 	organizationName: "amir2mi", // Usually your GitHub org/user name.
 	projectName: "FlatifyCSS", // Usually your repo name.
 	trailingSlash: true,
