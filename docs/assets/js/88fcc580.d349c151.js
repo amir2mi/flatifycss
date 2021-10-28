@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[430],{8595:function(s){s.exports=JSON.parse('{"allTagsPath":"/FlatifyCSS/blog/tags","slug":"/FlatifyCSS/blog/tags/docusaurus","name":"docusaurus","count":4,"permalink":"/FlatifyCSS/blog/tags/docusaurus"}')}}]);
