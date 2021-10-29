@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[563],{30:function(l){l.exports=JSON.parse('{"allTagsPath":"/FlatifyCSS/blog/tags","slug":"/FlatifyCSS/blog/tags/hello","name":"hello","count":2,"permalink":"/FlatifyCSS/blog/tags/hello"}')}}]);
