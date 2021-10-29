@@ -1,0 +1,75 @@
+// *** Colors
+// .style-[color] is a bg and color setter that can be practical for table items and other elements.
+.style-primary {
+	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+	background: var(--#{$CSS_VAR_PFX}accent-color) !important;
+}
+
+.style-success {
+	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+	background: var(--#{$CSS_VAR_PFX}success-color) !important;
+}
+
+.style-info {
+	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+	background: var(--#{$CSS_VAR_PFX}info-color) !important;
+}
+
+.style-warning {
+	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+	background: var(--#{$CSS_VAR_PFX}warning-color) !important;
+}
+
+.style-danger {
+	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+	background: var(--#{$CSS_VAR_PFX}danger-color) !important;
+}
+
+.style-light {
+	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+	background: var(--#{$CSS_VAR_PFX}light-color) !important;
+}
+
+.style-dark {
+	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+	background: var(--#{$CSS_VAR_PFX}dark-color) !important;
+}
+
+// *** Flex box
+// Center align children with flex
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-center-x {
+	display: flex;
+	justify-content: center;
+}
+
+.flex-center-y {
+	display: flex;
+	align-items: center;
+}
+
+.flex-column-center-x {
+	display: flex;
+	align-items: center;
+}
+
+.flex-column-center-y {
+	display: flex;
+	justify-content: center;
+}
+
+// *** Typography
+// though justify is not a good practice for text align, but with hyphens became better.
+.text-align-fill {
+	hyphens: auto;
+	text-align: justify;
+}
+
+.centered {
+	text-align: center;
+}

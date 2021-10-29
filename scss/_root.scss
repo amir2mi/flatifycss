@@ -1,5 +1,9 @@
 :root {
 	// CSS Variable naming: [prefix][use-case or element name][__state (hover, active, ...)]
+	// *** Design
+	--#{$CSS_VAR_PFX}border-width: #{$BORDER_WIDTH};
+	--#{$CSS_VAR_PFX}border-radius: #{$BORDER_RADIUS};
+
 	// *** Typography
 	--#{$CSS_VAR_PFX}max-font-size: #{$MAX_FONT_SIZE};
 	--#{$CSS_VAR_PFX}min-font-size: #{$MIN_FONT_SIZE};
@@ -67,6 +71,13 @@
 	--#{$CSS_VAR_PFX}accent-color: #{$ACCENT_COLOR};
 	--#{$CSS_VAR_PFX}accent-color-light: #{$ACCENT_COLOR_LIGHT};
 	--#{$CSS_VAR_PFX}accent-color-dark: #{$ACCENT_COLOR_DARK};
+
+	--#{$CSS_VAR_PFX}success-color: #{$SUCCESS_COLOR};
+	--#{$CSS_VAR_PFX}info-color: #{$INFO_COLOR};
+	--#{$CSS_VAR_PFX}warning-color: #{$WARNING_COLOR};
+	--#{$CSS_VAR_PFX}danger-color: #{$DANGER_COLOR};
+	--#{$CSS_VAR_PFX}light-color: #{$LIGHT_COLOR};
+	--#{$CSS_VAR_PFX}dark-color: #{$DARK_COLOR};
 
 	--#{$CSS_VAR_PFX}tap-highlight-color: #{$TAP_HIGHLIGHT_COLOR};
 

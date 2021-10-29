@@ -2,4 +2,9 @@
 @import "config";
 @import "root";
 @import "reset";
-@import "utils";
+@import "helpers";
+
+// Content
+@import "content/figure";
+@import "content/kbd";
+@import "content/table";

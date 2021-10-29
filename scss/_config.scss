@@ -1,7 +1,11 @@
-// *** General
+// *** General: prefix, rtl and ltr
 // add a prefix before CSS variables to prevent unwanted conflicts.
 $CSS_VAR_PFX: flatify__ !default;
 $SUPPORT_LTR: true !default;
+
+// *** Design: border width, radius
+$BORDER_WIDTH: 0.18em;
+$BORDER_RADIUS: 1em;
 
 // *** Colors: accent color, background color, text color, palette
 $BG_COLOR: #ffffff !default;
@@ -43,6 +47,13 @@ $ACCENT_COLOR: $BLUE !default;
 $ACCENT_COLOR_LIGHT: $BLUE_LIGHT !default;
 $ACCENT_COLOR_DARK: $BLUE_DARK !default;
 
+$SUCCESS_COLOR: $GREEN !default;
+$INFO_COLOR: $BLUE !default;
+$WARNING_COLOR: $ORANGE !default;
+$DANGER_COLOR: $RED !default;
+$LIGHT_COLOR: $BG_COLOR_3 !default;
+$DARK_COLOR: $TXT_COLOR !default;
+
 $LINK_COLOR: $ACCENT_COLOR !default;
 $LINK_COLOR_HOVER: $ACCENT_COLOR_LIGHT !default;
 $LINK_COLOR_FOCUS: $ACCENT_COLOR_DARK !default;
@@ -54,14 +65,11 @@ $SUPPORT_SMOOTH_SCROLL: true !default;
 $SIMPLE_TRANSITION: 0.18s ease-in-out; // without specifying properties
 
 // *** Typography: font size, font family, line height
-$MAX_FONT_SIZE: 18 !default; // Must be without unit
+$MAX_FONT_SIZE: 16 !default; // Must be without unit
 $MIN_FONT_SIZE: 14 !default; // Must be without unit
-
-// $PRIMARY_FONT_FAMILY: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-// 	"Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$PRIMARY_FONT_FAMILY: "Varela Round", sans-serif;
+$PRIMARY_FONT_FAMILY: "Nunito", sans-serif;
 $HEADING_FONT_FAMILY: $PRIMARY_FONT_FAMILY !default;
-$CODE_FONT_FAMILY: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$CODE_FONT_FAMILY: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
 $BASE_LINE_HEIGHT: 1.5 !default;
 $SMALL_LINE_HEIGHT: 1.2 !default;

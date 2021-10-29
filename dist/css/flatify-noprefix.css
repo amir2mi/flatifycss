@@ -1,12 +1,14 @@
 @charset "UTF-8";
 :root {
-  --flatify__max-font-size: 18;
+  --flatify__border-width: 0.18em;
+  --flatify__border-radius: 1em;
+  --flatify__max-font-size: 16;
   --flatify__min-font-size: 14;
-  --flatify__max-font-size-with-unit: 18px;
+  --flatify__max-font-size-with-unit: 16px;
   --flatify__min-font-size-with-unit: 14px;
-  --flatify__primary-font-family: Varela Round, sans-serif;
-  --flatify__heading-font-family: Varela Round, sans-serif;
-  --flatify__code-font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  --flatify__primary-font-family: Nunito, sans-serif;
+  --flatify__heading-font-family: Nunito, sans-serif;
+  --flatify__code-font-family: JetBrains Mono, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   --flatify__base-line-height: 1.5;
   --flatify__small-line-height: 1.2;
   --flatify__large-line-height: 1.8;
@@ -49,6 +51,12 @@
   --flatify__accent-color: #1cb0f6;
   --flatify__accent-color-light: #6bccf9;
   --flatify__accent-color-dark: #1e94ce;
+  --flatify__success-color: #58cc02;
+  --flatify__info-color: #1cb0f6;
+  --flatify__warning-color: #ff9600;
+  --flatify__danger-color: #ff4b4b;
+  --flatify__light-color: #ced9e3;
+  --flatify__dark-color: #2e4051;
   --flatify__tap-highlight-color: transparent;
   --flatify__link-color: #1cb0f6;
   --flatify__link-color__hover: #6bccf9;
@@ -103,7 +111,7 @@ hr {
   border: none;
 }
 hr:not([size]) {
-  height: 0.18em;
+  height: var(--flatify__border-width);
 }
 hr.dots {
   line-height: 1;
@@ -331,43 +339,11 @@ pre code {
 }
 
 code {
-  font-size: 1em;
+  font-size: 0.9em;
   word-wrap: break-word;
 }
 a > code {
   color: inherit;
-}
-
-kbd {
-  font-size: 0.9em;
-  font-weight: normal;
-  line-height: 1;
-  display: inline-block;
-  padding: 0.18em 0.25em 0.32em;
-  margin: 0 0.25em;
-  background: var(--flatify__bg-color-dark);
-  border: 0.18em solid var(--flatify__bg-color-darker);
-  border-radius: 0.38em;
-  box-shadow: inset 0 -0.125em 0 var(--flatify__bg-color-darker);
-  will-change: transform;
-  transition: all var(--flatify__simple-transition);
-}
-@media (prefers-reduced-motion: no-preference) {
-  kbd:hover {
-    box-shadow: inset 0 0 0 var(--flatify__bg-color-darker);
-    transform: translateY(0.15em);
-  }
-}
-kbd kbd {
-  padding: 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  transform: none !important;
-}
-
-figure {
-  margin: 0 0 1em;
 }
 
 img,
@@ -375,130 +351,39 @@ svg {
   vertical-align: middle;
 }
 
-table {
-  display: table;
-  table-layout: fixed;
-  caption-side: bottom;
-  width: 100%;
-}
-table td,
-table th {
-  padding: 0.64em 1em;
-}
-table thead td,
-table thead th {
-  background: var(--flatify__bg-color-dark);
-}
-table:not(.bordered) {
-  border-collapse: collapse;
-}
-table.bordered:not(.horizontal) {
-  border-spacing: 0;
-}
-table.bordered:not(.horizontal) tr:first-child th,
-table.bordered:not(.horizontal) tr:first-child td {
-  border-top: 0.18em solid var(--flatify__bg-color-darker);
-}
-table.bordered:not(.horizontal) td,
-table.bordered:not(.horizontal) th {
-  border-left: 0.18em solid var(--flatify__bg-color-darker);
-}
-table.bordered:not(.horizontal) td:last-child,
-table.bordered:not(.horizontal) th:last-child {
-  border-right: 0.18em solid var(--flatify__bg-color-darker);
-}
-table.bordered:not(.horizontal) td,
-table.bordered:not(.horizontal) th {
-  border-bottom: 0.18em solid var(--flatify__bg-color-darker);
-}
-table.bordered:not(.horizontal) thead + tbody tr td,
-table.bordered:not(.horizontal) thead + tbody tr th {
-  border-top: none !important;
-}
-table.horizontal tr {
-  flex-basis: 100%;
-  white-space: nowrap;
-}
-table.horizontal thead {
-  float: left;
-}
-table.horizontal thead td,
-table.horizontal thead th {
-  display: block;
-}
-table.horizontal tbody {
-  display: flex;
-  overflow-x: auto;
-}
-table.horizontal tbody tr {
-  display: inline-block;
-}
-table.horizontal tbody td,
-table.horizontal tbody th {
-  display: block;
-}
-table.horizontal.bordered {
-  border-spacing: 0;
-}
-table.horizontal.bordered thead tr {
-  display: block;
-  border-right: 0.18em solid var(--flatify__bg-color-darker);
-}
-table.horizontal.bordered thead td,
-table.horizontal.bordered thead th {
-  border-left: 0.18em solid var(--flatify__bg-color-darker);
-}
-table.horizontal.bordered tbody th,
-table.horizontal.bordered tbody td {
-  border-right: 0.18em solid var(--flatify__bg-color-darker);
-}
-table.horizontal.bordered td,
-table.horizontal.bordered th {
-  border-top: 0.18em solid var(--flatify__bg-color-darker);
-}
-table.horizontal.bordered td:last-child,
-table.horizontal.bordered th:last-child {
-  border-bottom: 0.18em solid var(--flatify__bg-color-darker);
-}
-table.horizontal thead tr th:first-child,
-table.horizontal thead tr td:first-child {
-  border-top-left-radius: 1em;
-}
-table.horizontal thead tr th:last-child,
-table.horizontal thead tr td:last-child {
-  border-bottom-left-radius: 1em;
-}
-table.horizontal tbody tr:last-child th:first-child,
-table.horizontal tbody tr:last-child td:first-child {
-  border-top-right-radius: 1em;
-}
-table.horizontal tbody tr:last-child th:last-child,
-table.horizontal tbody tr:last-child td:last-child {
-  border-bottom-right-radius: 1em;
-}
-table:not(.horizontal) tr:last-child th:first-child {
-  border-top-left-radius: 1em;
-}
-table:not(.horizontal) tr:last-child th:last-child {
-  border-top-right-radius: 1em;
-}
-table:not(.horizontal) tr:last-child td:first-child {
-  border-bottom-left-radius: 1em;
-}
-table:not(.horizontal) tr:last-child td:last-child {
-  border-bottom-right-radius: 1em;
+.style-primary {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__accent-color) !important;
 }
 
-caption {
-  font-size: 0.9em;
-  padding: 0.75em 0;
-  opacity: 0.8;
+.style-success {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__success-color) !important;
 }
 
-th {
-  font-weight: var(--flatify__medium-font-weight);
-  text-align: inherit;
-  text-align: -webkit-match-parent;
+.style-info {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__info-color) !important;
+}
+
+.style-warning {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__warning-color) !important;
+}
+
+.style-danger {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__danger-color) !important;
+}
+
+.style-light {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__light-color) !important;
+}
+
+.style-dark {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__dark-color) !important;
 }
 
 .flex-center {
@@ -534,5 +419,185 @@ th {
 
 .centered {
   text-align: center;
+}
+
+figure {
+  margin: 0 0 1em;
+}
+
+kbd {
+  font-size: 0.85em;
+  font-weight: normal;
+  line-height: 1;
+  display: inline-block;
+  padding: 0.18em 0.32em 0.32em;
+  margin: 0 0.25em;
+  background: var(--flatify__bg-color-dark);
+  border: var(--flatify__border-width) solid var(--flatify__bg-color-darker);
+  border-radius: calc(var(--flatify__border-radius) * 0.38);
+  box-shadow: inset 0 -0.125em 0 var(--flatify__bg-color-darker);
+  will-change: transform;
+  transition: all var(--flatify__simple-transition);
+}
+@media (prefers-reduced-motion: no-preference) {
+  kbd:hover {
+    box-shadow: inset 0 0 0 var(--flatify__bg-color-darker);
+    transform: translateY(0.15em);
+  }
+}
+kbd kbd {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transform: none !important;
+}
+
+:root {
+  --flatify__table-border-color: var(--flatify__bg-color-darker);
+  --flatify__table-bg-color: var(--flatify__bg-color);
+  --flatify__table-bg-color-dark: var(--flatify__bg-color-dark);
+  --flatify__table-bg-color-darker: var(--flatify__bg-color-darker);
+  --flatify__table-txt-color: var(--flatify__txt-color);
+}
+
+table {
+  display: table;
+  table-layout: fixed;
+  caption-side: bottom;
+  color: var(--flatify__table-txt-color);
+  width: 100%;
+}
+table td,
+table th {
+  padding: 0.64em 1em;
+  background: var(--flatify__table-bg-color);
+}
+table thead td,
+table thead th {
+  background: var(--flatify__table-bg-color-dark);
+}
+table:not(.bordered) {
+  border-collapse: collapse;
+}
+table.bordered:not(.horizontal) {
+  border-spacing: 0;
+}
+table.bordered:not(.horizontal) tr:first-child th,
+table.bordered:not(.horizontal) tr:first-child td {
+  border-top: var(--flatify__border-width) solid var(--flatify__table-border-color);
+}
+table.bordered:not(.horizontal) td,
+table.bordered:not(.horizontal) th {
+  border-left: var(--flatify__border-width) solid var(--flatify__table-border-color);
+}
+table.bordered:not(.horizontal) td:last-child,
+table.bordered:not(.horizontal) th:last-child {
+  border-right: var(--flatify__border-width) solid var(--flatify__table-border-color);
+}
+table.bordered:not(.horizontal) td,
+table.bordered:not(.horizontal) th {
+  border-bottom: var(--flatify__border-width) solid var(--flatify__table-border-color);
+}
+table.bordered:not(.horizontal) thead + tbody tr td,
+table.bordered:not(.horizontal) thead + tbody tr th {
+  border-top: none !important;
+}
+table.horizontal tr {
+  flex-basis: 100%;
+  white-space: nowrap;
+}
+table.horizontal thead {
+  float: left;
+}
+table.horizontal thead td,
+table.horizontal thead th {
+  display: block;
+}
+table.horizontal tbody {
+  display: flex;
+  overflow-x: auto;
+}
+table.horizontal tbody tr {
+  display: inline-block;
+}
+table.horizontal tbody td,
+table.horizontal tbody th {
+  display: block;
+}
+table.horizontal.bordered {
+  border-spacing: 0;
+}
+table.horizontal.bordered thead tr {
+  display: block;
+  border-right: var(--flatify__border-width) solid var(--flatify__table-border-color);
+}
+table.horizontal.bordered thead td,
+table.horizontal.bordered thead th {
+  border-left: var(--flatify__border-width) solid var(--flatify__table-border-color);
+}
+table.horizontal.bordered tbody th,
+table.horizontal.bordered tbody td {
+  border-right: var(--flatify__border-width) solid var(--flatify__table-border-color);
+}
+table.horizontal.bordered td,
+table.horizontal.bordered th {
+  border-top: var(--flatify__border-width) solid var(--flatify__table-border-color);
+}
+table.horizontal.bordered td:last-child,
+table.horizontal.bordered th:last-child {
+  border-bottom: var(--flatify__border-width) solid var(--flatify__table-border-color);
+}
+table.horizontal thead tr th:first-child,
+table.horizontal thead tr td:first-child {
+  border-top-left-radius: 1em;
+}
+table.horizontal thead tr th:last-child,
+table.horizontal thead tr td:last-child {
+  border-bottom-left-radius: 1em;
+}
+table.horizontal tbody tr:last-child th:first-child,
+table.horizontal tbody tr:last-child td:first-child {
+  border-top-right-radius: 1em;
+}
+table.horizontal tbody tr:last-child th:last-child,
+table.horizontal tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 1em;
+}
+table:not(.horizontal) tr:last-child th:first-child {
+  border-top-left-radius: 1em;
+}
+table:not(.horizontal) tr:last-child th:last-child {
+  border-top-right-radius: 1em;
+}
+table:not(.horizontal) tr:last-child td:first-child {
+  border-bottom-left-radius: 1em;
+}
+table:not(.horizontal) tr:last-child td:last-child {
+  border-bottom-right-radius: 1em;
+}
+table.striped tbody tr:nth-child(even) td,
+table.striped tbody tr:nth-child(even) th {
+  background: var(--flatify__table-bg-color-dark);
+}
+table.striped:not(.bordered) thead th,
+table.striped:not(.bordered) thead td {
+  background: var(--flatify__table-bg-color-darker);
+}
+
+caption {
+  font-size: 0.9em;
+  padding: 0.75em 0;
+  opacity: 0.8;
+}
+
+th {
+  font-weight: var(--flatify__medium-font-weight);
+  text-align: inherit;
+  text-align: -webkit-match-parent;
+}
+
+.table-active {
+  background: var(--flatify__table-bg-color-darker);
 }
 /*# sourceMappingURL=../maps/flatify-noprefix.css.map */
