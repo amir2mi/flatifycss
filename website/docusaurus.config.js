@@ -25,12 +25,12 @@ const config = {
 				docs: {
 					sidebarPath: require.resolve("./sidebars.js"),
 					// Please change this to your repo.
-					editUrl: "https://github.com/amir2mi/FlatifyCSS/tree/gh-pages/website/docs",
+					editUrl: "https://github.com/amir2mi/FlatifyCSS/tree/master/website",
 				},
 				blog: {
 					showReadingTime: true,
 					// Please change this to your repo.
-					editUrl: "https://github.com/amir2mi/FlatifyCSS/tree/gh-pages/website/blog",
+					editUrl: "https://github.com/amir2mi/FlatifyCSS/tree/master/website/blog",
 				},
 				theme: {
 					customCss: require.resolve("./src/css/custom.css"),

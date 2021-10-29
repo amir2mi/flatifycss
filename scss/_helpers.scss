@@ -26,7 +26,7 @@
 }
 
 .style-light {
-	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+	color: var(--#{$CSS_VAR_PFX}txt-color) !important;
 	background: var(--#{$CSS_VAR_PFX}light-color) !important;
 }
 

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Nunito:wght@400;600;700&display=swap");
-@import url("https://cdn.jsdelivr.net/gh/amir2mi/flatifycss/dist/css/flatify-min.css");
+@import url("https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css");
 
 /**
  * Any CSS included here will be global. The classic template
@@ -17,15 +17,47 @@
 	--ifm-color-primary-lighter: #47bff8;
 	--ifm-color-primary-lightest: #70cdf9;
 	--ifm-code-font-size: 95%;
-	--docus-bd: 0.125em solid #ced9e3;
+	--docus-bd: 2px solid #ced9e3;
 	--ifm-spacing-horizontal: 1.5em;
+	--ifm-heading-font-family: var(--flatify__primary-font-family);
+	--ifm-global-shadow-lw: none;
+	--ifm-menu-link-padding-vertical: 12px;
 }
 html[data-theme="dark"] {
-	--docus-bd: 0.125em solid #2e4051;
+	--docus-bd: 2px solid #2e4051;
 	--flatify__bg-color: #141f23;
 	--ifm-background-surface-color: #141f23;
 	--ifm-background-color: #141f23;
 	--flatify__txt-color: #f1f4f7;
+	--flatify__txt-color-dark: #ced9e3;
+}
+
+pre.prism-code {
+	border: var(--docus-bd);
+	background: #ced9e3;
+	font-family: var(--flatify__code-font-family);
+	border-radius: 1em;
+	padding: 0.38em;
+}
+
+html[data-theme="dark"] pre.prism-code {
+	background: #1c2731 !important;
+}
+
+.table-of-contents.table-of-contents__left-border {
+	border-top: var(--docus-bd);
+}
+
+.pagination-nav__link {
+	border: var(--docus-bd);
+	border-radius: 1em;
+}
+
+@media screen and (min-width: 997px) {
+	.table-of-contents.table-of-contents__left-border {
+		border: var(--docus-bd);
+		border-radius: 1em;
+	}
 }
 
 .navbar-sidebar__brand,
@@ -38,9 +70,31 @@ html[data-theme="dark"] {
 	border-right: var(--docus-bd);
 }
 
+.theme-doc-sidebar-menu.menu__list a {
+	color: var(--flatify__txt-color-dark) !important;
+}
+
+.navbar__brand,
+.navbar__item.navbar__link {
+	color: var(--flatify__txt-color);
+}
+
+.navbar__item.navbar__link.navbar__link--active {
+	color: var(--flatify__accent-color);
+	font-weight: bold;
+}
+
+.navbar__brand,
+.navbar__item.navbar__link,
+.pagination-nav__link,
 .menu__link,
 .table-of-contents__link {
+	font-weight: bold;
 	text-decoration: none !important;
+}
+
+.menu__link {
+	border-radius: 0.5em;
 }
 
 .docusaurus-highlight-code-line {
