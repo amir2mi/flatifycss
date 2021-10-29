@@ -1,0 +1,34 @@
+{
+	"name": "flatifycss",
+	"version": "0.1.0",
+	"description": " Modern flat design framework for the web. ",
+	"main": "index.html",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/amir2mi/FlatifyCSS.git"
+	},
+	"keywords": [
+		"css",
+		"flat",
+		"front-end"
+	],
+	"author": "Amir M. Mohamadi",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/amir2mi/FlatifyCSS/issues"
+	},
+	"homepage": "https://github.com/amir2mi/FlatifyCSS#readme",
+	"devDependencies": {
+		"autoprefixer": "^10.3.7",
+		"cssnano": "^5.0.8",
+		"gulp": "^4.0.2",
+		"gulp-concat": "^2.6.1",
+		"gulp-noop": "^1.0.1",
+		"gulp-postcss": "^9.0.1",
+		"gulp-rename": "^2.0.0",
+		"gulp-sass": "^5.0.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-uglify": "^3.0.2",
+		"sass": "^1.43.4"
+	}
+}
