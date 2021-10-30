@@ -43,41 +43,6 @@ body {
 	}
 }
 
-// *** Reset
-// hr: default, dots, short
-hr {
-	margin: 1em 0;
-	opacity: 0.5;
-	color: currentColor;
-	background-color: currentColor;
-	border: none;
-
-	&:not([size]) {
-		height: var(--#{$CSS_VAR_PFX}border-width);
-	}
-
-	&.dots {
-		line-height: 1;
-		display: block;
-		height: auto;
-		padding: 2em;
-		text-align: center;
-		background: transparent;
-
-		&:before {
-			content: "‌•••";
-			letter-spacing: 1.4em;
-			font-size: 1.4em;
-			font-weight: bold;
-		}
-	}
-
-	&.short {
-		width: 9em;
-		margin: 3em auto;
-	}
-}
-
 // *** Typography
 %heading {
 	margin-top: 0;

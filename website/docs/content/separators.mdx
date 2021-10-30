@@ -1,0 +1,84 @@
+---
+title: Separators
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+With separators, content can have an area to breathe, suitable whitespace, or anything you call it.
+Three kinds of separators are available in Flatify CSS, dots, line, and short line.
+
+### Dots
+
+Three gorgeous dots, that is all a long document needs.
+The opacity of the separators primarily are decreased, it helps element to tread more
+as a passive object in the playground, you can use [opacity helper classes](/docs/helpers/opacity-setters) to change it.
+
+<PreviewBox
+	height="340px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Separators</title>
+	</head>
+    <hr class="dots opacity-90" />
+    <hr class="dots color-red" />
+    <hr class="dots style-blue opacity-100" />
+</html>'
+/>
+
+```html title="index.html"
+<hr class="dots opacity-90" />
+<hr class="dots color-red" />
+<hr class="dots style-blue opacity-100" />
+```
+
+### Classic line
+
+It is a simple `<hr>`.
+
+<PreviewBox
+	height="80px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Separators</title>
+	</head>
+	<hr>
+</html>'
+/>
+
+### Short line
+
+Sometimes classic `<hr>` is more interrupting than it should be, however, a short one can be beneficial.
+
+<PreviewBox
+	height="275px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Separators</title>
+	</head>
+	<hr class="short">
+	<hr class="short style-green">
+	<hr class="short style-warning">
+	<hr class="short style-danger">
+</html>'
+/>
+
+```html title="index.html"
+<hr class="short" />
+<hr class="short style-green" />
+<hr class="short style-warning" />
+```

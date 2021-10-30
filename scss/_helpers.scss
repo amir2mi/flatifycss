@@ -1,11 +1,13 @@
-// *** Colors
-// .style-[color] is a bg and color setter that can be practical for table items and other elements.
+@use "sass:math";
 
+// *** Colors
+// .style-[color] is a bg, color and border color setter that can be practical for table items and other elements
 @each $name, $colors in $PALETTE {
 	.style-#{"" + $name} {
 		color: var(--#{$CSS_VAR_PFX}bg-color) !important;
 		background: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
+		// Local border color can be used as color of box shadow e.g. buttons
 		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
 	}
 }
@@ -21,8 +23,21 @@
 	}
 }
 
+// *** Design
+// List of opacity helper classes
+@each $value in $OPACITY_LIST {
+	// e.g. [.opacity-10]
+	.opacity-#{$value} {
+		opacity: math.div($value, 100);
+	}
+}
+
 // *** Flex box
 // Center align children with flex
+.inline-flex {
+	display: inline-flex !important;
+}
+
 .flex-center {
 	display: flex;
 	justify-content: center;
