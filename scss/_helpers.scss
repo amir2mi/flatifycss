@@ -15,6 +15,12 @@
 	color: var(--#{$CSS_VAR_PFX}txt-color) !important;
 }
 
+@each $name, $colors in $PALETTE {
+	.color-#{"" + $name} {
+		color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+	}
+}
+
 // *** Flex box
 // Center align children with flex
 .flex-center {

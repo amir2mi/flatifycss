@@ -435,6 +435,58 @@ svg {
   color: var(--flatify__txt-color) !important;
 }
 
+.color-blue {
+  color: var(--flatify__color-blue-primary) !important;
+}
+
+.color-green {
+  color: var(--flatify__color-green-primary) !important;
+}
+
+.color-yellow {
+  color: var(--flatify__color-yellow-primary) !important;
+}
+
+.color-orange {
+  color: var(--flatify__color-orange-primary) !important;
+}
+
+.color-red {
+  color: var(--flatify__color-red-primary) !important;
+}
+
+.color-purple {
+  color: var(--flatify__color-purple-primary) !important;
+}
+
+.color-accent {
+  color: var(--flatify__color-accent-primary) !important;
+}
+
+.color-success {
+  color: var(--flatify__color-success-primary) !important;
+}
+
+.color-info {
+  color: var(--flatify__color-info-primary) !important;
+}
+
+.color-warning {
+  color: var(--flatify__color-warning-primary) !important;
+}
+
+.color-danger {
+  color: var(--flatify__color-danger-primary) !important;
+}
+
+.color-light {
+  color: var(--flatify__color-light-primary) !important;
+}
+
+.color-dark {
+  color: var(--flatify__color-dark-primary) !important;
+}
+
 .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -735,6 +787,7 @@ th {
 
 blockquote {
   position: relative;
+  z-index: 0;
   overflow: hidden;
   line-height: var(--flatify__large-line-height);
   margin: 0 0 var(--flatify__paragraph-mb);
