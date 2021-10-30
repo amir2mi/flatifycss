@@ -1,0 +1,97 @@
+---
+title: Colors setters
+---
+
+import PreviewBox from "../../src/components/preview-box";
+import ColorIndicator from "../../src/components/color-indicator";
+
+Here is the list of practical helper classes to style elements,
+for example a button, table item, div, etc.  
+What they do is pretty simple:
+set background, color, and border based on the color palette.
+
+### Main colors
+
+<ColorIndicator color="#1cb0f6" title=".style-accent" inline={true} /> Brings the UI primary color.
+
+<PreviewBox
+	height="165px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Colors helper classes</title>
+        <style>
+            .my-box{
+                width: 200px;
+                height: 100px;
+				margin: 0.5em;
+                border: 0.25em solid;
+                border-radius: 1em;
+            }
+        </style>
+	</head>
+	<div class="flex-center">
+		<div class="my-box flex-center style-blue">
+			<p class="text-centered">Hello Everybody!</p>
+		</div>
+		<div class="my-box flex-center style-red">
+			<p class="text-centered">Hello Everybody!</p>
+		</div>
+		<div class="my-box flex-center style-green">
+			<p class="text-centered">Hello Everybody!</p>
+		</div>
+	</div>
+</html>'
+/>
+
+```html {1,5,9} title="index.html"
+<div class="my-box flex-center style-blue">
+	<p class="text-centered">Hello Everybody!</p>
+</div>
+
+<div class="my-box flex-center style-red">
+	<p class="text-centered">Hello Everybody!</p>
+</div>
+
+<div class="my-box flex-center style-green">
+	<p class="text-centered">Hello Everybody!</p>
+</div>
+```
+
+```css title="style.css"
+.my-box {
+	width: 200px;
+	height: 100px;
+	margin: 0.5em;
+	border: 0.25em solid;
+	border-radius: 1em;
+}
+```
+
+### Palette colors
+
+These colors can be reset with CSS and declared from the `_config.scss` file,
+for more information [read this page.](#)
+
+<ColorIndicator color="#1cb0f6" title=".style-blue" />
+<ColorIndicator color="#58cc02" title=".style-green" />
+<ColorIndicator color="#ffde00" title=".style-yellow" />
+<ColorIndicator color="#ff9600" title=".style-orange" />
+<ColorIndicator color="#ff4b4b" title=".style-red" />
+<ColorIndicator color="#ce82ff" title=".style-purple" />
+
+### State colors
+
+Colors are an important part of expressing feelings in the process of designing a UI,
+this helper classes are specifically here to help you achieve it.
+
+<ColorIndicator color="#58cc02" title=".style-success" />
+<ColorIndicator color="#1cb0f6" title=".style-info" />
+<ColorIndicator color="#ff9600" title=".style-warning" />
+<ColorIndicator color="#ff4b4b" title=".style-danger" />
+<ColorIndicator color="#f1f4f7" title=".style-light" />
+<ColorIndicator color="#2e4051" title=".style-dark" />

@@ -1,0 +1,44 @@
+---
+title: Keyboard buttons
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+There is a customized `<kbd>` tag for displaying keyboard buttons shortcuts,
+`<kbd>` is just a simple tag to show them and itself does not have any functionality.
+also it can have different style by adding [color setters classes](/docs/helpers/color-setters).
+
+<PreviewBox
+	height="325px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Keyboard buttons</title>
+        <style>
+            .my-shortcuts-lg{
+                font-size: 1.5em;
+            }
+            .my-shortcuts-xlg{
+                font-size: 2em;
+            }
+        </style>
+	</head>
+	<body>
+        <kbd>Ctrl</kbd> + <kbd>F5</kbd>
+        <br /><br />
+        <div class="my-shortcuts-lg">
+            <kbd class="style-red">⌘</kbd> + <kbd class="style-blue">S</kbd>
+        </div>
+        <br /><br />
+        <div class="my-shortcuts-xlg">
+            <kbd class="style-red">⌘</kbd> + <kbd class="style-blue">S</kbd>
+        </div>
+	</body>
+</html>
+'
+/>

@@ -145,3 +145,29 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 	padding: 1.5em;
 	margin: 1.5em 0;
 }
+
+.docus-color-indicator.inline {
+	display: inline-flex;
+}
+
+.docus-color-indicator:not(.inline) .docus-color {
+	display: inline-block;
+	margin: 0.5em;
+	width: 1.8em;
+	height: 1.8em;
+	border: var(--docus-bd);
+	border-radius: 0.5em;
+}
+
+.docus-color-indicator.inline .docus-color {
+	display: inline-block;
+	margin: 0 0.5em;
+	width: 1em;
+	height: 1em;
+	border-radius: 0.2em;
+}
+
+.docus-color-indicator.inline code {
+	line-height: 1;
+	margin-right: 0.3em;
+}
