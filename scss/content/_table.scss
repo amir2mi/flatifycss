@@ -236,18 +236,16 @@ table {
 	}
 
 	&.striped {
-		tbody tr:nth-child(odd) {
-			td,
-			th {
-				background: var(--#{$CSS_VAR_PFX}table-bg-color-dark);
-			}
-		}
-	}
-	&.striped:not(.bordered) {
 		thead {
 			th,
 			td {
 				background: var(--#{$CSS_VAR_PFX}table-bg-color-darker);
+			}
+		}
+		tbody tr:nth-child(odd) {
+			td,
+			th {
+				background: var(--#{$CSS_VAR_PFX}table-bg-color-dark);
 			}
 		}
 	}

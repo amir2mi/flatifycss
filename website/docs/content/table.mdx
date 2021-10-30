@@ -12,7 +12,7 @@ with Flatify CSS you can have striped, bordered, and customized one vertical or 
 First, create a simple HTML table, then add the `.bordered` class to the table:
 
 <PreviewBox
-	height="350px"
+	height="360px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -128,7 +128,7 @@ A striped table has **different odd rows** for helping readers to know which row
 To have a striped style add the `.striped` class to the table.
 
 <PreviewBox
-	height="300px"
+	height="310px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -199,7 +199,7 @@ for small screens and other use cases, we might need to have a horizontal table,
 it is possible with adding the `.horizontal` class to the table:
 
 <PreviewBox
-	height="220px"
+	height="230px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -267,6 +267,72 @@ it is possible with adding the `.horizontal` class to the table:
 ### Centered
 
 By adding the `.text-centered` class to the table, texts will be centered.
+
+<PreviewBox
+	height="310px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Table</title>
+	</head>
+	<body>
+		<table class="striped text-centered">
+			<thead>
+				<tr>
+					<th>Student</th>
+					<th>Study time</th>
+					<th>Homework</th>
+					<th>Total grade</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Alan</td>
+					<td>6</td>
+					<td>9/10</td>
+					<td>95</td>
+				</tr>
+				<tr>
+					<td>Carlos</td>
+					<td>2</td>
+					<td>7/10</td>
+					<td>72</td>
+				</tr>
+				<tr>
+					<td>Kim</td>
+					<td>4</td>
+					<td>7/10</td>
+					<td>88</td>
+				</tr>
+				<tr>
+					<td>Pat</td>
+					<td>2</td>
+					<td>4/10</td>
+					<td>60</td>
+				</tr>
+				<tr>
+					<td>Thomas</td>
+					<td>5</td>
+					<td>10/10</td>
+					<td>98</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
+'
+/>
+
+```html {1} title="index.html"
+<table class="striped text-centered">
+	...
+</table>
+```
 
 ### Styling table items
 
@@ -417,7 +483,7 @@ Let's apply them in an example:
 				--flatify__table-border-color: #E0C341;
 				--flatify__table-bg-color: #967ADC;
 				--flatify__table-bg-color-dark: #6A50A7;
-				--flatify__table-bg-color-darker: #6A50A7;
+				--flatify__table-bg-color-darker: #4d3a79;
 				--flatify__table-txt-color: #FFF;
 			}
     	</style>
@@ -482,7 +548,7 @@ Let's apply them in an example:
 	--flatify__table-border-color: #e0c341;
 	--flatify__table-bg-color: #967adc;
 	--flatify__table-bg-color-dark: #6a50a7;
-	--flatify__table-bg-color-darker: #6a50a7;
+	--flatify__table-bg-color-darker: #4d3a79;
 	--flatify__table-txt-color: #fff;
 }
 ```

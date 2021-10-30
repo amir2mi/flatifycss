@@ -682,13 +682,13 @@ table:not(.horizontal) tr:last-child td:first-child {
 table:not(.horizontal) tr:last-child td:last-child {
   border-bottom-right-radius: 1em;
 }
+table.striped thead th,
+table.striped thead td {
+  background: var(--flatify__table-bg-color-darker);
+}
 table.striped tbody tr:nth-child(odd) td,
 table.striped tbody tr:nth-child(odd) th {
   background: var(--flatify__table-bg-color-dark);
-}
-table.striped:not(.bordered) thead th,
-table.striped:not(.bordered) thead td {
-  background: var(--flatify__table-bg-color-darker);
 }
 
 caption {
