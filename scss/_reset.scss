@@ -181,7 +181,7 @@ blockquote {
 	margin: 0 0 var(--#{$CSS_VAR_PFX}paragraph-mb);
 	border-radius: 0.25em;
 	border-style: solid;
-	border-color: var(--#{$CSS_VAR_PFX}accent-color);
+	border-color: var(--#{$CSS_VAR_PFX}color-accent-primary);
 
 	@if $SUPPORT_LTR {
 		border-width: 0 0 0 0.5em;

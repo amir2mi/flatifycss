@@ -7,7 +7,7 @@ $SUPPORT_LTR: true !default;
 $BORDER_WIDTH: 2px;
 $BORDER_RADIUS: 1em;
 
-// *** Colors: accent color, background color, text color, palette
+// *** Colors: accent color, background color, text color, heading color, palette
 $BG_COLOR: #ffffff !default;
 $BG_COLOR_2: #f1f4f7 !default;
 $BG_COLOR_3: #ced9e3 !default;
@@ -41,18 +41,35 @@ $PURPLE: #ce82ff !default;
 $PURPLE_LIGHT: tint($PURPLE, 35%) !default;
 $PURPLE_DARK: shade($PURPLE, 20%) !default;
 
-$HEADING_COLOR: currentColor !default;
-
 $ACCENT_COLOR: $BLUE !default;
 $ACCENT_COLOR_LIGHT: $BLUE_LIGHT !default;
 $ACCENT_COLOR_DARK: $BLUE_DARK !default;
 
 $SUCCESS_COLOR: $GREEN !default;
+$SUCCESS_COLOR_LIGHT: $GREEN_LIGHT !default;
+$SUCCESS_COLOR_DARK: $GREEN_DARK !default;
+
 $INFO_COLOR: $BLUE !default;
+$INFO_COLOR_LIGHT: $BLUE_LIGHT !default;
+$INFO_COLOR_DARK: $BLUE_DARK !default;
+
 $WARNING_COLOR: $ORANGE !default;
+$WARNING_COLOR_LIGHT: $ORANGE_LIGHT !default;
+$WARNING_COLOR_DARK: $ORANGE_DARK !default;
+
 $DANGER_COLOR: $RED !default;
-$LIGHT_COLOR: $BG_COLOR_3 !default;
+$DANGER_COLOR_LIGHT: $RED_LIGHT !default;
+$DANGER_COLOR_DARK: $RED_DARK !default;
+
+$LIGHT_COLOR: $BG_COLOR_2 !default;
+$LIGHT_COLOR_LIGHT: $BG_COLOR !default;
+$LIGHT_COLOR_DARK: $BG_COLOR_3 !default;
+
 $DARK_COLOR: $TXT_COLOR !default;
+$DARK_COLOR_LIGHT: $TXT_COLOR_LIGHT !default;
+$DARK_COLOR_DARK: $TXT_COLOR_DARK !default;
+
+$HEADING_COLOR: currentColor !default;
 
 $LINK_COLOR: $ACCENT_COLOR !default;
 $LINK_COLOR_HOVER: $ACCENT_COLOR_LIGHT !default;
@@ -60,6 +77,74 @@ $LINK_COLOR_FOCUS: $ACCENT_COLOR_DARK !default;
 
 $TAP_HIGHLIGHT_COLOR: transparent !default;
 
+// Do not modify this palette directly
+$PALETTE: (
+	blue: (
+		primary: $BLUE,
+		light: $BLUE_LIGHT,
+		dark: $BLUE_DARK,
+	),
+	green: (
+		primary: $GREEN,
+		light: $GREEN_LIGHT,
+		dark: $GREEN_DARK,
+	),
+	yellow: (
+		primary: $YELLOW,
+		light: $YELLOW_LIGHT,
+		dark: $YELLOW_DARK,
+	),
+	orange: (
+		primary: $ORANGE,
+		light: $ORANGE_LIGHT,
+		dark: $ORANGE_DARK,
+	),
+	red: (
+		primary: $RED,
+		light: $RED_LIGHT,
+		dark: $RED_DARK,
+	),
+	purple: (
+		primary: $PURPLE,
+		light: $PURPLE_LIGHT,
+		dark: $PURPLE_DARK,
+	),
+	accent: (
+		primary: $ACCENT_COLOR,
+		light: $ACCENT_COLOR_LIGHT,
+		dark: $ACCENT_COLOR_DARK,
+	),
+	success: (
+		primary: $SUCCESS_COLOR,
+		light: $SUCCESS_COLOR_LIGHT,
+		dark: $SUCCESS_COLOR_DARK,
+	),
+	info: (
+		primary: $INFO_COLOR,
+		light: $INFO_COLOR_LIGHT,
+		dark: $INFO_COLOR_DARK,
+	),
+	warning: (
+		primary: $WARNING_COLOR,
+		light: $WARNING_COLOR_LIGHT,
+		dark: $WARNING_COLOR_DARK,
+	),
+	danger: (
+		primary: $DANGER_COLOR,
+		light: $DANGER_COLOR_LIGHT,
+		dark: $DANGER_COLOR_DARK,
+	),
+	light: (
+		primary: $LIGHT_COLOR,
+		light: $LIGHT_COLOR_LIGHT,
+		dark: $LIGHT_COLOR_DARK,
+	),
+	dark: (
+		primary: $DARK_COLOR,
+		light: $DARK_COLOR_LIGHT,
+		dark: $DARK_COLOR_DARK,
+	),
+);
 // *** Motion: animations, transitions
 $SUPPORT_SMOOTH_SCROLL: true !default;
 $SIMPLE_TRANSITION: 0.18s ease-in-out; // without specifying properties

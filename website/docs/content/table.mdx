@@ -2,5 +2,487 @@
 title: Table
 ---
 
+import PreviewBox from "../../src/components/preview-box";
+
 Tables allow web developers to arrange data into rows and columns,
-with Flatify CSS you can have striped, bordered and customzied one.
+with Flatify CSS you can have striped, bordered, and customized one vertical or horizontal.
+
+### Bordered
+
+First, create a simple HTML table, then add the `.bordered` class to the table:
+
+<PreviewBox
+	height="350px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Table</title>
+	</head>
+	<body>
+		<table class="bordered">
+			<caption>
+				The list of students
+			</caption>
+			<thead>
+				<tr>
+					<th>Student</th>
+					<th>Study time</th>
+					<th>Homework</th>
+					<th>Total grade</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Alan</td>
+					<td>6</td>
+					<td>9/10</td>
+					<td>95</td>
+				</tr>
+				<tr>
+					<td>Carlos</td>
+					<td>2</td>
+					<td>7/10</td>
+					<td>72</td>
+				</tr>
+				<tr>
+					<td>Kim</td>
+					<td>4</td>
+					<td>7/10</td>
+					<td>88</td>
+				</tr>
+				<tr>
+					<td>Pat</td>
+					<td>2</td>
+					<td>4/10</td>
+					<td>60</td>
+				</tr>
+				<tr>
+					<td>Thomas</td>
+					<td>5</td>
+					<td>10/10</td>
+					<td>98</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
+'
+/>
+
+```html {1} title="index.html"
+<table class="bordered">
+	<caption>
+		The list of students
+	</caption>
+	<thead>
+		<tr>
+			<th>Student</th>
+			<th>Study time</th>
+			<th>Homework</th>
+			<th>Total grade</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Alan</td>
+			<td>6</td>
+			<td>9/10</td>
+			<td>95</td>
+		</tr>
+		<tr>
+			<td>Carlos</td>
+			<td>2</td>
+			<td>7/10</td>
+			<td>72</td>
+		</tr>
+		<tr>
+			<td>Kim</td>
+			<td>4</td>
+			<td>7/10</td>
+			<td>88</td>
+		</tr>
+		<tr>
+			<td>Pat</td>
+			<td>2</td>
+			<td>4/10</td>
+			<td>60</td>
+		</tr>
+		<tr>
+			<td>Thomas</td>
+			<td>5</td>
+			<td>10/10</td>
+			<td>98</td>
+		</tr>
+	</tbody>
+</table>
+```
+
+### Striped
+
+A striped table has **different odd rows** for helping readers to know which row they are.
+To have a striped style add the `.striped` class to the table.
+
+<PreviewBox
+	height="300px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Table</title>
+	</head>
+	<body>
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>Student</th>
+					<th>Study time</th>
+					<th>Homework</th>
+					<th>Total grade</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Alan</td>
+					<td>6</td>
+					<td>9/10</td>
+					<td>95</td>
+				</tr>
+				<tr>
+					<td>Carlos</td>
+					<td>2</td>
+					<td>7/10</td>
+					<td>72</td>
+				</tr>
+				<tr>
+					<td>Kim</td>
+					<td>4</td>
+					<td>7/10</td>
+					<td>88</td>
+				</tr>
+				<tr>
+					<td>Pat</td>
+					<td>2</td>
+					<td>4/10</td>
+					<td>60</td>
+				</tr>
+				<tr>
+					<td>Thomas</td>
+					<td>5</td>
+					<td>10/10</td>
+					<td>98</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
+'
+/>
+
+```html {1} title="index.html"
+<table class="striped">
+	...
+</table>
+```
+
+### Horizontal
+
+for small screens and other use cases, we might need to have a horizontal table,
+it is possible with adding the `.horizontal` class to the table:
+
+<PreviewBox
+	height="220px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Table</title>
+	</head>
+	<body>
+		<table class="bordered horizontal">
+			<thead>
+				<tr>
+					<th>Student</th>
+					<th>Study time</th>
+					<th>Homework</th>
+					<th>Total grade</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Alan</td>
+					<td>6</td>
+					<td>9/10</td>
+					<td>95</td>
+				</tr>
+				<tr>
+					<td>Carlos</td>
+					<td>2</td>
+					<td>7/10</td>
+					<td>72</td>
+				</tr>
+				<tr>
+					<td>Kim</td>
+					<td>4</td>
+					<td>7/10</td>
+					<td>88</td>
+				</tr>
+				<tr>
+					<td>Pat</td>
+					<td>2</td>
+					<td>4/10</td>
+					<td>60</td>
+				</tr>
+				<tr>
+					<td>Thomas</td>
+					<td>5</td>
+					<td>10/10</td>
+					<td>98</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
+'
+/>
+
+```html {1} title="index.html"
+<table class="bordered horizontal">
+	...
+</table>
+```
+
+### Centered
+
+By adding the `.text-centered` class to the table, texts will be centered.
+
+### Styling table items
+
+With helper classes we can have specific table items with various background and colors,
+[See here](tss), is the list of helper classes for styling elements based on CSS background and color properties.
+for example lets show which student was better and who needs help:
+
+<PreviewBox
+	height="320px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Table</title>
+	</head>
+	<body>
+		<table class="bordered striped">
+			<thead>
+				<tr>
+					<th>Student</th>
+					<th>Study time</th>
+					<th>Homework</th>
+					<th>Total grade</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Alan</td>
+					<td>6</td>
+					<td>9/10</td>
+					<td>95</td>
+				</tr>
+				<tr>
+					<td>Carlos</td>
+					<td>2</td>
+					<td>7/10</td>
+					<td class="style-warning">72</td>
+				</tr>
+				<tr>
+					<td>Kim</td>
+					<td>4</td>
+					<td>7/10</td>
+					<td>88</td>
+				</tr>
+				<tr>
+					<td>Pat</td>
+					<td>2</td>
+					<td>4/10</td>
+					<td class="style-danger">60</td>
+				</tr>
+				<tr>
+					<td>Thomas</td>
+					<td>5</td>
+					<td>10/10</td>
+					<td class="style-success">98</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
+'
+/>
+
+```html {22,34,40} title="index.html"
+<table class="bordered horizontal">
+	<table class="bordered striped">
+		<thead>
+			<tr>
+				<th>Student</th>
+				<th>Study time</th>
+				<th>Homework</th>
+				<th>Total grade</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Alan</td>
+				<td>6</td>
+				<td>9/10</td>
+				<td>95</td>
+			</tr>
+			<tr>
+				<td>Carlos</td>
+				<td>2</td>
+				<td>7/10</td>
+				<td class="style-warning">72</td>
+			</tr>
+			<tr>
+				<td>Kim</td>
+				<td>4</td>
+				<td>7/10</td>
+				<td>88</td>
+			</tr>
+			<tr>
+				<td>Pat</td>
+				<td>2</td>
+				<td>4/10</td>
+				<td class="style-danger">60</td>
+			</tr>
+			<tr>
+				<td>Thomas</td>
+				<td>5</td>
+				<td>10/10</td>
+				<td class="style-success">98</td>
+			</tr>
+		</tbody>
+	</table>
+</table>
+```
+
+### Customization
+
+Each table can be customized individually or customized settings can be set as a wrapper for tables,
+this approach is done with custom CSS properties aka "variables".
+Flatify CSS consider these CSS variables for table customization:
+
+`--flatify__table-border-color`  
+`--flatify__table-bg-color`  
+`--flatify__table-bg-color-dark`  
+`--flatify__table-bg-color-darker`  
+`--flatify__table-txt-color`
+
+:::info
+By default Flatify CSS adds `flatify__` prefix to CSS variables to prevent unwanted conflicts,
+If you change `$CSS_VAR_PFX` in `_config.scss` instead of `flatify__`, variables will have your custom prefix:
+`--[your prefix]table-border-color`.
+:::
+
+Let's apply them in an example:
+
+<PreviewBox
+	height="320px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Table</title>
+		<style>
+			.my-table{
+				--flatify__table-border-color: #E0C341;
+				--flatify__table-bg-color: #967ADC;
+				--flatify__table-bg-color-dark: #6A50A7;
+				--flatify__table-bg-color-darker: #6A50A7;
+				--flatify__table-txt-color: #FFF;
+			}
+    	</style>
+    </head>
+    <body>
+    	<table class="my-table bordered striped">
+    		<thead>
+    			<tr>
+    				<th>Student</th>
+    				<th>Study time</th>
+    				<th>Homework</th>
+    				<th>Total grade</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>Alan</td>
+    				<td>6</td>
+    				<td>9/10</td>
+    				<td>95</td>
+    			</tr>
+    			<tr>
+    				<td>Carlos</td>
+    				<td>2</td>
+    				<td>7/10</td>
+    				<td>72</td>
+    			</tr>
+    			<tr>
+    				<td>Kim</td>
+    				<td>4</td>
+    				<td>7/10</td>
+    				<td>88</td>
+    			</tr>
+    			<tr>
+    				<td>Pat</td>
+    				<td>2</td>
+    				<td>4/10</td>
+    				<td>60</td>
+    			</tr>
+    			<tr>
+    				<td>Thomas</td>
+    				<td>5</td>
+    				<td>10/10</td>
+    				<td>98</td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </body>
+
+</html>
+'
+/>
+
+```html {1} title="index.html"
+<table class="my-table bordered striped">
+	...
+</table>
+```
+
+```css title="style.css"
+.my-table {
+	--flatify__table-border-color: #e0c341;
+	--flatify__table-bg-color: #967adc;
+	--flatify__table-bg-color-dark: #6a50a7;
+	--flatify__table-bg-color-darker: #6a50a7;
+	--flatify__table-txt-color: #fff;
+}
+```

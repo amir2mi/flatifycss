@@ -1,38 +1,17 @@
 // *** Colors
 // .style-[color] is a bg and color setter that can be practical for table items and other elements.
-.style-primary {
-	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
-	background: var(--#{$CSS_VAR_PFX}accent-color) !important;
+
+@each $name, $colors in $PALETTE {
+	.style-#{$name + ""} {
+		color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+		background: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
+	}
 }
 
-.style-success {
-	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
-	background: var(--#{$CSS_VAR_PFX}success-color) !important;
-}
-
-.style-info {
-	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
-	background: var(--#{$CSS_VAR_PFX}info-color) !important;
-}
-
-.style-warning {
-	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
-	background: var(--#{$CSS_VAR_PFX}warning-color) !important;
-}
-
-.style-danger {
-	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
-	background: var(--#{$CSS_VAR_PFX}danger-color) !important;
-}
-
+.style-yellow,
 .style-light {
-	color: var(--#{$CSS_VAR_PFX}txt-color) !important;
-	background: var(--#{$CSS_VAR_PFX}light-color) !important;
-}
-
-.style-dark {
-	color: var(--#{$CSS_VAR_PFX}bg-color) !important;
-	background: var(--#{$CSS_VAR_PFX}dark-color) !important;
+	color: var(--#{$CSS_VAR_PFX}txt-color);
 }
 
 // *** Flex box
@@ -64,12 +43,12 @@
 }
 
 // *** Typography
-// though justify is not a good practice for text align, but with hyphens became better.
-.text-align-fill {
+// though justify is not a good practice for text align, but with it hyphens becomes better.
+.text-filled {
 	hyphens: auto;
 	text-align: justify;
 }
 
-.centered {
+.text-centered {
 	text-align: center;
 }

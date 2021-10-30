@@ -30,33 +30,45 @@
   --flatify__txt-color-dark: #292b36;
   --flatify__txt-color-inverted: #f1f4f7;
   --flatify__heading-color: currentColor;
-  --flatify__blue: #1cb0f6;
-  --flatify__blue-light: #6bccf9;
-  --flatify__blue-dark: #1e94ce;
-  --flatify__green: #58cc02;
-  --flatify__green-light: #92de5b;
-  --flatify__green-dark: #4eaa0b;
-  --flatify__yellow: #ffde00;
-  --flatify__yellow-light: #ffea59;
-  --flatify__yellow-dark: #d4b909;
-  --flatify__orange: #ff9600;
-  --flatify__orange-light: #ffbb59;
-  --flatify__orange-dark: #d47f09;
-  --flatify__red: #ff4b4b;
-  --flatify__red-light: #ff8a8a;
-  --flatify__red-dark: #d44345;
-  --flatify__purple: #ce82ff;
-  --flatify__purple-light: #dfaeff;
-  --flatify__purple-dark: #ad6fd5;
-  --flatify__accent-color: #1cb0f6;
-  --flatify__accent-color-light: #6bccf9;
-  --flatify__accent-color-dark: #1e94ce;
-  --flatify__success-color: #58cc02;
-  --flatify__info-color: #1cb0f6;
-  --flatify__warning-color: #ff9600;
-  --flatify__danger-color: #ff4b4b;
-  --flatify__light-color: #ced9e3;
-  --flatify__dark-color: #2e4051;
+  --flatify__color-blue-primary: #1cb0f6;
+  --flatify__color-blue-light: #6bccf9;
+  --flatify__color-blue-dark: #1e94ce;
+  --flatify__color-green-primary: #58cc02;
+  --flatify__color-green-light: #92de5b;
+  --flatify__color-green-dark: #4eaa0b;
+  --flatify__color-yellow-primary: #ffde00;
+  --flatify__color-yellow-light: #ffea59;
+  --flatify__color-yellow-dark: #d4b909;
+  --flatify__color-orange-primary: #ff9600;
+  --flatify__color-orange-light: #ffbb59;
+  --flatify__color-orange-dark: #d47f09;
+  --flatify__color-red-primary: #ff4b4b;
+  --flatify__color-red-light: #ff8a8a;
+  --flatify__color-red-dark: #d44345;
+  --flatify__color-purple-primary: #ce82ff;
+  --flatify__color-purple-light: #dfaeff;
+  --flatify__color-purple-dark: #ad6fd5;
+  --flatify__color-accent-primary: #1cb0f6;
+  --flatify__color-accent-light: #6bccf9;
+  --flatify__color-accent-dark: #1e94ce;
+  --flatify__color-success-primary: #58cc02;
+  --flatify__color-success-light: #92de5b;
+  --flatify__color-success-dark: #4eaa0b;
+  --flatify__color-info-primary: #1cb0f6;
+  --flatify__color-info-light: #6bccf9;
+  --flatify__color-info-dark: #1e94ce;
+  --flatify__color-warning-primary: #ff9600;
+  --flatify__color-warning-light: #ffbb59;
+  --flatify__color-warning-dark: #d47f09;
+  --flatify__color-danger-primary: #ff4b4b;
+  --flatify__color-danger-light: #ff8a8a;
+  --flatify__color-danger-dark: #d44345;
+  --flatify__color-light-primary: #f1f4f7;
+  --flatify__color-light-light: #ffffff;
+  --flatify__color-light-dark: #ced9e3;
+  --flatify__color-dark-primary: #2e4051;
+  --flatify__color-dark-light: #77838e;
+  --flatify__color-dark-dark: #292b36;
   --flatify__tap-highlight-color: transparent;
   --flatify__link-color: #1cb0f6;
   --flatify__link-color__hover: #6bccf9;
@@ -225,7 +237,7 @@ blockquote {
   margin: 0 0 var(--flatify__paragraph-mb);
   border-radius: 0.25em;
   border-style: solid;
-  border-color: var(--flatify__accent-color);
+  border-color: var(--flatify__accent-color-primary);
   border-width: 0 0 0 0.5em;
 }
 blockquote:not(.large) {
@@ -351,39 +363,87 @@ svg {
   vertical-align: middle;
 }
 
-.style-primary {
+.style-blue {
   color: var(--flatify__bg-color) !important;
-  background: var(--flatify__accent-color) !important;
+  background: var(--flatify__color-blue-primary) !important;
+  border-color: var(--flatify__color-blue-dark) !important;
+}
+
+.style-green {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__color-green-primary) !important;
+  border-color: var(--flatify__color-green-dark) !important;
+}
+
+.style-yellow {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__color-yellow-primary) !important;
+  border-color: var(--flatify__color-yellow-dark) !important;
+}
+
+.style-orange {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__color-orange-primary) !important;
+  border-color: var(--flatify__color-orange-dark) !important;
+}
+
+.style-red {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__color-red-primary) !important;
+  border-color: var(--flatify__color-red-dark) !important;
+}
+
+.style-purple {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__color-purple-primary) !important;
+  border-color: var(--flatify__color-purple-dark) !important;
+}
+
+.style-accent {
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__color-accent-primary) !important;
+  border-color: var(--flatify__color-accent-dark) !important;
 }
 
 .style-success {
   color: var(--flatify__bg-color) !important;
-  background: var(--flatify__success-color) !important;
+  background: var(--flatify__color-success-primary) !important;
+  border-color: var(--flatify__color-success-dark) !important;
 }
 
 .style-info {
   color: var(--flatify__bg-color) !important;
-  background: var(--flatify__info-color) !important;
+  background: var(--flatify__color-info-primary) !important;
+  border-color: var(--flatify__color-info-dark) !important;
 }
 
 .style-warning {
   color: var(--flatify__bg-color) !important;
-  background: var(--flatify__warning-color) !important;
+  background: var(--flatify__color-warning-primary) !important;
+  border-color: var(--flatify__color-warning-dark) !important;
 }
 
 .style-danger {
   color: var(--flatify__bg-color) !important;
-  background: var(--flatify__danger-color) !important;
+  background: var(--flatify__color-danger-primary) !important;
+  border-color: var(--flatify__color-danger-dark) !important;
 }
 
 .style-light {
-  color: var(--flatify__txt-color) !important;
-  background: var(--flatify__light-color) !important;
+  color: var(--flatify__bg-color) !important;
+  background: var(--flatify__color-light-primary) !important;
+  border-color: var(--flatify__color-light-dark) !important;
 }
 
 .style-dark {
   color: var(--flatify__bg-color) !important;
-  background: var(--flatify__dark-color) !important;
+  background: var(--flatify__color-dark-primary) !important;
+  border-color: var(--flatify__color-dark-dark) !important;
+}
+
+.style-yellow,
+.style-light {
+  color: var(--flatify__txt-color);
 }
 
 .flex-center {
@@ -412,12 +472,12 @@ svg {
   justify-content: center;
 }
 
-.text-align-fill {
+.text-filled {
   hyphens: auto;
   text-align: justify;
 }
 
-.centered {
+.text-centered {
   text-align: center;
 }
 
@@ -470,7 +530,7 @@ table {
 }
 table td,
 table th {
-  padding: 0.64em 1em;
+  padding: 0.75em 1em;
   background: var(--flatify__table-bg-color);
 }
 table thead td,
@@ -576,8 +636,8 @@ table:not(.horizontal) tr:last-child td:first-child {
 table:not(.horizontal) tr:last-child td:last-child {
   border-bottom-right-radius: 1em;
 }
-table.striped tbody tr:nth-child(even) td,
-table.striped tbody tr:nth-child(even) th {
+table.striped tbody tr:nth-child(odd) td,
+table.striped tbody tr:nth-child(odd) th {
   background: var(--flatify__table-bg-color-dark);
 }
 table.striped:not(.bordered) thead th,

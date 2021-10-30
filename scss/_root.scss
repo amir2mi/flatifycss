@@ -44,40 +44,12 @@
 	--#{$CSS_VAR_PFX}txt-color-inverted: #{$TXT_COLOR_INVERTED};
 	--#{$CSS_VAR_PFX}heading-color: #{$HEADING_COLOR};
 
-	--#{$CSS_VAR_PFX}blue: #{$BLUE};
-	--#{$CSS_VAR_PFX}blue-light: #{$BLUE_LIGHT};
-	--#{$CSS_VAR_PFX}blue-dark: #{$BLUE_DARK};
-
-	--#{$CSS_VAR_PFX}green: #{$GREEN};
-	--#{$CSS_VAR_PFX}green-light: #{$GREEN_LIGHT};
-	--#{$CSS_VAR_PFX}green-dark: #{$GREEN_DARK};
-
-	--#{$CSS_VAR_PFX}yellow: #{$YELLOW};
-	--#{$CSS_VAR_PFX}yellow-light: #{$YELLOW_LIGHT};
-	--#{$CSS_VAR_PFX}yellow-dark: #{$YELLOW_DARK};
-
-	--#{$CSS_VAR_PFX}orange: #{$ORANGE};
-	--#{$CSS_VAR_PFX}orange-light: #{$ORANGE_LIGHT};
-	--#{$CSS_VAR_PFX}orange-dark: #{$ORANGE_DARK};
-
-	--#{$CSS_VAR_PFX}red: #{$RED};
-	--#{$CSS_VAR_PFX}red-light: #{$RED_LIGHT};
-	--#{$CSS_VAR_PFX}red-dark: #{$RED_DARK};
-
-	--#{$CSS_VAR_PFX}purple: #{$PURPLE};
-	--#{$CSS_VAR_PFX}purple-light: #{$PURPLE_LIGHT};
-	--#{$CSS_VAR_PFX}purple-dark: #{$PURPLE_DARK};
-
-	--#{$CSS_VAR_PFX}accent-color: #{$ACCENT_COLOR};
-	--#{$CSS_VAR_PFX}accent-color-light: #{$ACCENT_COLOR_LIGHT};
-	--#{$CSS_VAR_PFX}accent-color-dark: #{$ACCENT_COLOR_DARK};
-
-	--#{$CSS_VAR_PFX}success-color: #{$SUCCESS_COLOR};
-	--#{$CSS_VAR_PFX}info-color: #{$INFO_COLOR};
-	--#{$CSS_VAR_PFX}warning-color: #{$WARNING_COLOR};
-	--#{$CSS_VAR_PFX}danger-color: #{$DANGER_COLOR};
-	--#{$CSS_VAR_PFX}light-color: #{$LIGHT_COLOR};
-	--#{$CSS_VAR_PFX}dark-color: #{$DARK_COLOR};
+	@each $name, $colors in $PALETTE {
+		// Palette include basic colors, states [danger, warning ...] and accent color with shade and tint
+		@each $type, $color in $colors {
+			--#{$CSS_VAR_PFX + 'color-' + $name + "-" + $type}: #{$color};
+		}
+	}
 
 	--#{$CSS_VAR_PFX}tap-highlight-color: #{$TAP_HIGHLIGHT_COLOR};
 
