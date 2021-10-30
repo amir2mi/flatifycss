@@ -176,53 +176,6 @@ dd {
 	margin-left: 0;
 }
 
-:root {
-	--#{$CSS_VAR_PFX}blockquote-accent-color: var(--#{$CSS_VAR_PFX}color-accent-primary);
-}
-
-blockquote {
-	line-height: var(--#{$CSS_VAR_PFX}large-line-height);
-	margin: 0 0 var(--#{$CSS_VAR_PFX}paragraph-mb);
-	border-radius: 0.25em;
-	border-style: solid;
-	border-color: var(--#{$CSS_VAR_PFX}blockquote-accent-color);
-
-	@if $SUPPORT_LTR {
-		border-width: 0 0 0 0.5em;
-	} @else {
-		border-width: 0 0.5em 0 0;
-	}
-
-	&:not(.large) {
-		font-size: 1em;
-		line-height: var(--#{$CSS_VAR_PFX}large-line-height);
-		padding: 0.75em 1.25em;
-	}
-
-	&.large {
-		font-size: 1.25em;
-		border-width: 0.5em 0;
-		padding: 1.25em 0.75em;
-		cite {
-			padding-top: 1.25em;
-		}
-	}
-
-	&.large:not(.text-align-fill) {
-		text-align: center;
-	}
-
-	cite {
-		display: block;
-		font-size: 0.64em;
-		font-style: normal;
-		letter-spacing: 0.18em;
-		text-transform: uppercase;
-		padding-top: 0.5em;
-		opacity: 0.8;
-	}
-}
-
 // *** Text formatting
 b,
 strong {

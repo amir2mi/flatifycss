@@ -19,26 +19,32 @@ also it can have different styles by adding [color setter classes](/docs/helpers
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Keyboard buttons</title>
-        <style>
-            .my-shortcuts-lg{
-                font-size: 1.5em;
-            }
-            .my-shortcuts-xlg{
-                font-size: 2em;
-            }
-        </style>
 	</head>
 	<body>
         <kbd>Ctrl</kbd> + <kbd>F5</kbd>
         <br /><br />
-        <div class="my-shortcuts-lg">
+        <div class="size-lg">
             <kbd class="style-red">⌘</kbd> + <kbd class="style-blue">S</kbd>
         </div>
         <br /><br />
-        <div class="my-shortcuts-xlg">
+        <div class="size-2x">
             <kbd class="style-orange">Ctrl</kbd> + <kbd class="style-yellow">Shift</kbd> + <kbd class="style-green">S</kbd>
         </div>
 	</body>
 </html>
 '
 />
+
+```html title="index.html"
+<kbd>Ctrl</kbd> + <kbd>F5</kbd>
+
+<div class="size-lg">
+	<kbd class="style-red">⌘</kbd> +
+	<kbd class="style-blue">S</kbd>
+</div>
+
+<div class="size-2x">
+	<kbd class="style-orange">Ctrl</kbd> + <kbd class="style-yellow">Shift</kbd> +
+	<kbd class="style-green">S</kbd>
+</div>
+```

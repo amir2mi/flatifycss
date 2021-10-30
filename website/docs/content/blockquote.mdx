@@ -1,7 +1,145 @@
 ---
-title: blockquote
+title: Blockquote
 ---
 
 import PreviewBox from "../../src/components/preview-box";
 
+### Default
 
+To write a quote Flatify CSS gives two type of `<blockquote>`s, first one is a default blockquote:
+
+<PreviewBox
+	height="175px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Quote</title>
+	</head>
+	<body>
+        <blockquote style="margin-bottom: 0">
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+                Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+            </p>
+			<cite>John Doe</cite>
+		</blockquote>        
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<blockquote>
+	<p>
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+		malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+	</p>
+	<cite>John Doe</cite>
+</blockquote>
+```
+
+### Large
+
+To have a large blockquote add `.large` to the blockquote.
+
+<PreviewBox
+	height="240px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Quote</title>
+	</head>
+	<body>
+        <blockquote class="large" style="margin-bottom: 0">
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+                Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+            </p>
+			<cite>John Doe</cite>
+		</blockquote>        
+    </body>
+</html>
+'
+/>
+
+```html {1} title="index.html"
+<blockquote class="large">...</blockquote>
+```
+
+### Customization
+
+Blockquotes can have different accent colors or use [color setter classes](/docs/helpers/color-setters).
+
+<PreviewBox
+	height="540px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Quote</title>
+        <style>
+            .my-blockquote{
+                --flatify__blockquote-accent-color: #ff9600;
+            }
+        </style>
+	</head>
+	<body>
+        <blockquote class="my-blockquote">
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+                Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+            </p>
+			<cite>John Doe</cite>
+		</blockquote>
+        <blockquote class="style-green">
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+                Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+            </p>
+    		<cite>John Doe</cite>
+    	</blockquote>
+        <blockquote class="large style-red" style="margin-bottom: 0">
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+                Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+            </p>
+    		<cite>John Doe</cite>
+    	</blockquote>
+    </body>
+
+</html>
+'
+/>
+
+```html title="index.html"
+<blockquote class="my-blockquote">...</blockquote>
+
+<blockquote class="style-green">...</blockquote>
+
+<blockquote class="large style-red">...</blockquote>
+```
+
+```css title="style.css"
+.my-blockquote {
+	--flatify__blockquote-accent-color: #ff9600;
+}
+```
