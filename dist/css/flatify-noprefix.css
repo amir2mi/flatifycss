@@ -232,12 +232,16 @@ dd {
   margin-left: 0;
 }
 
+:root {
+  --flatify__blockquote-accent-color: var(--flatify__color-accent-primary);
+}
+
 blockquote {
   line-height: var(--flatify__large-line-height);
   margin: 0 0 var(--flatify__paragraph-mb);
   border-radius: 0.25em;
   border-style: solid;
-  border-color: var(--flatify__color-accent-primary);
+  border-color: var(--flatify__blockquote-accent-color);
   border-width: 0 0 0 0.5em;
 }
 blockquote:not(.large) {
@@ -505,7 +509,7 @@ kbd {
   font-weight: normal;
   line-height: 1;
   display: inline-block;
-  min-width: 1.5em;
+  min-width: 1.75em;
   padding: 0.18em 0.32em 0.32em;
   margin: 0 0.25em;
   background: var(--flatify__bg-color-dark);

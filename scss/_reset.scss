@@ -176,12 +176,16 @@ dd {
 	margin-left: 0;
 }
 
+:root {
+	--#{$CSS_VAR_PFX}blockquote-accent-color: var(--#{$CSS_VAR_PFX}color-accent-primary);
+}
+
 blockquote {
 	line-height: var(--#{$CSS_VAR_PFX}large-line-height);
 	margin: 0 0 var(--#{$CSS_VAR_PFX}paragraph-mb);
 	border-radius: 0.25em;
 	border-style: solid;
-	border-color: var(--#{$CSS_VAR_PFX}color-accent-primary);
+	border-color: var(--#{$CSS_VAR_PFX}blockquote-accent-color);
 
 	@if $SUPPORT_LTR {
 		border-width: 0 0 0 0.5em;
