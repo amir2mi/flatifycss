@@ -367,78 +367,91 @@ svg {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-blue-primary) !important;
   border-color: var(--flatify__color-blue-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-blue-dark) !important;
 }
 
 .style-green {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-green-primary) !important;
   border-color: var(--flatify__color-green-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-green-dark) !important;
 }
 
 .style-yellow {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-yellow-primary) !important;
   border-color: var(--flatify__color-yellow-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-yellow-dark) !important;
 }
 
 .style-orange {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-orange-primary) !important;
   border-color: var(--flatify__color-orange-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-orange-dark) !important;
 }
 
 .style-red {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-red-primary) !important;
   border-color: var(--flatify__color-red-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-red-dark) !important;
 }
 
 .style-purple {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-purple-primary) !important;
   border-color: var(--flatify__color-purple-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-purple-dark) !important;
 }
 
 .style-accent {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-accent-primary) !important;
   border-color: var(--flatify__color-accent-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-accent-dark) !important;
 }
 
 .style-success {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-success-primary) !important;
   border-color: var(--flatify__color-success-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-success-dark) !important;
 }
 
 .style-info {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-info-primary) !important;
   border-color: var(--flatify__color-info-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-info-dark) !important;
 }
 
 .style-warning {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-warning-primary) !important;
   border-color: var(--flatify__color-warning-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-warning-dark) !important;
 }
 
 .style-danger {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-danger-primary) !important;
   border-color: var(--flatify__color-danger-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-danger-dark) !important;
 }
 
 .style-light {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-light-primary) !important;
   border-color: var(--flatify__color-light-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-light-dark) !important;
 }
 
 .style-dark {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-dark-primary) !important;
   border-color: var(--flatify__color-dark-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-dark-dark) !important;
 }
 
 .style-yellow,
@@ -486,16 +499,19 @@ figure {
 }
 
 kbd {
+  --flatify__local-border-color: var(--flatify__bg-color-darker);
+  text-align: center;
   font-size: 0.85em;
   font-weight: normal;
   line-height: 1;
   display: inline-block;
+  min-width: 1.5em;
   padding: 0.18em 0.32em 0.32em;
   margin: 0 0.25em;
   background: var(--flatify__bg-color-dark);
-  border: var(--flatify__border-width) solid var(--flatify__bg-color-darker);
-  border-radius: calc(var(--flatify__border-radius) * 0.38);
-  box-shadow: inset 0 -0.125em 0 var(--flatify__bg-color-darker);
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.5);
+  box-shadow: inset 0 -0.125em 0 var(--flatify__local-border-color);
   will-change: transform;
   transition: all var(--flatify__simple-transition);
 }
