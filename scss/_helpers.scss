@@ -2,7 +2,7 @@
 // .style-[color] is a bg and color setter that can be practical for table items and other elements.
 
 @each $name, $colors in $PALETTE {
-	.style-#{$name + ""} {
+	.style-#{"" + $name} {
 		color: var(--#{$CSS_VAR_PFX}bg-color) !important;
 		background: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
@@ -11,7 +11,7 @@
 
 .style-yellow,
 .style-light {
-	color: var(--#{$CSS_VAR_PFX}txt-color);
+	color: var(--#{$CSS_VAR_PFX}txt-color) !important;
 }
 
 // *** Flex box

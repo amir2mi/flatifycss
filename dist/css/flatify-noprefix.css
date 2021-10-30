@@ -237,7 +237,7 @@ blockquote {
   margin: 0 0 var(--flatify__paragraph-mb);
   border-radius: 0.25em;
   border-style: solid;
-  border-color: var(--flatify__accent-color-primary);
+  border-color: var(--flatify__color-accent-primary);
   border-width: 0 0 0 0.5em;
 }
 blockquote:not(.large) {
@@ -443,7 +443,7 @@ svg {
 
 .style-yellow,
 .style-light {
-  color: var(--flatify__txt-color);
+  color: var(--flatify__txt-color) !important;
 }
 
 .flex-center {
