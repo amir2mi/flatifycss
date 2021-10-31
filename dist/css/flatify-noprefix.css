@@ -493,19 +493,19 @@ svg {
 }
 
 .edge-round-xs {
-  border-radius: calc(var(--flatify__border-radius) * 0.38em);
+  border-radius: calc(var(--flatify__border-radius) * 0.38em) !important;
 }
 
 .edge-round-sm {
-  border-radius: calc(var(--flatify__border-radius) * 0.5em);
+  border-radius: calc(var(--flatify__border-radius) * 0.5em) !important;
 }
 
 .edge-round-md {
-  border-radius: calc(var(--flatify__border-radius) * 0.75em);
+  border-radius: calc(var(--flatify__border-radius) * 0.75em) !important;
 }
 
 .edge-round-lg {
-  border-radius: calc(var(--flatify__border-radius) * 1em);
+  border-radius: calc(var(--flatify__border-radius) * 1em) !important;
 }
 
 .edge-sharp {

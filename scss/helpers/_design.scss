@@ -11,7 +11,7 @@
 // List of border-radius helper classes
 @each $type, $value in $BORDER_RADIUS_LIST {
 	.edge-#{$type} {
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * #{$value});
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * #{$value}) !important;
 	}
 }
 // sharp and circle should not be affected by primary border-radius
