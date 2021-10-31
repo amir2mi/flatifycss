@@ -1,6 +1,7 @@
 figure {
 	position: relative;
 	width: max-content;
+	max-width: 100%;
 	height: max-content;
 	margin: 0 0 1em;
 	border-radius: 1em;
@@ -16,12 +17,14 @@ figure {
 	}
 
 	.source {
+		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 		position: absolute;
 		top: 1em;
 		font-size: 0.75em;
-		padding: 0.32em 0.5em;
+		padding: 0.25em 0.5em;
 		color: var(--#{$CSS_VAR_PFX}bg-color);
 		background: var(--#{$CSS_VAR_PFX}txt-color-dark);
+		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
 
 		@if $SUPPORT_LTR {

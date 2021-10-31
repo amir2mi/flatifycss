@@ -708,6 +708,7 @@ figure {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  max-width: 100%;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -723,12 +724,14 @@ figure figcaption {
   padding: 1.5em 0 1em;
 }
 figure .source {
+  --flatify__local-border-color: var(--flatify__bg-color-darker);
   position: absolute;
   top: 1em;
   font-size: 0.75em;
-  padding: 0.32em 0.5em;
+  padding: 0.25em 0.5em;
   color: var(--flatify__bg-color);
   background: var(--flatify__txt-color-dark);
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.75);
   right: 1em;
 }
