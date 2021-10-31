@@ -41,12 +41,12 @@ pre.prism-code {
 }
 
 pre.prism-code,
-codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
+.codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
 	background: #ced9e3;
 }
 
 html[data-theme="dark"] pre.prism-code,
-html[data-theme="dark"] codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
+html[data-theme="dark"] .codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
 	background: #1c2731 !important;
 }
 
