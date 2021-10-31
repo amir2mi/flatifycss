@@ -677,15 +677,22 @@ blockquote:before {
 
 figure {
   position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   margin: 0 0 1em;
   border-radius: 1em;
 }
 figure img {
+  width: 100%;
+  height: 100%;
   border-radius: 1em;
 }
 figure figcaption {
   padding: 1.5em 0 1em;
-  opacity: 0.8;
 }
 figure .source {
   position: absolute;
@@ -696,6 +703,13 @@ figure .source {
   background: var(--flatify__txt-color-dark);
   border-radius: calc(var(--flatify__border-radius) * 0.75);
   right: 1em;
+}
+figure.fill {
+  width: 100% !important;
+}
+figure.centered {
+  margin-left: auto;
+  margin-right: auto;
 }
 figure.overlay-caption {
   overflow: hidden;

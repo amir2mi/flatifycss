@@ -1,15 +1,18 @@
 figure {
 	position: relative;
+	width: max-content;
+	height: max-content;
 	margin: 0 0 1em;
 	border-radius: 1em;
 
 	img {
+		width: 100%;
+		height: 100%;
 		border-radius: 1em;
 	}
 
 	figcaption {
 		padding: 1.5em 0 1em;
-		opacity: 0.8;
 	}
 
 	.source {
@@ -26,6 +29,15 @@ figure {
 		} @else {
 			left: 1em;
 		}
+	}
+
+	&.fill {
+		width: 100% !important;
+	}
+
+	&.centered {
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	&.overlay-caption {

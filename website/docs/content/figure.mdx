@@ -4,12 +4,14 @@ title: Figure
 
 import PreviewBox from "../../src/components/preview-box";
 
-### Default
-
 Figures are independant parts of a page mostly contain images with captions.
 
+### Default
+
+A primary figure with image inside.
+
 <PreviewBox
-	height="180px"
+	height="300px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -18,35 +20,28 @@ Figures are independant parts of a page mostly contain images with captions.
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Quote</title>
+		<title>Figures</title>
 	</head>
 	<body>
-        <blockquote style="margin-bottom: 0">
-            <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-                Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-            </p>
-			<cite>John Doe</cite>
-		</blockquote>        
+       <figure>
+			<img src="https://picsum.photos/500/300" alt="a random image"/>
+			<figcaption>A random image - high quality images</figcaption>
+		</figure>     
     </body>
 </html>
 '
 />
 
 ```html title="index.html"
-<blockquote>
-	<p>
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
-		malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-	</p>
-	<cite>John Doe</cite>
-</blockquote>
+<figure>
+	<img src="https://picsum.photos/500/300" alt="a random image" />
+	<figcaption>A random image - high quality images</figcaption>
+</figure>
 ```
 
-### Large
+### Add source link
 
-To have a large blockquote add `.large` to the blockquote.
+To mention source of the image you can put a link inside figure with `.source` class.
 
 <PreviewBox
 	height="250px"
@@ -58,32 +53,34 @@ To have a large blockquote add `.large` to the blockquote.
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Quote</title>
+		<title>Figure</title>
 	</head>
 	<body>
-        <blockquote class="large" style="margin-bottom: 0">
-            <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-                Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-            </p>
-			<cite>John Doe</cite>
-		</blockquote>        
+        <figure>
+			<img src="https://picsum.photos/500/300" alt="a random image"/>
+			<figcaption>A random image - high quality images</figcaption>
+			<a href="#" class="source">Picsum</a>
+		</figure>     
     </body>
 </html>
 '
 />
 
-```html {1} title="index.html"
-<blockquote class="large">...</blockquote>
+```html {4} title="index.html"
+<figure>
+	<img src="https://picsum.photos/500/300" alt="a random image" />
+	<figcaption>A random image - high quality images</figcaption>
+	<a href="#" class="source">Picsum</a>
+</figure>
 ```
 
-### Customization
+### Overlay caption
 
-Blockquotes can have different accent colors or use [color setter classes](/docs/helpers/color-setters).
+By adding `.overlay-caption` captions can be over image
+it is possible when you use figures because there is a wrapper.
 
 <PreviewBox
-	height="565px"
+	height="250px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -92,54 +89,59 @@ Blockquotes can have different accent colors or use [color setter classes](/docs
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Quote</title>
-        <style>
-            .my-blockquote{
-                --flatify__blockquote-accent-color: #ff9600;
-            }
-        </style>
+		<title>Figure</title>
 	</head>
 	<body>
-        <blockquote class="my-blockquote">
-            <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-                Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-            </p>
-			<cite>John Doe</cite>
-		</blockquote>
-        <blockquote class="style-green">
-            <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-                Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-            </p>
-    		<cite>John Doe</cite>
-    	</blockquote>
-        <blockquote class="large style-red" style="margin-bottom: 0">
-            <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-                Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-            </p>
-    		<cite>John Doe</cite>
-    	</blockquote>
+        <figure class="overlay-caption">
+			<img src="https://picsum.photos/500/300" alt="a random image"/>
+			<figcaption>A random image - high quality images</figcaption>
+			<a href="#" class="source">Picsum</a>
+		</figure>     
     </body>
-
 </html>
 '
 />
 
-```html title="index.html"
-<blockquote class="my-blockquote">...</blockquote>
-
-<blockquote class="style-green">...</blockquote>
-
-<blockquote class="large style-red">...</blockquote>
+```html {1} title="index.html"
+<figure class="overlay-caption">
+	<img src="https://picsum.photos/500/300" alt="a random image" />
+	<figcaption>A random image - high quality images</figcaption>
+	<a href="#" class="source">Picsum</a>
+</figure>
 ```
 
-```css title="style.css"
-.my-blockquote {
-	--flatify__blockquote-accent-color: #ff9600;
-}
-```
+### Helper classes
+
+To center align image add `.centered` class to the figure,
+also by adding `.fill` class it will fill the whole space.
+
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Figure</title>
+	</head>
+	<body>
+        <figure class="overlay-caption centered">
+			<img src="https://picsum.photos/500/300" alt="a random image"/>
+			<figcaption>A random image - high quality images</figcaption>
+			<a href="#" class="source">Picsum</a>
+		</figure>     
+		<br>
+		<br>
+		<figure class="overlay-caption fill">
+			<img src="https://picsum.photos/500/300" alt="a random image"/>
+			<figcaption>A random image - high quality images</figcaption>
+			<a href="#" class="source">Picsum</a>
+		</figure>   
+    </body>
+</html>
+'
+/>
