@@ -704,12 +704,56 @@ progress {
 
 .flex-column-center-x {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .flex-column-center-y {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-none {
+  float: none;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.margin-ya {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.margin-ta {
+  margin-top: auto;
+}
+
+.margin-ba {
+  margin-bottom: auto;
+}
+
+.margin-xa {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin-la {
+  margin-left: auto;
+}
+
+.margin-ra {
+  margin-right: auto;
 }
 
 .text-filled {

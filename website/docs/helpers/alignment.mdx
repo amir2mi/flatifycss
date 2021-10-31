@@ -1,0 +1,165 @@
+---
+title: Alignment
+---
+
+import PreviewBox from "../../src/components/preview-box";
+import ColorIndicator from "../../src/components/color-indicator";
+
+Alignment in CSS is a dilemma for beginners, there are tons of ways to achieve it
+but helpers classes are life savers.
+
+## Flex
+
+Flexbox is a great feature in CSS you can have what you need without any effort though,
+flexbox with vendor prefixes can be messy if you repeat the main logic all the time,
+it is better to use the helper classes.
+
+:::info
+For alignment with flexbox, **the helper class should be applied to the wrapper element** so the child itself
+without flex parent do nothing.
+:::
+
+`.inline-flex` Treat as inline flex.  
+`.flex-center` [row & column] Alignment for both X and Y axes.  
+`.flex-center-x` [row] Alignment for X axis.  
+`.flex-center-y` [row] Alignment for Y axis.  
+`.flex-column-center-x` [column] Alignment for X axis.  
+`.flex-column-center-y` [column] Alignment for Y axis.
+
+### Row
+
+<PreviewBox
+	height="265px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Flex alignment classes</title>
+        <style>
+            .box{
+                width: 200px;
+                height: 200px;
+				margin: 0.5em;
+                border: 0.25em solid;
+                border-radius: 1em;
+            }
+            .box-sm{
+                width: 25px;
+                height: 25px;
+				margin: 0.5em;
+                border: 0.18em solid;
+                border-radius: 0.5em;
+            }
+        </style>
+	</head>
+	<div class="flex-center">
+		<div class="box flex-center style-light">
+			<div class="box-sm style-red"></div>
+			<div class="box-sm style-green"></div>
+			<div class="box-sm style-blue"></div>
+		</div>
+		<div class="box flex-center-x style-light">
+			<div class="box-sm style-red"></div>
+			<div class="box-sm style-green"></div>
+			<div class="box-sm style-blue"></div>
+		</div>
+        	<div class="box flex-center-y style-light">
+			<div class="box-sm style-red"></div>
+			<div class="box-sm style-green"></div>
+			<div class="box-sm style-blue"></div>
+		</div>
+	</div>
+</html>'
+/>
+
+```html title="index.html"
+<div class="flex-center style-light">
+	<div class="style-red"></div>
+	<div class="style-green"></div>
+	<div class="style-blue"></div>
+</div>
+
+<div class="flex-center-x style-light">
+	<div class="style-red"></div>
+	<div class="style-green"></div>
+	<div class="style-blue"></div>
+</div>
+
+<div class="flex-center-y style-light">
+	<div class="style-red"></div>
+	<div class="style-green"></div>
+	<div class="style-blue"></div>
+</div>
+```
+
+### Column
+
+<PreviewBox
+	height="265px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Flex alignment classes</title>
+        <style>
+            .box{
+                width: 200px;
+                height: 200px;
+				margin: 0.5em;
+                border: 0.25em solid;
+                border-radius: 1em;
+            }
+            .box-sm{
+                width: 25px;
+                height: 25px;
+				margin: 0.5em;
+                border: 0.18em solid;
+                border-radius: 0.5em;
+            }
+        </style>
+	</head>
+	<div class="flex-center">
+		<div class="box flex-column-center style-light">
+			<div class="box-sm style-red"></div>
+			<div class="box-sm style-green"></div>
+			<div class="box-sm style-blue"></div>
+		</div>
+		<div class="box flex-column-center-x style-light">
+			<div class="box-sm style-red"></div>
+			<div class="box-sm style-green"></div>
+			<div class="box-sm style-blue"></div>
+		</div>
+        	<div class="box flex-column-center-y style-light">
+			<div class="box-sm style-red"></div>
+			<div class="box-sm style-green"></div>
+			<div class="box-sm style-blue"></div>
+		</div>
+	</div>
+</html>'
+/>
+
+```html title="index.html"
+<div class="flex-center style-light">
+	<div class="style-red"></div>
+	<div class="style-green"></div>
+	<div class="style-blue"></div>
+</div>
+
+<div class="flex-center-x style-light">
+	<div class="style-red"></div>
+	<div class="style-green"></div>
+	<div class="style-blue"></div>
+</div>
+
+<div class="flex-center-y style-light">
+	<div class="style-red"></div>
+	<div class="style-green"></div>
+	<div class="style-blue"></div>
+</div>
+```

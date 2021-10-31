@@ -736,6 +736,10 @@ progress {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -745,9 +749,55 @@ progress {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-none {
+  float: none;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.margin-ya {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.margin-ta {
+  margin-top: auto;
+}
+
+.margin-ba {
+  margin-bottom: auto;
+}
+
+.margin-xa {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin-la {
+  margin-left: auto;
+}
+
+.margin-ra {
+  margin-right: auto;
 }
 
 .text-filled {
