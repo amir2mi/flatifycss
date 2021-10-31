@@ -681,7 +681,8 @@ figure img {
   border-radius: 1em;
 }
 figure figcaption {
-  padding: 1.5em 0 1em;
+  font-size: 0.9em;
+  padding: 1em 0;
 }
 figure .source {
   --flatify__local-border-color: var(--flatify__bg-color-darker);
