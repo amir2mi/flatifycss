@@ -171,7 +171,7 @@ $MAX_FONT_SIZE: 16 !default; // Must be without unit
 $MIN_FONT_SIZE: 14 !default; // Must be without unit
 $PRIMARY_FONT_FAMILY: "Nunito", sans-serif;
 $HEADING_FONT_FAMILY: $PRIMARY_FONT_FAMILY !default;
-$CODE_FONT_FAMILY: "Source Code Pro", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$CODE_FONT_FAMILY: "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
 // This list will be converted to helper classes.
 // .size-[] | .text-[]
@@ -192,6 +192,7 @@ $LARGE_LINE_HEIGHT: 1.8 !default;
 
 $MEDIUM_FONT_WEIGHT: 600 !default;
 $BOLD_FONT_WEIGHT: 700 !default;
+$EXTRA_BOLD_FONT_WEIGHT: 900 !default;
 
 $BODY_TEXT_ALIGN: initial !default;
 

@@ -54,6 +54,11 @@ body {
 	font-style: var(--#{$CSS_VAR_PFX}heading-font-style);
 	font-weight: var(--#{$CSS_VAR_PFX}heading-font-weight);
 	color: var(--#{$CSS_VAR_PFX}heading-color);
+
+	strong,
+	b {
+		font-weight: var(--#{$CSS_VAR_PFX}extra-bold-font-weight);
+	}
 }
 
 h1 {
@@ -249,6 +254,7 @@ pre {
 }
 
 code {
+	vertical-align: middle;
 	font-size: 0.85em;
 	word-wrap: break-word;
 	padding: 0.18em 0.32em;

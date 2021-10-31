@@ -8,12 +8,13 @@
   --flatify__min-font-size-with-unit: 14px;
   --flatify__primary-font-family: Nunito, sans-serif;
   --flatify__heading-font-family: Nunito, sans-serif;
-  --flatify__code-font-family: Source Code Pro, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  --flatify__code-font-family: Fira Code, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   --flatify__base-line-height: 1.5;
   --flatify__small-line-height: 1.2;
   --flatify__large-line-height: 1.8;
   --flatify__medium-font-weight: 600;
   --flatify__bold-font-weight: 700;
+  --flatify__extra-bold-font-weight: 900;
   --flatify__body-text-align: initial;
   --flatify__heading-font-style: normal;
   --flatify__heading-font-weight: bold;
@@ -122,6 +123,15 @@ h6, h5, h4, h3, h2, h1 {
   font-style: var(--flatify__heading-font-style);
   font-weight: var(--flatify__heading-font-weight);
   color: var(--flatify__heading-color);
+}
+h6 strong, h5 strong, h4 strong, h3 strong, h2 strong, h1 strong,
+h6 b,
+h5 b,
+h4 b,
+h3 b,
+h2 b,
+h1 b {
+  font-weight: var(--flatify__extra-bold-font-weight);
 }
 
 h1 {
@@ -292,6 +302,7 @@ pre code {
 }
 
 code {
+  vertical-align: middle;
   font-size: 0.85em;
   word-wrap: break-word;
   padding: 0.18em 0.32em;
@@ -901,6 +912,7 @@ hr.short {
 
 kbd {
   --flatify__local-border-color: var(--flatify__bg-color-darker);
+  vertical-align: middle;
   text-align: center;
   font-size: 0.85em;
   font-weight: normal;

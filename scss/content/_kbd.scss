@@ -1,5 +1,6 @@
 kbd {
 	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+	vertical-align: middle;
 	text-align: center;
 	font-size: 0.85em;
 	font-weight: normal;
