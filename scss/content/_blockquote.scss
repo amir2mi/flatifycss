@@ -8,7 +8,7 @@ blockquote {
 	overflow: hidden;
 	line-height: var(--#{$CSS_VAR_PFX}large-line-height);
 	margin: 0 0 var(--#{$CSS_VAR_PFX}paragraph-mb);
-	border-radius: 0.5em;
+	border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 	border-style: solid;
 	border-color: var(--#{$CSS_VAR_PFX}blockquote-accent-color);
 
@@ -24,9 +24,15 @@ blockquote {
 		padding: 0.75em 1.25em;
 
 		@if $SUPPORT_LTR {
-			border-radius: 0.5em 1em 1em 0.5em;
+			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
+				calc(var(--#{$CSS_VAR_PFX}border-radius) * 1)
+				calc(var(--#{$CSS_VAR_PFX}border-radius) * 1)
+				calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 		} @else {
-			border-radius: 1em 0.5em 0.5em 1em;
+			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 1)
+				calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
+				calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
+				calc(var(--#{$CSS_VAR_PFX}border-radius) * 1);
 		}
 
 		&:before {

@@ -1,3 +1,6 @@
+// Most of the fixes are from Bootstrap [_reboot.scss]
+// https://github.com/twbs/bootstrap/blob/main/scss/_reboot.scss
+
 // *** Document
 *,
 *::before,
@@ -151,7 +154,7 @@ mark {
 	color: var(--#{$CSS_VAR_PFX}text-color-darker);
 
 	&:not(.inline) {
-		border-radius: 0.38em;
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.38);
 		padding: 0 0.32em;
 		background: var(--#{$CSS_VAR_PFX}yellow-light);
 	}
@@ -171,7 +174,7 @@ mark {
 			width: 100%;
 			height: 100%;
 			background: var(--#{$CSS_VAR_PFX}yellow-light);
-			border-radius: 0.38em;
+			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.38);
 			opacity: 0.9;
 
 			@if $SUPPORT_LTR {
@@ -232,8 +235,12 @@ samp {
 pre {
 	overflow: auto;
 	display: block;
+	padding: 1em;
 	margin-top: 0;
 	margin-bottom: 1em;
+	background: var(--#{$CSS_VAR_PFX}bg-color-dark);
+	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}table-border-color);
+	border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 1);
 
 	code {
 		color: inherit;
@@ -242,16 +249,234 @@ pre {
 }
 
 code {
-	font-size: 0.9em;
+	font-size: 0.85em;
 	word-wrap: break-word;
+	padding: 0.18em 0.32em;
+	background: var(--#{$CSS_VAR_PFX}bg-color-dark);
+	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}table-border-color);
+	border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 
 	a > & {
 		color: inherit;
 	}
 }
 
+// ** Fixes
 // Media
 img,
 svg {
 	vertical-align: middle;
+}
+
+// Forms
+//
+// 1. Allow labels to use `margin` for spacing.
+
+label {
+	display: inline-block; // 1
+}
+
+// Explicitly remove focus outline in Chromium when it shouldn't be
+// visible (e.g. as result of mouse click or touch tap). It already
+// should be doing this automatically, but seems to currently be
+// confused and applies its very visible two-tone outline anyway.
+
+button:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+// 1. Remove the margin in Firefox and Safari
+
+input,
+button,
+select,
+optgroup,
+textarea {
+	margin: 0; // 1
+	font-family: inherit;
+	line-height: inherit;
+}
+
+// Remove the inheritance of text transform in Firefox
+button,
+select {
+	text-transform: none;
+}
+// Set the cursor for non-`<button>` buttons
+[role="button"] {
+	cursor: pointer;
+}
+
+select {
+	// Remove the inheritance of word-wrap in Safari.
+	word-wrap: normal;
+
+	// Undo the opacity change from Chrome
+	&:disabled {
+		opacity: 1;
+	}
+}
+
+// Remove the dropdown arrow in Chrome from inputs built with datalists.
+// See https://stackoverflow.com/a/54997118
+
+[list]::-webkit-calendar-picker-indicator {
+	display: none;
+}
+
+// 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+//    controls in Android 4.
+// 2. Correct the inability to style clickable types in iOS and Safari.
+// 3. Opinionated: add "hand" cursor to non-disabled button elements.
+
+button,
+  [type="button"], // 1
+  [type="reset"],
+  [type="submit"] {
+	-webkit-appearance: button; // 2
+
+	&:not(:disabled) {
+		cursor: pointer; // 3
+	}
+}
+
+// Remove inner border and padding from Firefox, but don't restore the outline like Normalize.
+
+::-moz-focus-inner {
+	padding: 0;
+	border-style: none;
+}
+
+// 1. Textareas should really only resize vertically so they don't break their (horizontal) containers.
+
+textarea {
+	resize: vertical; // 1
+}
+
+// 1. Browsers set a default `min-width: min-content;` on fieldsets,
+//    unlike e.g. `<div>`s, which have `min-width: 0;` by default.
+//    So we reset that to ensure fieldsets behave more like a standard block element.
+//    and https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
+// 2. Reset the default outline behavior of fieldsets so they don't affect page layout.
+
+fieldset {
+	min-width: 0; // 1
+	padding: 0; // 2
+	margin: 0; // 2
+	border: 0; // 2
+}
+
+// 1. By using `float: left`, the legend will behave like a block element.
+//    This way the border of a fieldset wraps around the legend if present.
+
+legend {
+	float: left; // 1
+	width: 100%;
+	padding: 0;
+	margin-bottom: 0.5em;
+	font-weight: var(--#{$CSS_VAR_PFX}bold-font-weight);
+	line-height: inherit;
+
+	+ * {
+		clear: left;
+	}
+}
+
+// Fix height of inputs with a type of datetime-local, date, month, week, or time
+
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+	padding: 0;
+}
+
+::-webkit-inner-spin-button {
+	height: auto;
+}
+// 1. Correct the outline style in Safari.
+// 2. This overrides the extra rounded corners on search inputs in iOS so that our
+//    `.form-control` class can properly style them. Note that this cannot simply
+//    be added to `.form-control` as it's not specific enough. For details, see
+
+[type="search"] {
+	outline-offset: -2px; // 1
+	-webkit-appearance: textfield; // 2
+}
+// 1. A few input types should stay LTR
+// See https://rtlstyling.com/posts/rtl-styling#form-inputs
+// 2. RTL only output
+// See https://rtlcss.com/learn/usage-guide/control-directives/#raw
+
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="number"] {
+	direction: ltr;
+}
+
+// Remove the inner padding in Chrome and Safari on macOS.
+
+::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+// Remove padding around color pickers in webkit browsers
+
+::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+// Inherit font family and line height for file input buttons
+
+::file-selector-button {
+	font: inherit;
+}
+
+// 1. Change font properties to `inherit`
+// 2. Correct the inability to style clickable types in iOS and Safari.
+
+::-webkit-file-upload-button {
+	font: inherit; // 1
+	-webkit-appearance: button; // 2
+}
+
+// Correct element displays
+
+output {
+	display: inline-block;
+}
+
+// Remove border from iframe
+
+iframe {
+	border: 0;
+}
+
+// Summary
+//
+// 1. Add the correct display in all browsers
+
+summary {
+	display: list-item; // 1
+	cursor: pointer;
+}
+
+// Progress
+//
+// Add the correct vertical alignment in Chrome, Firefox, and Opera.
+
+progress {
+	vertical-align: baseline;
+}
+
+// Hidden attribute
+//
+// Always hide an element with the `hidden` HTML attribute.
+
+[hidden] {
+	display: none !important;
 }

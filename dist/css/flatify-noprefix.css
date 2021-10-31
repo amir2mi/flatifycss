@@ -212,7 +212,7 @@ mark {
   color: var(--flatify__text-color-darker);
 }
 mark:not(.inline) {
-  border-radius: 0.38em;
+  border-radius: calc(var(--flatify__border-radius) * 0.38);
   padding: 0 0.32em;
   background: var(--flatify__yellow-light);
 }
@@ -231,7 +231,7 @@ mark.inline:before {
   width: 100%;
   height: 100%;
   background: var(--flatify__yellow-light);
-  border-radius: 0.38em;
+  border-radius: calc(var(--flatify__border-radius) * 0.38);
   opacity: 0.9;
   transform: rotate(-3deg) scale(1.05, 0.9) skew(-10deg);
 }
@@ -279,8 +279,12 @@ samp {
 pre {
   overflow: auto;
   display: block;
+  padding: 1em;
   margin-top: 0;
   margin-bottom: 1em;
+  background: var(--flatify__bg-color-dark);
+  border: var(--flatify__border-width) solid var(--flatify__table-border-color);
+  border-radius: calc(var(--flatify__border-radius) * 1);
 }
 pre code {
   color: inherit;
@@ -288,8 +292,12 @@ pre code {
 }
 
 code {
-  font-size: 0.9em;
+  font-size: 0.85em;
   word-wrap: break-word;
+  padding: 0.18em 0.32em;
+  background: var(--flatify__bg-color-dark);
+  border: var(--flatify__border-width) solid var(--flatify__table-border-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.5);
 }
 a > code {
   color: inherit;
@@ -298,6 +306,149 @@ a > code {
 img,
 svg {
   vertical-align: middle;
+}
+
+label {
+  display: inline-block;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+[role=button] {
+  cursor: pointer;
+}
+
+select {
+  word-wrap: normal;
+}
+select:disabled {
+  opacity: 1;
+}
+
+[list]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {
+  cursor: pointer;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 0.5em;
+  font-weight: var(--flatify__bold-font-weight);
+  line-height: inherit;
+}
+legend + * {
+  clear: left;
+}
+
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+  padding: 0;
+}
+
+::-webkit-inner-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  outline-offset: -2px;
+  -webkit-appearance: textfield;
+}
+
+[type=tel],
+[type=url],
+[type=email],
+[type=number] {
+  direction: ltr;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::file-selector-button {
+  font: inherit;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+output {
+  display: inline-block;
+}
+
+iframe {
+  border: 0;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 .style-blue {
@@ -617,7 +768,7 @@ blockquote {
   overflow: hidden;
   line-height: var(--flatify__large-line-height);
   margin: 0 0 var(--flatify__paragraph-mb);
-  border-radius: 0.5em;
+  border-radius: calc(var(--flatify__border-radius) * 0.5);
   border-style: solid;
   border-color: var(--flatify__blockquote-accent-color);
   border-width: 0 0 0 0.5em;
@@ -626,7 +777,7 @@ blockquote:not(.large) {
   font-size: 1em;
   line-height: var(--flatify__large-line-height);
   padding: 0.75em 1.25em;
-  border-radius: 0.5em 1em 1em 0.5em;
+  border-radius: calc(var(--flatify__border-radius) * 0.5) calc(var(--flatify__border-radius) * 1) calc(var(--flatify__border-radius) * 1) calc(var(--flatify__border-radius) * 0.5);
 }
 blockquote:not(.large):before {
   top: 1em;
@@ -673,12 +824,12 @@ figure {
   max-width: 100%;
   height: max-content;
   margin: 0 0 1em;
-  border-radius: 1em;
+  border-radius: calc(var(--flatify__border-radius) * 1);
 }
 figure img {
   width: 100%;
   height: 100%;
-  border-radius: 1em;
+  border-radius: calc(var(--flatify__border-radius) * 1);
 }
 figure figcaption {
   font-size: 0.9em;
@@ -723,7 +874,7 @@ hr {
   color: currentColor;
   background-color: currentColor;
   border: none;
-  border-radius: 1em;
+  border-radius: calc(var(--flatify__border-radius) * 1);
 }
 hr:not([size]) {
   height: var(--flatify__border-width);
@@ -875,31 +1026,31 @@ table.horizontal.bordered th:last-child {
 }
 table.horizontal thead tr th:first-child,
 table.horizontal thead tr td:first-child {
-  border-top-left-radius: 1em;
+  border-top-left-radius: calc(var(--flatify__border-radius) * 1);
 }
 table.horizontal thead tr th:last-child,
 table.horizontal thead tr td:last-child {
-  border-bottom-left-radius: 1em;
+  border-bottom-left-radius: calc(var(--flatify__border-radius) * 1);
 }
 table.horizontal tbody tr:last-child th:first-child,
 table.horizontal tbody tr:last-child td:first-child {
-  border-top-right-radius: 1em;
+  border-top-right-radius: calc(var(--flatify__border-radius) * 1);
 }
 table.horizontal tbody tr:last-child th:last-child,
 table.horizontal tbody tr:last-child td:last-child {
-  border-bottom-right-radius: 1em;
+  border-bottom-right-radius: calc(var(--flatify__border-radius) * 1);
 }
 table:not(.horizontal) tr:last-child th:first-child {
-  border-top-left-radius: 1em;
+  border-top-left-radius: calc(var(--flatify__border-radius) * 1);
 }
 table:not(.horizontal) tr:last-child th:last-child {
-  border-top-right-radius: 1em;
+  border-top-right-radius: calc(var(--flatify__border-radius) * 1);
 }
 table:not(.horizontal) tr:last-child td:first-child {
-  border-bottom-left-radius: 1em;
+  border-bottom-left-radius: calc(var(--flatify__border-radius) * 1);
 }
 table:not(.horizontal) tr:last-child td:last-child {
-  border-bottom-right-radius: 1em;
+  border-bottom-right-radius: calc(var(--flatify__border-radius) * 1);
 }
 table.striped thead th,
 table.striped thead td {

@@ -5,7 +5,7 @@ hr {
 	color: currentColor;
 	background-color: currentColor;
 	border: none;
-    border-radius: 1em;
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 1);
 
 	&:not([size]) {
 		height: var(--#{$CSS_VAR_PFX}border-width);
