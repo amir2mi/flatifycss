@@ -11,6 +11,15 @@ $BORDER_RADIUS: 1em;
 // .opacity-[]
 $OPACITY_LIST: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100) !default;
 
+// This list will be converted to helper classes.
+// .edge-[]
+$BORDER_RADIUS_LIST: (
+	round-xs: 0.38em,
+	round-sm: 0.5em,
+	round-md: 0.75em,
+	round-lg: 1em,
+) !default;
+
 $LINK_DECORATION: none;
 $LINK_DECORATION_HOVER: underline 0.125em currentColor;
 $LINK_DECORATION_FOCUS: none;
