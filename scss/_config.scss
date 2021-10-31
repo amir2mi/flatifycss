@@ -3,11 +3,17 @@
 $CSS_VAR_PFX: flatify__ !default;
 $SUPPORT_LTR: true !default;
 
-// *** Design: border width, radius
+// *** Design: border width, radius, opacity, links
 $BORDER_WIDTH: 2px;
 $BORDER_RADIUS: 1em;
-// This list will be generated to helper classes.
+
+// This list will be converted to helper classes.
+// .opacity-[]
 $OPACITY_LIST: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100) !default;
+
+$LINK_DECORATION: none;
+$LINK_DECORATION_HOVER: underline 0.125em currentColor;
+$LINK_DECORATION_FOCUS: none;
 
 // *** Colors: accent color, background color, text color, heading color, palette
 $BG_COLOR: #ffffff !default;
@@ -158,11 +164,24 @@ $PRIMARY_FONT_FAMILY: "Nunito", sans-serif;
 $HEADING_FONT_FAMILY: $PRIMARY_FONT_FAMILY !default;
 $CODE_FONT_FAMILY: "Source Code Pro", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
+// This list will be converted to helper classes.
+// .size-[] | .text-[]
+$FONT_SIZE_LIST: (
+	xs: 0.5em,
+	sm: 0.75em,
+	md: 1em,
+	lg: 1.5em,
+	2x: 2.15em,
+	3x: 2.5em,
+	4x: 3.14em,
+	5x: 3.75em,
+) !default;
+
 $BASE_LINE_HEIGHT: 1.5 !default;
 $SMALL_LINE_HEIGHT: 1.2 !default;
 $LARGE_LINE_HEIGHT: 1.8 !default;
 
-$MEDIUM_FONT_WEIGHT: 500 !default;
+$MEDIUM_FONT_WEIGHT: 600 !default;
 $BOLD_FONT_WEIGHT: 700 !default;
 
 $BODY_TEXT_ALIGN: initial !default;
@@ -172,7 +191,3 @@ $HEADING_FONT_STYLE: normal !default;
 $HEADING_FONT_WEIGHT: bold !default;
 
 $PARAGRAPH_MARGIN_BOTTOM: 2em !default;
-
-$LINK_DECORATION: none;
-$LINK_DECORATION_HOVER: underline 2px currentColor;
-$LINK_DECORATION_FOCUS: none;

@@ -1,0 +1,21 @@
+// .style-[color] is a bg, color and border color setter that can be practical for table items and other elements
+@each $name, $colors in $PALETTE {
+	.style-#{"" + $name} {
+		color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+		background: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
+		// Local border color can be used as color of box shadow e.g. buttons
+		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
+	}
+}
+
+.style-yellow,
+.style-light {
+	color: var(--#{$CSS_VAR_PFX}txt-color) !important;
+}
+
+@each $name, $colors in $PALETTE {
+	.color-#{"" + $name} {
+		color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+	}
+}

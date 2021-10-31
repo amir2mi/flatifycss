@@ -1,0 +1,17 @@
+// though justify is not a good practice for text align, but with it hyphens becomes better.
+.text-filled {
+	hyphens: auto;
+	text-align: justify;
+}
+
+.text-centered {
+	text-align: center;
+}
+
+// text sizes
+@each $size, $value in $FONT_SIZE_LIST {
+	.size-#{$size},
+	.text-#{$size} {
+		font-size: $value;
+	}
+}

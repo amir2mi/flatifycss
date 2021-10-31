@@ -12,7 +12,7 @@
   --flatify__base-line-height: 1.5;
   --flatify__small-line-height: 1.2;
   --flatify__large-line-height: 1.8;
-  --flatify__medium-font-weight: 500;
+  --flatify__medium-font-weight: 600;
   --flatify__bold-font-weight: 700;
   --flatify__body-text-align: initial;
   --flatify__heading-font-style: normal;
@@ -20,7 +20,7 @@
   --flatify__heading-mb: 0.5em;
   --flatify__paragraph-mb: 2em;
   --flatify__link-decoration: none;
-  --flatify__link-decoration__hover: underline 2px currentColor;
+  --flatify__link-decoration__hover: underline 0.125em currentColor;
   --flatify__link-decoration__focus: none;
   --flatify__bg-color: #ffffff;
   --flatify__bg-color-dark: #f1f4f7;

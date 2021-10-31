@@ -1,0 +1,30 @@
+// Center align children with flex
+.inline-flex {
+	display: inline-flex !important;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-center-x {
+	display: flex;
+	justify-content: center;
+}
+
+.flex-center-y {
+	display: flex;
+	align-items: center;
+}
+
+.flex-column-center-x {
+	display: flex;
+	align-items: center;
+}
+
+.flex-column-center-y {
+	display: flex;
+	justify-content: center;
+}

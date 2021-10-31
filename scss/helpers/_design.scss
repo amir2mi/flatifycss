@@ -1,0 +1,9 @@
+@use "sass:math";
+
+// List of opacity helper classes
+@each $value in $OPACITY_LIST {
+	// e.g. [.opacity-10]
+	.opacity-#{$value} {
+		opacity: math.div($value, 100);
+	}
+}

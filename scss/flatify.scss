@@ -2,7 +2,12 @@
 @import "config";
 @import "root";
 @import "reset";
-@import "helpers";
+
+// Helpers
+@import "helpers/colors";
+@import "helpers/design";
+@import "helpers/layout";
+@import "helpers/typography";
 
 // Content
 @import "content/blockquote";
