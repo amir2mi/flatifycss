@@ -836,11 +836,12 @@ figure figcaption {
   padding: 1em 0;
 }
 figure .source {
-  --flatify__local-border-color: var(--flatify__bg-color-darker);
+  --flatify__local-border-color: var(--flatify__txt-color-light);
   position: absolute;
   top: 1em;
   font-size: 0.75em;
-  padding: 0.25em 0.5em;
+  line-height: 1;
+  padding: 0.5em;
   color: var(--flatify__bg-color);
   background: var(--flatify__txt-color-dark);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
