@@ -527,8 +527,16 @@ svg {
   text-align: justify;
 }
 
-.text-centered {
+.text-center {
   text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .size-xs,
@@ -632,7 +640,39 @@ blockquote:before {
 }
 
 figure {
+  position: relative;
   margin: 0 0 1em;
+  border-radius: 1em;
+}
+figure img {
+  border-radius: 1em;
+}
+figure figcaption {
+  padding: 1.5em 0 1em;
+  opacity: 0.8;
+}
+figure .source {
+  position: absolute;
+  top: 1em;
+  font-size: 0.75em;
+  padding: 0.32em 0.5em;
+  color: var(--flatify__bg-color);
+  background: var(--flatify__txt-color-dark);
+  border-radius: calc(var(--flatify__border-radius) * 0.75);
+  right: 1em;
+}
+figure.overlay-caption {
+  overflow: hidden;
+}
+figure.overlay-caption figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: var(--flatify__bg-color);
+  background: linear-gradient(0, var(--flatify__txt-color-dark), transparent);
 }
 
 hr {

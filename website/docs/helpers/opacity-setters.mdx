@@ -5,152 +5,46 @@ title: Opacity setters
 import PreviewBox from "../../src/components/preview-box";
 import ColorIndicator from "../../src/components/color-indicator";
 
-Here is the list of practical helper classes to style elements,
-for example a button, table item, div, etc.  
-What they do is pretty simple:
-set background, color, and border based on the color palette.
+Opacity setter classes are practical for any element,
+you can change the impact an element can have on others by adjusting opacity.
 
-### Main colors
+<ColorIndicator className="opacity-0" color="#1cb0f6" title=".opacity-0" />
+<ColorIndicator className="opacity-10" color="#1cb0f6" title=".opacity-10" />
+<ColorIndicator className="opacity-20" color="#1cb0f6" title=".opacity-20" />
+<ColorIndicator className="opacity-30" color="#1cb0f6" title=".opacity-30" />
+<ColorIndicator className="opacity-40" color="#1cb0f6" title=".opacity-40" />
+<ColorIndicator className="opacity-50" color="#1cb0f6" title=".opacity-50" />
+<ColorIndicator className="opacity-60" color="#1cb0f6" title=".opacity-60" />
+<ColorIndicator className="opacity-70" color="#1cb0f6" title=".opacity-70" />
+<ColorIndicator className="opacity-80" color="#1cb0f6" title=".opacity-80" />
+<ColorIndicator className="opacity-90" color="#1cb0f6" title=".opacity-90" />
+<ColorIndicator className="opacity-100" color="#1cb0f6" title=".opacity-100" />  
 
-<ColorIndicator color="#1cb0f6" title=".style-accent" inline={true} /> Brings the UI primary color.
+<br/>
 
-<PreviewBox
-	height="165px"
-	children='<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Colors helper classes</title>
-        <style>
-            .my-box{
-                width: 200px;
-                height: 100px;
-				margin: 0.5em;
-                border: 0.25em solid;
-                border-radius: 1em;
-            }
-        </style>
-	</head>
-	<div class="flex-center">
-		<div class="my-box flex-center style-blue">
-			<p class="text-centered">Hello Everybody!</p>
-		</div>
-		<div class="my-box flex-center style-red">
-			<p class="text-centered">Hello Everybody!</p>
-		</div>
-		<div class="my-box flex-center style-green">
-			<p class="text-centered">Hello Everybody!</p>
-		</div>
-	</div>
-</html>'
-/>
+:::info
+Note that these classes can be customized in `_config.scss` file, there is a variable called `$OPACITY_LIST`,
+all classes are generated from this list.
+So it is possible to create customized helper classes for opacity simply!
+:::
 
-```html {1,5,9} title="index.html"
-<div class="my-box flex-center style-blue">
-	<p class="text-centered">Hello Everybody!</p>
-</div>
-
-<div class="my-box flex-center style-red">
-	<p class="text-centered">Hello Everybody!</p>
-</div>
-
-<div class="my-box flex-center style-green">
-	<p class="text-centered">Hello Everybody!</p>
-</div>
+```scss {5,6,12} title="_config.scss"
+// This list will be converted to helper classes.
+// .opacity-[]
+$OPACITY_LIST: (
+	0,
+	5,
+	8,
+ 	10,
+  	20,
+	30,
+    40,
+	50, 
+	55,
+	60, 
+	70, 
+	80, 
+	90, 
+	100
+);
 ```
-
-```css title="style.css"
-.my-box {
-	width: 200px;
-	height: 100px;
-	margin: 0.5em;
-	border: 0.25em solid;
-	border-radius: 1em;
-}
-```
-
-### Palette colors
-
-These colors can be declared from the `_config.scss` file or reset with CSS,
-for more information [read this page.](#).
-
-<ColorIndicator color="#1cb0f6" title=".style-blue" />
-<ColorIndicator color="#58cc02" title=".style-green" />
-<ColorIndicator color="#ffde00" title=".style-yellow" />
-<ColorIndicator color="#ff9600" title=".style-orange" />
-<ColorIndicator color="#ff4b4b" title=".style-red" />
-<ColorIndicator color="#ce82ff" title=".style-purple" />
-
-### State colors
-
-Colors are an important part of expressing feelings in the process of designing a UI,
-this helper classes are specifically here to help you achieve it.
-
-<ColorIndicator color="#58cc02" title=".style-success" />
-<ColorIndicator color="#1cb0f6" title=".style-info" />
-<ColorIndicator color="#ff9600" title=".style-warning" />
-<ColorIndicator color="#ff4b4b" title=".style-danger" />
-<ColorIndicator color="#f1f4f7" title=".style-light" />
-<ColorIndicator color="#2e4051" title=".style-dark" />
-
-### Text colors
-
-There are also some useful classes for changing texts color.
-
-<p className="color-accent">
-	<code>.color-accent</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<br />
-<p className="color-blue">
-	<code>.color-blue</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<p className="color-green">
-	<code>.color-green</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<p className="color-yellow">
-	<code>.color-yellow</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<p className="color-orange">
-	<code>.color-orange</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<p className="color-red">
-	<code>.color-red</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<p className="color-purple">
-	<code>.color-purple</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<br />
-<p className="color-success">
-	<code>.color-success</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<p className="color-info">
-	<code>.color-info</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<p className="color-warning">
-	<code>.color-warning</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<p className="color-danger">
-	<code>.color-danger</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<p className="color-light">
-	<code style={{ background: "#292b36" }}>.color-light</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>
-<p className="color-dark">
-	<code style={{ background: "#ced9e3" }}>.color-dark</code>
-	&nbsp; Lorem ipsum dolor sit amet.
-</p>

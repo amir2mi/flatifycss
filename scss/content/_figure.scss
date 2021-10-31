@@ -1,3 +1,45 @@
 figure {
+	position: relative;
 	margin: 0 0 1em;
+	border-radius: 1em;
+
+	img {
+		border-radius: 1em;
+	}
+
+	figcaption {
+		padding: 1.5em 0 1em;
+		opacity: 0.8;
+	}
+
+	.source {
+		position: absolute;
+		top: 1em;
+		font-size: 0.75em;
+		padding: 0.32em 0.5em;
+		color: var(--#{$CSS_VAR_PFX}bg-color);
+		background: var(--#{$CSS_VAR_PFX}txt-color-dark);
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
+
+		@if $SUPPORT_LTR {
+			right: 1em;
+		} @else {
+			left: 1em;
+		}
+	}
+
+	&.overlay-caption {
+		overflow: hidden;
+
+		figcaption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding-left: 1em;
+			padding-right: 1em;
+			color: var(--#{$CSS_VAR_PFX}bg-color);
+			background: linear-gradient(0, var(--#{$CSS_VAR_PFX}txt-color-dark), transparent);
+		}
+	}
 }

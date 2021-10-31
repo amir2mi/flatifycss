@@ -12,7 +12,7 @@
   --flatify__base-line-height: 1.5;
   --flatify__small-line-height: 1.2;
   --flatify__large-line-height: 1.8;
-  --flatify__medium-font-weight: 500;
+  --flatify__medium-font-weight: 600;
   --flatify__bold-font-weight: 700;
   --flatify__body-text-align: initial;
   --flatify__heading-font-style: normal;
@@ -20,7 +20,7 @@
   --flatify__heading-mb: 0.5em;
   --flatify__paragraph-mb: 2em;
   --flatify__link-decoration: none;
-  --flatify__link-decoration__hover: underline 2px currentColor;
+  --flatify__link-decoration__hover: underline 0.125em currentColor;
   --flatify__link-decoration__focus: none;
   --flatify__bg-color: #ffffff;
   --flatify__bg-color-dark: #f1f4f7;
@@ -563,8 +563,16 @@ svg {
   text-align: justify;
 }
 
-.text-centered {
+.text-center {
   text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .size-xs,
@@ -668,7 +676,41 @@ blockquote:before {
 }
 
 figure {
+  position: relative;
   margin: 0 0 1em;
+  border-radius: 1em;
+}
+figure img {
+  border-radius: 1em;
+}
+figure figcaption {
+  padding: 1.5em 0 1em;
+  opacity: 0.8;
+}
+figure .source {
+  position: absolute;
+  top: 1em;
+  font-size: 0.75em;
+  padding: 0.32em 0.5em;
+  color: var(--flatify__bg-color);
+  background: var(--flatify__txt-color-dark);
+  border-radius: calc(var(--flatify__border-radius) * 0.75);
+  right: 1em;
+}
+figure.overlay-caption {
+  overflow: hidden;
+}
+figure.overlay-caption figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: var(--flatify__bg-color);
+  background: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(var(--flatify__txt-color-dark)), to(transparent));
+  background: -o-linear-gradient(0, var(--flatify__txt-color-dark), transparent);
+  background: linear-gradient(0, var(--flatify__txt-color-dark), transparent);
 }
 
 hr {
