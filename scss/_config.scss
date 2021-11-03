@@ -14,7 +14,7 @@ $RESPONSIVE_BREAKPOINTS: (
 );
 
 // *** Design: border width, radius, opacity, links
-$BORDER_WIDTH: 2px;
+$BORDER_WIDTH: max(2px, 0.18em);
 $BORDER_RADIUS: 1em;
 
 // This list will be converted to helper classes.
@@ -46,28 +46,28 @@ $TXT_COLOR_DARK: shade($TXT_COLOR, 75%) !default;
 $TXT_COLOR_INVERTED: $BG_COLOR_2 !default;
 
 $BLUE: #1cb0f6 !default;
-$BLUE_LIGHT: tint($BLUE, 35%) !default;
-$BLUE_DARK: shade($BLUE, 20%) !default;
+$BLUE_LIGHT: tint($BLUE, 20%) !default;
+$BLUE_DARK: shade($BLUE, 15%) !default;
 
 $GREEN: #58cc02 !default;
-$GREEN_LIGHT: tint($GREEN, 35%) !default;
-$GREEN_DARK: shade($GREEN, 20%) !default;
+$GREEN_LIGHT: tint($GREEN, 20%) !default;
+$GREEN_DARK: shade($GREEN, 15%) !default;
 
 $YELLOW: #ffde00 !default;
-$YELLOW_LIGHT: tint($YELLOW, 35%) !default;
-$YELLOW_DARK: shade($YELLOW, 20%) !default;
+$YELLOW_LIGHT: tint($YELLOW, 20%) !default;
+$YELLOW_DARK: shade($YELLOW, 15%) !default;
 
 $ORANGE: #ff9600 !default;
-$ORANGE_LIGHT: tint($ORANGE, 35%) !default;
-$ORANGE_DARK: shade($ORANGE, 20%) !default;
+$ORANGE_LIGHT: tint($ORANGE, 20%) !default;
+$ORANGE_DARK: shade($ORANGE, 15%) !default;
 
 $RED: #ff4b4b !default;
-$RED_LIGHT: tint($RED, 35%) !default;
-$RED_DARK: shade($RED, 20%) !default;
+$RED_LIGHT: tint($RED, 20%) !default;
+$RED_DARK: shade($RED, 15%) !default;
 
 $PURPLE: #c164ff !default;
-$PURPLE_LIGHT: tint($PURPLE, 35%) !default;
-$PURPLE_DARK: shade($PURPLE, 20%) !default;
+$PURPLE_LIGHT: tint($PURPLE, 20%) !default;
+$PURPLE_DARK: shade($PURPLE, 15%) !default;
 
 $ACCENT_COLOR: $BLUE !default;
 $ACCENT_COLOR_LIGHT: $BLUE_LIGHT !default;

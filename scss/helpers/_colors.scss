@@ -8,6 +8,7 @@
 		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
 		// Local background color can be used as background of <mark.inline> [:before]
 		--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+	
 	}
 }
 

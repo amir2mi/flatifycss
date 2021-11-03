@@ -4,15 +4,18 @@
 @import "reset";
 @import "a11y";
 
-// Helpers
-@import "helpers/colors";
-@import "helpers/design";
-@import "helpers/layout";
-@import "helpers/typography";
-
 // Content
 @import "content/blockquote";
 @import "content/figure";
 @import "content/hr";
 @import "content/kbd";
 @import "content/table";
+
+// Components
+@import "components/button";
+
+// Helpers
+@import "helpers/colors";
+@import "helpers/design";
+@import "helpers/layout";
+@import "helpers/typography";
