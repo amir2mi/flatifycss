@@ -244,7 +244,7 @@ mark.inline:before {
   background: var(--flatify__local-bg-color);
   border-radius: calc(var(--flatify__border-radius) * 0.38);
   opacity: 0.9;
-  transform: rotate(-3deg) scale(1.05, 0.9) skew(-10deg);
+  transform: rotate(-3deg) scale(1.1, 1.2) skew(-10deg);
 }
 
 sub,

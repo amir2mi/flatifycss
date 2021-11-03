@@ -114,9 +114,11 @@ it is possible when you use figures because there is a wrapper.
 
 To center align image add `.centered` class to the figure,
 also by adding `.fill` class it will fill the whole space.
+There are [helper classes for roundness](/docs/helpers/roundness-setters), for example by adding `.edge-sharp`
+you'll have an image without roundness.
 
 <PreviewBox
-	height="900px"
+	height="1200px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -127,20 +129,35 @@ also by adding `.fill` class it will fill the whole space.
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Figure</title>
 	</head>
-	<body>
+	<body>		
+		<figure class="overlay-caption edge-sharp">
+			<img class="edge-sharp" src="https://picsum.photos/500/300" alt="a random image"/>
+			<figcaption>A random image - high quality images</figcaption>
+			<a href="#" class="source" target="_blank" rel="nofollow">Picsum</a>
+		</figure> 
+		<br>
+		<br>
         <figure class="overlay-caption centered">
 			<img src="https://picsum.photos/500/300" alt="a random image"/>
 			<figcaption>A random image - high quality images</figcaption>
 			<a href="#" class="source" target="_blank" rel="nofollow">Picsum</a>
 		</figure>     
 		<br>
-		<br>
+		<br> 
 		<figure class="overlay-caption fill">
 			<img src="https://picsum.photos/500/300" alt="a random image"/>
 			<figcaption>A random image - high quality images</figcaption>
 			<a href="#" class="source" target="_blank" rel="nofollow">Picsum</a>
-		</figure>   
+		</figure>    
     </body>
 </html>
 '
 />
+
+```html {1-2} title="index.html"
+<figure class="overlay-caption edge-sharp">
+	<img class="edge-sharp" src="https://picsum.photos/500/300" alt="a random image" />
+	<figcaption>A random image - high quality images</figcaption>
+	<a href="#" class="source" target="_blank" rel="nofollow">Picsum</a>
+</figure>
+```

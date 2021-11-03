@@ -184,9 +184,9 @@ mark {
 			opacity: 0.9;
 
 			@if $SUPPORT_LTR {
-				transform: rotate(-3deg) scale(1.05, 0.9) skew(-10deg);
+				transform: rotate(-3deg) scale(1.1, 1.2) skew(-10deg);
 			} @else {
-				transform: rotate(3deg) scale(1.05, 0.9) skew(10deg);
+				transform: rotate(3deg) scale(1.1, 1.2) skew(10deg);
 			}
 		}
 	}
