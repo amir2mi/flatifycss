@@ -5,10 +5,10 @@
 	--#{$CSS_VAR_PFX}button-text-color__focus: var(--#{$CSS_VAR_PFX}txt-color);
 }
 
-input[type="submit"],
-input[type="button"],
-*[role="button"],
-button,
+input[type="submit"]:not(.default),
+input[type="button"]:not(.default),
+*[role="button"]:not(.default),
+button:not(.default),
 .button {
 	vertical-align: middle;
 	text-align: center;
