@@ -165,13 +165,13 @@ mark {
 	}
 
 	&.inline {
+		--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}color-yellow-light);
 		position: relative;
 		white-space: nowrap;
 		margin: 0 0.32em;
 		background: transparent !important;
 
 		&:before {
-			--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}color-yellow-light);
 			content: " ";
 			position: absolute;
 			top: 0;

@@ -230,13 +230,13 @@ mark:not(.inline) {
   background: var(--flatify__color-yellow-light);
 }
 mark.inline {
+  --flatify__local-bg-color: var(--flatify__color-yellow-light);
   position: relative;
   white-space: nowrap;
   margin: 0 0.32em;
   background: transparent !important;
 }
 mark.inline:before {
-  --flatify__local-bg-color: var(--flatify__color-yellow-light);
   content: " ";
   position: absolute;
   top: 0;
