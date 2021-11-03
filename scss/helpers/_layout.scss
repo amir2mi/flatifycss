@@ -19,6 +19,13 @@
 	align-items: center;
 }
 
+.flex-column-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .flex-column-center-x {
 	display: flex;
 	flex-direction: column;
@@ -58,13 +65,18 @@
 	margin-bottom: auto;
 }
 
+.push-center,
 .margin-xa {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.push-right,
 .margin-la {
 	margin-left: auto;
 }
+
+.push-left,
 .margin-ra {
 	margin-right: auto;
 }

@@ -655,19 +655,19 @@ progress {
 }
 
 .edge-round-xs {
-  border-radius: calc(var(--flatify__border-radius) * 0.38em) !important;
+  border-radius: calc(var(--flatify__border-radius) * 0.38) !important;
 }
 
 .edge-round-sm {
-  border-radius: calc(var(--flatify__border-radius) * 0.5em) !important;
+  border-radius: calc(var(--flatify__border-radius) * 0.5) !important;
 }
 
 .edge-round-md {
-  border-radius: calc(var(--flatify__border-radius) * 0.75em) !important;
+  border-radius: calc(var(--flatify__border-radius) * 0.75) !important;
 }
 
 .edge-round-lg {
-  border-radius: calc(var(--flatify__border-radius) * 1em) !important;
+  border-radius: calc(var(--flatify__border-radius) * 1) !important;
 }
 
 .edge-sharp {
@@ -699,6 +699,13 @@ progress {
 
 .flex-center-y {
   display: flex;
+  align-items: center;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -743,15 +750,18 @@ progress {
   margin-bottom: auto;
 }
 
+.push-center,
 .margin-xa {
   margin-left: auto;
   margin-right: auto;
 }
 
+.push-right,
 .margin-la {
   margin-left: auto;
 }
 
+.push-left,
 .margin-ra {
   margin-right: auto;
 }

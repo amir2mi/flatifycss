@@ -11,22 +11,22 @@ but helpers classes are life savers.
 ## Flex
 
 Flexbox is a great feature in CSS you can have what you need without any effort though,
-flexbox with vendor prefixes can be messy if you repeat the main logic all the time,
+with vendor prefixes it can be messy if you repeat the main logic all the time,
 it is better to use the helper classes.
+There are two types of helper classes for vertical and horizontal centering with Flexbox.
 
 :::info
 For alignment with flexbox, **the helper class should be applied to the wrapper element** so the child itself
 without flex parent do nothing.
 :::
 
-`.inline-flex` Treat as inline flex.  
-`.flex-center` [row & column] Alignment for both X and Y axes.  
-`.flex-center-x` [row] Alignment for X axis.  
-`.flex-center-y` [row] Alignment for Y axis.  
-`.flex-column-center-x` [column] Alignment for X axis.  
-`.flex-column-center-y` [column] Alignment for Y axis.
+`.inline-flex` Treat as inline flex.
 
 ### Row
+
+`.flex-center` [row & column] Alignment for both X and Y axes.  
+`.flex-center-x` [row] Alignment for X axis.  
+`.flex-center-y` [row] Alignment for Y axis.
 
 <PreviewBox
 	height="265px"
@@ -97,6 +97,10 @@ without flex parent do nothing.
 
 ### Column
 
+`.flex-column-center` [column] Alignment for X axis.  
+`.flex-column-center-x` [column] Alignment for X axis.  
+`.flex-column-center-y` [column] Alignment for Y axis.
+
 <PreviewBox
 	height="265px"
 	children='<!DOCTYPE html>
@@ -145,21 +149,66 @@ without flex parent do nothing.
 />
 
 ```html title="index.html"
-<div class="flex-center style-light">
+<div class="flex-column-center style-light">
 	<div class="style-red"></div>
 	<div class="style-green"></div>
 	<div class="style-blue"></div>
 </div>
 
-<div class="flex-center-x style-light">
+<div class="flex-column-center-x style-light">
 	<div class="style-red"></div>
 	<div class="style-green"></div>
 	<div class="style-blue"></div>
 </div>
 
-<div class="flex-center-y style-light">
+<div class="flex-column-center-y style-light">
 	<div class="style-red"></div>
 	<div class="style-green"></div>
 	<div class="style-blue"></div>
 </div>
 ```
+
+## Margin
+
+With margin you can center an element one horizontal line.
+
+<PreviewBox
+	height="265px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Flex alignment classes</title>
+        <style>
+            .box{
+                width: 200px;
+                height: 200px;
+				padding: 10px;
+				margin: 0.5em;
+                border: 0.25em solid;
+                border-radius: 1em;
+            }
+            .box-sm{
+                width: 25px;
+                height: 25px;
+                border: 0.18em solid;
+                border-radius: 0.5em;
+            }
+        </style>
+	</head>
+	<div class="flex-center">
+		<div class="box style-light">
+			<div class="box-sm margin-left style-red"></div>
+		</div>
+		<div class="box style-light">
+			<div class="box-sm margin-center style-green"></div>
+		</div>
+		<div class="box style-light">
+			<div class="box-sm margin-right style-blue"></div>
+		</div>
+	</div>
+</html>'
+/>

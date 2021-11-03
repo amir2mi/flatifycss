@@ -19,11 +19,12 @@ $BORDER_RADIUS: 1em;
 
 // This list will be converted to helper classes.
 // .edge-[]
+// e.g. 38% of $BORDER_RADIUS
 $BORDER_RADIUS_LIST: (
-	round-xs: 0.38em,
-	round-sm: 0.5em,
-	round-md: 0.75em,
-	round-lg: 1em,
+	round-xs: 0.38,
+	round-sm: 0.5,
+	round-md: 0.75,
+	round-lg: 1,
 ) !default;
 
 // This list will be converted to helper classes.

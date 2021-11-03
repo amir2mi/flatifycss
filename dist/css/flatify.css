@@ -669,19 +669,19 @@ progress {
 }
 
 .edge-round-xs {
-  border-radius: calc(var(--flatify__border-radius) * 0.38em) !important;
+  border-radius: calc(var(--flatify__border-radius) * 0.38) !important;
 }
 
 .edge-round-sm {
-  border-radius: calc(var(--flatify__border-radius) * 0.5em) !important;
+  border-radius: calc(var(--flatify__border-radius) * 0.5) !important;
 }
 
 .edge-round-md {
-  border-radius: calc(var(--flatify__border-radius) * 0.75em) !important;
+  border-radius: calc(var(--flatify__border-radius) * 0.75) !important;
 }
 
 .edge-round-lg {
-  border-radius: calc(var(--flatify__border-radius) * 1em) !important;
+  border-radius: calc(var(--flatify__border-radius) * 1) !important;
 }
 
 .edge-sharp {
@@ -727,6 +727,22 @@ progress {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-column-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -787,15 +803,18 @@ progress {
   margin-bottom: auto;
 }
 
+.push-center,
 .margin-xa {
   margin-left: auto;
   margin-right: auto;
 }
 
+.push-right,
 .margin-la {
   margin-left: auto;
 }
 
+.push-left,
 .margin-ra {
   margin-right: auto;
 }
