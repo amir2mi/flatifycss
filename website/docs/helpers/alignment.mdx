@@ -22,9 +22,9 @@ without flex parent do nothing.
 
 `.inline-flex` Treat as inline flex.
 
-### Row
+### Children in a row
 
-`.flex-center` [row & column] Alignment for both X and Y axes.  
+`.flex-center` [row] Alignment for both X and Y axes.  
 `.flex-center-x` [row] Alignment for X axis.  
 `.flex-center-y` [row] Alignment for Y axis.
 
@@ -53,26 +53,32 @@ without flex parent do nothing.
                 border: 0.18em solid;
                 border-radius: 0.5em;
             }
+    		@media screen and (max-width: 650px){
+    			.wrapper {
+    				flex-direction: column !important;
+    			}
+    		}
         </style>
 	</head>
-	<div class="flex-center">
-		<div class="box flex-center style-light">
-			<div class="box-sm style-red"></div>
-			<div class="box-sm style-green"></div>
-			<div class="box-sm style-blue"></div>
-		</div>
-		<div class="box flex-center-x style-light">
-			<div class="box-sm style-red"></div>
-			<div class="box-sm style-green"></div>
-			<div class="box-sm style-blue"></div>
-		</div>
-        	<div class="box flex-center-y style-light">
-			<div class="box-sm style-red"></div>
-			<div class="box-sm style-green"></div>
-			<div class="box-sm style-blue"></div>
-		</div>
-	</div>
-</html>'
+    <div class="wrapper flex-center">
+    	<div class="box flex-center style-light">
+    		<div class="box-sm style-red"></div>
+    		<div class="box-sm style-green"></div>
+    		<div class="box-sm style-blue"></div>
+    	</div>
+    	<div class="box flex-center-x style-light">
+    		<div class="box-sm style-red"></div>
+    		<div class="box-sm style-green"></div>
+    		<div class="box-sm style-blue"></div>
+    	</div>
+    	<div class="box flex-center-y style-light">
+    		<div class="box-sm style-red"></div>
+    		<div class="box-sm style-green"></div>
+    		<div class="box-sm style-blue"></div>
+    	</div>
+    </div>
+</html>
+'
 />
 
 ```html title="index.html"
@@ -95,9 +101,9 @@ without flex parent do nothing.
 </div>
 ```
 
-### Column
+### Children in a column
 
-`.flex-column-center` [column] Alignment for X axis.  
+`.flex-column-center` [column] Alignment for both X and Y axes.  
 `.flex-column-center-x` [column] Alignment for X axis.  
 `.flex-column-center-y` [column] Alignment for Y axis.
 
@@ -126,9 +132,14 @@ without flex parent do nothing.
                 border: 0.18em solid;
                 border-radius: 0.5em;
             }
+			@media screen and (max-width: 650px){
+    			.wrapper {
+    				flex-direction: column !important;
+    			}
+    		}
         </style>
 	</head>
-	<div class="flex-center">
+	<div class="wrapper flex-center">
 		<div class="box flex-column-center style-light">
 			<div class="box-sm style-red"></div>
 			<div class="box-sm style-green"></div>
@@ -170,6 +181,20 @@ without flex parent do nothing.
 
 ## Margin
 
+`.margin-auto`
+
+<br />
+
+`.margin-ya` Margin top & bottom is auto.  
+`.margin-ta` Margin top auto.  
+`.margin-ba` Margin bottom auto.
+
+<br />
+
+`.margin-xa` or `.push-center` Margin left & right is auto.  
+`.margin-la` or `.push-right` Margin lefy is auto.  
+`.margin-ra` or `.push-left` Margin right is auto.
+
 With margin you can center an element one horizontal line.
 
 <PreviewBox
@@ -181,7 +206,7 @@ With margin you can center an element one horizontal line.
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Flex alignment classes</title>
+		<title>Margin alignment classes</title>
         <style>
             .box{
                 width: 200px;
@@ -197,9 +222,14 @@ With margin you can center an element one horizontal line.
                 border: 0.18em solid;
                 border-radius: 0.5em;
             }
+			@media screen and (max-width: 650px){
+    			.wrapper {
+    				flex-direction: column !important;
+    			}
+    		}
         </style>
 	</head>
-	<div class="flex-center">
+	<div class="wrapper flex-center">
 		<div class="box style-light">
 			<div class="box-sm push-left style-red"></div>
 		</div>
@@ -228,9 +258,30 @@ With margin you can center an element one horizontal line.
 ```
 
 ## Absolute position
-Sometime it happens that the element has absolute position and you might try above tricks but they wont ring the bell,
-so in this case `left: 50%` or something like is not a wise choice for centering, let see what is the better way:
 
+Sometime it happens that the element has absolute position and you might try above tricks
+but they will not work, to center things with absolute position just set both sides
+so in this case `left: 50%` or something like **is not a wise choice**,
+`top` and `bottom` or `left` and `right` to `0` and set `margin: auto`.
+The list position helper classes are:
+
+`.position-relative` To have relative postion (mostly for wrapper).  
+`.position-absolute` To have absolute postion (mostly for children).
+
+<br />
+
+`.place-expand` It sets all sides to 0  
+`.place-expand-y` It sets `top` and `bottom` to 0  
+`.place-expand-x` It sets `left` and `right` to 0
+
+<br />
+
+`.place-top` It sets top to 0  
+`.place-bottom` It sets bottom to 0  
+`.place-left` It sets left to 0  
+`.place-right` It sets right to 0
+
+Let see what is the better way:
 
 <PreviewBox
 	height="265px"
@@ -241,7 +292,7 @@ so in this case `left: 50%` or something like is not a wise choice for centering
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Flex alignment classes</title>
+		<title>Position alignment classes</title>
         <style>
             .box{
                 width: 200px;
@@ -260,10 +311,36 @@ so in this case `left: 50%` or something like is not a wise choice for centering
         </style>
 	</head>
 	<div class="flex-center">
-		<div class="box style-light">
-			<div class="box-sm push-right style-blue"></div>
-		</div>
-	</div>
+		<div class="box style-light position-relative">
+			<div class="box-sm position-absolute place-top place-left style-blue"></div>
+			<div class="box-sm position-absolute place-top place-expand-x margin-xa style-blue"></div>
+			<div class="box-sm position-absolute place-top place-right style-blue"></div>
+			<br>
+			<div class="box-sm position-absolute place-expand-y margin-ya place-left style-red"></div>
+    		<div class="box-sm position-absolute place-expand margin-auto style-red"></div>
+    		<div class="box-sm position-absolute place-expand-y margin-ya place-right style-red"></div>
+			<br>
+			<div class="box-sm position-absolute place-bottom place-left style-green"></div>
+			<div class="box-sm position-absolute place-bottom place-expand-x margin-xa style-green"></div>
+			<div class="box-sm position-absolute place-bottom place-right style-green"></div>
+    	</div>
+    </div>
+
 </html>'
 />
 
+```html title="index.html"
+<div class="style-light position-relative">
+	<div class="position-absolute place-top place-left style-blue"></div>
+	<div class="position-absolute place-top place-expand-x margin-xa style-blue"></div>
+	<div class="position-absolute place-top place-right style-blue"></div>
+
+	<div class="position-absolute place-expand-y place-left margin-ya style-red"></div>
+	<div class="position-absolute place-expand margin-auto style-red"></div>
+	<div class="position-absolute place-expand-y place-right margin-ya style-red"></div>
+
+	<div class="position-absolute place-bottom place-left style-green"></div>
+	<div class="position-absolute place-bottom place-expand-x margin-xa style-green"></div>
+	<div class="position-absolute place-bottom place-right style-green"></div>
+</div>
+```

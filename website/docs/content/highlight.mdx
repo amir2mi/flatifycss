@@ -1,0 +1,97 @@
+---
+title: Highlight
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Highlight texts with html `<mark>` tag, but there is some features that should be shown.
+
+### Default
+
+<PreviewBox
+	height="90px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Highlight</title>
+	</head>
+	Lorem ipsum <mark>dolor sit amet</mark>, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+</html>'
+/>
+
+```html title="index.html"
+Lorem ipsum <mark>dolor sit amet</mark>, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+```
+
+### Inline
+
+By adding `.inline` class to the `<mark>` it will not break the line and highlight will have different style,
+This is so cool for highlighting small words in a sentence.
+
+<PreviewBox
+	height="90px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Highlight</title>
+	</head>
+	<mark class="inline">Lorem ipsum</mark> dolor sit amet, consectetuer <mark class="inline">adipiscing</mark> elit. Donec odio. Quisque volutpat mattis eros.
+</html>'
+/>
+
+```html title="index.html"
+<mark class="inline">Lorem ipsum</mark> dolor sit amet, consectetuer <mark class="inline">adipiscing</mark> elit. Donec
+odio. Quisque volutpat mattis eros. mattis eros.
+```
+
+### Customization
+
+You can customize
+
+<PreviewBox
+	height="90px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Highlight</title>
+	</head>
+	<mark class="inline style-green">Lorem ipsum</mark> dolor sit amet, consectetuer <mark class="inline style-red">adipiscing</mark> elit. Donec odio. Quisque volutpat mattis eros.
+	<br>
+	Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. 
+	<mark class="style-dark">
+	Aenean dignissim pellentesque felis.
+	Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+	Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. 
+	</mark>
+	Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+</html>'
+/>
+
+```html title="index.html"
+<mark class="inline style-green">Lorem ipsum</mark> dolor sit amet, consectetuer
+<mark class="inline style-red">adipiscing</mark> elit.
+
+<br />
+
+Donec odio. Quisque volutpat mattis eros. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit
+amet orci.
+<mark class="style-dark">
+	Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in,
+	pharetra a, ultricies in, diam. Sed arcu. Cras consequat.Donec nec justo eget felis facilisis fermentum. Aliquam
+	porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Praesent dapibus, neque id cursus faucibus,
+	tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.
+</mark>
+Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+```

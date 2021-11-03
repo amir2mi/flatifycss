@@ -224,15 +224,16 @@ mark {
 mark:not(.inline) {
   border-radius: calc(var(--flatify__border-radius) * 0.38);
   padding: 0 0.32em;
-  background: var(--flatify__yellow-light);
+  background: var(--flatify__color-yellow-light);
 }
 mark.inline {
   position: relative;
   white-space: nowrap;
   margin: 0 0.32em;
-  background: transparent;
+  background: transparent !important;
 }
 mark.inline:before {
+  --flatify__local-bg-color: var(--flatify__color-yellow-light);
   content: " ";
   position: absolute;
   top: 0;
@@ -240,7 +241,7 @@ mark.inline:before {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: var(--flatify__yellow-light);
+  background: var(--flatify__local-bg-color);
   border-radius: calc(var(--flatify__border-radius) * 0.38);
   opacity: 0.9;
   transform: rotate(-3deg) scale(1.05, 0.9) skew(-10deg);
@@ -467,6 +468,7 @@ progress {
   background: var(--flatify__color-blue-primary) !important;
   border-color: var(--flatify__color-blue-dark) !important;
   --flatify__local-border-color: var(--flatify__color-blue-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-blue-primary) !important;
 }
 
 .style-green {
@@ -474,6 +476,7 @@ progress {
   background: var(--flatify__color-green-primary) !important;
   border-color: var(--flatify__color-green-dark) !important;
   --flatify__local-border-color: var(--flatify__color-green-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-green-primary) !important;
 }
 
 .style-yellow {
@@ -481,6 +484,7 @@ progress {
   background: var(--flatify__color-yellow-primary) !important;
   border-color: var(--flatify__color-yellow-dark) !important;
   --flatify__local-border-color: var(--flatify__color-yellow-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-yellow-primary) !important;
 }
 
 .style-orange {
@@ -488,6 +492,7 @@ progress {
   background: var(--flatify__color-orange-primary) !important;
   border-color: var(--flatify__color-orange-dark) !important;
   --flatify__local-border-color: var(--flatify__color-orange-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-orange-primary) !important;
 }
 
 .style-red {
@@ -495,6 +500,7 @@ progress {
   background: var(--flatify__color-red-primary) !important;
   border-color: var(--flatify__color-red-dark) !important;
   --flatify__local-border-color: var(--flatify__color-red-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-red-primary) !important;
 }
 
 .style-purple {
@@ -502,6 +508,7 @@ progress {
   background: var(--flatify__color-purple-primary) !important;
   border-color: var(--flatify__color-purple-dark) !important;
   --flatify__local-border-color: var(--flatify__color-purple-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-purple-primary) !important;
 }
 
 .style-accent {
@@ -509,6 +516,7 @@ progress {
   background: var(--flatify__color-accent-primary) !important;
   border-color: var(--flatify__color-accent-dark) !important;
   --flatify__local-border-color: var(--flatify__color-accent-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-accent-primary) !important;
 }
 
 .style-success {
@@ -516,6 +524,7 @@ progress {
   background: var(--flatify__color-success-primary) !important;
   border-color: var(--flatify__color-success-dark) !important;
   --flatify__local-border-color: var(--flatify__color-success-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-success-primary) !important;
 }
 
 .style-info {
@@ -523,6 +532,7 @@ progress {
   background: var(--flatify__color-info-primary) !important;
   border-color: var(--flatify__color-info-dark) !important;
   --flatify__local-border-color: var(--flatify__color-info-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-info-primary) !important;
 }
 
 .style-warning {
@@ -530,6 +540,7 @@ progress {
   background: var(--flatify__color-warning-primary) !important;
   border-color: var(--flatify__color-warning-dark) !important;
   --flatify__local-border-color: var(--flatify__color-warning-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-warning-primary) !important;
 }
 
 .style-danger {
@@ -537,6 +548,7 @@ progress {
   background: var(--flatify__color-danger-primary) !important;
   border-color: var(--flatify__color-danger-dark) !important;
   --flatify__local-border-color: var(--flatify__color-danger-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-danger-primary) !important;
 }
 
 .style-light {
@@ -544,6 +556,7 @@ progress {
   background: var(--flatify__color-light-primary) !important;
   border-color: var(--flatify__color-light-dark) !important;
   --flatify__local-border-color: var(--flatify__color-light-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-light-primary) !important;
 }
 
 .style-dark {
@@ -551,6 +564,7 @@ progress {
   background: var(--flatify__color-dark-primary) !important;
   border-color: var(--flatify__color-dark-dark) !important;
   --flatify__local-border-color: var(--flatify__color-dark-dark) !important;
+  --flatify__local-bg-color: var(--flatify__color-dark-primary) !important;
 }
 
 .style-yellow,
