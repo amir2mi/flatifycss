@@ -1,0 +1,9 @@
+@media (prefers-reduced-motion: reduce) {
+	*,
+	::before,
+	::after {
+		--#{$CSS_VAR_PFX}simple-transition: 0s !important;
+		background-attachment: initial !important;
+		scroll-behavior: auto !important;
+	}
+}

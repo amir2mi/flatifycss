@@ -46,9 +46,9 @@
   --flatify__color-red-primary: #ff4b4b;
   --flatify__color-red-light: #ff8a8a;
   --flatify__color-red-dark: #d44345;
-  --flatify__color-purple-primary: #ce82ff;
-  --flatify__color-purple-light: #dfaeff;
-  --flatify__color-purple-dark: #ad6fd5;
+  --flatify__color-purple-primary: #c164ff;
+  --flatify__color-purple-light: #d79aff;
+  --flatify__color-purple-dark: #a257d5;
   --flatify__color-accent-primary: #1cb0f6;
   --flatify__color-accent-light: #6bccf9;
   --flatify__color-accent-dark: #1e94ce;
@@ -464,6 +464,15 @@ progress {
   display: none !important;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+::before,
+::after {
+    --flatify__simple-transition: 0s !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+  }
+}
 .style-blue {
   color: var(--flatify__bg-color) !important;
   background: var(--flatify__color-blue-primary) !important;
@@ -894,6 +903,12 @@ blockquote {
   border-color: var(--flatify__blockquote-accent-color);
   border-width: 0 0 0 0.5em;
 }
+blockquote:before {
+  content: var(--flatify__blockquote-icon);
+  position: absolute;
+  z-index: -1;
+  opacity: 0.06;
+}
 blockquote:not(.large) {
   font-size: 1em;
   line-height: var(--flatify__large-line-height);
@@ -931,12 +946,6 @@ blockquote cite {
   text-transform: uppercase;
   padding-top: 1.5em;
   opacity: 0.8;
-}
-blockquote:before {
-  content: var(--flatify__blockquote-icon);
-  position: absolute;
-  z-index: -1;
-  opacity: 0.06;
 }
 
 figure {
@@ -1020,6 +1029,37 @@ hr.short {
   margin: 3em auto;
 }
 
+.button {
+  --flatify__local-border-color: var(--flatify__bg-color-darker);
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1;
+  display: inline-block;
+  padding: 0.75em 0.9em 0.9em;
+  margin: 0.25em 0.125em;
+  background: var(--flatify__bg-color-dark);
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  border-radius: var(--flatify__border-radius);
+  box-shadow: inset 0 -0.15em 0 var(--flatify__local-border-color);
+  will-change: transform;
+  transition: all var(--flatify__simple-transition);
+}
+.button:hover {
+  background: var(--flatify__bg-color-darker);
+}
+.button:active {
+  background: var(--flatify__bg-color-darker);
+  box-shadow: inset 0 0 0 var(--flatify__local-border-color);
+  transform: translateY(0.15em) scale(0.98) !important;
+}
+.button:focus {
+  background: var(--flatify__bg-color-darker);
+  box-shadow: inset 0 0 0 var(--flatify__local-border-color);
+  transform: translateY(0.15em);
+}
+
 kbd {
   --flatify__local-border-color: var(--flatify__bg-color-darker);
   vertical-align: middle;
@@ -1038,11 +1078,9 @@ kbd {
   will-change: transform;
   transition: all var(--flatify__simple-transition);
 }
-@media (prefers-reduced-motion: no-preference) {
-  kbd:hover {
-    box-shadow: inset 0 0 0 var(--flatify__bg-color-darker);
-    transform: translateY(0.15em);
-  }
+kbd:hover {
+  box-shadow: inset 0 0 0 var(--flatify__local-border-color);
+  transform: translateY(0.15em);
 }
 kbd kbd {
   padding: 0;
