@@ -58,6 +58,9 @@
 	--#{$CSS_VAR_PFX}link-color__hover: #{$LINK_COLOR_HOVER};
 	--#{$CSS_VAR_PFX}link-color__focus: #{$LINK_COLOR_FOCUS};
 
+	// *** Icons
+	--#{$CSS_VAR_PFX}blockquote-icon: #{$BLOCKQUOTE_ICON};
+
 	// *** Motion
 	--#{$CSS_VAR_PFX}simple-transition: #{$SIMPLE_TRANSITION};
 }
