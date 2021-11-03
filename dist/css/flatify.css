@@ -819,6 +819,10 @@ progress {
   margin-right: auto;
 }
 
+.position-relative {
+  position: relative;
+}
+
 .position-absolute {
   position: absolute;
 }

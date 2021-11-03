@@ -231,3 +231,39 @@ With margin you can center an element one horizontal line.
 Sometime it happens that the element has absolute position and you might try above tricks but they wont ring the bell,
 so in this case `left: 50%` or something like is not a wise choice for centering, let see what is the better way:
 
+
+<PreviewBox
+	height="265px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Flex alignment classes</title>
+        <style>
+            .box{
+                width: 200px;
+                height: 200px;
+				padding: 10px;
+				margin: 0.5em;
+                border: 0.25em solid;
+                border-radius: 1em;
+            }
+            .box-sm{
+                width: 25px;
+                height: 25px;
+                border: 0.18em solid;
+                border-radius: 0.5em;
+            }
+        </style>
+	</head>
+	<div class="flex-center">
+		<div class="box style-light">
+			<div class="box-sm push-right style-blue"></div>
+		</div>
+	</div>
+</html>'
+/>
+
