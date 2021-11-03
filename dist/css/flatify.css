@@ -819,6 +819,43 @@ progress {
   margin-right: auto;
 }
 
+.position-absolute {
+  position: absolute;
+}
+
+.place-expand {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.place-expand-x {
+  left: 0;
+  right: 0;
+}
+
+.place-expand-y {
+  top: 0;
+  bottom: 0;
+}
+
+.place-top {
+  top: 0;
+}
+
+.place-bottom {
+  bottom: 0;
+}
+
+.place-left {
+  left: 0;
+}
+
+.place-right {
+  right: 0;
+}
+
 .text-filled {
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
