@@ -11,8 +11,11 @@ First, take a look at [button cheat sheet](https://www.buttoncheatsheet.com/).
 
 ### A simple button
 
+A button with Flatify CSS style can be defined in several ways as mentioned in the button cheatsheet,
+for any type of element, you can use the `.button` class but elements like `<button>` or input with button type do not need the class.
+
 <PreviewBox
-	height="230px"
+	height="100px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -24,27 +27,96 @@ First, take a look at [button cheat sheet](https://www.buttoncheatsheet.com/).
 		<title>Buttons</title>
 	</head>
 	<body>
-        <button>
-			Click Here
-		</button>
+        <div class="flex-center">
+			<button>
+				Click Here
+			</button>
+		</div>
 	</body>
 </html>
 '
 />
 
 ```html title="index.html"
-<kbd>Ctrl</kbd> + <kbd>F5</kbd>
-
-<div class="size-lg">
-	<kbd class="style-red">⌘</kbd> +
-	<kbd class="style-blue">S</kbd>
-</div>
-
-<div class="size-2x">
-	<kbd class="style-orange">Ctrl</kbd> + <kbd class="style-yellow">Shift</kbd> +
-	<kbd class="style-green">S</kbd>
-</div>
+<button>Click Here</button>
 ```
+
+:::info
+If you do not want to have Flatify CSS style on elements like `<button>` there is a class called
+`.default` that do not allow the button to have Flatify CSS button style primarily.
+
+<PreviewBox
+	height="100px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Buttons</title>
+	</head>
+	<body>
+        <div class="flex-center">
+			<button class="default">
+				Click Here
+			</button>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<button class="default">Click Here</button>
+```
+
+:::
+
+### Colors
+
+There are helper classes for styling elements like button,
+first [color setter classes](/docs/helpers/color-setters) for having button which diffrent
+background and text color.
+
+<PreviewBox
+	height="200px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Buttons</title>
+	</head>
+	<body>
+        <div class="flex-center" style="flex-wrap: wrap;">
+			<button style="width: 200px; margin: 10px" class="style-accent">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-purple">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-yellow">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-warning">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-danger">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-dark">Click Here</button>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<button class="style-accent">Click Here</button>
+<button class="style-purple">Click Here</button>
+<button class="style-yellow">Click Here</button>
+<button class="style-warning">Click Here</button>
+<button class="style-danger">Click Here</button>
+<button class="style-dark">Click Here</button>
+```
+
+### Sizes
+
 
 ### Customization
 

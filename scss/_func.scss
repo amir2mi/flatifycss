@@ -3,7 +3,7 @@
 }
 
 @function shade($color, $percentage) {
-	@return mix(#27242d, $color, $percentage);
+	@return mix(#000, $color, $percentage);
 }
 
 // Responsive breakpoints media query
