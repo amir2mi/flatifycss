@@ -28,52 +28,52 @@
   --flatify__bg-color-darker: #ced9e3;
   --flatify__txt-color: #2e4051;
   --flatify__txt-color-light: #77838e;
-  --flatify__txt-color-dark: #292b36;
+  --flatify__txt-color-dark: #0c1014;
   --flatify__txt-color-inverted: #f1f4f7;
   --flatify__heading-color: currentColor;
   --flatify__color-blue-primary: #1cb0f6;
   --flatify__color-blue-light: #49c0f8;
-  --flatify__color-blue-dark: #1e9bd8;
+  --flatify__color-blue-dark: #1896d1;
   --flatify__color-green-primary: #58cc02;
   --flatify__color-green-light: #79d635;
-  --flatify__color-green-dark: #51b308;
+  --flatify__color-green-dark: #4bad02;
   --flatify__color-yellow-primary: #ffde00;
   --flatify__color-yellow-light: #ffe533;
-  --flatify__color-yellow-dark: #dfc207;
+  --flatify__color-yellow-dark: #d9bd00;
   --flatify__color-orange-primary: #ff9600;
   --flatify__color-orange-light: #ffab33;
-  --flatify__color-orange-dark: #df8507;
+  --flatify__color-orange-dark: #d98000;
   --flatify__color-red-primary: #ff4b4b;
   --flatify__color-red-light: #ff6f6f;
-  --flatify__color-red-dark: #df4547;
+  --flatify__color-red-dark: #d94040;
   --flatify__color-purple-primary: #c164ff;
   --flatify__color-purple-light: #cd83ff;
-  --flatify__color-purple-dark: #aa5ae0;
+  --flatify__color-purple-dark: #a455d9;
   --flatify__color-accent-primary: #1cb0f6;
   --flatify__color-accent-light: #49c0f8;
-  --flatify__color-accent-dark: #1e9bd8;
+  --flatify__color-accent-dark: #1896d1;
   --flatify__color-success-primary: #58cc02;
   --flatify__color-success-light: #79d635;
-  --flatify__color-success-dark: #51b308;
+  --flatify__color-success-dark: #4bad02;
   --flatify__color-info-primary: #1cb0f6;
   --flatify__color-info-light: #49c0f8;
-  --flatify__color-info-dark: #1e9bd8;
+  --flatify__color-info-dark: #1896d1;
   --flatify__color-warning-primary: #ff9600;
   --flatify__color-warning-light: #ffab33;
-  --flatify__color-warning-dark: #df8507;
+  --flatify__color-warning-dark: #d98000;
   --flatify__color-danger-primary: #ff4b4b;
   --flatify__color-danger-light: #ff6f6f;
-  --flatify__color-danger-dark: #df4547;
+  --flatify__color-danger-dark: #d94040;
   --flatify__color-light-primary: #f1f4f7;
   --flatify__color-light-light: #ffffff;
   --flatify__color-light-dark: #ced9e3;
   --flatify__color-dark-primary: #2e4051;
   --flatify__color-dark-light: #77838e;
-  --flatify__color-dark-dark: #292b36;
+  --flatify__color-dark-dark: #0c1014;
   --flatify__tap-highlight-color: transparent;
   --flatify__link-color: #1cb0f6;
   --flatify__link-color__hover: #49c0f8;
-  --flatify__link-color__focus: #1e9bd8;
+  --flatify__link-color__focus: #1896d1;
   --flatify__blockquote-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 125"> <path d="M24.503 12.412C13.732 12.412 5 21.144 5 31.916c0 10.771 8.732 19.502 19.503 19.502.232 0 6.279-.034 6.279-.034-.153 10.869-7.646 19.99-17.738 22.613a55.73 55.73 0 01-2.123.473A6.572 6.572 0 005 81.008c0 3.288 2.422 6.003 5.574 6.485.033.006.066.008.099.016.151.02.304.035.458.045.074.004.145.021.22.021 0 0 .789.025 1.05.004 1.165-.098 1.529-.246 2.281-.404 16.618-3.49 29.156-18.187 29.315-35.791h.01V31.829l-.005.004c-.045-10.733-8.755-19.421-19.499-19.421zM94.995 31.833c-.045-10.732-8.756-19.42-19.499-19.42-10.771 0-19.503 8.732-19.503 19.503s8.732 19.502 19.503 19.502c.231 0 6.278-.034 6.278-.034-.152 10.869-7.646 19.99-17.737 22.613-.68.176-2.103.471-2.123.473a6.572 6.572 0 00-5.921 6.538c0 3.288 2.422 6.003 5.574 6.485.032.006.065.008.099.016.15.02.303.035.457.045.074.004.145.021.221.021 0 0 .788.025 1.049.004 1.166-.098 1.53-.246 2.282-.404 16.618-3.49 29.156-18.187 29.315-35.791H95V31.829l-.005.004z"></path> </svg>');
   --flatify__simple-transition: 0.18s ease-in-out;
 }
@@ -831,10 +831,10 @@ th {
   --flatify__button-text-color__focus: var(--flatify__txt-color);
 }
 
-input[type=submit],
-input[type=button],
-*[role=button],
-button,
+input[type=submit]:not(.default),
+input[type=button]:not(.default),
+*[role=button]:not(.default),
+button:not(.default),
 .button {
   vertical-align: middle;
   text-align: center;
@@ -855,26 +855,26 @@ button,
   -o-transition: all var(--flatify__simple-transition);
   transition: all var(--flatify__simple-transition);
 }
-input[type=submit][class*=style-],
-input[type=button][class*=style-],
-*[role=button][class*=style-],
-button[class*=style-],
+input[type=submit]:not(.default)[class*=style-],
+input[type=button]:not(.default)[class*=style-],
+*[role=button]:not(.default)[class*=style-],
+button:not(.default)[class*=style-],
 .button[class*=style-] {
   --flatify__button-bg-color: var(--flatify__local-bg-color);
   --flatify__button-bg-color__focus: var(--flatify__local-border-color);
 }
-input[type=submit]:hover:not(:focus),
-input[type=button]:hover:not(:focus),
-*[role=button]:hover:not(:focus),
-button:hover:not(:focus),
+input[type=submit]:not(.default):hover:not(:focus),
+input[type=button]:not(.default):hover:not(:focus),
+*[role=button]:not(.default):hover:not(:focus),
+button:not(.default):hover:not(:focus),
 .button:hover:not(:focus) {
   -webkit-filter: contrast(85%) brightness(95%);
           filter: contrast(85%) brightness(95%);
 }
-input[type=submit]:focus,
-input[type=button]:focus,
-*[role=button]:focus,
-button:focus,
+input[type=submit]:not(.default):focus,
+input[type=button]:not(.default):focus,
+*[role=button]:not(.default):focus,
+button:not(.default):focus,
 .button:focus {
   color: var(--flatify__button-text-color__focus);
   background: var(--flatify__button-bg-color__focus) !important;
@@ -884,16 +884,16 @@ button:focus,
       -ms-transform: translateY(0.15em);
           transform: translateY(0.15em);
 }
-input[type=submit].inactive, input[type=submit].disabled, input[type=submit]:disabled,
-input[type=button].inactive,
-input[type=button].disabled,
-input[type=button]:disabled,
-*[role=button].inactive,
-*[role=button].disabled,
-*[role=button]:disabled,
-button.inactive,
-button.disabled,
-button:disabled,
+input[type=submit]:not(.default).inactive, input[type=submit]:not(.default).disabled, input[type=submit]:not(.default):disabled,
+input[type=button]:not(.default).inactive,
+input[type=button]:not(.default).disabled,
+input[type=button]:not(.default):disabled,
+*[role=button]:not(.default).inactive,
+*[role=button]:not(.default).disabled,
+*[role=button]:not(.default):disabled,
+button:not(.default).inactive,
+button:not(.default).disabled,
+button:not(.default):disabled,
 .button.inactive,
 .button.disabled,
 .button:disabled {
