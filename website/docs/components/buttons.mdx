@@ -193,8 +193,9 @@ the button it will have border.
 
 ### Outline
 
-By default Flatify CSS buttons does not have border however if you add `.bordered` class to
-the button it will have border.
+Buttons with outline style get more transition time because of
+background and text inverted color for `:active` & `:focus-visible` states. In this case text color
+is border color, so there is no need to add `.bordered` class for outline buttons.
 
 <PreviewBox
 	height="200px"
@@ -237,12 +238,12 @@ Each button has these CSS variables for customization, they can be set as `:root
 of just for an specific selector.
 
 `--flatify__button-bg-color` Button background color  
-`--flatify__button-bg-color__focus` Button background color for border and focus  
 `--flatify__button-text-color` Button text color  
+`--flatify__button-bg-color__focus` Button background color for border and focus  
 `--flatify__button-text-color__focus` Button text color for focus
 
 <PreviewBox
-	height="150px"
+	height="310px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -254,23 +255,33 @@ of just for an specific selector.
 		<title>Buttons</title>
 		<style>
 			.my-button-1{
-				--flatify__button-bg-color: linear-gradient(to right, #4A00E0, #8E2DE2);
-				--flatify__button-bg-color__focus: linear-gradient(to right, #4A00E0, #8E2DE2);
+				margin: 0.5em !important;
+				--flatify__button-bg-color: linear-gradient(15deg, #03001e, #7303c0, #ec38bc, #fdeff9);
 				--flatify__button-text-color: white;
+				--flatify__button-bg-color__focus: linear-gradient(25deg, #03001e, #7303c0, #ec38bc, #fdeff9);
 				--flatify__button-text-color__focus: white;
 			}
 			.my-button-2{
+				margin: 0.5em !important;
 				--flatify__button-bg-color: #48CFAD;
-				--flatify__button-bg-color__focus: #37BC9B;
 				--flatify__button-text-color: #fff;
-				--flatify__button-text-color__focus: #F5F7FA;
+				--flatify__button-bg-color__focus: #37BC9B;
+				--flatify__button-text-color__focus: #fff;
+			}
+			.my-button-3{
+				margin: 0.5em !important;
+				--flatify__button-bg-color: #EC87C0;
+				--flatify__button-text-color: #F5F7FA;
+				--flatify__button-bg-color__focus: #D770AD;
+				--flatify__button-text-color__focus: #fff;
 			}
 		</style>
     </head>
     <body>
         <div class="flex-column-center">
-    		<button class="my-button-1">Click Here</button>
-    		<button class="my-button-2">Click Here</button>
+    		<button class="my-button-1 size-lg">Custom button</button>
+    		<button class="my-button-2 size-lg">Custom button</button>
+    		<button class="my-button-3 outline size-lg">Custom button</button>
     	</div>
     </body>
 
@@ -279,23 +290,33 @@ of just for an specific selector.
 />
 
 ```html title="index.html"
-<button class="my-button-1">Click Here</button>
-
-<button class="my-button-2">Click Here</button>
+<button class="my-button-1 size-lg">Custom button</button>
+<button class="my-button-2 size-lg">Custom button</button>
+<button class="my-button-3 outline size-lg">Custom button</button>
 ```
 
 ```css title="style.css"
 .my-button-1 {
-	--flatify__button-bg-color: linear-gradient(to right, #4a00e0, #8e2de2);
-	--flatify__button-bg-color__focus: linear-gradient(to right, #4a00e0, #8e2de2);
+	margin: 0.5em !important;
+	--flatify__button-bg-color: linear-gradient(15deg, #03001e, #7303c0, #ec38bc, #fdeff9);
 	--flatify__button-text-color: white;
+	--flatify__button-bg-color__focus: linear-gradient(25deg, #03001e, #7303c0, #ec38bc, #fdeff9);
 	--flatify__button-text-color__focus: white;
 }
 
 .my-button-2 {
+	margin: 0.5em !important;
 	--flatify__button-bg-color: #48cfad;
-	--flatify__button-bg-color__focus: #37bc9b;
 	--flatify__button-text-color: #fff;
-	--flatify__button-text-color__focus: #f5f7fa;
+	--flatify__button-bg-color__focus: #37bc9b;
+	--flatify__button-text-color__focus: #fff;
+}
+
+.my-button-3 {
+	margin: 0.5em !important;
+	--flatify__button-bg-color: #ec87c0;
+	--flatify__button-text-color: #f5f7fa;
+	--flatify__button-bg-color__focus: #d770ad;
+	--flatify__button-text-color__focus: #fff;
 }
 ```

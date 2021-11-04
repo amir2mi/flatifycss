@@ -843,14 +843,22 @@ button:not(.default).bordered,
 .button.bordered {
   box-shadow: inset 0 -0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0 0 0.125em var(--flatify__button-bg-color__focus);
 }
-input[type=reset]:not(.default).outline:not(:active),
-input[type=submit]:not(.default).outline:not(:active),
-input[type=button]:not(.default).outline:not(:active),
-*[role=button]:not(.default).outline:not(:active),
-button:not(.default).outline:not(:active),
-.button.outline:not(:active) {
+input[type=reset]:not(.default).outline:not(:active, :focus-visible),
+input[type=submit]:not(.default).outline:not(:active, :focus-visible),
+input[type=button]:not(.default).outline:not(:active, :focus-visible),
+*[role=button]:not(.default).outline:not(:active, :focus-visible),
+button:not(.default).outline:not(:active, :focus-visible),
+.button.outline:not(:active, :focus-visible) {
   color: var(--flatify__button-bg-color__focus) !important;
   background: transparent !important;
+}
+input[type=reset]:not(.default):not(.outline):active,
+input[type=submit]:not(.default):not(.outline):active,
+input[type=button]:not(.default):not(.outline):active,
+*[role=button]:not(.default):not(.outline):active,
+button:not(.default):not(.outline):active,
+.button:not(.outline):active {
+  transition: all 0s !important;
 }
 input[type=reset]:not(.default):hover:not(:active),
 input[type=submit]:not(.default):hover:not(:active),
@@ -860,31 +868,19 @@ button:not(.default):hover:not(:active),
 .button:hover:not(:active) {
   filter: brightness(92%);
 }
-input[type=reset]:not(.default):active,
+input[type=reset]:not(.default):focus-visible, input[type=reset]:not(.default):active,
+input[type=submit]:not(.default):focus-visible,
 input[type=submit]:not(.default):active,
+input[type=button]:not(.default):focus-visible,
 input[type=button]:not(.default):active,
+*[role=button]:not(.default):focus-visible,
 *[role=button]:not(.default):active,
+button:not(.default):focus-visible,
 button:not(.default):active,
+.button:focus-visible,
 .button:active {
   color: var(--flatify__button-text-color__focus);
   background: var(--flatify__button-bg-color__focus) !important;
-  box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-  transform: translateY(0.15em);
-}
-input[type=reset]:not(.default):active:not(.outline),
-input[type=submit]:not(.default):active:not(.outline),
-input[type=button]:not(.default):active:not(.outline),
-*[role=button]:not(.default):active:not(.outline),
-button:not(.default):active:not(.outline),
-.button:active:not(.outline) {
-  transition: all 0s !important;
-}
-input[type=reset]:not(.default):focus-visible,
-input[type=submit]:not(.default):focus-visible,
-input[type=button]:not(.default):focus-visible,
-*[role=button]:not(.default):focus-visible,
-button:not(.default):focus-visible,
-.button:focus-visible {
   box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
   transform: translateY(0.15em);
 }

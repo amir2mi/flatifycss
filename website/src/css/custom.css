@@ -30,6 +30,7 @@ html[data-theme="dark"] {
 	--ifm-background-surface-color: #141f23;
 	--ifm-background-color: #141f23;
 	--flatify__bg-color: #141f23;
+	--flatify__bg-color-dark: #121a20;
 	--flatify__txt-color: #f1f4f7;
 	--flatify__txt-color-dark: #ced9e3;
 }
@@ -137,6 +138,39 @@ html[data-theme="dark"] .codeBlockTitle_node_modules-\@docusaurus-theme-classic-
 
 html[data-theme="dark"] .docusaurus-highlight-code-line {
 	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar__toggle {
+	padding: 0 1em 0 0 !important;
+	background: transparent !important;
+}
+.navbar-sidebar__close {
+	margin-left: auto !important;
+	padding: 0 0 0 1em !important;
+	background: transparent !important;
+}
+
+@media screen and (min-width: 997px) {
+	.navbar__toggle {
+		display: none !important;
+	}
+}
+
+.toggleTrack_node_modules-\@docusaurus-theme-classic-lib-next-theme-Toggle-styles-module {
+	background: var(--flatify__bg-color-dark) !important;
+	padding: 0 !important;
+	transform: none !important;
+}
+
+.copyButton_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module.clean-btn {
+	background: var(--flatify__bg-color-dark) !important;
+	font-size: 0.8em !important;
+	padding: 0.5em 0.85em !important;
+}
+
+.clean-btn.theme-back-to-top-button {
+	background: var(--flatify__bg-color-dark) !important;
+	padding: 0 !important;
 }
 
 .docus-preview-box {
