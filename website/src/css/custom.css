@@ -42,11 +42,13 @@ pre.prism-code {
 	/* padding: 0.38em; */
 }
 
+div[class*="codeBlockTitle_"],
 pre.prism-code,
 .codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
 	background: #ced9e3;
 }
 
+html[data-theme="dark"] div[class*="codeBlockTitle_"],
 html[data-theme="dark"] pre.prism-code,
 html[data-theme="dark"] .codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
 	background: #1c2731 !important;
@@ -56,6 +58,7 @@ html[data-theme="dark"] .codeBlockTitle_node_modules-\@docusaurus-theme-classic-
 	border-top: var(--docus-bd);
 }
 
+div[class*="codeBlockTitle_"],
 .codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
 	border: var(--docus-bd) !important;
 	border-bottom: none !important;
@@ -70,9 +73,6 @@ html[data-theme="dark"] .codeBlockTitle_node_modules-\@docusaurus-theme-classic-
 
 .prism-code.thin-scrollbar {
 	border-radius: 0 0 1em 1em;
-}
-div[class*="codeBlockTitle_"] {
-	border-radius: 1em 1em 0 0;
 }
 
 .pagination-nav__link {
@@ -163,6 +163,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 	}
 }
 
+div[class*="toggleTrack_"],
 .toggleTrack_node_modules-\@docusaurus-theme-classic-lib-next-theme-Toggle-styles-module {
 	background: var(--flatify__bg-color-dark) !important;
 	padding: 0 !important;
