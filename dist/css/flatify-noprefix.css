@@ -28,7 +28,7 @@
   --flatify__bg-color-darker: #ced9e3;
   --flatify__txt-color: #2e4051;
   --flatify__txt-color-light: #77838e;
-  --flatify__txt-color-dark: #0c1014;
+  --flatify__txt-color-dark: #1e2a35;
   --flatify__txt-color-inverted: #f1f4f7;
   --flatify__heading-color: currentColor;
   --flatify__color-blue-primary: #1cb0f6;
@@ -69,7 +69,7 @@
   --flatify__color-light-dark: #ced9e3;
   --flatify__color-dark-primary: #2e4051;
   --flatify__color-dark-light: #77838e;
-  --flatify__color-dark-dark: #0c1014;
+  --flatify__color-dark-dark: #1e2a35;
   --flatify__tap-highlight-color: transparent;
   --flatify__link-color: #1cb0f6;
   --flatify__link-color__hover: #49c0f8;
@@ -799,6 +799,7 @@ th {
   --flatify__button-text-color__focus: var(--flatify__txt-color);
 }
 
+input[type=reset]:not(.default),
 input[type=submit]:not(.default),
 input[type=button]:not(.default),
 *[role=button]:not(.default),
@@ -810,16 +811,17 @@ button:not(.default),
   font-weight: normal;
   line-height: 1;
   display: inline-block;
-  padding: 0.9em 1.4em;
+  padding: 1em 1.4em;
   margin: 0.25em 0.125em;
   color: var(--flatify__button-text-color);
   background: var(--flatify__button-bg-color);
-  border: var(--flatify__border-width) solid var(--flatify__button-bg-color__focus);
+  border: none;
   border-radius: var(--flatify__border-radius);
-  box-shadow: inset 0 -0.18em 0 var(--flatify__button-bg-color__focus);
+  box-shadow: inset 0 -0.32em 0 var(--flatify__button-bg-color__focus);
   will-change: transform;
   transition: all var(--flatify__simple-transition);
 }
+input[type=reset]:not(.default)[class*=style-],
 input[type=submit]:not(.default)[class*=style-],
 input[type=button]:not(.default)[class*=style-],
 *[role=button]:not(.default)[class*=style-],
@@ -828,40 +830,79 @@ button:not(.default)[class*=style-],
   --flatify__button-bg-color: var(--flatify__local-bg-color);
   --flatify__button-bg-color__focus: var(--flatify__local-border-color);
 }
-input[type=submit]:not(.default):hover:not(:focus),
-input[type=button]:not(.default):hover:not(:focus),
-*[role=button]:not(.default):hover:not(:focus),
-button:not(.default):hover:not(:focus),
-.button:hover:not(:focus) {
-  filter: contrast(85%) brightness(95%);
+input[type=reset]:not(.default).outline, input[type=reset]:not(.default).bordered,
+input[type=submit]:not(.default).outline,
+input[type=submit]:not(.default).bordered,
+input[type=button]:not(.default).outline,
+input[type=button]:not(.default).bordered,
+*[role=button]:not(.default).outline,
+*[role=button]:not(.default).bordered,
+button:not(.default).outline,
+button:not(.default).bordered,
+.button.outline,
+.button.bordered {
+  box-shadow: inset 0 -0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0 0 0.125em var(--flatify__button-bg-color__focus);
 }
-input[type=submit]:not(.default):focus,
-input[type=button]:not(.default):focus,
-*[role=button]:not(.default):focus,
-button:not(.default):focus,
-.button:focus {
+input[type=reset]:not(.default).outline:not(:active),
+input[type=submit]:not(.default).outline:not(:active),
+input[type=button]:not(.default).outline:not(:active),
+*[role=button]:not(.default).outline:not(:active),
+button:not(.default).outline:not(:active),
+.button.outline:not(:active) {
+  color: var(--flatify__button-bg-color__focus) !important;
+  background: transparent !important;
+}
+input[type=reset]:not(.default):hover:not(:active),
+input[type=submit]:not(.default):hover:not(:active),
+input[type=button]:not(.default):hover:not(:active),
+*[role=button]:not(.default):hover:not(:active),
+button:not(.default):hover:not(:active),
+.button:hover:not(:active) {
+  filter: brightness(92%);
+}
+input[type=reset]:not(.default):active,
+input[type=submit]:not(.default):active,
+input[type=button]:not(.default):active,
+*[role=button]:not(.default):active,
+button:not(.default):active,
+.button:active {
   color: var(--flatify__button-text-color__focus);
   background: var(--flatify__button-bg-color__focus) !important;
   box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
   transform: translateY(0.15em);
 }
-input[type=submit]:not(.default).inactive, input[type=submit]:not(.default).disabled, input[type=submit]:not(.default):disabled,
-input[type=button]:not(.default).inactive,
+input[type=reset]:not(.default):active:not(.outline),
+input[type=submit]:not(.default):active:not(.outline),
+input[type=button]:not(.default):active:not(.outline),
+*[role=button]:not(.default):active:not(.outline),
+button:not(.default):active:not(.outline),
+.button:active:not(.outline) {
+  transition: all 0s !important;
+}
+input[type=reset]:not(.default):focus-visible,
+input[type=submit]:not(.default):focus-visible,
+input[type=button]:not(.default):focus-visible,
+*[role=button]:not(.default):focus-visible,
+button:not(.default):focus-visible,
+.button:focus-visible {
+  box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
+  transform: translateY(0.15em);
+}
+input[type=reset]:not(.default).disabled, input[type=reset]:not(.default):disabled,
+input[type=submit]:not(.default).disabled,
+input[type=submit]:not(.default):disabled,
 input[type=button]:not(.default).disabled,
 input[type=button]:not(.default):disabled,
-*[role=button]:not(.default).inactive,
 *[role=button]:not(.default).disabled,
 *[role=button]:not(.default):disabled,
-button:not(.default).inactive,
 button:not(.default).disabled,
 button:not(.default):disabled,
-.button.inactive,
 .button.disabled,
 .button:disabled {
-  cursor: not-allowed;
+  pointer-events: none;
   background: var(--flatify__button-bg-color__focus) !important;
   transform: none !important;
-  filter: contrast(80%) brightness(90%) !important;
+  filter: contrast(85%) brightness(85%) !important;
 }
 
 .style-blue {
