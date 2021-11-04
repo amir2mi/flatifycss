@@ -20,6 +20,6 @@
 @each $size, $value in $FONT_SIZE_LIST {
 	.size-#{$size},
 	.text-#{$size} {
-		font-size: $value;
+		font-size: $value !important;
 	}
 }

@@ -1282,41 +1282,41 @@ button:not(.default):disabled,
 
 .size-xs,
 .text-xs {
-  font-size: 0.5em;
+  font-size: 0.5em !important;
 }
 
 .size-sm,
 .text-sm {
-  font-size: 0.75em;
+  font-size: 0.75em !important;
 }
 
 .size-md,
 .text-md {
-  font-size: 1em;
+  font-size: 1em !important;
 }
 
 .size-lg,
 .text-lg {
-  font-size: 1.5em;
+  font-size: 1.5em !important;
 }
 
 .size-2x,
 .text-2x {
-  font-size: 2.15em;
+  font-size: 2.15em !important;
 }
 
 .size-3x,
 .text-3x {
-  font-size: 2.5em;
+  font-size: 2.5em !important;
 }
 
 .size-4x,
 .text-4x {
-  font-size: 3.14em;
+  font-size: 3.14em !important;
 }
 
 .size-5x,
 .text-5x {
-  font-size: 3.75em;
+  font-size: 3.75em !important;
 }
 /*# sourceMappingURL=../maps/flatify-noprefix.css.map */

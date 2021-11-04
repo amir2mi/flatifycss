@@ -151,6 +151,86 @@ This classes just set a `font-size` property so it is possible to change it your
 <button class="size-2x">Click Here</button>
 ```
 
+### Bordered
+
+By default Flatify CSS buttons does not have border however if you add `.bordered` class to
+the button it will have border.
+
+<PreviewBox
+	height="200px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Buttons</title>
+	</head>
+	<body>
+        <div class="flex-center" style="flex-wrap: wrap">
+			<button style="width: 200px; margin: 10px" class="style-accent bordered">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-purple bordered">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-yellow bordered">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-warning bordered">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-danger bordered">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-dark bordered">Click Here</button>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<button class="style-accent bordered">Click Here</button>
+<button class="style-purple bordered">Click Here</button>
+<button class="style-yellow bordered">Click Here</button>
+<button class="style-warning bordered">Click Here</button>
+<button class="style-danger bordered">Click Here</button>
+<button class="style-dark bordered">Click Here</button>
+```
+
+### Outline
+
+By default Flatify CSS buttons does not have border however if you add `.bordered` class to
+the button it will have border.
+
+<PreviewBox
+	height="200px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Buttons</title>
+	</head>
+	<body>
+        <div class="flex-center" style="flex-wrap: wrap">
+			<button style="width: 200px; margin: 10px" class="style-accent outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-purple outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-yellow outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-warning outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-danger outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-dark outline">Click Here</button>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<button class="style-accent outline">Click Here</button>
+<button class="style-purple outline">Click Here</button>
+<button class="style-yellow outline">Click Here</button>
+<button class="style-warning outline">Click Here</button>
+<button class="style-danger outline">Click Here</button>
+<button class="style-dark outline">Click Here</button>
+```
+
 ### Customization
 
 Each button has these CSS variables for customization, they can be set as `:root` for all buttons default style
@@ -199,7 +279,9 @@ of just for an specific selector.
 />
 
 ```html title="index.html"
-<button class="my-button-1">Click Here</button> <button class="my-button-2">Click Here</button>
+<button class="my-button-1">Click Here</button>
+
+<button class="my-button-2">Click Here</button>
 ```
 
 ```css title="style.css"
@@ -209,6 +291,7 @@ of just for an specific selector.
 	--flatify__button-text-color: white;
 	--flatify__button-text-color__focus: white;
 }
+
 .my-button-2 {
 	--flatify__button-bg-color: #48cfad;
 	--flatify__button-bg-color__focus: #37bc9b;
