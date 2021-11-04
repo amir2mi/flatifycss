@@ -68,6 +68,13 @@ html[data-theme="dark"] .codeBlockTitle_node_modules-\@docusaurus-theme-classic-
 	border-radius: 0 0 1em 1em;
 }
 
+.prism-code.thin-scrollbar {
+	border-radius: 0 0 1em 1em;
+}
+div[class*="codeBlockTitle_"] {
+	border-radius: 1em 1em 0 0;
+}
+
 .pagination-nav__link {
 	border: var(--docus-bd);
 	border-radius: 1em;
