@@ -28,8 +28,8 @@
 			left: -0.38em;
 		}
 
-		width: 3em;
-		height: 3em;
+		width: 2.5em;
+		height: 2.5em;
 		padding: 0.5em;
 		color: inherit;
 		background: var(--#{$CSS_VAR_PFX}local-bg-color);
@@ -83,6 +83,43 @@
 
 		&:focus {
 			transform: scale(1) !important;
+		}
+	}
+
+	&.has-icon {
+		@if $SUPPORT_LTR {
+			padding-left: 2.75em;
+			margin-left: 1.5em;
+		} @else {
+			padding-right: 2.75em;
+			margin-right: 1.5em;
+		}
+	}
+
+	.alert-svg {
+		position: absolute;
+		height: 3.3em;
+		margin: auto 0;
+		top: 0;
+		bottom: 0;
+		filter: brightness(110%);
+
+		@if $SUPPORT_LTR {
+			left: -1.4em;
+		} @else {
+			right: -1.4em;
+		}
+
+		padding: 0.5em;
+		color: inherit;
+		background: var(--#{$CSS_VAR_PFX}local-bg-color);
+		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.9);
+
+		svg {
+			width: 2em;
+			height: 2em;
+			fill: currentColor;
 		}
 	}
 }
