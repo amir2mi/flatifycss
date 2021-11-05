@@ -81,7 +81,7 @@ first [color setter classes](/docs/helpers/color-setters) for having button whic
 background and text color.
 
 <PreviewBox
-	height="200px"
+	height="300px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -91,17 +91,31 @@ background and text color.
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Buttons</title>
+		<style>
+			@media screen and (max-width: 650px){
+    			.flex-center button {
+    				width: 100% !important;
+    			}
+    		}
+		</style>
 	</head>
 	<body>
         <div class="flex-center" style="flex-wrap: wrap;">
-			<button style="width: 200px; margin: 10px" class="style-accent">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-purple">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-yellow">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-warning">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-danger">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-dark">Click Here</button>
-		</div>
-	</body>
+			<button style="width: 200px; margin: 10px" class="style-warning-lighter">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-danger-lighter">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-dark-lighter">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-accent">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-purple">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-yellow">Click Here</button>
+ 		    <button style="width: 200px; margin: 10px" class="style-warning-light">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-danger-light">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-dark-light">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-warning">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-danger">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-dark">Click Here</button>
+    	</div>
+    </body>
+
 </html>
 '
 />
@@ -110,9 +124,18 @@ background and text color.
 <button class="style-accent">Click Here</button>
 <button class="style-purple">Click Here</button>
 <button class="style-yellow">Click Here</button>
+
+<button class="style-accent-light">Click Here</button>
+<button class="style-purple-light">Click Here</button>
+<button class="style-yellow-light">Click Here</button>
+
 <button class="style-warning">Click Here</button>
 <button class="style-danger">Click Here</button>
 <button class="style-dark">Click Here</button>
+
+<button class="style-warning-light">Click Here</button>
+<button class="style-danger-light">Click Here</button>
+<button class="style-dark-light">Click Here</button>
 ```
 
 ### Sizes
@@ -131,6 +154,13 @@ This classes just set a `font-size` property so it is possible to change it your
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Buttons</title>
+		<style>
+			@media screen and (max-width: 650px){
+    			.flex-center button {
+    				width: 100% !important;
+    			}
+    		}
+		</style>
 	</head>
 	<body>
         <div class="flex-column-center">
@@ -157,7 +187,7 @@ By default Flatify CSS buttons does not have border however if you add `.bordere
 the button it will have border.
 
 <PreviewBox
-	height="200px"
+	height="300px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -167,17 +197,31 @@ the button it will have border.
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Buttons</title>
-	</head>
-	<body>
+		<style>
+			@media screen and (max-width: 650px){
+    			.flex-center button {
+    				width: 100% !important;
+    			}
+    		}
+		</style>
+    </head>
+    <body>
         <div class="flex-center" style="flex-wrap: wrap">
-			<button style="width: 200px; margin: 10px" class="style-accent bordered">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-purple bordered">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-yellow bordered">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-warning bordered">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-danger bordered">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-dark bordered">Click Here</button>
-		</div>
-	</body>
+    		<button style="width: 200px; margin: 10px" class="style-accent bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-purple bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-yellow bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-accent-light bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-purple-light bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-yellow-light bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-warning bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-danger bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-dark bordered">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-warning-light bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-danger-light bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="style-dark-light bordered">Click Here</button>
+    	</div>
+    </body>
+
 </html>
 '
 />
@@ -186,9 +230,18 @@ the button it will have border.
 <button class="style-accent bordered">Click Here</button>
 <button class="style-purple bordered">Click Here</button>
 <button class="style-yellow bordered">Click Here</button>
+
+<button class="style-accent-light bordered">Click Here</button>
+<button class="style-purple-light bordered">Click Here</button>
+<button class="style-yellow-light bordered">Click Here</button>
+
 <button class="style-warning bordered">Click Here</button>
 <button class="style-danger bordered">Click Here</button>
 <button class="style-dark bordered">Click Here</button>
+
+<button class="style-warning-light bordered">Click Here</button>
+<button class="style-danger-light bordered">Click Here</button>
+<button class="style-dark-light bordered">Click Here</button>
 ```
 
 ### Outline
@@ -198,7 +251,7 @@ background and text inverted color for `:active` & `:focus-visible` states. In t
 is border color, so there is no need to add `.bordered` class for outline buttons.
 
 <PreviewBox
-	height="200px"
+	height="300px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -208,15 +261,28 @@ is border color, so there is no need to add `.bordered` class for outline button
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Buttons</title>
+		<style>
+			@media screen and (max-width: 650px){
+    			.flex-center button {
+    				width: 100% !important;
+    			}
+    		}
+		</style>
 	</head>
 	<body>
         <div class="flex-center" style="flex-wrap: wrap">
 			<button style="width: 200px; margin: 10px" class="style-accent outline">Click Here</button>
 			<button style="width: 200px; margin: 10px" class="style-purple outline">Click Here</button>
 			<button style="width: 200px; margin: 10px" class="style-yellow outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-accent-light outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-purple-light outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-yellow-light outline">Click Here</button>
 			<button style="width: 200px; margin: 10px" class="style-warning outline">Click Here</button>
 			<button style="width: 200px; margin: 10px" class="style-danger outline">Click Here</button>
 			<button style="width: 200px; margin: 10px" class="style-dark outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-warning-light outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-danger-light outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="style-dark-light outline">Click Here</button>
 		</div>
 	</body>
 </html>
@@ -227,9 +293,18 @@ is border color, so there is no need to add `.bordered` class for outline button
 <button class="style-accent outline">Click Here</button>
 <button class="style-purple outline">Click Here</button>
 <button class="style-yellow outline">Click Here</button>
+
+<button class="style-accent-light outline">Click Here</button>
+<button class="style-purple-light outline">Click Here</button>
+<button class="style-yellow-light outline">Click Here</button>
+
 <button class="style-warning outline">Click Here</button>
 <button class="style-danger outline">Click Here</button>
 <button class="style-dark outline">Click Here</button>
+
+<button class="style-warning-light outline">Click Here</button>
+<button class="style-danger-light outline">Click Here</button>
+<button class="style-dark-light outline">Click Here</button>
 ```
 
 ### Customization
