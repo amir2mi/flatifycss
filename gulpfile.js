@@ -11,6 +11,8 @@ const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify");
 
+const webpack = require("webpack-stream");
+
 // File path variables
 const files = {
 	scssMain: "scss/**/*.scss",
@@ -49,6 +51,11 @@ function scssTask(file, fileName, minify = true, prefixed = true) {
 
 function jsTask(file, fileName, minify = true) {
 	return src(file)
+		.pipe(
+			webpack({
+				mode: "development",
+			})
+		)
 		.pipe(sourcemaps.init())
 		.pipe(concat(fileName))
 		.pipe(minify ? uglify() : noop())

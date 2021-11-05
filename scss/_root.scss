@@ -60,7 +60,9 @@
 
 	// *** Icons
 	--#{$CSS_VAR_PFX}blockquote-icon: #{$BLOCKQUOTE_ICON};
+	--#{$CSS_VAR_PFX}close-icon: #{$CLOSE_ICON};
 
 	// *** Motion
 	--#{$CSS_VAR_PFX}simple-transition: #{$SIMPLE_TRANSITION};
+	--#{$CSS_VAR_PFX}alert-remove-animation: #{$ALERT_REMOVE_ANIMATION};
 }

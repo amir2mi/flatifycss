@@ -32,14 +32,14 @@ blockquote {
 
 		@if $SUPPORT_LTR {
 			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
-				calc(var(--#{$CSS_VAR_PFX}border-radius) * 1)
-				calc(var(--#{$CSS_VAR_PFX}border-radius) * 1)
+				var(--#{$CSS_VAR_PFX}border-radius)
+				var(--#{$CSS_VAR_PFX}border-radius)
 				calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 		} @else {
-			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 1)
+			border-radius: var(--#{$CSS_VAR_PFX}border-radius)
 				calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
 				calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
-				calc(var(--#{$CSS_VAR_PFX}border-radius) * 1);
+				var(--#{$CSS_VAR_PFX}border-radius);
 		}
 
 		&:before {

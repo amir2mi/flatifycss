@@ -1,0 +1,20 @@
+// Default animation before removing elements,
+// It can be customized both with [_config.scss] and [--flatify__remove-animation-duration] CSS var.
+@keyframes alert-will-be-removed {
+	85% {
+		opacity: 0;
+	}
+	100% {
+		@if $SUPPORT_LTR {
+			transform-origin: top right;
+		} @else {
+			transform-origin: top left;
+		}
+		opacity: 0;
+		transform: scale(0.92);
+	}
+}
+
+.alert-will-be-removed {
+	animation: var(--#{$CSS_VAR_PFX}alert-remove-animation) both;
+}

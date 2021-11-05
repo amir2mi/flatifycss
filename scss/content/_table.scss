@@ -7,7 +7,7 @@
 }
 
 table {
-	$table_radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 1);
+	$table_radius: var(--#{$CSS_VAR_PFX}border-radius);
 	$table_border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}table-border-color);
 
 	display: table;

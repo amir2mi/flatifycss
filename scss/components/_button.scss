@@ -15,9 +15,8 @@ button:not(.default),
 	text-align: center;
 	font-size: 1em;
 	font-weight: normal;
-	line-height: 1;
 	display: inline-block;
-	padding: 1em 1.4em;
+	padding: 0.9em 1.4em;
 	margin: 0.25em 0.125em;
 	color: var(--#{$CSS_VAR_PFX}button-text-color);
 	background: var(--#{$CSS_VAR_PFX}button-bg-color);
@@ -38,7 +37,7 @@ button:not(.default),
 			inset 0 0 0 0.125em var(--#{$CSS_VAR_PFX}button-bg-color__focus);
 	}
 
-	&.outline:not(:active,:focus-visible) {
+	&.outline:not(:active, :focus-visible) {
 		color: var(--#{$CSS_VAR_PFX}button-bg-color__focus) !important;
 		background: transparent !important;
 	}

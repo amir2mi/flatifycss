@@ -12,9 +12,11 @@
 @import "content/table";
 
 // Components
+@import "components/alert";
 @import "components/button";
 
 // Helpers
+@import "helpers/animations";
 @import "helpers/colors";
 @import "helpers/design";
 @import "helpers/layout";

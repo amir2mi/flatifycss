@@ -29,6 +29,7 @@
 		"gulp-sass": "^5.0.0",
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-uglify": "^3.0.2",
-		"sass": "^1.43.4"
+		"sass": "^1.43.4",
+		"webpack-stream": "^7.0.0"
 	}
 }
