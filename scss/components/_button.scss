@@ -23,6 +23,7 @@ button:not(.default),
 	border: none;
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 	box-shadow: inset 0 -0.32em 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
+	outline: none;
 	will-change: transform;
 	transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
@@ -35,6 +36,14 @@ button:not(.default),
 	&.bordered {
 		box-shadow: inset 0 -0.32em 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus),
 			inset 0 0 0 0.125em var(--#{$CSS_VAR_PFX}button-bg-color__focus);
+	}
+
+	&[class*="style-"][class*="-light"] {
+		// Light color for outline buttons with light style
+		&.outline:active,
+		&.outline:focus-visible {
+			color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+		}
 	}
 
 	&.outline:not(:active, :focus-visible) {

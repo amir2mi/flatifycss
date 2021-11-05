@@ -1,20 +1,46 @@
 // .style-[color] is a bg, color and border color setter that can be practical for table items and other elements
 @each $name, $colors in $PALETTE {
+	// Original version
 	.style-#{"" + $name} {
-		color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+		// These are exceptions that should have darker text color
+		@if $name == yellow or $name == light {
+			color: var(--#{$CSS_VAR_PFX}txt-color) !important;
+		} @else {
+			color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+		}
+
 		background: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
 		// Local border color can be used as color of box shadow e.g. buttons
 		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
 		// Local background color can be used as background of <mark.inline> [:before]
 		--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
-	
+	}
+
+	// Light version
+	.style-#{"" + $name}-light {
+		// These are exceptions that should have darker text color
+		@if $name ==yellow or $name == light {
+			color: var(--#{$CSS_VAR_PFX}txt-color) !important;
+		} @else {
+			color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
+		}
+
+		background: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "light"}) !important;
+		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+		// Local border color can be used as color of box shadow e.g. buttons
+		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+		// Local background color can be used as background of <mark.inline> [:before]
+		--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "light"}) !important;
 	}
 }
 
-.style-yellow,
-.style-light {
-	color: var(--#{$CSS_VAR_PFX}txt-color) !important;
+*[class*="style-"][class*="-light"] {
+	// Light color for disabled elements with light style
+	&.disabled,
+	&:disabled {
+		color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+	}
 }
 
 @each $name, $colors in $PALETTE {

@@ -46,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/**\n * Vent, jQuery inspired
   \************************/
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse('{\"alertRemoveAnimationDuration\":\"400\"}');\n\n//# sourceURL=webpack://flatifycss/./js/config.json?");
+eval("module.exports = JSON.parse('{\"alertRemoveAnimationDuration\":\"500\"}');\n\n//# sourceURL=webpack://flatifycss/./js/config.json?");
 
 /***/ })
 

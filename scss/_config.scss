@@ -39,63 +39,78 @@ $LINK_DECORATION_FOCUS: none;
 $BG_COLOR: #ffffff !default;
 $BG_COLOR_2: #f1f4f7 !default;
 $BG_COLOR_3: #ced9e3 !default;
+$BG_COLOR_4: #bbcad8 !default;
 
 $TXT_COLOR: #2e4051 !default;
-$TXT_COLOR_LIGHT: tint($TXT_COLOR, 35%) !default;
+$TXT_COLOR_LIGHT: tint($TXT_COLOR, 50%) !default;
 $TXT_COLOR_DARK: shade($TXT_COLOR, 35%) !default;
+$TXT_COLOR_DARKER: shade($TXT_COLOR, 60%) !default;
 $TXT_COLOR_INVERTED: $BG_COLOR_2 !default;
 
 $BLUE: #1cb0f6 !default;
-$BLUE_LIGHT: tint($BLUE, 20%) !default;
+$BLUE_LIGHT: tint($BLUE, 30%) !default;
 $BLUE_DARK: shade($BLUE, 15%) !default;
+$BLUE_DARKER: shade($BLUE, 50%) !default;
 
 $GREEN: #58cc02 !default;
-$GREEN_LIGHT: tint($GREEN, 20%) !default;
+$GREEN_LIGHT: tint($GREEN, 30%) !default;
 $GREEN_DARK: shade($GREEN, 15%) !default;
+$GREEN_DARKER: shade($GREEN, 50%) !default;
 
 $YELLOW: #ffde00 !default;
-$YELLOW_LIGHT: tint($YELLOW, 20%) !default;
+$YELLOW_LIGHT: tint($YELLOW, 30%) !default;
 $YELLOW_DARK: shade($YELLOW, 15%) !default;
+$YELLOW_DARKER: shade($YELLOW, 50%) !default;
 
 $ORANGE: #ff9600 !default;
-$ORANGE_LIGHT: tint($ORANGE, 20%) !default;
+$ORANGE_LIGHT: tint($ORANGE, 30%) !default;
 $ORANGE_DARK: shade($ORANGE, 15%) !default;
+$ORANGE_DARKER: shade($ORANGE, 50%) !default;
 
 $RED: #ff4b4b !default;
-$RED_LIGHT: tint($RED, 20%) !default;
+$RED_LIGHT: tint($RED, 30%) !default;
 $RED_DARK: shade($RED, 15%) !default;
+$RED_DARKER: shade($RED, 50%) !default;
 
 $PURPLE: #c164ff !default;
-$PURPLE_LIGHT: tint($PURPLE, 20%) !default;
+$PURPLE_LIGHT: tint($PURPLE, 30%) !default;
 $PURPLE_DARK: shade($PURPLE, 15%) !default;
+$PURPLE_DARKER: shade($PURPLE, 50%) !default;
 
 $ACCENT_COLOR: $BLUE !default;
 $ACCENT_COLOR_LIGHT: $BLUE_LIGHT !default;
 $ACCENT_COLOR_DARK: $BLUE_DARK !default;
+$ACCENT_COLOR_DARKER: $BLUE_DARKER !default;
 
 $SUCCESS_COLOR: $GREEN !default;
 $SUCCESS_COLOR_LIGHT: $GREEN_LIGHT !default;
 $SUCCESS_COLOR_DARK: $GREEN_DARK !default;
+$SUCCESS_COLOR_DARKER: $GREEN_DARKER !default;
 
 $INFO_COLOR: $BLUE !default;
 $INFO_COLOR_LIGHT: $BLUE_LIGHT !default;
 $INFO_COLOR_DARK: $BLUE_DARK !default;
+$INFO_COLOR_DARKER: $BLUE_DARKER !default;
 
 $WARNING_COLOR: $ORANGE !default;
 $WARNING_COLOR_LIGHT: $ORANGE_LIGHT !default;
 $WARNING_COLOR_DARK: $ORANGE_DARK !default;
+$WARNING_COLOR_DARKER: $ORANGE_DARKER !default;
 
 $DANGER_COLOR: $RED !default;
 $DANGER_COLOR_LIGHT: $RED_LIGHT !default;
 $DANGER_COLOR_DARK: $RED_DARK !default;
+$DANGER_COLOR_DARKER: $RED_DARKER !default;
 
 $LIGHT_COLOR: $BG_COLOR_2 !default;
 $LIGHT_COLOR_LIGHT: $BG_COLOR !default;
 $LIGHT_COLOR_DARK: $BG_COLOR_3 !default;
+$LIGHT_COLOR_DARKER: $BG_COLOR_4 !default;
 
 $DARK_COLOR: $TXT_COLOR !default;
 $DARK_COLOR_LIGHT: $TXT_COLOR_LIGHT !default;
 $DARK_COLOR_DARK: $TXT_COLOR_DARK !default;
+$DARK_COLOR_DARKER: $TXT_COLOR_DARKER !default;
 
 $HEADING_COLOR: currentColor !default;
 
@@ -111,66 +126,79 @@ $PALETTE: (
 		primary: $BLUE,
 		light: $BLUE_LIGHT,
 		dark: $BLUE_DARK,
+		darker: $BLUE_DARKER,
 	),
 	green: (
 		primary: $GREEN,
 		light: $GREEN_LIGHT,
 		dark: $GREEN_DARK,
+		darker: $GREEN_DARKER,
 	),
 	yellow: (
 		primary: $YELLOW,
 		light: $YELLOW_LIGHT,
 		dark: $YELLOW_DARK,
+		darker: $YELLOW_DARKER,
 	),
 	orange: (
 		primary: $ORANGE,
 		light: $ORANGE_LIGHT,
 		dark: $ORANGE_DARK,
+		darker: $ORANGE_DARKER,
 	),
 	red: (
 		primary: $RED,
 		light: $RED_LIGHT,
 		dark: $RED_DARK,
+		darker: $RED_DARKER,
 	),
 	purple: (
 		primary: $PURPLE,
 		light: $PURPLE_LIGHT,
 		dark: $PURPLE_DARK,
+		darker: $PURPLE_DARKER,
 	),
 	accent: (
 		primary: $ACCENT_COLOR,
 		light: $ACCENT_COLOR_LIGHT,
 		dark: $ACCENT_COLOR_DARK,
+		darker: $ACCENT_COLOR_DARKER,
 	),
 	success: (
 		primary: $SUCCESS_COLOR,
 		light: $SUCCESS_COLOR_LIGHT,
 		dark: $SUCCESS_COLOR_DARK,
+		darker: $SUCCESS_COLOR_DARKER,
 	),
 	info: (
 		primary: $INFO_COLOR,
 		light: $INFO_COLOR_LIGHT,
 		dark: $INFO_COLOR_DARK,
+		darker: $INFO_COLOR_DARKER,
 	),
 	warning: (
 		primary: $WARNING_COLOR,
 		light: $WARNING_COLOR_LIGHT,
 		dark: $WARNING_COLOR_DARK,
+		darker: $WARNING_COLOR_DARKER,
 	),
 	danger: (
 		primary: $DANGER_COLOR,
 		light: $DANGER_COLOR_LIGHT,
 		dark: $DANGER_COLOR_DARK,
+		darker: $DANGER_COLOR_DARKER,
 	),
 	light: (
 		primary: $LIGHT_COLOR,
 		light: $LIGHT_COLOR_LIGHT,
 		dark: $LIGHT_COLOR_DARK,
+		darker: $LIGHT_COLOR_DARKER,
 	),
 	dark: (
 		primary: $DARK_COLOR,
 		light: $DARK_COLOR_LIGHT,
 		dark: $DARK_COLOR_DARK,
+		darker: $DARK_COLOR_DARKER,
 	),
 );
 
