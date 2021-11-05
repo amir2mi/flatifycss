@@ -807,15 +807,22 @@ th {
   background: var(--flatify__table-bg-color-darker);
 }
 
+:root {
+  --flatify__alert-bg-color: var(--flatify__bg-color-dark);
+  --flatify__alert-text-color: var(--flatify__txt-color);
+  --flatify__alert-border-color: var(--flatify__bg-color-darker);
+}
+
 .alert {
-  --flatify__local-bg-color: var(--flatify__bg-color-dark);
-  --flatify__local-border-color: var(--flatify__bg-color-darker);
+  --flatify__local-bg-color: var(--flatify__alert-bg-color);
+  --flatify__local-border-color: var(--flatify__alert-border-color);
   position: relative;
   font-size: 0.9em;
   line-height: var(--flatify__large-line-height);
   padding: 1.25em;
   margin-bottom: 1em;
-  background: var(--flatify__bg-color-dark);
+  color: var(--flatify__alert-text-color);
+  background: var(--flatify__alert-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
@@ -883,7 +890,7 @@ th {
   margin: auto 0;
   top: 0;
   bottom: 0;
-  filter: brightness(110%);
+  filter: brightness(115%);
   left: -1.4em;
   padding: 0.5em;
   color: inherit;
@@ -895,6 +902,9 @@ th {
   width: 2em;
   height: 2em;
   fill: currentColor;
+}
+.alert.style-light-light .alert-svg {
+  filter: brightness(95%);
 }
 
 :root {

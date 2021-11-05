@@ -37,7 +37,129 @@ however, a `<div>` with paragraphs in it is the most common choice.
 />
 
 ```html title="index.html"
-<div class="alert">  
-    I am an alert to notify you of how great you are.  
+<div class="alert">...</div>
+```
+
+### Colors
+
+Like any other components, alerts can be have diffrent colors
+by adding [color setter classes](/docs/helpers/color-setters).
+
+<PreviewBox
+	height="350px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Buttons</title>
+    </head>
+    <body>
+        <div class="flex-center" style="flex-wrap: wrap">
+    		<div class="alert style-info">
+                I am an alert to notify you of how great you are.
+            </div>
+            <div class="alert style-info-light">
+                I am an alert to notify you of how great you are.
+            </div>
+            <div class="alert style-success">
+                I am an alert to notify you of how great you are.
+            </div>
+             <div class="alert style-success-light">
+                I am an alert to notify you of how great you are.
+            </div>
+            <div class="alert style-danger">
+                I am an alert to notify you of how great you are.
+            </div>
+            <div class="alert style-danger-light">
+                I am an alert to notify you of how great you are.
+            </div>
+            <div class="alert style-purple">
+                I am an alert to notify you of how great you are.
+            </div>
+             <div class="alert style-purple-light">
+                I am an alert to notify you of how great you are.
+            </div>
+    	</div>
+    </body>
+
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="alert style-info">...</div>
+
+<div class="alert style-info-light">...</div>
+
+<div class="alert style-success">...</div>
+
+<div class="alert style-success-light">...</div>
+
+<div class="alert style-danger">...</div>
+
+<div class="alert style-danger-light">...</div>
+
+<div class="alert style-purple">...</div>
+
+<div class="alert style-purple-light">...</div>
+```
+
+### Dismissable
+
+Alerts might be dismissable in this case implementation of this feature is so simple,
+first, you need to make sure you are using the flatify JS file on your web page,
+then add a button inside
+alert with the `.close-button` class, nothing more. Now your alert can be closed by users!
+
+:::info
+You can add the `.floating` class to the `.close-button` for having a floating button,
+it means that the button is hidden by default, does not get the space of alert
+and it just shows up when the user hovers/focuses alert.
+:::
+
+<PreviewBox
+	height="150px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Buttons</title>
+    </head>
+    <body>
+       <div class="alert" role="alert">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+			malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+			<button class="close-button default" aria-label="Close"></button>
+        </div>
+        <div class="alert" role="alert">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+			malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+			<button class="close-button default floating" aria-label="Close"></button>
+        </div>
+    </body>
+
+</html>
+'
+/>
+
+```html {4,10} title="index.html"
+<div class="alert" role="alert">
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+	erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+	<button class="close-button default" aria-label="Close"></button>
+</div>
+
+<div class="alert" role="alert">
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+	erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+	<button class="close-button default floating" aria-label="Close"></button>
 </div>
 ```

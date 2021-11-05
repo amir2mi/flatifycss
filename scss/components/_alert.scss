@@ -1,12 +1,19 @@
+:root {
+	--#{$CSS_VAR_PFX}alert-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
+	--#{$CSS_VAR_PFX}alert-text-color: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}alert-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+}
+
 .alert {
-	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
-	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}alert-bg-color);
+	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}alert-border-color);
 	position: relative;
 	font-size: 0.9em;
 	line-height: var(--#{$CSS_VAR_PFX}large-line-height);
 	padding: 1.25em;
 	margin-bottom: 1em;
-	background: var(--#{$CSS_VAR_PFX}bg-color-dark);
+	color: var(--#{$CSS_VAR_PFX}alert-text-color);
+	background: var(--#{$CSS_VAR_PFX}alert-bg-color);
 	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
@@ -102,7 +109,7 @@
 		margin: auto 0;
 		top: 0;
 		bottom: 0;
-		filter: brightness(110%);
+		filter: brightness(115%);
 
 		@if $SUPPORT_LTR {
 			left: -1.4em;
@@ -121,5 +128,10 @@
 			height: 2em;
 			fill: currentColor;
 		}
+	}
+
+	// It should be darker
+	&.style-light-light .alert-svg {
+		filter: brightness(95%);
 	}
 }
