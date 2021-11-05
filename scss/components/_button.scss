@@ -42,7 +42,7 @@ button:not(.default),
 		// Light color for outline buttons with light style
 		&.outline:active,
 		&.outline:focus-visible {
-			color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+			color: var(--#{$CSS_VAR_PFX}txt-color-inverted) !important;
 		}
 	}
 

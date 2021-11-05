@@ -572,7 +572,7 @@ figure .source {
   font-size: 0.75em;
   line-height: 1;
   padding: 0.5em;
-  color: var(--flatify__bg-color);
+  color: var(--flatify__txt-color-inverted);
   background: var(--flatify__txt-color-dark);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.75);
@@ -595,7 +595,7 @@ figure.overlay-caption figcaption {
   width: 100%;
   padding-left: 1em;
   padding-right: 1em;
-  color: var(--flatify__bg-color);
+  color: var(--flatify__txt-color-inverted);
   background: linear-gradient(0, var(--flatify__txt-color-dark), transparent);
 }
 
@@ -936,7 +936,7 @@ button:not(.default)[class*=style-][class*=-light].outline:active,
 button:not(.default)[class*=style-][class*=-light].outline:focus-visible,
 .button[class*=style-][class*=-light].outline:active,
 .button[class*=style-][class*=-light].outline:focus-visible {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
 }
 input[type=reset]:not(.default).outline:not(:active, :focus-visible),
 input[type=submit]:not(.default).outline:not(:active, :focus-visible),
@@ -1011,7 +1011,7 @@ button:not(.default):disabled,
 }
 
 .style-blue {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-blue-primary) !important;
   border-color: var(--flatify__color-blue-dark) !important;
   --flatify__local-border-color: var(--flatify__color-blue-dark) !important;
@@ -1027,7 +1027,7 @@ button:not(.default):disabled,
 }
 
 .style-green {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-green-primary) !important;
   border-color: var(--flatify__color-green-dark) !important;
   --flatify__local-border-color: var(--flatify__color-green-dark) !important;
@@ -1059,7 +1059,7 @@ button:not(.default):disabled,
 }
 
 .style-orange {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-orange-primary) !important;
   border-color: var(--flatify__color-orange-dark) !important;
   --flatify__local-border-color: var(--flatify__color-orange-dark) !important;
@@ -1075,7 +1075,7 @@ button:not(.default):disabled,
 }
 
 .style-red {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-red-primary) !important;
   border-color: var(--flatify__color-red-dark) !important;
   --flatify__local-border-color: var(--flatify__color-red-dark) !important;
@@ -1091,7 +1091,7 @@ button:not(.default):disabled,
 }
 
 .style-purple {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-purple-primary) !important;
   border-color: var(--flatify__color-purple-dark) !important;
   --flatify__local-border-color: var(--flatify__color-purple-dark) !important;
@@ -1107,7 +1107,7 @@ button:not(.default):disabled,
 }
 
 .style-accent {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-accent-primary) !important;
   border-color: var(--flatify__color-accent-dark) !important;
   --flatify__local-border-color: var(--flatify__color-accent-dark) !important;
@@ -1123,7 +1123,7 @@ button:not(.default):disabled,
 }
 
 .style-success {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-success-primary) !important;
   border-color: var(--flatify__color-success-dark) !important;
   --flatify__local-border-color: var(--flatify__color-success-dark) !important;
@@ -1139,7 +1139,7 @@ button:not(.default):disabled,
 }
 
 .style-info {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-info-primary) !important;
   border-color: var(--flatify__color-info-dark) !important;
   --flatify__local-border-color: var(--flatify__color-info-dark) !important;
@@ -1155,7 +1155,7 @@ button:not(.default):disabled,
 }
 
 .style-warning {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-warning-primary) !important;
   border-color: var(--flatify__color-warning-dark) !important;
   --flatify__local-border-color: var(--flatify__color-warning-dark) !important;
@@ -1171,7 +1171,7 @@ button:not(.default):disabled,
 }
 
 .style-danger {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-danger-primary) !important;
   border-color: var(--flatify__color-danger-dark) !important;
   --flatify__local-border-color: var(--flatify__color-danger-dark) !important;
@@ -1203,7 +1203,7 @@ button:not(.default):disabled,
 }
 
 .style-dark {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-dark-primary) !important;
   border-color: var(--flatify__color-dark-dark) !important;
   --flatify__local-border-color: var(--flatify__color-dark-dark) !important;
@@ -1219,7 +1219,7 @@ button:not(.default):disabled,
 }
 
 *[class*=style-][class*=-light].disabled, *[class*=style-][class*=-light]:disabled {
-  color: var(--flatify__bg-color) !important;
+  color: var(--flatify__txt-color-inverted) !important;
 }
 
 .color-blue {

@@ -6,7 +6,7 @@
 		@if $name == yellow or $name == light {
 			color: var(--#{$CSS_VAR_PFX}txt-color) !important;
 		} @else {
-			color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+			color: var(--#{$CSS_VAR_PFX}txt-color-inverted) !important;
 		}
 
 		background: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
@@ -39,7 +39,7 @@
 	// Light color for disabled elements with light style
 	&.disabled,
 	&:disabled {
-		color: var(--#{$CSS_VAR_PFX}bg-color) !important;
+		color: var(--#{$CSS_VAR_PFX}txt-color-inverted) !important;
 	}
 }
 
