@@ -10,6 +10,7 @@
 	position: relative;
 	font-size: 0.9em;
 	line-height: var(--#{$CSS_VAR_PFX}large-line-height);
+	width: 100%;
 	padding: 1.25em;
 	margin-bottom: 1em;
 	color: var(--#{$CSS_VAR_PFX}alert-text-color);

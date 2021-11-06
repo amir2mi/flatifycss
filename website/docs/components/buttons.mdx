@@ -13,7 +13,7 @@ First, take a look at [button cheat sheet](https://www.buttoncheatsheet.com/).
 
 A button with Flatify CSS style can be defined in several ways as mentioned in the button cheatsheet,
 for any type of element, you can use the `.button` class,
-the element will have button style with the active/focus-visible states support.
+the element will have button style with the active/focus-visible states if it supports.
 
 <PreviewBox
 	height="110px"
@@ -61,7 +61,7 @@ This classes just set a `font-size` property so it is possible to change it your
 		<style>
 			@media screen and (max-width: 650px){
     			.flex-center button {
-    				width: 100% !important;
+    				width: 45% !important;
     			}
     		}
 		</style>
@@ -92,7 +92,7 @@ first [color setter classes](/docs/helpers/color-setters) for having button whic
 background and text color.
 
 <PreviewBox
-	height="340px"
+	height="330px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -105,7 +105,7 @@ background and text color.
 		<style>
 			@media screen and (max-width: 650px){
     			.flex-center button {
-    				width: 100% !important;
+    				width: 45% !important;
     			}
     		}
 		</style>
@@ -155,7 +155,7 @@ By default Flatify CSS buttons does not have border however if you add `.bordere
 the button it will have border.
 
 <PreviewBox
-	height="300px"
+	height="330px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -168,7 +168,7 @@ the button it will have border.
 		<style>
 			@media screen and (max-width: 650px){
     			.flex-center button {
-    				width: 100% !important;
+    				width: 45% !important;
     			}
     		}
 		</style>
@@ -219,7 +219,7 @@ background and text inverted color for `:active` & `:focus-visible` states. In t
 is border color, so there is no need to add `.bordered` class for outline buttons.
 
 <PreviewBox
-	height="300px"
+	height="330px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -232,7 +232,7 @@ is border color, so there is no need to add `.bordered` class for outline button
 		<style>
 			@media screen and (max-width: 650px){
     			.flex-center button {
-    				width: 100% !important;
+    				width: 45% !important;
     			}
     		}
 		</style>
@@ -286,7 +286,7 @@ of just for an specific selector.
 `--flatify__button-txt-color__focus` Button text color for focus
 
 <PreviewBox
-	height="310px"
+	height="330px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -314,7 +314,7 @@ of just for an specific selector.
 			.my-button-3{
 				margin: 0.5em !important;
 				--flatify__button-bg-color: #EC87C0;
-				--flatify__button-txt-color: #F5F7FA;
+				--flatify__button-txt-color: #d770ad;
 				--flatify__button-bg-color__focus: #D770AD;
 				--flatify__button-txt-color__focus: #fff;
 			}
@@ -358,7 +358,7 @@ of just for an specific selector.
 .my-button-3 {
 	margin: 0.5em !important;
 	--flatify__button-bg-color: #ec87c0;
-	--flatify__button-txt-color: #f5f7fa;
+	--flatify__button-txt-color: #d770ad;
 	--flatify__button-bg-color__focus: #d770ad;
 	--flatify__button-txt-color__focus: #fff;
 }
