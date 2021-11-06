@@ -1,13 +1,21 @@
 @media (prefers-reduced-motion: reduce) {
-	*,
-	::before,
-	::after {
-		--#{$CSS_VAR_PFX}simple-transition: 0s !important;
-		background-attachment: initial !important;
-		scroll-behavior: auto !important;
-	}
+	// mentions body for higher priority
+	body {
+		*,
+		::before,
+		::after {
+			background-attachment: initial !important;
+			scroll-behavior: auto !important;
+		}
 
-	.alert-will-be-removed {
-		animation-name: fade-out !important;
+		// Does not need transition in this case
+		.button {
+			--#{$CSS_VAR_PFX}simple-transition: 0s !important;
+		}
+
+		// Fade out instead of custom animation
+		.alert-will-be-removed {
+			animation-name: flatify-fade-out !important;
+		}
 	}
 }

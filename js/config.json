@@ -1,4 +1,4 @@
 {
 	"enableLogging": true,
-	"alertRemoveAnimationDuration": "500"
+	"alertRemoveDelay": "400"
 }

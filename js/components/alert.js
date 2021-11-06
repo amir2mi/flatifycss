@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		// after delay remove alert from DOM
 		setTimeout(() => {
 			wrapper.remove();
-			logger("info", `Alert is removed after ${config.alertRemoveAnimationDuration}ms delay.`, wrapper);
-		}, config.alertRemoveAnimationDuration);
+			logger("info", `Alert is removed after ${config.alertRemoveDelay}ms delay.`, wrapper);
+		}, config.alertRemoveDelay);
 	});
 });

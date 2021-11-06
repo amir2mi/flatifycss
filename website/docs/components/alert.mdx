@@ -325,10 +325,11 @@ or just for an specific selector.
 
 `--flatify__alert-bg-color`  
 `--flatify__alert-txt-color`  
-`--flatify__alert-border-color`
+`--flatify__alert-border-color`  
+`--flatify__alert-remove-animation` to have a custom animation when alert is removed
 
 <PreviewBox
-	height="330px"
+	height="180px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -339,12 +340,24 @@ or just for an specific selector.
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Alerts</title>
 		<style>
-			.my-alert{
-	            --flatify__alert-bg-color: #8067B7;
-                --flatify__alert-txt-color: #F5F7FA;
-                --flatify__alert-border-color: #BF263C;
-			}
-		</style>
+            @keyframes my-custom-animation{
+                from{
+                    opacity: 1;
+                    transform: scale(1);
+                } 
+                to{
+                    opacity: 0;
+                    transform: scale(0.5) rotate(0.5turn);
+                }
+            }
+    		.my-alert{
+                --flatify__alert-bg-color: #A0CECB;
+                --flatify__alert-txt-color: #434A54;
+                --flatify__alert-border-color: #A0CECB;
+                --flatify__alert-remove-animation: my-custom-animation 0.4s ease;
+    		}
+    	</style>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
     </head>
     <body>
         <div class="flex-column-center">
@@ -381,9 +394,34 @@ or just for an specific selector.
 ```
 
 ```css title="style.css"
+/* Define the custom animation when alert is going to be removed */
+@keyframes my-custom-animation {
+	from {
+		opacity: 1;
+		transform: scale(1);
+	}
+	to {
+		opacity: 0;
+		transform: scale(0.5) rotate(0.5turn);
+	}
+}
+
 .my-alert {
-	--flatify__alert-bg-color: #8067b7;
-	--flatify__alert-txt-color: #f5f7fa;
-	--flatify__alert-border-color: #bf263c;
+	--flatify__alert-bg-color: #a0cecb;
+	--flatify__alert-txt-color: #434a54;
+	--flatify__alert-border-color: #a0cecb;
+	--flatify__alert-remove-animation: my-custom-animation 0.4s ease;
 }
 ```
+
+:::success
+
+### Alert remove animation custom duration
+
+To change alert remove animation duration you need to change two things:
+
+1- Change `$ALERT_REMOVE_ANIMATION` in `_config.scss` or `--flatify__alert-remove-animation` CSS variable.  
+2- Change the delay that the alert after it will get removed by JS in the `config.json` file,
+change `alertRemoveDelay` to whatever you want however it is suggested setting this delay duration
+more than CSS animation to prevent an immediate shift in UI.
+:::

@@ -1,6 +1,6 @@
 // A simple fade out animation,
 // it is a great choice for reduced-motion situations in [a11y.scss]
-@keyframes fade-out {
+@keyframes flatify-fade-out {
 	to {
 		opacity: 0;
 	}
@@ -9,7 +9,7 @@
 // Default animation before removing elements,
 // It can be customized both with [_config.scss] and [--flatify__remove-animation-duration] CSS var.
 
-@keyframes alert-will-be-removed {
+@keyframes flatify-alert-will-be-removed {
 	85% {
 		opacity: 0;
 	}

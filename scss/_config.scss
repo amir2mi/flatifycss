@@ -207,7 +207,7 @@ $SUPPORT_SMOOTH_SCROLL: true !default;
 
 $SIMPLE_TRANSITION: 0.15s ease-in-out; // without specifying properties
 
-$ALERT_REMOVE_ANIMATION: alert-will-be-removed 400ms cubic-bezier(0.48, -0.31, 0.46, 0.87);
+$ALERT_REMOVE_ANIMATION: flatify-alert-will-be-removed 350ms ease;
 
 // *** Typography: font size, font family, line height
 $MAX_FONT_SIZE: 16 !default; // must be without unit
