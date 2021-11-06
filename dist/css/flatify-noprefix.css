@@ -27,7 +27,7 @@
   --flatify__bg-color-dark: #f1f4f7;
   --flatify__bg-color-darker: #ced9e3;
   --flatify__txt-color: #2e4051;
-  --flatify__txt-color-light: #97a0a8;
+  --flatify__txt-color-light: #77838e;
   --flatify__txt-color-dark: #1e2a35;
   --flatify__txt-color-inverted: #f1f4f7;
   --flatify__heading-color: currentColor;
@@ -78,9 +78,9 @@
   --flatify__color-light-primary: #f1f4f7;
   --flatify__color-light-light: #ffffff;
   --flatify__color-light-dark: #ced9e3;
-  --flatify__color-light-darker: #bbcad8;
+  --flatify__color-light-darker: #809cb6;
   --flatify__color-dark-primary: #2e4051;
-  --flatify__color-dark-light: #97a0a8;
+  --flatify__color-dark-light: #77838e;
   --flatify__color-dark-dark: #1e2a35;
   --flatify__color-dark-darker: #121a20;
   --flatify__tap-highlight-color: transparent;
@@ -910,15 +910,10 @@ th {
 :root {
   --flatify__button-bg-color: var(--flatify__bg-color-dark);
   --flatify__button-bg-color__focus: var(--flatify__bg-color-darker);
-  --flatify__button-text-color: var(--flatify__txt-color);
-  --flatify__button-text-color__focus: var(--flatify__txt-color);
+  --flatify__button-txt-color: var(--flatify__txt-color);
+  --flatify__button-txt-color__focus: var(--flatify__txt-color);
 }
 
-input[type=reset]:not(.default),
-input[type=submit]:not(.default),
-input[type=button]:not(.default),
-*[role=button]:not(.default),
-button:not(.default),
 .button {
   vertical-align: middle;
   text-align: center;
@@ -927,7 +922,7 @@ button:not(.default),
   display: inline-block;
   padding: 0.9em 1.4em;
   margin: 0.25em 0.125em;
-  color: var(--flatify__button-text-color);
+  color: var(--flatify__button-txt-color);
   background: var(--flatify__button-bg-color);
   border: none;
   border-radius: var(--flatify__border-radius);
@@ -936,97 +931,42 @@ button:not(.default),
   will-change: transform;
   transition: all var(--flatify__simple-transition);
 }
-input[type=reset]:not(.default)[class*=style-],
-input[type=submit]:not(.default)[class*=style-],
-input[type=button]:not(.default)[class*=style-],
-*[role=button]:not(.default)[class*=style-],
-button:not(.default)[class*=style-],
-.button[class*=style-] {
-  --flatify__button-bg-color: var(--flatify__local-bg-color);
-  --flatify__button-bg-color__focus: var(--flatify__local-border-color);
-}
-input[type=reset]:not(.default).outline, input[type=reset]:not(.default).bordered,
-input[type=submit]:not(.default).outline,
-input[type=submit]:not(.default).bordered,
-input[type=button]:not(.default).outline,
-input[type=button]:not(.default).bordered,
-*[role=button]:not(.default).outline,
-*[role=button]:not(.default).bordered,
-button:not(.default).outline,
-button:not(.default).bordered,
-.button.outline,
-.button.bordered {
-  box-shadow: inset 0 -0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0 0 0.125em var(--flatify__button-bg-color__focus);
-}
-input[type=reset]:not(.default)[class*=style-][class*=-light].outline:active, input[type=reset]:not(.default)[class*=style-][class*=-light].outline:focus-visible,
-input[type=submit]:not(.default)[class*=style-][class*=-light].outline:active,
-input[type=submit]:not(.default)[class*=style-][class*=-light].outline:focus-visible,
-input[type=button]:not(.default)[class*=style-][class*=-light].outline:active,
-input[type=button]:not(.default)[class*=style-][class*=-light].outline:focus-visible,
-*[role=button]:not(.default)[class*=style-][class*=-light].outline:active,
-*[role=button]:not(.default)[class*=style-][class*=-light].outline:focus-visible,
-button:not(.default)[class*=style-][class*=-light].outline:active,
-button:not(.default)[class*=style-][class*=-light].outline:focus-visible,
-.button[class*=style-][class*=-light].outline:active,
-.button[class*=style-][class*=-light].outline:focus-visible {
-  color: var(--flatify__txt-color-inverted) !important;
-}
-input[type=reset]:not(.default).outline:not(:active, :focus-visible),
-input[type=submit]:not(.default).outline:not(:active, :focus-visible),
-input[type=button]:not(.default).outline:not(:active, :focus-visible),
-*[role=button]:not(.default).outline:not(:active, :focus-visible),
-button:not(.default).outline:not(:active, :focus-visible),
-.button.outline:not(:active, :focus-visible) {
-  color: var(--flatify__button-bg-color__focus) !important;
+.button.outline {
+  color: var(--flatify__button-txt-color) !important;
   background: transparent !important;
 }
-input[type=reset]:not(.default):not(.outline):active,
-input[type=submit]:not(.default):not(.outline):active,
-input[type=button]:not(.default):not(.outline):active,
-*[role=button]:not(.default):not(.outline):active,
-button:not(.default):not(.outline):active,
+.button.outline, .button.bordered {
+  box-shadow: inset 0 -0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0 0 0.125em var(--flatify__button-bg-color__focus);
+}
 .button:not(.outline):active {
   transition: all 0s !important;
 }
-input[type=reset]:not(.default):hover:not(:active),
-input[type=submit]:not(.default):hover:not(:active),
-input[type=button]:not(.default):hover:not(:active),
-*[role=button]:not(.default):hover:not(:active),
-button:not(.default):hover:not(:active),
 .button:hover:not(:active) {
   filter: brightness(92%);
 }
-input[type=reset]:not(.default):focus-visible, input[type=reset]:not(.default):active,
-input[type=submit]:not(.default):focus-visible,
-input[type=submit]:not(.default):active,
-input[type=button]:not(.default):focus-visible,
-input[type=button]:not(.default):active,
-*[role=button]:not(.default):focus-visible,
-*[role=button]:not(.default):active,
-button:not(.default):focus-visible,
-button:not(.default):active,
-.button:focus-visible,
-.button:active {
-  color: var(--flatify__button-text-color__focus);
+.button:focus-visible, .button:active {
+  color: var(--flatify__button-txt-color__focus);
   background: var(--flatify__button-bg-color__focus) !important;
   box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
   transform: translateY(0.15em);
 }
-input[type=reset]:not(.default).disabled, input[type=reset]:not(.default):disabled,
-input[type=submit]:not(.default).disabled,
-input[type=submit]:not(.default):disabled,
-input[type=button]:not(.default).disabled,
-input[type=button]:not(.default):disabled,
-*[role=button]:not(.default).disabled,
-*[role=button]:not(.default):disabled,
-button:not(.default).disabled,
-button:not(.default):disabled,
-.button.disabled,
-.button:disabled {
+.button.disabled, .button:disabled {
   pointer-events: none;
   background: var(--flatify__button-bg-color__focus) !important;
   transform: none !important;
-  filter: contrast(85%) brightness(85%) !important;
+  filter: contrast(85%) brightness(85%) opacity(70%) !important;
+}
+.button[class*=style-] {
+  --flatify__button-bg-color: var(--flatify__local-bg-color);
+  --flatify__button-bg-color__focus: var(--flatify__local-border-color);
+  --flatify__button-txt-color: var(--flatify__local-txt-color);
+  --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
+}
+body .button.outline[class*=style-]:active, body .button.outline[class*=style-]:focus-visible, .button.style-dark:active, .button.style-dark:focus-visible, .button.style-dark-light:active, .button.style-dark-light:focus-visible {
+  color: var(--flatify__txt-color-inverted) !important;
+}
+body .button.outline.style-yellow:active, body .button.outline.style-yellow:focus-visible, body .button.outline.style-yellow-light:active, body .button.outline.style-yellow-light:focus-visible, body .button.outline.style-light:active, body .button.outline.style-light:focus-visible, body .button.outline.style-light-light:active, body .button.outline.style-light-light:focus-visible {
+  color: var(--flatify__txt-color) !important;
 }
 
 @keyframes alert-will-be-removed {
@@ -1047,6 +987,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-blue-primary) !important;
   border-color: var(--flatify__color-blue-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-blue-darker) !important;
   --flatify__local-border-color: var(--flatify__color-blue-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-blue-primary) !important;
 }
@@ -1055,6 +996,7 @@ button:not(.default):disabled,
   color: var(--flatify__color-blue-darker) !important;
   background: var(--flatify__color-blue-light) !important;
   border-color: var(--flatify__color-blue-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-blue-darker) !important;
   --flatify__local-border-color: var(--flatify__color-blue-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-blue-light) !important;
 }
@@ -1063,6 +1005,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-green-primary) !important;
   border-color: var(--flatify__color-green-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-green-darker) !important;
   --flatify__local-border-color: var(--flatify__color-green-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-green-primary) !important;
 }
@@ -1071,6 +1014,7 @@ button:not(.default):disabled,
   color: var(--flatify__color-green-darker) !important;
   background: var(--flatify__color-green-light) !important;
   border-color: var(--flatify__color-green-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-green-darker) !important;
   --flatify__local-border-color: var(--flatify__color-green-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-green-light) !important;
 }
@@ -1079,14 +1023,16 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color) !important;
   background: var(--flatify__color-yellow-primary) !important;
   border-color: var(--flatify__color-yellow-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-yellow-darker) !important;
   --flatify__local-border-color: var(--flatify__color-yellow-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-yellow-primary) !important;
 }
 
 .style-yellow-light {
-  color: var(--flatify__txt-color) !important;
+  color: var(--flatify__color-yellow-darker) !important;
   background: var(--flatify__color-yellow-light) !important;
   border-color: var(--flatify__color-yellow-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-yellow-darker) !important;
   --flatify__local-border-color: var(--flatify__color-yellow-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-yellow-light) !important;
 }
@@ -1095,6 +1041,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-orange-primary) !important;
   border-color: var(--flatify__color-orange-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-orange-darker) !important;
   --flatify__local-border-color: var(--flatify__color-orange-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-orange-primary) !important;
 }
@@ -1103,6 +1050,7 @@ button:not(.default):disabled,
   color: var(--flatify__color-orange-darker) !important;
   background: var(--flatify__color-orange-light) !important;
   border-color: var(--flatify__color-orange-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-orange-darker) !important;
   --flatify__local-border-color: var(--flatify__color-orange-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-orange-light) !important;
 }
@@ -1111,6 +1059,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-red-primary) !important;
   border-color: var(--flatify__color-red-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-red-darker) !important;
   --flatify__local-border-color: var(--flatify__color-red-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-red-primary) !important;
 }
@@ -1119,6 +1068,7 @@ button:not(.default):disabled,
   color: var(--flatify__color-red-darker) !important;
   background: var(--flatify__color-red-light) !important;
   border-color: var(--flatify__color-red-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-red-darker) !important;
   --flatify__local-border-color: var(--flatify__color-red-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-red-light) !important;
 }
@@ -1127,6 +1077,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-purple-primary) !important;
   border-color: var(--flatify__color-purple-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-purple-darker) !important;
   --flatify__local-border-color: var(--flatify__color-purple-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-purple-primary) !important;
 }
@@ -1135,6 +1086,7 @@ button:not(.default):disabled,
   color: var(--flatify__color-purple-darker) !important;
   background: var(--flatify__color-purple-light) !important;
   border-color: var(--flatify__color-purple-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-purple-darker) !important;
   --flatify__local-border-color: var(--flatify__color-purple-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-purple-light) !important;
 }
@@ -1143,6 +1095,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-accent-primary) !important;
   border-color: var(--flatify__color-accent-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-accent-darker) !important;
   --flatify__local-border-color: var(--flatify__color-accent-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-accent-primary) !important;
 }
@@ -1151,6 +1104,7 @@ button:not(.default):disabled,
   color: var(--flatify__color-accent-darker) !important;
   background: var(--flatify__color-accent-light) !important;
   border-color: var(--flatify__color-accent-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-accent-darker) !important;
   --flatify__local-border-color: var(--flatify__color-accent-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-accent-light) !important;
 }
@@ -1159,6 +1113,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-success-primary) !important;
   border-color: var(--flatify__color-success-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-success-darker) !important;
   --flatify__local-border-color: var(--flatify__color-success-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-success-primary) !important;
 }
@@ -1167,6 +1122,7 @@ button:not(.default):disabled,
   color: var(--flatify__color-success-darker) !important;
   background: var(--flatify__color-success-light) !important;
   border-color: var(--flatify__color-success-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-success-darker) !important;
   --flatify__local-border-color: var(--flatify__color-success-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-success-light) !important;
 }
@@ -1175,6 +1131,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-info-primary) !important;
   border-color: var(--flatify__color-info-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-info-darker) !important;
   --flatify__local-border-color: var(--flatify__color-info-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-info-primary) !important;
 }
@@ -1183,6 +1140,7 @@ button:not(.default):disabled,
   color: var(--flatify__color-info-darker) !important;
   background: var(--flatify__color-info-light) !important;
   border-color: var(--flatify__color-info-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-info-darker) !important;
   --flatify__local-border-color: var(--flatify__color-info-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-info-light) !important;
 }
@@ -1191,6 +1149,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-warning-primary) !important;
   border-color: var(--flatify__color-warning-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-warning-darker) !important;
   --flatify__local-border-color: var(--flatify__color-warning-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-warning-primary) !important;
 }
@@ -1199,6 +1158,7 @@ button:not(.default):disabled,
   color: var(--flatify__color-warning-darker) !important;
   background: var(--flatify__color-warning-light) !important;
   border-color: var(--flatify__color-warning-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-warning-darker) !important;
   --flatify__local-border-color: var(--flatify__color-warning-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-warning-light) !important;
 }
@@ -1207,6 +1167,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-danger-primary) !important;
   border-color: var(--flatify__color-danger-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-danger-darker) !important;
   --flatify__local-border-color: var(--flatify__color-danger-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-danger-primary) !important;
 }
@@ -1215,6 +1176,7 @@ button:not(.default):disabled,
   color: var(--flatify__color-danger-darker) !important;
   background: var(--flatify__color-danger-light) !important;
   border-color: var(--flatify__color-danger-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-danger-darker) !important;
   --flatify__local-border-color: var(--flatify__color-danger-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-danger-light) !important;
 }
@@ -1223,6 +1185,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color) !important;
   background: var(--flatify__color-light-primary) !important;
   border-color: var(--flatify__color-light-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-light-darker) !important;
   --flatify__local-border-color: var(--flatify__color-light-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-light-primary) !important;
 }
@@ -1231,6 +1194,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color) !important;
   background: var(--flatify__color-light-light) !important;
   border-color: var(--flatify__color-light-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-light-darker) !important;
   --flatify__local-border-color: var(--flatify__color-light-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-light-light) !important;
 }
@@ -1239,6 +1203,7 @@ button:not(.default):disabled,
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-dark-primary) !important;
   border-color: var(--flatify__color-dark-dark) !important;
+  --flatify__local-txt-color: var(--flatify__color-dark-darker) !important;
   --flatify__local-border-color: var(--flatify__color-dark-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-dark-primary) !important;
 }
@@ -1247,12 +1212,9 @@ button:not(.default):disabled,
   color: var(--flatify__color-dark-darker) !important;
   background: var(--flatify__color-dark-light) !important;
   border-color: var(--flatify__color-dark-primary) !important;
+  --flatify__local-txt-color: var(--flatify__color-dark-darker) !important;
   --flatify__local-border-color: var(--flatify__color-dark-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-dark-light) !important;
-}
-
-*[class*=style-][class*=-light].disabled, *[class*=style-][class*=-light]:disabled {
-  color: var(--flatify__txt-color-inverted) !important;
 }
 
 .color-blue {

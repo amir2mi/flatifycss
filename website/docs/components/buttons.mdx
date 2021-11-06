@@ -12,10 +12,11 @@ First, take a look at [button cheat sheet](https://www.buttoncheatsheet.com/).
 ### A simple button
 
 A button with Flatify CSS style can be defined in several ways as mentioned in the button cheatsheet,
-for any type of element, you can use the `.button` class but elements like `<button>` or input with button type do not need the class.
+for any type of element, you can use the `.button` class,
+the element will have button style with the active/focus-visible states support.
 
 <PreviewBox
-	height="100px"
+	height="110px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +29,7 @@ for any type of element, you can use the `.button` class but elements like `<but
 	</head>
 	<body>
         <div class="flex-center">
-			<button>
+			<button class="button">
 				Click Here
 			</button>
 		</div>
@@ -38,50 +39,16 @@ for any type of element, you can use the `.button` class but elements like `<but
 />
 
 ```html title="index.html"
-<button>Click Here</button>
+<button class="button">Click Here</button>
 ```
 
-:::info
-If you do not want to have Flatify CSS style on elements like `<button>` there is a class called
-`.default` that do not allow the button to have Flatify CSS button style primarily.
+### Sizes
+
+To change the button size use [size setter classes](/docs/helpers/size-setters).
+This classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
 
 <PreviewBox
-	height="100px"
-	children='
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Buttons</title>
-	</head>
-	<body>
-        <div class="flex-center">
-			<button class="default">
-				Click Here
-			</button>
-		</div>
-	</body>
-</html>
-'
-/>
-
-```html title="index.html"
-<button class="default">Click Here</button>
-```
-
-:::
-
-### Colors
-
-There are helper classes for styling elements like button,
-first [color setter classes](/docs/helpers/color-setters) for having button which diffrent
-background and text color.
-
-<PreviewBox
-	height="300px"
+	height="350px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -100,48 +67,29 @@ background and text color.
 		</style>
 	</head>
 	<body>
-        <div class="flex-center" style="flex-wrap: wrap;">
-			<button style="width: 200px; margin: 10px" class="style-warning-lighter">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-danger-lighter">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-dark-lighter">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-accent">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-purple">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-yellow">Click Here</button>
- 		    <button style="width: 200px; margin: 10px" class="style-warning-light">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-danger-light">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-dark-light">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-warning">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-danger">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-dark">Click Here</button>
-    	</div>
-    </body>
-
+        <div class="flex-column-center">
+			<button class="button size-sm">Click Here</button>
+			<button class="button size-md">Click Here</button>
+			<button class="button size-lg">Click Here</button>
+			<button class="button size-2x">Click Here</button>
+		</div>
+	</body>
 </html>
 '
 />
 
 ```html title="index.html"
-<button class="style-accent">Click Here</button>
-<button class="style-purple">Click Here</button>
-<button class="style-yellow">Click Here</button>
-
-<button class="style-accent-light">Click Here</button>
-<button class="style-purple-light">Click Here</button>
-<button class="style-yellow-light">Click Here</button>
-
-<button class="style-warning">Click Here</button>
-<button class="style-danger">Click Here</button>
-<button class="style-dark">Click Here</button>
-
-<button class="style-warning-light">Click Here</button>
-<button class="style-danger-light">Click Here</button>
-<button class="style-dark-light">Click Here</button>
+<button class="button size-sm">Click Here</button>
+<button class="button size-md">Click Here</button>
+<button class="button size-lg">Click Here</button>
+<button class="button size-2x">Click Here</button>
 ```
 
-### Sizes
+### Colors
 
-To change the button size use [size setter classes](/docs/helpers/size-setters).
-This classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+There are helper classes for styling elements like button,
+first [color setter classes](/docs/helpers/color-setters) for having button which diffrent
+background and text color.
 
 <PreviewBox
 	height="340px"
@@ -163,22 +111,42 @@ This classes just set a `font-size` property so it is possible to change it your
 		</style>
 	</head>
 	<body>
-        <div class="flex-column-center">
-			<button class="size-sm">Click Here</button>
-			<button class="size-md">Click Here</button>
-			<button class="size-lg">Click Here</button>
-			<button class="size-2x">Click Here</button>
-		</div>
-	</body>
+        <div class="flex-center" style="flex-wrap: wrap;">
+			<button style="width: 200px; margin: 10px" class="button style-accent-light">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-purple-light">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-yellow-light">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-accent">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-purple">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-yellow">Click Here</button>
+ 		    <button style="width: 200px; margin: 10px" class="button style-warning-light">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-danger-light">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-dark-light">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-warning">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-danger">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-dark">Click Here</button>
+    	</div>
+    </body>
+
 </html>
 '
 />
 
 ```html title="index.html"
-<button class="size-sm">Click Here</button>
-<button class="size-md">Click Here</button>
-<button class="size-lg">Click Here</button>
-<button class="size-2x">Click Here</button>
+<button class="button style-accent">Click Here</button>
+<button class="button style-purple">Click Here</button>
+<button class="button style-yellow">Click Here</button>
+
+<button class="button style-accent-light">Click Here</button>
+<button class="button style-purple-light">Click Here</button>
+<button class="button style-yellow-light">Click Here</button>
+
+<button class="button style-warning">Click Here</button>
+<button class="button style-danger">Click Here</button>
+<button class="button style-dark">Click Here</button>
+
+<button class="button style-warning-light">Click Here</button>
+<button class="button style-danger-light">Click Here</button>
+<button class="button style-dark-light">Click Here</button>
 ```
 
 ### Bordered
@@ -207,18 +175,18 @@ the button it will have border.
     </head>
     <body>
         <div class="flex-center" style="flex-wrap: wrap">
-    		<button style="width: 200px; margin: 10px" class="style-accent bordered">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-purple bordered">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-yellow bordered">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-accent-light bordered">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-purple-light bordered">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-yellow-light bordered">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-warning bordered">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-danger bordered">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-dark bordered">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-warning-light bordered">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-danger-light bordered">Click Here</button>
-    		<button style="width: 200px; margin: 10px" class="style-dark-light bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-accent bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-purple bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-yellow bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-accent-light bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-purple-light bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-yellow-light bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-warning bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-danger bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-dark bordered">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-warning-light bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-danger-light bordered">Click Here</button>
+    		<button style="width: 200px; margin: 10px" class="button style-dark-light bordered">Click Here</button>
     	</div>
     </body>
 
@@ -227,21 +195,21 @@ the button it will have border.
 />
 
 ```html title="index.html"
-<button class="style-accent bordered">Click Here</button>
-<button class="style-purple bordered">Click Here</button>
-<button class="style-yellow bordered">Click Here</button>
+<button class="button style-accent bordered">Click Here</button>
+<button class="button style-purple bordered">Click Here</button>
+<button class="button style-yellow bordered">Click Here</button>
 
-<button class="style-accent-light bordered">Click Here</button>
-<button class="style-purple-light bordered">Click Here</button>
-<button class="style-yellow-light bordered">Click Here</button>
+<button class="button style-accent-light bordered">Click Here</button>
+<button class="button style-purple-light bordered">Click Here</button>
+<button class="button style-yellow-light bordered">Click Here</button>
 
-<button class="style-warning bordered">Click Here</button>
-<button class="style-danger bordered">Click Here</button>
-<button class="style-dark bordered">Click Here</button>
+<button class="button style-warning bordered">Click Here</button>
+<button class="button style-danger bordered">Click Here</button>
+<button class="button style-dark bordered">Click Here</button>
 
-<button class="style-warning-light bordered">Click Here</button>
-<button class="style-danger-light bordered">Click Here</button>
-<button class="style-dark-light bordered">Click Here</button>
+<button class="button style-warning-light bordered">Click Here</button>
+<button class="button style-danger-light bordered">Click Here</button>
+<button class="button style-dark-light bordered">Click Here</button>
 ```
 
 ### Outline
@@ -271,18 +239,18 @@ is border color, so there is no need to add `.bordered` class for outline button
 	</head>
 	<body>
         <div class="flex-center" style="flex-wrap: wrap">
-			<button style="width: 200px; margin: 10px" class="style-accent outline">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-purple outline">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-yellow outline">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-accent-light outline">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-purple-light outline">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-yellow-light outline">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-warning outline">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-danger outline">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-dark outline">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-warning-light outline">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-danger-light outline">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="style-dark-light outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-accent outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-purple outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-yellow outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-accent-light outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-purple-light outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-yellow-light outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-warning outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-danger outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-dark outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-warning-light outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-danger-light outline">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-dark-light outline">Click Here</button>
 		</div>
 	</body>
 </html>
@@ -290,21 +258,21 @@ is border color, so there is no need to add `.bordered` class for outline button
 />
 
 ```html title="index.html"
-<button class="style-accent outline">Click Here</button>
-<button class="style-purple outline">Click Here</button>
-<button class="style-yellow outline">Click Here</button>
+<button class="button style-accent outline">Click Here</button>
+<button class="button style-purple outline">Click Here</button>
+<button class="button style-yellow outline">Click Here</button>
 
-<button class="style-accent-light outline">Click Here</button>
-<button class="style-purple-light outline">Click Here</button>
-<button class="style-yellow-light outline">Click Here</button>
+<button class="button style-accent-light outline">Click Here</button>
+<button class="button style-purple-light outline">Click Here</button>
+<button class="button style-yellow-light outline">Click Here</button>
 
-<button class="style-warning outline">Click Here</button>
-<button class="style-danger outline">Click Here</button>
-<button class="style-dark outline">Click Here</button>
+<button class="button style-warning outline">Click Here</button>
+<button class="button style-danger outline">Click Here</button>
+<button class="button style-dark outline">Click Here</button>
 
-<button class="style-warning-light outline">Click Here</button>
-<button class="style-danger-light outline">Click Here</button>
-<button class="style-dark-light outline">Click Here</button>
+<button class="button style-warning-light outline">Click Here</button>
+<button class="button style-danger-light outline">Click Here</button>
+<button class="button style-dark-light outline">Click Here</button>
 ```
 
 ### Customization
@@ -313,9 +281,9 @@ Each button has these CSS variables for customization, they can be set as `:root
 of just for an specific selector.
 
 `--flatify__button-bg-color` Button background color  
-`--flatify__button-text-color` Button text color  
+`--flatify__button-txt-color` Button text color  
 `--flatify__button-bg-color__focus` Button background color for border and focus  
-`--flatify__button-text-color__focus` Button text color for focus
+`--flatify__button-txt-color__focus` Button text color for focus
 
 <PreviewBox
 	height="310px"
@@ -332,31 +300,31 @@ of just for an specific selector.
 			.my-button-1{
 				margin: 0.5em !important;
 				--flatify__button-bg-color: linear-gradient(15deg, #03001e, #7303c0, #ec38bc, #fdeff9);
-				--flatify__button-text-color: white;
+				--flatify__button-txt-color: white;
 				--flatify__button-bg-color__focus: linear-gradient(25deg, #03001e, #7303c0, #ec38bc, #fdeff9);
-				--flatify__button-text-color__focus: white;
+				--flatify__button-txt-color__focus: white;
 			}
 			.my-button-2{
 				margin: 0.5em !important;
 				--flatify__button-bg-color: #48CFAD;
-				--flatify__button-text-color: #fff;
+				--flatify__button-txt-color: #fff;
 				--flatify__button-bg-color__focus: #37BC9B;
-				--flatify__button-text-color__focus: #fff;
+				--flatify__button-txt-color__focus: #fff;
 			}
 			.my-button-3{
 				margin: 0.5em !important;
 				--flatify__button-bg-color: #EC87C0;
-				--flatify__button-text-color: #F5F7FA;
+				--flatify__button-txt-color: #F5F7FA;
 				--flatify__button-bg-color__focus: #D770AD;
-				--flatify__button-text-color__focus: #fff;
+				--flatify__button-txt-color__focus: #fff;
 			}
 		</style>
     </head>
     <body>
         <div class="flex-column-center">
-    		<button class="my-button-1 size-lg">Custom button</button>
-    		<button class="my-button-2 size-lg">Custom button</button>
-    		<button class="my-button-3 outline size-lg">Custom button</button>
+    		<button class="my-button-1 button size-lg">Custom button</button>
+    		<button class="my-button-2 button size-lg">Custom button</button>
+    		<button class="my-button-3 button outline size-lg">Custom button</button>
     	</div>
     </body>
 
@@ -365,33 +333,33 @@ of just for an specific selector.
 />
 
 ```html title="index.html"
-<button class="my-button-1 size-lg">Custom button</button>
-<button class="my-button-2 size-lg">Custom button</button>
-<button class="my-button-3 outline size-lg">Custom button</button>
+<button class="my-button-1 button size-lg">Custom button</button>
+<button class="my-button-2 button size-lg">Custom button</button>
+<button class="my-button-3 button outline size-lg">Custom button</button>
 ```
 
 ```css title="style.css"
 .my-button-1 {
 	margin: 0.5em !important;
 	--flatify__button-bg-color: linear-gradient(15deg, #03001e, #7303c0, #ec38bc, #fdeff9);
-	--flatify__button-text-color: white;
+	--flatify__button-txt-color: white;
 	--flatify__button-bg-color__focus: linear-gradient(25deg, #03001e, #7303c0, #ec38bc, #fdeff9);
-	--flatify__button-text-color__focus: white;
+	--flatify__button-txt-color__focus: white;
 }
 
 .my-button-2 {
 	margin: 0.5em !important;
 	--flatify__button-bg-color: #48cfad;
-	--flatify__button-text-color: #fff;
+	--flatify__button-txt-color: #fff;
 	--flatify__button-bg-color__focus: #37bc9b;
-	--flatify__button-text-color__focus: #fff;
+	--flatify__button-txt-color__focus: #fff;
 }
 
 .my-button-3 {
 	margin: 0.5em !important;
 	--flatify__button-bg-color: #ec87c0;
-	--flatify__button-text-color: #f5f7fa;
+	--flatify__button-txt-color: #f5f7fa;
 	--flatify__button-bg-color__focus: #d770ad;
-	--flatify__button-text-color__focus: #fff;
+	--flatify__button-txt-color__focus: #fff;
 }
 ```

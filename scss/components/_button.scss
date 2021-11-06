@@ -1,15 +1,16 @@
 :root {
 	--#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
 	--#{$CSS_VAR_PFX}button-bg-color__focus: var(--#{$CSS_VAR_PFX}bg-color-darker);
-	--#{$CSS_VAR_PFX}button-text-color: var(--#{$CSS_VAR_PFX}txt-color);
-	--#{$CSS_VAR_PFX}button-text-color__focus: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}button-txt-color__focus: var(--#{$CSS_VAR_PFX}txt-color);
 }
 
-input[type="reset"]:not(.default),
-input[type="submit"]:not(.default),
-input[type="button"]:not(.default),
-*[role="button"]:not(.default),
-button:not(.default),
+//*** Just limit button style to class it reduce the complexity and code will be cleaner.
+// input[type="reset"]:not(.default),
+// input[type="submit"]:not(.default),
+// input[type="button"]:not(.default),
+// *[role="button"]:not(.default),
+// button:not(.default),
 .button {
 	vertical-align: middle;
 	text-align: center;
@@ -18,7 +19,7 @@ button:not(.default),
 	display: inline-block;
 	padding: 0.9em 1.4em;
 	margin: 0.25em 0.125em;
-	color: var(--#{$CSS_VAR_PFX}button-text-color);
+	color: var(--#{$CSS_VAR_PFX}button-txt-color);
 	background: var(--#{$CSS_VAR_PFX}button-bg-color);
 	border: none;
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
@@ -27,28 +28,15 @@ button:not(.default),
 	will-change: transform;
 	transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
-	&[class*="style-"] {
-		--#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
-		--#{$CSS_VAR_PFX}button-bg-color__focus: var(--#{$CSS_VAR_PFX}local-border-color);
+	&.outline {
+		color: var(--#{$CSS_VAR_PFX}button-txt-color) !important;
+		background: transparent !important;
 	}
 
 	&.outline,
 	&.bordered {
 		box-shadow: inset 0 -0.32em 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus),
 			inset 0 0 0 0.125em var(--#{$CSS_VAR_PFX}button-bg-color__focus);
-	}
-
-	&[class*="style-"][class*="-light"] {
-		// Light color for outline buttons with light style
-		&.outline:active,
-		&.outline:focus-visible {
-			color: var(--#{$CSS_VAR_PFX}txt-color-inverted) !important;
-		}
-	}
-
-	&.outline:not(:active, :focus-visible) {
-		color: var(--#{$CSS_VAR_PFX}button-bg-color__focus) !important;
-		background: transparent !important;
 	}
 
 	&:not(.outline):active {
@@ -61,7 +49,7 @@ button:not(.default),
 
 	&:focus-visible,
 	&:active {
-		color: var(--#{$CSS_VAR_PFX}button-text-color__focus);
+		color: var(--#{$CSS_VAR_PFX}button-txt-color__focus);
 		background: var(--#{$CSS_VAR_PFX}button-bg-color__focus) !important;
 		box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
 		transform: translateY(0.15em);
@@ -72,6 +60,34 @@ button:not(.default),
 		pointer-events: none;
 		background: var(--#{$CSS_VAR_PFX}button-bg-color__focus) !important;
 		transform: none !important;
-		filter: contrast(85%) brightness(85%) !important;
+		filter: contrast(85%) brightness(85%) opacity(70%) !important;
+	}
+
+	&[class*="style-"] {
+		--#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
+		--#{$CSS_VAR_PFX}button-bg-color__focus: var(--#{$CSS_VAR_PFX}local-border-color);
+		--#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
+		--#{$CSS_VAR_PFX}button-txt-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
+	}
+
+	// They should have light text color
+	body &.outline[class*="style-"],
+	&.style-dark,
+	&.style-dark-light {
+		&:active,
+		&:focus-visible {
+			color: var(--#{$CSS_VAR_PFX}txt-color-inverted) !important;
+		}
+	}
+
+	// They should have dark text color
+	body &.outline.style-yellow,
+	body &.outline.style-yellow-light,
+	body &.outline.style-light,
+	body &.outline.style-light-light {
+		&:active,
+		&:focus-visible {
+			color: var(--#{$CSS_VAR_PFX}txt-color) !important;
+		}
 	}
 }
