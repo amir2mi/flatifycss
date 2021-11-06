@@ -48,6 +48,7 @@
 		filter: brightness(92%);
 	}
 
+	&.active,
 	&:focus-visible,
 	&:active {
 		color: var(--#{$CSS_VAR_PFX}button-txt-color__focus) !important;

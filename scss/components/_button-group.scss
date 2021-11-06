@@ -1,5 +1,6 @@
 .button-group {
 	display: flex;
+	margin: 0.25em 0.125em;
 
 	.button {
 		margin: 0;
@@ -8,17 +9,28 @@
 
 	&:not(.vertical) {
 		.button {
-			&:first-child {
-				border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
-			}
+			@if $SUPPORT_LTR {
+				&:first-child {
+					border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+				}
 
-			&:last-child {
-				border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+				&:last-child {
+					border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+				}
+			} @else {
+				&:first-child {
+					border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+				}
+
+				&:last-child {
+					border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+				}
 			}
 		}
 	}
 
 	&.vertical {
+		flex-direction: column;
 		.button {
 			&:first-child {
 				border-radius: var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0 0;

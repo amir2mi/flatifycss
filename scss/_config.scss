@@ -45,7 +45,7 @@ $TXT_COLOR: #2e4051 !default;
 $TXT_COLOR_LIGHT: tint($TXT_COLOR, 35%) !default;
 $TXT_COLOR_DARK: shade($TXT_COLOR, 35%) !default;
 $TXT_COLOR_DARKER: shade($TXT_COLOR, 60%) !default;
-$TXT_COLOR_INVERTED: $BG_COLOR_2 !default;
+$TXT_COLOR_INVERTED: $BG_COLOR !default;
 
 $BLUE: #1cb0f6 !default;
 $BLUE_LIGHT: tint($BLUE, 30%) !default;

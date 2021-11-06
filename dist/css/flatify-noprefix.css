@@ -29,7 +29,7 @@
   --flatify__txt-color: #2e4051;
   --flatify__txt-color-light: #77838e;
   --flatify__txt-color-dark: #1e2a35;
-  --flatify__txt-color-inverted: #f1f4f7;
+  --flatify__txt-color-inverted: #ffffff;
   --flatify__heading-color: currentColor;
   --flatify__color-blue-primary: #1cb0f6;
   --flatify__color-blue-light: #60c8f9;
@@ -950,7 +950,7 @@ th {
 .button:hover:not(:active) {
   filter: brightness(92%);
 }
-.button:focus-visible, .button:active {
+.button.active, .button:focus-visible, .button:active {
   color: var(--flatify__button-txt-color__focus) !important;
   background: var(--flatify__button-bg-color__focus) !important;
   box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
@@ -977,6 +977,7 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
 
 .button-group {
   display: flex;
+  margin: 0.25em 0.125em;
 }
 .button-group .button {
   margin: 0;
@@ -987,6 +988,9 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
 }
 .button-group:not(.vertical) .button:last-child {
   border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
+}
+.button-group.vertical {
+  flex-direction: column;
 }
 .button-group.vertical .button:first-child {
   border-radius: var(--flatify__border-radius) var(--flatify__border-radius) 0 0;
