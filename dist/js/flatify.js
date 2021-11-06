@@ -16,7 +16,7 @@
   \********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils_vent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/vent */ \"./js/utils/vent.js\");\n/* harmony import */ var _config_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config.json */ \"./js/config.json\");\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n\t(0,_utils_vent__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(document).on(\"click\", \".close-button\", function () {\n\t\tthis.closest(\".alert\").classList.add(\"alert-will-be-removed\");\n\n\t\tsetTimeout(() => {\n\t\t\tthis.closest(\".alert\").remove();\n\t\t}, _config_json__WEBPACK_IMPORTED_MODULE_1__.alertRemoveAnimationDuration);\n\t});\n});\n\n\n//# sourceURL=webpack://flatifycss/./js/components/alert.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _config_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config.json */ \"./js/config.json\");\n/* harmony import */ var _utils_vent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/vent */ \"./js/utils/vent.js\");\n/* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/logger */ \"./js/utils/logger.js\");\n\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n\t(0,_utils_vent__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(document).on(\"click\", \".close-button\", function () {\n\t\tthis.closest(\".alert\").classList.add(\"alert-will-be-removed\");\n\n\t\t(0,_utils_logger__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"info\", \"Alert will be removed...\", this);\n\n\t\tsetTimeout(() => {\n\t\t\tthis.closest(\".alert\").remove();\n\n\t\t\t(0,_utils_logger__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"info\", `Alert is removed after ${_config_json__WEBPACK_IMPORTED_MODULE_0__.alertRemoveAnimationDuration}ms delay.`, this);\n\t\t}, _config_json__WEBPACK_IMPORTED_MODULE_0__.alertRemoveAnimationDuration);\n\t});\n});\n\n\n//# sourceURL=webpack://flatifycss/./js/components/alert.js?");
 
 /***/ }),
 
@@ -27,6 +27,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _uti
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_alert__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/alert */ \"./js/components/alert.js\");\n\n\n\n//# sourceURL=webpack://flatifycss/./js/flatify.js?");
+
+/***/ }),
+
+/***/ "./js/utils/logger.js":
+/*!****************************!*\
+  !*** ./js/utils/logger.js ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ logger; }\n/* harmony export */ });\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config */ \"./js/config.json\");\n\n\nfunction logger(type, message, data) {\n\tif (_config__WEBPACK_IMPORTED_MODULE_0__.enableLogging === true) {\n\t\tswitch (type) {\n\t\t\tcase \"info\":\n\t\t\t\treturn console.info(message, data);\n\t\t\tcase \"warn\":\n\t\t\t\treturn console.warn(message, data);\n\t\t\tcase \"error\":\n\t\t\t\treturn console.error(message, data);\n\t\t\tdefault:\n\t\t\t\treturn console.log(message, data);\n\t\t}\n\t}\n}\n\n\n//# sourceURL=webpack://flatifycss/./js/utils/logger.js?");
 
 /***/ }),
 
@@ -46,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/**\n * Vent, jQuery inspired
   \************************/
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse('{\"alertRemoveAnimationDuration\":\"500\"}');\n\n//# sourceURL=webpack://flatifycss/./js/config.json?");
+eval("module.exports = JSON.parse('{\"enableLogging\":true,\"alertRemoveAnimationDuration\":\"500\"}');\n\n//# sourceURL=webpack://flatifycss/./js/config.json?");
 
 /***/ })
 
@@ -77,6 +87,23 @@ eval("module.exports = JSON.parse('{\"alertRemoveAnimationDuration\":\"500\"}');
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -95,6 +122,7 @@ eval("module.exports = JSON.parse('{\"alertRemoveAnimationDuration\":\"500\"}');
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	__webpack_require__("./js/flatify.js");
 /******/ 	__webpack_require__("./js/components/alert.js");
+/******/ 	__webpack_require__("./js/utils/logger.js");
 /******/ 	var __webpack_exports__ = __webpack_require__("./js/utils/vent.js");
 /******/ 	
 /******/ })()
