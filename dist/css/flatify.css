@@ -857,12 +857,8 @@ th {
   position: relative;
   font-size: 0.9em;
   line-height: var(--flatify__large-line-height);
-  width: 100%;
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
   padding: 1.25em;
-  margin-bottom: 1em;
+  margin: 0 0.125em 1em;
   color: var(--flatify__alert-txt-color);
   background: var(--flatify__alert-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
@@ -934,6 +930,9 @@ th {
   -webkit-transform: scale(1) !important;
       -ms-transform: scale(1) !important;
           transform: scale(1) !important;
+}
+.alert:not(.has-icon) {
+  width: 100%;
 }
 .alert.has-icon {
   padding-left: 2.75em;

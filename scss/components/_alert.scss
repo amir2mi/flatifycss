@@ -10,10 +10,8 @@
 	position: relative;
 	font-size: 0.9em;
 	line-height: var(--#{$CSS_VAR_PFX}large-line-height);
-	width: 100%;
-	max-width: fit-content;
 	padding: 1.25em;
-	margin-bottom: 1em;
+	margin: 0 0.125em 1em;
 	color: var(--#{$CSS_VAR_PFX}alert-txt-color);
 	background: var(--#{$CSS_VAR_PFX}alert-bg-color);
 	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
@@ -93,6 +91,10 @@
 		&:focus {
 			transform: scale(1) !important;
 		}
+	}
+
+	&:not(.has-icon) {
+		width: 100%;
 	}
 
 	&.has-icon {
