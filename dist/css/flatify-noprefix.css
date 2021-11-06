@@ -487,6 +487,10 @@ progress {
     background-attachment: initial !important;
     scroll-behavior: auto !important;
   }
+
+  .alert-will-be-removed {
+    animation-name: fade-out !important;
+  }
 }
 :root {
   --flatify__blockquote-accent-color: var(--flatify__color-accent-primary);
@@ -969,6 +973,11 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
   color: var(--flatify__txt-color) !important;
 }
 
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
 @keyframes alert-will-be-removed {
   85% {
     opacity: 0;

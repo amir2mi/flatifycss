@@ -6,4 +6,8 @@
 		background-attachment: initial !important;
 		scroll-behavior: auto !important;
 	}
+
+	.alert-will-be-removed {
+		animation-name: fade-out !important;
+	}
 }
