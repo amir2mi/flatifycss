@@ -858,7 +858,7 @@ th {
   font-size: 0.9em;
   line-height: var(--flatify__large-line-height);
   padding: 1.25em;
-  margin: 0 0.125em 1em;
+  margin-bottom: 1em;
   color: var(--flatify__alert-txt-color);
   background: var(--flatify__alert-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
@@ -976,32 +976,31 @@ th {
   font-size: 1em;
   font-weight: normal;
   display: inline-block;
-  padding: 0.9em 1.4em;
-  margin: 0.25em 0.125em;
+  padding: 0.75em 1.4em 0.5em;
+  margin: 0.32em 0.32em 0.5em;
   color: var(--flatify__button-txt-color);
   background: var(--flatify__button-bg-color);
   border: none;
   border-radius: var(--flatify__border-radius);
-  -webkit-box-shadow: inset 0 -0.32em 0 var(--flatify__button-bg-color__focus);
-          box-shadow: inset 0 -0.32em 0 var(--flatify__button-bg-color__focus);
+  -webkit-box-shadow: 0 0.32em 0 var(--flatify__button-bg-color__focus);
+          box-shadow: 0 0.32em 0 var(--flatify__button-bg-color__focus);
   outline: none;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
   will-change: transform;
-  -webkit-transition: all var(--flatify__simple-transition);
-  -o-transition: all var(--flatify__simple-transition);
-  transition: all var(--flatify__simple-transition);
+  -webkit-transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
+  transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
+  -o-transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
+  transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
+  transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), filter var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
 }
 .button.outline {
   color: var(--flatify__button-txt-color) !important;
   background: transparent !important;
 }
 .button.outline, .button.bordered {
-  -webkit-box-shadow: inset 0 -0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0 0 0.125em var(--flatify__button-bg-color__focus);
-          box-shadow: inset 0 -0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0 0 0.125em var(--flatify__button-bg-color__focus);
-}
-.button:not(.outline):active {
-  -webkit-transition: all 0s !important;
-  -o-transition: all 0s !important;
-  transition: all 0s !important;
+  -webkit-box-shadow: 0 0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0.125em 0 var(--flatify__button-bg-color__focus), inset 0.125em 0 0 var(--flatify__button-bg-color__focus), inset -0.125em 0 0 var(--flatify__button-bg-color__focus);
+          box-shadow: 0 0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0.125em 0 var(--flatify__button-bg-color__focus), inset 0.125em 0 0 var(--flatify__button-bg-color__focus), inset -0.125em 0 0 var(--flatify__button-bg-color__focus);
 }
 .button:hover:not(:active) {
   -webkit-filter: brightness(92%);
@@ -1012,9 +1011,9 @@ th {
   background: var(--flatify__button-bg-color__focus) !important;
   -webkit-box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
           box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-  -webkit-transform: translateY(0.15em);
-      -ms-transform: translateY(0.15em);
-          transform: translateY(0.15em);
+  -webkit-transform: translateY(0.32em);
+      -ms-transform: translateY(0.32em);
+          transform: translateY(0.32em);
 }
 .button.disabled, .button:disabled {
   pointer-events: none;
@@ -1036,6 +1035,28 @@ body .button.outline[class*=style-]:active, body .button.outline[class*=style-]:
 }
 body .button.outline.style-yellow:active, body .button.outline.style-yellow:focus-visible, body .button.outline.style-yellow-light:active, body .button.outline.style-yellow-light:focus-visible, body .button.outline.style-light:active, body .button.outline.style-light:focus-visible, body .button.outline.style-light-light:active, body .button.outline.style-light-light:focus-visible {
   color: var(--flatify__txt-color) !important;
+}
+
+.button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.button-group .button {
+  margin: 0;
+  border-radius: 0;
+}
+.button-group:not(.vertical) .button:first-child {
+  border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
+}
+.button-group:not(.vertical) .button:last-child {
+  border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
+}
+.button-group.vertical .button:first-child {
+  border-radius: var(--flatify__border-radius) var(--flatify__border-radius) 0 0;
+}
+.button-group.vertical .button:last-child {
+  border-radius: 0 0 var(--flatify__border-radius) var(--flatify__border-radius);
 }
 
 @-webkit-keyframes flatify-fade-out {
