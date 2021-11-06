@@ -11,7 +11,7 @@
 	font-size: 0.9em;
 	line-height: var(--#{$CSS_VAR_PFX}large-line-height);
 	padding: 1.25em;
-	margin: 0 0.125em 1em;
+	margin-bottom: 1em;
 	color: var(--#{$CSS_VAR_PFX}alert-txt-color);
 	background: var(--#{$CSS_VAR_PFX}alert-bg-color);
 	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);

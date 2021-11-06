@@ -1,0 +1,32 @@
+.button-group {
+	display: flex;
+
+	.button {
+		margin: 0;
+		border-radius: 0;
+	}
+
+	&:not(.vertical) {
+		.button {
+			&:first-child {
+				border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+			}
+
+			&:last-child {
+				border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+			}
+		}
+	}
+
+	&.vertical {
+		.button {
+			&:first-child {
+				border-radius: var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0 0;
+			}
+
+			&:last-child {
+				border-radius: 0 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius);
+			}
+		}
+	}
+}
