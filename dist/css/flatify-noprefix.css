@@ -813,7 +813,7 @@ th {
 
 :root {
   --flatify__alert-bg-color: var(--flatify__bg-color-dark);
-  --flatify__alert-text-color: var(--flatify__txt-color);
+  --flatify__alert-txt-color: var(--flatify__txt-color);
   --flatify__alert-border-color: var(--flatify__bg-color-darker);
 }
 
@@ -824,9 +824,10 @@ th {
   font-size: 0.9em;
   line-height: var(--flatify__large-line-height);
   width: 100%;
+  max-width: fit-content;
   padding: 1.25em;
   margin-bottom: 1em;
-  color: var(--flatify__alert-text-color);
+  color: var(--flatify__alert-txt-color);
   background: var(--flatify__alert-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);

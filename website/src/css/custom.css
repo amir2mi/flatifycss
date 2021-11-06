@@ -191,6 +191,7 @@ div[class*="toggleTrack_"],
 
 .docus-color-indicator.inline {
 	display: inline-flex;
+	vertical-align: middle;
 }
 
 .docus-color-indicator:not(.inline) .docus-color {

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (!wrapper) {
 			return logger("error", `Close button is not in an ".alert"`, this.parentElement);
 		} else {
-			logger("info", "Alert will be removed...", this);
+			logger("info", "Alert will be removed...", wrapper);
 		}
 
 		// add animation class to remove the alert
@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		// after delay remove alert from DOM
 		setTimeout(() => {
-			this.closest(".alert").remove();
-			logger("info", `Alert is removed after ${config.alertRemoveAnimationDuration}ms delay.`, this);
+			wrapper.remove();
+			logger("info", `Alert is removed after ${config.alertRemoveAnimationDuration}ms delay.`, wrapper);
 		}, config.alertRemoveAnimationDuration);
 	});
 });

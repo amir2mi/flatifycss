@@ -1,6 +1,6 @@
 :root {
 	--#{$CSS_VAR_PFX}alert-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
-	--#{$CSS_VAR_PFX}alert-text-color: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}alert-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}alert-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 }
 
@@ -11,9 +11,10 @@
 	font-size: 0.9em;
 	line-height: var(--#{$CSS_VAR_PFX}large-line-height);
 	width: 100%;
+	max-width: fit-content;
 	padding: 1.25em;
 	margin-bottom: 1em;
-	color: var(--#{$CSS_VAR_PFX}alert-text-color);
+	color: var(--#{$CSS_VAR_PFX}alert-txt-color);
 	background: var(--#{$CSS_VAR_PFX}alert-bg-color);
 	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
