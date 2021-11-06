@@ -4,8 +4,7 @@ title: Table
 
 import PreviewBox from "../../src/components/preview-box";
 
-Tables allow web developers to arrange data into rows and columns,
-with Flatify CSS you can have striped, bordered, and customized one vertical or horizontal.
+Tables allow web developers to arrange data into rows and columns, with Flatify CSS you can have striped, bordered, and customized one vertical or horizontal.
 
 ### Bordered
 
@@ -124,8 +123,7 @@ First, create a simple HTML table, then add the `.bordered` class to the table:
 
 ### Striped
 
-A striped table has **different odd rows** for helping readers to know which row they are.
-To have a striped style add the `.striped` class to the table.
+A striped table has **different odd rows** for helping readers to know which row they are. To have a striped style add the `.striped` class to the table.
 
 <PreviewBox
 	height="310px"
@@ -195,8 +193,7 @@ To have a striped style add the `.striped` class to the table.
 
 ### Horizontal
 
-By default, tables are vertical however for small screens and other use cases, we might need to have a horizontal table,
-it is possible with adding the `.horizontal` class to the table:
+By default, tables are vertical however for small screens and other use cases, we might need to have a horizontal table, it is possible with adding the ` horizontal` class to the table:
 
 <PreviewBox
 	height="235px"
@@ -336,9 +333,7 @@ By adding the `.text-center` class to the table, texts will be centered.
 
 ### Styling table items
 
-With helper classes we can have specific table items with various background and colors,
-[See here](/docs/helpers/color-setters), is the list of helper classes. for styling elements based on CSS background and color properties.
-For example, lets show which student was better and who needs help:
+With helper classes we can have specific table items with various background and colors, [See here](/docs/helpers/color-setters), is the list of helper classes. for styling elements based on CSS background and color properties. For example, lets show which student was better and who needs help:
 
 <PreviewBox
 	height="325px"
@@ -449,8 +444,7 @@ For example, lets show which student was better and who needs help:
 
 ### Customization
 
-Each table can be customized individually or customized settings can be set as a wrapper for tables,
-this approach is done with custom CSS properties aka "variables".
+Each table can be customized individually or customized settings can be set as a wrapper for tables, this approach is done with custom CSS properties aka "variables".
 Flatify CSS consider these CSS variables for table customization:
 
 `--flatify__table-border-color`  
@@ -460,9 +454,7 @@ Flatify CSS consider these CSS variables for table customization:
 `--flatify__table-txt-color`
 
 :::info
-By default Flatify CSS adds `flatify__` prefix to CSS variables to prevent unwanted conflicts,
-If you change `$CSS_VAR_PFX` in `_config.scss` instead of `flatify__`, variables will have your custom prefix:
-`--[your prefix]table-border-color`.
+By default Flatify CSS adds `flatify__` prefix to CSS variables to prevent unwanted conflicts, If you change `$CSS_VAR_PFX` in `_config.scss` instead of `flatify__`, variables will have your custom prefix: `--[your prefix]table-border-color`.
 :::
 
 Let's apply them in an example:

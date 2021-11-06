@@ -1,16 +1,16 @@
 ---
 title: Alerts
+sidebar_position: 1
 ---
 
 import PreviewBox from "../../src/components/preview-box";
 
-Alerts are a great way to communicate with users, to show errors, warnings, tips, and much more ideas
-an alert can be helpful. Alerts can be dismissable so if users do not want to see them again they can close it.
+Alerts are a great way to communicate with users, to show errors warnings, tips, and much more ideas an alert can be helpful.  
+Alerts can be dismissable so if users do not want to see them again they can close it.
 
 ### A simple alert
 
-Any HTML tag can be alert with the `.alert` class,
-however, a `<div>` with paragraphs in it is the most common choice.
+Any HTML tag can be alert with the `.alert` class, however, a `<div>` with paragraphs in it is the most common choice.
 
 <PreviewBox
 	height="120px"
@@ -42,12 +42,10 @@ however, a `<div>` with paragraphs in it is the most common choice.
 
 ### Colors
 
-Like any other component, alerts can have different colors
-by adding [color setter classes](/docs/helpers/color-setters).
+Like any other component, alerts can have different colors by adding [color setter classes](/docs/helpers/color-setters).
 
 :::success
-Alerts can have the light theme to gain less attention since you can set color setter helper class
-with `-light` suffix, e.g. `style-danger-light`.
+Alerts can have the light theme to gain less attention since you can set color setter helper class with `-light` suffix, e.g. `style-danger-light`.
 :::
 
 <PreviewBox
@@ -120,15 +118,10 @@ with `-light` suffix, e.g. `style-danger-light`.
 
 ### Dismissable
 
-Alerts might be dismissable in this case implementation of this feature is so simple,
-first, you need to make sure you are using the flatify JS file on your web page,
-then add a button inside
-alert with the `.close-button` class, nothing more. Now your alert can be closed by users!
+Alerts might be dismissable in this case implementation of this feature is so simple, first, you need to make sure you are using the flatify JS file on your web page, then add a button insidealert with the `.close-button` class, nothing more. Now your alert can be closed by users!
 
 :::info
-You can add the `.floating` class to the `.close-button` for having a floating button,
-it means that the button is hidden by default, does not get the space of alert
-and it just shows up when the user hovers/focuses alert.
+You can add the `.floating` class to the `.close-button` for having a floating button, it means that the button is hidden by default, does not get the space of alert and it just shows up when the user hovers/focuses alert.
 :::
 
 <PreviewBox
@@ -186,8 +179,7 @@ and it just shows up when the user hovers/focuses alert.
 
 ### With icon
 
-It is possible to have an SVG as an icon for alert just add `.has-icon` to the alert and put
-SVG inside a div with `.alert-svg` class before message.
+It is possible to have an SVG as an icon for alert just add `.has-icon` to the alert and put SVG inside a div with `.alert-svg` class before message.
 
 <PreviewBox
 	height="670px"
@@ -320,8 +312,7 @@ SVG inside a div with `.alert-svg` class before message.
 
 ### Customization
 
-Each alert has these CSS variables for customization, they can be set as `:root` for all alerts default style
-or just for an specific selector.
+Each alert has these CSS variables for customization, they can be set as `:root` for all alerts default style or just for an specific selector.
 
 `--flatify__alert-bg-color`  
 `--flatify__alert-txt-color`  
@@ -421,7 +412,5 @@ or just for an specific selector.
 To change alert remove animation duration you need to change two things:
 
 1- Change `$ALERT_REMOVE_ANIMATION` in `_config.scss` or `--flatify__alert-remove-animation` CSS variable.  
-2- Change the delay that the alert after it will get removed by JS in the `config.json` file,
-change `alertRemoveDelay` to whatever you want however it is suggested setting this delay duration
-more than CSS animation to prevent an immediate shift in UI.
+2- Change the delay that the alert after it will get removed by JS in the `config.json` file, change `alertRemoveDelay` to whatever you want however it is suggested setting this delay duration more than CSS animation to prevent an immediate shift in UI.
 :::

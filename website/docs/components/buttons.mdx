@@ -1,19 +1,17 @@
 ---
 title: Buttons
+sidebar_position: 2
 ---
 
 import PreviewBox from "../../src/components/preview-box";
 
-Buttons play a big role in any user interface as they give users the ability
-to interact with the website, so we should use them carefully.
+Buttons play a big role in any user interface as they give users the ability to interact with the website, so we should use them carefully.  
 It is necessary to know the good and bad practices for a perfect button.
 First, take a look at [button cheat sheet](https://www.buttoncheatsheet.com/).
 
 ### A simple button
 
-A button with Flatify CSS style can be defined in several ways as mentioned in the button cheatsheet,
-for any type of element, you can use the `.button` class,
-the element will have button style with the active/focus-visible states if it supports.
+A button with Flatify CSS style can be defined in several ways as mentioned in the button cheatsheet, for any type of element, you can use the `.button` class, the element will have button style with the active/focus-visible states if it supports.
 
 <PreviewBox
 	height="110px"
@@ -87,9 +85,7 @@ This classes just set a `font-size` property so it is possible to change it your
 
 ### Colors
 
-There are helper classes for styling elements like button,
-first [color setter classes](/docs/helpers/color-setters) for having button which diffrent
-background and text color.
+There are helper classes for styling elements like button, first [color setter classes](/docs/helpers/color-setters) for having button which diffrent background and text color.
 
 <PreviewBox
 	height="330px"
@@ -151,8 +147,7 @@ background and text color.
 
 ### Bordered
 
-By default Flatify CSS buttons does not have border however if you add `.bordered` class to
-the button it will have border.
+By default Flatify CSS buttons does not have border however if you add ` bordered` class to the button it will have border.
 
 <PreviewBox
 	height="330px"
@@ -214,9 +209,7 @@ the button it will have border.
 
 ### Outline
 
-Buttons with outline style get more transition time because of
-background and text inverted color for `:active` & `:focus-visible` states. In this case text color
-is border color, so there is no need to add `.bordered` class for outline buttons.
+Buttons with outline style get more transition time because of background and text inverted color for `:active` & `:focus-visible` states. In this case text color is border color, so there is no need to add `.bordered` class for outline buttons.
 
 <PreviewBox
 	height="330px"
@@ -275,10 +268,51 @@ is border color, so there is no need to add `.bordered` class for outline button
 <button class="button style-dark-light outline">Click Here</button>
 ```
 
+### Disabled & active
+
+To make a button disabled you can add the `.disabled` class or HTML `disabled` attribute, also to keep the button in pressed style use the `.active` class.
+
+<PreviewBox
+	height="240px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Buttons</title>
+		<style>
+			@media screen and (max-width: 650px){
+    			.flex-center button {
+    				width: 45% !important;
+    			}
+    		}
+		</style>
+	</head>
+	<body>
+        <div class="flex-center" style="flex-wrap: wrap">
+			<button style="width: 200px; margin: 10px" class="button style-accent disabled">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-purple" disabled>Click Here</button>
+			<button style="width: 420px; margin: 10px 0" class="button style-green">Click Here</button>
+			<button style="width: 420px; margin: 10px 0" class="button style-green active">Click Here</button>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<button class="button style-accent disabled">Click Here</button>
+<button class="button style-purple" disabled>Click Here</button>
+<button class="button style-green">Click Here</button>
+<button class="button style-green active">Click Here</button>
+```
+
 ### Customization
 
-Each button has these CSS variables for customization, they can be set as `:root` for all buttons default style
-or just for an specific selector.
+Each button has these CSS variables for customization, they can be set as `:root` for all buttons default style or just for an specific selector.
 
 `--flatify__button-bg-color` Button background color  
 `--flatify__button-txt-color` Button text color  
