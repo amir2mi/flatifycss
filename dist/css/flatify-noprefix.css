@@ -42,7 +42,7 @@
   --flatify__color-yellow-primary: #ffde00;
   --flatify__color-yellow-light: #ffe84d;
   --flatify__color-yellow-dark: #d9bd00;
-  --flatify__color-yellow-darker: #806f00;
+  --flatify__color-yellow-darker: #a69000;
   --flatify__color-orange-primary: #ff9600;
   --flatify__color-orange-light: #ffb64d;
   --flatify__color-orange-dark: #d98000;
@@ -929,7 +929,7 @@ th {
   font-size: 1em;
   font-weight: normal;
   display: inline-block;
-  padding: 0.75em 0.85em 0.5em;
+  padding: 0.75em 0.85em 0.55em;
   margin: 0.32em 0.32em 0.5em;
   color: var(--flatify__button-txt-color);
   background: var(--flatify__button-bg-color);
@@ -939,7 +939,15 @@ th {
   outline: none;
   filter: brightness(100%);
   will-change: transform;
-  transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
+  transition: filter var(--flatify__simple-transition);
+}
+.button:hover {
+  filter: brightness(92%);
+}
+.button.active, .button:focus-visible, .button:active {
+  box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
+  transform: translateY(0.32em);
+  filter: brightness(92%);
 }
 .button.outline {
   color: var(--flatify__button-txt-color) !important;
@@ -948,21 +956,8 @@ th {
 .button.outline, .button.bordered {
   box-shadow: 0 0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0.125em 0 var(--flatify__button-bg-color__focus), inset 0.125em 0 0 var(--flatify__button-bg-color__focus), inset -0.125em 0 0 var(--flatify__button-bg-color__focus);
 }
-.button:hover:not(:active) {
-  filter: brightness(92%);
-}
-.button.active, .button:focus-visible, .button:active {
-  color: var(--flatify__button-txt-color__focus) !important;
-  background: var(--flatify__button-bg-color__focus) !important;
-  box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-  transform: translateY(0.32em);
-}
-.button.disabled, .button:disabled {
-  pointer-events: none;
-  background: var(--flatify__button-bg-color__focus) !important;
-  box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-  transform: translateY(0.32em);
-  filter: contrast(85%) brightness(85%) opacity(70%) !important;
+.button.outline.active, .button.outline:focus-visible, .button.outline:active, .button.bordered.active, .button.bordered:focus-visible, .button.bordered:active {
+  box-shadow: inset 0 0 0 0.125em var(--flatify__button-bg-color__focus);
 }
 .button[class*=style-] {
   --flatify__button-bg-color: var(--flatify__local-bg-color);
@@ -970,11 +965,15 @@ th {
   --flatify__button-txt-color: var(--flatify__local-txt-color);
   --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
 }
-body .button.outline[class*=style-]:active, body .button.outline[class*=style-]:focus-visible, .button.style-dark:active, .button.style-dark:focus-visible, .button.style-dark-light:active, .button.style-dark-light:focus-visible {
-  color: var(--flatify__txt-color-inverted) !important;
+.button[class*=style-].outline:not(.style-light-light) {
+  --flatify__button-bg-color__focus: var(--flatify__local-bg-color);
 }
-body .button.outline.style-yellow:active, body .button.outline.style-yellow:focus-visible, body .button.outline.style-yellow-light:active, body .button.outline.style-yellow-light:focus-visible, body .button.outline.style-light:active, body .button.outline.style-light:focus-visible, body .button.outline.style-light-light:active, body .button.outline.style-light-light:focus-visible {
-  color: var(--flatify__txt-color) !important;
+.button.disabled, .button:disabled {
+  pointer-events: none;
+  background: var(--flatify__button-bg-color__focus) !important;
+  box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
+  transform: translateY(0.32em);
+  filter: contrast(85%) brightness(85%) opacity(70%) !important;
 }
 
 .button-group {

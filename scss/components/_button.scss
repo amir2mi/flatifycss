@@ -17,7 +17,7 @@
 	font-size: 1em;
 	font-weight: normal;
 	display: inline-block;
-	padding: 0.75em 0.85em 0.5em;
+	padding: 0.75em 0.85em 0.55em;
 	margin: 0.32em 0.32em 0.5em;
 	color: var(--#{$CSS_VAR_PFX}button-txt-color);
 	background: var(--#{$CSS_VAR_PFX}button-bg-color);
@@ -28,8 +28,19 @@
 	// filter affect box-shadow width, so it should be set as default to prevent bugs on hover
 	filter: brightness(100%);
 	will-change: transform;
-	transition: background var(--#{$CSS_VAR_PFX}simple-transition), color var(--#{$CSS_VAR_PFX}simple-transition),
-		filter var(--#{$CSS_VAR_PFX}simple-transition);
+	transition: filter var(--#{$CSS_VAR_PFX}simple-transition);
+
+	&:hover {
+		filter: brightness(92%);
+	}
+
+	&.active,
+	&:focus-visible,
+	&:active {
+		box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
+		transform: translateY(0.32em);
+		filter: brightness(92%);
+	}
 
 	&.outline {
 		color: var(--#{$CSS_VAR_PFX}button-txt-color) !important;
@@ -44,17 +55,25 @@
 			inset -0.125em 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
 	}
 
-	&:hover:not(:active) {
-		filter: brightness(92%);
+	&.outline,
+	&.bordered {
+		&.active,
+		&:focus-visible,
+		&:active {
+			box-shadow: inset 0 0 0 0.125em var(--#{$CSS_VAR_PFX}button-bg-color__focus);
+		}
 	}
 
-	&.active,
-	&:focus-visible,
-	&:active {
-		color: var(--#{$CSS_VAR_PFX}button-txt-color__focus) !important;
-		background: var(--#{$CSS_VAR_PFX}button-bg-color__focus) !important;
-		box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
-		transform: translateY(0.32em);
+	&[class*="style-"] {
+		--#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
+		--#{$CSS_VAR_PFX}button-bg-color__focus: var(--#{$CSS_VAR_PFX}local-border-color);
+		--#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
+		--#{$CSS_VAR_PFX}button-txt-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
+
+		&.outline:not(.style-light-light) {
+			// outline button
+			--#{$CSS_VAR_PFX}button-bg-color__focus: var(--#{$CSS_VAR_PFX}local-bg-color);
+		}
 	}
 
 	&.disabled,
@@ -64,33 +83,5 @@
 		box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
 		transform: translateY(0.32em);
 		filter: contrast(85%) brightness(85%) opacity(70%) !important;
-	}
-
-	&[class*="style-"] {
-		--#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
-		--#{$CSS_VAR_PFX}button-bg-color__focus: var(--#{$CSS_VAR_PFX}local-border-color);
-		--#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
-		--#{$CSS_VAR_PFX}button-txt-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
-	}
-
-	// They should have light text color
-	body &.outline[class*="style-"],
-	&.style-dark,
-	&.style-dark-light {
-		&:active,
-		&:focus-visible {
-			color: var(--#{$CSS_VAR_PFX}txt-color-inverted) !important;
-		}
-	}
-
-	// They should have dark text color
-	body &.outline.style-yellow,
-	body &.outline.style-yellow-light,
-	body &.outline.style-light,
-	body &.outline.style-light-light {
-		&:active,
-		&:focus-visible {
-			color: var(--#{$CSS_VAR_PFX}txt-color) !important;
-		}
 	}
 }
