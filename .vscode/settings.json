@@ -1,6 +1,0 @@
-{
-	"[markdown]": {
-		"editor.wordWrap": "bounded",
-		"editor.wordWrapColumn": 80
-	}
-}
