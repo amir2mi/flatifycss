@@ -14,14 +14,3 @@
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * #{$value}) !important;
 	}
 }
-// sharp and circle should not be affected by primary border-radius
-.edge-sharp {
-	border-radius: 0 !important;
-}
-.edge-circle {
-	// In this case, 50% just ruins the circle.
-	border-radius: 50em !important;
-}
-.edge-oval {
-	border-radius: 50% !important;
-}

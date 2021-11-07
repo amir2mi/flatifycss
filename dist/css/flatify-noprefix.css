@@ -1363,6 +1363,10 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
   opacity: 1;
 }
 
+.edge-sharp {
+  border-radius: calc(var(--flatify__border-radius) * 0) !important;
+}
+
 .edge-round-xs {
   border-radius: calc(var(--flatify__border-radius) * 0.38) !important;
 }
@@ -1379,16 +1383,16 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
   border-radius: calc(var(--flatify__border-radius) * 1) !important;
 }
 
-.edge-sharp {
-  border-radius: 0 !important;
-}
-
 .edge-circle {
-  border-radius: 50em !important;
+  border-radius: calc(var(--flatify__border-radius) * 50em) !important;
 }
 
 .edge-oval {
-  border-radius: 50% !important;
+  border-radius: calc(var(--flatify__border-radius) * 50%) !important;
+}
+
+.edge-triangle {
+  border-radius: calc(var(--flatify__border-radius) * 100% 50% 50% 100%/75% 69% 69% 75%) !important;
 }
 
 .inline-flex {
