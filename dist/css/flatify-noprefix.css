@@ -902,6 +902,7 @@ th {
 }
 
 .badge {
+  user-select: none;
   display: inline-block;
   min-width: 1.35em;
   min-height: 1.35em;

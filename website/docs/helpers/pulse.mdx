@@ -1,0 +1,62 @@
+---
+title: Pulse
+sidebar_position: 1
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+`.pulse` is a helper class that gives animation to the element `::after` so it will get the attention of the user where is it necessary.
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Pulse</title>
+        <style>
+            .my-box{
+                width: 150px;
+                height: 100px;
+                margin: 50px;
+            }
+            @media screen and (max-width: 650px){
+    			.flex-center{
+                    flex-wrap: wrap;
+                }
+                
+                .my-box {
+    				width: 40% !important;
+    			}
+    		}
+        </style>
+	</head>
+	<body>
+       <div class="flex-center">
+            <div class="my-box style-blue pulse flex-center edge-round-md">Hello!</div>
+            <div class="my-box style-orange pulse flex-center edge-round-md">Hola!</div>
+            <div class="my-box style-green pulse flex-center edge-round-md">Salut!</div>
+        </div>
+    </body>
+
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="pulse my-box style-blue flex-center edge-round-md">Hello!</div>
+<div class="pulse my-box style-orange flex-center edge-round-md">Hola!</div>
+<div class="pulse my-box style-green flex-center edge-round-md">Salut!</div>
+```
+
+```css title="style.css"
+.my-box {
+	width: 150px;
+	height: 100px;
+	margin: 50px;
+}
+```
