@@ -493,21 +493,6 @@ progress {
   display: none !important;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  body *,
-body ::before,
-body ::after {
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-  }
-  body .button {
-    --flatify__simple-transition: 0s !important;
-  }
-  body .alert-will-be-removed {
-    -webkit-animation-name: flatify-fade-out !important;
-            animation-name: flatify-fade-out !important;
-  }
-}
 :root {
   --flatify__blockquote-accent-color: var(--flatify__color-accent-primary);
 }
@@ -963,6 +948,20 @@ th {
           filter: brightness(95%);
 }
 
+.badge {
+  display: inline-block;
+  min-width: 1.35em;
+  min-height: 1.35em;
+  padding: 0.35em 0.65em;
+  font-size: 0.64em;
+  font-weight: var(--flatify__medium-font-weight);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: calc(var(--flatify__border-radius) * 0.25);
+}
+
 :root {
   --flatify__button-bg-color: var(--flatify__bg-color-dark);
   --flatify__button-bg-color__focus: var(--flatify__bg-color-darker);
@@ -976,7 +975,7 @@ th {
   font-size: 1em;
   font-weight: normal;
   display: inline-block;
-  padding: 0.75em 1.4em 0.5em;
+  padding: 0.75em 0.85em 0.5em;
   margin: 0.32em 0.32em 0.5em;
   color: var(--flatify__button-txt-color);
   background: var(--flatify__button-bg-color);
@@ -1018,9 +1017,11 @@ th {
 .button.disabled, .button:disabled {
   pointer-events: none;
   background: var(--flatify__button-bg-color__focus) !important;
-  -webkit-transform: none !important;
-      -ms-transform: none !important;
-          transform: none !important;
+  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
+          box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
+  -webkit-transform: translateY(0.32em);
+      -ms-transform: translateY(0.32em);
+          transform: translateY(0.32em);
   -webkit-filter: contrast(85%) brightness(85%) opacity(70%) !important;
           filter: contrast(85%) brightness(85%) opacity(70%) !important;
 }
@@ -1044,7 +1045,7 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
   margin: 0.25em 0.125em;
 }
 .button-group .button {
-  margin: 0;
+  margin: -1px;
   border-radius: 0;
 }
 .button-group:not(.vertical) .button:first-child {
@@ -1106,6 +1107,39 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
           animation: var(--flatify__alert-remove-animation) both;
 }
 
+@-webkit-keyframes flatify-pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  40% {
+    opacity: 0.6;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes flatify-pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  40% {
+    opacity: 0.6;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
 .style-blue {
   color: var(--flatify__txt-color-inverted) !important;
   background: var(--flatify__color-blue-primary) !important;
@@ -1628,6 +1662,25 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
   right: 0;
 }
 
+.pulse {
+  position: relative;
+}
+.pulse:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  will-change: opacity, transform;
+  -webkit-animation: flatify-pulse 1s infinite;
+          animation: flatify-pulse 1s infinite;
+}
+
 .text-filled {
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
@@ -1685,5 +1738,59 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
 .size-5x,
 .text-5x {
   font-size: 3.75em !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body *,
+body ::before,
+body ::after {
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+  }
+  body .button {
+    --flatify__simple-transition: 0s !important;
+  }
+  body .alert-will-be-removed {
+    -webkit-animation-name: flatify-fade-out !important;
+            animation-name: flatify-fade-out !important;
+  }
+
+  @-webkit-keyframes flatify-pulse {
+    0% {
+      -webkit-transform: scale(1.25);
+              transform: scale(1.25);
+      opacity: 0.2;
+    }
+    40% {
+      -webkit-transform: scale(1.25);
+              transform: scale(1.25);
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: scale(1.25);
+              transform: scale(1.25);
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes flatify-pulse {
+    0% {
+      -webkit-transform: scale(1.25);
+              transform: scale(1.25);
+      opacity: 0.2;
+    }
+    40% {
+      -webkit-transform: scale(1.25);
+              transform: scale(1.25);
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: scale(1.25);
+              transform: scale(1.25);
+      opacity: 0.2;
+    }
+  }
 }
 /*# sourceMappingURL=../maps/flatify.css.map */

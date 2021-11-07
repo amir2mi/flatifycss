@@ -2,7 +2,6 @@
 @import "config";
 @import "root";
 @import "reset";
-@import "a11y";
 
 // Content
 @import "content/blockquote";
@@ -13,6 +12,7 @@
 
 // Components
 @import "components/alert";
+@import "components/badge";
 @import "components/button";
 @import "components/button-group";
 
@@ -21,4 +21,8 @@
 @import "helpers/colors";
 @import "helpers/design";
 @import "helpers/layout";
+@import "helpers/pulse";
 @import "helpers/typography";
+
+// Accessibility
+@import "a11y";
