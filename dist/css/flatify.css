@@ -864,12 +864,6 @@ th {
   top: -0.38em;
   float: right;
   right: -0.38em;
-  will-change: transform;
-  -webkit-transition: -webkit-transform var(--flatify__simple-transition);
-  transition: -webkit-transform var(--flatify__simple-transition);
-  -o-transition: transform var(--flatify__simple-transition);
-  transition: transform var(--flatify__simple-transition);
-  transition: transform var(--flatify__simple-transition), -webkit-transform var(--flatify__simple-transition);
 }
 .alert .close-button.floating {
   position: absolute;
@@ -893,15 +887,10 @@ th {
   -webkit-box-shadow: 0 0 0.64em 0.5em var(--flatify__local-bg-color);
           box-shadow: 0 0 0.64em 0.5em var(--flatify__local-bg-color);
 }
-.alert .close-button:active {
-  -webkit-transform: scale(0.8) !important;
-      -ms-transform: scale(0.8) !important;
-          transform: scale(0.8) !important;
-}
 .alert .close-button:focus {
-  -webkit-transform: scale(1) !important;
-      -ms-transform: scale(1) !important;
-          transform: scale(1) !important;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }
 .alert:not(.has-icon) {
   width: 100%;
@@ -1067,6 +1056,10 @@ th {
   background: var(--flatify__local-bg-color);
   border: none;
   border-radius: var(--flatify__border-radius);
+  will-change: transform;
+  -webkit-transition: all var(--flatify__simple-transition);
+  -o-transition: all var(--flatify__simple-transition);
+  transition: all var(--flatify__simple-transition);
 }
 .close-button:before {
   content: " ";
@@ -1078,6 +1071,11 @@ th {
   background-color: currentColor;
   mask: var(--flatify__close-icon) no-repeat 50% 50%;
   -webkit-mask: var(--flatify__close-icon) no-repeat 50% 50%;
+}
+.close-button:focus-visible, .close-button:active {
+  -webkit-transform: scale(0.85) !important;
+      -ms-transform: scale(0.85) !important;
+          transform: scale(0.85) !important;
 }
 
 @-webkit-keyframes flatify-fade-out {

@@ -35,9 +35,6 @@
 			left: -0.38em;
 		}
 
-		will-change: transform;
-		transition: transform var(--#{$CSS_VAR_PFX}simple-transition);
-
 		&.floating {
 			position: absolute;
 			top: 0.75em;
@@ -65,12 +62,8 @@
 			}
 		}
 
-		&:active {
-			transform: scale(0.8) !important;
-		}
-
 		&:focus {
-			transform: scale(1) !important;
+			transform: scale(1);
 		}
 	}
 

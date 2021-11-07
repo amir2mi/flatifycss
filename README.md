@@ -24,7 +24,7 @@ List of work in progress features:
 -   [x] Badge
 -   [ ] Breadcrumb
 -   [x] Button
--   [ ] Close Button
+-   [x] Close Button
 -   [x] Button group
 -   [ ] Dropdowns
 -   [ ] Loading

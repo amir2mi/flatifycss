@@ -6,6 +6,8 @@
 	background: var(--#{$CSS_VAR_PFX}local-bg-color);
 	border: none;
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+	will-change: transform;
+	transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
 	&:before {
 		content: " ";
@@ -17,5 +19,10 @@
 		background-color: currentColor;
 		mask: var(--#{$CSS_VAR_PFX}close-icon) no-repeat 50% 50%;
 		-webkit-mask: var(--#{$CSS_VAR_PFX}close-icon) no-repeat 50% 50%;
+	}
+
+	&:focus-visible,
+	&:active {
+		transform: scale(0.85) !important;
 	}
 }
