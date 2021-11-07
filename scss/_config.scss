@@ -21,11 +21,11 @@ $BORDER_RADIUS: 1em;
 // .edge-[]
 // e.g. 38% of $BORDER_RADIUS
 $BORDER_RADIUS_LIST: (
-	sharp: 0,
-	round-xs: 0.38,
-	round-sm: 0.5,
-	round-md: 0.75,
-	round-lg: 1,
+	sharp: 0em,
+	round-xs: 0.32em,
+	round-sm: 0.5em,
+	round-md: 0.75em,
+	round-lg: 1em,
 	circle: 50em,
 	oval: 50%,
 	triangle: 100% 50% 50% 100% / 75% 69% 69% 75%,

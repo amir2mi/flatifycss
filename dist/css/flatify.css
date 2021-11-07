@@ -949,6 +949,10 @@ th {
 }
 
 .badge {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: inline-block;
   min-width: 1.35em;
   min-height: 1.35em;
@@ -1470,24 +1474,24 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
   opacity: 1;
 }
 
+.edge-sharp {
+  border-radius: 0em !important;
+}
+
 .edge-round-xs {
-  border-radius: calc(var(--flatify__border-radius) * 0.38) !important;
+  border-radius: 0.32em !important;
 }
 
 .edge-round-sm {
-  border-radius: calc(var(--flatify__border-radius) * 0.5) !important;
+  border-radius: 0.5em !important;
 }
 
 .edge-round-md {
-  border-radius: calc(var(--flatify__border-radius) * 0.75) !important;
+  border-radius: 0.75em !important;
 }
 
 .edge-round-lg {
-  border-radius: calc(var(--flatify__border-radius) * 1) !important;
-}
-
-.edge-sharp {
-  border-radius: 0 !important;
+  border-radius: 1em !important;
 }
 
 .edge-circle {
@@ -1496,6 +1500,10 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
 
 .edge-oval {
   border-radius: 50% !important;
+}
+
+.edge-triangle {
+  border-radius: 100% 50% 50% 100%/75% 69% 69% 75% !important;
 }
 
 .inline-flex {

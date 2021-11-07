@@ -32,10 +32,15 @@ There are classes to make element edges sharp, round, circle...
 	color="#1cb0f6"
 	title=".edge-round-lg"
 />
+<ColorIndicator
+	style={{ width: "4em", height: "4em" }}
+	className="edge-triangle"
+	color="#1cb0f6"
+	title=".edge-triangle"
+/>
 <ColorIndicator style={{ width: "4em", height: "4em" }} className="edge-circle" color="#1cb0f6" title=".edge-circle" />
 <ColorIndicator style={{ width: "6em", height: "4em" }} className="edge-circle" color="#1cb0f6" title=".edge-circle" />
-<ColorIndicator style={{ width: "6em", height: "4em" }} className="edge-oval" color="#1cb0f6" title=".edge-oval" />{" "}
-
+<ColorIndicator style={{ width: "6em", height: "4em" }} className="edge-oval" color="#1cb0f6" title=".edge-oval" />
 <br />
 
 :::info
@@ -45,14 +50,18 @@ These classes are generated from this list.
 So it is possible to create customized helper classes for roundness simply!
 :::
 
-```scss {8-10} title="_config.scss"
+```scss {12-14} title="_config.scss"
 // This list will be converted to helper classes.
 // .edge-[]
 $BORDER_RADIUS_LIST: (
-	round-xs: 0.38em,
-	round-sm: 0.5em,
-	round-md: 0.75em,
-	round-lg: 1em,
+	sharp: 0,
+	round-xs: 0.38,
+	round-sm: 0.5,
+	round-md: 0.75,
+	round-lg: 1,
+	circle: 50em,
+	oval: 50%,
+	triangle: 100% 50% 50% 100% / 75% 69% 69% 75%,
 	round-pillow: 88% 12% 89% 11% / 12% 89% 11% 88%,
 	round-rice: 100% 0% 100% 0% / 100% 0% 100% 0%,
 	round-flower: 1em 0.25em 1em 0.25em,

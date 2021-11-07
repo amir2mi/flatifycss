@@ -11,6 +11,6 @@
 // List of border-radius helper classes
 @each $type, $value in $BORDER_RADIUS_LIST {
 	.edge-#{$type} {
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * #{$value}) !important;
+		border-radius: #{$value} !important;
 	}
 }
