@@ -2,7 +2,7 @@
 
 Modern flat design framework for the web — inspired by Duolingo design system and Bootstrap.
 
-List of work in progress features:
+List of work in progress:
 
 ## Supports
 
