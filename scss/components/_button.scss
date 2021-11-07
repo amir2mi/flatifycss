@@ -5,7 +5,7 @@
 	--#{$CSS_VAR_PFX}button-txt-color__focus: var(--#{$CSS_VAR_PFX}txt-color);
 }
 
-//*** Just limit button style to class it reduce the complexity and code will be cleaner.
+// *** Just limit button style to class it, reduce the complexity and code will be cleaner.
 // input[type="reset"]:not(.default),
 // input[type="submit"]:not(.default),
 // input[type="button"]:not(.default),

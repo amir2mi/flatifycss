@@ -19,10 +19,14 @@ blockquote {
 	}
 
 	&:before {
-		content: var(--#{$CSS_VAR_PFX}blockquote-icon);
+		content: " ";
 		position: absolute;
 		z-index: -1;
-		opacity: 0.06;
+		opacity: 0.08;
+		background-color: var(--#{$CSS_VAR_PFX}blockquote-accent-color);
+		mask: var(--#{$CSS_VAR_PFX}blockquote-icon) no-repeat 50% 50%;
+		-webkit-mask: var(--#{$CSS_VAR_PFX}blockquote-icon) no-repeat 50% 50%;
+		filter: brightness(75%);
 	}
 
 	&:not(.large) {

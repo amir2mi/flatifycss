@@ -42,7 +42,7 @@
   --flatify__color-yellow-primary: #ffde00;
   --flatify__color-yellow-light: #ffe84d;
   --flatify__color-yellow-dark: #d9bd00;
-  --flatify__color-yellow-darker: #806f00;
+  --flatify__color-yellow-darker: #a69000;
   --flatify__color-orange-primary: #ff9600;
   --flatify__color-orange-light: #ffb64d;
   --flatify__color-orange-dark: #d98000;
@@ -509,10 +509,15 @@ blockquote {
   border-width: 0 0 0 0.5em;
 }
 blockquote:before {
-  content: var(--flatify__blockquote-icon);
+  content: " ";
   position: absolute;
   z-index: -1;
-  opacity: 0.06;
+  opacity: 0.08;
+  background-color: var(--flatify__blockquote-accent-color);
+  mask: var(--flatify__blockquote-icon) no-repeat 50% 50%;
+  -webkit-mask: var(--flatify__blockquote-icon) no-repeat 50% 50%;
+  -webkit-filter: brightness(75%);
+          filter: brightness(75%);
 }
 blockquote:not(.large) {
   font-size: 1em;
@@ -859,13 +864,6 @@ th {
   top: -0.38em;
   float: right;
   right: -0.38em;
-  width: 2.5em;
-  height: 2.5em;
-  padding: 0.5em;
-  color: inherit;
-  background: var(--flatify__local-bg-color);
-  border: none;
-  border-radius: var(--flatify__border-radius);
   will-change: transform;
   -webkit-transition: -webkit-transform var(--flatify__simple-transition);
   transition: -webkit-transform var(--flatify__simple-transition);
@@ -894,17 +892,6 @@ th {
   background: var(--flatify__local-bg-color);
   -webkit-box-shadow: 0 0 0.64em 0.5em var(--flatify__local-bg-color);
           box-shadow: 0 0 0.64em 0.5em var(--flatify__local-bg-color);
-}
-.alert .close-button:before {
-  content: " ";
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: currentColor;
-  mask: var(--flatify__close-icon) no-repeat 50% 50%;
-  -webkit-mask: var(--flatify__close-icon) no-repeat 50% 50%;
 }
 .alert .close-button:active {
   -webkit-transform: scale(0.8) !important;
@@ -979,7 +966,7 @@ th {
   font-size: 1em;
   font-weight: normal;
   display: inline-block;
-  padding: 0.75em 0.85em 0.5em;
+  padding: 0.75em 0.85em 0.55em;
   margin: 0.32em 0.32em 0.5em;
   color: var(--flatify__button-txt-color);
   background: var(--flatify__button-bg-color);
@@ -991,11 +978,24 @@ th {
   -webkit-filter: brightness(100%);
           filter: brightness(100%);
   will-change: transform;
-  -webkit-transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
-  transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
-  -o-transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
-  transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
-  transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), filter var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
+  -webkit-transition: -webkit-filter var(--flatify__simple-transition);
+  transition: -webkit-filter var(--flatify__simple-transition);
+  -o-transition: filter var(--flatify__simple-transition);
+  transition: filter var(--flatify__simple-transition);
+  transition: filter var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
+}
+.button:hover {
+  -webkit-filter: brightness(92%);
+          filter: brightness(92%);
+}
+.button.active, .button:focus-visible, .button:active {
+  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
+          box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
+  -webkit-transform: translateY(0.32em);
+      -ms-transform: translateY(0.32em);
+          transform: translateY(0.32em);
+  -webkit-filter: brightness(92%);
+          filter: brightness(92%);
 }
 .button.outline {
   color: var(--flatify__button-txt-color) !important;
@@ -1005,18 +1005,18 @@ th {
   -webkit-box-shadow: 0 0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0.125em 0 var(--flatify__button-bg-color__focus), inset 0.125em 0 0 var(--flatify__button-bg-color__focus), inset -0.125em 0 0 var(--flatify__button-bg-color__focus);
           box-shadow: 0 0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0.125em 0 var(--flatify__button-bg-color__focus), inset 0.125em 0 0 var(--flatify__button-bg-color__focus), inset -0.125em 0 0 var(--flatify__button-bg-color__focus);
 }
-.button:hover:not(:active) {
-  -webkit-filter: brightness(92%);
-          filter: brightness(92%);
+.button.outline.active, .button.outline:focus-visible, .button.outline:active, .button.bordered.active, .button.bordered:focus-visible, .button.bordered:active {
+  -webkit-box-shadow: inset 0 0 0 0.125em var(--flatify__button-bg-color__focus);
+          box-shadow: inset 0 0 0 0.125em var(--flatify__button-bg-color__focus);
 }
-.button.active, .button:focus-visible, .button:active {
-  color: var(--flatify__button-txt-color__focus) !important;
-  background: var(--flatify__button-bg-color__focus) !important;
-  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-          box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-  -webkit-transform: translateY(0.32em);
-      -ms-transform: translateY(0.32em);
-          transform: translateY(0.32em);
+.button[class*=style-] {
+  --flatify__button-bg-color: var(--flatify__local-bg-color);
+  --flatify__button-bg-color__focus: var(--flatify__local-border-color);
+  --flatify__button-txt-color: var(--flatify__local-txt-color);
+  --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
+}
+.button[class*=style-].outline:not(.style-light-light) {
+  --flatify__button-bg-color__focus: var(--flatify__local-bg-color);
 }
 .button.disabled, .button:disabled {
   pointer-events: none;
@@ -1028,18 +1028,6 @@ th {
           transform: translateY(0.32em);
   -webkit-filter: contrast(85%) brightness(85%) opacity(70%) !important;
           filter: contrast(85%) brightness(85%) opacity(70%) !important;
-}
-.button[class*=style-] {
-  --flatify__button-bg-color: var(--flatify__local-bg-color);
-  --flatify__button-bg-color__focus: var(--flatify__local-border-color);
-  --flatify__button-txt-color: var(--flatify__local-txt-color);
-  --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
-}
-body .button.outline[class*=style-]:active, body .button.outline[class*=style-]:focus-visible, .button.style-dark:active, .button.style-dark:focus-visible, .button.style-dark-light:active, .button.style-dark-light:focus-visible {
-  color: var(--flatify__txt-color-inverted) !important;
-}
-body .button.outline.style-yellow:active, body .button.outline.style-yellow:focus-visible, body .button.outline.style-yellow-light:active, body .button.outline.style-yellow-light:focus-visible, body .button.outline.style-light:active, body .button.outline.style-light:focus-visible, body .button.outline.style-light-light:active, body .button.outline.style-light-light:focus-visible {
-  color: var(--flatify__txt-color) !important;
 }
 
 .button-group {
@@ -1069,6 +1057,27 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
 }
 .button-group.vertical .button:last-child {
   border-radius: 0 0 var(--flatify__border-radius) var(--flatify__border-radius);
+}
+
+.close-button {
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.5em;
+  color: inherit;
+  background: var(--flatify__local-bg-color);
+  border: none;
+  border-radius: var(--flatify__border-radius);
+}
+.close-button:before {
+  content: " ";
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  mask: var(--flatify__close-icon) no-repeat 50% 50%;
+  -webkit-mask: var(--flatify__close-icon) no-repeat 50% 50%;
 }
 
 @-webkit-keyframes flatify-fade-out {
@@ -1116,15 +1125,10 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  40% {
-    opacity: 0.6;
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-  }
   100% {
     opacity: 0;
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: scale(1.75);
+            transform: scale(1.75);
   }
 }
 
@@ -1133,15 +1137,10 @@ body .button.outline.style-yellow:active, body .button.outline.style-yellow:focu
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  40% {
-    opacity: 0.6;
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-  }
   100% {
     opacity: 0;
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: scale(1.75);
+            transform: scale(1.75);
   }
 }
 .style-blue {

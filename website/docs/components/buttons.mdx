@@ -43,7 +43,7 @@ A button with Flatify CSS style can be defined in several ways as mentioned in t
 ### Sizes
 
 To change the button size use [size setter classes](/docs/helpers/size-setters).
-This classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
 
 <PreviewBox
 	height="350px"
@@ -143,6 +143,47 @@ There are helper classes for styling elements like button, first [color setter c
 <button class="button style-warning-light">Click Here</button>
 <button class="button style-danger-light">Click Here</button>
 <button class="button style-dark-light">Click Here</button>
+```
+
+### Roundness
+
+To change roundness there are [roundness helper classes](/docs/helpers/roundness-setters).
+
+<PreviewBox
+	height="200px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Buttons</title>
+		<style>
+			@media screen and (max-width: 650px){
+    			.flex-center button {
+    				width: 45% !important;
+    			}
+    		}
+		</style>
+	</head>
+	<body>
+        <div class="flex-center" style="flex-wrap: wrap;">
+			<button style="width: 200px; margin: 10px" class="button style-accent edge-sharp">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-purple edge-round-sm">Click Here</button>
+			<button style="width: 200px; margin: 10px" class="button style-yellow edge-circle">Click Here</button>
+    	</div>
+    </body>
+
+</html>
+'
+/>
+
+```html title="index.html"
+<button class="button style-accent edge-sharp">Click Here</button>
+<button class="button style-purple edge-round-sm">Click Here</button>
+<button class="button style-yellow edge-circle">Click Here</button>
 ```
 
 ### Bordered

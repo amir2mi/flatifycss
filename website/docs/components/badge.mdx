@@ -5,7 +5,7 @@ sidebar_position: 2
 
 import PreviewBox from "../../src/components/preview-box";
 
-You can use badge to show numbers, texts or just as an icon to get user attention, badges get their size from parent size or they can have specific size.
+Use badges to show numbers, texts, or just as an icon to get user attention, badges get their size from parent font size either you can set a specific size.
 
 <PreviewBox
 	height="200px"
@@ -38,6 +38,10 @@ You can use badge to show numbers, texts or just as an icon to get user attentio
 '
 />
 
+:::info
+`.pulse` is a helper class that gives animation to the element `::after` so it will get users' attention where is it necessary.
+:::
+
 ```html {3,8,13} title="index.html"
 <p class="size-sm">
 	You have got new messages!
@@ -53,4 +57,73 @@ You can use badge to show numbers, texts or just as an icon to get user attentio
 	You have got new messages!
 	<span class="badge style-red edge-round-sm">+999</span>
 </p>
+```
+
+Here is an example of badge over button:
+
+<PreviewBox
+	height="110px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Badges</title>
+		<style>
+			.my-button{
+				position: relative;
+				min-width: 120px;
+				margin: 10px;
+			}
+			.my-badge{
+				position: absolute;
+				top: -2px;
+				right: -2px
+			}
+		</style>
+	</head>
+	<body>
+       <div class="flex-center">
+			<button class="my-button button bordered">
+				Help us!
+				<span class="my-badge badge style-red edge-circle pulse"></span>
+			</button>
+			<button class="my-button button bordered">
+				New messages!
+				<span class="my-badge badge style-green edge-round-sm pulse"></span>
+			</button>
+		</div>
+    </body>
+
+</html>
+'
+/>
+
+```html title="index.html"
+<button class="my-button button bordered">
+	Help us!
+	<span class="my-badge badge style-red edge-circle pulse"></span>
+</button>
+
+<button class="my-button button bordered">
+	New messages!
+	<span class="my-badge badge style-green edge-round-sm pulse"></span>
+</button>
+```
+
+```css title="style.css"
+.my-button {
+	position: relative;
+	min-width: 120px;
+	margin: 10px;
+}
+
+.my-badge {
+	position: absolute;
+	top: -2px;
+	right: -2px;
+}
 ```

@@ -1,0 +1,21 @@
+.close-button {
+	width: 2.5em;
+	height: 2.5em;
+	padding: 0.5em;
+	color: inherit;
+	background: var(--#{$CSS_VAR_PFX}local-bg-color);
+	border: none;
+	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+
+	&:before {
+		content: " ";
+		position: relative;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: currentColor;
+		mask: var(--#{$CSS_VAR_PFX}close-icon) no-repeat 50% 50%;
+		-webkit-mask: var(--#{$CSS_VAR_PFX}close-icon) no-repeat 50% 50%;
+	}
+}
