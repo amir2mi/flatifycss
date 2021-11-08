@@ -38,10 +38,11 @@ List of work in progress:
 
 ## Forms
 
--   [ ] Input
+-   [x] Text input
 -   [ ] Select
 -   [ ] Check
 -   [ ] Radio
+-   [ ] Toggle
 
 ## Helpers
 
@@ -51,4 +52,5 @@ List of work in progress:
 -   [x] Opacity setters
 -   [x] Roundness setters
 -   [x] Size setters
+-   [x] Width setters
 -   [ ] Text truncation
