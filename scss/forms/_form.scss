@@ -42,7 +42,7 @@
 		bottom: 0;
 		margin: auto 0;
 		height: fit-content;
-        opacity: 0.8;
+		opacity: 0.8;
 		will-change: opacity, transform;
 		transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
 

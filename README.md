@@ -8,6 +8,8 @@ List of work in progress:
 
 -   [x] RTL
 -   [x] A11y
+    -   [x] prefers-reduced-motion
+    -   [x] ARIA for docs
 
 ## Contents
 
@@ -46,6 +48,9 @@ List of work in progress:
     -   [x] Number
     -   [x] Password
     -   [x] Range
+    -   [x] Reset
+    -   [x] Search
+    -   [x] Submit
     -   [x] Text
     -   [ ] Checkbox
     -   [ ] Radio

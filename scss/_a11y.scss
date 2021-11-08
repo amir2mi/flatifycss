@@ -9,7 +9,10 @@
 		}
 
 		// Does not need transition in this case
-		.button {
+		.input-wrapper:before,
+		.input-wrapper:after,
+		input[type="range"],
+		.close-button {
 			--#{$CSS_VAR_PFX}simple-transition: 0s !important;
 		}
 

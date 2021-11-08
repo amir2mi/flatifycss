@@ -1875,7 +1875,10 @@ body ::after {
     background-attachment: initial !important;
     scroll-behavior: auto !important;
   }
-  body .button, body input[type=file]:not(.default)::file-selector-button {
+  body .input-wrapper:before,
+body .input-wrapper:after,
+body input[type=range],
+body .close-button {
     --flatify__simple-transition: 0s !important;
   }
   body .alert-will-be-removed {
