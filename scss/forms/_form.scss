@@ -1,6 +1,6 @@
 .form-label {
 	margin-top: 0.9em;
-    
+
 	&.inline:not(:first-child) {
 		@if $SUPPORT_LTR {
 			margin-left: 0.38em;
@@ -15,6 +15,42 @@
 			margin-left: 0.38em;
 		} @else {
 			margin-right: 0.38em;
+		}
+	}
+}
+
+// [.floating-label] should added to [.input-wrapper]
+.floating-label {
+	input {
+		padding-top: 1.75em;
+
+		&:not(:placeholder-shown) + .form-label,
+		&:focus + .form-label {
+			opacity: 0.5;
+			transform: scale(0.75) translateY(-0.9em);
+		}
+
+		&::placeholder {
+			opacity: 0;
+		}
+	}
+
+	.form-label {
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		height: fit-content;
+		will-change: opacity, transform;
+		transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
+
+		@if $SUPPORT_LTR {
+			transform-origin: top left;
+			left: 1em;
+		} @else {
+			transform-origin: top right;
+			right: 1em;
 		}
 	}
 }

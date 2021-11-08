@@ -64,5 +64,6 @@
 
 	// *** Motion
 	--#{$CSS_VAR_PFX}simple-transition: #{$SIMPLE_TRANSITION};
+	--#{$CSS_VAR_PFX}bouncing-transition: #{$BOUNCING_TRANSITION};
 	--#{$CSS_VAR_PFX}alert-remove-animation: #{$ALERT_REMOVE_ANIMATION};
 }

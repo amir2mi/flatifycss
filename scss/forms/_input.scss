@@ -3,6 +3,9 @@
 	--#{$CSS_VAR_PFX}input-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 	--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}color-accent-primary);
+	--#{$CSS_VAR_PFX}input-border-color__valid: var(--#{$CSS_VAR_PFX}color-success-primary);
+	--#{$CSS_VAR_PFX}input-border-color__warning: var(--#{$CSS_VAR_PFX}color-warning-primary);
+	--#{$CSS_VAR_PFX}input-border-color__invalid: var(--#{$CSS_VAR_PFX}color-danger-primary);
 }
 
 input {
@@ -20,7 +23,7 @@ input {
 
 input {
 	padding: 0.9em 1em;
-	margin: 0.38em;
+	margin: 0.38em 0;
 	color: var(--#{$CSS_VAR_PFX}input-txt-color);
 	background: var(--#{$CSS_VAR_PFX}input-bg-color);
 	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}input-border-color);
@@ -40,29 +43,33 @@ input {
 	}
 
 	.input-wrapper.invalid &,
-	&.invalid,
+	&.invalid {
+		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
+		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
+	}
+
 	&:focus:invalid {
-		border-color: var(--#{$CSS_VAR_PFX}color-danger-primary) !important;
+		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
 	}
 
 	.input-wrapper.warning &,
 	&.warning {
-		border-color: var(--#{$CSS_VAR_PFX}color-warning-primary) !important;
+		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__warning) !important;
+		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__warning) !important;
 	}
 
 	.input-wrapper.valid &,
 	&.valid {
-		border-color: var(--#{$CSS_VAR_PFX}color-success-primary);
+		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__valid);
+		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__valid);
 	}
 }
 
+// Input wrapper to add [::before] & [::after] for input styles
 .input-wrapper {
 	position: relative;
-    display: flex;
-
-    .text-before-input{
-        
-    }
+	display: flex;
+	align-items: center;
 
 	input {
 		width: 100%;
@@ -89,28 +96,28 @@ input {
 	&:focus:invalid {
 		&:after {
 			@if $SUPPORT_LTR {
-				right: 0.75em;
+				right: 1.35em;
 			} @else {
-				left: 0.75em;
+				left: 1.35em;
 			}
 
 			width: 1em;
 			height: 0.25em;
-			background: var(--#{$CSS_VAR_PFX}color-danger-primary);
+			background: var(--#{$CSS_VAR_PFX}input-border-color__invalid);
 		}
 	}
 
 	&.warning {
 		&:after {
 			@if $SUPPORT_LTR {
-				right: 1em;
+				right: 1.7em;
 			} @else {
-				left: 1em;
+				left: 1.7em;
 			}
 
 			width: 0.5em;
 			height: 0.5em;
-			background: var(--#{$CSS_VAR_PFX}color-warning-primary);
+			background: var(--#{$CSS_VAR_PFX}input-border-color__warning);
 		}
 
 		&:focus-within:after {
@@ -133,27 +140,27 @@ input {
 			animation: flatify-fade-in 0.35s;
 
 			@if $SUPPORT_LTR {
-				right: 1.25em;
+				right: 1.75em;
 			} @else {
-				left: 1.25em;
+				left: 1.75em;
 			}
 
 			width: 0.64em;
 			height: 0.25em;
-			background: var(--#{$CSS_VAR_PFX}color-success-primary);
-			transform: rotate(40deg);
+			background: var(--#{$CSS_VAR_PFX}input-border-color__valid);
+			transform: rotate(45deg);
 		}
 
 		&:after {
 			@if $SUPPORT_LTR {
-				right: 0.5em;
+				right: 1em;
 			} @else {
-				left: 0.5em;
+				left: 1em;
 			}
 
 			width: 1.2em;
 			height: 0.25em;
-			background: var(--#{$CSS_VAR_PFX}color-success-primary);
+			background: var(--#{$CSS_VAR_PFX}input-border-color__valid);
 			transform: rotate(-55deg);
 		}
 	}

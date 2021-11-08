@@ -90,6 +90,7 @@
   --flatify__blockquote-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 125"> <path d="M24.503 12.412C13.732 12.412 5 21.144 5 31.916c0 10.771 8.732 19.502 19.503 19.502.232 0 6.279-.034 6.279-.034-.153 10.869-7.646 19.99-17.738 22.613a55.73 55.73 0 01-2.123.473A6.572 6.572 0 005 81.008c0 3.288 2.422 6.003 5.574 6.485.033.006.066.008.099.016.151.02.304.035.458.045.074.004.145.021.22.021 0 0 .789.025 1.05.004 1.165-.098 1.529-.246 2.281-.404 16.618-3.49 29.156-18.187 29.315-35.791h.01V31.829l-.005.004c-.045-10.733-8.755-19.421-19.499-19.421zM94.995 31.833c-.045-10.732-8.756-19.42-19.499-19.42-10.771 0-19.503 8.732-19.503 19.503s8.732 19.502 19.503 19.502c.231 0 6.278-.034 6.278-.034-.152 10.869-7.646 19.99-17.737 22.613-.68.176-2.103.471-2.123.473a6.572 6.572 0 00-5.921 6.538c0 3.288 2.422 6.003 5.574 6.485.032.006.065.008.099.016.15.02.303.035.457.045.074.004.145.021.221.021 0 0 .788.025 1.049.004 1.166-.098 1.53-.246 2.282-.404 16.618-3.49 29.156-18.187 29.315-35.791H95V31.829l-.005.004z"></path></svg>');
   --flatify__close-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 16 16"><path d="M3.3 12.7c.2.2.4.3.7.3s.5-.1.7-.3L8 9.4l3.3 3.3c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4L9.4 8l3.3-3.3c.4-.4.4-1 0-1.4s-1-.4-1.4 0L8 6.6 4.7 3.3c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4L6.6 8l-3.3 3.3c-.4.4-.4 1 0 1.4z"></path></svg>');
   --flatify__simple-transition: 0.15s ease-in-out;
+  --flatify__bouncing-transition: 0.35s cubic-bezier(0.59, -0.39, 0.36, 1.38);
   --flatify__alert-remove-animation: flatify-alert-will-be-removed 350ms ease;
 }
 
@@ -1018,11 +1019,37 @@ th {
   margin-left: 0.38em;
 }
 
+.floating-label input {
+  padding-top: 1.75em;
+}
+.floating-label input:not(:placeholder-shown) + .form-label, .floating-label input:focus + .form-label {
+  opacity: 0.5;
+  transform: scale(0.75) translateY(-0.9em);
+}
+.floating-label input::placeholder {
+  opacity: 0;
+}
+.floating-label .form-label {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: fit-content;
+  will-change: opacity, transform;
+  transition: all var(--flatify__bouncing-transition);
+  transform-origin: top left;
+  left: 1em;
+}
+
 :root {
   --flatify__input-bg-color: var(--flatify__bg-color-dark);
   --flatify__input-txt-color: var(--flatify__txt-color);
   --flatify__input-border-color: var(--flatify__bg-color-darker);
   --flatify__input-border-color__focus: var(--flatify__color-accent-primary);
+  --flatify__input-border-color__valid: var(--flatify__color-success-primary);
+  --flatify__input-border-color__warning: var(--flatify__color-warning-primary);
+  --flatify__input-border-color__invalid: var(--flatify__color-danger-primary);
 }
 
 input {
@@ -1039,7 +1066,7 @@ input:focus::placeholder {
 
 input {
   padding: 0.9em 1em;
-  margin: 0.38em;
+  margin: 0.38em 0;
   color: var(--flatify__input-txt-color);
   background: var(--flatify__input-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__input-border-color);
@@ -1055,19 +1082,26 @@ input:hover, input:focus {
 input:focus {
   border-color: var(--flatify__input-border-color__focus) !important;
 }
-.input-wrapper.invalid input, input.invalid, input:focus:invalid {
-  border-color: var(--flatify__color-danger-primary) !important;
+.input-wrapper.invalid input, input.invalid {
+  --flatify__input-border-color: var(--flatify__input-border-color__invalid) !important;
+  --flatify__input-border-color__focus: var(--flatify__input-border-color__invalid) !important;
+}
+input:focus:invalid {
+  --flatify__input-border-color__focus: var(--flatify__input-border-color__invalid) !important;
 }
 .input-wrapper.warning input, input.warning {
-  border-color: var(--flatify__color-warning-primary) !important;
+  --flatify__input-border-color: var(--flatify__input-border-color__warning) !important;
+  --flatify__input-border-color__focus: var(--flatify__input-border-color__warning) !important;
 }
 .input-wrapper.valid input, input.valid {
-  border-color: var(--flatify__color-success-primary);
+  --flatify__input-border-color: var(--flatify__input-border-color__valid);
+  --flatify__input-border-color__focus: var(--flatify__input-border-color__valid);
 }
 
 .input-wrapper {
   position: relative;
   display: flex;
+  align-items: center;
 }
 .input-wrapper input {
   width: 100%;
@@ -1084,16 +1118,16 @@ input:focus {
   transition: all var(--flatify__simple-transition);
 }
 .input-wrapper.invalid:after, .input-wrapper:focus:invalid:after {
-  right: 0.75em;
+  right: 1.35em;
   width: 1em;
   height: 0.25em;
-  background: var(--flatify__color-danger-primary);
+  background: var(--flatify__input-border-color__invalid);
 }
 .input-wrapper.warning:after {
-  right: 1em;
+  right: 1.7em;
   width: 0.5em;
   height: 0.5em;
-  background: var(--flatify__color-warning-primary);
+  background: var(--flatify__input-border-color__warning);
 }
 .input-wrapper.warning:focus-within:after {
   animation: flatify-fade-out 1s infinite;
@@ -1108,17 +1142,17 @@ input:focus {
   border-radius: var(--flatify__border-radius);
   transition: all var(--flatify__simple-transition);
   animation: flatify-fade-in 0.35s;
-  right: 1.25em;
+  right: 1.75em;
   width: 0.64em;
   height: 0.25em;
-  background: var(--flatify__color-success-primary);
-  transform: rotate(40deg);
+  background: var(--flatify__input-border-color__valid);
+  transform: rotate(45deg);
 }
 .input-wrapper.valid:after {
-  right: 0.5em;
+  right: 1em;
   width: 1.2em;
   height: 0.25em;
-  background: var(--flatify__color-success-primary);
+  background: var(--flatify__input-border-color__valid);
   transform: rotate(-55deg);
 }
 

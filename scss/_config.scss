@@ -209,6 +209,7 @@ $PALETTE: (
 $SUPPORT_SMOOTH_SCROLL: true !default;
 
 $SIMPLE_TRANSITION: 0.15s ease-in-out; // without specifying properties
+$BOUNCING_TRANSITION: 0.35s cubic-bezier(.59,-0.39,.36,1.38); // without specifying properties
 
 $ALERT_REMOVE_ANIMATION: flatify-alert-will-be-removed 350ms ease;
 
