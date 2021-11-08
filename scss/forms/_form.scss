@@ -22,7 +22,7 @@
 // [.floating-label] should added to [.input-wrapper]
 .floating-label {
 	input {
-		padding-top: 1.64em !important;
+		padding: 1.64em 1em 0.64em !important;
 
 		&:not(:placeholder-shown) + .form-label,
 		&:focus + .form-label {

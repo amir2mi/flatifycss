@@ -44,14 +44,16 @@ List of work in progress:
     -   [x] Email
     -   [x] Button
     -   [x] Color
-    -   [x] Date
+    -   [x] Date & time
     -   [x] Number
     -   [x] Password
     -   [x] Range
     -   [x] Reset
     -   [x] Search
     -   [x] Submit
+    -   [x] Tel
     -   [x] Text
+    -   [x] URL
     -   [ ] Checkbox
     -   [ ] Radio
 -   [ ] Select

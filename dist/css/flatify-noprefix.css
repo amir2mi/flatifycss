@@ -928,8 +928,8 @@ th {
 }
 .button.active, input.active[type=file]:not(.default)::file-selector-button, .button:focus-visible, input[type=file]:focus-visible:not(.default)::file-selector-button, .button:active, input[type=file]:active:not(.default)::file-selector-button {
   box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-  transform: translateY(calc(var(--flatify__border-width) * 1.38));
   filter: brightness(92%);
+  transform: translateY(calc(var(--flatify__border-width) * 1.38));
 }
 .button.outline, input.outline[type=file]:not(.default)::file-selector-button {
   color: var(--flatify__button-txt-color) !important;
@@ -947,15 +947,12 @@ th {
   --flatify__button-txt-color: var(--flatify__local-txt-color);
   --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
 }
-.button[class*=style-].outline:not(.style-light-light), input[class*=style-].outline[type=file]:not(.style-light-light):not(.default)::file-selector-button {
-  --flatify__button-bg-color__focus: var(--flatify__local-bg-color);
-}
 .button.disabled, input.disabled[type=file]:not(.default)::file-selector-button, .button:disabled, input[type=file]:disabled:not(.default)::file-selector-button {
   pointer-events: none;
   background: var(--flatify__button-bg-color__focus) !important;
   box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-  transform: calc(var(--flatify__border-width) * 1.38);
   filter: contrast(85%) brightness(85%) opacity(70%) !important;
+  transform: translateY(calc(var(--flatify__border-width) * 1.38));
 }
 
 .button-group {
@@ -1020,7 +1017,7 @@ th {
 }
 
 .floating-label input {
-  padding-top: 1.64em !important;
+  padding: 1.64em 1em 0.64em !important;
 }
 .floating-label input:not(:placeholder-shown) + .form-label, .floating-label input:focus + .form-label {
   opacity: 0.5;
@@ -1161,6 +1158,14 @@ input:not(.default):focus:invalid {
   border-color: var(--flatify__input-border-color) !important;
   --flatify__input-border-color: var(--flatify__input-border-color__valid);
   --flatify__input-border-color__focus: var(--flatify__input-border-color__valid);
+}
+input:not(.default)[readonly] {
+  filter: none !important;
+  --flatify__input-border-color__focus: var(--flatify__input-border-color) !important;
+}
+input:not(.default).disabled, input:not(.default):disabled {
+  pointer-events: none;
+  filter: contrast(85%) brightness(85%) opacity(70%) !important;
 }
 
 input[type=password]:not(:placeholder-shown) {

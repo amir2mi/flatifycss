@@ -173,6 +173,18 @@ input:not(.default) {
 		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__valid);
 		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__valid);
 	}
+
+	// Just elements with [readonly] attribute instead of CSS [:read-only] that also considers [disabled] elements.
+	&[readonly] {
+		filter: none !important;
+		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color) !important;
+	}
+
+	&.disabled,
+	&:disabled {
+		pointer-events: none;
+		filter: contrast(85%) brightness(85%) opacity(70%) !important;
+	}
 }
 
 // when password is entered give letters morespace.
