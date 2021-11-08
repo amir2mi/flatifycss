@@ -42,8 +42,13 @@ input {
 		border-color: var(--#{$CSS_VAR_PFX}input-border-color__focus) !important;
 	}
 
+	&[class*="style-"] {
+		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
+	}
+
 	.input-wrapper.invalid &,
 	&.invalid {
+		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
 		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
 		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
 	}
@@ -54,12 +59,14 @@ input {
 
 	.input-wrapper.warning &,
 	&.warning {
+		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
 		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__warning) !important;
 		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__warning) !important;
 	}
 
 	.input-wrapper.valid &,
 	&.valid {
+		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
 		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__valid);
 		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__valid);
 	}
@@ -168,4 +175,30 @@ input {
 
 input[type="password"]:not(:placeholder-shown) {
 	letter-spacing: 0.18em;
+}
+
+input[type="color"] {
+	width: 3.14em;
+	height: 2.75em;
+	padding: 0.5em;
+	border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
+}
+
+input[type="file"] {
+	filter: brightness(100%);
+
+	&::file-selector-button {
+		@extend .button;
+		cursor: pointer;
+		font-size: 0.9em;
+		color: inherit;
+		filter: brightness(92%);
+		vertical-align: baseline;
+
+		@if $SUPPORT_LTR {
+			margin: 0 0.5em 0 0;
+		} @else {
+			margin: 0 0 0 0.5em;
+		}
+	}
 }
