@@ -14,3 +14,10 @@
 		border-radius: #{$value} !important;
 	}
 }
+
+// List of width helper classes
+@each $type, $value in $WIDTH_LIST {
+	.width-#{$type} {
+		width: #{$value} !important;
+	}
+}

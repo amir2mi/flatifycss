@@ -1558,6 +1558,46 @@ input[type=password]:not(:placeholder-shown) {
   border-radius: 100% 50% 50% 100%/75% 69% 69% 75% !important;
 }
 
+.width-0p {
+  width: 0 !important;
+}
+
+.width-10p {
+  width: 10% !important;
+}
+
+.width-15p {
+  width: 15% !important;
+}
+
+.width-25p {
+  width: 25% !important;
+}
+
+.width-30p {
+  width: 30% !important;
+}
+
+.width-50p {
+  width: 50% !important;
+}
+
+.width-60p {
+  width: 60% !important;
+}
+
+.width-75p {
+  width: 75% !important;
+}
+
+.width-90p {
+  width: 90% !important;
+}
+
+.width-100p {
+  width: 100% !important;
+}
+
 .inline-flex {
   display: inline-flex !important;
 }
