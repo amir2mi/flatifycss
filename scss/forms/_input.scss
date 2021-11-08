@@ -5,19 +5,160 @@
 	--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}color-accent-primary);
 }
 
-input[type="text"]:not(.default) {
-	padding: 1em;
-	margin: 0.32em;
+input {
+	font-size: 0.9em;
+	&::placeholder {
+		color: inherit;
+		opacity: 0.45;
+		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+	}
+
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+input {
+	padding: 0.9em 1em;
+	margin: 0.38em;
 	color: var(--#{$CSS_VAR_PFX}input-txt-color);
 	background: var(--#{$CSS_VAR_PFX}input-bg-color);
 	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}input-border-color);
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+	filter: brightness(100%);
+	outline: none !important;
+	will-change: filter;
+	transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
-	&:hover {
-		filter: brightness(92%);
+	&:hover,
+	&:focus {
+		filter: brightness(95%);
 	}
 
 	&:focus {
-		outline: none !important;
+		border-color: var(--#{$CSS_VAR_PFX}input-border-color__focus) !important;
 	}
+
+	.input-wrapper.invalid &,
+	&.invalid,
+	&:focus:invalid {
+		border-color: var(--#{$CSS_VAR_PFX}color-danger-primary) !important;
+	}
+
+	.input-wrapper.warning &,
+	&.warning {
+		border-color: var(--#{$CSS_VAR_PFX}color-warning-primary) !important;
+	}
+
+	.input-wrapper.valid &,
+	&.valid {
+		border-color: var(--#{$CSS_VAR_PFX}color-success-primary);
+	}
+}
+
+.input-wrapper {
+	position: relative;
+    display: flex;
+
+    .text-before-input{
+        
+    }
+
+	input {
+		width: 100%;
+
+		@if $SUPPORT_LTR {
+			padding-right: 3em;
+		} @else {
+			padding-left: 3em;
+		}
+	}
+
+	&:after {
+		content: " ";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+		margin: auto 0;
+		border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+	}
+
+	&.invalid,
+	&:focus:invalid {
+		&:after {
+			@if $SUPPORT_LTR {
+				right: 0.75em;
+			} @else {
+				left: 0.75em;
+			}
+
+			width: 1em;
+			height: 0.25em;
+			background: var(--#{$CSS_VAR_PFX}color-danger-primary);
+		}
+	}
+
+	&.warning {
+		&:after {
+			@if $SUPPORT_LTR {
+				right: 1em;
+			} @else {
+				left: 1em;
+			}
+
+			width: 0.5em;
+			height: 0.5em;
+			background: var(--#{$CSS_VAR_PFX}color-warning-primary);
+		}
+
+		&:focus-within:after {
+			animation: flatify-fade-out 1s infinite;
+		}
+	}
+
+	&.valid {
+		&:before {
+			content: " ";
+			position: absolute;
+			top: 0.45em;
+			bottom: 0;
+			z-index: 1;
+			margin: auto 0;
+			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+			// This animation will be played on state change because invalid or warning
+			// does not have [::before] so it will get flashed without this animation, that is bad.
+			animation: flatify-fade-in 0.35s;
+
+			@if $SUPPORT_LTR {
+				right: 1.25em;
+			} @else {
+				left: 1.25em;
+			}
+
+			width: 0.64em;
+			height: 0.25em;
+			background: var(--#{$CSS_VAR_PFX}color-success-primary);
+			transform: rotate(40deg);
+		}
+
+		&:after {
+			@if $SUPPORT_LTR {
+				right: 0.5em;
+			} @else {
+				left: 0.5em;
+			}
+
+			width: 1.2em;
+			height: 0.25em;
+			background: var(--#{$CSS_VAR_PFX}color-success-primary);
+			transform: rotate(-55deg);
+		}
+	}
+}
+
+input[type="password"]:not(:placeholder-shown) {
+	letter-spacing: 0.18em;
 }

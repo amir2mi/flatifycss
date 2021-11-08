@@ -919,7 +919,7 @@ th {
   box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus);
   outline: none;
   filter: brightness(100%);
-  will-change: transform;
+  will-change: transform, filter;
   transition: filter var(--flatify__simple-transition);
 }
 .button:hover {
@@ -1007,6 +1007,17 @@ th {
   transform: scale(0.85) !important;
 }
 
+.form-label {
+  margin-top: 0.9em;
+}
+.form-label.inline:not(:first-child) {
+  margin-left: 0.38em;
+}
+.form-label:not(.inline) {
+  display: block;
+  margin-left: 0.38em;
+}
+
 :root {
   --flatify__input-bg-color: var(--flatify__bg-color-dark);
   --flatify__input-txt-color: var(--flatify__txt-color);
@@ -1014,21 +1025,115 @@ th {
   --flatify__input-border-color__focus: var(--flatify__color-accent-primary);
 }
 
-input[type=text]:not(.default) {
-  padding: 1em;
-  margin: 0.32em;
+input {
+  font-size: 0.9em;
+}
+input::placeholder {
+  color: inherit;
+  opacity: 0.45;
+  transition: all var(--flatify__simple-transition);
+}
+input:focus::placeholder {
+  opacity: 0;
+}
+
+input {
+  padding: 0.9em 1em;
+  margin: 0.38em;
   color: var(--flatify__input-txt-color);
   background: var(--flatify__input-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__input-border-color);
   border-radius: var(--flatify__border-radius);
-}
-input[type=text]:not(.default):hover {
-  filter: brightness(92%);
-}
-input[type=text]:not(.default):focus {
+  filter: brightness(100%);
   outline: none !important;
+  will-change: filter;
+  transition: all var(--flatify__simple-transition);
+}
+input:hover, input:focus {
+  filter: brightness(95%);
+}
+input:focus {
+  border-color: var(--flatify__input-border-color__focus) !important;
+}
+.input-wrapper.invalid input, input.invalid, input:focus:invalid {
+  border-color: var(--flatify__color-danger-primary) !important;
+}
+.input-wrapper.warning input, input.warning {
+  border-color: var(--flatify__color-warning-primary) !important;
+}
+.input-wrapper.valid input, input.valid {
+  border-color: var(--flatify__color-success-primary);
 }
 
+.input-wrapper {
+  position: relative;
+  display: flex;
+}
+.input-wrapper input {
+  width: 100%;
+  padding-right: 3em;
+}
+.input-wrapper:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  margin: auto 0;
+  border-radius: var(--flatify__border-radius);
+  transition: all var(--flatify__simple-transition);
+}
+.input-wrapper.invalid:after, .input-wrapper:focus:invalid:after {
+  right: 0.75em;
+  width: 1em;
+  height: 0.25em;
+  background: var(--flatify__color-danger-primary);
+}
+.input-wrapper.warning:after {
+  right: 1em;
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--flatify__color-warning-primary);
+}
+.input-wrapper.warning:focus-within:after {
+  animation: flatify-fade-out 1s infinite;
+}
+.input-wrapper.valid:before {
+  content: " ";
+  position: absolute;
+  top: 0.45em;
+  bottom: 0;
+  z-index: 1;
+  margin: auto 0;
+  border-radius: var(--flatify__border-radius);
+  transition: all var(--flatify__simple-transition);
+  animation: flatify-fade-in 0.35s;
+  right: 1.25em;
+  width: 0.64em;
+  height: 0.25em;
+  background: var(--flatify__color-success-primary);
+  transform: rotate(40deg);
+}
+.input-wrapper.valid:after {
+  right: 0.5em;
+  width: 1.2em;
+  height: 0.25em;
+  background: var(--flatify__color-success-primary);
+  transform: rotate(-55deg);
+}
+
+input[type=password]:not(:placeholder-shown) {
+  letter-spacing: 0.18em;
+}
+
+@keyframes flatify-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @keyframes flatify-fade-out {
   to {
     opacity: 0;

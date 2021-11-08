@@ -27,7 +27,7 @@
 	outline: none;
 	// filter affect box-shadow width, so it should be set as default to prevent bugs on hover
 	filter: brightness(100%);
-	will-change: transform;
+	will-change: transform, filter;
 	transition: filter var(--#{$CSS_VAR_PFX}simple-transition);
 
 	&:hover {

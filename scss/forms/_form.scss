@@ -1,0 +1,20 @@
+.form-label {
+	margin-top: 0.9em;
+    
+	&.inline:not(:first-child) {
+		@if $SUPPORT_LTR {
+			margin-left: 0.38em;
+		} @else {
+			margin-right: 0.38em;
+		}
+	}
+
+	&:not(.inline) {
+		display: block;
+		@if $SUPPORT_LTR {
+			margin-left: 0.38em;
+		} @else {
+			margin-right: 0.38em;
+		}
+	}
+}
