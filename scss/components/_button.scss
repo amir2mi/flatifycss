@@ -17,13 +17,13 @@
 	font-size: 1em;
 	font-weight: normal;
 	display: inline-block;
-	padding: 0.75em 0.85em 0.55em;
+	padding: 0.75em 0.85em 0.5em;
 	margin: 0.32em 0.32em 0.5em;
 	color: var(--#{$CSS_VAR_PFX}button-txt-color);
 	background: var(--#{$CSS_VAR_PFX}button-bg-color);
 	border: none;
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-	box-shadow: 0 0.32em 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
+	box-shadow: 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38) 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
 	outline: none;
 	// filter affect box-shadow width, so it should be set as default to prevent bugs on hover
 	filter: brightness(100%);
@@ -38,7 +38,7 @@
 	&:focus-visible,
 	&:active {
 		box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
-		transform: translateY(0.32em);
+		transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
 		filter: brightness(92%);
 	}
 
@@ -49,10 +49,10 @@
 
 	&.outline,
 	&.bordered {
-		box-shadow: 0 0.32em 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus),
-			inset 0 0.125em 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus),
-			inset 0.125em 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus),
-			inset -0.125em 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
+		box-shadow: 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38) 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus),
+			inset 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.8) 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus),
+			inset calc(var(--#{$CSS_VAR_PFX}border-width) * 0.8) 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus),
+			inset calc(var(--#{$CSS_VAR_PFX}border-width) * -0.8) 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
 	}
 
 	&.outline,
@@ -60,7 +60,8 @@
 		&.active,
 		&:focus-visible,
 		&:active {
-			box-shadow: inset 0 0 0 0.125em var(--#{$CSS_VAR_PFX}button-bg-color__focus);
+			box-shadow: inset 0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.8)
+				var(--#{$CSS_VAR_PFX}button-bg-color__focus);
 		}
 	}
 
@@ -81,7 +82,7 @@
 		pointer-events: none;
 		background: var(--#{$CSS_VAR_PFX}button-bg-color__focus) !important;
 		box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
-		transform: translateY(0.32em);
+		transform: calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38);
 		filter: contrast(85%) brightness(85%) opacity(70%) !important;
 	}
 }

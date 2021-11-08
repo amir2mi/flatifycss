@@ -910,13 +910,13 @@ th {
   font-size: 1em;
   font-weight: normal;
   display: inline-block;
-  padding: 0.75em 0.85em 0.55em;
+  padding: 0.75em 0.85em 0.5em;
   margin: 0.32em 0.32em 0.5em;
   color: var(--flatify__button-txt-color);
   background: var(--flatify__button-bg-color);
   border: none;
   border-radius: var(--flatify__border-radius);
-  box-shadow: 0 0.32em 0 var(--flatify__button-bg-color__focus);
+  box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus);
   outline: none;
   filter: brightness(100%);
   will-change: transform;
@@ -927,7 +927,7 @@ th {
 }
 .button.active, .button:focus-visible, .button:active {
   box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-  transform: translateY(0.32em);
+  transform: translateY(calc(var(--flatify__border-width) * 1.38));
   filter: brightness(92%);
 }
 .button.outline {
@@ -935,10 +935,10 @@ th {
   background: transparent !important;
 }
 .button.outline, .button.bordered {
-  box-shadow: 0 0.32em 0 var(--flatify__button-bg-color__focus), inset 0 0.125em 0 var(--flatify__button-bg-color__focus), inset 0.125em 0 0 var(--flatify__button-bg-color__focus), inset -0.125em 0 0 var(--flatify__button-bg-color__focus);
+  box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus), inset 0 calc(var(--flatify__border-width) * 0.8) 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * 0.8) 0 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * -0.8) 0 0 var(--flatify__button-bg-color__focus);
 }
 .button.outline.active, .button.outline:focus-visible, .button.outline:active, .button.bordered.active, .button.bordered:focus-visible, .button.bordered:active {
-  box-shadow: inset 0 0 0 0.125em var(--flatify__button-bg-color__focus);
+  box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.8) var(--flatify__button-bg-color__focus);
 }
 .button[class*=style-] {
   --flatify__button-bg-color: var(--flatify__local-bg-color);
@@ -953,7 +953,7 @@ th {
   pointer-events: none;
   background: var(--flatify__button-bg-color__focus) !important;
   box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-  transform: translateY(0.32em);
+  transform: calc(var(--flatify__border-width) * 1.38);
   filter: contrast(85%) brightness(85%) opacity(70%) !important;
 }
 
@@ -1005,6 +1005,28 @@ th {
 }
 .close-button:focus-visible, .close-button:active {
   transform: scale(0.85) !important;
+}
+
+:root {
+  --flatify__input-bg-color: var(--flatify__bg-color-dark);
+  --flatify__input-txt-color: var(--flatify__txt-color);
+  --flatify__input-border-color: var(--flatify__bg-color-darker);
+  --flatify__input-border-color__focus: var(--flatify__color-accent-primary);
+}
+
+input[type=text]:not(.default) {
+  padding: 1em;
+  margin: 0.32em;
+  color: var(--flatify__input-txt-color);
+  background: var(--flatify__input-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__input-border-color);
+  border-radius: var(--flatify__border-radius);
+}
+input[type=text]:not(.default):hover {
+  filter: brightness(92%);
+}
+input[type=text]:not(.default):focus {
+  outline: none !important;
 }
 
 @keyframes flatify-fade-out {

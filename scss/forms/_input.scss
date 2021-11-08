@@ -1,0 +1,23 @@
+:root {
+	--#{$CSS_VAR_PFX}input-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
+	--#{$CSS_VAR_PFX}input-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+	--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}color-accent-primary);
+}
+
+input[type="text"]:not(.default) {
+	padding: 1em;
+	margin: 0.32em;
+	color: var(--#{$CSS_VAR_PFX}input-txt-color);
+	background: var(--#{$CSS_VAR_PFX}input-bg-color);
+	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}input-border-color);
+	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+
+	&:hover {
+		filter: brightness(92%);
+	}
+
+	&:focus {
+		outline: none !important;
+	}
+}
