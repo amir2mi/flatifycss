@@ -8,70 +8,6 @@
 	--#{$CSS_VAR_PFX}input-border-color__invalid: var(--#{$CSS_VAR_PFX}color-danger-primary);
 }
 
-input {
-	font-size: 0.9em;
-	&::placeholder {
-		color: inherit;
-		opacity: 0.45;
-		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
-	}
-
-	&:focus::placeholder {
-		opacity: 0;
-	}
-}
-
-input {
-	padding: 0.9em 1em;
-	margin: 0.38em 0;
-	color: var(--#{$CSS_VAR_PFX}input-txt-color);
-	background: var(--#{$CSS_VAR_PFX}input-bg-color);
-	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}input-border-color);
-	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-	filter: brightness(100%);
-	outline: none !important;
-	will-change: filter;
-	transition: all var(--#{$CSS_VAR_PFX}simple-transition);
-
-	&:hover,
-	&:focus {
-		filter: brightness(95%);
-	}
-
-	&:focus {
-		border-color: var(--#{$CSS_VAR_PFX}input-border-color__focus) !important;
-	}
-
-	&[class*="style-"] {
-		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
-	}
-
-	.input-wrapper.invalid &,
-	&.invalid {
-		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
-		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
-		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
-	}
-
-	&:focus:invalid {
-		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
-	}
-
-	.input-wrapper.warning &,
-	&.warning {
-		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
-		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__warning) !important;
-		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__warning) !important;
-	}
-
-	.input-wrapper.valid &,
-	&.valid {
-		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
-		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__valid);
-		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__valid);
-	}
-}
-
 // Input wrapper to add [::before] & [::after] for input styles
 .input-wrapper {
 	position: relative;
@@ -173,18 +109,85 @@ input {
 	}
 }
 
+input:not(.default) {
+	font-size: 0.9em;
+	padding: 0.9em 1em;
+	margin: 0.38em 0;
+	color: var(--#{$CSS_VAR_PFX}input-txt-color);
+	background: var(--#{$CSS_VAR_PFX}input-bg-color);
+	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}input-border-color);
+	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+	filter: brightness(100%);
+	outline: none !important;
+	will-change: filter;
+	transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+
+	&:hover,
+	&:focus {
+		filter: brightness(95%);
+	}
+
+	&:focus {
+		border-color: var(--#{$CSS_VAR_PFX}input-border-color__focus) !important;
+	}
+
+	&::placeholder {
+		color: inherit;
+		opacity: 0.45;
+		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+	}
+
+	&:focus::placeholder {
+		// hide placeholder on focus
+		opacity: 0;
+	}
+
+	&[class*="style-"] {
+		--#{$CSS_VAR_PFX}input-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
+		--#{$CSS_VAR_PFX}input-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
+		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}local-border-color);
+		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
+	}
+
+	.input-wrapper.invalid &,
+	&.invalid {
+		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
+		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
+		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
+	}
+
+	&:focus:invalid {
+		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
+	}
+
+	.input-wrapper.warning &,
+	&.warning {
+		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
+		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__warning) !important;
+		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__warning) !important;
+	}
+
+	.input-wrapper.valid &,
+	&.valid {
+		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
+		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__valid);
+		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__valid);
+	}
+}
+
+// when password is entered give letters morespace.
 input[type="password"]:not(:placeholder-shown) {
 	letter-spacing: 0.18em;
 }
 
-input[type="color"] {
+input[type="color"]:not(.default) {
 	width: 3.14em;
 	height: 2.75em;
 	padding: 0.5em;
 	border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
 }
 
-input[type="file"] {
+input[type="file"]:not(.default) {
 	filter: brightness(100%);
 
 	&::file-selector-button {
@@ -196,9 +199,61 @@ input[type="file"] {
 		vertical-align: baseline;
 
 		@if $SUPPORT_LTR {
-			margin: 0 0.5em 0 0;
+			margin: 0 0.75em 0 0;
 		} @else {
-			margin: 0 0 0 0.5em;
+			margin: 0 0 0 0.75em;
+		}
+	}
+}
+
+input[type="range"]:not(.default) {
+	-webkit-appearance: none;
+	width: 100%;
+	background: transparent !important;
+	border: none;
+	filter: none;
+
+	&::-moz-range-track,
+	&::-webkit-slider-runnable-track {
+		width: 100%;
+		cursor: pointer;
+		width: 100%;
+		height: max(3px, calc(var(--#{$CSS_VAR_PFX}border-width) * 1.5));
+		background: var(--#{$CSS_VAR_PFX}input-border-color);
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+	}
+
+	&::-moz-range-thumb,
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		cursor: pointer;
+		height: 1.24em;
+		width: 1.24em;
+		background: var(--#{$CSS_VAR_PFX}input-bg-color);
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+		border: max(1px, var(--#{$CSS_VAR_PFX}border-width)) solid var(--#{$CSS_VAR_PFX}input-border-color);
+		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+	}
+
+	&:hover {
+		&::-webkit-slider-thumb,
+		&::-moz-range-thumb {
+			filter: brightness(90%);
+		}
+	}
+
+	&:active {
+		&::-webkit-slider-thumb,
+		&::-moz-range-thumb {
+			transform: scale(0.9);
+		}
+	}
+
+	&:focus {
+		&::-webkit-slider-thumb,
+		&::-moz-range-thumb {
+			border-color: var(--#{$CSS_VAR_PFX}input-border-color__focus);
+			filter: brightness(90%);
 		}
 	}
 }

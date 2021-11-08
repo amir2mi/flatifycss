@@ -905,7 +905,7 @@ th {
   --flatify__button-txt-color__focus: var(--flatify__txt-color);
 }
 
-.button, input[type=file]::file-selector-button {
+.button, input[type=file]:not(.default)::file-selector-button {
   vertical-align: middle;
   text-align: center;
   font-size: 1em;
@@ -923,34 +923,34 @@ th {
   will-change: transform, filter;
   transition: filter var(--flatify__simple-transition);
 }
-.button:hover, input[type=file]:hover::file-selector-button {
+.button:hover, input[type=file]:hover:not(.default)::file-selector-button {
   filter: brightness(92%);
 }
-.button.active, input.active[type=file]::file-selector-button, .button:focus-visible, input[type=file]:focus-visible::file-selector-button, .button:active, input[type=file]:active::file-selector-button {
+.button.active, input.active[type=file]:not(.default)::file-selector-button, .button:focus-visible, input[type=file]:focus-visible:not(.default)::file-selector-button, .button:active, input[type=file]:active:not(.default)::file-selector-button {
   box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
   transform: translateY(calc(var(--flatify__border-width) * 1.38));
   filter: brightness(92%);
 }
-.button.outline, input.outline[type=file]::file-selector-button {
+.button.outline, input.outline[type=file]:not(.default)::file-selector-button {
   color: var(--flatify__button-txt-color) !important;
   background: transparent !important;
 }
-.button.outline, input.outline[type=file]::file-selector-button, .button.bordered, input.bordered[type=file]::file-selector-button {
+.button.outline, input.outline[type=file]:not(.default)::file-selector-button, .button.bordered, input.bordered[type=file]:not(.default)::file-selector-button {
   box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus), inset 0 calc(var(--flatify__border-width) * 0.8) 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * 0.8) 0 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * -0.8) 0 0 var(--flatify__button-bg-color__focus);
 }
-.button.outline.active, input.outline.active[type=file]::file-selector-button, .button.outline:focus-visible, input.outline[type=file]:focus-visible::file-selector-button, .button.outline:active, input.outline[type=file]:active::file-selector-button, .button.bordered.active, input.bordered.active[type=file]::file-selector-button, .button.bordered:focus-visible, input.bordered[type=file]:focus-visible::file-selector-button, .button.bordered:active, input.bordered[type=file]:active::file-selector-button {
+.button.outline.active, input.outline.active[type=file]:not(.default)::file-selector-button, .button.outline:focus-visible, input.outline[type=file]:focus-visible:not(.default)::file-selector-button, .button.outline:active, input.outline[type=file]:active:not(.default)::file-selector-button, .button.bordered.active, input.bordered.active[type=file]:not(.default)::file-selector-button, .button.bordered:focus-visible, input.bordered[type=file]:focus-visible:not(.default)::file-selector-button, .button.bordered:active, input.bordered[type=file]:active:not(.default)::file-selector-button {
   box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.8) var(--flatify__button-bg-color__focus);
 }
-.button[class*=style-], input[class*=style-][type=file]::file-selector-button {
+.button[class*=style-], input[class*=style-][type=file]:not(.default)::file-selector-button {
   --flatify__button-bg-color: var(--flatify__local-bg-color);
   --flatify__button-bg-color__focus: var(--flatify__local-border-color);
   --flatify__button-txt-color: var(--flatify__local-txt-color);
   --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
 }
-.button[class*=style-].outline:not(.style-light-light), input[class*=style-].outline[type=file]:not(.style-light-light)::file-selector-button {
+.button[class*=style-].outline:not(.style-light-light), input[class*=style-].outline[type=file]:not(.style-light-light):not(.default)::file-selector-button {
   --flatify__button-bg-color__focus: var(--flatify__local-bg-color);
 }
-.button.disabled, input.disabled[type=file]::file-selector-button, .button:disabled, input[type=file]:disabled::file-selector-button {
+.button.disabled, input.disabled[type=file]:not(.default)::file-selector-button, .button:disabled, input[type=file]:disabled:not(.default)::file-selector-button {
   pointer-events: none;
   background: var(--flatify__button-bg-color__focus) !important;
   box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
@@ -962,23 +962,23 @@ th {
   display: flex;
   margin: 0.25em 0.125em;
 }
-.button-group .button, .button-group input[type=file]::file-selector-button {
+.button-group .button, .button-group input[type=file]:not(.default)::file-selector-button {
   margin: -1px;
   border-radius: 0;
 }
-.button-group:not(.vertical) .button:first-child, .button-group:not(.vertical) input[type=file]:first-child::file-selector-button {
+.button-group:not(.vertical) .button:first-child, .button-group:not(.vertical) input[type=file]:first-child:not(.default)::file-selector-button {
   border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
 }
-.button-group:not(.vertical) .button:last-child, .button-group:not(.vertical) input[type=file]:last-child::file-selector-button {
+.button-group:not(.vertical) .button:last-child, .button-group:not(.vertical) input[type=file]:last-child:not(.default)::file-selector-button {
   border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
 }
 .button-group.vertical {
   flex-direction: column;
 }
-.button-group.vertical .button:first-child, .button-group.vertical input[type=file]:first-child::file-selector-button {
+.button-group.vertical .button:first-child, .button-group.vertical input[type=file]:first-child:not(.default)::file-selector-button {
   border-radius: var(--flatify__border-radius) var(--flatify__border-radius) 0 0;
 }
-.button-group.vertical .button:last-child, .button-group.vertical input[type=file]:last-child::file-selector-button {
+.button-group.vertical .button:last-child, .button-group.vertical input[type=file]:last-child:not(.default)::file-selector-button {
   border-radius: 0 0 var(--flatify__border-radius) var(--flatify__border-radius);
 }
 
@@ -1020,14 +1020,14 @@ th {
 }
 
 .floating-label input {
-  padding-top: 1.75em;
+  padding-top: 1.64em !important;
 }
 .floating-label input:not(:placeholder-shown) + .form-label, .floating-label input:focus + .form-label {
   opacity: 0.5;
   transform: scale(0.75) translateY(-0.9em);
 }
 .floating-label input::placeholder {
-  opacity: 0;
+  opacity: 0 !important;
 }
 .floating-label .form-label {
   pointer-events: none;
@@ -1036,6 +1036,7 @@ th {
   bottom: 0;
   margin: auto 0;
   height: fit-content;
+  opacity: 0.8;
   will-change: opacity, transform;
   transition: all var(--flatify__bouncing-transition);
   transform-origin: top left;
@@ -1050,58 +1051,6 @@ th {
   --flatify__input-border-color__valid: var(--flatify__color-success-primary);
   --flatify__input-border-color__warning: var(--flatify__color-warning-primary);
   --flatify__input-border-color__invalid: var(--flatify__color-danger-primary);
-}
-
-input {
-  font-size: 0.9em;
-}
-input::placeholder {
-  color: inherit;
-  opacity: 0.45;
-  transition: all var(--flatify__simple-transition);
-}
-input:focus::placeholder {
-  opacity: 0;
-}
-
-input {
-  padding: 0.9em 1em;
-  margin: 0.38em 0;
-  color: var(--flatify__input-txt-color);
-  background: var(--flatify__input-bg-color);
-  border: var(--flatify__border-width) solid var(--flatify__input-border-color);
-  border-radius: var(--flatify__border-radius);
-  filter: brightness(100%);
-  outline: none !important;
-  will-change: filter;
-  transition: all var(--flatify__simple-transition);
-}
-input:hover, input:focus {
-  filter: brightness(95%);
-}
-input:focus {
-  border-color: var(--flatify__input-border-color__focus) !important;
-}
-input[class*=style-] {
-  --flatify__input-border-color__focus: var(--flatify__local-txt-color);
-}
-.input-wrapper.invalid input, input.invalid {
-  border-color: var(--flatify__input-border-color) !important;
-  --flatify__input-border-color: var(--flatify__input-border-color__invalid) !important;
-  --flatify__input-border-color__focus: var(--flatify__input-border-color__invalid) !important;
-}
-input:focus:invalid {
-  --flatify__input-border-color__focus: var(--flatify__input-border-color__invalid) !important;
-}
-.input-wrapper.warning input, input.warning {
-  border-color: var(--flatify__input-border-color) !important;
-  --flatify__input-border-color: var(--flatify__input-border-color__warning) !important;
-  --flatify__input-border-color__focus: var(--flatify__input-border-color__warning) !important;
-}
-.input-wrapper.valid input, input.valid {
-  border-color: var(--flatify__input-border-color) !important;
-  --flatify__input-border-color: var(--flatify__input-border-color__valid);
-  --flatify__input-border-color__focus: var(--flatify__input-border-color__valid);
 }
 
 .input-wrapper {
@@ -1162,27 +1111,115 @@ input:focus:invalid {
   transform: rotate(-55deg);
 }
 
+input:not(.default) {
+  font-size: 0.9em;
+  padding: 0.9em 1em;
+  margin: 0.38em 0;
+  color: var(--flatify__input-txt-color);
+  background: var(--flatify__input-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__input-border-color);
+  border-radius: var(--flatify__border-radius);
+  filter: brightness(100%);
+  outline: none !important;
+  will-change: filter;
+  transition: all var(--flatify__simple-transition);
+}
+input:not(.default):hover, input:not(.default):focus {
+  filter: brightness(95%);
+}
+input:not(.default):focus {
+  border-color: var(--flatify__input-border-color__focus) !important;
+}
+input:not(.default)::placeholder {
+  color: inherit;
+  opacity: 0.45;
+  transition: all var(--flatify__simple-transition);
+}
+input:not(.default):focus::placeholder {
+  opacity: 0;
+}
+input:not(.default)[class*=style-] {
+  --flatify__input-bg-color: var(--flatify__local-bg-color);
+  --flatify__input-txt-color: var(--flatify__local-txt-color);
+  --flatify__input-border-color: var(--flatify__local-border-color);
+  --flatify__input-border-color__focus: var(--flatify__local-txt-color);
+}
+.input-wrapper.invalid input:not(.default), input:not(.default).invalid {
+  border-color: var(--flatify__input-border-color) !important;
+  --flatify__input-border-color: var(--flatify__input-border-color__invalid) !important;
+  --flatify__input-border-color__focus: var(--flatify__input-border-color__invalid) !important;
+}
+input:not(.default):focus:invalid {
+  --flatify__input-border-color__focus: var(--flatify__input-border-color__invalid) !important;
+}
+.input-wrapper.warning input:not(.default), input:not(.default).warning {
+  border-color: var(--flatify__input-border-color) !important;
+  --flatify__input-border-color: var(--flatify__input-border-color__warning) !important;
+  --flatify__input-border-color__focus: var(--flatify__input-border-color__warning) !important;
+}
+.input-wrapper.valid input:not(.default), input:not(.default).valid {
+  border-color: var(--flatify__input-border-color) !important;
+  --flatify__input-border-color: var(--flatify__input-border-color__valid);
+  --flatify__input-border-color__focus: var(--flatify__input-border-color__valid);
+}
+
 input[type=password]:not(:placeholder-shown) {
   letter-spacing: 0.18em;
 }
 
-input[type=color] {
+input[type=color]:not(.default) {
   width: 3.14em;
   height: 2.75em;
   padding: 0.5em;
   border-radius: calc(var(--flatify__border-radius) * 0.75);
 }
 
-input[type=file] {
+input[type=file]:not(.default) {
   filter: brightness(100%);
 }
-input[type=file]::file-selector-button {
+input[type=file]:not(.default)::file-selector-button {
   cursor: pointer;
   font-size: 0.9em;
   color: inherit;
   filter: brightness(92%);
   vertical-align: baseline;
-  margin: 0 0.5em 0 0;
+  margin: 0 0.75em 0 0;
+}
+
+input[type=range]:not(.default) {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent !important;
+  border: none;
+  filter: none;
+}
+input[type=range]:not(.default)::-moz-range-track, input[type=range]:not(.default)::-webkit-slider-runnable-track {
+  width: 100%;
+  cursor: pointer;
+  width: 100%;
+  height: max(3px, var(--flatify__border-width) * 1.5);
+  background: var(--flatify__input-border-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.5);
+}
+input[type=range]:not(.default)::-moz-range-thumb, input[type=range]:not(.default)::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  height: 1.24em;
+  width: 1.24em;
+  background: var(--flatify__input-bg-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.5);
+  border: max(1px, var(--flatify__border-width)) solid var(--flatify__input-border-color);
+  transition: all var(--flatify__simple-transition);
+}
+input[type=range]:not(.default):hover::-webkit-slider-thumb, input[type=range]:not(.default):hover::-moz-range-thumb {
+  filter: brightness(90%);
+}
+input[type=range]:not(.default):active::-webkit-slider-thumb, input[type=range]:not(.default):active::-moz-range-thumb {
+  transform: scale(0.9);
+}
+input[type=range]:not(.default):focus::-webkit-slider-thumb, input[type=range]:not(.default):focus::-moz-range-thumb {
+  border-color: var(--flatify__input-border-color__focus);
+  filter: brightness(90%);
 }
 
 @keyframes flatify-fade-in {
@@ -1830,7 +1867,7 @@ body ::after {
     background-attachment: initial !important;
     scroll-behavior: auto !important;
   }
-  body .button, body input[type=file]::file-selector-button {
+  body .button, body input[type=file]:not(.default)::file-selector-button {
     --flatify__simple-transition: 0s !important;
   }
   body .alert-will-be-removed {

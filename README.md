@@ -39,15 +39,16 @@ List of work in progress:
 ## Forms
 
 -   [ ] Inputs
-    -   [x] Email inputs
-    -   [x] Button input
-    -   [x] Color input
-    -   [x] Date input
-    -   [x] Number input
-    -   [x] Password inputs
-    -   [x] Text inputs
-    -   [ ] Checkbox input
-    -   [ ] Radio input
+    -   [x] Email
+    -   [x] Button
+    -   [x] Color
+    -   [x] Date
+    -   [x] Number
+    -   [x] Password
+    -   [x] Range
+    -   [x] Text
+    -   [ ] Checkbox
+    -   [ ] Radio
 -   [ ] Select
 -   [ ] Check
 -   [ ] Radio
