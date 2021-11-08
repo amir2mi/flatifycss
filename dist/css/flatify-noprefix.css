@@ -921,7 +921,7 @@ th {
   outline: none;
   filter: brightness(100%);
   will-change: transform, filter;
-  transition: filter var(--flatify__simple-transition);
+  transition: filter var(--flatify__simple-transition) !important;
 }
 .button:hover, input[type=file]:hover:not(.default)::file-selector-button {
   filter: brightness(92%);
@@ -1220,6 +1220,14 @@ input[type=range]:not(.default):active::-webkit-slider-thumb, input[type=range]:
 input[type=range]:not(.default):focus::-webkit-slider-thumb, input[type=range]:not(.default):focus::-moz-range-thumb {
   border-color: var(--flatify__input-border-color__focus);
   filter: brightness(90%);
+}
+
+input[type=submit].button, input[type=submit][type=file]:not(.default)::file-selector-button,
+input[type=reset].button,
+input[type=reset][type=file]:not(.default)::file-selector-button,
+input[type=button].button,
+input[type=button][type=file]:not(.default)::file-selector-button {
+  border: none !important;
 }
 
 @keyframes flatify-fade-in {

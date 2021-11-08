@@ -257,3 +257,12 @@ input[type="range"]:not(.default) {
 		}
 	}
 }
+
+// Buttons with [.button] should not have border
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.button {
+		border: none !important;
+	}
+}
