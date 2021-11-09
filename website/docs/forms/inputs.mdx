@@ -96,7 +96,7 @@ Inputs which get text from user can have type of password, email, url etc.
 
 ### Inline label
 
-By default label and input are in a row.
+By default input labels are inline until you add `.form-label` which is necessary, in this case if you add `.inline` class to the `<label>` it will be inline.
 
 <PreviewBox
 	height="200px"
@@ -110,16 +110,43 @@ By default label and input are in a row.
 		<title>Inputs</title>
 	</head>
 	<body>
+			<label for="my-text-input" class="form-label inline">Enter you name</label>
+			<input id="my-text-input" type="text" placeholder="Enter you name" />
+			<br>
 			<label for="my-text-input" class="form-label">Enter you name</label>
-			<input required id="my-text-input" type="text" placeholder="Enter you name" />
+			<input id="my-text-input" type="text" placeholder="Enter you name" />
 	</body>
 </html>'
 />
 
-```html title="index.html"
+### Floating label
+
+The floating label is inside the input and it seems like a placeholder, how it works is done by pure CSS and it is necessary to set a placeholder for input, though it does not show it.
+To have a floating label first wrap both input and label with `.input-wrapper` & `.floating-label` classes and place the label after input.
+
+<PreviewBox
+	height="110px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+	</head>
+	<body>
+		<div class="input-wrapper floating-label">
+			<input id="my-text-input" type="text" placeholder="Enter you name" />
+			<label for="my-text-input" class="form-label">Enter you name</label>
+		</div>
+	</body>
+</html>'
+/>
+
+```html {1,3} title="index.html"
 <div class="input-wrapper floating-label">
-	<input required id="password" type="password" placeholder="Enter new password" />
-	<label for="password" class="form-label">Enter new password</label>
+	<input id="my-text-input" type="text" placeholder="Enter you name" />
+	<label for="my-text-input" class="form-label">Enter you name</label>
 </div>
-<p class="help-text size-sm">Password length should be more than 8 chars with letters.</p>
 ```
