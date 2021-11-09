@@ -109,15 +109,20 @@
 
 	.show-password-button {
 		position: absolute;
+		top: 0;
+		bottom: 0;
+
 		@if $SUPPORT_LTR {
-			right: 0.5em;
+			right: 0.25em;
 		} @else {
-			left: 0.5em;
+			left: 0.25em;
 		}
 
+		font-size: 1em;
 		width: 2.5em;
 		height: 2.5em;
-		padding: 0.38em;
+		padding: 0.5em;
+		margin: auto 0;
 		color: var(--#{$CSS_VAR_PFX}input-txt-color);
 		background: var(--#{$CSS_VAR_PFX}input-bg-color);
 		border: none;
@@ -137,28 +142,27 @@
 			content: " ";
 			position: absolute;
 			@if $SUPPORT_LTR {
-				right: 0.4em;
+				right: 0.5em;
 			} @else {
-				left: 0.4em;
+				left: 0.5em;
 			}
-			top: 0;
+			top: 0.1em;
 			bottom: 0;
 			z-index: 1;
-			width: 1.75em;
+			width: 1.5em;
 			height: 0.18em;
 			margin: auto 0;
 			background: currentColor;
 			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-			transform: rotate(-35deg);
-			clip-path: circle(0% at right);
+			transform: rotate(-30deg);
+			clip-path: circle(200% at right);
 			transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
 		}
 	}
 
-	.show-password-button.visible-password,
 	&.visible-password .show-password-button {
 		&:after {
-			clip-path: circle(200% at right);
+			clip-path: circle(0% at right);
 		}
 	}
 }

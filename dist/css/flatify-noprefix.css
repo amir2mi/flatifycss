@@ -1110,10 +1110,14 @@ th {
 }
 .input-wrapper .show-password-button {
   position: absolute;
-  right: 0.5em;
+  top: 0;
+  bottom: 0;
+  right: 0.25em;
+  font-size: 1em;
   width: 2.5em;
   height: 2.5em;
-  padding: 0.38em;
+  padding: 0.5em;
+  margin: auto 0;
   color: var(--flatify__input-txt-color);
   background: var(--flatify__input-bg-color);
   border: none;
@@ -1131,21 +1135,21 @@ th {
 .input-wrapper .show-password-button:after {
   content: " ";
   position: absolute;
-  right: 0.4em;
-  top: 0;
+  right: 0.5em;
+  top: 0.1em;
   bottom: 0;
   z-index: 1;
-  width: 1.75em;
+  width: 1.5em;
   height: 0.18em;
   margin: auto 0;
   background: currentColor;
   border-radius: var(--flatify__border-radius);
-  transform: rotate(-35deg);
-  clip-path: circle(0% at right);
+  transform: rotate(-30deg);
+  clip-path: circle(200% at right);
   transition: all var(--flatify__bouncing-transition);
 }
-.input-wrapper .show-password-button.visible-password:after, .input-wrapper.visible-password .show-password-button:after {
-  clip-path: circle(200% at right);
+.input-wrapper.visible-password .show-password-button:after {
+  clip-path: circle(0% at right);
 }
 
 input:not(.default) {
