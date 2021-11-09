@@ -1835,12 +1835,12 @@ input[type=button][type=file]:not(.default)::file-selector-button {
 
 .size-xs,
 .text-xs {
-  font-size: 0.5em !important;
+  font-size: 0.75em !important;
 }
 
 .size-sm,
 .text-sm {
-  font-size: 0.75em !important;
+  font-size: 0.9em !important;
 }
 
 .size-md,
@@ -1850,27 +1850,27 @@ input[type=button][type=file]:not(.default)::file-selector-button {
 
 .size-lg,
 .text-lg {
-  font-size: 1.5em !important;
+  font-size: 1.25em !important;
 }
 
 .size-2x,
 .text-2x {
-  font-size: 2.15em !important;
+  font-size: 1.5em !important;
 }
 
 .size-3x,
 .text-3x {
-  font-size: 2.5em !important;
+  font-size: 2.2em !important;
 }
 
 .size-4x,
 .text-4x {
-  font-size: 3.14em !important;
+  font-size: 2.5em !important;
 }
 
 .size-5x,
 .text-5x {
-  font-size: 3.75em !important;
+  font-size: 3.14em !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

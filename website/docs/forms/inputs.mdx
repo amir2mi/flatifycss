@@ -1,0 +1,125 @@
+---
+title: Inputs
+sidebar_position: 1
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+On this page we will talk about how to style inputs for a form with Flatify CSS, by default inputs get Flatify CSS style but you can reset to default with the `.default` class.
+
+## Demo
+
+<PreviewBox
+	height="200px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+	</head>
+	<body>
+		<div class="input-wrapper floating-label">
+			<input required id="password" type="password" placeholder="Enter new password" />
+			<label for="password" class="form-label">Enter new password</label>
+		</div>
+		<p class="help-text size-sm">
+			Password length should be more than 8 chars with letters.
+		</p>
+	</body>
+	<script>
+		const elem_wrapper = document.querySelector(".input-wrapper");
+		const elem_password = document.querySelector("#password");
+		const elem_help = document.querySelector(".help-text");
+    	elem_password.addEventListener("keyup", function () {
+    		if (elem_password.value.length >= 8) {
+    			if (/[a-zA-Z]/.test(elem_password.value)) {
+    				elem_wrapper.classList.remove("invalid", "warning");
+    				elem_wrapper.classList.add("valid");
+    				elem_help.innerText = "You chose the perfect password!";
+    			} else {
+    				elem_wrapper.classList.remove("invalid", "valid");
+    				elem_wrapper.classList.add("warning");
+    				elem_help.innerText = "You can add some letters as well!";
+    			}
+    		} else {
+    			elem_wrapper.classList.remove("valid", "warning");
+    			elem_wrapper.classList.add("invalid");
+    			elem_help.innerText = "Password length should be more than 8 chars.";
+    		}
+    	});
+    </script>
+</html>'
+/>
+
+```html title="index.html"
+<div class="input-wrapper floating-label">
+	<input required id="password" type="password" placeholder="Enter new password" />
+	<label for="password" class="form-label">Enter new password</label>
+</div>
+<p class="help-text size-sm">Password length should be more than 8 chars with letters.</p>
+```
+
+```js title="main.js"
+const elem_wrapper = document.querySelector(".input-wrapper");
+const elem_password = document.querySelector("#password");
+const elem_help = document.querySelector(".help-text");
+
+// check on keyup
+elem_password.addEventListener("keyup", function () {
+	// should have length of eight chars
+	if (elem_password.value.length >= 8) {
+		// should have at least one letter
+		if (/[a-zA-Z]/.test(elem_password.value)) {
+			elem_wrapper.classList.remove("invalid", "warning");
+			elem_wrapper.classList.add("valid");
+			elem_help.innerText = "You chose the perfect password!";
+		} else {
+			elem_wrapper.classList.remove("invalid", "valid");
+			elem_wrapper.classList.add("warning");
+			elem_help.innerText = "You can add some letters as well!";
+		}
+	} else {
+		// invalid if does not have 8 chars length and letter
+		elem_wrapper.classList.remove("valid", "warning");
+		elem_wrapper.classList.add("invalid");
+		elem_help.innerText = "Password length should be more than 8 chars.";
+	}
+});
+```
+
+## Text input
+
+Inputs which get text from user can have type of password, email, url etc.
+
+### Inline label
+
+By default label and input are in a row.
+
+<PreviewBox
+	height="200px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+	</head>
+	<body>
+			<label for="my-text-input" class="form-label">Enter you name</label>
+			<input required id="my-text-input" type="text" placeholder="Enter you name" />
+	</body>
+</html>'
+/>
+
+```html title="index.html"
+<div class="input-wrapper floating-label">
+	<input required id="password" type="password" placeholder="Enter new password" />
+	<label for="password" class="form-label">Enter new password</label>
+</div>
+<p class="help-text size-sm">Password length should be more than 8 chars with letters.</p>
+```

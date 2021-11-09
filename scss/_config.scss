@@ -238,14 +238,14 @@ $CODE_FONT_FAMILY: "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Cou
 // This list will be converted to helper classes.
 // .size-[] | .text-[]
 $FONT_SIZE_LIST: (
-	xs: 0.5em,
-	sm: 0.75em,
+	xs: 0.75em,
+	sm: 0.9em,
 	md: 1em,
-	lg: 1.5em,
-	2x: 2.15em,
-	3x: 2.5em,
-	4x: 3.14em,
-	5x: 3.75em,
+	lg: 1.25em,
+	2x: 1.5em,
+	3x: 2.2em,
+	4x: 2.5em,
+	5x: 3.14em,
 ) !default;
 
 $BASE_LINE_HEIGHT: 1.5 !default;
