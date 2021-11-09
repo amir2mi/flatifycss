@@ -35,8 +35,7 @@
 		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 	}
 
-	&.invalid,
-	&:focus:invalid {
+	&.invalid {
 		&:after {
 			@if $SUPPORT_LTR {
 				right: 1.35em;
@@ -105,6 +104,61 @@
 			height: 0.25em;
 			background: var(--#{$CSS_VAR_PFX}input-border-color__valid);
 			transform: rotate(-55deg);
+		}
+	}
+
+	.show-password-button {
+		position: absolute;
+		@if $SUPPORT_LTR {
+			right: 0.5em;
+		} @else {
+			left: 0.5em;
+		}
+
+		width: 2.5em;
+		height: 2.5em;
+		padding: 0.38em;
+		color: var(--#{$CSS_VAR_PFX}input-txt-color);
+		background: var(--#{$CSS_VAR_PFX}input-bg-color);
+		border: none;
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
+
+		&:before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: currentColor;
+			mask: var(--#{$CSS_VAR_PFX}eye-icon) no-repeat 50% 50%;
+			-webkit-mask: var(--#{$CSS_VAR_PFX}eye-icon) no-repeat 50% 50%;
+		}
+
+		&:after {
+			content: " ";
+			position: absolute;
+			@if $SUPPORT_LTR {
+				right: 0.4em;
+			} @else {
+				left: 0.4em;
+			}
+			top: 0;
+			bottom: 0;
+			z-index: 1;
+			width: 1.75em;
+			height: 0.18em;
+			margin: auto 0;
+			background: currentColor;
+			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+			transform: rotate(-35deg);
+			clip-path: circle(0% at right);
+			transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
+		}
+	}
+
+	.show-password-button.visible-password,
+	&.visible-password .show-password-button {
+		&:after {
+			clip-path: circle(200% at right);
 		}
 	}
 }

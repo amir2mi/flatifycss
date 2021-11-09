@@ -1,4 +1,3 @@
-import config from "../config.json";
 import $ from "../utils/vent";
 import logger from "../utils/logger";
 import { secondToMs } from "../utils/time";
