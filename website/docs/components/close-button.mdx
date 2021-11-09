@@ -8,7 +8,7 @@ import PreviewBox from "../../src/components/preview-box";
 By adding `.close-button` to a `<button>` it will be an button with close icon.
 
 :::info Accessibility matters!
-You do not need to add anything inside close button element but it is necessary to set `aria-label` HTML attribute for accessibility purposes. [Read more about aria-label usage](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute).
+You do not need to add anything inside the close button element but it is necessary to set an `aria-label` HTML attribute for accessibility purposes. [Read more about aria-label usage](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute).
 :::
 
 <PreviewBox
@@ -117,4 +117,22 @@ There are helper classes for styling elements like button, first read about [col
 <button class="close-button color-warning" aria-label="Close"/></button>
 <button class="close-button color-purple" aria-label="Close"/></button>
 <button class="close-button color-red" aria-label="Close"/></button>
+```
+
+### Customization
+
+It is possible to change the close button icon with both `_config.scss` and CSS variables.
+
+Inside `_config.scss` find `$CLOSE_ICON` and set svg of customized icon with this format:
+
+```scss title="_config.scss"
+$CLOSE_ICON: url("data:image/svg+xml; utf8, YOUR SVG CODE HERE");
+```
+
+or
+
+change its CSS variable:
+
+```css title="style.css"
+--flatify__close-icon: url("data:image/svg+xml; utf8, YOUR SVG CODE HERE");
 ```

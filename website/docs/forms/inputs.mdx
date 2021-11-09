@@ -240,7 +240,11 @@ elem_password.addEventListener("keyup", function () {
 
 ## Show password button
 
-It is a built in button that helps you change the type of input from password to text, so user can see the password. Having this button is pretty simple you just need to add a `<button>` with `.show-password-button` class inside the `.input-wrapper` element.
+It is a built in button that helps you change the type of input from password to text, so user can see the password. Having this button is pretty simple you just need to add a `<button>` with `.show-password-button` class inside the `.input-wrapper.toggle-password` element.
+
+:::info Accessibility matters!
+You do not need to add anything inside the show password button element but it is necessary to set an `aria-label` HTML attribute for accessibility purposes. [Read more about aria-label usage](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute).
+:::
 
 <PreviewBox
 	height="150px"
@@ -266,10 +270,28 @@ It is a built in button that helps you change the type of input from password to
 '
 />
 
-```html title="index.html"
+```html {4} title="index.html"
 <label for="password" class="form-label">New password</label>
 <div class="input-wrapper">
 	<input required id="password" type="password" placeholder="Enter new password" />
 	<button class="show-password-button" aria-label="Show password"></button>
 </div>
+```
+
+### Changing icon
+
+It is possible to change the eye icon with both `_config.scss` and CSS variables.
+
+Inside `_config.scss` find `$EYE_ICON` and set svg of customized icon with this format:
+
+```scss title="_config.scss"
+$EYE_ICON: url("data:image/svg+xml; utf8, YOUR SVG CODE HERE");
+```
+
+or
+
+change its CSS variable:
+
+```css title="style.css"
+--flatify__eye-icon: url("data:image/svg+xml; utf8, YOUR SVG CODE HERE");
 ```

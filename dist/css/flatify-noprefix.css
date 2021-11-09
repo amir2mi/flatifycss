@@ -500,11 +500,11 @@ blockquote:before {
   content: " ";
   position: absolute;
   z-index: -1;
-  opacity: 0.08;
-  background-color: var(--flatify__blockquote-accent-color);
+  opacity: 0.1;
+  background-color: currentColor;
   mask: var(--flatify__blockquote-icon) no-repeat 50% 50%;
   -webkit-mask: var(--flatify__blockquote-icon) no-repeat 50% 50%;
-  filter: brightness(75%);
+  filter: brightness(100%);
 }
 blockquote:not(.large) {
   font-size: 1em;
@@ -514,22 +514,23 @@ blockquote:not(.large) {
 }
 blockquote:not(.large):before {
   top: 1em;
-  width: 4em;
-  height: 4em;
+  width: 10em;
+  height: 10em;
   left: 1em;
 }
 blockquote.large {
   font-size: 1.25em;
   border-width: 0.5em 0;
   padding: 1.25em 0.75em;
+  margin-top: 2em;
 }
 blockquote.large:before {
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 7em;
-  height: 7em;
+  width: 15em;
+  height: 15em;
   margin: auto;
 }
 blockquote.large:not(.text-align-fill) {
@@ -1062,7 +1063,10 @@ th {
   width: 100%;
   padding-right: 3em;
 }
-.input-wrapper:after {
+.input-wrapper.toggle-password input, .input-wrapper.invalid input, .input-wrapper.warning input, .input-wrapper.valid input {
+  padding-right: 3.5em;
+}
+.input-wrapper.toggle-password:after, .input-wrapper.invalid:after, .input-wrapper.warning:after, .input-wrapper.valid:after {
   content: " ";
   position: absolute;
   top: 0;
@@ -1127,7 +1131,7 @@ th {
   border-radius: calc(var(--flatify__border-radius) * 0.75);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .input-wrapper .show-password-button:active:before {
+  .input-wrapper .show-password-button:active:before, .input-wrapper .show-password-button:focus-visible:before {
     transform: scale(0.85) !important;
   }
 }
@@ -1145,7 +1149,7 @@ th {
   content: " ";
   position: absolute;
   right: 0.5em;
-  top: 0.1em;
+  top: 0;
   bottom: 0;
   z-index: 1;
   width: 1.5em;

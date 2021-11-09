@@ -11,11 +11,11 @@ $RESPONSIVE_BREAKPOINTS: (
 	lg: 992px,
 	xl: 1200px,
 	xxl: 1400px,
-);
+) !default;
 
 // *** Design: border width, radius, opacity, links
-$BORDER_WIDTH: max(2px, 0.18em);
-$BORDER_RADIUS: 1em;
+$BORDER_WIDTH: max(2px, 0.18em) !default;
+$BORDER_RADIUS: 1em !default;
 
 // This list will be converted to helper classes.
 // .edge-[]
@@ -49,9 +49,9 @@ $WIDTH_LIST: (
 // .opacity-[]
 $OPACITY_LIST: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100) !default;
 
-$LINK_DECORATION: none;
-$LINK_DECORATION_HOVER: underline 0.125em currentColor;
-$LINK_DECORATION_FOCUS: none;
+$LINK_DECORATION: none !default;
+$LINK_DECORATION_HOVER: underline 0.125em currentColor !default;
+$LINK_DECORATION_FOCUS: none !default;
 
 // *** Colors: accent color, background color, text color, heading color, palette
 $BG_COLOR: #ffffff !default;
@@ -223,10 +223,10 @@ $PALETTE: (
 // *** Motion: animations, transitions
 $SUPPORT_SMOOTH_SCROLL: true !default;
 
-$SIMPLE_TRANSITION: 0.15s ease-in-out; // without specifying properties
-$BOUNCING_TRANSITION: 0.35s cubic-bezier(0.59, -0.39, 0.36, 1.38); // without specifying properties
+$SIMPLE_TRANSITION: 0.15s ease-in-out !default; // without specifying properties
+$BOUNCING_TRANSITION: 0.35s cubic-bezier(0.59, -0.39, 0.36, 1.38) !default; // without specifying properties
 
-$ALERT_REMOVE_ANIMATION: flatify-alert-will-be-removed 350ms ease;
+$ALERT_REMOVE_ANIMATION: flatify-alert-will-be-removed 350ms ease !default;
 
 // *** Typography: font size, font family, line height
 $MAX_FONT_SIZE: 16 !default; // must be without unit
@@ -265,6 +265,6 @@ $HEADING_FONT_WEIGHT: bold !default;
 $PARAGRAPH_MARGIN_BOTTOM: 2em !default;
 
 // ICONS
-$BLOCKQUOTE_ICON: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 125"> <path d="M24.503 12.412C13.732 12.412 5 21.144 5 31.916c0 10.771 8.732 19.502 19.503 19.502.232 0 6.279-.034 6.279-.034-.153 10.869-7.646 19.99-17.738 22.613a55.73 55.73 0 01-2.123.473A6.572 6.572 0 005 81.008c0 3.288 2.422 6.003 5.574 6.485.033.006.066.008.099.016.151.02.304.035.458.045.074.004.145.021.22.021 0 0 .789.025 1.05.004 1.165-.098 1.529-.246 2.281-.404 16.618-3.49 29.156-18.187 29.315-35.791h.01V31.829l-.005.004c-.045-10.733-8.755-19.421-19.499-19.421zM94.995 31.833c-.045-10.732-8.756-19.42-19.499-19.42-10.771 0-19.503 8.732-19.503 19.503s8.732 19.502 19.503 19.502c.231 0 6.278-.034 6.278-.034-.152 10.869-7.646 19.99-17.737 22.613-.68.176-2.103.471-2.123.473a6.572 6.572 0 00-5.921 6.538c0 3.288 2.422 6.003 5.574 6.485.032.006.065.008.099.016.15.02.303.035.457.045.074.004.145.021.221.021 0 0 .788.025 1.049.004 1.166-.098 1.53-.246 2.282-.404 16.618-3.49 29.156-18.187 29.315-35.791H95V31.829l-.005.004z"></path></svg>');
-$CLOSE_ICON: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 16 16"><path d="M3.3 12.7c.2.2.4.3.7.3s.5-.1.7-.3L8 9.4l3.3 3.3c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4L9.4 8l3.3-3.3c.4-.4.4-1 0-1.4s-1-.4-1.4 0L8 6.6 4.7 3.3c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4L6.6 8l-3.3 3.3c-.4.4-.4 1 0 1.4z"></path></svg>');
-$EYE_ICON: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24"><path d="M12,4c-4.326,0-8.227,3.005-9.938,7.654c-0.082,0.224-0.082,0.468,0,0.691C3.773,16.995,7.674,20,12,20  s8.227-3.005,9.938-7.654c0.082-0.224,0.082-0.468,0-0.691C20.227,7.005,16.326,4,12,4z M12,18c-3.374,0-6.451-2.343-7.928-6  C5.549,8.343,8.626,6,12,6s6.451,2.343,7.928,6C18.451,15.657,15.374,18,12,18z"/><path d="M12,8c-2.206,0-4,1.794-4,4s1.794,4,4,4s4-1.794,4-4S14.206,8,12,8z M12,14c-1.103,0-2-0.897-2-2s0.897-2,2-2s2,0.897,2,2  S13.103,14,12,14z"/></svg>');
+$BLOCKQUOTE_ICON: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 125"> <path d="M24.503 12.412C13.732 12.412 5 21.144 5 31.916c0 10.771 8.732 19.502 19.503 19.502.232 0 6.279-.034 6.279-.034-.153 10.869-7.646 19.99-17.738 22.613a55.73 55.73 0 01-2.123.473A6.572 6.572 0 005 81.008c0 3.288 2.422 6.003 5.574 6.485.033.006.066.008.099.016.151.02.304.035.458.045.074.004.145.021.22.021 0 0 .789.025 1.05.004 1.165-.098 1.529-.246 2.281-.404 16.618-3.49 29.156-18.187 29.315-35.791h.01V31.829l-.005.004c-.045-10.733-8.755-19.421-19.499-19.421zM94.995 31.833c-.045-10.732-8.756-19.42-19.499-19.42-10.771 0-19.503 8.732-19.503 19.503s8.732 19.502 19.503 19.502c.231 0 6.278-.034 6.278-.034-.152 10.869-7.646 19.99-17.737 22.613-.68.176-2.103.471-2.123.473a6.572 6.572 0 00-5.921 6.538c0 3.288 2.422 6.003 5.574 6.485.032.006.065.008.099.016.15.02.303.035.457.045.074.004.145.021.221.021 0 0 .788.025 1.049.004 1.166-.098 1.53-.246 2.282-.404 16.618-3.49 29.156-18.187 29.315-35.791H95V31.829l-.005.004z"></path></svg>') !default;
+$CLOSE_ICON: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 16 16"><path d="M3.3 12.7c.2.2.4.3.7.3s.5-.1.7-.3L8 9.4l3.3 3.3c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4L9.4 8l3.3-3.3c.4-.4.4-1 0-1.4s-1-.4-1.4 0L8 6.6 4.7 3.3c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4L6.6 8l-3.3 3.3c-.4.4-.4 1 0 1.4z"></path></svg>') !default;
+$EYE_ICON: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24"><path d="M12,4c-4.326,0-8.227,3.005-9.938,7.654c-0.082,0.224-0.082,0.468,0,0.691C3.773,16.995,7.674,20,12,20  s8.227-3.005,9.938-7.654c0.082-0.224,0.082-0.468,0-0.691C20.227,7.005,16.326,4,12,4z M12,18c-3.374,0-6.451-2.343-7.928-6  C5.549,8.343,8.626,6,12,6s6.451,2.343,7.928,6C18.451,15.657,15.374,18,12,18z"/><path d="M12,8c-2.206,0-4,1.794-4,4s1.794,4,4,4s4-1.794,4-4S14.206,8,12,8z M12,14c-1.103,0-2-0.897-2-2s0.897-2,2-2s2,0.897,2,2  S13.103,14,12,14z"/></svg>') !default;
