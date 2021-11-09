@@ -7,10 +7,158 @@ import PreviewBox from "../../src/components/preview-box";
 
 On this page we will talk about how to style inputs for a form with Flatify CSS, by default inputs get Flatify CSS style but you can reset to default with the `.default` class.
 
-## Demo
+## Label
+
+### Inline label
+
+By default input labels are inline until you add `.form-label` which is necessary, in this case, if you add the `.inline` class to the `<label>` it will be inline.
 
 <PreviewBox
 	height="200px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+	</head>
+	<body>
+			<label for="my-text-input" class="form-label inline">Enter you name</label>
+			<input id="my-text-input" type="text" placeholder="Enter you name" />
+			<br>
+			<label for="my-text-input" class="form-label">Enter you name</label>
+			<input id="my-text-input" type="text" placeholder="Enter you name" />
+	</body>
+</html>'
+/>
+
+```html title="index.html"
+<label class="form-label inline" for="my-text-input">Enter you name</label>
+<input id="my-text-input" type="text" placeholder="Enter you name" />
+
+<label class="form-label" for="my-text-input"> Enter you name </label>
+<input id="my-text-input" type="text" placeholder="Enter you name" />
+```
+
+### Floating label
+
+The floating label is inside the input and it seems like a placeholder, how it works is done by pure CSS and it is necessary to set a placeholder for input, though it does not show it.
+To have a floating label first wrap both input and label with `.input-wrapper` & `.floating-label` classes and place the label after input.
+
+<PreviewBox
+	height="110px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+	</head>
+	<body>
+		<div class="input-wrapper floating-label">
+			<input id="my-text-input" type="text" placeholder="Enter you name" />
+			<label for="my-text-input" class="form-label">Enter you name</label>
+		</div>
+	</body>
+</html>'
+/>
+
+```html {1,3} title="index.html"
+<div class="input-wrapper floating-label">
+	<input id="my-text-input" type="text" placeholder="Enter you name" />
+	<label for="my-text-input" class="form-label">Enter you name</label>
+</div>
+```
+
+## Validation
+
+Input invalid state is red by default however you can have valid and warning states as well. You can use `.valid`, `.warning`, `.invalid` classes both for input or input wrapper. The diffrence between them is simple if you add these classes to the `.input-wrapper` it will show an indicator icon.
+
+<PreviewBox
+	height="620px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+	</head>
+	<body>
+		<label for="my-text-input" class="form-label">Enter you name</label>
+		<div class="input-wrapper">
+			<input class="valid" id="my-text-input" type="text" placeholder="Enter you name" />
+		</div>
+		<label for="my-text-input" class="form-label">Enter you name</label>
+		<div class="input-wrapper">
+			<input class="warning" id="my-text-input" type="text" placeholder="Enter you name" />
+		</div>
+		<label for="my-text-input" class="form-label">Enter you name</label>
+		<div class="input-wrapper">
+			<input class="invalid" id="my-text-input" type="text" placeholder="Enter you name" />
+		</div>
+		<br>
+		<label for="my-email-input" class="form-label">Enter you email</label>
+		<div class="input-wrapper valid">
+			<input id="my-email-input" type="email" placeholder="Enter you email" />
+		</div>
+		<label for="my-email-input" class="form-label">Enter you email</label>
+		<div class="input-wrapper warning">
+			<input id="my-email-input" type="email" placeholder="Enter you name" />
+		</div>
+		<label for="my-email-input" class="form-label">Enter you email</label>
+		<div class="input-wrapper invalid">
+			<input id="my-email-input" type="email" placeholder="Enter you email" />
+		</div>
+	</body>
+</html>'
+/>
+
+```html title="index.html"
+// Validation classes added to the input
+<label for="my-text-input" class="form-label">Enter you name</label>
+<div class="input-wrapper">
+	<input class="valid" id="my-text-input" type="text" placeholder="Enter you name" />
+</div>
+
+<label for="my-text-input" class="form-label">Enter you name</label>
+<div class="input-wrapper">
+	<input class="warning" id="my-text-input" type="text" placeholder="Enter you name" />
+</div>
+
+<label for="my-text-input" class="form-label">Enter you name</label>
+<div class="input-wrapper">
+	<input class="invalid" id="my-text-input" type="text" placeholder="Enter you name" />
+</div>
+
+// Validation classes added to the .input-wrapper
+<label for="my-text-input" class="form-label">Enter you name</label>
+<div class="input-wrapper valid">
+	<input id="my-text-input" type="text" placeholder="Enter you name" />
+</div>
+
+<label for="my-text-input" class="form-label">Enter you name</label>
+<div class="input-wrapper warning">
+	<input id="my-text-input" type="text" placeholder="Enter you name" />
+</div>
+
+<label for="my-text-input" class="form-label">Enter you name</label>
+<div class="input-wrapper invalid">
+	<input id="my-text-input" type="text" placeholder="Enter you name" />
+</div>
+```
+
+### Validation demo
+
+Here is an example of how to use validation classes to have a dynamic input.
+
+<PreviewBox
+	height="140px"
 	children='<!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -62,7 +210,7 @@ On this page we will talk about how to style inputs for a form with Flatify CSS,
 <p class="help-text size-sm">Password length should be more than 8 chars with letters.</p>
 ```
 
-```js title="main.js"
+```javascript title="main.js"
 const elem_wrapper = document.querySelector(".input-wrapper");
 const elem_password = document.querySelector("#password");
 const elem_help = document.querySelector(".help-text");
@@ -88,65 +236,4 @@ elem_password.addEventListener("keyup", function () {
 		elem_help.innerText = "Password length should be more than 8 chars.";
 	}
 });
-```
-
-## Text input
-
-Inputs which get text from user can have type of password, email, url etc.
-
-### Inline label
-
-By default input labels are inline until you add `.form-label` which is necessary, in this case if you add `.inline` class to the `<label>` it will be inline.
-
-<PreviewBox
-	height="200px"
-	children='<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Inputs</title>
-	</head>
-	<body>
-			<label for="my-text-input" class="form-label inline">Enter you name</label>
-			<input id="my-text-input" type="text" placeholder="Enter you name" />
-			<br>
-			<label for="my-text-input" class="form-label">Enter you name</label>
-			<input id="my-text-input" type="text" placeholder="Enter you name" />
-	</body>
-</html>'
-/>
-
-### Floating label
-
-The floating label is inside the input and it seems like a placeholder, how it works is done by pure CSS and it is necessary to set a placeholder for input, though it does not show it.
-To have a floating label first wrap both input and label with `.input-wrapper` & `.floating-label` classes and place the label after input.
-
-<PreviewBox
-	height="110px"
-	children='<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Inputs</title>
-	</head>
-	<body>
-		<div class="input-wrapper floating-label">
-			<input id="my-text-input" type="text" placeholder="Enter you name" />
-			<label for="my-text-input" class="form-label">Enter you name</label>
-		</div>
-	</body>
-</html>'
-/>
-
-```html {1,3} title="index.html"
-<div class="input-wrapper floating-label">
-	<input id="my-text-input" type="text" placeholder="Enter you name" />
-	<label for="my-text-input" class="form-label">Enter you name</label>
-</div>
 ```

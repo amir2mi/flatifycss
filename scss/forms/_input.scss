@@ -111,7 +111,7 @@
 
 input:not(.default) {
 	font-size: 0.9em;
-	padding: 0.9em 1em;
+	padding: 0.8em 1em;
 	margin: 0.38em 0;
 	color: var(--#{$CSS_VAR_PFX}input-txt-color);
 	background: var(--#{$CSS_VAR_PFX}input-bg-color);
@@ -218,16 +218,14 @@ input[type="file"]:not(.default) {
 	}
 }
 
-input[type="range"]:not(.default) {
+input[type="range"] {
 	-webkit-appearance: none;
 	width: 100%;
 	background: transparent !important;
 	border: none;
-	filter: none;
+	filter: none !important;
 
-	&::-moz-range-track,
-	&::-webkit-slider-runnable-track {
-		width: 100%;
+	&::-moz-range-track {
 		cursor: pointer;
 		width: 100%;
 		height: max(3px, calc(var(--#{$CSS_VAR_PFX}border-width) * 1.5));
@@ -235,8 +233,15 @@ input[type="range"]:not(.default) {
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 	}
 
-	&::-moz-range-thumb,
-	&::-webkit-slider-thumb {
+	&::-webkit-slider-runnable-track {
+		cursor: pointer;
+		width: 100%;
+		height: max(3px, calc(var(--#{$CSS_VAR_PFX}border-width) * 1.5));
+		background: var(--#{$CSS_VAR_PFX}input-border-color);
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+	}
+
+	&::-moz-range-thumb {
 		-webkit-appearance: none;
 		cursor: pointer;
 		height: 1.24em;
@@ -247,26 +252,42 @@ input[type="range"]:not(.default) {
 		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 	}
 
-	&:hover {
-		&::-webkit-slider-thumb,
-		&::-moz-range-thumb {
-			filter: brightness(90%);
-		}
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		cursor: pointer;
+		height: 1.24em;
+		width: 1.24em;
+		margin: -0.55em; // webkit thumb should be positioned manually
+		background: var(--#{$CSS_VAR_PFX}input-bg-color);
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+		border: max(1px, var(--#{$CSS_VAR_PFX}border-width)) solid var(--#{$CSS_VAR_PFX}input-border-color);
+		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 	}
 
-	&:active {
-		&::-webkit-slider-thumb,
-		&::-moz-range-thumb {
-			transform: scale(0.9);
-		}
+	&:hover::-moz-range-thumb {
+		filter: brightness(90%);
 	}
 
-	&:focus {
-		&::-webkit-slider-thumb,
-		&::-moz-range-thumb {
-			border-color: var(--#{$CSS_VAR_PFX}input-border-color__focus);
-			filter: brightness(90%);
-		}
+	&:hover::-webkit-slider-thumb {
+		filter: brightness(90%);
+	}
+
+	&:active::-moz-range-thumb {
+		transform: scale(0.9);
+	}
+
+	&:active::-webkit-slider-thumb {
+		transform: scale(0.9);
+	}
+
+	&:focus::-moz-range-thumb {
+		border-color: var(--#{$CSS_VAR_PFX}input-border-color__focus);
+		filter: brightness(90%);
+	}
+
+	&:focus::-webkit-slider-thumb {
+		border-color: var(--#{$CSS_VAR_PFX}input-border-color__focus);
+		filter: brightness(90%);
 	}
 }
 
