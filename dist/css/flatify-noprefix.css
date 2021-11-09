@@ -1002,8 +1002,10 @@ th {
   mask: var(--flatify__close-icon) no-repeat 50% 50%;
   -webkit-mask: var(--flatify__close-icon) no-repeat 50% 50%;
 }
-.close-button:focus-visible, .close-button:active {
-  transform: scale(0.85) !important;
+@media (prefers-reduced-motion: no-preference) {
+  .close-button:focus-visible, .close-button:active {
+    transform: scale(0.85) !important;
+  }
 }
 
 .form-label {
@@ -1123,6 +1125,11 @@ th {
   border: none;
   border-radius: calc(var(--flatify__border-radius) * 0.75);
 }
+@media (prefers-reduced-motion: no-preference) {
+  .input-wrapper .show-password-button:active:before {
+    transform: scale(0.85) !important;
+  }
+}
 .input-wrapper .show-password-button:before {
   content: "";
   display: block;
@@ -1131,6 +1138,7 @@ th {
   background-color: currentColor;
   mask: var(--flatify__eye-icon) no-repeat 50% 50%;
   -webkit-mask: var(--flatify__eye-icon) no-repeat 50% 50%;
+  transition: all var(--flatify__simple-transition);
 }
 .input-wrapper .show-password-button:after {
   content: " ";
@@ -1283,11 +1291,13 @@ input[type=range]:hover::-moz-range-thumb {
 input[type=range]:hover::-webkit-slider-thumb {
   filter: brightness(90%);
 }
-input[type=range]:active::-moz-range-thumb {
-  transform: scale(0.9);
-}
-input[type=range]:active::-webkit-slider-thumb {
-  transform: scale(0.9);
+@media (prefers-reduced-motion: no-preference) {
+  input[type=range]:active::-moz-range-thumb {
+    transform: scale(0.9);
+  }
+  input[type=range]:active::-webkit-slider-thumb {
+    transform: scale(0.9);
+  }
 }
 input[type=range]:focus::-moz-range-thumb {
   border-color: var(--flatify__input-border-color__focus);
@@ -1951,11 +1961,9 @@ body ::after {
     background-attachment: initial !important;
     scroll-behavior: auto !important;
   }
-  body .input-wrapper:before,
-body .input-wrapper:after,
-body input[type=range],
-body .close-button {
+  body * {
     --flatify__simple-transition: 0s !important;
+    --flatify__bouncing-transition: 0s !important;
   }
   body .alert-will-be-removed {
     animation-name: flatify-fade-out !important;

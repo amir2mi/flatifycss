@@ -21,8 +21,10 @@
 		-webkit-mask: var(--#{$CSS_VAR_PFX}close-icon) no-repeat 50% 50%;
 	}
 
-	&:focus-visible,
-	&:active {
-		transform: scale(0.85) !important;
+	@media (prefers-reduced-motion: no-preference) {
+		&:focus-visible,
+		&:active {
+			transform: scale(0.85) !important;
+		}
 	}
 }

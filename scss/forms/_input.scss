@@ -128,6 +128,14 @@
 		border: none;
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
 
+		@media (prefers-reduced-motion: no-preference) {
+			&:active {
+				&:before {
+					transform: scale(0.85) !important;
+				}
+			}
+		}
+
 		&:before {
 			content: "";
 			display: block;
@@ -136,6 +144,7 @@
 			background-color: currentColor;
 			mask: var(--#{$CSS_VAR_PFX}eye-icon) no-repeat 50% 50%;
 			-webkit-mask: var(--#{$CSS_VAR_PFX}eye-icon) no-repeat 50% 50%;
+			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 		}
 
 		&:after {
@@ -330,12 +339,14 @@ input[type="range"] {
 		filter: brightness(90%);
 	}
 
-	&:active::-moz-range-thumb {
-		transform: scale(0.9);
-	}
+	@media (prefers-reduced-motion: no-preference) {
+		&:active::-moz-range-thumb {
+			transform: scale(0.9);
+		}
 
-	&:active::-webkit-slider-thumb {
-		transform: scale(0.9);
+		&:active::-webkit-slider-thumb {
+			transform: scale(0.9);
+		}
 	}
 
 	&:focus::-moz-range-thumb {

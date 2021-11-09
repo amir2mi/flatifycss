@@ -8,12 +8,10 @@
 			scroll-behavior: auto !important;
 		}
 
-		// Does not need transition in this case
-		.input-wrapper:before,
-		.input-wrapper:after,
-		input[type="range"],
-		.close-button {
+		// Do not need transition in this case
+		* {
 			--#{$CSS_VAR_PFX}simple-transition: 0s !important;
+			--#{$CSS_VAR_PFX}bouncing-transition: 0s !important;
 		}
 
 		// Fade out instead of custom animation
