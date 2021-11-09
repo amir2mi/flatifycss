@@ -237,3 +237,39 @@ elem_password.addEventListener("keyup", function () {
 	}
 });
 ```
+
+## Show password button
+
+It is a built in button that helps you change the type of input from password to text, so user can see the password. Having this button is pretty simple you just need to add a `<button>` with `.show-password-button` class inside the `.input-wrapper` element.
+
+<PreviewBox
+	height="150px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Buttons</title>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body>
+        <label for="password" class="form-label">New password</label>
+		<div class="input-wrapper">
+			<input required id="password" type="password" placeholder="Enter new password" />
+			<button class="show-password-button" aria-label="Show password"></button>
+		</div>
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<label for="password" class="form-label">New password</label>
+<div class="input-wrapper">
+	<input required id="password" type="password" placeholder="Enter new password" />
+	<button class="show-password-button" aria-label="Show password"></button>
+</div>
+```

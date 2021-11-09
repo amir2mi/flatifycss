@@ -52,9 +52,9 @@
 	&.warning {
 		&:after {
 			@if $SUPPORT_LTR {
-				right: 1.7em;
+				right: 1.55em;
 			} @else {
-				left: 1.7em;
+				left: 1.55em;
 			}
 
 			width: 0.5em;
@@ -111,20 +111,20 @@
 		position: absolute;
 		top: 0;
 		bottom: 0;
-
+		// should be over [.input-wrapper] ::before and ::after
+		z-index: 3;
 		@if $SUPPORT_LTR {
-			right: 0.25em;
+			right: 0.5em;
 		} @else {
-			left: 0.25em;
+			left: 0.5em;
 		}
-
 		font-size: 1em;
 		width: 2.5em;
 		height: 2.5em;
 		padding: 0.5em;
 		margin: auto 0;
 		color: var(--#{$CSS_VAR_PFX}input-txt-color);
-		background: var(--#{$CSS_VAR_PFX}input-bg-color);
+		background: transparent;
 		border: none;
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
 

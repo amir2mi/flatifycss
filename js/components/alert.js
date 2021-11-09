@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		// after delay remove alert from DOM
 		wrapper.onanimationend = (e) => {
 			wrapper.remove();
-			logger("info", `Alert is removed after ${secondToMs(e.elapsedTime)}ms delay.`, wrapper);
+			logger("info", `Alert is removed after ${secondToMs(e.elapsedTime)}ms delay`, wrapper);
 		};
 	});
 });

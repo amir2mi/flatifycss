@@ -1079,7 +1079,7 @@ th {
   background: var(--flatify__input-border-color__invalid);
 }
 .input-wrapper.warning:after {
-  right: 1.7em;
+  right: 1.55em;
   width: 0.5em;
   height: 0.5em;
   background: var(--flatify__input-border-color__warning);
@@ -1114,14 +1114,15 @@ th {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0.25em;
+  z-index: 3;
+  right: 0.5em;
   font-size: 1em;
   width: 2.5em;
   height: 2.5em;
   padding: 0.5em;
   margin: auto 0;
   color: var(--flatify__input-txt-color);
-  background: var(--flatify__input-bg-color);
+  background: transparent;
   border: none;
   border-radius: calc(var(--flatify__border-radius) * 0.75);
 }
