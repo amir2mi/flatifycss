@@ -66,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/**\n * Vent, jQuery inspired
   \************************/
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse('{\"enableLogging\":true,\"alertRemoveDelay\":\"400\"}');\n\n//# sourceURL=webpack://flatifycss/./js/config.json?");
+eval("module.exports = JSON.parse('{\"enableLogging\":true}');\n\n//# sourceURL=webpack://flatifycss/./js/config.json?");
 
 /***/ })
 
