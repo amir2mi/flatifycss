@@ -16,7 +16,7 @@
   \********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _config_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config.json */ \"./js/config.json\");\n/* harmony import */ var _utils_vent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/vent */ \"./js/utils/vent.js\");\n/* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/logger */ \"./js/utils/logger.js\");\n\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n\t(0,_utils_vent__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(document).on(\"click\", \".close-button\", function () {\n\t\tconst wrapper = this.closest(\".alert\");\n\n\t\t// return if close button does not have wrapper with [.alert] class\n\t\tif (!wrapper) {\n\t\t\treturn (0,_utils_logger__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"error\", `Close button is not in an \".alert\"`, this.parentElement);\n\t\t} else {\n\t\t\t(0,_utils_logger__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"info\", \"Alert will be removed...\", wrapper);\n\t\t}\n\n\t\t// add animation class to remove the alert\n\t\twrapper.classList.add(\"alert-will-be-removed\");\n\n\t\t// after delay remove alert from DOM\n\t\tsetTimeout(() => {\n\t\t\twrapper.remove();\n\t\t\t(0,_utils_logger__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"info\", `Alert is removed after ${_config_json__WEBPACK_IMPORTED_MODULE_0__.alertRemoveDelay}ms delay.`, wrapper);\n\t\t}, _config_json__WEBPACK_IMPORTED_MODULE_0__.alertRemoveDelay);\n\t});\n});\n\n\n//# sourceURL=webpack://flatifycss/./js/components/alert.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _config_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config.json */ \"./js/config.json\");\n/* harmony import */ var _utils_vent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/vent */ \"./js/utils/vent.js\");\n/* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/logger */ \"./js/utils/logger.js\");\n/* harmony import */ var _utils_time__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/time */ \"./js/utils/time.js\");\n\n\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n\t(0,_utils_vent__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(document).on(\"click\", \".close-button\", function () {\n\t\tconst wrapper = this.closest(\".alert\");\n\n\t\t// return if close button does not have wrapper with [.alert] class\n\t\tif (!wrapper) {\n\t\t\treturn (0,_utils_logger__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"error\", `Close button is not in an \".alert\"`, this.parentElement);\n\t\t} else {\n\t\t\t(0,_utils_logger__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"info\", \"Alert will be removed...\", wrapper);\n\t\t}\n\n\t\t// add animation class to remove the alert\n\t\twrapper.classList.add(\"alert-will-be-removed\");\n\n\t\t// after delay remove alert from DOM\n\t\twrapper.onanimationend = (e) => {\n\t\t\twrapper.remove();\n\t\t\t(0,_utils_logger__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\"info\", `Alert is removed after ${(0,_utils_time__WEBPACK_IMPORTED_MODULE_3__.secondToMs)(e.elapsedTime)}ms delay.`, wrapper);\n\t\t};\n\t});\n});\n\n\n//# sourceURL=webpack://flatifycss/./js/components/alert.js?");
 
 /***/ }),
 
@@ -37,6 +37,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ logger; }\n/* harmony export */ });\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config */ \"./js/config.json\");\n\n\n/**\n * Log a message in the console or another services,\n * It will log if [enableLogging] is true in config.json.\n *\n * @param type {string} console logging type.\n * @param message {string} console logging type.\n * @param data {any} Attached data for further information.\n */\nfunction logger(type, message, data) {\n\tif (_config__WEBPACK_IMPORTED_MODULE_0__.enableLogging === true) {\n\t\tswitch (type) {\n\t\t\tcase \"info\":\n\t\t\t\treturn console.info(message, data);\n\t\t\tcase \"warn\":\n\t\t\t\treturn console.warn(message, data);\n\t\t\tcase \"error\":\n\t\t\t\treturn console.error(message, data);\n\t\t\tdefault:\n\t\t\t\treturn console.log(message, data);\n\t\t}\n\t}\n}\n\n\n//# sourceURL=webpack://flatifycss/./js/utils/logger.js?");
+
+/***/ }),
+
+/***/ "./js/utils/time.js":
+/*!**************************!*\
+  !*** ./js/utils/time.js ***!
+  \**************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"secondToMs\": function() { return /* binding */ secondToMs; }\n/* harmony export */ });\n/**\n * Convert seconds to milliseconds\n * @param {number} time \n * @returns milliseconds\n */\nfunction secondToMs(time) {\n\treturn !isNaN(time) && Math.ceil(time * 1000);\n}\n\n\n//# sourceURL=webpack://flatifycss/./js/utils/time.js?");
 
 /***/ }),
 
@@ -123,6 +133,7 @@ eval("module.exports = JSON.parse('{\"enableLogging\":true,\"alertRemoveDelay\":
 /******/ 	__webpack_require__("./js/flatify.js");
 /******/ 	__webpack_require__("./js/components/alert.js");
 /******/ 	__webpack_require__("./js/utils/logger.js");
+/******/ 	__webpack_require__("./js/utils/time.js");
 /******/ 	var __webpack_exports__ = __webpack_require__("./js/utils/vent.js");
 /******/ 	
 /******/ })()

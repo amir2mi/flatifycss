@@ -1,4 +1,3 @@
 {
-	"enableLogging": true,
-	"alertRemoveDelay": "400"
+	"enableLogging": true
 }

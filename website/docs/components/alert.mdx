@@ -405,12 +405,6 @@ Each alert has these CSS variables for customization, they can be set as `:root`
 }
 ```
 
-:::success
-
-### Alert remove animation custom duration
-
-To change alert remove animation duration you need to change two things:
-
-1- Change `$ALERT_REMOVE_ANIMATION` in `_config.scss` or `--flatify__alert-remove-animation` CSS variable.  
-2- Change the delay that the alert after it will get removed by JS in the `config.json` file, change `alertRemoveDelay` to whatever you want however it is suggested setting this delay duration more than CSS animation to prevent an immediate shift in UI.
+:::success Alert remove animation custom duration
+To change alert remove animation duration you need to change `$ALERT_REMOVE_ANIMATION` in `_config.scss` or `--flatify__alert-remove-animation` CSS variable. Javascript automatically will remove alert when animation is finished.
 :::

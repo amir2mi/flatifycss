@@ -1,6 +1,7 @@
 import config from "../config.json";
 import $ from "../utils/vent";
 import logger from "../utils/logger";
+import { secondToMs } from "../utils/time";
 
 document.addEventListener("DOMContentLoaded", () => {
 	$(document).on("click", ".close-button", function () {
@@ -17,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		wrapper.classList.add("alert-will-be-removed");
 
 		// after delay remove alert from DOM
-		setTimeout(() => {
+		wrapper.onanimationend = (e) => {
 			wrapper.remove();
-			logger("info", `Alert is removed after ${config.alertRemoveDelay}ms delay.`, wrapper);
-		}, config.alertRemoveDelay);
+			logger("info", `Alert is removed after ${secondToMs(e.elapsedTime)}ms delay.`, wrapper);
+		};
 	});
 });
