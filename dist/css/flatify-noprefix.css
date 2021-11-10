@@ -132,6 +132,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: var(--flatify__tap-highlight-color);
   text-rendering: optimizeLegibility;
+  direction: rtl;
 }
 
 h6, h5, h4, h3, h2, h1 {
@@ -262,7 +263,7 @@ mark.inline:before {
   background: var(--flatify__local-bg-color);
   border-radius: calc(var(--flatify__border-radius) * 0.38);
   opacity: 0.9;
-  transform: rotate(-3deg) scale(1.1, 1.2) skew(-10deg);
+  transform: rotate(3deg) scale(1.1, 1.2) skew(10deg);
 }
 
 sub,
@@ -494,7 +495,7 @@ blockquote {
   border-radius: calc(var(--flatify__border-radius) * 0.5);
   border-style: solid;
   border-color: var(--flatify__blockquote-accent-color);
-  border-width: 0 0 0 0.5em;
+  border-width: 0 0.5em 0 0;
 }
 blockquote:before {
   content: " ";
@@ -510,13 +511,13 @@ blockquote:not(.large) {
   font-size: 1em;
   line-height: var(--flatify__large-line-height);
   padding: 0.75em 1.25em;
-  border-radius: calc(var(--flatify__border-radius) * 0.5) var(--flatify__border-radius) var(--flatify__border-radius) calc(var(--flatify__border-radius) * 0.5);
+  border-radius: var(--flatify__border-radius) calc(var(--flatify__border-radius) * 0.5) calc(var(--flatify__border-radius) * 0.5) var(--flatify__border-radius);
 }
 blockquote:not(.large):before {
   top: 1em;
   width: 10em;
   height: 10em;
-  left: 1em;
+  right: 1em;
 }
 blockquote.large {
   font-size: 1.25em;
@@ -574,7 +575,7 @@ figure .source {
   background: var(--flatify__txt-color-dark);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.75);
-  right: 1em;
+  left: 1em;
 }
 figure.fill {
   width: 100% !important;
@@ -693,11 +694,11 @@ table.bordered:not(.horizontal) tr:first-child td {
 }
 table.bordered:not(.horizontal) td,
 table.bordered:not(.horizontal) th {
-  border-left: var(--flatify__border-width) solid var(--flatify__table-border-color);
+  border-right: var(--flatify__border-width) solid var(--flatify__table-border-color);
 }
 table.bordered:not(.horizontal) td:last-child,
 table.bordered:not(.horizontal) th:last-child {
-  border-right: var(--flatify__border-width) solid var(--flatify__table-border-color);
+  border-left: var(--flatify__border-width) solid var(--flatify__table-border-color);
 }
 table.bordered:not(.horizontal) td,
 table.bordered:not(.horizontal) th {
@@ -712,7 +713,7 @@ table.horizontal tr {
   white-space: nowrap;
 }
 table.horizontal thead {
-  float: left;
+  float: right;
 }
 table.horizontal thead td,
 table.horizontal thead th {
@@ -734,15 +735,15 @@ table.horizontal.bordered {
 }
 table.horizontal.bordered thead tr {
   display: block;
-  border-right: var(--flatify__border-width) solid var(--flatify__table-border-color);
+  border-left: var(--flatify__border-width) solid var(--flatify__table-border-color);
 }
 table.horizontal.bordered thead td,
 table.horizontal.bordered thead th {
-  border-left: var(--flatify__border-width) solid var(--flatify__table-border-color);
+  border-right: var(--flatify__border-width) solid var(--flatify__table-border-color);
 }
 table.horizontal.bordered tbody th,
 table.horizontal.bordered tbody td {
-  border-right: var(--flatify__border-width) solid var(--flatify__table-border-color);
+  border-left: var(--flatify__border-width) solid var(--flatify__table-border-color);
 }
 table.horizontal.bordered td,
 table.horizontal.bordered th {
@@ -754,31 +755,31 @@ table.horizontal.bordered th:last-child {
 }
 table.horizontal thead tr th:first-child,
 table.horizontal thead tr td:first-child {
-  border-top-left-radius: var(--flatify__border-radius);
+  border-top-right-radius: var(--flatify__border-radius);
 }
 table.horizontal thead tr th:last-child,
 table.horizontal thead tr td:last-child {
-  border-bottom-left-radius: var(--flatify__border-radius);
+  border-bottom-right-radius: var(--flatify__border-radius);
 }
 table.horizontal tbody tr:last-child th:first-child,
 table.horizontal tbody tr:last-child td:first-child {
-  border-top-right-radius: var(--flatify__border-radius);
+  border-top-left-radius: var(--flatify__border-radius);
 }
 table.horizontal tbody tr:last-child th:last-child,
 table.horizontal tbody tr:last-child td:last-child {
-  border-bottom-right-radius: var(--flatify__border-radius);
-}
-table:not(.horizontal) tr:last-child th:first-child {
-  border-top-left-radius: var(--flatify__border-radius);
-}
-table:not(.horizontal) tr:last-child th:last-child {
-  border-top-right-radius: var(--flatify__border-radius);
-}
-table:not(.horizontal) tr:last-child td:first-child {
   border-bottom-left-radius: var(--flatify__border-radius);
 }
-table:not(.horizontal) tr:last-child td:last-child {
+table:not(.horizontal) tr:last-child th:first-child {
+  border-top-right-radius: var(--flatify__border-radius);
+}
+table:not(.horizontal) tr:last-child th:last-child {
+  border-top-left-radius: var(--flatify__border-radius);
+}
+table:not(.horizontal) tr:last-child td:first-child {
   border-bottom-right-radius: var(--flatify__border-radius);
+}
+table:not(.horizontal) tr:last-child td:last-child {
+  border-bottom-left-radius: var(--flatify__border-radius);
 }
 table.striped thead th,
 table.striped thead td {
@@ -830,13 +831,13 @@ th {
 .alert .close-button {
   position: relative;
   top: -0.38em;
-  float: right;
-  right: -0.38em;
+  float: left;
+  left: -0.38em;
 }
 .alert .close-button.floating {
   position: absolute;
   top: 0.75em;
-  right: 0.75em;
+  left: 0.75em;
   transform: scale(0);
 }
 .alert .close-button.floating:after {
@@ -859,8 +860,8 @@ th {
   width: 100%;
 }
 .alert.has-icon {
-  padding-left: 2.75em;
-  margin-left: 1.5em;
+  padding-right: 2.75em;
+  margin-right: 1.5em;
 }
 .alert .alert-svg {
   position: absolute;
@@ -869,7 +870,7 @@ th {
   top: 0;
   bottom: 0;
   filter: brightness(115%);
-  left: -1.4em;
+  right: -1.4em;
   padding: 0.5em;
   color: inherit;
   background: var(--flatify__local-bg-color);
@@ -966,10 +967,10 @@ th {
   border-radius: 0;
 }
 .button-group:not(.vertical) .button:first-child, .button-group:not(.vertical) input[type=file]:first-child:not(.default)::file-selector-button {
-  border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
+  border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
 }
 .button-group:not(.vertical) .button:last-child, .button-group:not(.vertical) input[type=file]:last-child:not(.default)::file-selector-button {
-  border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
+  border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
 }
 .button-group.vertical {
   flex-direction: column;
@@ -1013,11 +1014,11 @@ th {
   margin-top: 0.9em;
 }
 .form-label.inline:not(:first-child) {
-  margin-left: 0.38em;
+  margin-right: 0.38em;
 }
 .form-label:not(.inline) {
   display: block;
-  margin-left: 0.38em;
+  margin-right: 0.38em;
 }
 
 .floating-label input {
@@ -1040,8 +1041,8 @@ th {
   opacity: 0.8;
   will-change: opacity, transform;
   transition: all var(--flatify__bouncing-transition);
-  transform-origin: top left;
-  left: 1em;
+  transform-origin: top right;
+  right: 1em;
 }
 
 :root {
@@ -1061,10 +1062,10 @@ th {
 }
 .input-wrapper input {
   width: 100%;
-  padding-right: 3em;
+  padding-left: 3em;
 }
 .input-wrapper.toggle-password input, .input-wrapper.invalid input, .input-wrapper.warning input, .input-wrapper.valid input {
-  padding-right: 3.5em;
+  padding-left: 3.5em;
 }
 .input-wrapper.toggle-password:after, .input-wrapper.invalid:after, .input-wrapper.warning:after, .input-wrapper.valid:after {
   content: " ";
@@ -1077,13 +1078,13 @@ th {
   transition: all var(--flatify__simple-transition);
 }
 .input-wrapper.invalid:after {
-  right: 1.35em;
+  left: 1.35em;
   width: 1em;
   height: 0.25em;
   background: var(--flatify__input-border-color__invalid);
 }
 .input-wrapper.warning:after {
-  right: 1.55em;
+  left: 1.55em;
   width: 0.5em;
   height: 0.5em;
   background: var(--flatify__input-border-color__warning);
@@ -1101,14 +1102,14 @@ th {
   border-radius: var(--flatify__border-radius);
   transition: all var(--flatify__simple-transition);
   animation: flatify-fade-in 0.35s;
-  right: 1.75em;
+  left: 0.8em;
   width: 0.64em;
   height: 0.25em;
   background: var(--flatify__input-border-color__valid);
   transform: rotate(45deg);
 }
 .input-wrapper.valid:after {
-  right: 1em;
+  left: 1em;
   width: 1.2em;
   height: 0.25em;
   background: var(--flatify__input-border-color__valid);
@@ -1119,7 +1120,7 @@ th {
   top: 0;
   bottom: 0;
   z-index: 3;
-  right: 0.5em;
+  left: 0.5em;
   font-size: 1em;
   width: 2.5em;
   height: 2.5em;
@@ -1148,7 +1149,7 @@ th {
 .input-wrapper .show-password-button:after {
   content: " ";
   position: absolute;
-  right: 0.5em;
+  left: 0.5em;
   top: 0;
   bottom: 0;
   z-index: 1;
@@ -1245,7 +1246,7 @@ input[type=file]:not(.default)::file-selector-button {
   color: inherit;
   filter: brightness(92%);
   vertical-align: baseline;
-  margin: 0 0.75em 0 0;
+  margin: 0 0 0 0.75em;
 }
 
 input[type=range] {
@@ -1340,8 +1341,8 @@ input[type=button][type=file]:not(.default)::file-selector-button {
   }
   100% {
     opacity: 0;
-    transform-origin: top right;
-    transform: scale(0.92) rotate(-0.5deg);
+    transform-origin: top left;
+    transform: scale(0.92) rotate(0.5deg);
   }
 }
 .alert-will-be-removed {

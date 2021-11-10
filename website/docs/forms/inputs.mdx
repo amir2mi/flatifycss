@@ -90,30 +90,30 @@ Input invalid state is red by default however you can have valid and warning sta
 		<title>Inputs</title>
 	</head>
 	<body>
-		<label for="my-text-input" class="form-label">Enter you name</label>
+		<label for="my-text-input-1" class="form-label">Enter you name</label>
 		<div class="input-wrapper">
-			<input class="valid" id="my-text-input" type="text" placeholder="Enter you name" />
+			<input class="valid" id="my-text-input-1" type="text" placeholder="Enter you name" />
 		</div>
-		<label for="my-text-input" class="form-label">Enter you name</label>
+		<label for="my-text-input-2" class="form-label">Enter you name</label>
 		<div class="input-wrapper">
-			<input class="warning" id="my-text-input" type="text" placeholder="Enter you name" />
+			<input class="warning" id="my-text-input-2" type="text" placeholder="Enter you name" />
 		</div>
-		<label for="my-text-input" class="form-label">Enter you name</label>
+		<label for="my-text-input-3" class="form-label">Enter you name</label>
 		<div class="input-wrapper">
-			<input class="invalid" id="my-text-input" type="text" placeholder="Enter you name" />
+			<input class="invalid" id="my-text-input-3" type="text" placeholder="Enter you name" />
 		</div>
 		<br>
-		<label for="my-email-input" class="form-label">Enter you email</label>
+		<label for="my-email-input-4" class="form-label">Enter you email</label>
 		<div class="input-wrapper valid">
-			<input id="my-email-input" type="email" placeholder="Enter you email" />
+			<input id="my-email-input-4" type="email" placeholder="Enter you email" />
 		</div>
-		<label for="my-email-input" class="form-label">Enter you email</label>
+		<label for="my-email-input-5" class="form-label">Enter you email</label>
 		<div class="input-wrapper warning">
-			<input id="my-email-input" type="email" placeholder="Enter you name" />
+			<input id="my-email-input-5" type="email" placeholder="Enter you name" />
 		</div>
-		<label for="my-email-input" class="form-label">Enter you email</label>
+		<label for="my-email-input-6" class="form-label">Enter you email</label>
 		<div class="input-wrapper invalid">
-			<input id="my-email-input" type="email" placeholder="Enter you email" />
+			<input id="my-email-input-6" type="email" placeholder="Enter you email" />
 		</div>
 	</body>
 </html>'
@@ -121,39 +121,37 @@ Input invalid state is red by default however you can have valid and warning sta
 
 ```html title="index.html"
 // Validation classes added to the input
-<label for="my-text-input" class="form-label">Enter you name</label>
+<label for="my-text-input-1" class="form-label">Enter you name</label>
 <div class="input-wrapper">
-	<input class="valid" id="my-text-input" type="text" placeholder="Enter you name" />
+	<input class="valid" id="my-text-input-1" type="text" placeholder="Enter you name" />
 </div>
 
-<label for="my-text-input" class="form-label">Enter you name</label>
+<label for="my-text-input-2" class="form-label">Enter you name</label>
 <div class="input-wrapper">
-	<input class="warning" id="my-text-input" type="text" placeholder="Enter you name" />
+	<input class="warning" id="my-text-input-2" type="text" placeholder="Enter you name" />
 </div>
 
-<label for="my-text-input" class="form-label">Enter you name</label>
+<label for="my-text-input-3" class="form-label">Enter you name</label>
 <div class="input-wrapper">
-	<input class="invalid" id="my-text-input" type="text" placeholder="Enter you name" />
+	<input class="invalid" id="my-text-input-3" type="text" placeholder="Enter you name" />
 </div>
 
 // Validation classes added to the .input-wrapper
-<label for="my-text-input" class="form-label">Enter you name</label>
+<label for="my-text-input-4" class="form-label">Enter you name</label>
 <div class="input-wrapper valid">
-	<input id="my-text-input" type="text" placeholder="Enter you name" />
+	<input id="my-text-input-4" type="text" placeholder="Enter you name" />
 </div>
 
-<label for="my-text-input" class="form-label">Enter you name</label>
+<label for="my-text-input-5" class="form-label">Enter you name</label>
 <div class="input-wrapper warning">
-	<input id="my-text-input" type="text" placeholder="Enter you name" />
+	<input id="my-text-input-5" type="text" placeholder="Enter you name" />
 </div>
 
-<label for="my-text-input" class="form-label">Enter you name</label>
+<label for="my-text-input-6" class="form-label">Enter you name</label>
 <div class="input-wrapper invalid">
-	<input id="my-text-input" type="text" placeholder="Enter you name" />
+	<input id="my-text-input-6" type="text" placeholder="Enter you name" />
 </div>
 ```
-
-### Validation demo
 
 Here is an example of how to use validation classes to have a dynamic input.
 
@@ -238,9 +236,9 @@ elem_password.addEventListener("keyup", function () {
 });
 ```
 
-## Show password button
+## Password visibilty toggle
 
-It is a built in button that helps you change the type of input from password to text, so user can see the password. Having this button is pretty simple you just need to add a `<button>` with `.show-password-button` class inside the `.input-wrapper.toggle-password` element.
+It is a built-in button that helps you change the type of input from password to text, so the user can see the password. Having this button is pretty simple you just need to add a `<button>` with `.show-password-button` class inside the `.input-wrapper.toggle-password` wrapper.
 
 :::info Accessibility matters!
 You do not need to add anything inside the show password button element but it is necessary to set an `aria-label` HTML attribute for accessibility purposes. [Read more about aria-label usage](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute).
@@ -278,7 +276,7 @@ You do not need to add anything inside the show password button element but it i
 </div>
 ```
 
-### Changing icon
+### Change eye icon
 
 It is possible to change the eye icon with both `_config.scss` and CSS variables.
 
@@ -294,4 +292,159 @@ change its CSS variable:
 
 ```css title="style.css"
 --flatify__eye-icon: url("data:image/svg+xml; utf8, YOUR SVG CODE HERE");
+```
+
+## Sizes
+
+To change the input size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+
+<PreviewBox
+	height="520px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+	</head>
+	<body>
+      	<div class="size-xs">
+			<label for="my-datetime-input-sm" class="form-label">Make an appointment</label>
+			<input id="my-datetime-input-sm" type="datetime-local" placeholder="Make an appointment" />
+		</div>
+		   	<div class="size-md">
+			<label for="my-datetime-input-md" class="form-label">Make an appointment</label>
+			<input id="my-datetime-input-md" type="datetime-local" placeholder="Make an appointment" />
+		</div>
+		   	<div class="size-lg">
+			<label for="my-datetime-input-lg" class="form-label">Make an appointment</label>
+			<input id="my-datetime-input-lg" type="datetime-local" placeholder="Make an appointment" />
+		</div>
+   		<div class="size-3x">
+			<label for="my-datetime-input-3x" class="form-label">Make an appointment</label>
+			<input id="my-datetime-input-3x" type="datetime-local" placeholder="Make an appointment" />
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="size-xs">
+	<label for="my-datetime-input-sm" class="form-label">Make an appointment</label>
+	<input id="my-datetime-input-sm" type="datetime-local" placeholder="Make an appointment" />
+</div>
+
+<div class="size-md">
+	<label for="my-datetime-input-md" class="form-label">Make an appointment</label>
+	<input id="my-datetime-input-md" type="datetime-local" placeholder="Make an appointment" />
+</div>
+
+<div class="size-lg">
+	<label for="my-datetime-input-lg" class="form-label">Make an appointment</label>
+	<input id="my-datetime-input-lg" type="datetime-local" placeholder="Make an appointment" />
+</div>
+
+<div class="size-3x">
+	<label for="my-datetime-input-3x" class="form-label">Make an appointment</label>
+	<input id="my-datetime-input-3x" type="datetime-local" placeholder="Make an appointment" />
+</div>
+```
+
+## Color picker
+
+Color picker helps you pick any color you need some browsers like chromium based use their special color picker on the other hand some of them as Firefox prefer operating system default.
+
+<PreviewBox
+	height="100px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body>
+		<input type="color" />
+		<input type="color" value="#2ECC71" />
+		<input type="color" value="#5D9CEC" />
+		<input type="color" value="#48CFAD" />
+		<input type="color" value="#FFCE54" />
+		<input type="color" value="#ED5565" />
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<input type="color" />
+<input type="color" value="#2ECC71" />
+<input type="color" value="#5D9CEC" />
+<input type="color" value="#48CFAD" />
+<input type="color" value="#FFCE54" />
+<input type="color" value="#ED5565" />
+```
+
+## File
+
+It handles selecting files with the local file manager and has a customized button.
+
+<PreviewBox
+	height="120px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body>
+		<input type="file"/>
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<input type="file" />
+```
+
+## Range
+
+The range is another type of input that return number and accept min, max, step, and other useful options. Here is the default range which is customized.
+
+<PreviewBox
+	height="110px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body>
+		<input type="range" min="10" max="250" step="10" />
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<input type="range" min="10" max="250" step="10" />
 ```
