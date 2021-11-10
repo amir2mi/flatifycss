@@ -1,8 +1,11 @@
 select:not(.default) {
 	@extend %form-element;
+
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+	min-width: 15em;
+	max-width: 100%;
 
 	@if $SUPPORT_LTR {
 		padding-right: 2.5em;
@@ -27,6 +30,7 @@ select:not(.default) {
 }
 
 select option {
+	padding: 0.32em;
 	color: var(--#{$CSS_VAR_PFX}form-element-txt-color);
 	background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
 }

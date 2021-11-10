@@ -1,0 +1,112 @@
+---
+title: Selects
+sidebar_position: 2
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Flatify CSS gives styles to the native `<select>` which can be denied by adding `.default` class Changing size and adding colors is similar to [inputs](/docs/forms/inputs).
+
+### Size and colors
+
+<PreviewBox
+	height="600px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+		<style>
+			select {
+				width: 20em
+			}
+		</style>
+	</head>
+	<body>
+		<label for="cars" class="form-label size-sm">Choose your car</label>
+		<select name="cars" id="cars" class="size-xs">
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="mercedes">Mercedes</option>
+			<option value="audi">Audi</option>
+		</select>
+		<label for="cars2" class="form-label">Choose your car</label>
+		<select name="cars2" id="cars2" class="style-red">
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="mercedes">Mercedes</option>
+			<option value="audi">Audi</option>
+		</select>
+		<label for="cars3" class="form-label size-lg">Choose your car</label>
+		<select name="cars3" id="cars3" class="style-dark size-lg">
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="mercedes">Mercedes</option>
+			<option value="audi">Audi</option>
+		</select>
+		<label for="cars4" class="form-label size-2x">Choose your cars</label>
+		<select multiple name="cars4" id="cars4" class="style-green size-2x">
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="mercedes">Mercedes</option>
+			<option value="audi">Audi</option>
+		</select>
+    </body>
+
+</html>'
+/>
+
+```html title="index.html"
+<label for="cars" class="form-label size-sm">Choose your car</label>
+<select name="cars" id="cars" class="size-xs">
+	<option value="volvo">Volvo</option>
+	<option value="saab">Saab</option>
+	<option value="mercedes">Mercedes</option>
+	<option value="audi">Audi</option>
+</select>
+
+<label for="cars2" class="form-label">Choose your car</label>
+<select name="cars2" id="cars2" class="style-red">
+	<option value="volvo">Volvo</option>
+	<option value="saab">Saab</option>
+	<option value="mercedes">Mercedes</option>
+	<option value="audi">Audi</option>
+</select>
+
+<label for="cars3" class="form-label size-lg">Choose your car</label>
+<select name="cars3" id="cars3" class="style-dark size-lg">
+	<option value="volvo">Volvo</option>
+	<option value="saab">Saab</option>
+	<option value="mercedes">Mercedes</option>
+	<option value="audi">Audi</option>
+</select>
+
+<label for="cars4" class="form-label size-2x">Choose your cars</label>
+<select multiple name="cars4" id="cars4" class="style-green size-2x">
+	<option value="volvo">Volvo</option>
+	<option value="saab">Saab</option>
+	<option value="mercedes">Mercedes</option>
+	<option value="audi">Audi</option>
+</select>
+```
+
+### Change select icon
+
+It is possible to change the select select icon with both `_config.scss` and CSS variables.
+
+Inside `_config.scss` find `$SELECT_ICON` and set svg of customized icon with this format:
+
+```scss title="_config.scss"
+$SELECT_ICON: url("data:image/svg+xml; utf8, YOUR SVG CODE HERE");
+```
+
+or
+
+change its CSS variable:
+
+```css title="style.css"
+--flatify__select-icon: url("data:image/svg+xml; utf8, YOUR SVG CODE HERE");
+```

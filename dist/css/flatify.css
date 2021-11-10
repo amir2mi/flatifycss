@@ -1629,6 +1629,8 @@ select:not(.default) {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  min-width: 15em;
+  max-width: 100%;
   padding-right: 2.5em;
   background-image: var(--flatify__select-icon);
   background-repeat: no-repeat;
@@ -1641,6 +1643,7 @@ select:not(.default)[multiple] {
 }
 
 select option {
+  padding: 0.32em;
   color: var(--flatify__form-element-txt-color);
   background: var(--flatify__form-element-bg-color);
 }
