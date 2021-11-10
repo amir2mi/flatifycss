@@ -939,16 +939,20 @@ th {
   background: transparent !important;
 }
 .button.outline, input.outline[type=file]:not(.default)::file-selector-button, .button.bordered, input.bordered[type=file]:not(.default)::file-selector-button {
-  box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus), inset 0 calc(var(--flatify__border-width) * 0.8) 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * 0.8) 0 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * -0.8) 0 0 var(--flatify__button-bg-color__focus);
+  box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus), inset 0 calc(var(--flatify__border-width) * 0.38) 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-bg-color__focus), 0 calc(var(--flatify__border-width) * -0.38) 0 var(--flatify__button-bg-color__focus), calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-bg-color__focus), calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-bg-color__focus);
 }
 .button.outline.active, input.outline.active[type=file]:not(.default)::file-selector-button, .button.outline:focus-visible, input.outline[type=file]:focus-visible:not(.default)::file-selector-button, .button.outline:active, input.outline[type=file]:active:not(.default)::file-selector-button, .button.bordered.active, input.bordered.active[type=file]:not(.default)::file-selector-button, .button.bordered:focus-visible, input.bordered[type=file]:focus-visible:not(.default)::file-selector-button, .button.bordered:active, input.bordered[type=file]:active:not(.default)::file-selector-button {
-  box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.8) var(--flatify__button-bg-color__focus);
+  box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
 }
 .button[class*=style-], input[class*=style-][type=file]:not(.default)::file-selector-button {
   --flatify__button-bg-color: var(--flatify__local-bg-color);
   --flatify__button-bg-color__focus: var(--flatify__local-border-color);
   --flatify__button-txt-color: var(--flatify__local-txt-color);
   --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
+}
+.button[class*=style-][class*=light], input[class*=style-][class*=light][type=file]:not(.default)::file-selector-button {
+  --flatify__button-txt-color: var(--flatify__local-border-color);
+  --flatify__button-txt-color__focus: var(--flatify__local-border-color);
 }
 .button.disabled, input.disabled[type=file]:not(.default)::file-selector-button, .button:disabled, input[type=file]:disabled:not(.default)::file-selector-button {
   pointer-events: none;
@@ -1425,8 +1429,8 @@ textarea:not(.default) {
 }
 
 .style-yellow {
-  color: var(--flatify__txt-color) !important;
-  --flatify__local-txt-color: var(--flatify__txt-color) !important;
+  color: var(--flatify__color-yellow-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-yellow-darker) !important;
   background-color: var(--flatify__color-yellow-primary) !important;
   border-color: var(--flatify__color-yellow-dark) !important;
   --flatify__local-border-color: var(--flatify__color-yellow-dark) !important;
@@ -1587,8 +1591,8 @@ textarea:not(.default) {
 }
 
 .style-light {
-  color: var(--flatify__txt-color) !important;
-  --flatify__local-txt-color: var(--flatify__txt-color) !important;
+  color: var(--flatify__color-light-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-light-darker) !important;
   background-color: var(--flatify__color-light-primary) !important;
   border-color: var(--flatify__color-light-dark) !important;
   --flatify__local-border-color: var(--flatify__color-light-dark) !important;
