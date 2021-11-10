@@ -104,7 +104,7 @@
 		--#{$CSS_VAR_PFX}form-element-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
 		--#{$CSS_VAR_PFX}form-element-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
 		--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}local-border-color);
-		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
+		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}local-border-color-dark);
 	}
 
 	.input-wrapper.invalid &,

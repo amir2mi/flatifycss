@@ -15,9 +15,10 @@
 
 		background-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
-
+		
 		// Local border color can be used as color of box shadow e.g. buttons
 		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
+		--#{$CSS_VAR_PFX}local-border-color-dark: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
 		// Local background color can be used as background of <mark.inline> [:before]
 		--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 	}
@@ -40,6 +41,7 @@
 
 		// Local border color can be used as color of box shadow e.g. buttons
 		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+		--#{$CSS_VAR_PFX}local-border-color-dark: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
 		// Local background color can be used as background of <mark.inline> [:before]
 		--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "light"}) !important;
 	}
