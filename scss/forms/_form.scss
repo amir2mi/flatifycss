@@ -31,6 +31,7 @@
 
 // [.floating-label] should added to [.input-wrapper]
 .floating-label {
+	textarea,
 	input {
 		padding: 1.64em 1em 0.5em !important;
 
@@ -64,6 +65,13 @@
 			right: 1em;
 		}
 	}
+
+	&.is-textarea {
+		.form-label {
+			top: 1.5em;
+			bottom: unset;
+		}
+	}
 }
 
 %form-element {
@@ -77,8 +85,7 @@
 	filter: brightness(100%);
 	outline: none !important;
 	will-change: filter;
-	transition: background var(--#{$CSS_VAR_PFX}simple-transition), color var(--#{$CSS_VAR_PFX}simple-transition),
-		border-color var(--#{$CSS_VAR_PFX}simple-transition);
+	transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
 	&:hover,
 	&:focus {

@@ -1194,36 +1194,40 @@ input.disabled[type=file]:not(.default)::-webkit-file-upload-button, input[type=
   margin-left: 0.38em;
 }
 
+.floating-label textarea,
 .floating-label input {
   padding: 1.64em 1em 0.5em !important;
 }
-.floating-label input:not(:-moz-placeholder-shown) + .form-label {
+.floating-label textarea:not(:-moz-placeholder-shown) + .form-label, .floating-label input:not(:-moz-placeholder-shown) + .form-label {
   opacity: 0.5;
   transform: scale(0.75) translateY(-0.9em);
 }
-.floating-label input:not(:-ms-input-placeholder) + .form-label {
+.floating-label textarea:not(:-ms-input-placeholder) + .form-label, .floating-label input:not(:-ms-input-placeholder) + .form-label {
   opacity: 0.5;
   -ms-transform: scale(0.75) translateY(-0.9em);
       transform: scale(0.75) translateY(-0.9em);
 }
-.floating-label input:not(:placeholder-shown) + .form-label, .floating-label input:focus + .form-label {
+.floating-label textarea:not(:placeholder-shown) + .form-label, .floating-label textarea:focus + .form-label,
+.floating-label input:not(:placeholder-shown) + .form-label,
+.floating-label input:focus + .form-label {
   opacity: 0.5;
   -webkit-transform: scale(0.75) translateY(-0.9em);
       -ms-transform: scale(0.75) translateY(-0.9em);
           transform: scale(0.75) translateY(-0.9em);
 }
-.floating-label input::-webkit-input-placeholder {
+.floating-label textarea::-webkit-input-placeholder, .floating-label input::-webkit-input-placeholder {
   opacity: 0 !important;
 }
-.floating-label input::-moz-placeholder {
+.floating-label textarea::-moz-placeholder, .floating-label input::-moz-placeholder {
   opacity: 0 !important;
 }
-.floating-label input:-ms-input-placeholder {
+.floating-label textarea:-ms-input-placeholder, .floating-label input:-ms-input-placeholder {
   opacity: 0 !important;
 }
-.floating-label input::-ms-input-placeholder {
+.floating-label textarea::-ms-input-placeholder, .floating-label input::-ms-input-placeholder {
   opacity: 0 !important;
 }
+.floating-label textarea::placeholder,
 .floating-label input::placeholder {
   opacity: 0 !important;
 }
@@ -1246,6 +1250,10 @@ input.disabled[type=file]:not(.default)::-webkit-file-upload-button, input[type=
           transform-origin: top left;
   left: 1em;
 }
+.floating-label.is-textarea .form-label {
+  top: 1.5em;
+  bottom: unset;
+}
 
 textarea:not(.default), select:not(.default), input:not(.default) {
   font-size: 0.9em;
@@ -1259,9 +1267,9 @@ textarea:not(.default), select:not(.default), input:not(.default) {
           filter: brightness(100%);
   outline: none !important;
   will-change: filter;
-  -webkit-transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), border-color var(--flatify__simple-transition);
-  -o-transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), border-color var(--flatify__simple-transition);
-  transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), border-color var(--flatify__simple-transition);
+  -webkit-transition: all var(--flatify__simple-transition);
+  -o-transition: all var(--flatify__simple-transition);
+  transition: all var(--flatify__simple-transition);
 }
 textarea:hover:not(.default), select:hover:not(.default), input:hover:not(.default), textarea:focus:not(.default), select:focus:not(.default), input:focus:not(.default) {
   -webkit-filter: brightness(95%);
@@ -1639,6 +1647,11 @@ select option {
 
 textarea:not(.default) {
   font-size: 1em;
+  -webkit-transition: border-color var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
+  transition: border-color var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
+  -o-transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
+  transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
+  transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
 }
 
 @-webkit-keyframes flatify-fade-in {

@@ -1037,13 +1037,17 @@ th {
   margin-left: 0.38em;
 }
 
+.floating-label textarea,
 .floating-label input {
   padding: 1.64em 1em 0.5em !important;
 }
-.floating-label input:not(:placeholder-shown) + .form-label, .floating-label input:focus + .form-label {
+.floating-label textarea:not(:placeholder-shown) + .form-label, .floating-label textarea:focus + .form-label,
+.floating-label input:not(:placeholder-shown) + .form-label,
+.floating-label input:focus + .form-label {
   opacity: 0.5;
   transform: scale(0.75) translateY(-0.9em);
 }
+.floating-label textarea::placeholder,
 .floating-label input::placeholder {
   opacity: 0 !important;
 }
@@ -1060,6 +1064,10 @@ th {
   transform-origin: top left;
   left: 1em;
 }
+.floating-label.is-textarea .form-label {
+  top: 1.5em;
+  bottom: unset;
+}
 
 textarea:not(.default), select:not(.default), input:not(.default) {
   font-size: 0.9em;
@@ -1072,7 +1080,7 @@ textarea:not(.default), select:not(.default), input:not(.default) {
   filter: brightness(100%);
   outline: none !important;
   will-change: filter;
-  transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), border-color var(--flatify__simple-transition);
+  transition: all var(--flatify__simple-transition);
 }
 textarea:hover:not(.default), select:hover:not(.default), input:hover:not(.default), textarea:focus:not(.default), select:focus:not(.default), input:focus:not(.default) {
   filter: brightness(95%);
@@ -1356,6 +1364,7 @@ select option {
 
 textarea:not(.default) {
   font-size: 1em;
+  transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
 }
 
 @keyframes flatify-fade-in {

@@ -47,8 +47,12 @@ By default input labels are inline until you add `.form-label` which is necessar
 The floating label is inside the input and it seems like a placeholder, how it works is done by pure CSS and it is necessary to set a placeholder for input, though it does not show it.
 To have a floating label first wrap both input and label with `.input-wrapper` & `.floating-label` classes and place the label after input.
 
+:::warning Textarea floating label
+Note that if you want to have the floating label for `<textarea>` should add the `.is-textarea` class to the `.input-wrapper`.
+:::
+
 <PreviewBox
-	height="110px"
+	height="250px"
 	children='<!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -63,14 +67,26 @@ To have a floating label first wrap both input and label with `.input-wrapper` &
 			<input id="my-text-input" type="text" placeholder="Enter you name" />
 			<label for="my-text-input" class="form-label">Enter you name</label>
 		</div>
+		<div class="input-wrapper is-textarea floating-label">
+			<textarea id="thoughts" name="thoughts" rows="4" style="width:100%" placeholder="What do you think?">
+			</textarea>
+			<label id="thoughts" class="form-label" name="thoughts" for="yourname">What do you think?</label>
+		</div>
 	</body>
 </html>'
 />
 
-```html {1,3} title="index.html"
+```html {2,4,8,10} title="index.html"
+// input
 <div class="input-wrapper floating-label">
 	<input id="my-text-input" type="text" placeholder="Enter you name" />
 	<label for="my-text-input" class="form-label">Enter you name</label>
+</div>
+
+// textarea
+<div class="input-wrapper is-textarea floating-label">
+	<textarea id="thoughts" name="thoughts" rows="4" placeholder="What do you think?"></textarea>
+	<label id="thoughts" class="form-label" name="thoughts" for="yourname">What do you think?</label>
 </div>
 ```
 
@@ -373,23 +389,25 @@ There are helper classes for styling inputs, first read about [color setter clas
 		 <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
 	</head>
 	<body>
-		<input type="color" value="#ED5565" />
-		<input type="color" value="#2ECC71" class="style-green-light" />
-		<input type="color" value="#FFCE54" class="style-blue-light" />
-		<input type="color" value="#48CFAD" class="style-dark"/>
-		<input type="range" class="style-purple" />
-		<input type="file" class="style-yellow-light" />
-		<br>
-		<label for="your-age" class="form-label">Age</label>
-		<input id="your-age" type="number" class="style-blue" />
-		<label for="your-name" class="form-label">Name</label>
-		<input class="style-orange" id="your-name" type="text" placeholder="Write something..." />
-    	<div class="input-wrapper toggle-password">
-    		<input class="style-dark" id="password" type="password" placeholder="Write something..." />
-    		<button class="show-password-button style-dark" aria-label="Show password"></button>
-    	</div>
-		<input type="reset" class="style-red-light" value="Reset" />
-		<input type="submit" class="style-red" value="Submit" />
+		<form>
+			<input type="color" value="#ED5565" />
+			<input type="color" value="#2ECC71" class="style-green-light" />
+			<input type="color" value="#FFCE54" class="style-blue-light" />
+			<input type="color" value="#48CFAD" class="style-dark"/>
+			<input type="range" class="style-purple" />
+			<input type="file" class="style-yellow-light" />
+			<br>
+			<label for="your-age" class="form-label">Age</label>
+			<input id="your-age" type="number" class="style-blue" />
+			<label for="your-name" class="form-label">Name</label>
+			<input class="style-orange" id="your-name" type="text" placeholder="Write something..." />
+			<div class="input-wrapper toggle-password">
+				<input class="style-dark" id="password" type="password" placeholder="Write something..." />
+				<button class="show-password-button style-dark" aria-label="Show password"></button>
+			</div>
+			<input type="reset" class="style-red-light" value="Reset" />
+			<input type="submit" class="style-red" value="Submit" />
+		</form>
     </body>
 
 </html>
