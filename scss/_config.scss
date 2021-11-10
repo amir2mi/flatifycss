@@ -1,7 +1,7 @@
 // *** General: prefix, rtl and ltr
 // add a prefix before CSS variables to prevent unwanted conflicts.
 $CSS_VAR_PFX: flatify__ !default;
-$SUPPORT_LTR: false !default;
+$SUPPORT_LTR: true !default;
 
 // do not change names, just values
 $RESPONSIVE_BREAKPOINTS: (

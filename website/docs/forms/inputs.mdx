@@ -316,11 +316,11 @@ These classes just set a `font-size` property so it is possible to change it you
 			<label for="my-datetime-input-sm" class="form-label">Make an appointment</label>
 			<input id="my-datetime-input-sm" type="datetime-local" placeholder="Make an appointment" />
 		</div>
-		   	<div class="size-md">
+		<div class="size-md">
 			<label for="my-datetime-input-md" class="form-label">Make an appointment</label>
 			<input id="my-datetime-input-md" type="datetime-local" placeholder="Make an appointment" />
 		</div>
-		   	<div class="size-lg">
+		<div class="size-lg">
 			<label for="my-datetime-input-lg" class="form-label">Make an appointment</label>
 			<input id="my-datetime-input-lg" type="datetime-local" placeholder="Make an appointment" />
 		</div>
@@ -355,12 +355,12 @@ These classes just set a `font-size` property so it is possible to change it you
 </div>
 ```
 
-## Color picker
+## Colors
 
-Color picker helps you pick any color you need some browsers like chromium based use their special color picker on the other hand some of them as Firefox prefer operating system default.
+There are helper classes for styling inputs, first read about [color setter classes](/docs/helpers/color-setters) for having button with diffrent background and text color.
 
 <PreviewBox
-	height="100px"
+	height="510px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -370,37 +370,75 @@ Color picker helps you pick any color you need some browsers like chromium based
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Inputs</title>
-        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
-    </head>
-    <body>
-		<input type="color" />
-		<input type="color" value="#2ECC71" />
-		<input type="color" value="#5D9CEC" />
-		<input type="color" value="#48CFAD" />
-		<input type="color" value="#FFCE54" />
+		 <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+	</head>
+	<body>
 		<input type="color" value="#ED5565" />
+		<input type="color" value="#2ECC71" class="style-green-light" />
+		<input type="color" value="#FFCE54" class="style-blue-light" />
+		<input type="color" value="#48CFAD" class="style-dark"/>
+		<input type="range" class="style-purple" />
+		<input type="file" class="style-yellow-light" />
+		<br>
+		<label for="your-age" class="form-label">Age</label>
+		<input id="your-age" type="number" class="style-blue" />
+		<label for="your-name" class="form-label">Name</label>
+		<input class="style-orange" id="your-name" type="text" placeholder="Write something..." />
+    	<div class="input-wrapper toggle-password">
+    		<input class="style-dark" id="password" type="password" placeholder="Write something..." />
+    		<button class="show-password-button style-dark" aria-label="Show password"></button>
+    	</div>
+		<input type="reset" class="style-red-light" value="Reset" />
+		<input type="submit" class="style-red" value="Submit" />
     </body>
+
 </html>
 '
 />
 
 ```html title="index.html"
-<input type="color" />
-<input type="color" value="#2ECC71" />
-<input type="color" value="#5D9CEC" />
-<input type="color" value="#48CFAD" />
-<input type="color" value="#FFCE54" />
+<!-- Color pickers -->
 <input type="color" value="#ED5565" />
+<input type="color" value="#2ECC71" class="style-green-light" />
+<input type="color" value="#FFCE54" class="style-blue-light" />
+<input type="color" value="#48CFAD" class="style-dark" />
+<!-- Range -->
+<input type="range" class="style-purple" />
+<!-- File -->
+<input type="file" class="style-yellow-light" />
+<!-- Number -->
+<label for="your-age" class="form-label">Age</label>
+<input id="your-age" type="number" class="style-blue" />
+<!-- Text -->
+<label for="your-name" class="form-label">Name</label>
+<input class="style-orange" id="your-name" type="text" placeholder="Write something..." />
+<!-- Password -->
+<div class="input-wrapper toggle-password">
+	<input class="style-dark" id="password" type="password" placeholder="Write something..." />
+	<button class="show-password-button style-dark" aria-label="Show password"></button>
+</div>
+<!-- Buttons -->
+<input type="reset" class="style-red-light" value="Reset" />
+<input type="submit" class="style-red" value="Submit" />
 ```
 
-## File
+## Customization
 
-It handles selecting files with the local file manager and has a customized button.
+There are CSS variables for customizing Background and text color for inputs:
+
+`--flatify__input-bg-color`  
+`--flatify__input-txt-color`  
+`--flatify__input-border-color`  
+`--flatify__input-border-color__focus`  
+`--flatify__input-border-color__valid`  
+`--flatify__input-border-color__warning`  
+`--flatify__input-border-color__invalid`
+
+Here is an example of these variables usage:
 
 <PreviewBox
-	height="120px"
-	children='
-<!DOCTYPE html>
+	height="140px"
+	children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -408,43 +446,64 @@ It handles selecting files with the local file manager and has a customized butt
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Inputs</title>
-        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
-    </head>
-    <body>
-		<input type="file"/>
-    </body>
-</html>
-'
+		<style>
+			:root{
+				--flatify__input-bg-color: #FFCE54;
+				--flatify__input-txt-color: #434A54;
+				--flatify__input-border-color: #FFCE54;
+				--flatify__input-border-color__focus: #F6BB42;
+				--flatify__input-border-color__valid: #5D9CEC;
+				--flatify__input-border-color__warning: #8067B7;
+				--flatify__input-border-color__invalid: #BF263C;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="input-wrapper floating-label">
+			<input required id="password" type="password" placeholder="Enter new password" />
+			<label for="password" class="form-label">Enter new password</label>
+		</div>
+		<p class="help-text size-sm">
+			Password length should be more than 8 chars with letters.
+		</p>
+	</body>
+	<script>
+		const elem_wrapper = document.querySelector(".input-wrapper");
+		const elem_password = document.querySelector("#password");
+		const elem_help = document.querySelector(".help-text");
+    	elem_password.addEventListener("keyup", function () {
+    		if (elem_password.value.length >= 8) {
+    			if (/[a-zA-Z]/.test(elem_password.value)) {
+    				elem_wrapper.classList.remove("invalid", "warning");
+    				elem_wrapper.classList.add("valid");
+    				elem_help.innerText = "You chose the perfect password!";
+    			} else {
+    				elem_wrapper.classList.remove("invalid", "valid");
+    				elem_wrapper.classList.add("warning");
+    				elem_help.innerText = "You can add some letters as well!";
+    			}
+    		} else {
+    			elem_wrapper.classList.remove("valid", "warning");
+    			elem_wrapper.classList.add("invalid");
+    			elem_help.innerText = "Password length should be more than 8 chars.";
+    		}
+    	});
+    </script>
+</html>'
 />
 
-```html title="index.html"
-<input type="file" />
+```css title="style.css"
+:root {
+	--flatify__input-bg-color: #ffce54;
+	--flatify__input-txt-color: #434a54;
+	--flatify__input-border-color: #ffce54;
+	--flatify__input-border-color__focus: #f6bb42;
+	--flatify__input-border-color__valid: #5d9cec;
+	--flatify__input-border-color__warning: #8067b7;
+	--flatify__input-border-color__invalid: #bf263c;
+}
 ```
 
-## Range
-
-The range is another type of input that return number and accept min, max, step, and other useful options. Here is the default range which is customized.
-
-<PreviewBox
-	height="110px"
-	children='
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Inputs</title>
-        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
-    </head>
-    <body>
-		<input type="range" min="10" max="250" step="10" />
-    </body>
-</html>
-'
-/>
-
-```html title="index.html"
-<input type="range" min="10" max="250" step="10" />
-```
+:::info Style every input differently!
+Note that you do not have to set these variables as root, you can style `.input-wrapper` or each `input` element as well.
+:::
