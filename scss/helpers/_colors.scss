@@ -9,7 +9,7 @@
 			color: var(--#{$CSS_VAR_PFX}txt-color-inverted) !important;
 		}
 
-		background: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+		background-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
 
 		// Local text color
@@ -29,7 +29,7 @@
 			color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
 		}
 
-		background: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "light"}) !important;
+		background-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "light"}) !important;
 		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 
 		// Local text color

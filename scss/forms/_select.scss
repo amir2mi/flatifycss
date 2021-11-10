@@ -1,0 +1,26 @@
+select:not(.default) {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	@if $SUPPORT_LTR {
+		padding-right: 2.5em;
+	} @else {
+		padding-left: 2.5em;
+	}
+
+	background-image: var(--#{$CSS_VAR_PFX}select-icon);
+	background-repeat: no-repeat;
+	@if $SUPPORT_LTR {
+		background-position: right 0.64em center;
+	} @else {
+		background-position: left 0.64em center;
+	}
+
+	&[multiple] {
+		// hide default scroll when there is no overflow
+		overflow-y: auto;
+		padding: 1em !important;
+		background-image: none !important;
+	}
+}
