@@ -1010,6 +1010,16 @@ th {
   }
 }
 
+:root {
+  --flatify__form-element-bg-color: var(--flatify__bg-color-dark);
+  --flatify__form-element-txt-color: var(--flatify__txt-color);
+  --flatify__form-element-border-color: var(--flatify__bg-color-darker);
+  --flatify__form-element-border-color__focus: var(--flatify__color-accent-primary);
+  --flatify__form-element-border-color__valid: var(--flatify__color-success-primary);
+  --flatify__form-element-border-color__warning: var(--flatify__color-warning-primary);
+  --flatify__form-element-border-color__invalid: var(--flatify__color-danger-primary);
+}
+
 .form-label {
   margin-top: 0.9em;
 }
@@ -1045,91 +1055,70 @@ th {
   left: 1em;
 }
 
-textarea:not(.default), select:not(.default),
-input:not(.default) {
+textarea:not(.default), select:not(.default), input:not(.default) {
   font-size: 0.9em;
   padding: 0.8em 1em;
   margin: 0.38em 0;
-  color: var(--flatify__input-txt-color);
-  background: var(--flatify__input-bg-color);
-  border: var(--flatify__border-width) solid var(--flatify__input-border-color);
+  color: var(--flatify__form-element-txt-color);
+  background: var(--flatify__form-element-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__form-element-border-color);
   border-radius: var(--flatify__border-radius);
   filter: brightness(100%);
   outline: none !important;
   will-change: filter;
-  transition: all var(--flatify__simple-transition);
+  transition: background var(--flatify__simple-transition), color var(--flatify__simple-transition), border-color var(--flatify__simple-transition);
 }
-textarea:hover:not(.default), select:hover:not(.default),
-input:hover:not(.default), textarea:focus:not(.default), select:focus:not(.default),
-input:focus:not(.default) {
+textarea:hover:not(.default), select:hover:not(.default), input:hover:not(.default), textarea:focus:not(.default), select:focus:not(.default), input:focus:not(.default) {
   filter: brightness(95%);
 }
-textarea:focus:not(.default), select:focus:not(.default),
-input:focus:not(.default) {
-  border-color: var(--flatify__input-border-color__focus) !important;
+textarea:focus:not(.default), select:focus:not(.default), input:focus:not(.default) {
+  border-color: var(--flatify__form-element-border-color__focus) !important;
 }
-textarea:not(.default)::placeholder, select:not(.default)::placeholder,
-input:not(.default)::placeholder {
+textarea:not(.default)::placeholder, select:not(.default)::placeholder, input:not(.default)::placeholder {
   color: inherit;
   opacity: 0.45;
   transition: all var(--flatify__simple-transition);
 }
-textarea:focus:not(.default)::placeholder, select:focus:not(.default)::placeholder,
-input:focus:not(.default)::placeholder {
+textarea:focus:not(.default)::placeholder, select:focus:not(.default)::placeholder, input:focus:not(.default)::placeholder {
   opacity: 0;
 }
-textarea[class*=style-]:not(.default), select[class*=style-]:not(.default),
-input[class*=style-]:not(.default) {
-  --flatify__input-bg-color: var(--flatify__local-bg-color);
-  --flatify__input-txt-color: var(--flatify__local-txt-color);
-  --flatify__input-border-color: var(--flatify__local-border-color);
-  --flatify__input-border-color__focus: var(--flatify__local-txt-color);
+textarea[class*=style-]:not(.default), select[class*=style-]:not(.default), input[class*=style-]:not(.default) {
+  --flatify__form-element-bg-color: var(--flatify__local-bg-color);
+  --flatify__form-element-txt-color: var(--flatify__local-txt-color);
+  --flatify__form-element-border-color: var(--flatify__local-border-color);
+  --flatify__form-element-border-color__focus: var(--flatify__local-txt-color);
 }
-.input-wrapper.invalid textarea:not(.default), .input-wrapper.invalid select:not(.default),
-.input-wrapper.invalid input:not(.default), textarea.invalid:not(.default), select.invalid:not(.default),
-input.invalid:not(.default) {
-  border-color: var(--flatify__input-border-color) !important;
-  --flatify__input-border-color: var(--flatify__input-border-color__invalid) !important;
-  --flatify__input-border-color__focus: var(--flatify__input-border-color__invalid) !important;
+.input-wrapper.invalid textarea:not(.default), .input-wrapper.invalid select:not(.default), .input-wrapper.invalid input:not(.default), textarea.invalid:not(.default), select.invalid:not(.default), input.invalid:not(.default) {
+  border-color: var(--flatify__form-element-border-color) !important;
+  --flatify__form-element-border-color: var(--flatify__form-element-border-color__invalid) !important;
+  --flatify__form-element-border-color__focus: var(
+  	--flatify__form-element-border-color__invalid
+  ) !important;
 }
-textarea:focus:invalid:not(.default), select:focus:invalid:not(.default),
-input:focus:invalid:not(.default) {
-  --flatify__input-border-color__focus: var(--flatify__input-border-color__invalid) !important;
+textarea:focus:invalid:not(.default), select:focus:invalid:not(.default), input:focus:invalid:not(.default) {
+  --flatify__form-element-border-color__focus: var(
+  	--flatify__form-element-border-color__invalid
+  ) !important;
 }
-.input-wrapper.warning textarea:not(.default), .input-wrapper.warning select:not(.default),
-.input-wrapper.warning input:not(.default), textarea.warning:not(.default), select.warning:not(.default),
-input.warning:not(.default) {
-  border-color: var(--flatify__input-border-color) !important;
-  --flatify__input-border-color: var(--flatify__input-border-color__warning) !important;
-  --flatify__input-border-color__focus: var(--flatify__input-border-color__warning) !important;
+.input-wrapper.warning textarea:not(.default), .input-wrapper.warning select:not(.default), .input-wrapper.warning input:not(.default), textarea.warning:not(.default), select.warning:not(.default), input.warning:not(.default) {
+  border-color: var(--flatify__form-element-border-color) !important;
+  --flatify__form-element-border-color: var(--flatify__form-element-border-color__warning) !important;
+  --flatify__form-element-border-color__focus: var(
+  	--flatify__form-element-border-color__warning
+  ) !important;
 }
-.input-wrapper.valid textarea:not(.default), .input-wrapper.valid select:not(.default),
-.input-wrapper.valid input:not(.default), textarea.valid:not(.default), select.valid:not(.default),
-input.valid:not(.default) {
-  border-color: var(--flatify__input-border-color) !important;
-  --flatify__input-border-color: var(--flatify__input-border-color__valid);
-  --flatify__input-border-color__focus: var(--flatify__input-border-color__valid);
+.input-wrapper.valid textarea:not(.default), .input-wrapper.valid select:not(.default), .input-wrapper.valid input:not(.default), textarea.valid:not(.default), select.valid:not(.default), input.valid:not(.default) {
+  border-color: var(--flatify__form-element-border-color) !important;
+  --flatify__form-element-border-color: var(--flatify__form-element-border-color__valid);
+  --flatify__form-element-border-color__focus: var(--flatify__form-element-border-color__valid);
 }
-textarea[readonly]:not(.default), select[readonly]:not(.default),
-input[readonly]:not(.default) {
+textarea[readonly]:not(.default), select[readonly]:not(.default), input[readonly]:not(.default) {
   filter: none !important;
-  --flatify__input-border-color__focus: var(--flatify__input-border-color) !important;
+  --flatify__form-element-border-color__focus: var(--flatify__form-element-border-color) !important;
 }
-textarea.disabled:not(.default), select.disabled:not(.default),
-input.disabled:not(.default), textarea:disabled:not(.default), select:disabled:not(.default),
-input:disabled:not(.default) {
+textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:not(.default), textarea:disabled:not(.default), select:disabled:not(.default), input:disabled:not(.default) {
   pointer-events: none;
   filter: contrast(85%) brightness(85%) opacity(70%) !important;
-}
-
-:root {
-  --flatify__input-bg-color: var(--flatify__bg-color-dark);
-  --flatify__input-txt-color: var(--flatify__txt-color);
-  --flatify__input-border-color: var(--flatify__bg-color-darker);
-  --flatify__input-border-color__focus: var(--flatify__color-accent-primary);
-  --flatify__input-border-color__valid: var(--flatify__color-success-primary);
-  --flatify__input-border-color__warning: var(--flatify__color-warning-primary);
-  --flatify__input-border-color__invalid: var(--flatify__color-danger-primary);
 }
 
 .input-wrapper {
@@ -1158,13 +1147,13 @@ input:disabled:not(.default) {
   right: 1.35em;
   width: 1em;
   height: 0.25em;
-  background: var(--flatify__input-border-color__invalid);
+  background: var(--flatify__form-element-border-color__invalid);
 }
 .input-wrapper.warning:after {
   right: 1.55em;
   width: 0.5em;
   height: 0.5em;
-  background: var(--flatify__input-border-color__warning);
+  background: var(--flatify__form-element-border-color__warning);
 }
 .input-wrapper.warning:focus-within:after {
   animation: flatify-fade-out 1s infinite;
@@ -1182,14 +1171,14 @@ input:disabled:not(.default) {
   right: 1.75em;
   width: 0.64em;
   height: 0.25em;
-  background: var(--flatify__input-border-color__valid);
+  background: var(--flatify__form-element-border-color__valid);
   transform: rotate(45deg);
 }
 .input-wrapper.valid:after {
   right: 1em;
   width: 1.2em;
   height: 0.25em;
-  background: var(--flatify__input-border-color__valid);
+  background: var(--flatify__form-element-border-color__valid);
   transform: rotate(-55deg);
 }
 .input-wrapper .show-password-button {
@@ -1203,7 +1192,7 @@ input:disabled:not(.default) {
   height: 2.5em;
   padding: 0.5em;
   margin: auto 0;
-  color: var(--flatify__input-txt-color);
+  color: var(--flatify__form-element-txt-color);
   background: transparent;
   border: none;
   border-radius: calc(var(--flatify__border-radius) * 0.75);
@@ -1285,14 +1274,14 @@ input[type=range]::-moz-range-track {
   cursor: pointer;
   width: 100%;
   height: max(3px, var(--flatify__border-width) * 1.5);
-  background: var(--flatify__input-border-color);
+  background: var(--flatify__form-element-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
 }
 input[type=range]::-webkit-slider-runnable-track {
   cursor: pointer;
   width: 100%;
   height: max(3px, var(--flatify__border-width) * 1.5);
-  background: var(--flatify__input-border-color);
+  background: var(--flatify__form-element-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
 }
 input[type=range]::-moz-range-thumb {
@@ -1300,9 +1289,9 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
   height: 1.24em;
   width: 1.24em;
-  background: var(--flatify__input-bg-color);
+  background: var(--flatify__form-element-bg-color);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
-  border: max(1px, var(--flatify__border-width)) solid var(--flatify__input-border-color);
+  border: max(1px, var(--flatify__border-width)) solid var(--flatify__form-element-border-color);
   transition: all var(--flatify__simple-transition);
 }
 input[type=range]::-webkit-slider-thumb {
@@ -1311,9 +1300,9 @@ input[type=range]::-webkit-slider-thumb {
   height: 1.24em;
   width: 1.24em;
   margin: -0.55em;
-  background: var(--flatify__input-bg-color);
+  background: var(--flatify__form-element-bg-color);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
-  border: max(1px, var(--flatify__border-width)) solid var(--flatify__input-border-color);
+  border: max(1px, var(--flatify__border-width)) solid var(--flatify__form-element-border-color);
   transition: all var(--flatify__simple-transition);
 }
 input[type=range]:hover::-moz-range-thumb {
@@ -1331,11 +1320,11 @@ input[type=range]:hover::-webkit-slider-thumb {
   }
 }
 input[type=range]:focus::-moz-range-thumb {
-  border-color: var(--flatify__input-border-color__focus);
+  border-color: var(--flatify__form-element-border-color__focus);
   filter: brightness(90%);
 }
 input[type=range]:focus::-webkit-slider-thumb {
-  border-color: var(--flatify__input-border-color__focus);
+  border-color: var(--flatify__form-element-border-color__focus);
   filter: brightness(90%);
 }
 
@@ -1352,6 +1341,15 @@ select:not(.default)[multiple] {
   overflow-y: auto;
   padding: 1em !important;
   background-image: none !important;
+}
+
+select option {
+  color: var(--flatify__form-element-txt-color);
+  background: var(--flatify__form-element-bg-color);
+}
+
+textarea:not(.default) {
+  font-size: 1em;
 }
 
 @keyframes flatify-fade-in {
@@ -1392,234 +1390,234 @@ select:not(.default)[multiple] {
 }
 .style-blue {
   color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-blue-primary) !important;
   border-color: var(--flatify__color-blue-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-blue-darker) !important;
   --flatify__local-border-color: var(--flatify__color-blue-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-blue-primary) !important;
 }
 
 .style-blue-light {
   color: var(--flatify__color-blue-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-blue-darker) !important;
   background-color: var(--flatify__color-blue-light) !important;
   border-color: var(--flatify__color-blue-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-blue-darker) !important;
   --flatify__local-border-color: var(--flatify__color-blue-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-blue-light) !important;
 }
 
 .style-green {
   color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-green-primary) !important;
   border-color: var(--flatify__color-green-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-green-darker) !important;
   --flatify__local-border-color: var(--flatify__color-green-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-green-primary) !important;
 }
 
 .style-green-light {
   color: var(--flatify__color-green-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-green-darker) !important;
   background-color: var(--flatify__color-green-light) !important;
   border-color: var(--flatify__color-green-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-green-darker) !important;
   --flatify__local-border-color: var(--flatify__color-green-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-green-light) !important;
 }
 
 .style-yellow {
   color: var(--flatify__txt-color) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color) !important;
   background-color: var(--flatify__color-yellow-primary) !important;
   border-color: var(--flatify__color-yellow-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-yellow-darker) !important;
   --flatify__local-border-color: var(--flatify__color-yellow-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-yellow-primary) !important;
 }
 
 .style-yellow-light {
   color: var(--flatify__color-yellow-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-yellow-darker) !important;
   background-color: var(--flatify__color-yellow-light) !important;
   border-color: var(--flatify__color-yellow-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-yellow-darker) !important;
   --flatify__local-border-color: var(--flatify__color-yellow-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-yellow-light) !important;
 }
 
 .style-orange {
   color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-orange-primary) !important;
   border-color: var(--flatify__color-orange-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-orange-darker) !important;
   --flatify__local-border-color: var(--flatify__color-orange-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-orange-primary) !important;
 }
 
 .style-orange-light {
   color: var(--flatify__color-orange-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-orange-darker) !important;
   background-color: var(--flatify__color-orange-light) !important;
   border-color: var(--flatify__color-orange-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-orange-darker) !important;
   --flatify__local-border-color: var(--flatify__color-orange-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-orange-light) !important;
 }
 
 .style-red {
   color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-red-primary) !important;
   border-color: var(--flatify__color-red-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-red-darker) !important;
   --flatify__local-border-color: var(--flatify__color-red-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-red-primary) !important;
 }
 
 .style-red-light {
   color: var(--flatify__color-red-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-red-darker) !important;
   background-color: var(--flatify__color-red-light) !important;
   border-color: var(--flatify__color-red-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-red-darker) !important;
   --flatify__local-border-color: var(--flatify__color-red-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-red-light) !important;
 }
 
 .style-purple {
   color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-purple-primary) !important;
   border-color: var(--flatify__color-purple-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-purple-darker) !important;
   --flatify__local-border-color: var(--flatify__color-purple-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-purple-primary) !important;
 }
 
 .style-purple-light {
   color: var(--flatify__color-purple-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-purple-darker) !important;
   background-color: var(--flatify__color-purple-light) !important;
   border-color: var(--flatify__color-purple-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-purple-darker) !important;
   --flatify__local-border-color: var(--flatify__color-purple-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-purple-light) !important;
 }
 
 .style-accent {
   color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-accent-primary) !important;
   border-color: var(--flatify__color-accent-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-accent-darker) !important;
   --flatify__local-border-color: var(--flatify__color-accent-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-accent-primary) !important;
 }
 
 .style-accent-light {
   color: var(--flatify__color-accent-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-accent-darker) !important;
   background-color: var(--flatify__color-accent-light) !important;
   border-color: var(--flatify__color-accent-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-accent-darker) !important;
   --flatify__local-border-color: var(--flatify__color-accent-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-accent-light) !important;
 }
 
 .style-success {
   color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-success-primary) !important;
   border-color: var(--flatify__color-success-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-success-darker) !important;
   --flatify__local-border-color: var(--flatify__color-success-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-success-primary) !important;
 }
 
 .style-success-light {
   color: var(--flatify__color-success-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-success-darker) !important;
   background-color: var(--flatify__color-success-light) !important;
   border-color: var(--flatify__color-success-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-success-darker) !important;
   --flatify__local-border-color: var(--flatify__color-success-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-success-light) !important;
 }
 
 .style-info {
   color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-info-primary) !important;
   border-color: var(--flatify__color-info-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-info-darker) !important;
   --flatify__local-border-color: var(--flatify__color-info-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-info-primary) !important;
 }
 
 .style-info-light {
   color: var(--flatify__color-info-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-info-darker) !important;
   background-color: var(--flatify__color-info-light) !important;
   border-color: var(--flatify__color-info-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-info-darker) !important;
   --flatify__local-border-color: var(--flatify__color-info-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-info-light) !important;
 }
 
 .style-warning {
   color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-warning-primary) !important;
   border-color: var(--flatify__color-warning-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-warning-darker) !important;
   --flatify__local-border-color: var(--flatify__color-warning-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-warning-primary) !important;
 }
 
 .style-warning-light {
   color: var(--flatify__color-warning-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-warning-darker) !important;
   background-color: var(--flatify__color-warning-light) !important;
   border-color: var(--flatify__color-warning-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-warning-darker) !important;
   --flatify__local-border-color: var(--flatify__color-warning-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-warning-light) !important;
 }
 
 .style-danger {
   color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-danger-primary) !important;
   border-color: var(--flatify__color-danger-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-danger-darker) !important;
   --flatify__local-border-color: var(--flatify__color-danger-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-danger-primary) !important;
 }
 
 .style-danger-light {
   color: var(--flatify__color-danger-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-danger-darker) !important;
   background-color: var(--flatify__color-danger-light) !important;
   border-color: var(--flatify__color-danger-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-danger-darker) !important;
   --flatify__local-border-color: var(--flatify__color-danger-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-danger-light) !important;
 }
 
 .style-light {
   color: var(--flatify__txt-color) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color) !important;
   background-color: var(--flatify__color-light-primary) !important;
   border-color: var(--flatify__color-light-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-light-darker) !important;
   --flatify__local-border-color: var(--flatify__color-light-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-light-primary) !important;
 }
 
 .style-light-light {
   color: var(--flatify__txt-color) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color) !important;
   background-color: var(--flatify__color-light-light) !important;
   border-color: var(--flatify__color-light-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-light-darker) !important;
   --flatify__local-border-color: var(--flatify__color-light-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-light-light) !important;
 }
 
 .style-dark {
   color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-dark-primary) !important;
   border-color: var(--flatify__color-dark-dark) !important;
-  --flatify__local-txt-color: var(--flatify__color-dark-darker) !important;
   --flatify__local-border-color: var(--flatify__color-dark-dark) !important;
   --flatify__local-bg-color: var(--flatify__color-dark-primary) !important;
 }
 
 .style-dark-light {
   color: var(--flatify__color-dark-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-dark-darker) !important;
   background-color: var(--flatify__color-dark-light) !important;
   border-color: var(--flatify__color-dark-primary) !important;
-  --flatify__local-txt-color: var(--flatify__color-dark-darker) !important;
   --flatify__local-border-color: var(--flatify__color-dark-primary) !important;
   --flatify__local-bg-color: var(--flatify__color-dark-light) !important;
 }

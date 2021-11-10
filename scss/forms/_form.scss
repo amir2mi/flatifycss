@@ -1,3 +1,13 @@
+:root {
+	--#{$CSS_VAR_PFX}form-element-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
+	--#{$CSS_VAR_PFX}form-element-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+	--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}color-accent-primary);
+	--#{$CSS_VAR_PFX}form-element-border-color__valid: var(--#{$CSS_VAR_PFX}color-success-primary);
+	--#{$CSS_VAR_PFX}form-element-border-color__warning: var(--#{$CSS_VAR_PFX}color-warning-primary);
+	--#{$CSS_VAR_PFX}form-element-border-color__invalid: var(--#{$CSS_VAR_PFX}color-danger-primary);
+}
+
 .form-label {
 	margin-top: 0.9em;
 
@@ -60,14 +70,15 @@
 	font-size: 0.9em;
 	padding: 0.8em 1em;
 	margin: 0.38em 0;
-	color: var(--#{$CSS_VAR_PFX}input-txt-color);
-	background: var(--#{$CSS_VAR_PFX}input-bg-color);
-	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}input-border-color);
+	color: var(--#{$CSS_VAR_PFX}form-element-txt-color);
+	background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
+	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 	filter: brightness(100%);
 	outline: none !important;
 	will-change: filter;
-	transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+	transition: background var(--#{$CSS_VAR_PFX}simple-transition), color var(--#{$CSS_VAR_PFX}simple-transition),
+		border-color var(--#{$CSS_VAR_PFX}simple-transition);
 
 	&:hover,
 	&:focus {
@@ -75,7 +86,7 @@
 	}
 
 	&:focus {
-		border-color: var(--#{$CSS_VAR_PFX}input-border-color__focus) !important;
+		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__focus) !important;
 	}
 
 	&::placeholder {
@@ -90,41 +101,47 @@
 	}
 
 	&[class*="style-"] {
-		--#{$CSS_VAR_PFX}input-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
-		--#{$CSS_VAR_PFX}input-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
-		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}local-border-color);
-		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
+		--#{$CSS_VAR_PFX}form-element-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
+		--#{$CSS_VAR_PFX}form-element-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
+		--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}local-border-color);
+		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
 	}
 
 	.input-wrapper.invalid &,
 	&.invalid {
-		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
-		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
-		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
+		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
+		--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid) !important;
+		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(
+			--#{$CSS_VAR_PFX}form-element-border-color__invalid
+		) !important;
 	}
 
 	&:focus:invalid {
-		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__invalid) !important;
+		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(
+			--#{$CSS_VAR_PFX}form-element-border-color__invalid
+		) !important;
 	}
 
 	.input-wrapper.warning &,
 	&.warning {
-		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
-		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__warning) !important;
-		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__warning) !important;
+		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
+		--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__warning) !important;
+		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(
+			--#{$CSS_VAR_PFX}form-element-border-color__warning
+		) !important;
 	}
 
 	.input-wrapper.valid &,
 	&.valid {
-		border-color: var(--#{$CSS_VAR_PFX}input-border-color) !important;
-		--#{$CSS_VAR_PFX}input-border-color: var(--#{$CSS_VAR_PFX}input-border-color__valid);
-		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color__valid);
+		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
+		--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
 	}
 
 	// Just elements with [readonly] attribute instead of CSS [:read-only] that also considers [disabled] elements.
 	&[readonly] {
 		filter: none !important;
-		--#{$CSS_VAR_PFX}input-border-color__focus: var(--#{$CSS_VAR_PFX}input-border-color) !important;
+		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
 	}
 
 	&.disabled,

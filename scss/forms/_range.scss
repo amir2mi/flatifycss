@@ -9,7 +9,7 @@ input[type="range"] {
 		cursor: pointer;
 		width: 100%;
 		height: max(3px, calc(var(--#{$CSS_VAR_PFX}border-width) * 1.5));
-		background: var(--#{$CSS_VAR_PFX}input-border-color);
+		background: var(--#{$CSS_VAR_PFX}form-element-border-color);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 	}
 
@@ -17,7 +17,7 @@ input[type="range"] {
 		cursor: pointer;
 		width: 100%;
 		height: max(3px, calc(var(--#{$CSS_VAR_PFX}border-width) * 1.5));
-		background: var(--#{$CSS_VAR_PFX}input-border-color);
+		background: var(--#{$CSS_VAR_PFX}form-element-border-color);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 	}
 
@@ -26,9 +26,9 @@ input[type="range"] {
 		cursor: pointer;
 		height: 1.24em;
 		width: 1.24em;
-		background: var(--#{$CSS_VAR_PFX}input-bg-color);
+		background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
-		border: max(1px, var(--#{$CSS_VAR_PFX}border-width)) solid var(--#{$CSS_VAR_PFX}input-border-color);
+		border: max(1px, var(--#{$CSS_VAR_PFX}border-width)) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
 		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 	}
 
@@ -38,9 +38,9 @@ input[type="range"] {
 		height: 1.24em;
 		width: 1.24em;
 		margin: -0.55em; // webkit thumb should be positioned manually
-		background: var(--#{$CSS_VAR_PFX}input-bg-color);
+		background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
-		border: max(1px, var(--#{$CSS_VAR_PFX}border-width)) solid var(--#{$CSS_VAR_PFX}input-border-color);
+		border: max(1px, var(--#{$CSS_VAR_PFX}border-width)) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
 		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 	}
 
@@ -63,12 +63,12 @@ input[type="range"] {
 	}
 
 	&:focus::-moz-range-thumb {
-		border-color: var(--#{$CSS_VAR_PFX}input-border-color__focus);
+		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__focus);
 		filter: brightness(90%);
 	}
 
 	&:focus::-webkit-slider-thumb {
-		border-color: var(--#{$CSS_VAR_PFX}input-border-color__focus);
+		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__focus);
 		filter: brightness(90%);
 	}
 }

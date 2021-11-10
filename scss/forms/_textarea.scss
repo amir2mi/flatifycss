@@ -1,0 +1,5 @@
+textarea:not(.default) {
+	@extend %form-element;
+	font-size: 1em;
+    
+}
