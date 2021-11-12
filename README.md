@@ -54,12 +54,10 @@ List of work in progress:
     -   [x] Tel
     -   [x] Text
     -   [x] URL
-    -   [ ] Checkbox
-    -   [ ] Radio
--   [ ] Select
--   [ ] Check
--   [ ] Radio
--   [ ] Toggle
+-   [x] Select
+-   [x] Check
+-   [x] Radio
+-   [x] Toggle
 
 ## Helpers
 
