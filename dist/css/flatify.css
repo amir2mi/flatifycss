@@ -1366,6 +1366,80 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
           filter: contrast(85%) brightness(85%) opacity(70%) !important;
 }
 
+.checkbox-wrapper,
+.radio-wrapper,
+.toggle-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.75em 0;
+}
+.checkbox-wrapper:hover .check, .checkbox-wrapper:focus-within .check,
+.radio-wrapper:hover .check,
+.radio-wrapper:focus-within .check,
+.toggle-wrapper:hover .check,
+.toggle-wrapper:focus-within .check {
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+}
+.checkbox-wrapper .check,
+.radio-wrapper .check,
+.toggle-wrapper .check {
+  position: relative;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background: var(--flatify__form-element-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__form-element-border-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.5);
+  -webkit-transition: all var(--flatify__simple-transition);
+  -o-transition: all var(--flatify__simple-transition);
+  transition: all var(--flatify__simple-transition);
+  margin-right: 0.38em;
+}
+.checkbox-wrapper .check:after,
+.radio-wrapper .check:after,
+.toggle-wrapper .check:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: var(--flatify__border-radius);
+  -webkit-transition: all var(--flatify__simple-transition);
+  -o-transition: all var(--flatify__simple-transition);
+  transition: all var(--flatify__simple-transition);
+}
+.checkbox-wrapper input:not(:disabled) + .check,
+.radio-wrapper input:not(:disabled) + .check,
+.toggle-wrapper input:not(:disabled) + .check {
+  cursor: pointer;
+}
+.checkbox-wrapper input:disabled + .check,
+.radio-wrapper input:disabled + .check,
+.toggle-wrapper input:disabled + .check {
+  pointer-events: none;
+  -webkit-filter: contrast(85%) brightness(85%) opacity(70%) !important;
+          filter: contrast(85%) brightness(85%) opacity(70%) !important;
+}
+.checkbox-wrapper input:disabled + .check:after,
+.radio-wrapper input:disabled + .check:after,
+.toggle-wrapper input:disabled + .check:after {
+  background: var(--flatify__form-element-border-color__invalid);
+}
+.checkbox-wrapper input,
+.radio-wrapper input,
+.toggle-wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
 .input-wrapper {
   position: relative;
   display: -webkit-box;
@@ -1555,41 +1629,11 @@ input[type=button][type=file]:not(.default)::file-selector-button {
   border: none !important;
 }
 
-.checkbox-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0.75em 0;
-}
-.checkbox-wrapper .check {
-  position: relative;
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  background: var(--flatify__form-element-bg-color);
-  border: var(--flatify__border-width) solid var(--flatify__form-element-border-color);
-  border-radius: calc(var(--flatify__border-radius) * 0.5);
-  margin-right: 0.38em;
-}
-.checkbox-wrapper .check:after {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  border-radius: var(--flatify__border-radius);
-  -webkit-transition: all var(--flatify__simple-transition);
-  -o-transition: all var(--flatify__simple-transition);
-  transition: all var(--flatify__simple-transition);
-}
 .checkbox-wrapper input:not(:checked) + .check:after {
   -webkit-clip-path: circle(0% at left);
           clip-path: circle(0% at left);
 }
-.checkbox-wrapper input:checked + .check:before {
+.checkbox-wrapper input:checked:not(:indeterminate) + .check:before {
   content: " ";
   position: absolute;
   top: 0.7em;
@@ -1608,7 +1652,7 @@ input[type=button][type=file]:not(.default)::file-selector-button {
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-.checkbox-wrapper input:checked + .check:after {
+.checkbox-wrapper input:checked:not(:indeterminate) + .check:after {
   top: 0.45em;
   left: 0.25em;
   width: 1.2em;
@@ -1625,43 +1669,46 @@ input[type=button][type=file]:not(.default)::file-selector-button {
   transition: clip-path linear 0.5s 0.1s;
   transition: clip-path linear 0.5s 0.1s, -webkit-clip-path linear 0.5s 0.1s;
 }
-.checkbox-wrapper input:not(:disabled) + .check {
-  cursor: pointer;
-}
-.checkbox-wrapper input:disabled + .check {
-  pointer-events: none;
-  -webkit-filter: contrast(85%) brightness(85%) opacity(70%) !important;
-          filter: contrast(85%) brightness(85%) opacity(70%) !important;
-}
-.checkbox-wrapper input:disabled + .check:after {
-  background: var(--flatify__form-element-border-color__invalid);
-}
 .checkbox-wrapper input:indeterminate + .check:after {
   background: var(--flatify__form-element-accent-color);
 }
 .checkbox-wrapper input:indeterminate + .check:after,
-.checkbox-wrapper input:disabled + .check:after {
-  inset: auto;
+.checkbox-wrapper input:disabled:not(:checked) + .check:after {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 0.75em;
   height: 0.2em;
   margin: auto;
-  background: var(--flatify__form-element-border-color__invalid);
   -webkit-clip-path: circle(200% at bottom);
           clip-path: circle(200% at bottom);
-  -webkit-transition: -webkit-clip-path linear 0.5s 0.1s;
-  transition: -webkit-clip-path linear 0.5s 0.1s;
-  -o-transition: clip-path linear 0.5s 0.1s;
-  transition: clip-path linear 0.5s 0.1s;
-  transition: clip-path linear 0.5s 0.1s, -webkit-clip-path linear 0.5s 0.1s;
-}
-.checkbox-wrapper input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  visibility: hidden;
+  -webkit-transition: -webkit-clip-path linear 0.4s 0.1s;
+  transition: -webkit-clip-path linear 0.4s 0.1s;
+  -o-transition: clip-path linear 0.4s 0.1s;
+  transition: clip-path linear 0.4s 0.1s;
+  transition: clip-path linear 0.4s 0.1s, -webkit-clip-path linear 0.4s 0.1s;
+  -webkit-animation: flatify-grow-x 0.2s both;
+          animation: flatify-grow-x 0.2s both;
 }
 
-input[type=range] {
+.radio-wrapper .check:after {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0.64em;
+  height: 0.64em;
+  margin: auto;
+  border-radius: calc(var(--flatify__border-radius) * 0.2);
+}
+.radio-wrapper input:checked + .check:after {
+  background: var(--flatify__form-element-border-color__valid);
+  -webkit-animation: flatify-grow 0.25s cubic-bezier(0.85, -0.57, 0.36, 1.72) both;
+          animation: flatify-grow 0.25s cubic-bezier(0.85, -0.57, 0.36, 1.72) both;
+}
+
+input[type=range]:not(.default) {
   -webkit-appearance: none;
   width: 100%;
   background: transparent !important;
@@ -1669,21 +1716,21 @@ input[type=range] {
   -webkit-filter: none !important;
           filter: none !important;
 }
-input[type=range]::-moz-range-track {
+input[type=range]:not(.default)::-moz-range-track {
   cursor: pointer;
   width: 100%;
   height: max(3px, var(--flatify__border-width) * 1.5);
   background: var(--flatify__form-element-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
 }
-input[type=range]::-webkit-slider-runnable-track {
+input[type=range]:not(.default)::-webkit-slider-runnable-track {
   cursor: pointer;
   width: 100%;
   height: max(3px, var(--flatify__border-width) * 1.5);
   background: var(--flatify__form-element-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
 }
-input[type=range]::-moz-range-thumb {
+input[type=range]:not(.default)::-moz-range-thumb {
   -webkit-appearance: none;
   cursor: pointer;
   height: 1.24em;
@@ -1694,7 +1741,7 @@ input[type=range]::-moz-range-thumb {
   -moz-transition: all var(--flatify__simple-transition);
   transition: all var(--flatify__simple-transition);
 }
-input[type=range]::-webkit-slider-thumb {
+input[type=range]:not(.default)::-webkit-slider-thumb {
   -webkit-appearance: none;
   cursor: pointer;
   height: 1.24em;
@@ -1706,27 +1753,27 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-transition: all var(--flatify__simple-transition);
   transition: all var(--flatify__simple-transition);
 }
-input[type=range]:hover::-moz-range-thumb {
+input[type=range]:not(.default):hover::-moz-range-thumb {
   filter: brightness(90%);
 }
-input[type=range]:hover::-webkit-slider-thumb {
+input[type=range]:not(.default):hover::-webkit-slider-thumb {
   -webkit-filter: brightness(90%);
           filter: brightness(90%);
 }
 @media (prefers-reduced-motion: no-preference) {
-  input[type=range]:active::-moz-range-thumb {
+  input[type=range]:not(.default):active::-moz-range-thumb {
     transform: scale(0.85);
   }
-  input[type=range]:active::-webkit-slider-thumb {
+  input[type=range]:not(.default):active::-webkit-slider-thumb {
     -webkit-transform: scale(0.85);
             transform: scale(0.85);
   }
 }
-input[type=range]:focus::-moz-range-thumb {
+input[type=range]:not(.default):focus::-moz-range-thumb {
   border-color: var(--flatify__form-element-border-color__focus);
   filter: brightness(90%);
 }
-input[type=range]:focus::-webkit-slider-thumb {
+input[type=range]:not(.default):focus::-webkit-slider-thumb {
   border-color: var(--flatify__form-element-border-color__focus);
   -webkit-filter: brightness(90%);
           filter: brightness(90%);
@@ -1753,6 +1800,44 @@ select option {
   padding: 0.32em;
   color: var(--flatify__form-element-txt-color);
   background: var(--flatify__form-element-bg-color);
+}
+
+.toggle-wrapper .check {
+  width: 3em;
+}
+.toggle-wrapper .check:after {
+  top: 0;
+  bottom: 0;
+  left: 0.18em;
+  width: 0.9em;
+  height: 0.9em;
+  margin: auto 0;
+  background: var(--flatify__form-element-border-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.3);
+  -webkit-transition: all var(--flatify__bouncing-transition);
+  -o-transition: all var(--flatify__bouncing-transition);
+  transition: all var(--flatify__bouncing-transition);
+}
+.toggle-wrapper input:checked + .check:after {
+  -webkit-transform: translateX(1.4em);
+      -ms-transform: translateX(1.4em);
+          transform: translateX(1.4em);
+  background: var(--flatify__form-element-accent-color);
+}
+.toggle-wrapper:active .check {
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+}
+.toggle-wrapper:active input:not(:checked) + .check:after {
+  -webkit-transform: scaleX(1.2) scaleY(0.5);
+      -ms-transform: scaleX(1.2) scaleY(0.5);
+          transform: scaleX(1.2) scaleY(0.5);
+}
+.toggle-wrapper:active input:checked + .check:after {
+  -webkit-transform: translateX(1.2em) scaleY(0.5) scaleX(1.4);
+      -ms-transform: translateX(1.2em) scaleY(0.5) scaleX(1.4);
+          transform: translateX(1.2em) scaleY(0.5) scaleX(1.4);
 }
 
 textarea:not(.default) {
@@ -1789,6 +1874,66 @@ textarea:not(.default) {
 @keyframes flatify-fade-out {
   to {
     opacity: 0;
+  }
+}
+@-webkit-keyframes flatify-grow {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes flatify-grow {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes flatify-grow-x {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+@keyframes flatify-grow-x {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+@-webkit-keyframes flatify-grow-y {
+  from {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  to {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+@keyframes flatify-grow-y {
+  from {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  to {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
   }
 }
 @-webkit-keyframes flatify-alert-will-be-removed {

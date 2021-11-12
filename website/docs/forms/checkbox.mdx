@@ -1,0 +1,37 @@
+---
+title: Checkbox
+sidebar_position: 3
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Default checkboxes can be customized with Flatify CSS, it is done with pure CSS and easy to have one. First you need to wrap your checkbox with `.checkbox-wrapper` (it is better to wrap with `<label>`), and add `<span class="check"></span> after input, that is it and now you have a custom checkbox.
+
+<PreviewBox
+	height="90px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+	</head>
+	<body>
+		<label class="checkbox-wrapper">
+			<input type="checkbox" />
+			<span class="check"></span>
+			I Agree to Privacy Policy.
+		</label>
+    </body>
+</html>'
+/>
+
+```html {3} title="index.html"
+<label class="checkbox-wrapper">
+	<input type="checkbox" />
+	<span class="check"></span>
+	I Agree to Privacy Policy.
+</label>
+```
