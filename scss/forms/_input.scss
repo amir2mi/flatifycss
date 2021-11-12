@@ -185,7 +185,7 @@ input:not(.default) {
 	@extend %form-element;
 }
 
-// when password is entered give letters morespace.
+// when password is entered give letters more space.
 input[type="password"]:not(:placeholder-shown) {
 	letter-spacing: 0.18em;
 }
