@@ -158,3 +158,66 @@
 		filter: contrast(85%) brightness(85%) opacity(70%) !important;
 	}
 }
+
+.checkbox-wrapper,
+.radio-wrapper,
+.toggle-wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin: 0.75em 0;
+
+	&:hover,
+	&:focus-within {
+		.check {
+			filter: brightness(95%);
+		}
+	}
+
+	.check {
+		position: relative;
+		display: inline-block;
+		width: 1.5em;
+		height: 1.5em;
+		background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
+		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+
+		@if $SUPPORT_LTR {
+			margin-right: 0.38em;
+		} @else {
+			margin-left: 0.38em;
+		}
+
+		&:after {
+			content: " ";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+		}
+	}
+
+	input:not(:disabled) + .check {
+		cursor: pointer;
+	}
+
+	input:disabled + .check {
+		pointer-events: none;
+		filter: contrast(85%) brightness(85%) opacity(70%) !important;
+
+		&:after {
+			background: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid);
+		}
+	}
+
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+	}
+}

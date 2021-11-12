@@ -1,0 +1,21 @@
+.radio-wrapper {
+	.check {
+		&:after {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 0.64em;
+			height: 0.64em;
+			margin: auto;
+			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.2);
+		}
+	}
+
+	input:checked + .check {
+		&:after {
+			background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+			animation: flatify-grow 0.25s cubic-bezier(0.85, -0.57, 0.36, 1.72) both;
+		}
+	}
+}

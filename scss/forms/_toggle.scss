@@ -1,0 +1,52 @@
+.toggle-wrapper {
+	.check {
+		width: 3em;
+
+		&:after {
+			top: 0;
+			bottom: 0;
+
+			@if $SUPPORT_LTR {
+				left: 0.18em;
+			} @else {
+				right: 0.18em;
+			}
+
+			width: 0.9em;
+			height: 0.9em;
+			margin: auto 0;
+			background: var(--#{$CSS_VAR_PFX}form-element-border-color);
+			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.3);
+			transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
+		}
+	}
+
+	input:checked + .check {
+		&:after {
+			@if $SUPPORT_LTR {
+				transform: translateX(1.4em);
+			} @else {
+				transform: translateX(-1.4em);
+			}
+			background: var(--#{$CSS_VAR_PFX}form-element-accent-color);
+		}
+	}
+
+	&:active {
+		.check {
+			transition: all 0.1s;
+		}
+
+		input:not(:checked) + .check:after {
+			transform: scaleX(1.2) scaleY(0.5);
+		}
+
+		input:checked + .check:after {
+			@if $SUPPORT_LTR {
+				transform: translateX(1.2em) scaleY(0.5) scaleX(1.4);
+			} @else {
+				transform: translateX(-1.2em) scaleY(0.5) scaleX(1.4);
+			}
+		}
+	}
+}

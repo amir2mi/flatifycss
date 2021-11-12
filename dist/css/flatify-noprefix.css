@@ -1136,6 +1136,70 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
   filter: contrast(85%) brightness(85%) opacity(70%) !important;
 }
 
+.checkbox-wrapper,
+.radio-wrapper,
+.toggle-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0.75em 0;
+}
+.checkbox-wrapper:hover .check, .checkbox-wrapper:focus-within .check,
+.radio-wrapper:hover .check,
+.radio-wrapper:focus-within .check,
+.toggle-wrapper:hover .check,
+.toggle-wrapper:focus-within .check {
+  filter: brightness(95%);
+}
+.checkbox-wrapper .check,
+.radio-wrapper .check,
+.toggle-wrapper .check {
+  position: relative;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background: var(--flatify__form-element-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__form-element-border-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.5);
+  transition: all var(--flatify__simple-transition);
+  margin-right: 0.38em;
+}
+.checkbox-wrapper .check:after,
+.radio-wrapper .check:after,
+.toggle-wrapper .check:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: var(--flatify__border-radius);
+  transition: all var(--flatify__simple-transition);
+}
+.checkbox-wrapper input:not(:disabled) + .check,
+.radio-wrapper input:not(:disabled) + .check,
+.toggle-wrapper input:not(:disabled) + .check {
+  cursor: pointer;
+}
+.checkbox-wrapper input:disabled + .check,
+.radio-wrapper input:disabled + .check,
+.toggle-wrapper input:disabled + .check {
+  pointer-events: none;
+  filter: contrast(85%) brightness(85%) opacity(70%) !important;
+}
+.checkbox-wrapper input:disabled + .check:after,
+.radio-wrapper input:disabled + .check:after,
+.toggle-wrapper input:disabled + .check:after {
+  background: var(--flatify__form-element-border-color__invalid);
+}
+.checkbox-wrapper input,
+.radio-wrapper input,
+.toggle-wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
 .input-wrapper {
   position: relative;
   display: flex;
@@ -1278,70 +1342,6 @@ input[type=button][type=file]:not(.default)::file-selector-button {
   border: none !important;
 }
 
-.checkbox-wrapper,
-.radio-wrapper,
-.toggle-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin: 0.75em 0;
-}
-.checkbox-wrapper:hover .check, .checkbox-wrapper:focus-within .check,
-.radio-wrapper:hover .check,
-.radio-wrapper:focus-within .check,
-.toggle-wrapper:hover .check,
-.toggle-wrapper:focus-within .check {
-  filter: brightness(95%);
-}
-.checkbox-wrapper .check,
-.radio-wrapper .check,
-.toggle-wrapper .check {
-  position: relative;
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  background: var(--flatify__form-element-bg-color);
-  border: var(--flatify__border-width) solid var(--flatify__form-element-border-color);
-  border-radius: calc(var(--flatify__border-radius) * 0.5);
-  transition: all var(--flatify__simple-transition);
-  margin-right: 0.38em;
-}
-.checkbox-wrapper .check:after,
-.radio-wrapper .check:after,
-.toggle-wrapper .check:after {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  border-radius: var(--flatify__border-radius);
-  transition: all var(--flatify__simple-transition);
-}
-.checkbox-wrapper input:not(:disabled) + .check,
-.radio-wrapper input:not(:disabled) + .check,
-.toggle-wrapper input:not(:disabled) + .check {
-  cursor: pointer;
-}
-.checkbox-wrapper input:disabled + .check,
-.radio-wrapper input:disabled + .check,
-.toggle-wrapper input:disabled + .check {
-  pointer-events: none;
-  filter: contrast(85%) brightness(85%) opacity(70%) !important;
-}
-.checkbox-wrapper input:disabled + .check:after,
-.radio-wrapper input:disabled + .check:after,
-.toggle-wrapper input:disabled + .check:after {
-  background: var(--flatify__form-element-border-color__invalid);
-}
-.checkbox-wrapper input,
-.radio-wrapper input,
-.toggle-wrapper input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
 .checkbox-wrapper input:not(:checked) + .check:after {
   clip-path: circle(0% at left);
 }
@@ -1399,34 +1399,6 @@ input[type=button][type=file]:not(.default)::file-selector-button {
 .radio-wrapper input:checked + .check:after {
   background: var(--flatify__form-element-border-color__valid);
   animation: flatify-grow 0.25s cubic-bezier(0.85, -0.57, 0.36, 1.72) both;
-}
-
-.toggle-wrapper .check {
-  width: 3em;
-}
-.toggle-wrapper .check:after {
-  top: 0;
-  bottom: 0;
-  left: 0.18em;
-  width: 0.9em;
-  height: 0.9em;
-  margin: auto 0;
-  background: var(--flatify__form-element-border-color);
-  border-radius: calc(var(--flatify__border-radius) * 0.3);
-  transition: all var(--flatify__bouncing-transition);
-}
-.toggle-wrapper input:checked + .check:after {
-  transform: translateX(1.4em);
-  background: var(--flatify__form-element-accent-color);
-}
-.toggle-wrapper:active .check {
-  transition: all 0.1s;
-}
-.toggle-wrapper:active input:not(:checked) + .check:after {
-  transform: scaleX(1.2) scaleY(0.5);
-}
-.toggle-wrapper:active input:checked + .check:after {
-  transform: translateX(1.2em) scaleY(0.5) scaleX(1.4);
 }
 
 input[type=range]:not(.default) {
@@ -1515,6 +1487,34 @@ select option {
   padding: 0.32em;
   color: var(--flatify__form-element-txt-color);
   background: var(--flatify__form-element-bg-color);
+}
+
+.toggle-wrapper .check {
+  width: 3em;
+}
+.toggle-wrapper .check:after {
+  top: 0;
+  bottom: 0;
+  left: 0.18em;
+  width: 0.9em;
+  height: 0.9em;
+  margin: auto 0;
+  background: var(--flatify__form-element-border-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.3);
+  transition: all var(--flatify__bouncing-transition);
+}
+.toggle-wrapper input:checked + .check:after {
+  transform: translateX(1.4em);
+  background: var(--flatify__form-element-accent-color);
+}
+.toggle-wrapper:active .check {
+  transition: all 0.1s;
+}
+.toggle-wrapper:active input:not(:checked) + .check:after {
+  transform: scaleX(1.2) scaleY(0.5);
+}
+.toggle-wrapper:active input:checked + .check:after {
+  transform: translateX(1.2em) scaleY(0.5) scaleX(1.4);
 }
 
 textarea:not(.default) {
