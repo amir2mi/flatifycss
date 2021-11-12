@@ -185,9 +185,9 @@
 		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
 		@if $SUPPORT_LTR {
-			margin-right: 0.38em;
+			margin-right: 0.5em;
 		} @else {
-			margin-left: 0.38em;
+			margin-left: 0.5em;
 		}
 
 		&:after {

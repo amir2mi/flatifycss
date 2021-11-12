@@ -178,8 +178,16 @@
 			clip-path: circle(0% at right);
 		}
 	}
-}
 
+	// blink eye icon every 7s when password is shown.
+	@media (prefers-reduced-motion: no-preference) {
+		&.visible-password .show-password-button:not(:active) {
+			&:before {
+				animation: flatify-eye-blink 7s infinite;
+			}
+		}
+	}
+}
 
 input:not(.default) {
 	@extend %form-element;

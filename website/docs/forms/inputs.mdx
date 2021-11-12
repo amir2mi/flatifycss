@@ -52,7 +52,7 @@ Note that if you want to have the floating label for `<textarea>` should add the
 :::
 
 <PreviewBox
-	height="250px"
+	height="260px"
 	children='<!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -441,7 +441,7 @@ There are helper classes for styling inputs, first read about [color setter clas
 
 ## Customization
 
-There are CSS variables for customizing Background and text color for inputs:
+There are CSS variables for customizing form inputs:
 
 `--flatify__form-element-accent-color`  
 `--flatify__form-element-bg-color`  
@@ -466,6 +466,7 @@ Here is an example of these variables usage:
 		<title>Inputs</title>
 		<style>
 			:root{
+				--flatify__form-element-accent-color: #f6bb42;
 				--flatify__form-element-bg-color: #FFCE54;
 				--flatify__form-element-txt-color: #434A54;
 				--flatify__form-element-border-color: #FFCE54;
@@ -512,13 +513,14 @@ Here is an example of these variables usage:
 
 ```css title="style.css"
 :root {
+	--flatify__form-element-accent-color: #f6bb42;
 	--flatify__form-element-bg-color: #ffce54;
 	--flatify__form-element-txt-color: #434a54;
 	--flatify__form-element-border-color: #ffce54;
 	--flatify__form-element-border-color__focus: #f6bb42;
 	--flatify__form-element-border-color__valid: #5d9cec;
 	--flatify__form-element-border-color__warning: #8067b7;
-	--flatify__form-element-border-color__invalid: #bf263c;
+	--flatify__form-element-border-color__invalid: #bf263c;ch
 }
 ```
 

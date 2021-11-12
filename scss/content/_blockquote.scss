@@ -49,8 +49,8 @@ blockquote {
 		&:before {
 			// blockquote icon
 			top: 1em;
-			width: 10em;
-			height: 10em;
+			width: 7em;
+			height: 7em;
 
 			@if $SUPPORT_LTR {
 				left: 1em;

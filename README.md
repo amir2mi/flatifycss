@@ -10,6 +10,7 @@ List of work in progress:
 -   [x] A11y
     -   [x] prefers-reduced-motion
     -   [x] ARIA for docs
+    -   [x] Keyboard friendly
 
 ## Contents
 

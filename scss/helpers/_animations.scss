@@ -18,7 +18,7 @@
 }
 
 @keyframes flatify-grow {
-	from{
+	from {
 		transform: scale(0);
 	}
 	to {
@@ -27,7 +27,7 @@
 }
 
 @keyframes flatify-grow-x {
-	from{
+	from {
 		transform: scaleX(0);
 	}
 	to {
@@ -36,7 +36,7 @@
 }
 
 @keyframes flatify-grow-y {
-	from{
+	from {
 		transform: scaleY(0);
 	}
 	to {
@@ -76,5 +76,24 @@
 	100% {
 		opacity: 0;
 		transform: scale(1.75);
+	}
+}
+
+// animation for eyes blinking
+@keyframes flatify-eye-blink {
+	0% {
+		transform: scaleY(1);
+	}
+	40% {
+		transform: scaleY(1);
+	}
+	42% {
+		transform: scaleY(0.3);
+	}
+	45% {
+		transform: scaleY(1);
+	}
+	100% {
+		transform: scaleY(1);
 	}
 }
