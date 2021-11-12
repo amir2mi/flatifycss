@@ -1,5 +1,7 @@
 .checkbox-wrapper,
-.radio-wrapper {
+.radio-wrapper,
+.toggle-wrapper {
+	position: relative;
 	display: flex;
 	align-items: center;
 	margin: 0.75em 0;
@@ -36,6 +38,26 @@
 			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 		}
+	}
+
+	input:not(:disabled) + .check {
+		cursor: pointer;
+	}
+
+	input:disabled + .check {
+		pointer-events: none;
+		filter: contrast(85%) brightness(85%) opacity(70%) !important;
+
+		&:after {
+			background: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid);
+		}
+	}
+
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
 	}
 }
 
@@ -75,19 +97,6 @@
 		}
 	}
 
-	input:not(:disabled) + .check {
-		cursor: pointer;
-	}
-
-	input:disabled + .check {
-		pointer-events: none;
-		filter: contrast(85%) brightness(85%) opacity(70%) !important;
-
-		&:after {
-			background: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid);
-		}
-	}
-
 	input:indeterminate + .check {
 		&:after {
 			background: var(--#{$CSS_VAR_PFX}form-element-accent-color);
@@ -105,17 +114,30 @@
 			height: 0.2em;
 			margin: auto;
 			clip-path: circle(200% at bottom);
-			transition: clip-path linear 0.5s 0.1s;
-			animation: flatify-grow-x 0.15s both;
+			transition: clip-path linear 0.4s 0.1s;
+			animation: flatify-grow-x 0.2s both;
 		}
-	}
-	input {
-		position: absolute;
-		top: 0;
-		left: 0;
-		visibility: hidden;
 	}
 }
 
 .radio-wrapper {
+	.check {
+		&:after {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 0.64em;
+			height: 0.64em;
+			margin: auto;
+			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.2);
+		}
+	}
+
+	input:checked + .check {
+		&:after {
+			background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+			animation: flatify-grow 0.25s cubic-bezier(0.85, -0.57, 0.36, 1.72) both;
+		}
+	}
 }

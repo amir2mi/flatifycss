@@ -1279,18 +1279,23 @@ input[type=button][type=file]:not(.default)::file-selector-button {
 }
 
 .checkbox-wrapper,
-.radio-wrapper {
+.radio-wrapper,
+.toggle-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   margin: 0.75em 0;
 }
 .checkbox-wrapper:hover .check, .checkbox-wrapper:focus-within .check,
 .radio-wrapper:hover .check,
-.radio-wrapper:focus-within .check {
+.radio-wrapper:focus-within .check,
+.toggle-wrapper:hover .check,
+.toggle-wrapper:focus-within .check {
   filter: brightness(95%);
 }
 .checkbox-wrapper .check,
-.radio-wrapper .check {
+.radio-wrapper .check,
+.toggle-wrapper .check {
   position: relative;
   display: inline-block;
   width: 1.5em;
@@ -1302,7 +1307,8 @@ input[type=button][type=file]:not(.default)::file-selector-button {
   margin-right: 0.38em;
 }
 .checkbox-wrapper .check:after,
-.radio-wrapper .check:after {
+.radio-wrapper .check:after,
+.toggle-wrapper .check:after {
   content: " ";
   position: absolute;
   top: 0;
@@ -1310,6 +1316,30 @@ input[type=button][type=file]:not(.default)::file-selector-button {
   z-index: 1;
   border-radius: var(--flatify__border-radius);
   transition: all var(--flatify__simple-transition);
+}
+.checkbox-wrapper input:not(:disabled) + .check,
+.radio-wrapper input:not(:disabled) + .check,
+.toggle-wrapper input:not(:disabled) + .check {
+  cursor: pointer;
+}
+.checkbox-wrapper input:disabled + .check,
+.radio-wrapper input:disabled + .check,
+.toggle-wrapper input:disabled + .check {
+  pointer-events: none;
+  filter: contrast(85%) brightness(85%) opacity(70%) !important;
+}
+.checkbox-wrapper input:disabled + .check:after,
+.radio-wrapper input:disabled + .check:after,
+.toggle-wrapper input:disabled + .check:after {
+  background: var(--flatify__form-element-border-color__invalid);
+}
+.checkbox-wrapper input,
+.radio-wrapper input,
+.toggle-wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
 }
 
 .checkbox-wrapper input:not(:checked) + .check:after {
@@ -1339,16 +1369,6 @@ input[type=button][type=file]:not(.default)::file-selector-button {
   transform: rotate(-55deg);
   transition: clip-path linear 0.5s 0.1s;
 }
-.checkbox-wrapper input:not(:disabled) + .check {
-  cursor: pointer;
-}
-.checkbox-wrapper input:disabled + .check {
-  pointer-events: none;
-  filter: contrast(85%) brightness(85%) opacity(70%) !important;
-}
-.checkbox-wrapper input:disabled + .check:after {
-  background: var(--flatify__form-element-border-color__invalid);
-}
 .checkbox-wrapper input:indeterminate + .check:after {
   background: var(--flatify__form-element-accent-color);
 }
@@ -1362,14 +1382,23 @@ input[type=button][type=file]:not(.default)::file-selector-button {
   height: 0.2em;
   margin: auto;
   clip-path: circle(200% at bottom);
-  transition: clip-path linear 0.5s 0.1s;
-  animation: flatify-grow-x 0.15s both;
+  transition: clip-path linear 0.4s 0.1s;
+  animation: flatify-grow-x 0.2s both;
 }
-.checkbox-wrapper input {
-  position: absolute;
+
+.radio-wrapper .check:after {
   top: 0;
+  bottom: 0;
   left: 0;
-  visibility: hidden;
+  right: 0;
+  width: 0.64em;
+  height: 0.64em;
+  margin: auto;
+  border-radius: calc(var(--flatify__border-radius) * 0.2);
+}
+.radio-wrapper input:checked + .check:after {
+  background: var(--flatify__form-element-border-color__valid);
+  animation: flatify-grow 0.25s cubic-bezier(0.85, -0.57, 0.36, 1.72) both;
 }
 
 input[type=range] {
