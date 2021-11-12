@@ -1,0 +1,121 @@
+.checkbox-wrapper,
+.radio-wrapper {
+	display: flex;
+	align-items: center;
+	margin: 0.75em 0;
+
+	&:hover,
+	&:focus-within {
+		.check {
+			filter: brightness(95%);
+		}
+	}
+
+	.check {
+		position: relative;
+		display: inline-block;
+		width: 1.5em;
+		height: 1.5em;
+		background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
+		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+
+		@if $SUPPORT_LTR {
+			margin-right: 0.38em;
+		} @else {
+			margin-left: 0.38em;
+		}
+
+		&:after {
+			content: " ";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+		}
+	}
+}
+
+.checkbox-wrapper {
+	input:not(:checked) + .check {
+		&:after {
+			clip-path: circle(0% at left);
+		}
+	}
+
+	input:checked:not(:indeterminate) + .check {
+		&:before {
+			content: " ";
+			position: absolute;
+			top: 0.7em;
+			left: 0.1em;
+			z-index: 1;
+			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+			animation: flatify-fade-in 0.35s;
+
+			width: 0.64em;
+			height: 0.25em;
+			background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+			transform: rotate(45deg);
+		}
+
+		&:after {
+			top: 0.45em;
+			left: 0.25em;
+			width: 1.2em;
+			height: 0.25em;
+			background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+			clip-path: circle(200% at bottom);
+			transform: rotate(-55deg);
+			transition: clip-path linear 0.5s 0.1s;
+		}
+	}
+
+	input:not(:disabled) + .check {
+		cursor: pointer;
+	}
+
+	input:disabled + .check {
+		pointer-events: none;
+		filter: contrast(85%) brightness(85%) opacity(70%) !important;
+
+		&:after {
+			background: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid);
+		}
+	}
+
+	input:indeterminate + .check {
+		&:after {
+			background: var(--#{$CSS_VAR_PFX}form-element-accent-color);
+		}
+	}
+
+	input:indeterminate + .check,
+	input:disabled:not(:checked) + .check {
+		&:after {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 0.75em;
+			height: 0.2em;
+			margin: auto;
+			clip-path: circle(200% at bottom);
+			transition: clip-path linear 0.5s 0.1s;
+			animation: flatify-grow-x 0.15s both;
+		}
+	}
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		visibility: hidden;
+	}
+}
+
+.radio-wrapper {
+}

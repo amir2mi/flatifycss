@@ -1,8 +1,9 @@
 :root {
+	--#{$CSS_VAR_PFX}form-element-accent-color: var(--#{$CSS_VAR_PFX}color-accent-primary);
 	--#{$CSS_VAR_PFX}form-element-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
 	--#{$CSS_VAR_PFX}form-element-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
-	--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}color-accent-primary);
+	--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}form-element-accent-color);
 	--#{$CSS_VAR_PFX}form-element-border-color__valid: var(--#{$CSS_VAR_PFX}color-success-primary);
 	--#{$CSS_VAR_PFX}form-element-border-color__warning: var(--#{$CSS_VAR_PFX}color-warning-primary);
 	--#{$CSS_VAR_PFX}form-element-border-color__invalid: var(--#{$CSS_VAR_PFX}color-danger-primary);

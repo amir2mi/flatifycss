@@ -1174,10 +1174,11 @@ input.disabled[type=file]:not(.default)::-webkit-file-upload-button, input[type=
 }
 
 :root {
+  --flatify__form-element-accent-color: var(--flatify__color-accent-primary);
   --flatify__form-element-bg-color: var(--flatify__bg-color-dark);
   --flatify__form-element-txt-color: var(--flatify__txt-color);
   --flatify__form-element-border-color: var(--flatify__bg-color-darker);
-  --flatify__form-element-border-color__focus: var(--flatify__color-accent-primary);
+  --flatify__form-element-border-color__focus: var(--flatify__form-element-accent-color);
   --flatify__form-element-border-color__valid: var(--flatify__color-success-primary);
   --flatify__form-element-border-color__warning: var(--flatify__color-warning-primary);
   --flatify__form-element-border-color__invalid: var(--flatify__color-danger-primary);
@@ -1552,6 +1553,112 @@ input[type=reset][type=file]:not(.default)::file-selector-button,
 input[type=button].button,
 input[type=button][type=file]:not(.default)::file-selector-button {
   border: none !important;
+}
+
+.checkbox-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.75em 0;
+}
+.checkbox-wrapper .check {
+  position: relative;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background: var(--flatify__form-element-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__form-element-border-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.5);
+  margin-right: 0.38em;
+}
+.checkbox-wrapper .check:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: var(--flatify__border-radius);
+  -webkit-transition: all var(--flatify__simple-transition);
+  -o-transition: all var(--flatify__simple-transition);
+  transition: all var(--flatify__simple-transition);
+}
+.checkbox-wrapper input:not(:checked) + .check:after {
+  -webkit-clip-path: circle(0% at left);
+          clip-path: circle(0% at left);
+}
+.checkbox-wrapper input:checked + .check:before {
+  content: " ";
+  position: absolute;
+  top: 0.7em;
+  left: 0.1em;
+  z-index: 1;
+  border-radius: var(--flatify__border-radius);
+  -webkit-transition: all var(--flatify__simple-transition);
+  -o-transition: all var(--flatify__simple-transition);
+  transition: all var(--flatify__simple-transition);
+  -webkit-animation: flatify-fade-in 0.35s;
+          animation: flatify-fade-in 0.35s;
+  width: 0.64em;
+  height: 0.25em;
+  background: var(--flatify__form-element-border-color__valid);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.checkbox-wrapper input:checked + .check:after {
+  top: 0.45em;
+  left: 0.25em;
+  width: 1.2em;
+  height: 0.25em;
+  background: var(--flatify__form-element-border-color__valid);
+  -webkit-clip-path: circle(200% at bottom);
+          clip-path: circle(200% at bottom);
+  -webkit-transform: rotate(-55deg);
+      -ms-transform: rotate(-55deg);
+          transform: rotate(-55deg);
+  -webkit-transition: -webkit-clip-path linear 0.5s 0.1s;
+  transition: -webkit-clip-path linear 0.5s 0.1s;
+  -o-transition: clip-path linear 0.5s 0.1s;
+  transition: clip-path linear 0.5s 0.1s;
+  transition: clip-path linear 0.5s 0.1s, -webkit-clip-path linear 0.5s 0.1s;
+}
+.checkbox-wrapper input:not(:disabled) + .check {
+  cursor: pointer;
+}
+.checkbox-wrapper input:disabled + .check {
+  pointer-events: none;
+  -webkit-filter: contrast(85%) brightness(85%) opacity(70%) !important;
+          filter: contrast(85%) brightness(85%) opacity(70%) !important;
+}
+.checkbox-wrapper input:disabled + .check:after {
+  background: var(--flatify__form-element-border-color__invalid);
+}
+.checkbox-wrapper input:indeterminate + .check:after {
+  background: var(--flatify__form-element-accent-color);
+}
+.checkbox-wrapper input:indeterminate + .check:after,
+.checkbox-wrapper input:disabled + .check:after {
+  inset: auto;
+  width: 0.75em;
+  height: 0.2em;
+  margin: auto;
+  background: var(--flatify__form-element-border-color__invalid);
+  -webkit-clip-path: circle(200% at bottom);
+          clip-path: circle(200% at bottom);
+  -webkit-transition: -webkit-clip-path linear 0.5s 0.1s;
+  transition: -webkit-clip-path linear 0.5s 0.1s;
+  -o-transition: clip-path linear 0.5s 0.1s;
+  transition: clip-path linear 0.5s 0.1s;
+  transition: clip-path linear 0.5s 0.1s, -webkit-clip-path linear 0.5s 0.1s;
+}
+.checkbox-wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
 }
 
 input[type=range] {

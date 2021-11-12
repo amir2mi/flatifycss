@@ -1017,10 +1017,11 @@ th {
 }
 
 :root {
+  --flatify__form-element-accent-color: var(--flatify__color-accent-primary);
   --flatify__form-element-bg-color: var(--flatify__bg-color-dark);
   --flatify__form-element-txt-color: var(--flatify__txt-color);
   --flatify__form-element-border-color: var(--flatify__bg-color-darker);
-  --flatify__form-element-border-color__focus: var(--flatify__color-accent-primary);
+  --flatify__form-element-border-color__focus: var(--flatify__form-element-accent-color);
   --flatify__form-element-border-color__valid: var(--flatify__color-success-primary);
   --flatify__form-element-border-color__warning: var(--flatify__color-warning-primary);
   --flatify__form-element-border-color__invalid: var(--flatify__color-danger-primary);
@@ -1277,6 +1278,100 @@ input[type=button][type=file]:not(.default)::file-selector-button {
   border: none !important;
 }
 
+.checkbox-wrapper,
+.radio-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0.75em 0;
+}
+.checkbox-wrapper:hover .check, .checkbox-wrapper:focus-within .check,
+.radio-wrapper:hover .check,
+.radio-wrapper:focus-within .check {
+  filter: brightness(95%);
+}
+.checkbox-wrapper .check,
+.radio-wrapper .check {
+  position: relative;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background: var(--flatify__form-element-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__form-element-border-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.5);
+  transition: all var(--flatify__simple-transition);
+  margin-right: 0.38em;
+}
+.checkbox-wrapper .check:after,
+.radio-wrapper .check:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: var(--flatify__border-radius);
+  transition: all var(--flatify__simple-transition);
+}
+
+.checkbox-wrapper input:not(:checked) + .check:after {
+  clip-path: circle(0% at left);
+}
+.checkbox-wrapper input:checked:not(:indeterminate) + .check:before {
+  content: " ";
+  position: absolute;
+  top: 0.7em;
+  left: 0.1em;
+  z-index: 1;
+  border-radius: var(--flatify__border-radius);
+  transition: all var(--flatify__simple-transition);
+  animation: flatify-fade-in 0.35s;
+  width: 0.64em;
+  height: 0.25em;
+  background: var(--flatify__form-element-border-color__valid);
+  transform: rotate(45deg);
+}
+.checkbox-wrapper input:checked:not(:indeterminate) + .check:after {
+  top: 0.45em;
+  left: 0.25em;
+  width: 1.2em;
+  height: 0.25em;
+  background: var(--flatify__form-element-border-color__valid);
+  clip-path: circle(200% at bottom);
+  transform: rotate(-55deg);
+  transition: clip-path linear 0.5s 0.1s;
+}
+.checkbox-wrapper input:not(:disabled) + .check {
+  cursor: pointer;
+}
+.checkbox-wrapper input:disabled + .check {
+  pointer-events: none;
+  filter: contrast(85%) brightness(85%) opacity(70%) !important;
+}
+.checkbox-wrapper input:disabled + .check:after {
+  background: var(--flatify__form-element-border-color__invalid);
+}
+.checkbox-wrapper input:indeterminate + .check:after {
+  background: var(--flatify__form-element-accent-color);
+}
+.checkbox-wrapper input:indeterminate + .check:after,
+.checkbox-wrapper input:disabled:not(:checked) + .check:after {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0.75em;
+  height: 0.2em;
+  margin: auto;
+  clip-path: circle(200% at bottom);
+  transition: clip-path linear 0.5s 0.1s;
+  animation: flatify-grow-x 0.15s both;
+}
+.checkbox-wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
 input[type=range] {
   -webkit-appearance: none;
   width: 100%;
@@ -1381,6 +1476,30 @@ textarea:not(.default) {
 @keyframes flatify-fade-out {
   to {
     opacity: 0;
+  }
+}
+@keyframes flatify-grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes flatify-grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes flatify-grow-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
   }
 }
 @keyframes flatify-alert-will-be-removed {

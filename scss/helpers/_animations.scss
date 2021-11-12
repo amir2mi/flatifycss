@@ -17,6 +17,33 @@
 	}
 }
 
+@keyframes flatify-grow {
+	from{
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+@keyframes flatify-grow-x {
+	from{
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes flatify-grow-y {
+	from{
+		transform: scaleY(0);
+	}
+	to {
+		transform: scaleY(1);
+	}
+}
+
 // Default animation before removing elements,
 // It can be customized both with [_config.scss] and [--flatify__remove-animation-duration] CSS var.
 
