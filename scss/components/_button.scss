@@ -75,6 +75,8 @@
 	}
 
 	.checkbox-button:checked + &.outline,
+	.radio-button:checked + &.outline,
+	.checkbox-button:checked + &.bordered,
 	.radio-button:checked + &.bordered {
 		box-shadow: inset 0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38)
 				var(--#{$CSS_VAR_PFX}button-bg-color__focus),
