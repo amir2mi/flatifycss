@@ -1399,6 +1399,23 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
 }
+.checkbox-wrapper.valid .check,
+.radio-wrapper.valid .check,
+.toggle-wrapper.valid .check {
+  border-color: var(--flatify__form-element-border-color__valid);
+}
+.checkbox-wrapper.warning .check,
+.radio-wrapper.warning .check,
+.toggle-wrapper.warning .check {
+  border-color: var(--flatify__form-element-border-color__warning);
+}
+.checkbox-wrapper input:invalid + .check, .checkbox-wrapper.invalid .check,
+.radio-wrapper input:invalid + .check,
+.radio-wrapper.invalid .check,
+.toggle-wrapper input:invalid + .check,
+.toggle-wrapper.invalid .check {
+  border-color: var(--flatify__form-element-border-color__invalid);
+}
 .checkbox-wrapper .check,
 .radio-wrapper .check,
 .toggle-wrapper .check {

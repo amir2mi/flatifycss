@@ -41,7 +41,7 @@ List of work in progress:
 
 ## Forms
 
--   [ ] Inputs
+-   [x] Inputs
     -   [x] Email
     -   [x] Button
     -   [x] Color
@@ -56,8 +56,10 @@ List of work in progress:
     -   [x] Text
     -   [x] URL
 -   [x] Select
--   [x] Check
+-   [x] Checkbox
+-   [x] Checkbox button
 -   [x] Radio
+-   [x] Radio button
 -   [x] Toggle
 
 ## Helpers

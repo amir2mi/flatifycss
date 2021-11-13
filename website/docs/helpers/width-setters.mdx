@@ -1,0 +1,93 @@
+---
+title: Width setters
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Width setters help you set width for elements, it is defined in `_config.scss` file, so you can add more setter classes with custom values.
+
+<PreviewBox
+	height="320px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Width setters</title>
+        <style>
+            .my-box{
+                height: 30px;
+                padding: 5px 10px;
+                margin: 20px 0;
+                border-radius: 12px;
+            }
+        </style>
+	</head>
+	<body>
+        <div class="my-box style-blue width-100p">100%</div>
+        <div class="my-box style-green width-75p">75%</div>
+        <div class="my-box style-purple width-50p">50%</div>
+        <div class="my-box style-orange width-25p">25%</div>
+        <div class="my-box style-red width-10p">10%</div>
+    </body>
+
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="my-box style-blue width-100p">100%</div>
+<div class="my-box style-green width-75p">75%</div>
+<div class="my-box style-purple width-50p">50%</div>
+<div class="my-box style-orange width-25p">25%</div>
+<div class="my-box style-red width-10p">10%</div>
+```
+
+```css title="style.css"
+.my-box {
+	height: 30px;
+	padding: 5px 10px;
+	margin: 20px 0;
+	border-radius: 12px;
+}
+```
+
+Predefined classes are here:  
+`width-0p`  
+`width-10p`  
+`width-15p`  
+`width-25p`  
+`width-30p`  
+`width-50p`  
+`width-60p`  
+`width-75p`  
+`width-90p`  
+`width-100p`
+
+:::info Custom helper classes
+Note that these classes can be customized in `_config.scss` file, there is a variable called `$WIDTH_LIST`,
+all classes are generated from this list.
+So it is possible to create customized helper classes for width simply!
+:::
+
+```scss {14,15} title="_config.scss"
+// This list will be converted to helper classes.
+// .width-[]
+$WIDTH_LIST: (
+	0p: 0,
+	10p: 10%,
+	15p: 15%,
+	25p: 25%,
+	30p: 30%,
+	50p: 50%,
+	60p: 60%,
+	75p: 75%,
+	90p: 90%,
+	100p: 100%,
+	50-pixels: 50px,
+	5-em: 5em,
+);
+```
