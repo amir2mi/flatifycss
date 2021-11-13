@@ -1006,11 +1006,11 @@ input[type=file]:not(.default)::-webkit-file-upload-button {
   transition: filter var(--flatify__simple-transition) !important;
   transition: filter var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition) !important;
 }
-input[type=file]:hover:not(.default)::-webkit-file-upload-button {
+.radio-button:focus + input[type=file]:not(.default)::-webkit-file-upload-button, input[type=file]:hover:not(.default)::-webkit-file-upload-button {
   -webkit-filter: brightness(92%);
           filter: brightness(92%);
 }
-.button:hover, input[type=file]:hover:not(.default)::file-selector-button {
+.radio-button:focus + .button, .radio-button:focus + input[type=file]:not(.default)::file-selector-button, .button:hover, input[type=file]:hover:not(.default)::file-selector-button {
   -webkit-filter: brightness(92%);
           filter: brightness(92%);
 }

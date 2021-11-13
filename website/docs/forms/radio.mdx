@@ -5,11 +5,11 @@ sidebar_position: 4
 
 import PreviewBox from "../../src/components/preview-box";
 
-Radios are used when there are mutiple options but the limit is one, users can choose to have one of them not more.
+Radios are used when there are multiple options but the limit is one, users can choose to have one of them.
 Flatify CSS has its customized radio with is pretty simple, just wrap your radio with `.radio-wrapper` class and add `<span class="check"></span>` after your input radio inside wrapper.
 
 <PreviewBox
-	height="100px"
+	height="190px"
 	children='<!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -17,90 +17,56 @@ Flatify CSS has its customized radio with is pretty simple, just wrap your radio
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Checkboxes</title>
+		<title>Radios</title>
 	</head>
 	<body>
-		<label class="checkbox-wrapper">
-			<input type="radio" checked/>
+		<label class="radio-wrapper">
+			<input disabled type="radio" name="choices" />
 			<span class="check"></span>
-			I Agree to Privacy Policy.
+			Choice 1
+		</label>
+		<label class="radio-wrapper">
+			<input type="radio" checked name="choices" />
+			<span class="check"></span>
+			Choice 2
+		</label>
+		<label class="radio-wrapper">
+			<input type="radio" name="choices" />
+			<span class="check"></span>
+			Choice 3
 		</label>
     </body>
+
 </html>'
 />
 
-```html {3} title="index.html"
-<label class="checkbox-wrapper">
-	<input type="checkbox" checked />
+```html title="index.html"
+<label class="radio-wrapper">
+	<input disabled type="radio" name="choices" />
 	<span class="check"></span>
-	I Agree to Privacy Policy.
+	Choice 1
+</label>
+
+<label class="radio-wrapper">
+	<input type="radio" checked name="choices" />
+	<span class="check"></span>
+	Choice 2
+</label>
+
+<label class="radio-wrapper">
+	<input type="radio" name="choices" />
+	<span class="check"></span>
+	Choice 3
 </label>
 ```
 
-### States
-
-A checkbox might be checked, disabled or Indeterminate, so it is necessary to know about them. By adding the `checked` HTML attribute it will be checked. The `disabled` attribute will remove element functionality. Checkboxes can be both checked and disabled at the same time.  
-Indeterminate is the neutral state when a checkbox is neither or either true or false, as MDN Web Docs [mentions](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate_state_checkboxes):
-
-<blockquote>
-	No browser currently supports indeterminate as an attribute. It must be set via JavaScript. See Indeterminate state
-	checkboxes for details.
-</blockquote>
-
-Though indeterminate is not an HTML attribute but can be styled by CSS also reading [this article from CSS Tricks](https://css-tricks.com/indeterminate-checkboxes/)
-helps you understand its usage more.
-
-<PreviewBox
-	height="230px"
-	children='<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Checkboxes</title>
-	</head>
-	<body>
-		<label class="checkbox-wrapper">
-			<input type="checkbox" disabled />
-			<span class="check"></span>
-			I am disabled.
-		</label>
-		<label class="checkbox-wrapper">
-			<input type="checkbox" checked disabled/>
-			<span class="check"></span>
-			I am checked and disabled!
-		</label>
-    	<label class="checkbox-wrapper">
-    		<input type="checkbox" />
-    		<span class="check"></span>
-    		I am not checked.
-    	</label>
-    	<label class="checkbox-wrapper">
-    		<input type="checkbox" checked/>
-    		<span class="check"></span>
-    		I am checked!
-    	</label>
-    	<label class="checkbox-wrapper">
-    		<input type="checkbox" class="indeterminate-checkbox" />
-    		<span class="check"></span>
-    		I am neither false or true. (by Javascript)
-    	</label>
-    </body>
-    <script>
-    	document.querySelector(".indeterminate-checkbox").indeterminate = true;
-    </script>
-</html>'
-/>
-
 ### Sizes
 
-To change the checkbox size use [size setter classes](/docs/helpers/size-setters).
-These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS. Do not forget to add class to the wrapper to change label size as well not just input.
+To change the radio size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS. Do not forget to add class to the wrapper to change label size as well.
 
 <PreviewBox
-	height="240px"
+	height="250px"
 	children='<!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -111,54 +77,102 @@ These classes just set a `font-size` property so it is possible to change it you
 		<title>Checkboxes</title>
 	</head>
 	<body>
-		<label class="checkbox-wrapper size-xs" style="width: 100%">
-			<input type="checkbox" />
+		<label class="radio-wrapper size-xs">
+			<input type="radio" name="choices" />
 			<span class="check"></span>
-			I Agree to Privacy Policy.
+			 Choice 1
 		</label>
-		<label class="checkbox-wrapper" style="width: 100%">
-			<input type="checkbox" />
+		<label class="radio-wrapper size-md">
+			<input type="radio" name="choices" />
 			<span class="check"></span>
-			I Agree to Privacy Policy.
+			Choice 2
 		</label>
-		<label class="checkbox-wrapper size-lg" style="width: 100%">
-			<input type="checkbox" />
+		<label class="radio-wrapper size-2x">
+			<input type="radio" name="choices" />
 			<span class="check"></span>
-			I Agree to Privacy Policy.
+			Choice 3
 		</label>
-		<label class="checkbox-wrapper size-3x" style="width: 100%">
-			<input type="checkbox" />
+		<label class="radio-wrapper size-3x">
+			<input type="radio" checked name="choices" />
 			<span class="check"></span>
-			I Agree to Privacy Policy.
+			Choice 4
 		</label>
     </body>
 </html>'
 />
 
 ```html title="index.html"
-<label class="checkbox-wrapper size-xs">
-	<input type="checkbox" />
+<label class="radio-wrapper size-xs">
+	<input type="radio" name="choices" />
 	<span class="check"></span>
-	I Agree to Privacy Policy.
+	Choice 1
 </label>
 
-<label class="checkbox-wrapper size-xs">
-	<input type="checkbox" />
+<label class="radio-wrapper size-md">
+	<input type="radio" name="choices" />
 	<span class="check"></span>
-	I Agree to Privacy Policy.
+	Choice 2
 </label>
 
-<label class="checkbox-wrapper size-lg">
-	<input type="checkbox" />
+<label class="radio-wrapper size-2x">
+	<input type="radio" name="choices" />
 	<span class="check"></span>
-	I Agree to Privacy Policy.
+	Choice 3
 </label>
 
-<label class="checkbox-wrapper size-3x">
-	<input type="checkbox" />
+<label class="radio-wrapper size-3x">
+	<input type="radio" checked name="choices" />
 	<span class="check"></span>
-	I Agree to Privacy Policy.
+	Choice 4
 </label>
+```
+
+## Radio buttons
+
+It is possible to change radios appearance similar to buttons, it is a bit different from custom radios also it is necessary to [read about buttons](/docs/components/buttons), here is an example:
+
+<PreviewBox
+	height="150px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Radios</title>
+	</head>
+	<body>
+		<div class="flex-center">
+			<input id="my-radio-button1" class="radio-button" type="radio" 	name="radio-button" />
+			<label for="my-radio-button1" class="button style-blue">Pizza</label>
+			<input id="my-radio-button2" class="radio-button" type="radio" 	name="radio-button" />
+			<label for="my-radio-button2" class="button style-red">Sushi</label>
+			<input id="my-radio-button3" class="radio-button" type="radio" 	name="radio-button" />
+			<label for="my-radio-button3" class="button style-green">Taco</label>
+		</div>
+		<div class="flex-center">
+			<input id="my-radio-button4" class="radio-button" type="radio" 	name="radio-button" />
+			<label for="my-radio-button4" class="button outline style-blue">Pizza</label>
+			<input id="my-radio-button5" class="radio-button" type="radio" 	name="radio-button" />
+			<label for="my-radio-button5" class="button outline style-red">Sushi</label>
+			<input id="my-radio-button6" class="radio-button" type="radio" 	name="radio-button" />
+			<label for="my-radio-button6" class="button outline style-green">Taco</label>
+		</div>
+    </body>
+
+</html>'
+/>
+
+```html title="index.html"
+<input id="my-radio-button1" class="radio-button" type="radio" name="radio-button" />
+<label for="my-radio-button1" class="button style-blue">Pizza</label>
+
+<input id="my-radio-button2" class="radio-button" type="radio" name="radio-button" />
+<label for="my-radio-button2" class="button style-red">Sushi</label>
+
+<input id="my-radio-button3" class="radio-button" type="radio" name="radio-button" />
+<label for="my-radio-button3" class="button style-green">Taco</label>
 ```
 
 ## Customization

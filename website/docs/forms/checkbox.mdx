@@ -97,7 +97,7 @@ helps you understand its usage more.
 ### Sizes
 
 To change the checkbox size use [size setter classes](/docs/helpers/size-setters).
-These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS. Do not forget to add class to the wrapper to change label size as well not just input.
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS. Do not forget to add class to the wrapper to change label size as well.
 
 <PreviewBox
 	height="240px"
@@ -163,7 +163,7 @@ These classes just set a `font-size` property so it is possible to change it you
 
 ## Checkbox buttons
 
-It is possible to change checkboxes appereance similar to buttons, is it a bit diffrent from custom checkboxes, here is an example:
+It is possible to change checkboxes appearance similar to buttons, it is a bit different from custom checkboxes also it is necessary to [read about buttons](/docs/components/buttons), here is an example:
 
 <PreviewBox
 	height="150px"
@@ -198,12 +198,15 @@ It is possible to change checkboxes appereance similar to buttons, is it a bit d
 </html>'
 />
 
-```html {3} title="index.html"
-<label class="checkbox-wrapper">
-	<input type="checkbox" checked />
-	<span class="check"></span>
-	I Agree to Privacy Policy.
-</label>
+```html title="index.html"
+<input id="my-checkbox-button1" class="checkbox-button" type="checkbox" name="checkbox-button" />
+<label for="my-checkbox-button1" class="button style-blue">Pizza</label>
+
+<input id="my-checkbox-button2" class="checkbox-button" type="checkbox" name="checkbox-button" />
+<label for="my-checkbox-button2" class="button style-red">Sushi</label>
+
+<input id="my-checkbox-button3" class="checkbox-button" type="checkbox" name="checkbox-button" />
+<label for="my-checkbox-button3" class="button style-green">Taco</label>
 ```
 
 ## Customization
