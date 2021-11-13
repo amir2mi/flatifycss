@@ -1055,11 +1055,11 @@ input.outline.active[type=file]:not(.default)::-webkit-file-upload-button, input
   -webkit-box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
           box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
 }
-.checkbox-button:checked + input.outline[type=file]:not(.default)::-webkit-file-upload-button, .radio-button:checked + input.bordered[type=file]:not(.default)::-webkit-file-upload-button {
+.checkbox-button:checked + input.outline[type=file]:not(.default)::-webkit-file-upload-button, .radio-button:checked + input.outline[type=file]:not(.default)::-webkit-file-upload-button, .checkbox-button:checked + input.bordered[type=file]:not(.default)::-webkit-file-upload-button, .radio-button:checked + input.bordered[type=file]:not(.default)::-webkit-file-upload-button {
   -webkit-box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
           box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
 }
-.checkbox-button:checked + .button.outline, .checkbox-button:checked + input.outline[type=file]:not(.default)::file-selector-button, .radio-button:checked + .button.bordered, .radio-button:checked + input.bordered[type=file]:not(.default)::file-selector-button {
+.checkbox-button:checked + .button.outline, .checkbox-button:checked + input.outline[type=file]:not(.default)::file-selector-button, .radio-button:checked + .button.outline, .radio-button:checked + input.outline[type=file]:not(.default)::file-selector-button, .checkbox-button:checked + .button.bordered, .checkbox-button:checked + input.bordered[type=file]:not(.default)::file-selector-button, .radio-button:checked + .button.bordered, .radio-button:checked + input.bordered[type=file]:not(.default)::file-selector-button {
   -webkit-box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
           box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
 }

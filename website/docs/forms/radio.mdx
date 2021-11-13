@@ -60,7 +60,7 @@ Flatify CSS has its customized radio with is pretty simple, just wrap your radio
 </label>
 ```
 
-### Sizes
+## Sizes
 
 To change the radio size use [size setter classes](/docs/helpers/size-setters).
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS. Do not forget to add class to the wrapper to change label size as well.
@@ -74,7 +74,7 @@ These classes just set a `font-size` property so it is possible to change it you
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Checkboxes</title>
+		<title>Radios</title>
 	</head>
 	<body>
 		<label class="radio-wrapper size-xs">
@@ -177,7 +177,7 @@ It is possible to change radios appearance similar to buttons, it is a bit diffe
 
 ## Customization
 
-There are CSS variables for customizing checkboxes:
+There are CSS variables for customizing radios:
 
 `--flatify__form-element-accent-color`  
 `--flatify__form-element-bg-color`  
@@ -191,7 +191,7 @@ There are CSS variables for customizing checkboxes:
 Here is an example of these variables usage:
 
 <PreviewBox
-	height="240px"
+	height="160px"
 	children='<!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -201,7 +201,8 @@ Here is an example of these variables usage:
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Inputs</title>
 		<style>
-			.checkbox-wrapper{
+			.radio-wrapper{
+				--flatify__form-element-accent-color: #37BC9B;
 				--flatify__form-element-bg-color: #FFCE54;
 				--flatify__form-element-txt-color: #434A54;
 				--flatify__form-element-border-color: #E0C341;
@@ -212,41 +213,29 @@ Here is an example of these variables usage:
 			}
 		</style>
 	</head>
-		<body>
-		<label class="checkbox-wrapper">
-			<input type="checkbox" disabled />
+	<body>
+		<label class="radio-wrapper">
+			<input disabled type="radio" name="choices" />
 			<span class="check"></span>
-			I am a customized checkbox.
+			Choice 1
 		</label>
-		<label class="checkbox-wrapper">
-			<input type="checkbox" checked disabled/>
+		<label class="radio-wrapper">
+			<input type="radio" checked name="choices" />
 			<span class="check"></span>
-			I am a customized checkbox.
+			Choice 2
 		</label>
-    	<label class="checkbox-wrapper">
-    		<input type="checkbox" />
-    		<span class="check"></span>
-    		I am a customized checkbox.
-    	</label>
-    	<label class="checkbox-wrapper">
-    		<input type="checkbox" checked/>
-    		<span class="check"></span>
-    		I am a customized checkbox.
-    	</label>
-    	<label class="checkbox-wrapper">
-    		<input type="checkbox" class="indeterminate-checkbox" />
-    		<span class="check"></span>
-    		I am a customized checkbox.
-    	</label>
+		<label class="radio-wrapper">
+			<input type="radio" name="choices" />
+			<span class="check"></span>
+			Choice 3
+		</label>
     </body>
-    <script>
-    	document.querySelector(".indeterminate-checkbox").indeterminate = true;
-    </script>
 </html>'
 />
 
 ```css title="style.css"
-.checkbox-wrapper {
+.radio-wrapper {
+	--flatify__form-element-accent-color: #37BC9B;
 	--flatify__form-element-bg-color: #ffce54;
 	--flatify__form-element-txt-color: #434a54;
 	--flatify__form-element-border-color: #e0c341;
