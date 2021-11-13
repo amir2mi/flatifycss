@@ -1,0 +1,244 @@
+---
+title: Radio
+sidebar_position: 4
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Radios are used when there are mutiple options but the limit is one, users can choose to have one of them not more.
+Flatify CSS has its customized radio with is pretty simple, just wrap your radio with `.radio-wrapper` class and add `<span class="check"></span>` after your input radio inside wrapper.
+
+<PreviewBox
+	height="100px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Checkboxes</title>
+	</head>
+	<body>
+		<label class="checkbox-wrapper">
+			<input type="radio" checked/>
+			<span class="check"></span>
+			I Agree to Privacy Policy.
+		</label>
+    </body>
+</html>'
+/>
+
+```html {3} title="index.html"
+<label class="checkbox-wrapper">
+	<input type="checkbox" checked />
+	<span class="check"></span>
+	I Agree to Privacy Policy.
+</label>
+```
+
+### States
+
+A checkbox might be checked, disabled or Indeterminate, so it is necessary to know about them. By adding the `checked` HTML attribute it will be checked. The `disabled` attribute will remove element functionality. Checkboxes can be both checked and disabled at the same time.  
+Indeterminate is the neutral state when a checkbox is neither or either true or false, as MDN Web Docs [mentions](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate_state_checkboxes):
+
+<blockquote>
+	No browser currently supports indeterminate as an attribute. It must be set via JavaScript. See Indeterminate state
+	checkboxes for details.
+</blockquote>
+
+Though indeterminate is not an HTML attribute but can be styled by CSS also reading [this article from CSS Tricks](https://css-tricks.com/indeterminate-checkboxes/)
+helps you understand its usage more.
+
+<PreviewBox
+	height="230px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Checkboxes</title>
+	</head>
+	<body>
+		<label class="checkbox-wrapper">
+			<input type="checkbox" disabled />
+			<span class="check"></span>
+			I am disabled.
+		</label>
+		<label class="checkbox-wrapper">
+			<input type="checkbox" checked disabled/>
+			<span class="check"></span>
+			I am checked and disabled!
+		</label>
+    	<label class="checkbox-wrapper">
+    		<input type="checkbox" />
+    		<span class="check"></span>
+    		I am not checked.
+    	</label>
+    	<label class="checkbox-wrapper">
+    		<input type="checkbox" checked/>
+    		<span class="check"></span>
+    		I am checked!
+    	</label>
+    	<label class="checkbox-wrapper">
+    		<input type="checkbox" class="indeterminate-checkbox" />
+    		<span class="check"></span>
+    		I am neither false or true. (by Javascript)
+    	</label>
+    </body>
+    <script>
+    	document.querySelector(".indeterminate-checkbox").indeterminate = true;
+    </script>
+</html>'
+/>
+
+### Sizes
+
+To change the checkbox size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS. Do not forget to add class to the wrapper to change label size as well not just input.
+
+<PreviewBox
+	height="240px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Checkboxes</title>
+	</head>
+	<body>
+		<label class="checkbox-wrapper size-xs" style="width: 100%">
+			<input type="checkbox" />
+			<span class="check"></span>
+			I Agree to Privacy Policy.
+		</label>
+		<label class="checkbox-wrapper" style="width: 100%">
+			<input type="checkbox" />
+			<span class="check"></span>
+			I Agree to Privacy Policy.
+		</label>
+		<label class="checkbox-wrapper size-lg" style="width: 100%">
+			<input type="checkbox" />
+			<span class="check"></span>
+			I Agree to Privacy Policy.
+		</label>
+		<label class="checkbox-wrapper size-3x" style="width: 100%">
+			<input type="checkbox" />
+			<span class="check"></span>
+			I Agree to Privacy Policy.
+		</label>
+    </body>
+</html>'
+/>
+
+```html title="index.html"
+<label class="checkbox-wrapper size-xs">
+	<input type="checkbox" />
+	<span class="check"></span>
+	I Agree to Privacy Policy.
+</label>
+
+<label class="checkbox-wrapper size-xs">
+	<input type="checkbox" />
+	<span class="check"></span>
+	I Agree to Privacy Policy.
+</label>
+
+<label class="checkbox-wrapper size-lg">
+	<input type="checkbox" />
+	<span class="check"></span>
+	I Agree to Privacy Policy.
+</label>
+
+<label class="checkbox-wrapper size-3x">
+	<input type="checkbox" />
+	<span class="check"></span>
+	I Agree to Privacy Policy.
+</label>
+```
+
+## Customization
+
+There are CSS variables for customizing checkboxes:
+
+`--flatify__form-element-accent-color`  
+`--flatify__form-element-bg-color`  
+`--flatify__form-element-txt-color`  
+`--flatify__form-element-border-color`  
+`--flatify__form-element-border-color__focus`  
+`--flatify__form-element-border-color__valid`  
+`--flatify__form-element-border-color__warning`  
+`--flatify__form-element-border-color__invalid`
+
+Here is an example of these variables usage:
+
+<PreviewBox
+	height="240px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Inputs</title>
+		<style>
+			.checkbox-wrapper{
+				--flatify__form-element-bg-color: #FFCE54;
+				--flatify__form-element-txt-color: #434A54;
+				--flatify__form-element-border-color: #E0C341;
+				--flatify__form-element-border-color__focus: #F6BB42;
+				--flatify__form-element-border-color__valid: #5D9CEC;
+				--flatify__form-element-border-color__warning: #8067B7;
+				--flatify__form-element-border-color__invalid: #BF263C;
+			}
+		</style>
+	</head>
+		<body>
+		<label class="checkbox-wrapper">
+			<input type="checkbox" disabled />
+			<span class="check"></span>
+			I am a customized checkbox.
+		</label>
+		<label class="checkbox-wrapper">
+			<input type="checkbox" checked disabled/>
+			<span class="check"></span>
+			I am a customized checkbox.
+		</label>
+    	<label class="checkbox-wrapper">
+    		<input type="checkbox" />
+    		<span class="check"></span>
+    		I am a customized checkbox.
+    	</label>
+    	<label class="checkbox-wrapper">
+    		<input type="checkbox" checked/>
+    		<span class="check"></span>
+    		I am a customized checkbox.
+    	</label>
+    	<label class="checkbox-wrapper">
+    		<input type="checkbox" class="indeterminate-checkbox" />
+    		<span class="check"></span>
+    		I am a customized checkbox.
+    	</label>
+    </body>
+    <script>
+    	document.querySelector(".indeterminate-checkbox").indeterminate = true;
+    </script>
+</html>'
+/>
+
+```css title="style.css"
+.checkbox-wrapper {
+	--flatify__form-element-bg-color: #ffce54;
+	--flatify__form-element-txt-color: #434a54;
+	--flatify__form-element-border-color: #e0c341;
+	--flatify__form-element-border-color__focus: #f6bb42;
+	--flatify__form-element-border-color__valid: #5d9cec;
+	--flatify__form-element-border-color__warning: #8067b7;
+	--flatify__form-element-border-color__invalid: #bf263c;
+}
+```
