@@ -32,6 +32,7 @@
 	// !important to replace input transition
 	transition: filter var(--#{$CSS_VAR_PFX}simple-transition) !important;
 
+	.radio-button:focus + &,
 	&:hover {
 		filter: brightness(92%);
 	}
