@@ -1,0 +1,48 @@
+---
+title: Text truncation
+sidebar_position: 1
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+With text truncation helper class you can limit multiple line to one with three dots, it is even possible to create a toggle to truncate and expand text.
+
+### Simple truncation
+
+<PreviewBox
+	height="100px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Pulse</title>
+	</head>
+	<body>
+        <div class="flex-center">
+            <p class="truncate">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+            </p>
+        </div>
+    </body>
+
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="pulse my-box style-blue flex-center edge-round-md">Hello!</div>
+<div class="pulse my-box style-orange flex-center edge-round-md">Hola!</div>
+<div class="pulse my-box style-green flex-center edge-round-md">Salut!</div>
+```
+
+```css title="style.css"
+.my-box {
+	width: 150px;
+	height: 100px;
+	margin: 50px;
+}
+```

@@ -71,4 +71,4 @@ List of work in progress:
 -   [x] Roundness setters
 -   [x] Size setters
 -   [x] Width setters
--   [ ] Text truncation
+-   [x] Text truncation
