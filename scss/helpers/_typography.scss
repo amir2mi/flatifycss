@@ -23,3 +23,15 @@
 		font-size: $value !important;
 	}
 }
+
+// text truncation
+.truncate {
+	&:not(.show-text) {
+		white-space: nowrap !important;
+		overflow: hidden !important;
+		text-overflow: ellipsis !important;
+	}
+	&.add-space {
+		padding: 0.18em 0;
+	}
+}

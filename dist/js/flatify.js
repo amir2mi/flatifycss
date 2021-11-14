@@ -40,6 +40,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _uti
 
 /***/ }),
 
+/***/ "./js/helpers/truncate.js":
+/*!********************************!*\
+  !*** ./js/helpers/truncate.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils_vent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/vent */ \"./js/utils/vent.js\");\n/* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/logger */ \"./js/utils/logger.js\");\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n\t(0,_utils_vent__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(document).on(\"click\", \".toggle-truncate\", function (e) {\n\t\tlet text;\n\n\t\tif (e.target.classList.contains(\"truncate\")) {\n\t\t\t// if truncate class was added directly to the element\n\t\t\ttext = e.target;\n\t\t} else {\n\t\t\t// if there is a target that should be truncated\n\t\t\tconst target = e.target.getAttribute(\"data-target-selector\");\n\t\t\tif (target && document.querySelector(target)) {\n\t\t\t\ttext = document.querySelector(target);\n\t\t\t} else {\n\t\t\t\t// if target is in the page\n\t\t\t\treturn (0,_utils_logger__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(\n\t\t\t\t\t\"error\",\n\t\t\t\t\t\"No target found for truncation, try editing 'data-target-selector' attribute of '.toggle-truncate'\"\n\t\t\t\t);\n\t\t\t}\n\t\t}\n\n\t\tif (text.classList.contains(\"show-text\")) {\n\t\t\t// remove class to truncate text\n\t\t\ttext.classList.remove(\"show-text\");\n\n\t\t\t(0,_utils_logger__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(\"info\", \"Text is truncated\", text);\n\t\t} else {\n\t\t\t// add class to show full text\n\t\t\ttext.classList.add(\"show-text\");\n\n\t\t\t(0,_utils_logger__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(\"info\", \"Text is not truncated\", text);\n\t\t}\n\t});\n});\n\n\n//# sourceURL=webpack://flatifycss/./js/helpers/truncate.js?");
+
+/***/ }),
+
 /***/ "./js/utils/logger.js":
 /*!****************************!*\
   !*** ./js/utils/logger.js ***!
@@ -143,6 +153,7 @@ eval("module.exports = JSON.parse('{\"enableLogging\":true}');\n\n//# sourceURL=
 /******/ 	__webpack_require__("./js/flatify.js");
 /******/ 	__webpack_require__("./js/components/alert.js");
 /******/ 	__webpack_require__("./js/forms/show-password-button.js");
+/******/ 	__webpack_require__("./js/helpers/truncate.js");
 /******/ 	__webpack_require__("./js/utils/logger.js");
 /******/ 	__webpack_require__("./js/utils/time.js");
 /******/ 	var __webpack_exports__ = __webpack_require__("./js/utils/vent.js");

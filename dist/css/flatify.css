@@ -2750,6 +2750,16 @@ textarea:not(.default) {
   font-size: 3.14em !important;
 }
 
+.truncate:not(.show-text) {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  -o-text-overflow: ellipsis !important;
+     text-overflow: ellipsis !important;
+}
+.truncate.add-space {
+  padding: 0.18em 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   body *,
 body ::before,
