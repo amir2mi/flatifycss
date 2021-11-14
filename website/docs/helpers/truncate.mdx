@@ -42,10 +42,14 @@ With text truncation helper class you can limit multiple line to one with three 
 
 ### Toggle truncation
 
-You can add toggle truncation class directly to the `.truncate` element or create another element like button which its target it truncate.
+You can add toggle truncation class directly to the `.truncate` element or create another element like button which its target it `.truncate` element, check examples below to find out how it works.
+
+:::info
+You can make toggle truncation disabled by default, by adding `.show-text` to `.truncate` element.
+:::
 
 <PreviewBox
-	height="450px"
+	height="400px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -58,20 +62,16 @@ You can add toggle truncation class directly to the `.truncate` element or creat
 		 <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
 	</head>
 	<body>
-        <div class="flex-center">	
-            <p class="truncate toggle-truncate">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-				Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
-            </p>
-
-    		 <p class="truncate my-truncated-text">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-    			Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
-            </p>
-    		<button class="button toggle-truncate" data-truncation-target=".my-truncated-text">Truncate it!<button>
-        </div>
+		<p class="truncate toggle-truncate show-text">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+			Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+		</p>
+		<p class="truncate my-truncated-text">
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+			Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+		</p>
+		<button class="button toggle-truncate" data-truncation-target=".my-truncated-text">Toggle truncate</button>
     </body>
-
 </html>
 '
 />
