@@ -10,14 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			text = e.target;
 		} else {
 			// if there is a target that should be truncated
-			const target = e.target.getAttribute("data-target-selector");
+			const target = e.target.getAttribute("data-truncation-target");
 			if (target && document.querySelector(target)) {
 				text = document.querySelector(target);
 			} else {
 				// if target is in the page
 				return logger(
 					"error",
-					"No target found for truncation, try editing 'data-target-selector' attribute of '.toggle-truncate'"
+					"No target found for truncation, try add or edit 'data-truncation-target' attribute of '.toggle-truncate'"
 				);
 			}
 		}

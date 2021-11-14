@@ -10,7 +10,7 @@ With text truncation helper class you can limit multiple line to one with three 
 ### Simple truncation
 
 <PreviewBox
-	height="100px"
+	height="75px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@ With text truncation helper class you can limit multiple line to one with three 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Pulse</title>
+		<title>Text truncation</title>
 	</head>
 	<body>
         <div class="flex-center">
@@ -34,15 +34,51 @@ With text truncation helper class you can limit multiple line to one with three 
 />
 
 ```html title="index.html"
-<div class="pulse my-box style-blue flex-center edge-round-md">Hello!</div>
-<div class="pulse my-box style-orange flex-center edge-round-md">Hola!</div>
-<div class="pulse my-box style-green flex-center edge-round-md">Salut!</div>
+<p class="truncate">
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+	erat ut turpis.
+</p>
 ```
 
-```css title="style.css"
-.my-box {
-	width: 150px;
-	height: 100px;
-	margin: 50px;
-}
+### Toggle truncation
+
+You can add toggle truncation class directly to the `.truncate` element or create another element like button which its target it truncate.
+
+<PreviewBox
+	height="450px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Text truncation</title>
+		 <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+	</head>
+	<body>
+        <div class="flex-center">	
+            <p class="truncate toggle-truncate">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+				Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+            </p>
+
+    		 <p class="truncate my-truncated-text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+    			Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+            </p>
+    		<button class="button toggle-truncate" data-truncation-target=".my-truncated-text">Truncate it!<button>
+        </div>
+    </body>
+
+</html>
+'
+/>
+
+```html title="index.html"
+<p class="truncate">
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+	erat ut turpis.
+</p>
 ```
