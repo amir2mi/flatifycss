@@ -1543,14 +1543,16 @@ select option {
   transform: translateX(1.4em);
   background: var(--flatify__form-element-accent-color);
 }
-.toggle-wrapper:active .check {
-  transition: all 0.1s;
-}
-.toggle-wrapper:active input:not(:checked) + .check:after {
-  transform: scaleX(1.2) scaleY(0.5);
-}
-.toggle-wrapper:active input:checked + .check:after {
-  transform: translateX(1.2em) scaleY(0.5) scaleX(1.4);
+@media (pointer: fine) {
+  .toggle-wrapper:active .check:after {
+    transition: all 0.1s 0.05s;
+  }
+  .toggle-wrapper:active input:not(:checked) + .check:after {
+    transform: scaleX(1.2) scaleY(0.7);
+  }
+  .toggle-wrapper:active input:checked + .check:after {
+    transform: translateX(1.2em) scaleY(0.7) scaleX(1.4);
+  }
 }
 
 textarea:not(.default) {

@@ -21,7 +21,6 @@
 	"devDependencies": {
 		"autoprefixer": "^10.3.7",
 		"cssnano": "^5.0.8",
-		"gulp": "^3.9.1",
 		"gulp-concat": "^2.6.1",
 		"gulp-noop": "^1.0.1",
 		"gulp-postcss": "^9.0.1",
@@ -31,5 +30,8 @@
 		"gulp-uglify": "^3.0.2",
 		"sass": "^1.43.4",
 		"webpack-stream": "^7.0.0"
+	},
+	"dependencies": {
+		"gulp": "^4.0.2"
 	}
 }

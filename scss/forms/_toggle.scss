@@ -32,20 +32,23 @@
 		}
 	}
 
-	&:active {
-		.check {
-			transition: all 0.1s;
-		}
+	// To prevent delayed animation it is not available for touch users
+	@media (pointer: fine) {
+		&:active {
+			.check:after {
+				transition: all 0.1s 0.05s;
+			}
 
-		input:not(:checked) + .check:after {
-			transform: scaleX(1.2) scaleY(0.5);
-		}
+			input:not(:checked) + .check:after {
+				transform: scaleX(1.2) scaleY(0.7);
+			}
 
-		input:checked + .check:after {
-			@if $SUPPORT_LTR {
-				transform: translateX(1.2em) scaleY(0.5) scaleX(1.4);
-			} @else {
-				transform: translateX(-1.2em) scaleY(0.5) scaleX(1.4);
+			input:checked + .check:after {
+				@if $SUPPORT_LTR {
+					transform: translateX(1.2em) scaleY(0.7) scaleX(1.4);
+				} @else {
+					transform: translateX(-1.2em) scaleY(0.7) scaleX(1.4);
+				}
 			}
 		}
 	}
