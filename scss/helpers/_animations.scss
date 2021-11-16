@@ -9,6 +9,16 @@
 	}
 }
 
+// Fade in animation for backdrop, it will set the backdrop opacity instead of static value.
+@keyframes flatify-backdrop-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: var(--#{$CSS_VAR_PFX}backdrop-opacity);
+	}
+}
+
 // A simple fade out animation,
 // it is a great choice for reduced-motion situations in [a11y.scss]
 @keyframes flatify-fade-out {
@@ -41,6 +51,28 @@
 	}
 	to {
 		transform: scaleY(1);
+	}
+}
+
+// Blow in & Blow out animation (it will be cool with cubic bezier)
+@keyframes flatify-blow-in {
+	0% {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@keyframes flatify-blow-out {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.95);
 	}
 }
 

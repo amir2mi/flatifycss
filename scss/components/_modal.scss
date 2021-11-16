@@ -7,12 +7,24 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}loc
 	top: 5em;
 	left: 0;
 	right: 0;
+	display: none;
 	width: 90%;
 	height: fit-content;
 	max-width: 32em; // 512px
 	margin: 0 auto;
 	background: var(--#{$CSS_VAR_PFX}bg-color);
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+
+	&.show {
+		display: block;
+		animation: flatify-blow-in var(--#{$CSS_VAR_PFX}modal-show-animation-duration)
+			cubic-bezier(0.59, -0.39, 0.36, 1.38);
+	}
+
+	&.modal-will-be-removed {
+		animation: flatify-blow-out var(--#{$CSS_VAR_PFX}modal-show-animation-duration)
+			cubic-bezier(0.59, -0.39, 0.36, 1.38) both;
+	}
 
 	&.modal-center {
 		top: 0;

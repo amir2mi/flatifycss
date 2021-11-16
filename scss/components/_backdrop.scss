@@ -2,12 +2,22 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 100; // default z-index
+	display: none;
 	width: 100%;
 	height: 100%;
-	z-index: 100;
 	background: var(--#{$CSS_VAR_PFX}txt-color);
-	opacity: 0.4;
-	backdrop-filter: blur(2px) brightness(50%);
+	opacity: var(--#{$CSS_VAR_PFX}backdrop-opacity);
+	backdrop-filter: blur(2px) brightness(75%);
+
+	&.show {
+		display: block;
+		animation: flatify-backdrop-fade-in var(--#{$CSS_VAR_PFX}modal-show-animation-duration);
+	}
+
+	&.backdrop-will-be-removed {
+		animation: flatify-fade-out var(--#{$CSS_VAR_PFX}modal-remove-animation-duration) both;
+	}
 
 	&.modal-backdrop {
 		z-index: $ZINDEX_MODAL_BACKDROP;

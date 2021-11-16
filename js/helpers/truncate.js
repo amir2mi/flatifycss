@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			if (target && document.querySelector(target)) {
 				text = document.querySelector(target);
 			} else {
-				// if target is in the page
+				// if target was not found
 				return logger(
 					"error",
 					"No target found for truncation, try add or edit 'data-truncation-target' attribute of '.toggle-truncate'"

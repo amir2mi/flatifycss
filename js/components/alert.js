@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		wrapper.classList.add("alert-will-be-removed");
 
 		// after delay remove alert from DOM
-		wrapper.onanimationend = (e) => {
+		$(wrapper).once("animationend", (e) => {
 			wrapper.remove();
 			logger("info", `Alert is removed after ${secondToMs(e.elapsedTime)}ms delay`, wrapper);
-		};
+		});
 	});
 });
