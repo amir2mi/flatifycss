@@ -9,3 +9,5 @@ Eye by Royyan Wijaya from the Noun Project
 Arrow by wahyakup from the Noun Project
 Heart by BomSymbols from the Noun Project
 Brain by Adrien Coquet from the Noun Project
+Fullscreen by Landan Lloyd from the Noun Project
+Exit Fullscreen by Sophia Bai from the Noun Project

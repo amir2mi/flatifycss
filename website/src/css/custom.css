@@ -181,14 +181,6 @@ div[class*="toggleTrack_"],
 	padding: 0 !important;
 }
 
-.docus-preview-box {
-	background: #fff;
-	/* border: var(--docus-bd); */
-	border-radius: 1em;
-	padding: 1.5em;
-	margin: 1.5em 0;
-}
-
 .docus-color-indicator.inline {
 	display: inline-flex;
 	vertical-align: middle;
@@ -214,4 +206,47 @@ div[class*="toggleTrack_"],
 .docus-color-indicator.inline code {
 	line-height: 1;
 	margin-right: 0.3em;
+}
+
+.preview-box-wrapper {
+	position: relative;
+}
+
+.preview-box-wrapper {
+	margin: 1em 0;
+}
+
+.docus-preview-box {
+	background: #fff;
+	/* border: var(--docus-bd); */
+	border-radius: 1em;
+	padding: 1.5em;
+}
+
+.docus-preview-box.is-fullscreen {
+	height: 100% !important;
+	border-radius: 0;
+}
+
+.preview-box-fullscreen-toggle {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 5px;
+	background: #eee;
+	border: 2px solid #dedede;
+	border-radius: 14px;
+	transition: all 0.15s ease;
+	transform: scale(0);
+}
+
+.preview-box-wrapper:focus-within .preview-box-fullscreen-toggle,
+.preview-box-wrapper:hover .preview-box-fullscreen-toggle,
+.preview-box-fullscreen-toggle:focus {
+	transform: scale(1);
+}
+
+.preview-box-fullscreen-toggle svg {
+	fill: #696969;
+	width: 25px;
 }
