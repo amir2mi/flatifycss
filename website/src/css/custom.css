@@ -224,6 +224,7 @@ div[class*="toggleTrack_"],
 }
 
 .docus-preview-box.is-fullscreen {
+	padding: 0 !important;
 	height: 100% !important;
 	border-radius: 0;
 }

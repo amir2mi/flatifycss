@@ -5,7 +5,7 @@ export default function PreviewBox({ children, disableFullscreen, ...props }) {
 
 	return (
 		<div className="preview-box-wrapper">
-			{disableFullscreen && (
+			{!disableFullscreen && (
 				<button
 					className="preview-box-fullscreen-toggle"
 					onClick={(e) => {
