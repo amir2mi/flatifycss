@@ -169,3 +169,213 @@ By default if users click outside of the modal, aka "backdrop", the modal will b
 ```html title="index.html"
 <div class="modal my-modal required" aria-labelledby="my-modal-title">...</div>
 ```
+
+## Positions
+
+A modal can be centered or stick to top, bottom, right or left. While it is stuck at sides, its animation will be diffrent as well.
+These are classes that can be added to the `.modal` element, easy-peasy.
+
+`modal-center`  
+`modal-top`  
+`modal-botton`  
+`modal-left`  
+`modal-right`
+
+:::info
+You can use width & height setter helper classes, they come in handy when you need to fill the height for the left and right sides.
+:::
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Modals</title>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-column-center">
+		<div>
+			<button class="button open-modal" data-modal-target=".my-modal-top">Top</button>
+			<button class="button open-modal" data-modal-target=".my-modal-bottom">Bottom</button>
+			<button class="button open-modal" data-modal-target=".my-modal-center">Center</button>
+			<button class="button open-modal" data-modal-target=".my-modal-left">Left</button>
+			<button class="button open-modal" data-modal-target=".my-modal-right">Right</button>
+		</div>
+		<p class="opacity-50">By clicking the fullscreen button examine this example with more space.</p>
+		<div
+			class="modal my-modal-center modal-center"
+			aria-labelledby="my-modal-title"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="my-modal-title">Click outside of the modal</h5>
+					<button
+						type="button"
+						class="close-modal close-button"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+					Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+					pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+					dignissim pellentesque felis.
+				</div>
+    		</div>
+    	</div>
+    	<div
+    		class="modal my-modal-top modal-top"
+    		aria-labelledby="my-modal-title"
+    	>
+    		<div class="modal-content">
+    			<div class="modal-header">
+    				<h5 class="modal-title" id="my-modal-title">Click outside of the modal</h5>
+    				<button
+    					type="button"
+    					class="close-modal close-button"
+    					aria-label="Close"
+    				></button>
+    			</div>
+    			<div class="modal-body">
+    				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+    				Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+    				pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+    				dignissim pellentesque felis.
+    			</div>
+    		</div>
+    	</div>
+    	<div
+    		class="modal my-modal-bottom modal-bottom"
+    		aria-labelledby="my-modal-title"
+    	>
+    		<div class="modal-content">
+    			<div class="modal-header">
+    				<h5 class="modal-title" id="my-modal-title">Click outside of the modal</h5>
+    				<button
+    					type="button"
+    					class="close-modal close-button"
+    					aria-label="Close"
+    				></button>
+    			</div>
+    			<div class="modal-body">
+    				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+    				Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+    				pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+    				dignissim pellentesque felis.
+    			</div>
+    		</div>
+    	</div>
+    	<div
+    		class="modal my-modal-left modal-left"
+    		aria-labelledby="my-modal-title"
+    	>
+    		<div class="modal-content">
+    			<div class="modal-header">
+    				<h5 class="modal-title" id="my-modal-title">Click outside of the modal</h5>
+    				<button
+    					type="button"
+    					class="close-modal close-button"
+    					aria-label="Close"
+    				></button>
+    			</div>
+    			<div class="modal-body">
+    				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+    				Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+    				pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+    				dignissim pellentesque felis.
+    			</div>
+    		</div>
+    	</div>
+    	<div
+    		class="modal my-modal-right modal-right"
+    		aria-labelledby="my-modal-title"
+    	>
+    		<div class="modal-content">
+    			<div class="modal-header">
+    				<h5 class="modal-title" id="my-modal-title">Click outside of the modal</h5>
+    				<button
+    					type="button"
+    					class="close-modal close-button"
+    					aria-label="Close"
+    				></button>
+    			</div>
+    			<div class="modal-body">
+    				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+    				Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+    				pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+    				dignissim pellentesque felis.
+    			</div>
+    		</div>
+    	</div>
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="modal modal-center">...</div>
+<div class="modal modal-top">...</div>
+<div class="modal modal-bottom">...</div>
+<div class="modal modal-left">...</div>
+<div class="modal modal-right">...</div>
+```
+
+## Bordered
+
+To have modal with borders add `.bordered` class to the `.modal` element.
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Modals</title>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-column-center">
+		<button class="button open-modal" data-modal-target=".my-modal">Display The Modal</button>
+		<p class="opacity-50">By clicking the fullscreen button examine this example with more space.</p>
+		<div
+			class="modal my-modal bordered"
+			aria-labelledby="my-modal-title"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+					<button
+						type="button"
+						class="close-modal close-button"
+						data-modal-target=".my-modal"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+					Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+					pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+					dignissim pellentesque felis.
+				</div>
+				<div class="modal-footer">
+					<button class="button size-sm style-danger close-modal">Close</button>
+					<button class="button size-sm style-info close-modal">Confirm</button>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="modal bordered">...</div>
+```
