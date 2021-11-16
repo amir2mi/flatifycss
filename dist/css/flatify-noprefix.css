@@ -1060,6 +1060,14 @@ th {
   background: var(--flatify__bg-color);
   border-radius: var(--flatify__border-radius);
 }
+.modal.modal-sm {
+  font-size: 0.9em;
+  max-width: 20em;
+}
+.modal.modal-lg {
+  font-size: 1.2em;
+  max-width: 45em;
+}
 .modal.show {
   display: block;
   animation: flatify-blow-in var(--flatify__modal-show-animation-duration) cubic-bezier(0.59, -0.39, 0.36, 1.38);
@@ -2603,6 +2611,12 @@ body ::after {
     --flatify__bouncing-transition: 0s !important;
   }
   body .alert-will-be-removed {
+    animation-name: flatify-fade-out !important;
+  }
+  body .modal.show {
+    animation-name: flatify-fade-in !important;
+  }
+  body .modal.modal-will-be-removed {
     animation-name: flatify-fade-out !important;
   }
 

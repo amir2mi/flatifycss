@@ -18,6 +18,16 @@
 		.alert-will-be-removed {
 			animation-name: flatify-fade-out !important;
 		}
+
+		.modal {
+			&.show {
+				animation-name: flatify-fade-in !important;
+			}
+
+			&.modal-will-be-removed {
+				animation-name: flatify-fade-out !important;
+			}
+		}
 	}
 
 	// Custom pulse animation
