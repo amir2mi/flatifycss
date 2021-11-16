@@ -5,23 +5,17 @@ function showModal(modal, modalBackdrop) {
 	if (modalBackdrop) {
 		// there is a backdrop for modal, display it
 		modalBackdrop.classList.add("show");
-
-		logger("info", "Modal backdrop is displayed", modal);
 	} else {
 		// otherwise create one
 		let backdropElement = document.createElement("div");
 		backdropElement.classList.add("backdrop-layer", "modal-backdrop", "show");
 		document.body.appendChild(backdropElement);
-
-		logger("info", "Modal backdrop is created and shown", modal);
 	}
 
 	// change aria-modal to true
-	modal.ariaModal = true;
+	modal.setAttribute("aria-modal", true);
 	// add [display: block] and animation class
 	modal.classList.add("show");
-
-	logger("info", "Modal is shown", modal);
 }
 
 function hideModal(modal, modalBackdrop) {
@@ -35,7 +29,7 @@ function hideModal(modal, modalBackdrop) {
 		modal.classList.remove("show", "modal-will-be-removed");
 
 		// change aria-modal to false
-		modal.ariaModal = false;
+		modal.setAttribute("aria-modal", false);
 	});
 }
 
@@ -51,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			// if target was not found
 			return logger(
 				"error",
-				"No target found for modal, try to add or edit 'data-modal-target' attribute of '.open-modal'"
+				"No target found for open modal button, try to add or edit 'data-modal-target' attribute of '.open-modal'"
 			);
 		}
 
@@ -65,10 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if (target) {
 			modal = document.querySelector(target);
-			if (!modal) return;
+			if (!modal)
+				return logger(
+					"error",
+					"No target found for close modal, try to add or edit 'data-modal-target' attribute of '.close-modal'"
+				);
 		} else {
 			modal = e.target.closest(".modal");
-			if (!modal) return;
+			if (!modal)
+				return logger("error", "Close modal button is not in a modal, you can set 'data-modal-target' attribute to specify which modal belongs to this button");
 		}
 
 		hideModal(modal, modalBackdrop);

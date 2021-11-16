@@ -15,7 +15,7 @@
 	}
 
 	&.backdrop-will-be-removed {
-		animation: flatify-fade-out var(--#{$CSS_VAR_PFX}modal-remove-animation-duration) both;
+		animation: flatify-fade-out var(--#{$CSS_VAR_PFX}modal-hide-animation-duration) both;
 	}
 
 	&.modal-backdrop {

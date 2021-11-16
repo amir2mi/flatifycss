@@ -25,13 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (text.classList.contains("show-text")) {
 			// remove class to truncate text
 			text.classList.remove("show-text");
-
-			logger("info", "Text is truncated", text);
 		} else {
 			// add class to show full text
 			text.classList.add("show-text");
-
-			logger("info", "Text is not truncated", text);
 		}
 	});
 });

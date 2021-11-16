@@ -251,7 +251,7 @@ $BOUNCING_TRANSITION: 0.35s cubic-bezier(0.59, -0.39, 0.36, 1.38) !default; // w
 
 $ALERT_REMOVE_ANIMATION: flatify-alert-will-be-removed 350ms ease !default;
 $MODAL_SHOW_ANIMATION_DURATION: 350ms !default;
-$MODAL_REMOVE_ANIMATION_DURATION: 250ms !default;
+$MODAL_HIDE_ANIMATION_DURATION: 250ms !default;
 
 // *** Typography: font size, font family, line height
 $MAX_FONT_SIZE: 16 !default; // must be without unit

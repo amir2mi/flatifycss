@@ -28,12 +28,12 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}loc
 	&.show {
 		display: block;
 		animation: flatify-blow-in var(--#{$CSS_VAR_PFX}modal-show-animation-duration)
-			cubic-bezier(0.59, -0.39, 0.36, 1.38);
+			cubic-bezier(0.52, 0.42, 0.44, 1.44);
 	}
 
 	&.modal-will-be-removed {
-		animation: flatify-blow-out var(--#{$CSS_VAR_PFX}modal-show-animation-duration)
-			cubic-bezier(0.59, -0.39, 0.36, 1.38) both;
+		animation: flatify-blow-out var(--#{$CSS_VAR_PFX}modal-hide-animation-duration)
+			cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 	}
 
 	&.modal-center {
@@ -56,7 +56,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}loc
 		}
 
 		&.modal-will-be-removed {
-			animation: flatify-slide-down-out var(--#{$CSS_VAR_PFX}modal-show-animation-duration) ease both;
+			animation: flatify-slide-down-out var(--#{$CSS_VAR_PFX}modal-hide-animation-duration) ease both;
 		}
 	}
 	&.modal-bottom {
@@ -73,7 +73,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}loc
 		}
 
 		&.modal-will-be-removed {
-			animation: flatify-slide-up-out var(--#{$CSS_VAR_PFX}modal-show-animation-duration) ease both;
+			animation: flatify-slide-up-out var(--#{$CSS_VAR_PFX}modal-hide-animation-duration) ease both;
 		}
 	}
 	&.modal-left {
@@ -89,7 +89,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}loc
 		}
 
 		&.modal-will-be-removed {
-			animation: flatify-slide-right-out var(--#{$CSS_VAR_PFX}modal-show-animation-duration) ease both;
+			animation: flatify-slide-right-out var(--#{$CSS_VAR_PFX}modal-hide-animation-duration) ease both;
 		}
 	}
 	&.modal-right {
@@ -106,7 +106,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}loc
 		}
 
 		&.modal-will-be-removed {
-			animation: flatify-slide-left-out var(--#{$CSS_VAR_PFX}modal-show-animation-duration) ease both;
+			animation: flatify-slide-left-out var(--#{$CSS_VAR_PFX}modal-hide-animation-duration) ease both;
 		}
 	}
 
