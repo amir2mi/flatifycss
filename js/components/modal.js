@@ -67,7 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		} else {
 			modal = e.target.closest(".modal");
 			if (!modal)
-				return logger("error", "Close modal button is not in a modal, you can set 'data-modal-target' attribute to specify which modal belongs to this button");
+				return logger(
+					"error",
+					"Close modal button is not in a modal, you can set 'data-modal-target' attribute to specify which modal belongs to this button"
+				);
 		}
 
 		hideModal(modal, modalBackdrop);
