@@ -82,7 +82,7 @@ There are some other attributes that are set and will be set dynamically for the
 
 To create a button that closes modal, you can use [close button component](/docs/components/close-button). There are two ways to make the connection between the modal and close button:
 
--   Close button should be children of modal, in other words it should be inside `.modal`.  
+-   Close button should be children of modal, in other words it should be inside `.modal`.
     <p class="size-lg">or</p>
 -   Close button should have `data-modal-target` HTML attribute which specifies modal by its selector, like the open modal button.
 
@@ -94,7 +94,7 @@ To create a button that closes modal, you can use [close button component](/docs
 
 Modals can have their custom HTML, however by default there is a predefined structure with basic styles that make it look like a floating message, as shown in the example below they are wrapped by the `.modal-content` class. Inside it header, footer, and main contents are placed.
 
-```html {1,8} title="index.html"
+```html {1,8,14,15} title="index.html"
 <div class="modal my-modal" tabindex="-1" aria-labelledby="my-modal-title">
 	<div class="modal-content">
 		<div class="modal-header">
@@ -113,4 +113,59 @@ Modals can have their custom HTML, however by default there is a predefined stru
 		</div>
 	</div>
 </div>
+```
+
+## Required action
+
+By default if users click outside of the modal, aka "backdrop", the modal will be closed, however, if you add `.required` class to the `.modal` element it will not treat this way anymore, in other words, the modal will be closed only when user click related `.close-button`.
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Modals</title>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-column-center">
+		<button class="button open-modal" data-modal-target=".my-modal">Display The Modal</button>
+		<p class="opacity-50">By clicking the fullscreen button examine this example with more space.</p>
+		<div
+			class="modal my-modal required"
+			aria-labelledby="my-modal-title"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="my-modal-title">Click outside of the modal</h5>
+					<button
+						type="button"
+						class="close-modal close-button"
+						data-modal-target=".my-modal"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+					Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+					pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+					dignissim pellentesque felis.
+				</div>
+				<div class="modal-footer">
+					<button class="button size-sm style-danger close-modal">Close</button>
+					<button class="button size-sm style-info close-modal">Confirm</button>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="modal my-modal required" aria-labelledby="my-modal-title">...</div>
 ```
