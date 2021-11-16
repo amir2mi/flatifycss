@@ -93,11 +93,80 @@
 }
 
 .anim-heart {
-	animation: flatify-heart 1s ease infinite;
+	animation: flatify-heart 1s ease infinite !important;
 }
 
-.anim-is-required {
+.anim-required {
 	animation: flatify-heart 1s ease 2 !important;
+}
+
+// Slide animations
+@keyframes flatify-slide-up-in {
+	from {
+		transform: translateY(100%) scale(0.95);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+@keyframes flatify-slide-up-out {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(100%) scale(0.95);
+	}
+}
+
+@keyframes flatify-slide-down-in {
+	from {
+		transform: translateY(-100%) scale(0.95);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+@keyframes flatify-slide-down-out {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-100%) scale(0.95);
+	}
+}
+
+@keyframes flatify-slide-left-in {
+	from {
+		transform: translateX(100%) scale(0.95);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+@keyframes flatify-slide-left-out {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(100%) scale(0.95);
+	}
+}
+
+@keyframes flatify-slide-right-in {
+	from {
+		transform: translateX(-100%) scale(0.95);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+@keyframes flatify-slide-right-out {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%) scale(0.95);
+	}
 }
 
 // Default animation before removing elements,

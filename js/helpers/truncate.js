@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				// if target was not found
 				return logger(
 					"error",
-					"No target found for truncation, try add or edit 'data-truncation-target' attribute of '.toggle-truncate'"
+					"No target found for truncation, try to add or edit 'data-truncation-target' attribute of '.toggle-truncate'"
 				);
 			}
 		}

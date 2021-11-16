@@ -66,7 +66,7 @@ $HEIGHT_LIST: (
 // .opacity-[]
 $OPACITY_LIST: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100) !default;
 
-$BACKDROP_OPACITY: 0.5;
+$BACKDROP_OPACITY: 0.6;
 
 $LINK_DECORATION: none !default;
 $LINK_DECORATION_HOVER: underline 0.125em currentColor !default;
@@ -251,7 +251,7 @@ $BOUNCING_TRANSITION: 0.35s cubic-bezier(0.59, -0.39, 0.36, 1.38) !default; // w
 
 $ALERT_REMOVE_ANIMATION: flatify-alert-will-be-removed 350ms ease !default;
 $MODAL_SHOW_ANIMATION_DURATION: 350ms !default;
-$MODAL_REMOVE_ANIMATION_DURATION: 200ms !default;
+$MODAL_REMOVE_ANIMATION_DURATION: 250ms !default;
 
 // *** Typography: font size, font family, line height
 $MAX_FONT_SIZE: 16 !default; // must be without unit

@@ -8,7 +8,6 @@
 	height: 100%;
 	background: var(--#{$CSS_VAR_PFX}txt-color);
 	opacity: var(--#{$CSS_VAR_PFX}backdrop-opacity);
-	backdrop-filter: blur(2px) brightness(75%);
 
 	&.show {
 		display: block;

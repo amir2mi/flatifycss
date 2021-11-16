@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			// if target was not found
 			return logger(
 				"error",
-				"No target found for modal, try add or edit 'data-modal-target' attribute of '.open-modal'"
+				"No target found for modal, try to add or edit 'data-modal-target' attribute of '.open-modal'"
 			);
 		}
 

@@ -2,7 +2,7 @@
 :root {
   --flatify__border-width: max(2px, 0.18em);
   --flatify__border-radius: 1em;
-  --flatify__backdrop-opacity: 0.5;
+  --flatify__backdrop-opacity: 0.6;
   --flatify__max-font-size: 16;
   --flatify__min-font-size: 14;
   --flatify__max-font-size-with-unit: 16px;
@@ -96,7 +96,7 @@
   --flatify__bouncing-transition: 0.35s cubic-bezier(0.59, -0.39, 0.36, 1.38);
   --flatify__alert-remove-animation: flatify-alert-will-be-removed 350ms ease;
   --flatify__modal-show-animation-duration: 350ms;
-  --flatify__modal-remove-animation-duration: 200ms;
+  --flatify__modal-remove-animation-duration: 250ms;
 }
 
 *,
@@ -914,7 +914,6 @@ th {
   height: 100%;
   background: var(--flatify__txt-color);
   opacity: var(--flatify__backdrop-opacity);
-  backdrop-filter: blur(2px) brightness(75%);
 }
 .backdrop-layer.show {
   display: block;
@@ -1081,6 +1080,13 @@ th {
   right: 0;
   margin: 0 auto;
   border-radius: 0 0 var(--flatify__border-radius) var(--flatify__border-radius);
+  border-top: none !important;
+}
+.modal.modal-top.show {
+  animation: flatify-slide-down-in var(--flatify__modal-show-animation-duration) ease;
+}
+.modal.modal-top.modal-will-be-removed {
+  animation: flatify-slide-down-out var(--flatify__modal-show-animation-duration) ease both;
 }
 .modal.modal-bottom {
   top: unset;
@@ -1089,6 +1095,13 @@ th {
   right: 0;
   margin: 0 auto;
   border-radius: var(--flatify__border-radius) var(--flatify__border-radius) 0 0;
+  border-bottom: none !important;
+}
+.modal.modal-bottom.show {
+  animation: flatify-slide-up-in var(--flatify__modal-show-animation-duration) ease;
+}
+.modal.modal-bottom.modal-will-be-removed {
+  animation: flatify-slide-up-out var(--flatify__modal-show-animation-duration) ease both;
 }
 .modal.modal-left {
   left: 0;
@@ -1096,6 +1109,13 @@ th {
   bottom: 0;
   margin: auto 0;
   border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
+  border-left: none !important;
+}
+.modal.modal-left.show {
+  animation: flatify-slide-right-in var(--flatify__modal-show-animation-duration) ease;
+}
+.modal.modal-left.modal-will-be-removed {
+  animation: flatify-slide-right-out var(--flatify__modal-show-animation-duration) ease both;
 }
 .modal.modal-right {
   left: unset;
@@ -1104,6 +1124,13 @@ th {
   bottom: 0;
   margin: auto 0;
   border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
+  border-right: none !important;
+}
+.modal.modal-right.show {
+  animation: flatify-slide-left-in var(--flatify__modal-show-animation-duration) ease;
+}
+.modal.modal-right.modal-will-be-removed {
+  animation: flatify-slide-left-out var(--flatify__modal-show-animation-duration) ease both;
 }
 .modal.bordered {
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
@@ -1768,13 +1795,77 @@ textarea:not(.default) {
   }
 }
 .anim-heart {
-  animation: flatify-heart 1s ease infinite;
+  animation: flatify-heart 1s ease infinite !important;
 }
 
-.anim-is-required {
+.anim-required {
   animation: flatify-heart 1s ease 2 !important;
 }
 
+@keyframes flatify-slide-up-in {
+  from {
+    transform: translateY(100%) scale(0.95);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes flatify-slide-up-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%) scale(0.95);
+  }
+}
+@keyframes flatify-slide-down-in {
+  from {
+    transform: translateY(-100%) scale(0.95);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes flatify-slide-down-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%) scale(0.95);
+  }
+}
+@keyframes flatify-slide-left-in {
+  from {
+    transform: translateX(100%) scale(0.95);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes flatify-slide-left-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%) scale(0.95);
+  }
+}
+@keyframes flatify-slide-right-in {
+  from {
+    transform: translateX(-100%) scale(0.95);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes flatify-slide-right-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%) scale(0.95);
+  }
+}
 @keyframes flatify-alert-will-be-removed {
   85% {
     opacity: 0;
