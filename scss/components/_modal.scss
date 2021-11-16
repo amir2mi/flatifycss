@@ -1,0 +1,101 @@
+$modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+
+.modal {
+	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+	position: fixed;
+	z-index: $ZINDEX_MODAL;
+	top: 5em;
+	left: 0;
+	right: 0;
+	width: 90%;
+	height: fit-content;
+	max-width: 32em; // 512px
+	margin: 0 auto;
+	background: var(--#{$CSS_VAR_PFX}bg-color);
+	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+
+	&.modal-center {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	&.modal-top {
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		border-radius: 0 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius);
+	}
+	&.modal-bottom {
+		top: unset;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		border-radius: var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0 0;
+	}
+	&.modal-left {
+		left: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+	}
+	&.modal-right {
+		left: unset;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+	}
+
+	&.bordered {
+		border: $modal-border;
+
+		.modal-header {
+			border-bottom: $modal-border;
+		}
+		.modal-footer {
+			border-top: $modal-border;
+		}
+	}
+
+	// Do not limit width when width setter class is added.
+	&[class*="width-"] {
+		max-width: unset;
+	}
+}
+
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.modal-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.75em 1.25em;
+
+	.modal-title {
+		font-size: 1.4em;
+		font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+		margin-bottom: 0;
+	}
+}
+
+.modal-body {
+	flex-grow: 1; // fill the space when height is 100%
+	padding: 1.25em;
+}
+
+.modal-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5em 1.25em;
+}

@@ -42,6 +42,23 @@ $WIDTH_LIST: (
 	60p: 60%,
 	75p: 75%,
 	90p: 90%,
+	95p: 95%,
+	100p: 100%,
+) !default;
+
+// This list will be converted to helper classes.
+// .height-[]
+$HEIGHT_LIST: (
+	0p: 0,
+	10p: 10%,
+	15p: 15%,
+	25p: 25%,
+	30p: 30%,
+	50p: 50%,
+	60p: 60%,
+	75p: 75%,
+	90p: 90%,
+	95p: 95%,
 	100p: 100%,
 ) !default;
 
@@ -52,6 +69,10 @@ $OPACITY_LIST: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100) !default;
 $LINK_DECORATION: none !default;
 $LINK_DECORATION_HOVER: underline 0.125em currentColor !default;
 $LINK_DECORATION_FOCUS: none !default;
+
+// z-index
+$ZINDEX_MODAL_BACKDROP: 1050;
+$ZINDEX_MODAL: 1055;
 
 // *** Colors: accent color, background color, text color, heading color, palette
 $BG_COLOR: #ffffff !default;

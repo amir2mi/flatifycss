@@ -21,3 +21,10 @@
 		width: #{$value} !important;
 	}
 }
+
+// List of height helper classes
+@each $type, $value in $HEIGHT_LIST {
+	.height-#{$type} {
+		height: #{$value} !important;
+	}
+}
