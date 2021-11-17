@@ -2,11 +2,15 @@
 @each $name, $colors in $PALETTE {
 	// Original version
 	.style-#{"" + $name} {
-		// These are exceptions that should have darker text color
-		@if $name == yellow or $name == light {
+		// These are exceptions that should have special text color
+		@if $name == yellow {
 			color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
 			// Local text color
 			--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
+		} @else if $name == light {
+			color: var(--#{$CSS_VAR_PFX}txt-color) !important;
+			// Local text color
+			--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}txt-color) !important;
 		} @else {
 			color: var(--#{$CSS_VAR_PFX}txt-color-inverted) !important;
 			// Local text color
@@ -14,36 +18,29 @@
 		}
 
 		background-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+		// Local background color can be used as background of <mark.inline> [:before]
+		--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+
 		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
-		
 		// Local border color can be used as color of box shadow e.g. buttons
 		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
 		--#{$CSS_VAR_PFX}local-border-color-dark: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
-		// Local background color can be used as background of <mark.inline> [:before]
-		--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 	}
 
 	// Light version
 	.style-#{"" + $name}-light {
-		// These are exceptions that should have darker text color
-		@if $name == light {
-			color: var(--#{$CSS_VAR_PFX}txt-color) !important;
-			// Local text color
-			--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}txt-color) !important;
-		} @else {
-			color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
-			// Local text color
-			--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
-		}
+		color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
+		// Local text color
+		--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
 
 		background-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "light"}) !important;
-		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
+		// Local background color can be used as background of <mark.inline> [:before]
+		--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "light"}) !important;
 
+		border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 		// Local border color can be used as color of box shadow e.g. buttons
 		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 		--#{$CSS_VAR_PFX}local-border-color-dark: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
-		// Local background color can be used as background of <mark.inline> [:before]
-		--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "light"}) !important;
 	}
 }
 

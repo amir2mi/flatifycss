@@ -528,7 +528,12 @@ There are helper classes for styling elements like modal, first read about [colo
         <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
     </head>
     <body class="flex-column-center">
-		<button class="button open-modal style-red" data-modal-target=".my-modal-red">Red modal</button>
+		<div>
+			<button class="button open-modal style-red" data-modal-target=".my-modal-red">Red modal</button>
+			<button class="button open-modal style-red-light" data-modal-target=".my-modal-red-light">Light Red modal</button>
+			<button class="button open-modal style-blue" data-modal-target=".my-modal-blue">Blue modal</button>
+			<button class="button open-modal style-dark" data-modal-target=".my-modal-dark">Dark modal</button>
+		</div>
 		<p class="opacity-50">By clicking the fullscreen button examine this example with more space.</p>
 		<div
 			class="modal style-red bordered my-modal-red"
@@ -552,6 +557,81 @@ There are helper classes for styling elements like modal, first read about [colo
 				<div class="modal-footer">
 					<button class="button size-sm style-red-light bordered close-modal">Close</button>
 					<button class="button size-sm style-dark bordered close-modal">Confirm</button>
+				</div>
+			</div>
+		</div>
+		<div
+			class="modal style-red-light bordered my-modal-red-light"
+			aria-labelledby="my-modal-title"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+					<button
+						type="button"
+						class="close-modal close-button"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+					Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+					pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+					dignissim pellentesque felis.
+				</div>
+				<div class="modal-footer">
+					<button class="button size-sm close-modal">Close</button>
+					<button class="button size-sm close-modal">Confirm</button>
+				</div>
+			</div>
+		</div>
+		<div
+			class="modal style-blue bordered my-modal-blue"
+			aria-labelledby="my-modal-title"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+					<button
+						type="button"
+						class="close-modal close-button"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+					Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+					pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+					dignissim pellentesque felis.
+				</div>
+				<div class="modal-footer">
+					<button class="button size-sm close-modal">Close</button>
+					<button class="button size-sm close-modal">Confirm</button>
+				</div>
+			</div>
+		</div>
+		<div
+			class="modal style-dark bordered my-modal-dark"
+			aria-labelledby="my-modal-title"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+					<button
+						type="button"
+						class="close-modal close-button"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+					Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+					pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+					dignissim pellentesque felis.
+				</div>
+				<div class="modal-footer">
+					<button class="button size-sm style-red close-modal">Close</button>
+					<button class="button size-sm style-light close-modal">Confirm</button>
 				</div>
 			</div>
 		</div>
