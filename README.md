@@ -31,7 +31,7 @@ List of work in progress:
 -   [x] Button group
 -   [ ] Dropdowns
 -   [ ] Loading
--   [ ] Modal
+-   [x] Modal
 -   [ ] Nav
 -   [ ] Pagination
 -   [ ] Popover
@@ -70,5 +70,5 @@ List of work in progress:
 -   [x] Opacity setters
 -   [x] Roundness setters
 -   [x] Size setters
--   [x] Width setters
+-   [x] Width & height setters
 -   [x] Text truncation
