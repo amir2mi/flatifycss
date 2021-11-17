@@ -2,7 +2,7 @@
 :root {
   --flatify__border-width: max(2px, 0.18em);
   --flatify__border-radius: 1em;
-  --flatify__backdrop-opacity: 0.6;
+  --flatify__backdrop-opacity: 0.35;
   --flatify__max-font-size: 16;
   --flatify__min-font-size: 14;
   --flatify__max-font-size-with-unit: 16px;
@@ -52,6 +52,10 @@
   --flatify__color-red-light: #ff8181;
   --flatify__color-red-dark: #d94040;
   --flatify__color-red-darker: #802626;
+  --flatify__color-pink-primary: #ff86d0;
+  --flatify__color-pink-light: #ffaade;
+  --flatify__color-pink-dark: #d972b1;
+  --flatify__color-pink-darker: #804368;
   --flatify__color-purple-primary: #c164ff;
   --flatify__color-purple-light: #d493ff;
   --flatify__color-purple-dark: #a455d9;
@@ -949,6 +953,10 @@ th {
   border-radius: calc(var(--flatify__border-radius) * 0.25);
 }
 
+:root {
+  --flatify__modal-backdrop-color: var(--flatify__txt-color);
+}
+
 .backdrop-layer {
   position: fixed;
   top: 0;
@@ -1215,14 +1223,14 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
 }
 
 :root {
-  --flatify__modal-backdrop-color: var(--flatify__txt-color);
   --flatify__modal-bg-color: var(--flatify__bg-color);
   --flatify__modal-txt-color: var(--flatify__txt-color);
   --flatify__modal-border-color: var(--flatify__bg-color-darker);
 }
 
 .modal {
-  --flatify__local-border-color: var(--flatify__modal-bg-color);
+  --flatify__local-border-color: var(--flatify__modal-border-color);
+  overflow: hidden;
   position: fixed;
   z-index: 1055;
   top: 5em;
@@ -1236,7 +1244,8 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
   max-width: 32em;
   margin: 0 auto;
   color: var(--flatify__modal-txt-color);
-  background: var(--flatify__local-border-color);
+  background: var(--flatify__modal-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color, --flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
 .modal.modal-sm {
@@ -1329,14 +1338,11 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
   -webkit-animation: flatify-slide-left-out var(--flatify__modal-hide-animation-duration) ease both;
           animation: flatify-slide-left-out var(--flatify__modal-hide-animation-duration) ease both;
 }
-.modal.bordered {
-  border: var(--flatify__border-width) solid var(--flatify__modal-border-color);
-}
 .modal.bordered .modal-header {
-  border-bottom: var(--flatify__border-width) solid var(--flatify__modal-border-color);
+  border-bottom: var(--flatify__border-width) solid var(--flatify__local-border-color, --flatify__local-border-color);
 }
 .modal.bordered .modal-footer {
-  border-top: var(--flatify__border-width) solid var(--flatify__modal-border-color);
+  border-top: var(--flatify__border-width) solid var(--flatify__local-border-color, --flatify__local-border-color);
 }
 .modal[class*=width-] {
   max-width: unset;
@@ -2562,260 +2568,280 @@ textarea:not(.default) {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-blue-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-blue-primary) !important;
   border-color: var(--flatify__color-blue-dark) !important;
   --flatify__local-border-color: var(--flatify__color-blue-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-blue-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-blue-primary) !important;
 }
 
 .style-blue-light {
   color: var(--flatify__color-blue-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-blue-darker) !important;
   background-color: var(--flatify__color-blue-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-blue-light) !important;
   border-color: var(--flatify__color-blue-primary) !important;
   --flatify__local-border-color: var(--flatify__color-blue-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-blue-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-blue-light) !important;
 }
 
 .style-green {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-green-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-green-primary) !important;
   border-color: var(--flatify__color-green-dark) !important;
   --flatify__local-border-color: var(--flatify__color-green-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-green-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-green-primary) !important;
 }
 
 .style-green-light {
   color: var(--flatify__color-green-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-green-darker) !important;
   background-color: var(--flatify__color-green-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-green-light) !important;
   border-color: var(--flatify__color-green-primary) !important;
   --flatify__local-border-color: var(--flatify__color-green-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-green-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-green-light) !important;
 }
 
 .style-yellow {
   color: var(--flatify__color-yellow-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-yellow-darker) !important;
   background-color: var(--flatify__color-yellow-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-yellow-primary) !important;
   border-color: var(--flatify__color-yellow-dark) !important;
   --flatify__local-border-color: var(--flatify__color-yellow-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-yellow-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-yellow-primary) !important;
 }
 
 .style-yellow-light {
   color: var(--flatify__color-yellow-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-yellow-darker) !important;
   background-color: var(--flatify__color-yellow-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-yellow-light) !important;
   border-color: var(--flatify__color-yellow-primary) !important;
   --flatify__local-border-color: var(--flatify__color-yellow-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-yellow-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-yellow-light) !important;
 }
 
 .style-orange {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-orange-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-orange-primary) !important;
   border-color: var(--flatify__color-orange-dark) !important;
   --flatify__local-border-color: var(--flatify__color-orange-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-orange-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-orange-primary) !important;
 }
 
 .style-orange-light {
   color: var(--flatify__color-orange-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-orange-darker) !important;
   background-color: var(--flatify__color-orange-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-orange-light) !important;
   border-color: var(--flatify__color-orange-primary) !important;
   --flatify__local-border-color: var(--flatify__color-orange-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-orange-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-orange-light) !important;
 }
 
 .style-red {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-red-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-red-primary) !important;
   border-color: var(--flatify__color-red-dark) !important;
   --flatify__local-border-color: var(--flatify__color-red-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-red-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-red-primary) !important;
 }
 
 .style-red-light {
   color: var(--flatify__color-red-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-red-darker) !important;
   background-color: var(--flatify__color-red-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-red-light) !important;
   border-color: var(--flatify__color-red-primary) !important;
   --flatify__local-border-color: var(--flatify__color-red-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-red-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-red-light) !important;
+}
+
+.style-pink {
+  color: var(--flatify__color-pink-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-pink-darker) !important;
+  background-color: var(--flatify__color-pink-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-pink-primary) !important;
+  border-color: var(--flatify__color-pink-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-pink-dark) !important;
+  --flatify__local-border-color-dark: var(--flatify__color-pink-darker) !important;
+}
+
+.style-pink-light {
+  color: var(--flatify__color-pink-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-pink-darker) !important;
+  background-color: var(--flatify__color-pink-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-pink-light) !important;
+  border-color: var(--flatify__color-pink-primary) !important;
+  --flatify__local-border-color: var(--flatify__color-pink-primary) !important;
+  --flatify__local-border-color-dark: var(--flatify__color-pink-dark) !important;
 }
 
 .style-purple {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-purple-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-purple-primary) !important;
   border-color: var(--flatify__color-purple-dark) !important;
   --flatify__local-border-color: var(--flatify__color-purple-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-purple-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-purple-primary) !important;
 }
 
 .style-purple-light {
   color: var(--flatify__color-purple-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-purple-darker) !important;
   background-color: var(--flatify__color-purple-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-purple-light) !important;
   border-color: var(--flatify__color-purple-primary) !important;
   --flatify__local-border-color: var(--flatify__color-purple-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-purple-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-purple-light) !important;
 }
 
 .style-accent {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-accent-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-accent-primary) !important;
   border-color: var(--flatify__color-accent-dark) !important;
   --flatify__local-border-color: var(--flatify__color-accent-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-accent-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-accent-primary) !important;
 }
 
 .style-accent-light {
   color: var(--flatify__color-accent-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-accent-darker) !important;
   background-color: var(--flatify__color-accent-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-accent-light) !important;
   border-color: var(--flatify__color-accent-primary) !important;
   --flatify__local-border-color: var(--flatify__color-accent-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-accent-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-accent-light) !important;
 }
 
 .style-success {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-success-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-success-primary) !important;
   border-color: var(--flatify__color-success-dark) !important;
   --flatify__local-border-color: var(--flatify__color-success-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-success-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-success-primary) !important;
 }
 
 .style-success-light {
   color: var(--flatify__color-success-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-success-darker) !important;
   background-color: var(--flatify__color-success-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-success-light) !important;
   border-color: var(--flatify__color-success-primary) !important;
   --flatify__local-border-color: var(--flatify__color-success-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-success-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-success-light) !important;
 }
 
 .style-info {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-info-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-info-primary) !important;
   border-color: var(--flatify__color-info-dark) !important;
   --flatify__local-border-color: var(--flatify__color-info-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-info-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-info-primary) !important;
 }
 
 .style-info-light {
   color: var(--flatify__color-info-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-info-darker) !important;
   background-color: var(--flatify__color-info-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-info-light) !important;
   border-color: var(--flatify__color-info-primary) !important;
   --flatify__local-border-color: var(--flatify__color-info-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-info-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-info-light) !important;
 }
 
 .style-warning {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-warning-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-warning-primary) !important;
   border-color: var(--flatify__color-warning-dark) !important;
   --flatify__local-border-color: var(--flatify__color-warning-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-warning-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-warning-primary) !important;
 }
 
 .style-warning-light {
   color: var(--flatify__color-warning-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-warning-darker) !important;
   background-color: var(--flatify__color-warning-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-warning-light) !important;
   border-color: var(--flatify__color-warning-primary) !important;
   --flatify__local-border-color: var(--flatify__color-warning-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-warning-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-warning-light) !important;
 }
 
 .style-danger {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-danger-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-danger-primary) !important;
   border-color: var(--flatify__color-danger-dark) !important;
   --flatify__local-border-color: var(--flatify__color-danger-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-danger-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-danger-primary) !important;
 }
 
 .style-danger-light {
   color: var(--flatify__color-danger-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-danger-darker) !important;
   background-color: var(--flatify__color-danger-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-danger-light) !important;
   border-color: var(--flatify__color-danger-primary) !important;
   --flatify__local-border-color: var(--flatify__color-danger-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-danger-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-danger-light) !important;
 }
 
 .style-light {
-  color: var(--flatify__color-light-darker) !important;
-  --flatify__local-txt-color: var(--flatify__color-light-darker) !important;
+  color: var(--flatify__txt-color) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color) !important;
   background-color: var(--flatify__color-light-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-light-primary) !important;
   border-color: var(--flatify__color-light-dark) !important;
   --flatify__local-border-color: var(--flatify__color-light-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-light-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-light-primary) !important;
 }
 
 .style-light-light {
-  color: var(--flatify__txt-color) !important;
-  --flatify__local-txt-color: var(--flatify__txt-color) !important;
+  color: var(--flatify__color-light-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-light-darker) !important;
   background-color: var(--flatify__color-light-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-light-light) !important;
   border-color: var(--flatify__color-light-primary) !important;
   --flatify__local-border-color: var(--flatify__color-light-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-light-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-light-light) !important;
 }
 
 .style-dark {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-dark-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-dark-primary) !important;
   border-color: var(--flatify__color-dark-dark) !important;
   --flatify__local-border-color: var(--flatify__color-dark-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-dark-darker) !important;
-  --flatify__local-bg-color: var(--flatify__color-dark-primary) !important;
 }
 
 .style-dark-light {
   color: var(--flatify__color-dark-darker) !important;
   --flatify__local-txt-color: var(--flatify__color-dark-darker) !important;
   background-color: var(--flatify__color-dark-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-dark-light) !important;
   border-color: var(--flatify__color-dark-primary) !important;
   --flatify__local-border-color: var(--flatify__color-dark-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-dark-dark) !important;
-  --flatify__local-bg-color: var(--flatify__color-dark-light) !important;
 }
 
 .color-blue {
@@ -2836,6 +2862,10 @@ textarea:not(.default) {
 
 .color-red {
   color: var(--flatify__color-red-primary) !important;
+}
+
+.color-pink {
+  color: var(--flatify__color-pink-primary) !important;
 }
 
 .color-purple {

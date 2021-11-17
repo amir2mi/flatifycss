@@ -1,6 +1,11 @@
 import $ from "../utils/vent";
 import logger from "../utils/logger";
 
+/**
+ * Show given modal and its backdrop
+ * @param {Object} modal
+ * @param {Object} modalBackdrop
+ */
 function showModal(modal, modalBackdrop) {
 	if (modalBackdrop) {
 		// there is a backdrop for modal, display it
@@ -18,6 +23,11 @@ function showModal(modal, modalBackdrop) {
 	modal.classList.add("show");
 }
 
+/**
+ * Hide given modal and its backdrop
+ * @param {Object} modal
+ * @param {Object} modalBackdrop
+ */
 function hideModal(modal, modalBackdrop) {
 	modalBackdrop.classList.add("backdrop-will-be-removed");
 	modal.classList.add("modal-will-be-removed");
@@ -31,6 +41,26 @@ function hideModal(modal, modalBackdrop) {
 		// change aria-modal to false
 		modal.setAttribute("aria-modal", false);
 	});
+}
+
+/**
+ * Hide current active modal, if the backdrop is given hide it otherwise hide active backdrop
+ * @param {Object} modalBackdrop
+ */
+function hideActiveModal(modalBackdrop) {
+	const modal = document.querySelector(".modal.show");
+	if (!modal) return logger("warn", "There is no active modal in this page to hide", modal);
+
+	// if modal is required repeat the show animation else hide it.
+	if (modal.classList.contains("required")) {
+		modal.classList.remove("show");
+		setTimeout(() => {
+			modal.classList.add("show");
+		}, 150);
+	} else {
+		// hide modal and its backdrops, either the backdrop was the click target or find active backdrop.
+		hideModal(modal, modalBackdrop || document.querySelector(".modal-backdrop.show"));
+	}
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -76,18 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		hideModal(modal, modalBackdrop);
 	});
 
-	$(document).on("click", ".modal-backdrop", function (e) {
-		const modal = document.querySelector(".modal.show");
-		if (!modal) return logger("warn", "There is no modal in this page to hide", modal);
+	// if backdrop is clicked hide active modal.
+	$(document).on("click", ".modal-backdrop", (e) => hideActiveModal(e.target));
 
-		// if modal is required repeat the show animation else hide it.
-		if (modal.classList.contains("required")) {
-			modal.classList.remove("show");
-			setTimeout(() => {
-				modal.classList.add("show");
-			}, 150);
-		} else {
-			hideModal(modal, e.target);
-		}
-	});
+	// if esc key is pressed hide active modal.
+	document.onkeyup = (e) => e.key == "Escape" && hideActiveModal();
 });
