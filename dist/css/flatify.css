@@ -1218,11 +1218,11 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
   --flatify__modal-backdrop-color: var(--flatify__txt-color);
   --flatify__modal-bg-color: var(--flatify__bg-color);
   --flatify__modal-txt-color: var(--flatify__txt-color);
-  --flatify__modal-border-color: var(--flatify__local-border-color);
+  --flatify__modal-border-color: var(--flatify__bg-color-darker);
 }
 
 .modal {
-  --flatify__local-border-color: var(--flatify__bg-color-darker);
+  --flatify__local-border-color: var(--flatify__modal-bg-color);
   position: fixed;
   z-index: 1055;
   top: 5em;
@@ -1236,7 +1236,7 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
   max-width: 32em;
   margin: 0 auto;
   color: var(--flatify__modal-txt-color);
-  background: var(--flatify__modal-bg-color);
+  background: var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
 .modal.modal-sm {
