@@ -76,13 +76,13 @@ Note that if you want to have the floating label for `<textarea>` should add the
 />
 
 ```html {2,4,8,10} title="index.html"
-// input
+<!-- input -->
 <div class="input-wrapper floating-label">
 	<input id="my-text-input" type="text" placeholder="Enter you name" />
 	<label for="my-text-input" class="form-label">Enter you name</label>
 </div>
 
-// textarea
+<!-- textarea -->
 <div class="input-wrapper is-textarea floating-label">
 	<textarea id="thoughts" name="thoughts" rows="4" placeholder="What do you think?"></textarea>
 	<label id="thoughts" class="form-label" name="thoughts" for="yourname">What do you think?</label>
@@ -135,7 +135,7 @@ Input invalid state is red by default however you can have valid and warning sta
 />
 
 ```html title="index.html"
-// Validation classes added to the input
+<!-- Validation classes added to the input -->
 <label for="my-text-input-1" class="form-label">Enter you name</label>
 <div class="input-wrapper">
 	<input class="valid" id="my-text-input-1" type="text" placeholder="Enter you name" />
@@ -151,7 +151,7 @@ Input invalid state is red by default however you can have valid and warning sta
 	<input class="invalid" id="my-text-input-3" type="text" placeholder="Enter you name" />
 </div>
 
-// Validation classes added to the .input-wrapper
+<!-- Validation classes added to the .input-wrapper -->
 <label for="my-text-input-4" class="form-label">Enter you name</label>
 <div class="input-wrapper valid">
 	<input id="my-text-input-4" type="text" placeholder="Enter you name" />

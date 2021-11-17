@@ -924,6 +924,7 @@ th {
 }
 .backdrop-layer.modal-backdrop {
   z-index: 1050;
+  background: var(--flatify__modal-backdrop-color);
 }
 
 :root {
@@ -1045,6 +1046,13 @@ th {
   }
 }
 
+:root {
+  --flatify__modal-backdrop-color: var(--flatify__txt-color);
+  --flatify__modal-bg-color: var(--flatify__bg-color);
+  --flatify__modal-txt-color: var(--flatify__txt-color);
+  --flatify__modal-border-color: var(--flatify__local-border-color);
+}
+
 .modal {
   --flatify__local-border-color: var(--flatify__bg-color-darker);
   position: fixed;
@@ -1057,7 +1065,8 @@ th {
   height: fit-content;
   max-width: 32em;
   margin: 0 auto;
-  background: var(--flatify__bg-color);
+  color: var(--flatify__modal-txt-color);
+  background: var(--flatify__modal-bg-color);
   border-radius: var(--flatify__border-radius);
 }
 .modal.modal-sm {
@@ -1141,13 +1150,13 @@ th {
   animation: flatify-slide-left-out var(--flatify__modal-hide-animation-duration) ease both;
 }
 .modal.bordered {
-  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  border: var(--flatify__border-width) solid var(--flatify__modal-border-color);
 }
 .modal.bordered .modal-header {
-  border-bottom: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  border-bottom: var(--flatify__border-width) solid var(--flatify__modal-border-color);
 }
 .modal.bordered .modal-footer {
-  border-top: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  border-top: var(--flatify__border-width) solid var(--flatify__modal-border-color);
 }
 .modal[class*=width-] {
   max-width: unset;

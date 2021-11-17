@@ -20,5 +20,6 @@
 
 	&.modal-backdrop {
 		z-index: $ZINDEX_MODAL_BACKDROP;
+		background: var(--#{$CSS_VAR_PFX}modal-backdrop-color);
 	}
 }
