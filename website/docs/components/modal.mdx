@@ -181,7 +181,7 @@ These are classes that can be added to the `.modal` element, easy-peasy.
 `modal-left`  
 `modal-right`
 
-:::info
+:::info Width & height setters
 You can use [width & height setter helper classes](/docs/helpers/width-and-height-setters), they come in handy when you need to fill the height for the left and right sides.
 :::
 
@@ -639,3 +639,99 @@ There are helper classes for styling elements like modal, first read about [colo
 </html>
 '
 />
+
+```html title="index.html"
+<!-- Buttons -->
+<button class="button open-modal style-red" data-modal-target=".my-modal-red">Red modal</button>
+<button class="button open-modal style-red-light" data-modal-target=".my-modal-red-light">Light Red modal</button>
+<button class="button open-modal style-blue" data-modal-target=".my-modal-blue">Blue modal</button>
+<button class="button open-modal style-dark" data-modal-target=".my-modal-dark">Dark modal</button>
+
+<!-- Modals -->
+<div class="modal style-red bordered my-modal-red">...</div>
+<div class="modal style-red-light bordered my-modal-red-light">...</div>
+<div class="modal style-blue bordered my-modal-blue">...</div>
+<div class="modal style-dark bordered my-modal-dark">...</div>
+```
+
+## Customization
+
+Instead of using color setter classes you can customize it with predefined CSS variables, These are all of them:
+
+`--flatify__modal-bg-color`  
+`--flatify__modal-txt-color`  
+`--flatify__modal-border-color`
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Modals</title>
+		<style>
+			body{
+				--flatify__modal-backdrop-color: #8E8271;
+			}
+    		.my-modal{
+    			--flatify__modal-bg-color: #AA8E69;
+    			--flatify__modal-txt-color: #F5F7FA;
+    			--flatify__modal-border-color: #FFCE54;
+    		}
+    	</style>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-column-center">
+    	<button class="button open-modal" data-modal-target=".my-modal">Display The Modal</button>
+    	<p class="opacity-50">By clicking the fullscreen button examine this example with more space.</p>
+    	<div
+    		class="modal bordered my-modal"
+    		aria-labelledby="my-modal-title"
+    	>
+    		<div class="modal-content">
+    			<div class="modal-header">
+    				<h5 class="modal-title" id="my-modal-title">I am a grizzly bear...</h5>
+    				<button
+    					type="button"
+    					class="close-modal close-button"
+    					data-modal-target=".my-modal"
+    					aria-label="Close"
+    				></button>
+    			</div>
+    			<div class="modal-body">
+    				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+    				Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+    				pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+    				dignissim pellentesque felis.
+    			</div>
+    			<div class="modal-footer">
+    				<button class="button size-sm style-orange-light close-modal">Close</button>
+    				<button class="button size-sm style-orange close-modal">Confirm</button>
+    			</div>
+    		</div>
+    	</div>
+    </body>
+
+</html>
+'
+/>
+
+:::warning Modal backdrop color
+There is also a CSS variable called `--flatify__modal-backdrop-color`, it just changes the color of the modal backdrop. The important thing is that is not inside modal, it is a global element at the first level of body children, so you must set its custom color to the `:root`, `html` or `body`.
+:::
+
+```css title="style.css"
+body {
+	--flatify__modal-backdrop-color: #8e8271;
+}
+
+.my-modal {
+	--flatify__modal-bg-color: #aa8e69;
+	--flatify__modal-txt-color: #f5f7fa;
+	--flatify__modal-border-color: #FFCE54;
+}
+```

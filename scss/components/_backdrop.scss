@@ -1,3 +1,7 @@
+:root {
+	--#{$CSS_VAR_PFX}modal-backdrop-color: var(--#{$CSS_VAR_PFX}txt-color);
+}
+
 .backdrop-layer {
 	position: fixed;
 	top: 0;

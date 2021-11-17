@@ -1,5 +1,4 @@
 :root {
-	--#{$CSS_VAR_PFX}modal-backdrop-color: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}modal-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
 	--#{$CSS_VAR_PFX}modal-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}modal-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
@@ -24,6 +23,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid
 	margin: 0 auto;
 	color: var(--#{$CSS_VAR_PFX}modal-txt-color);
 	background: var(--#{$CSS_VAR_PFX}modal-bg-color);
+	border: $modal-border;
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
 	&.modal-sm {
@@ -122,8 +122,6 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid
 	}
 
 	&.bordered {
-		border: $modal-border;
-
 		.modal-header {
 			border-bottom: $modal-border;
 		}
