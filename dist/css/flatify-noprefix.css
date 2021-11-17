@@ -1054,7 +1054,8 @@ th {
 }
 
 .modal {
-  --flatify__local-border-color: var(--flatify__modal-bg-color);
+  --flatify__local-border-color: var(--flatify__modal-border-color);
+  overflow: hidden;
   position: fixed;
   z-index: 1055;
   top: 5em;
@@ -1066,7 +1067,7 @@ th {
   max-width: 32em;
   margin: 0 auto;
   color: var(--flatify__modal-txt-color);
-  background: var(--flatify__local-border-color);
+  background: var(--flatify__modal-bg-color);
   border-radius: var(--flatify__border-radius);
 }
 .modal.modal-sm {
@@ -1150,13 +1151,13 @@ th {
   animation: flatify-slide-left-out var(--flatify__modal-hide-animation-duration) ease both;
 }
 .modal.bordered {
-  border: var(--flatify__border-width) solid var(--flatify__modal-border-color);
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color, --flatify__local-border-color);
 }
 .modal.bordered .modal-header {
-  border-bottom: var(--flatify__border-width) solid var(--flatify__modal-border-color);
+  border-bottom: var(--flatify__border-width) solid var(--flatify__local-border-color, --flatify__local-border-color);
 }
 .modal.bordered .modal-footer {
-  border-top: var(--flatify__border-width) solid var(--flatify__modal-border-color);
+  border-top: var(--flatify__border-width) solid var(--flatify__local-border-color, --flatify__local-border-color);
 }
 .modal[class*=width-] {
   max-width: unset;

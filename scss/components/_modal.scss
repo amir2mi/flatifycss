@@ -5,10 +5,13 @@
 	--#{$CSS_VAR_PFX}modal-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 }
 
-$modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}modal-border-color);
+$modal-border: var(--#{$CSS_VAR_PFX}border-width) solid
+	var(--#{$CSS_VAR_PFX}local-border-color, --#{$CSS_VAR_PFX}local-border-color);
 
 .modal {
-	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}modal-bg-color);
+	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}modal-border-color);
+	// Basically there is no need for scrolling, if there is it should be the [.modal-body] not the modal itself.
+	overflow: hidden;
 	position: fixed;
 	z-index: $ZINDEX_MODAL;
 	top: 5em;
@@ -20,7 +23,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}mod
 	max-width: 32em; // 512px
 	margin: 0 auto;
 	color: var(--#{$CSS_VAR_PFX}modal-txt-color);
-	background: var(--#{$CSS_VAR_PFX}local-border-color);
+	background: var(--#{$CSS_VAR_PFX}modal-bg-color);
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
 	&.modal-sm {
