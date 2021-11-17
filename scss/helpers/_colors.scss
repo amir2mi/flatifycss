@@ -3,7 +3,7 @@
 	// Original version
 	.style-#{"" + $name} {
 		// These are exceptions that should have special text color
-		@if $name == yellow {
+		@if $name == yellow or $name == pink {
 			color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
 			// Local text color
 			--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;

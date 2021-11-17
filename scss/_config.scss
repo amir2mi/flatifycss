@@ -113,6 +113,11 @@ $RED_LIGHT: tint($RED, 30%) !default;
 $RED_DARK: shade($RED, 15%) !default;
 $RED_DARKER: shade($RED, 50%) !default;
 
+$PINK: #ff86d0 !default;
+$PINK_LIGHT: tint($PINK, 30%) !default;
+$PINK_DARK: shade($PINK, 15%) !default;
+$PINK_DARKER: shade($PINK, 50%) !default;
+
 $PURPLE: #c164ff !default;
 $PURPLE_LIGHT: tint($PURPLE, 30%) !default;
 $PURPLE_DARK: shade($PURPLE, 15%) !default;
@@ -192,6 +197,12 @@ $PALETTE: (
 		light: $RED_LIGHT,
 		dark: $RED_DARK,
 		darker: $RED_DARKER,
+	),
+	pink: (
+		primary: $PINK,
+		light: $PINK_LIGHT,
+		dark: $PINK_DARK,
+		darker: $PINK_DARKER,
 	),
 	purple: (
 		primary: $PURPLE,

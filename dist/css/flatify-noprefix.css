@@ -52,6 +52,10 @@
   --flatify__color-red-light: #ff8181;
   --flatify__color-red-dark: #d94040;
   --flatify__color-red-darker: #802626;
+  --flatify__color-pink-primary: #ff86d0;
+  --flatify__color-pink-light: #ffaade;
+  --flatify__color-pink-dark: #d972b1;
+  --flatify__color-pink-darker: #804368;
   --flatify__color-purple-primary: #c164ff;
   --flatify__color-purple-light: #d493ff;
   --flatify__color-purple-dark: #a455d9;
@@ -2024,6 +2028,26 @@ textarea:not(.default) {
   --flatify__local-border-color-dark: var(--flatify__color-red-dark) !important;
 }
 
+.style-pink {
+  color: var(--flatify__color-pink-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-pink-darker) !important;
+  background-color: var(--flatify__color-pink-primary) !important;
+  --flatify__local-bg-color: var(--flatify__color-pink-primary) !important;
+  border-color: var(--flatify__color-pink-dark) !important;
+  --flatify__local-border-color: var(--flatify__color-pink-dark) !important;
+  --flatify__local-border-color-dark: var(--flatify__color-pink-darker) !important;
+}
+
+.style-pink-light {
+  color: var(--flatify__color-pink-darker) !important;
+  --flatify__local-txt-color: var(--flatify__color-pink-darker) !important;
+  background-color: var(--flatify__color-pink-light) !important;
+  --flatify__local-bg-color: var(--flatify__color-pink-light) !important;
+  border-color: var(--flatify__color-pink-primary) !important;
+  --flatify__local-border-color: var(--flatify__color-pink-primary) !important;
+  --flatify__local-border-color-dark: var(--flatify__color-pink-dark) !important;
+}
+
 .style-purple {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
@@ -2202,6 +2226,10 @@ textarea:not(.default) {
 
 .color-red {
   color: var(--flatify__color-red-primary) !important;
+}
+
+.color-pink {
+  color: var(--flatify__color-pink-primary) !important;
 }
 
 .color-purple {
