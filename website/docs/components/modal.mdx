@@ -182,7 +182,7 @@ These are classes that can be added to the `.modal` element, easy-peasy.
 `modal-right`
 
 :::info
-You can use width & height setter helper classes, they come in handy when you need to fill the height for the left and right sides.
+You can use [width & height setter helper classes](/docs/helpers/width-and-height-setters), they come in handy when you need to fill the height for the left and right sides.
 :::
 
 <PreviewBox
@@ -378,4 +378,134 @@ To have modal with borders add `.bordered` class to the `.modal` element.
 
 ```html title="index.html"
 <div class="modal bordered">...</div>
+```
+
+## Sizes
+
+To change the button size use [size setter classes](/docs/helpers/size-setters). Modals also support two special classes `.modal-lg` and `.modal-sm`.
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Modals</title>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-column-center">
+		<div>
+			<button class="button open-modal" data-modal-target=".my-modal-sm">Small</button>
+			<button class="button open-modal" data-modal-target=".my-modal-md">Normal</button>
+			<button class="button open-modal" data-modal-target=".my-modal-lg">Large</button>
+		<button class="button open-modal" data-modal-target=".my-modal-3x">Size 3x</button>
+		</div>
+		<p class="opacity-50">By clicking the fullscreen button examine this example with more space.</p>
+		<div
+			class="modal modal-sm modal-center my-modal-sm"
+			aria-labelledby="my-modal-title"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+					<button
+						type="button"
+						class="close-modal close-button"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+				</div>
+				<div class="modal-footer">
+					<button class="button size-sm style-success close-modal width-100p">Okay</button>
+				</div>
+			</div>
+		</div>
+		<div
+			class="modal modal-center my-modal-md"
+			aria-labelledby="my-modal-title"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+					<button
+						type="button"
+						class="close-modal close-button"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+					Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+					pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+					dignissim pellentesque felis.
+				</div>
+				<div class="modal-footer">
+					<button class="button size-sm style-success close-modal width-100p">Okay</button>
+				</div>
+			</div>
+		</div>
+		<div
+			class="modal modal-lg modal-center my-modal-lg"
+			aria-labelledby="my-modal-title"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+					<button
+						type="button"
+						class="close-modal close-button"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+					Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+					pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+					dignissim pellentesque felis.
+				</div>
+				<div class="modal-footer">
+					<button class="button size-sm style-success close-modal width-100p">Okay</button>
+				</div>
+			</div>
+		</div>
+		<div
+			class="modal size-3x modal-center my-modal-3x"
+			aria-labelledby="my-modal-title"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+					<button
+						type="button"
+						class="close-modal close-button"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+					Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
+					pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean
+					dignissim pellentesque felis.
+				</div>
+				<div class="modal-footer">
+					<button class="button size-sm style-success close-modal width-100p">Okay</button>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="modal modal-sm"></div>
+<div class="modal"></div>
+<div class="modal modal-lg"></div>
+<div class="modal size-3x"></div>
 ```
