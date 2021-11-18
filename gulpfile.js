@@ -91,8 +91,7 @@ const mainJsTask__minified = () => jsTask(files.jsMain, distFileName, true);
 const defaultWatchTasks = () => watchTask([files.scssMain, files.jsMain], [mainScssTask__noprefix, mainJsTask]);
 
 // Default
-exports.default = series(parallel(mainScssTask__noprefix, mainJsTask), defaultWatchTasks);
-exports.release = series(
+exports.default = series(
 	parallel(
 		// css
 		mainScssTask__noprefix,
@@ -104,3 +103,4 @@ exports.release = series(
 		mainJsTask__minified
 	)
 );
+exports.watch = series(parallel(mainScssTask__noprefix, mainJsTask), defaultWatchTasks);
