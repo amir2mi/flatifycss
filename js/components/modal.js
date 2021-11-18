@@ -32,7 +32,7 @@ function hideModal(modal, modalBackdrop) {
 	// get all active modals
 	const activeModals = document.querySelectorAll(".modal.show");
 
-	// hide backdrop if there is only one active modal
+	// hide backdrop if there is xonly one active modal
 	if (activeModals.length === 1) {
 		modalBackdrop.classList.add("backdrop-will-be-removed");
 	}

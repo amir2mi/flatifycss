@@ -8,8 +8,12 @@ import PreviewBox from "../../src/components/preview-box";
 
 To write a quote Flatify CSS gives two types of `<blockquote>`s, first one is a default blockquote:
 
+:::info No icon
+To hide blockquote icon add `.no-icon` to the `<blockquote>` element.
+:::
+
 <PreviewBox
-	height="180px"
+	height="390px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +25,7 @@ To write a quote Flatify CSS gives two types of `<blockquote>`s, first one is a 
 		<title>Quote</title>
 	</head>
 	<body>
+		<p class="opacity-60" style="margin-bottom: 5px">With icon:</p>
         <blockquote style="margin-bottom: 0">
             <p>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
@@ -28,14 +33,32 @@ To write a quote Flatify CSS gives two types of `<blockquote>`s, first one is a 
                 Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
             </p>
 			<cite>John Doe</cite>
-		</blockquote>        
+		</blockquote>    
+		<br>
+		<p class="opacity-60" style="margin-bottom: 5px">Without icon:</p>
+		<blockquote class="no-icon" style="margin-bottom: 0">
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+                Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+                Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+            </p>
+			<cite>John Doe</cite>
+		</blockquote>       
     </body>
 </html>
 '
 />
 
-```html title="index.html"
+```html {9} title="index.html"
 <blockquote>
+	<p>
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+		malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+	</p>
+	<cite>John Doe</cite>
+</blockquote>
+
+<blockquote class="no-icon">
 	<p>
 		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
 		malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
@@ -49,7 +72,7 @@ To write a quote Flatify CSS gives two types of `<blockquote>`s, first one is a 
 To have a large blockquote add `.large` to the blockquote.
 
 <PreviewBox
-	height="250px"
+	height="300px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +106,7 @@ To have a large blockquote add `.large` to the blockquote.
 Blockquotes can have different accent colors or use [color setter classes](docs/helpers/color-setters).
 
 <PreviewBox
-	height="565px"
+	height="580px"
 	children='
 <!DOCTYPE html>
 <html lang="en">

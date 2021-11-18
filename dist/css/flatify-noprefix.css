@@ -504,7 +504,7 @@ blockquote {
   border-color: var(--flatify__blockquote-accent-color);
   border-width: 0 0 0 0.5em;
 }
-blockquote:before {
+blockquote:not(.no-icon):before {
   content: " ";
   position: absolute;
   z-index: -1;
