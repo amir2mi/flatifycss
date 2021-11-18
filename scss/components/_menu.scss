@@ -1,0 +1,91 @@
+:root {
+	--#{$CSS_VAR_PFX}menu-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+	--#{$CSS_VAR_PFX}menu-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+
+	--#{$CSS_VAR_PFX}menu-item-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+	--#{$CSS_VAR_PFX}menu-item-bg-color__hover: var(--#{$CSS_VAR_PFX}bg-color-dark);
+	--#{$CSS_VAR_PFX}menu-item-bg-color__active: var(--#{$CSS_VAR_PFX}bg-color-dark);
+	--#{$CSS_VAR_PFX}menu-item-bg-color__focus: var(--#{$CSS_VAR_PFX}bg-color-dark);
+
+	--#{$CSS_VAR_PFX}menu-item-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}menu-item-txt-color__hover: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}menu-item-txt-color__active: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}menu-item-txt-color__focus: var(--#{$CSS_VAR_PFX}txt-color);
+
+	--#{$CSS_VAR_PFX}submenu-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+}
+.menu-items-wrapper {
+	padding: 0.64em;
+	list-style: none;
+
+	.menu-item {
+		margin: 0 0.25em;
+		color: var(--#{$CSS_VAR_PFX}menu-item-txt-color);
+		background: var(--#{$CSS_VAR_PFX}menu-item-bg-color);
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
+		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+
+		a {
+			display: block;
+			padding: 0.9em 1.4em;
+			color: inherit;
+			text-decoration: none !important;
+			outline: none;
+		}
+
+		&:hover {
+			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__hover);
+			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__hover);
+		}
+
+		&:active {
+			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__active);
+			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__active);
+		}
+
+		&:focus-within {
+			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__focus);
+			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__focus);
+		}
+	}
+
+	&.dropdown,
+	&.submenu {
+		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}submenu-border-color);
+		border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+
+		.menu-item {
+			font-size: 0.9em;
+			margin: 0;
+
+			a {
+				padding: 0.75em 1.25em;
+			}
+		}
+
+		&:before {
+			content: " ";
+			position: absolute;
+			top: -0.5em;
+
+			@if $SUPPORT_LTR {
+				left: 2em;
+			} @else {
+				right: 2em;
+			}
+
+			height: 0;
+			width: 0;
+			border-width: 0 0.64em 0.64em 0.64em;
+			border-style: solid;
+			border-color: var(--#{$CSS_VAR_PFX}menu-bg-color) transparent;
+			filter: drop-shadow(
+				0 calc(var(--#{$CSS_VAR_PFX}border-width) * -1) 0 var(--#{$CSS_VAR_PFX}submenu-border-color)
+			);
+		}
+	}
+}
+
+.menu-items-wrapper:not(.dropdown) {
+	background: var(--#{$CSS_VAR_PFX}menu-bg-color);
+}

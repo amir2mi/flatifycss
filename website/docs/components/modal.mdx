@@ -7,6 +7,7 @@ import PreviewBox from "../../src/components/preview-box";
 
 Modal, pop-up box, bottom sheet, off-canvas, anything can be related to this component, we generally call it **modal**. There are different types of modals with different sizes and styles that come with Flatify CSS, which we will cover with practical examples on this page.
 
+
 ## A simple modal
 
 To have a simple modal you need to load Flatify CSS javascript file into your page. There must an element to call the modal and open it. Here is an example:
@@ -76,7 +77,8 @@ As said above we have a custom class called `.my-modal`, we should add it to the
 
 ### Accessibility
 
-There are some other attributes that are set and will be set dynamically for the sake of accessibility, there is an attribute called `aria-labelledby` you can read about [its use-cases](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute). Simply, it describes modal with the title (in this example `<h5>`) because it has the ID of modal title, so they are connected like form label `for` attribute.
+There are some other attributes that are set and will be set dynamically for the sake of accessibility, there is an attribute called `aria-labelledby` you can read about [its use-cases](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute). Simply, it describes modal with the title (in this example `<h5>`) because it has the ID of modal title, so they are connected like form label `for` attribute.  
+Note that modals are keyboard friendly, since pressing <kbd>ESC</kbd> will hide active modals.
 
 ### Close button
 

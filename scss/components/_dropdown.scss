@@ -1,0 +1,25 @@
+:root {
+	--#{$CSS_VAR_PFX}dropdown-offset: 4.5em;
+	--#{$CSS_VAR_PFX}dropdown-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}dropdown-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+}
+
+.dropdown-wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown {
+	position: absolute;
+	top: var(--#{$CSS_VAR_PFX}dropdown-offset);
+	width: 110%;
+
+	@if $SUPPORT_LTR {
+		left: 0;
+	} @else {
+		right: 0;
+	}
+
+	color: var(--#{$CSS_VAR_PFX}dropdown-txt-color);
+	background: var(--#{$CSS_VAR_PFX}dropdown-bg-color);
+}

@@ -1,0 +1,62 @@
+.arrow-button {
+	display: flex;
+	align-items: center;
+
+	&:after {
+		content: " ";
+		position: relative;
+		z-index: 1;
+		display: inline-block;
+		width: 2em;
+		height: 1.2em;
+		background-color: currentColor;
+		mask: var(--#{$CSS_VAR_PFX}arrow-down-icon) no-repeat 50% 50%;
+		-webkit-mask: var(--#{$CSS_VAR_PFX}arrow-down-icon) no-repeat 50% 50%;
+		will-change: transform;
+		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+	}
+
+	&.flip:after {
+		transform: rotate(180deg);
+	}
+
+	&.arrow-top {
+		&:after {
+			transform: rotate(180deg);
+		}
+
+		&.flip:after {
+			transform: rotate(0);
+		}
+	}
+
+	&.arrow-top {
+		&:after {
+			transform: rotate(180deg);
+		}
+
+		&.flip:after {
+			transform: rotate(0);
+		}
+	}
+
+	&.arrow-left {
+		&:after {
+			transform: rotate(90deg);
+		}
+
+		&.flip:after {
+			transform: rotate(-90deg);
+		}
+	}
+
+	&.arrow-right {
+		&:after {
+			transform: rotate(-90deg);
+		}
+
+		&.flip:after {
+			transform: rotate(90deg);
+		}
+	}
+}
