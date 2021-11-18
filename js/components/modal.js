@@ -29,13 +29,21 @@ function showModal(modal, modalBackdrop) {
  * @param {Object} modalBackdrop
  */
 function hideModal(modal, modalBackdrop) {
-	modalBackdrop.classList.add("backdrop-will-be-removed");
+	const activeModals = document.querySelectorAll(".modal.show");
+
+	if (activeModals.length === 1) {
+		// hide backdrop if there is only one active modal
+		modalBackdrop.classList.add("backdrop-will-be-removed");
+	}
 	modal.classList.add("modal-will-be-removed");
 
 	// after delay hide modal and its backdrop
 	$(modal).once("animationend", (e) => {
 		// removed hide animation class and show [display:none]
-		modalBackdrop.classList.remove("show", "backdrop-will-be-removed");
+		if (activeModals.length === 1) {
+			// hide backdrop if there is only one active modal
+			modalBackdrop.classList.remove("show", "backdrop-will-be-removed");
+		}
 		modal.classList.remove("show", "modal-will-be-removed");
 
 		// change aria-modal to false
