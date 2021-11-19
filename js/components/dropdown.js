@@ -36,6 +36,7 @@ function findDropdownToggle(dropdown) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+	// when dropdown toggle is clicked show or hide dropdown
 	$(document).on("click", ".dropdown-toggle", function (e) {
 		const wrapper = this.closest(".dropdown-wrapper");
 
@@ -53,12 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 
+	// close active dropdowns when outside of the dropdown area is clicked.
 	$(document).on("click", function (e) {
 		// select active dropdowns which has [data-dropdown-auto-close] = outside || true || default.
-		let activeDropdowns = document.querySelectorAll(
+		const activeDropdowns = document.querySelectorAll(
 			".dropdown.show:not([data-dropdown-auto-close]), .dropdown.show[data-dropdown-auto-close='outside'], .dropdown.show[data-dropdown-auto-close='true']"
 		);
-		console.log(activeDropdowns);
+
 		// if there is no active dropdown return
 		if (!activeDropdowns) return;
 

@@ -2,6 +2,7 @@ import $ from "../utils/vent";
 import logger from "../utils/logger";
 
 document.addEventListener("DOMContentLoaded", () => {
+	// when close button is clicked and have [.alert] wrapper, remove alert.
 	$(document).on("click", ".close-button", function () {
 		const wrapper = this.closest(".alert");
 

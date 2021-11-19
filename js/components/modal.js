@@ -83,6 +83,7 @@ function hideActiveModals(modalBackdrop) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+	// when open modal is clicked show related modal
 	$(document).on("click", ".open-modal", function (e) {
 		let modal;
 		const target = e.target.getAttribute("data-modal-target");
@@ -101,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		showModal(modal, modalBackdrop);
 	});
 
+	// when close modal is clicked hide related modal
 	$(document).on("click", ".close-modal", function (e) {
 		let modal;
 		const target = e.target.getAttribute("data-modal-target");
@@ -125,9 +127,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		hideModal(modal, modalBackdrop);
 	});
 
-	// if backdrop is clicked hide active modal.
+	// if backdrop is clicked hide active modals.
 	$(document).on("click", ".modal-backdrop", (e) => hideActiveModals(e.target));
 
-	// if esc key is pressed hide active modal.
+	// if esc key is pressed hide active modals.
 	document.onkeyup = (e) => e.key == "Escape" && hideActiveModals();
 });
