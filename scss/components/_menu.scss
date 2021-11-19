@@ -51,12 +51,17 @@
 
 	&.dropdown,
 	&.submenu {
+		min-width: 12em;
 		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}submenu-border-color);
 		border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
 		.menu-item {
 			font-size: 0.9em;
 			margin: 0;
+			
+			&:not(:last-child) {
+				margin-bottom: 0.25em;
+			}
 
 			a {
 				padding: 0.75em 1.25em;

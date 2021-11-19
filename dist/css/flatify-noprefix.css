@@ -1165,12 +1165,16 @@ th {
   background: var(--flatify__menu-item-bg-color__focus);
 }
 .menu-items-wrapper.dropdown, .menu-items-wrapper.submenu {
+  min-width: 12em;
   border: var(--flatify__border-width) solid var(--flatify__submenu-border-color);
   border-radius: var(--flatify__border-radius);
 }
 .menu-items-wrapper.dropdown .menu-item, .menu-items-wrapper.submenu .menu-item {
   font-size: 0.9em;
   margin: 0;
+}
+.menu-items-wrapper.dropdown .menu-item:not(:last-child), .menu-items-wrapper.submenu .menu-item:not(:last-child) {
+  margin-bottom: 0.25em;
 }
 .menu-items-wrapper.dropdown .menu-item a, .menu-items-wrapper.submenu .menu-item a {
   padding: 0.75em 1.25em;
