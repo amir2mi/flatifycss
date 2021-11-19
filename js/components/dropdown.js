@@ -2,6 +2,11 @@ import $ from "../utils/vent";
 import logger from "../utils/logger";
 
 function showDropdown(dropdown, toggle) {
+	// find dropdown toggle if it is not set
+	if (!toggle) {
+		toggle = findDropdownToggle(dropdown);
+	}
+
 	// show dropdown
 	dropdown.classList.add("show");
 
@@ -13,6 +18,11 @@ function showDropdown(dropdown, toggle) {
 }
 
 function hideDropdown(dropdown, toggle) {
+	// find dropdown toggle if it is not set
+	if (!toggle) {
+		toggle = findDropdownToggle(dropdown);
+	}
+
 	dropdown.classList.add("dropdown-will-be-hidden");
 
 	$(dropdown).once("animationend", (e) => {
@@ -37,7 +47,7 @@ function findDropdownToggle(dropdown) {
 
 document.addEventListener("DOMContentLoaded", () => {
 	// when dropdown toggle is clicked show or hide dropdown
-	$(document).on("click", ".dropdown-toggle", function (e) {
+	$(document).on("click", ".dropdown-toggle", function () {
 		const wrapper = this.closest(".dropdown-wrapper");
 
 		// return if dropdown toggle does not have wrapper with [.dropdown-wrapper] class
@@ -54,9 +64,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 
-	// close active dropdowns when outside of the dropdown area is clicked.
-	$(document).on("click", function (e) {
-		// select active dropdowns which has [data-dropdown-auto-close] = outside || true || default.
+	// close dropdown when is clicked
+	$(document).on("click", ".dropdown", function (e) {
+		const dropdown = e.target.closest(".dropdown");
+		const autoCloseType = dropdown.getAttribute("data-dropdown-auto-close");
+
+		// hide if [data-dropdown-auto-close] attribute = outside || true || default.
+		if (!autoCloseType || autoCloseType === "true" || autoCloseType === "inside") {
+			hideDropdown(dropdown);
+		}
+	});
+
+	// close active dropdowns when outside of the dropdown area is clicked, it respects [data-dropdown-auto-close] option.
+	document.onclick = function (e) {
+		// select active dropdowns which has [data-dropdown-auto-close] attribute = outside || true || default.
 		const activeDropdowns = document.querySelectorAll(
 			".dropdown.show:not([data-dropdown-auto-close]), .dropdown.show[data-dropdown-auto-close='outside'], .dropdown.show[data-dropdown-auto-close='true']"
 		);
@@ -75,5 +96,5 @@ document.addEventListener("DOMContentLoaded", () => {
 				hideDropdown(dropdown, toggle);
 			}
 		});
-	});
+	};
 });
