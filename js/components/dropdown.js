@@ -1,6 +1,11 @@
 import $ from "../utils/vent";
 import logger from "../utils/logger";
 
+/**
+ * Show given dropdown
+ * @param {Object} dropdown
+ * @param {Object=} toggle
+ */
 function showDropdown(dropdown, toggle) {
 	// find dropdown toggle if it is not set
 	if (!toggle) {
@@ -17,6 +22,11 @@ function showDropdown(dropdown, toggle) {
 	toggle.setAttribute("aria-expanded", true);
 }
 
+/**
+ * Hide given dropdown
+ * @param {Object} dropdown
+ * @param {Object=} toggle
+ */
 function hideDropdown(dropdown, toggle) {
 	// find dropdown toggle if it is not set
 	if (!toggle) {
@@ -25,7 +35,7 @@ function hideDropdown(dropdown, toggle) {
 
 	dropdown.classList.add("dropdown-will-be-hidden");
 
-	$(dropdown).once("animationend", (e) => {
+	$(dropdown).once("animationend", () => {
 		// hide dropdown when animation is done
 		dropdown.classList.remove("dropdown-will-be-hidden", "show");
 
@@ -37,6 +47,11 @@ function hideDropdown(dropdown, toggle) {
 	});
 }
 
+/**
+ * Find given dropdown toggle button
+ * @param {Object} dropdown
+ * @returns
+ */
 function findDropdownToggle(dropdown) {
 	// get dropdown wrapper if wrapper was not found return an error
 	const wrapper = dropdown.closest(".dropdown-wrapper");
