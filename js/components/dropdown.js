@@ -97,4 +97,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	};
+
+	// close active dropdowns when ESC key is pressed
+	document.addEventListener("keyup", (e) => {
+		if (e.key == "Escape") {
+			const activeDropdowns = document.querySelectorAll(".dropdown.show");
+
+			// if there is no active dropdown return
+			if (!activeDropdowns) return;
+
+			// hide all dropdowns
+			activeDropdowns.forEach((dropdown) => hideDropdown(dropdown));
+		}
+	});
 });

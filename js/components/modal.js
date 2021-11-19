@@ -130,6 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	// if backdrop is clicked hide active modals.
 	$(document).on("click", ".modal-backdrop", (e) => hideActiveModals(e.target));
 
-	// if esc key is pressed hide active modals.
-	document.onkeyup = (e) => e.key == "Escape" && hideActiveModals();
+	// if ESC key is pressed hide active modals.
+	document.addEventListener("keyup", (e) => e.key == "Escape" && hideActiveModals());
 });
