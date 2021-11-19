@@ -1214,17 +1214,15 @@ th {
   border-width: 0.64em 0.64em 0 0.64em;
   filter: drop-shadow(0 var(--flatify__border-width) 0 var(--flatify__submenu-border-color));
 }
-.menu-items-wrapper.dropdown.at-right:before, .menu-items-wrapper.submenu.at-right:before {
-  top: 2em;
-  right: unset;
+.menu-items-wrapper.dropdown.at-left:before, .menu-items-wrapper.submenu.at-left:before {
+  top: unset;
   left: -0.5em;
   border-width: 0.64em 0.64em 0.64em 0;
   border-color: transparent var(--flatify__menu-bg-color);
   filter: drop-shadow(calc(var(--flatify__border-width) * -1) 0 0 var(--flatify__submenu-border-color));
 }
-.menu-items-wrapper.dropdown.at-left:before, .menu-items-wrapper.submenu.at-left:before {
-  top: 2em;
-  left: unset;
+.menu-items-wrapper.dropdown.at-right:before, .menu-items-wrapper.submenu.at-right:before {
+  top: unset;
   right: -0.5em;
   border-width: 0.64em 0 0.64em 0.64em;
   border-color: transparent var(--flatify__menu-bg-color);

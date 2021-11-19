@@ -97,9 +97,8 @@
 			filter: drop-shadow(0 var(--#{$CSS_VAR_PFX}border-width) 0 var(--#{$CSS_VAR_PFX}submenu-border-color));
 		}
 
-		&.at-right:before {
-			top: 2em;
-			right: unset;
+		&.at-left:before {
+			top: unset;
 			left: -0.5em;
 			border-width: 0.64em 0.64em 0.64em 0;
 			border-color: transparent var(--#{$CSS_VAR_PFX}menu-bg-color);
@@ -108,9 +107,8 @@
 			);
 		}
 
-		&.at-left:before {
-			top: 2em;
-			left: unset;
+		&.at-right:before {
+			top: unset;
 			right: -0.5em;
 			border-width: 0.64em 0 0.64em 0.64em;
 			border-color: transparent var(--#{$CSS_VAR_PFX}menu-bg-color);
