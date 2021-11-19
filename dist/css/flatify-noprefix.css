@@ -1131,7 +1131,6 @@ th {
 .dropdown.dropdown-will-be-hidden {
   animation: var(--flatify__dropdown-animation-hide);
 }
-
 :root {
   --flatify__menu-bg-color: var(--flatify__bg-color);
   --flatify__menu-txt-color: var(--flatify__txt-color);

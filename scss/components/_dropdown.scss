@@ -39,4 +39,8 @@
 	&.dropdown-will-be-hidden {
 		animation: var(--#{$CSS_VAR_PFX}dropdown-animation-hide);
 	}
+
+	&.top{
+		
+	}
 }
