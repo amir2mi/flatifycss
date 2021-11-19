@@ -2,6 +2,10 @@
 	--#{$CSS_VAR_PFX}dropdown-offset: 4.5em;
 	--#{$CSS_VAR_PFX}dropdown-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}dropdown-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+	--#{$CSS_VAR_PFX}dropdown-animation-show: flatify-dropdown-show var(--#{$CSS_VAR_PFX}modal-show-animation-duration)
+		cubic-bezier(0.52, 0.42, 0.44, 1.44);
+	--#{$CSS_VAR_PFX}dropdown-animation-hide: flatify-dropdown-hide var(--#{$CSS_VAR_PFX}modal-show-animation-duration)
+		cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .dropdown-wrapper {
@@ -22,4 +26,12 @@
 
 	color: var(--#{$CSS_VAR_PFX}dropdown-txt-color);
 	background: var(--#{$CSS_VAR_PFX}dropdown-bg-color);
+
+	&.show{
+
+	}
+
+	&.dropdown-will-be-hidden{
+		
+	}
 }

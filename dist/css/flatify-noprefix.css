@@ -99,9 +99,6 @@
   --flatify__select-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" fill="%23CED3D6" viewBox="0 -16 32 64"><path d="M23.805 17.56H8.2a.78.78 0 00-.552 1.332l7.803 7.802a.778.778 0 001.103 0l7.802-7.802a.78.78 0 00-.551-1.332zM8.2 14.44H23.82a.78.78 0 00.452-1.417l-7.718-7.717a.78.78 0 00-1.103 0l-7.803 7.802A.78.78 0 008.2 14.44z"></path></svg>');
   --flatify__simple-transition: 0.15s ease-in-out;
   --flatify__bouncing-transition: 0.35s cubic-bezier(0.59, -0.39, 0.36, 1.38);
-  --flatify__alert-remove-animation: flatify-alert-will-be-removed 350ms ease;
-  --flatify__modal-show-animation-duration: 350ms;
-  --flatify__modal-hide-animation-duration: 250ms;
 }
 
 *,
@@ -818,6 +815,7 @@ th {
   --flatify__alert-bg-color: var(--flatify__bg-color-dark);
   --flatify__alert-txt-color: var(--flatify__txt-color);
   --flatify__alert-border-color: var(--flatify__bg-color-darker);
+  --flatify__alert-remove-animation: flatify-alert-will-be-removed 350ms ease;
 }
 
 .alert {
@@ -832,6 +830,9 @@ th {
   background: var(--flatify__alert-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
+}
+.alert.alert-will-be-removed {
+  animation: var(--flatify__alert-remove-animation) both;
 }
 .alert:hover .close-button.floating {
   transform: scale(1);
@@ -1104,6 +1105,10 @@ th {
   --flatify__dropdown-offset: 4.5em;
   --flatify__dropdown-txt-color: var(--flatify__txt-color);
   --flatify__dropdown-bg-color: var(--flatify__bg-color);
+  --flatify__dropdown-animation-show: flatify-dropdown-show var(--flatify__modal-show-animation-duration)
+  	cubic-bezier(0.52, 0.42, 0.44, 1.44);
+  --flatify__dropdown-animation-hide: flatify-dropdown-hide var(--flatify__modal-show-animation-duration)
+  	cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .dropdown-wrapper {
@@ -1119,7 +1124,6 @@ th {
   color: var(--flatify__dropdown-txt-color);
   background: var(--flatify__dropdown-bg-color);
 }
-
 :root {
   --flatify__menu-bg-color: var(--flatify__bg-color);
   --flatify__menu-txt-color: var(--flatify__txt-color);
@@ -1200,6 +1204,28 @@ th {
   --flatify__modal-bg-color: var(--flatify__bg-color);
   --flatify__modal-txt-color: var(--flatify__txt-color);
   --flatify__modal-border-color: var(--flatify__bg-color-darker);
+  --flatify__modal-show-animation-duration: 350ms;
+  --flatify__modal-hide-animation-duration: 250ms;
+  --flatify__modal-animation-default-show: flatify-blow-in var(--flatify__modal-show-animation-duration)
+  	cubic-bezier(0.52, 0.42, 0.44, 1.44);
+  --flatify__modal-animation-default-hide: flatify-blow-out var(--flatify__modal-hide-animation-duration)
+  	cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+  --flatify__modal-animation-top-show: flatify-slide-down-in var(--flatify__modal-show-animation-duration)
+  	ease;
+  --flatify__modal-animation-top-hide: flatify-slide-down-out
+  	var(--flatify__modal-hide-animation-duration) ease both;
+  --flatify__modal-animation-bottom-show: flatify-slide-up-in
+  	var(--flatify__modal-show-animation-duration) ease;
+  --flatify__modal-animation-bottom-hide: flatify-slide-up-out
+  	var(--flatify__modal-hide-animation-duration) ease both;
+  --flatify__modal-animation-left-show: flatify-slide-right-in
+  	var(--flatify__modal-show-animation-duration) ease;
+  --flatify__modal-animation-left-hide: flatify-slide-right-out
+  	var(--flatify__modal-hide-animation-duration) ease both;
+  --flatify__modal-animation-right-show: flatify-slide-left-in
+  	var(--flatify__modal-show-animation-duration) ease;
+  --flatify__modal-animation-right-hide: flatify-slide-left-out
+  	var(--flatify__modal-hide-animation-duration) ease both;
 }
 
 .modal {
@@ -1230,10 +1256,10 @@ th {
 }
 .modal.show {
   display: block;
-  animation: flatify-blow-in var(--flatify__modal-show-animation-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44);
+  animation: var(--flatify__modal-animation-default-show);
 }
 .modal.modal-will-be-removed {
-  animation: flatify-blow-out var(--flatify__modal-hide-animation-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+  animation: var(--flatify__modal-animation-default-hide);
 }
 .modal.modal-center {
   top: 0;
@@ -1251,10 +1277,10 @@ th {
   border-top: none !important;
 }
 .modal.modal-top.show {
-  animation: flatify-slide-down-in var(--flatify__modal-show-animation-duration) ease;
+  animation: var(--flatify__modal-animation-top-show);
 }
 .modal.modal-top.modal-will-be-removed {
-  animation: flatify-slide-down-out var(--flatify__modal-hide-animation-duration) ease both;
+  animation: var(--flatify__modal-animation-top-hide);
 }
 .modal.modal-bottom {
   top: unset;
@@ -1266,10 +1292,10 @@ th {
   border-bottom: none !important;
 }
 .modal.modal-bottom.show {
-  animation: flatify-slide-up-in var(--flatify__modal-show-animation-duration) ease;
+  animation: var(--flatify__modal-animation-bottom-show);
 }
 .modal.modal-bottom.modal-will-be-removed {
-  animation: flatify-slide-up-out var(--flatify__modal-hide-animation-duration) ease both;
+  animation: var(--flatify__modal-animation-bottom-hide);
 }
 .modal.modal-left {
   left: 0;
@@ -1280,10 +1306,10 @@ th {
   border-left: none !important;
 }
 .modal.modal-left.show {
-  animation: flatify-slide-right-in var(--flatify__modal-show-animation-duration) ease;
+  animation: var(--flatify__modal-animation-left-show);
 }
 .modal.modal-left.modal-will-be-removed {
-  animation: flatify-slide-right-out var(--flatify__modal-hide-animation-duration) ease both;
+  animation: var(--flatify__modal-animation-left-hide);
 }
 .modal.modal-right {
   left: unset;
@@ -1295,10 +1321,10 @@ th {
   border-right: none !important;
 }
 .modal.modal-right.show {
-  animation: flatify-slide-left-in var(--flatify__modal-show-animation-duration) ease;
+  animation: var(--flatify__modal-animation-right-show);
 }
 .modal.modal-right.modal-will-be-removed {
-  animation: flatify-slide-left-out var(--flatify__modal-hide-animation-duration) ease both;
+  animation: var(--flatify__modal-animation-right-hide);
 }
 .modal.bordered .modal-header {
   border-bottom: var(--flatify__border-width) solid var(--flatify__local-border-color, --flatify__local-border-color);
@@ -2041,10 +2067,29 @@ textarea:not(.default) {
     transform: scale(0.92) rotate(-0.5deg);
   }
 }
-.alert-will-be-removed {
-  animation: var(--flatify__alert-remove-animation) both;
+@keyframes flatify-dropdown-show {
+  from {
+    opacity: 0;
+    transform: scale(0.9) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
-
+@keyframes flatify-dropdown-hide {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) rotate(-5deg);
+  }
+}
 @keyframes flatify-pulse {
   0% {
     transform: scale(1);

@@ -189,9 +189,40 @@
 	}
 }
 
-.alert-will-be-removed {
-	animation: var(--#{$CSS_VAR_PFX}alert-remove-animation) both;
+// Dropdown show & hide
+@keyframes flatify-dropdown-show {
+	from {
+		opacity: 0;
+		@if $SUPPORT_LTR {
+			transform: scale(0.9) rotate(-5deg);
+		} @else {
+			transform: scale(0.9) rotate(5deg);
+		}
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
+
+@keyframes flatify-dropdown-hide {
+	from {
+		opacity: 1;
+		transform: scale(1);
+	}
+	75% {
+		opacity: 0;
+	}
+	to {
+		opacity: 0;
+		@if $SUPPORT_LTR {
+			transform: scale(0.9) rotate(-5deg);
+		} @else {
+			transform: scale(0.9) rotate(5deg);
+		}
+	}
+}
+
 
 // Pulse animation for .pulse
 @keyframes flatify-pulse {
