@@ -194,9 +194,9 @@
 	from {
 		opacity: 0;
 		@if $SUPPORT_LTR {
-			transform: scale(0.9) rotate(-5deg);
+			transform: scale(0.9) rotate(3deg);
 		} @else {
-			transform: scale(0.9) rotate(5deg);
+			transform: scale(0.9) rotate(-3deg);
 		}
 	}
 	to {
@@ -215,11 +215,7 @@
 	}
 	to {
 		opacity: 0;
-		@if $SUPPORT_LTR {
-			transform: scale(0.9) rotate(-5deg);
-		} @else {
-			transform: scale(0.9) rotate(5deg);
-		}
+		transform: scale(0.8);
 	}
 }
 
