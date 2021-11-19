@@ -75,7 +75,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid
 		animation: var(--#{$CSS_VAR_PFX}modal-animation-default-show);
 	}
 
-	&.modal-will-be-removed {
+	&.modal-will-be-hidden {
 		animation: var(--#{$CSS_VAR_PFX}modal-animation-default-hide);
 	}
 
@@ -98,7 +98,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid
 			animation: var(--#{$CSS_VAR_PFX}modal-animation-top-show);
 		}
 
-		&.modal-will-be-removed {
+		&.modal-will-be-hidden {
 			animation: var(--#{$CSS_VAR_PFX}modal-animation-top-hide);
 		}
 	}
@@ -115,7 +115,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid
 			animation: var(--#{$CSS_VAR_PFX}modal-animation-bottom-show);
 		}
 
-		&.modal-will-be-removed {
+		&.modal-will-be-hidden {
 			animation: var(--#{$CSS_VAR_PFX}modal-animation-bottom-hide);
 		}
 	}
@@ -131,7 +131,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid
 			animation: var(--#{$CSS_VAR_PFX}modal-animation-left-show);
 		}
 
-		&.modal-will-be-removed {
+		&.modal-will-be-hidden {
 			animation: var(--#{$CSS_VAR_PFX}modal-animation-left-hide);
 		}
 	}
@@ -148,7 +148,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid
 			animation: var(--#{$CSS_VAR_PFX}modal-animation-right-show);
 		}
 
-		&.modal-will-be-removed {
+		&.modal-will-be-hidden {
 			animation: var(--#{$CSS_VAR_PFX}modal-animation-right-hide);
 		}
 	}

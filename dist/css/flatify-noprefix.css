@@ -1258,7 +1258,7 @@ th {
   display: block;
   animation: var(--flatify__modal-animation-default-show);
 }
-.modal.modal-will-be-removed {
+.modal.modal-will-be-hidden {
   animation: var(--flatify__modal-animation-default-hide);
 }
 .modal.modal-center {
@@ -1279,7 +1279,7 @@ th {
 .modal.modal-top.show {
   animation: var(--flatify__modal-animation-top-show);
 }
-.modal.modal-top.modal-will-be-removed {
+.modal.modal-top.modal-will-be-hidden {
   animation: var(--flatify__modal-animation-top-hide);
 }
 .modal.modal-bottom {
@@ -1294,7 +1294,7 @@ th {
 .modal.modal-bottom.show {
   animation: var(--flatify__modal-animation-bottom-show);
 }
-.modal.modal-bottom.modal-will-be-removed {
+.modal.modal-bottom.modal-will-be-hidden {
   animation: var(--flatify__modal-animation-bottom-hide);
 }
 .modal.modal-left {
@@ -1308,7 +1308,7 @@ th {
 .modal.modal-left.show {
   animation: var(--flatify__modal-animation-left-show);
 }
-.modal.modal-left.modal-will-be-removed {
+.modal.modal-left.modal-will-be-hidden {
   animation: var(--flatify__modal-animation-left-hide);
 }
 .modal.modal-right {
@@ -1323,7 +1323,7 @@ th {
 .modal.modal-right.show {
   animation: var(--flatify__modal-animation-right-show);
 }
-.modal.modal-right.modal-will-be-removed {
+.modal.modal-right.modal-will-be-hidden {
   animation: var(--flatify__modal-animation-right-hide);
 }
 .modal.bordered .modal-header {
@@ -2842,7 +2842,7 @@ body ::after {
   body .modal.show {
     animation-name: flatify-fade-in !important;
   }
-  body .modal.modal-will-be-removed {
+  body .modal.modal-will-be-hidden {
     animation-name: flatify-fade-out !important;
   }
 

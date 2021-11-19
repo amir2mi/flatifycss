@@ -36,7 +36,7 @@ function hideModal(modal, modalBackdrop) {
 	if (activeModals.length === 1) {
 		modalBackdrop.classList.add("backdrop-will-be-removed");
 	}
-	modal.classList.add("modal-will-be-removed");
+	modal.classList.add("modal-will-be-hidden");
 
 	// after delay hide modal and its backdrop
 	$(modal).once("animationend", (e) => {
@@ -45,7 +45,7 @@ function hideModal(modal, modalBackdrop) {
 		if (activeModals.length === 1) {
 			modalBackdrop.classList.remove("show", "backdrop-will-be-removed");
 		}
-		modal.classList.remove("show", "modal-will-be-removed");
+		modal.classList.remove("show", "modal-will-be-hidden");
 
 		// change aria-modal to false
 		modal.setAttribute("aria-modal", false);
