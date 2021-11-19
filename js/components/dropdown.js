@@ -45,4 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			showDropdown(dropdown, toggle);
 		}
 	});
+
+    $(document).on("click", function () {
+    
+    });
 });

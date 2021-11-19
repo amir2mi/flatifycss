@@ -17,6 +17,7 @@
 
 .dropdown {
 	position: absolute;
+	// open at bottom as default
 	top: var(--#{$CSS_VAR_PFX}dropdown-offset);
 	z-index: $ZINDEX_DROPDOWN;
 	display: none;
@@ -40,7 +41,8 @@
 		animation: var(--#{$CSS_VAR_PFX}dropdown-animation-hide);
 	}
 
-	&.top{
-		
+	&.at-top {
+		top: unset;
+		bottom: var(--#{$CSS_VAR_PFX}dropdown-offset);
 	}
 }
