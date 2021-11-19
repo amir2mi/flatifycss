@@ -19,6 +19,7 @@ function showModal(modal, modalBackdrop) {
 
 	// change aria-modal to true
 	modal.setAttribute("aria-modal", true);
+
 	// add [display: block] and animation class
 	modal.classList.add("show");
 }

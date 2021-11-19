@@ -1,5 +1,5 @@
 :root {
-	--#{$CSS_VAR_PFX}dropdown-offset: 4.5em;
+	--#{$CSS_VAR_PFX}dropdown-offset: 4.2em;
 	--#{$CSS_VAR_PFX}dropdown-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}dropdown-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
 	--#{$CSS_VAR_PFX}dropdown-show-animation-duration: #{$DROPDOWN_SHOW_ANIMATION_DURATION};
@@ -18,6 +18,7 @@
 .dropdown {
 	position: absolute;
 	top: var(--#{$CSS_VAR_PFX}dropdown-offset);
+	z-index: $ZINDEX_DROPDOWN;
 	display: none;
 	width: 110%;
 

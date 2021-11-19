@@ -1,11 +1,13 @@
 import $ from "../utils/vent";
+import logger from "../utils/logger";
 
 document.addEventListener("DOMContentLoaded", () => {
 	$(document).on("click", ".close-button", function () {
 		const wrapper = this.closest(".alert");
 
 		// return if close button does not have wrapper with [.alert] class
-		if (!wrapper) return;
+		if (!wrapper) return logger("error", "Alert close button should be inside '.alert' wrapper");
+
 		// add animation class to remove the alert
 		wrapper.classList.add("alert-will-be-removed");
 

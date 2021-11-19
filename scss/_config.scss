@@ -73,6 +73,7 @@ $LINK_DECORATION_HOVER: underline 0.125em currentColor !default;
 $LINK_DECORATION_FOCUS: none !default;
 
 // z-index
+$ZINDEX_DROPDOWN: 1000;
 $ZINDEX_MODAL_BACKDROP: 1050;
 $ZINDEX_MODAL: 1055;
 
@@ -260,7 +261,7 @@ $SUPPORT_SMOOTH_SCROLL: true !default;
 $SIMPLE_TRANSITION: 0.15s ease-in-out !default; // without specifying properties
 $BOUNCING_TRANSITION: 0.35s cubic-bezier(0.59, -0.39, 0.36, 1.38) !default; // without specifying properties
 
-$ALERT_REMOVE_ANIMATION: flatify-alert-will-be-removed 350ms ease !default;
+$ALERT_REMOVE_ANIMATION_DURATION: 350ms !default;
 $DROPDOWN_SHOW_ANIMATION_DURATION: 300ms !default;
 $DROPDOWN_HIDE_ANIMATION_DURATION: 200ms !default;
 $MODAL_SHOW_ANIMATION_DURATION: 350ms !default;

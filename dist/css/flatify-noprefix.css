@@ -815,7 +815,9 @@ th {
   --flatify__alert-bg-color: var(--flatify__bg-color-dark);
   --flatify__alert-txt-color: var(--flatify__txt-color);
   --flatify__alert-border-color: var(--flatify__bg-color-darker);
-  --flatify__alert-remove-animation: flatify-alert-will-be-removed 350ms ease;
+  --flatify__alert-remove-animation-duration: 350ms;
+  --flatify__alert-remove-animation: flatify-alert-will-be-removed
+  	var(--flatify__alert-remove-animation-duration) ease;
 }
 
 .alert {
@@ -1021,32 +1023,26 @@ th {
   will-change: transform;
   transition: all var(--flatify__simple-transition);
 }
-.arrow-button.flip:after {
-  transform: rotate(180deg);
+.arrow-button.arrow-flip:after {
+  transform: rotateX(180deg);
 }
 .arrow-button.arrow-top:after {
-  transform: rotate(180deg);
+  transform: rotateX(180deg);
 }
-.arrow-button.arrow-top.flip:after {
-  transform: rotate(0);
-}
-.arrow-button.arrow-top:after {
-  transform: rotate(180deg);
-}
-.arrow-button.arrow-top.flip:after {
-  transform: rotate(0);
+.arrow-button.arrow-top.arrow-flip:after {
+  transform: rotateX(0);
 }
 .arrow-button.arrow-left:after {
-  transform: rotate(90deg);
+  transform: rotateY(90deg);
 }
-.arrow-button.arrow-left.flip:after {
-  transform: rotate(-90deg);
+.arrow-button.arrow-left.arrow-flip:after {
+  transform: rotateY(-90deg);
 }
 .arrow-button.arrow-right:after {
-  transform: rotate(-90deg);
+  transform: rotateY(-90deg);
 }
-.arrow-button.arrow-right.flip:after {
-  transform: rotate(90deg);
+.arrow-button.arrow-right.arrow-flip:after {
+  transform: rotateY(90deg);
 }
 
 .close-button {
@@ -1102,7 +1098,7 @@ th {
 }
 
 :root {
-  --flatify__dropdown-offset: 4.5em;
+  --flatify__dropdown-offset: 4.2em;
   --flatify__dropdown-txt-color: var(--flatify__txt-color);
   --flatify__dropdown-bg-color: var(--flatify__bg-color);
   --flatify__dropdown-show-animation-duration: 300ms;
@@ -1121,6 +1117,7 @@ th {
 .dropdown {
   position: absolute;
   top: var(--flatify__dropdown-offset);
+  z-index: 1000;
   display: none;
   width: 110%;
   left: 0;
@@ -1151,6 +1148,7 @@ th {
 
 .menu-items-wrapper {
   padding: 0.64em;
+  margin: 0;
   list-style: none;
 }
 .menu-items-wrapper .menu-item {

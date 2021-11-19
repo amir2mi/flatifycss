@@ -16,47 +16,37 @@
 		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 	}
 
-	&.flip:after {
-		transform: rotate(180deg);
+	&.arrow-flip:after {
+		transform: rotateX(180deg);
 	}
 
 	&.arrow-top {
 		&:after {
-			transform: rotate(180deg);
+			transform: rotateX(180deg);
 		}
 
-		&.flip:after {
-			transform: rotate(0);
-		}
-	}
-
-	&.arrow-top {
-		&:after {
-			transform: rotate(180deg);
-		}
-
-		&.flip:after {
-			transform: rotate(0);
+		&.arrow-flip:after {
+			transform: rotateX(0);
 		}
 	}
 
 	&.arrow-left {
 		&:after {
-			transform: rotate(90deg);
+			transform: rotateY(90deg);
 		}
 
-		&.flip:after {
-			transform: rotate(-90deg);
+		&.arrow-flip:after {
+			transform: rotateY(-90deg);
 		}
 	}
 
 	&.arrow-right {
 		&:after {
-			transform: rotate(-90deg);
+			transform: rotateY(-90deg);
 		}
 
-		&.flip:after {
-			transform: rotate(90deg);
+		&.arrow-flip:after {
+			transform: rotateY(90deg);
 		}
 	}
 }

@@ -2,7 +2,9 @@
 	--#{$CSS_VAR_PFX}alert-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
 	--#{$CSS_VAR_PFX}alert-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}alert-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
-	--#{$CSS_VAR_PFX}alert-remove-animation: #{$ALERT_REMOVE_ANIMATION};
+	--#{$CSS_VAR_PFX}alert-remove-animation-duration: #{$ALERT_REMOVE_ANIMATION_DURATION};
+	--#{$CSS_VAR_PFX}alert-remove-animation: flatify-alert-will-be-removed
+		var(--#{$CSS_VAR_PFX}alert-remove-animation-duration) ease;
 }
 
 .alert {
