@@ -1,0 +1,68 @@
+---
+title: Dropdowns
+sidebar_position: 6
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Dropdowns typically provide a list of items to interact with, however it is also possible to have a complex UI inside dropdowns.
+
+## A simple dropdown
+
+To create a dropdown we need a [button](docs/components/button), [menu items](docs/components/menu), and also an [arrow button](docs/components/arrow-button), these are basics and they should have some special classes to work as expected.
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Dropdown</title>
+		 <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+	</head>
+	<body>
+       <div class="dropdown-wrapper">
+			<button
+				class="button dropdown-toggle arrow-button"
+				id="my-dropdown-toggle"
+				aria-expanded="false"
+				aria-label="Open dropdown"
+			></button>
+			<ul
+				class="dropdown menu-items-wrapper"
+				aria-labelledby="my-dropdown-toggle"
+			>
+				<li class="menu-item"><a href="#">Item 1</a></li>
+				<li class="menu-item"><a href="#">Item 2</a></li>
+				<li class="menu-item"><a href="#">Item 3</a></li>
+				<li class="menu-item"><a href="#">Item 4</a></li>
+				<li class="menu-item"><a href="#">Item 5</a></li>
+			</ul>
+		</div>
+     	<div class="dropdown-wrapper">
+			<button
+				class="button dropdown-toggle arrow-button arrow-top"
+				id="my-dropdown-toggle"
+				aria-expanded="false"
+				aria-label="Open dropdown"
+			></button>
+			<ul
+				class="dropdown menu-items-wrapper at-top"
+				aria-labelledby="my-dropdown-toggle"
+			>
+				<li class="menu-item"><a href="#">Item 1</a></li>
+				<li class="menu-item"><a href="#">Item 2</a></li>
+				<li class="menu-item"><a href="#">Item 3</a></li>
+				<li class="menu-item"><a href="#">Item 4</a></li>
+				<li class="menu-item"><a href="#">Item 5</a></li>
+			</ul>
+		</div>
+    </body>
+
+</html>
+'
+/>

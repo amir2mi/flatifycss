@@ -19,7 +19,7 @@
 	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}menu-item-bg-color);
 	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}menu-border-color);
 	list-style: none;
-	padding: 0.64em;
+	padding: 0.5em;
 	margin: 0;
 	background: var(--#{$CSS_VAR_PFX}local-bg-color);
 
@@ -49,22 +49,37 @@
 			outline: none;
 		}
 
-		&:hover {
-			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__hover);
-			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__hover);
-			filter: brightness(95%);
+		&:not(.heading) {
+			&:hover {
+				color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__hover);
+				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__hover);
+				filter: brightness(95%);
+			}
+
+			&:active {
+				color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__active) !important;
+				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__active) !important;
+				filter: brightness(95%) !important;
+			}
+
+			&:focus-within {
+				color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__focus);
+				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__focus);
+				filter: brightness(95%);
+			}
 		}
 
-		&:active {
-			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__active) !important;
-			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__active) !important;
-			filter: brightness(95%) !important;
+		&.heading {
+			font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+			padding: 0.75em;
 		}
 
-		&:focus-within {
-			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__focus);
-			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__focus);
-			filter: brightness(95%);
+		&.separator,
+		&[role="separator"] {
+			height: var(--#{$CSS_VAR_PFX}border-width);
+			margin: 0.5em 0 !important;
+			background: var(--#{$CSS_VAR_PFX}local-border-color) !important;
+			opacity: 0.5;
 		}
 	}
 
@@ -85,7 +100,7 @@
 			}
 
 			a {
-				padding: 0.75em 1.25em;
+				padding: 0.64em 1.25em;
 			}
 		}
 

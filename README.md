@@ -31,8 +31,8 @@ List of work in progress:
 -   [x] Button group
 -   [x] Dropdowns
 -   [ ] Loading
+-   [ ] Menu
 -   [x] Modal
--   [ ] Nav
 -   [ ] Pagination
 -   [ ] Popover
 -   [ ] Tabs
