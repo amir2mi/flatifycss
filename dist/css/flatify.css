@@ -1333,7 +1333,7 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
   bottom: var(--flatify__dropdown-offset);
 }
 
-.dropdown-wrapper > .dropdown-toggle.arrow-button:after {
+.dropdown-wrapper > .dropdown-toggle.arrow-button:not(:empty):after {
   margin-left: 0.5em;
 }
 
@@ -2783,13 +2783,10 @@ textarea:not(.default) {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  75% {
-    opacity: 0;
-  }
   to {
     opacity: 0;
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
   }
 }
 @keyframes flatify-dropdown-hide {
@@ -2798,13 +2795,10 @@ textarea:not(.default) {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  75% {
-    opacity: 0;
-  }
   to {
     opacity: 0;
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
   }
 }
 @-webkit-keyframes flatify-pulse {
