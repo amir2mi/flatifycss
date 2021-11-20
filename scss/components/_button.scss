@@ -71,6 +71,7 @@
 			box-shadow: inset 0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38)
 					var(--#{$CSS_VAR_PFX}button-bg-color__focus),
 				0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) var(--#{$CSS_VAR_PFX}button-bg-color__focus);
+			transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.2));
 		}
 	}
 
@@ -81,6 +82,7 @@
 		box-shadow: inset 0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38)
 				var(--#{$CSS_VAR_PFX}button-bg-color__focus),
 			0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) var(--#{$CSS_VAR_PFX}button-bg-color__focus);
+		transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.2));
 	}
 
 	&[class*="style-"] {

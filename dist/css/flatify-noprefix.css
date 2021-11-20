@@ -982,9 +982,11 @@ th {
 }
 .button.outline.active, input.outline.active[type=file]:not(.default)::file-selector-button, .button.outline:focus-visible, input.outline[type=file]:focus-visible:not(.default)::file-selector-button, .button.outline:active, input.outline[type=file]:active:not(.default)::file-selector-button, .button.bordered.active, input.bordered.active[type=file]:not(.default)::file-selector-button, .button.bordered:focus-visible, input.bordered[type=file]:focus-visible:not(.default)::file-selector-button, .button.bordered:active, input.bordered[type=file]:active:not(.default)::file-selector-button {
   box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
+  transform: translateY(calc(var(--flatify__border-width) * 1.2));
 }
 .checkbox-button:checked + .button.outline, .checkbox-button:checked + input.outline[type=file]:not(.default)::file-selector-button, .radio-button:checked + .button.outline, .radio-button:checked + input.outline[type=file]:not(.default)::file-selector-button, .checkbox-button:checked + .button.bordered, .checkbox-button:checked + input.bordered[type=file]:not(.default)::file-selector-button, .radio-button:checked + .button.bordered, .radio-button:checked + input.bordered[type=file]:not(.default)::file-selector-button {
   box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
+  transform: translateY(calc(var(--flatify__border-width) * 1.2));
 }
 .button[class*=style-][class*=light], input[class*=style-][class*=light][type=file]:not(.default)::file-selector-button {
   --flatify__button-bg-color: var(--flatify__local-bg-color);
@@ -1078,7 +1080,7 @@ th {
   margin: 0.25em 0.125em;
 }
 .button-group .button, .button-group input[type=file]:not(.default)::file-selector-button {
-  margin: -1px;
+  margin: 0 -1px;
   border-radius: 0;
 }
 .button-group:not(.vertical) .button:first-child, .button-group:not(.vertical) input[type=file]:first-child:not(.default)::file-selector-button {
@@ -1146,6 +1148,7 @@ th {
 :root {
   --flatify__menu-bg-color: var(--flatify__bg-color);
   --flatify__menu-txt-color: var(--flatify__txt-color);
+  --flatify__menu-border-color: var(--flatify__bg-color-darker);
   --flatify__menu-item-bg-color: var(--flatify__bg-color);
   --flatify__menu-item-bg-color__hover: var(--flatify__bg-color-dark);
   --flatify__menu-item-bg-color__active: var(--flatify__bg-color-dark);
@@ -1154,18 +1157,30 @@ th {
   --flatify__menu-item-txt-color__hover: var(--flatify__txt-color);
   --flatify__menu-item-txt-color__active: var(--flatify__txt-color);
   --flatify__menu-item-txt-color__focus: var(--flatify__txt-color);
-  --flatify__submenu-border-color: var(--flatify__bg-color-darker);
 }
 
 .menu-items-wrapper {
+  --flatify__local-txt-color: var(--flatify__menu-txt-color);
+  --flatify__local-bg-color: var(--flatify__menu-item-bg-color);
+  --flatify__local-border-color: var(--flatify__menu-border-color);
   padding: 0.64em;
   margin: 0;
   list-style: none;
 }
+.menu-items-wrapper[class*=style-] {
+  --flatify__menu-item-bg-color: var(--flatify__local-bg-color);
+  --flatify__menu-item-bg-color__hover: var(--flatify__local-bg-color);
+  --flatify__menu-item-bg-color__active: var(--flatify__local-bg-color);
+  --flatify__menu-item-bg-color__focus: var(--flatify__local-bg-color);
+  --flatify__menu-item-txt-color: var(--flatify__local-txt-color);
+  --flatify__menu-item-txt-color__hover: var(--flatify__local-txt-color);
+  --flatify__menu-item-txt-color__active: var(--flatify__local-txt-color);
+  --flatify__menu-item-txt-color__focus: var(--flatify__local-txt-color);
+}
 .menu-items-wrapper .menu-item {
   margin: 0 0.25em;
-  color: var(--flatify__menu-item-txt-color);
-  background: var(--flatify__menu-item-bg-color);
+  color: var(--flatify__local-txt-color);
+  background: var(--flatify__local-bg-color);
   border-radius: calc(var(--flatify__border-radius) * 0.75);
   transition: all var(--flatify__simple-transition);
 }
@@ -1179,18 +1194,21 @@ th {
 .menu-items-wrapper .menu-item:hover {
   color: var(--flatify__menu-item-txt-color__hover);
   background: var(--flatify__menu-item-bg-color__hover);
+  filter: brightness(95%);
 }
 .menu-items-wrapper .menu-item:active {
   color: var(--flatify__menu-item-txt-color__active);
   background: var(--flatify__menu-item-bg-color__active);
+  filter: brightness(95%);
 }
 .menu-items-wrapper .menu-item:focus-within {
   color: var(--flatify__menu-item-txt-color__focus);
   background: var(--flatify__menu-item-bg-color__focus);
+  filter: brightness(95%);
 }
 .menu-items-wrapper.dropdown, .menu-items-wrapper.submenu {
   min-width: 12em;
-  border: var(--flatify__border-width) solid var(--flatify__submenu-border-color);
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
 .menu-items-wrapper.dropdown .menu-item, .menu-items-wrapper.submenu .menu-item {
@@ -1198,7 +1216,7 @@ th {
   margin: 0;
 }
 .menu-items-wrapper.dropdown .menu-item:not(:last-child), .menu-items-wrapper.submenu .menu-item:not(:last-child) {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.32em;
 }
 .menu-items-wrapper.dropdown .menu-item a, .menu-items-wrapper.submenu .menu-item a {
   padding: 0.75em 1.25em;
@@ -1212,32 +1230,32 @@ th {
   width: 0;
   border-width: 0 0.64em 0.64em 0.64em;
   border-style: solid;
-  border-color: var(--flatify__menu-bg-color) transparent;
-  filter: drop-shadow(0 calc(var(--flatify__border-width) * -1) 0 var(--flatify__submenu-border-color));
+  border-color: var(--flatify__local-bg-color) transparent;
+  filter: drop-shadow(0 calc(var(--flatify__border-width) * -1) 0 var(--flatify__local-border-color));
 }
 .menu-items-wrapper.dropdown.at-top:before, .menu-items-wrapper.submenu.at-top:before {
   top: unset;
   bottom: -0.5em;
   border-width: 0.64em 0.64em 0 0.64em;
-  filter: drop-shadow(0 var(--flatify__border-width) 0 var(--flatify__submenu-border-color));
+  filter: drop-shadow(0 var(--flatify__border-width) 0 var(--flatify__local-border-color));
 }
 .menu-items-wrapper.dropdown.at-left:before, .menu-items-wrapper.submenu.at-left:before {
   top: unset;
   left: -0.5em;
   border-width: 0.64em 0.64em 0.64em 0;
-  border-color: transparent var(--flatify__menu-bg-color);
-  filter: drop-shadow(calc(var(--flatify__border-width) * -1) 0 0 var(--flatify__submenu-border-color));
+  border-color: transparent var(--flatify__local-bg-color);
+  filter: drop-shadow(calc(var(--flatify__border-width) * -1) 0 0 var(--flatify__local-border-color));
 }
 .menu-items-wrapper.dropdown.at-right:before, .menu-items-wrapper.submenu.at-right:before {
   top: unset;
   right: -0.5em;
   border-width: 0.64em 0 0.64em 0.64em;
-  border-color: transparent var(--flatify__menu-bg-color);
-  filter: drop-shadow(var(--flatify__border-width) 0 0 var(--flatify__submenu-border-color));
+  border-color: transparent var(--flatify__local-bg-color);
+  filter: drop-shadow(var(--flatify__border-width) 0 0 var(--flatify__local-border-color));
 }
 
 .menu-items-wrapper:not(.dropdown) {
-  background: var(--flatify__menu-bg-color);
+  background: var(--flatify__local-bg-color);
 }
 
 :root {
@@ -1283,7 +1301,7 @@ th {
   margin: 0 auto;
   color: var(--flatify__modal-txt-color);
   background: var(--flatify__modal-bg-color);
-  border: var(--flatify__border-width) solid var(--flatify__local-border-color, --flatify__local-border-color);
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
 .modal.modal-sm {
@@ -1367,10 +1385,10 @@ th {
   animation: var(--flatify__modal-animation-right-hide);
 }
 .modal.bordered .modal-header {
-  border-bottom: var(--flatify__border-width) solid var(--flatify__local-border-color, --flatify__local-border-color);
+  border-bottom: var(--flatify__border-width) solid var(--flatify__local-border-color);
 }
 .modal.bordered .modal-footer {
-  border-top: var(--flatify__border-width) solid var(--flatify__local-border-color, --flatify__local-border-color);
+  border-top: var(--flatify__border-width) solid var(--flatify__local-border-color);
 }
 .modal[class*=width-] {
   max-width: unset;

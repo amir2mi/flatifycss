@@ -1,6 +1,7 @@
 :root {
 	--#{$CSS_VAR_PFX}menu-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
 	--#{$CSS_VAR_PFX}menu-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}menu-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 
 	--#{$CSS_VAR_PFX}menu-item-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
 	--#{$CSS_VAR_PFX}menu-item-bg-color__hover: var(--#{$CSS_VAR_PFX}bg-color-dark);
@@ -11,18 +12,30 @@
 	--#{$CSS_VAR_PFX}menu-item-txt-color__hover: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}menu-item-txt-color__active: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}menu-item-txt-color__focus: var(--#{$CSS_VAR_PFX}txt-color);
-
-	--#{$CSS_VAR_PFX}submenu-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 }
 .menu-items-wrapper {
+	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}menu-txt-color);
+	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}menu-item-bg-color);
+	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}menu-border-color);
 	padding: 0.64em;
 	margin: 0;
 	list-style: none;
 
+	&[class*="style-"] {
+		--#{$CSS_VAR_PFX}menu-item-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
+		--#{$CSS_VAR_PFX}menu-item-bg-color__hover: var(--#{$CSS_VAR_PFX}local-bg-color);
+		--#{$CSS_VAR_PFX}menu-item-bg-color__active: var(--#{$CSS_VAR_PFX}local-bg-color);
+		--#{$CSS_VAR_PFX}menu-item-bg-color__focus: var(--#{$CSS_VAR_PFX}local-bg-color);
+		--#{$CSS_VAR_PFX}menu-item-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
+		--#{$CSS_VAR_PFX}menu-item-txt-color__hover: var(--#{$CSS_VAR_PFX}local-txt-color);
+		--#{$CSS_VAR_PFX}menu-item-txt-color__active: var(--#{$CSS_VAR_PFX}local-txt-color);
+		--#{$CSS_VAR_PFX}menu-item-txt-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
+	}
+
 	.menu-item {
 		margin: 0 0.25em;
-		color: var(--#{$CSS_VAR_PFX}menu-item-txt-color);
-		background: var(--#{$CSS_VAR_PFX}menu-item-bg-color);
+		color: var(--#{$CSS_VAR_PFX}local-txt-color);
+		background: var(--#{$CSS_VAR_PFX}local-bg-color);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
 		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
@@ -37,23 +50,26 @@
 		&:hover {
 			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__hover);
 			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__hover);
+			filter: brightness(95%);
 		}
 
 		&:active {
 			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__active);
 			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__active);
+			filter: brightness(95%);
 		}
 
 		&:focus-within {
 			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__focus);
 			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__focus);
+			filter: brightness(95%);
 		}
 	}
 
 	&.dropdown,
 	&.submenu {
 		min-width: 12em;
-		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}submenu-border-color);
+		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
 		border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
 		.menu-item {
@@ -61,7 +77,7 @@
 			margin: 0;
 
 			&:not(:last-child) {
-				margin-bottom: 0.25em;
+				margin-bottom: 0.32em;
 			}
 
 			a {
@@ -84,9 +100,9 @@
 			width: 0;
 			border-width: 0 0.64em 0.64em 0.64em;
 			border-style: solid;
-			border-color: var(--#{$CSS_VAR_PFX}menu-bg-color) transparent;
+			border-color: var(--#{$CSS_VAR_PFX}local-bg-color) transparent;
 			filter: drop-shadow(
-				0 calc(var(--#{$CSS_VAR_PFX}border-width) * -1) 0 var(--#{$CSS_VAR_PFX}submenu-border-color)
+				0 calc(var(--#{$CSS_VAR_PFX}border-width) * -1) 0 var(--#{$CSS_VAR_PFX}local-border-color)
 			);
 		}
 
@@ -94,16 +110,16 @@
 			top: unset;
 			bottom: -0.5em;
 			border-width: 0.64em 0.64em 0 0.64em;
-			filter: drop-shadow(0 var(--#{$CSS_VAR_PFX}border-width) 0 var(--#{$CSS_VAR_PFX}submenu-border-color));
+			filter: drop-shadow(0 var(--#{$CSS_VAR_PFX}border-width) 0 var(--#{$CSS_VAR_PFX}local-border-color));
 		}
 
 		&.at-left:before {
 			top: unset;
 			left: -0.5em;
 			border-width: 0.64em 0.64em 0.64em 0;
-			border-color: transparent var(--#{$CSS_VAR_PFX}menu-bg-color);
+			border-color: transparent var(--#{$CSS_VAR_PFX}local-bg-color);
 			filter: drop-shadow(
-				calc(var(--#{$CSS_VAR_PFX}border-width) * -1) 0 0 var(--#{$CSS_VAR_PFX}submenu-border-color)
+				calc(var(--#{$CSS_VAR_PFX}border-width) * -1) 0 0 var(--#{$CSS_VAR_PFX}local-border-color)
 			);
 		}
 
@@ -111,12 +127,12 @@
 			top: unset;
 			right: -0.5em;
 			border-width: 0.64em 0 0.64em 0.64em;
-			border-color: transparent var(--#{$CSS_VAR_PFX}menu-bg-color);
-			filter: drop-shadow(var(--#{$CSS_VAR_PFX}border-width) 0 0 var(--#{$CSS_VAR_PFX}submenu-border-color));
+			border-color: transparent var(--#{$CSS_VAR_PFX}local-bg-color);
+			filter: drop-shadow(var(--#{$CSS_VAR_PFX}border-width) 0 0 var(--#{$CSS_VAR_PFX}local-border-color));
 		}
 	}
 }
 
 .menu-items-wrapper:not(.dropdown) {
-	background: var(--#{$CSS_VAR_PFX}menu-bg-color);
+	background: var(--#{$CSS_VAR_PFX}local-bg-color);
 }
