@@ -1163,9 +1163,10 @@ th {
   --flatify__local-txt-color: var(--flatify__menu-txt-color);
   --flatify__local-bg-color: var(--flatify__menu-item-bg-color);
   --flatify__local-border-color: var(--flatify__menu-border-color);
+  list-style: none;
   padding: 0.64em;
   margin: 0;
-  list-style: none;
+  background: var(--flatify__local-bg-color);
 }
 .menu-items-wrapper[class*=style-] {
   --flatify__menu-item-bg-color: var(--flatify__local-bg-color);
@@ -1197,9 +1198,9 @@ th {
   filter: brightness(95%);
 }
 .menu-items-wrapper .menu-item:active {
-  color: var(--flatify__menu-item-txt-color__active);
-  background: var(--flatify__menu-item-bg-color__active);
-  filter: brightness(95%);
+  color: var(--flatify__menu-item-txt-color__active) !important;
+  background: var(--flatify__menu-item-bg-color__active) !important;
+  filter: brightness(95%) !important;
 }
 .menu-items-wrapper .menu-item:focus-within {
   color: var(--flatify__menu-item-txt-color__focus);
@@ -1208,6 +1209,7 @@ th {
 }
 .menu-items-wrapper.dropdown, .menu-items-wrapper.submenu {
   min-width: 12em;
+  background: var(--flatify__local-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }

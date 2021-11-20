@@ -29,7 +29,7 @@ List of work in progress:
 -   [x] Button
 -   [x] Close Button
 -   [x] Button group
--   [ ] Dropdowns
+-   [x] Dropdowns
 -   [ ] Loading
 -   [x] Modal
 -   [ ] Nav

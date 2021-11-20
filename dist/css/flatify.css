@@ -1355,9 +1355,10 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
   --flatify__local-txt-color: var(--flatify__menu-txt-color);
   --flatify__local-bg-color: var(--flatify__menu-item-bg-color);
   --flatify__local-border-color: var(--flatify__menu-border-color);
+  list-style: none;
   padding: 0.64em;
   margin: 0;
-  list-style: none;
+  background: var(--flatify__local-bg-color);
 }
 .menu-items-wrapper[class*=style-] {
   --flatify__menu-item-bg-color: var(--flatify__local-bg-color);
@@ -1392,10 +1393,10 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
           filter: brightness(95%);
 }
 .menu-items-wrapper .menu-item:active {
-  color: var(--flatify__menu-item-txt-color__active);
-  background: var(--flatify__menu-item-bg-color__active);
-  -webkit-filter: brightness(95%);
-          filter: brightness(95%);
+  color: var(--flatify__menu-item-txt-color__active) !important;
+  background: var(--flatify__menu-item-bg-color__active) !important;
+  -webkit-filter: brightness(95%) !important;
+          filter: brightness(95%) !important;
 }
 .menu-items-wrapper .menu-item:focus-within {
   color: var(--flatify__menu-item-txt-color__focus);
@@ -1405,6 +1406,7 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
 }
 .menu-items-wrapper.dropdown, .menu-items-wrapper.submenu {
   min-width: 12em;
+  background: var(--flatify__local-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
