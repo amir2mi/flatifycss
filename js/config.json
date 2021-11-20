@@ -1,3 +1,4 @@
 {
-	"enableLogging": true
+	"enableLogging": true,
+	"supportLTR": true
 }

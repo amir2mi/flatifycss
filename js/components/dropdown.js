@@ -1,5 +1,6 @@
 import $ from "../utils/vent";
 import logger from "../utils/logger";
+import config from "../config.json";
 
 /**
  * Show given dropdown
@@ -13,7 +14,13 @@ function showDropdown(dropdown, toggle) {
 	}
 
 	// set CSS a variable for dropdown x-axis position
-	dropdown.style.setProperty("--dropdown-arrow-x-offset", toggle.offsetLeft - 15 + toggle.offsetWidth / 2 + "px");
+	let arrowOffset;
+	if (config.supportLTR) {
+		arrowOffset = toggle.offsetLeft - 15 + toggle.offsetWidth / 2;
+	} else {
+		arrowOffset = toggle.parentElement.offsetWidth - toggle.offsetWidth - 15 + toggle.offsetWidth / 2;
+	}
+	dropdown.style.setProperty("--dropdown-arrow-x-offset", arrowOffset + "px");
 
 	// show dropdown
 	dropdown.classList.add("show");

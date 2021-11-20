@@ -57,7 +57,7 @@
 
 // the arrow of dropdown toggle should have space only when it is a single button not when it is inside a button group
 .dropdown-wrapper > .dropdown-toggle {
-	&.arrow-button {
+	&.arrow-button:not(:empty) {
 		&:after {
 			@if $SUPPORT_LTR {
 				margin-left: 0.5em;

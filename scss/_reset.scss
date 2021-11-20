@@ -27,6 +27,10 @@
 			scroll-behavior: smooth;
 		}
 	}
+
+	@if not $SUPPORT_LTR {
+		direction: rtl;
+	}
 }
 
 // *** Body
@@ -40,10 +44,6 @@ body {
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: var(--#{$CSS_VAR_PFX}tap-highlight-color);
 	text-rendering: optimizeLegibility;
-
-	@if not $SUPPORT_LTR {
-		direction: rtl;
-	}
 }
 
 // *** Typography
