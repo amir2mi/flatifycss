@@ -1124,6 +1124,9 @@ th {
   color: var(--flatify__dropdown-txt-color);
   background: var(--flatify__dropdown-bg-color);
 }
+.dropdown:before {
+  left: var(--dropdown-arrow-x-offset) !important;
+}
 .dropdown.show {
   display: block;
   animation: var(--flatify__dropdown-animation-show);

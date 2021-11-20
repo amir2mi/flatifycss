@@ -32,6 +32,14 @@
 	color: var(--#{$CSS_VAR_PFX}dropdown-txt-color);
 	background: var(--#{$CSS_VAR_PFX}dropdown-bg-color);
 
+	&:before {
+		@if $SUPPORT_LTR {
+			left: var(--dropdown-arrow-x-offset) !important;
+		} @else {
+			right: var(--dropdown-arrow-x-offset) !important;
+		}
+	}
+
 	&.show {
 		display: block;
 		animation: var(--#{$CSS_VAR_PFX}dropdown-animation-show);

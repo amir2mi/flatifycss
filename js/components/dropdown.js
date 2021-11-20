@@ -12,6 +12,9 @@ function showDropdown(dropdown, toggle) {
 		toggle = findDropdownToggle(dropdown);
 	}
 
+	// set CSS a variable for dropdown x-axis position
+	dropdown.style.setProperty("--dropdown-arrow-x-offset", toggle.offsetLeft - 15 + toggle.offsetWidth / 2 + "px");
+
 	// show dropdown
 	dropdown.classList.add("show");
 
