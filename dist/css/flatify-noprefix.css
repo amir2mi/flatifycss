@@ -1015,7 +1015,7 @@ th {
   position: relative;
   z-index: 1;
   display: inline-block;
-  width: 2em;
+  width: 1.2em;
   height: 1.2em;
   background-color: currentColor;
   mask: var(--flatify__arrow-down-icon) no-repeat 50% 50%;
@@ -1134,6 +1134,10 @@ th {
 .dropdown.at-top {
   top: unset;
   bottom: var(--flatify__dropdown-offset);
+}
+
+.dropdown-wrapper > .dropdown-toggle.arrow-button:after {
+  margin-left: 0.5em;
 }
 
 :root {

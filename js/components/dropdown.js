@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	// close active dropdowns when outside of the dropdown area is clicked, it respects [data-dropdown-auto-close] option.
-	document.onclick = function (e) {
+	document.addEventListener("click", function (e) {
 		// select active dropdowns which has [data-dropdown-auto-close] attribute = outside || true || default.
 		const activeDropdowns = document.querySelectorAll(
 			".dropdown.show:not([data-dropdown-auto-close]), .dropdown.show[data-dropdown-auto-close='outside'], .dropdown.show[data-dropdown-auto-close='true']"
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				hideDropdown(dropdown, toggle);
 			}
 		});
-	};
+	});
 
 	// close active dropdowns when ESC key is pressed
 	document.addEventListener("keyup", (e) => {

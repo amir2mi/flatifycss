@@ -46,3 +46,16 @@
 		bottom: var(--#{$CSS_VAR_PFX}dropdown-offset);
 	}
 }
+
+// the arrow of dropdown toggle should have space only when it is a single button not when it is inside a button group
+.dropdown-wrapper > .dropdown-toggle {
+	&.arrow-button {
+		&:after {
+			@if $SUPPORT_LTR {
+				margin-left: 0.5em;
+			} @else {
+				margin-right: 0.5em;
+			}
+		}
+	}
+}
