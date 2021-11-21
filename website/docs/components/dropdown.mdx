@@ -5,14 +5,14 @@ sidebar_position: 6
 
 import PreviewBox from "../../src/components/preview-box";
 
-Dropdowns typically provide a list of items to interact with, however it is also possible to have a complex UI inside dropdowns.
+Dropdowns typically provide a list of items to interact with, however, it is possible to have a complex UI inside dropdowns. Flatify CSS uses [Popper](https://popper.js.org/) library for positioning dropdowns dynamically, so dropdowns need this library to work as expected and you should include it inside your webpage before Flatify CSS's JavaScript file.
 
 ## A simple dropdown
 
-To create a dropdown we need a [button](docs/components/button), [menu items](docs/components/menu), and also an [arrow button](docs/components/arrow-button), these are basics and they should have some special classes to work as expected.
+To create a simple dropdown, we need a [button](docs/components/button), [menu items](docs/components/menu), and also an [arrow button](docs/components/arrow-button), these are basics and they should have some special classes to work that you can see in the example below.
 
 <PreviewBox
-	height="420px"
+	height="430px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,8 @@ To create a dropdown we need a [button](docs/components/button), [menu items](do
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Dropdown</title>
-		 <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+		<script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
 	</head>
 	<body>
         <div class="dropdown-wrapper">
@@ -42,8 +43,8 @@ To create a dropdown we need a [button](docs/components/button), [menu items](do
 				<li class="menu-item"><a href="#">Rate it!</a></li>
 			</ul>
 		</div>
-		<br>
-		<p>
+		<br><br>
+		<p class="opacity-50">
 			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
 			Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
 			Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
