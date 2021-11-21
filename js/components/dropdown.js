@@ -8,8 +8,9 @@ import logger from "../utils/logger";
  * @param {Object} toggle
  */
 function createDropdown(dropdown, toggle) {
+	// return if Popper was not loaded
 	if (typeof Popper === "undefined") {
-		throw new TypeError("Dropdowns require Popper (https://popper.js.org)");
+		return logger("error", "Dropdowns require Popper (https://popper.js.org)");
 	}
 
 	Popper.createPopper(toggle, dropdown, {

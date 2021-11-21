@@ -10,6 +10,7 @@ import config from "../config";
  */
 export default function logger(type, message, data) {
 	if (config.enableLogging === true) {
+		message = `${config.name}: ${message}`;
 		return data ? console[type](message, data) : console[type](message);
 	}
 }
