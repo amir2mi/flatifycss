@@ -12,7 +12,7 @@ Dropdowns typically provide a list of items to interact with, however it is also
 To create a dropdown we need a [button](docs/components/button), [menu items](docs/components/menu), and also an [arrow button](docs/components/arrow-button), these are basics and they should have some special classes to work as expected.
 
 <PreviewBox
-	height="250px"
+	height="420px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -25,40 +25,47 @@ To create a dropdown we need a [button](docs/components/button), [menu items](do
 		 <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
 	</head>
 	<body>
-       <div class="dropdown-wrapper">
-			<button
-				class="button dropdown-toggle arrow-button"
-				id="my-dropdown-toggle"
-				aria-expanded="false"
-				aria-label="Open dropdown"
-			></button>
+        <div class="dropdown-wrapper">
+			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button"aria-expanded="false">
+				Open dropdown at bottom
+			</button>
 			<ul
 				class="dropdown menu-items-wrapper"
 				aria-labelledby="my-dropdown-toggle"
 			>
-				<li class="menu-item"><a href="#">Item 1</a></li>
-				<li class="menu-item"><a href="#">Item 2</a></li>
-				<li class="menu-item"><a href="#">Item 3</a></li>
-				<li class="menu-item"><a href="#">Item 4</a></li>
-				<li class="menu-item"><a href="#">Item 5</a></li>
+				<li class="menu-item heading">My Account</li>
+				<li class="menu-item"><a href="#">Sign up</a></li>
+				<li class="menu-item"><a href="#">Login</a></li>
+				<li role="separator" class="menu-item"></li>
+				<li class="menu-item"><a href="#">About us</a></li>
+				<li class="menu-item"><a href="#">Contribute</a></li>
+				<li class="menu-item"><a href="#">Rate it!</a></li>
 			</ul>
 		</div>
-     	<div class="dropdown-wrapper">
-			<button
-				class="button dropdown-toggle arrow-button arrow-top"
-				id="my-dropdown-toggle"
-				aria-expanded="false"
-				aria-label="Open dropdown"
-			></button>
+		<br>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+			Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+			Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
+			Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+			Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.
+		</p>
+		<br>
+     	<div class="dropdown-wrapper push-right" style="display: table">
+			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button arrow-top"aria-expanded="false">
+				Open dropdown at top
+			</button>
 			<ul
 				class="dropdown menu-items-wrapper at-top"
 				aria-labelledby="my-dropdown-toggle"
 			>
-				<li class="menu-item"><a href="#">Item 1</a></li>
-				<li class="menu-item"><a href="#">Item 2</a></li>
-				<li class="menu-item"><a href="#">Item 3</a></li>
-				<li class="menu-item"><a href="#">Item 4</a></li>
-				<li class="menu-item"><a href="#">Item 5</a></li>
+				<li class="menu-item heading">My Account</li>
+				<li class="menu-item"><a href="#">Sign up</a></li>
+				<li class="menu-item"><a href="#">Login</a></li>
+				<li role="separator" class="menu-item"></li>
+				<li class="menu-item"><a href="#">About us</a></li>
+				<li class="menu-item"><a href="#">Contribute</a></li>
+				<li class="menu-item"><a href="#">Rate it!</a></li>
 			</ul>
 		</div>
     </body>
