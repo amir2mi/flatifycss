@@ -9,7 +9,7 @@ Dropdowns typically provide a list of items to interact with, however, it is pos
 
 ## A simple dropdown
 
-To create a simple dropdown, we need a [button](docs/components/button), [menu items](docs/components/menu), and also an [arrow button](docs/components/arrow-button), these are basics and they should have some special classes to work that you can see in the example below.
+To create a simple dropdown, we need a [button](docs/components/button) with `.dropdown-toggle` class, [menu](docs/components/menu) with `.dropdown` class, also they should be wrapped by `.dropdown-wrapper` class. These are basics and they should have some special classes to work that you can see in the example below.
 
 <PreviewBox
 	height="430px"
@@ -27,8 +27,8 @@ To create a simple dropdown, we need a [button](docs/components/button), [menu i
 	</head>
 	<body>
         <div class="dropdown-wrapper">
-			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button"aria-expanded="false">
-				Open dropdown at bottom
+			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+				Dropdown at bottom
 			</button>
 			<ul
 				class="dropdown menu-items-wrapper"
@@ -37,10 +37,11 @@ To create a simple dropdown, we need a [button](docs/components/button), [menu i
 				<li class="menu-item heading">My Account</li>
 				<li class="menu-item"><a href="#">Sign up</a></li>
 				<li class="menu-item"><a href="#">Login</a></li>
-				<li role="separator" class="menu-item"></li>
+				<li role="separator" class="menu-item separator"></li>
 				<li class="menu-item"><a href="#">About us</a></li>
 				<li class="menu-item"><a href="#">Contribute</a></li>
 				<li class="menu-item"><a href="#">Rate it!</a></li>
+				<li aria-hidden="true"><span class="pointer-arrow"></span></li>
 			</ul>
 		</div>
 		<br><br>
@@ -54,19 +55,21 @@ To create a simple dropdown, we need a [button](docs/components/button), [menu i
 		<br>
      	<div class="dropdown-wrapper push-right" style="display: table">
 			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button arrow-top"aria-expanded="false">
-				Open dropdown at top
+				Dropdown at top
 			</button>
 			<ul
-				class="dropdown menu-items-wrapper at-top"
+				class="dropdown menu-items-wrapper"
 				aria-labelledby="my-dropdown-toggle"
+				data-dropdown-direction="top"
 			>
 				<li class="menu-item heading">My Account</li>
 				<li class="menu-item"><a href="#">Sign up</a></li>
 				<li class="menu-item"><a href="#">Login</a></li>
-				<li role="separator" class="menu-item"></li>
+				<li role="separator" class="menu-item separator"></li>
 				<li class="menu-item"><a href="#">About us</a></li>
 				<li class="menu-item"><a href="#">Contribute</a></li>
 				<li class="menu-item"><a href="#">Rate it!</a></li>
+				<li aria-hidden="true"><span class="pointer-arrow"></span></li>
 			</ul>
 		</div>
     </body>
@@ -74,3 +77,159 @@ To create a simple dropdown, we need a [button](docs/components/button), [menu i
 </html>
 '
 />
+
+```html title="index.html"
+<div class="dropdown-wrapper">
+	<!-- a button to toggle show/hide of dropdown -->
+	<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+		Dropdown at bottom
+	</button>
+	<!-- dropdown: in this case a menu -->
+	<ul class="dropdown menu-items-wrapper" aria-labelledby="my-dropdown-toggle">
+		<li class="menu-item heading">My Account</li>
+		<li class="menu-item"><a href="#">Sign up</a></li>
+		<li class="menu-item"><a href="#">Login</a></li>
+		<li role="separator" class="menu-item separator"></li>
+		<li class="menu-item"><a href="#">About us</a></li>
+		<li class="menu-item"><a href="#">Contribute</a></li>
+		<li class="menu-item"><a href="#">Rate it!</a></li>
+		<!-- dropdown arrow which is optional -->
+		<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+	</ul>
+</div>
+```
+
+:::info Accessibility matters!
+There is an attribute called `aria-labelledby` you can read about [its use-cases](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute). Simply, it describes dropdown with its toggle text, because it has the ID of the dropdown toggle button, so they are connected like form label `for` attribute.
+:::
+
+## Directions
+
+We call them dropdown but they can come from left, right, or top as well. To set a position for dropdown there is an HTML attribute called `data-dropdown-direction`, it accepts `top`, `bottom` (as default), `right` or `left` and should be added to the `.dropdown` element.
+
+<PreviewBox
+	height="450px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Dropdown</title>
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+		<script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+	</head>
+	<body>
+		<div class="flex-center" style="justify-content: space-between">
+			<div class="dropdown-wrapper">
+				<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+					Dropdown at bottom
+				</button>
+				<ul
+					class="dropdown menu-items-wrapper"
+					aria-labelledby="my-dropdown-toggle"
+				>
+					<li class="menu-item heading">My Account</li>
+					<li class="menu-item"><a href="#">Sign up</a></li>
+					<li class="menu-item"><a href="#">Login</a></li>
+					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+				</ul>
+			</div>
+			<div class="dropdown-wrapper">
+				<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+					Dropdown at left
+				</button>
+				<ul
+					class="dropdown menu-items-wrapper"
+					aria-labelledby="my-dropdown-toggle"
+						data-dropdown-direction="left"
+				>
+					<li class="menu-item heading">My Account</li>
+					<li class="menu-item"><a href="#">Sign up</a></li>
+					<li class="menu-item"><a href="#">Login</a></li>
+					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+				</ul>
+			</div>
+		</div>
+    	<br><br>
+    	<p class="opacity-50">
+    		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+    		Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+    		Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
+    		Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+    		Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.
+    	</p>
+    	<br>
+		<div class="flex-center" style="justify-content: space-between">
+			<div class="dropdown-wrapper">
+				<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+					Dropdown at right
+				</button>
+				<ul
+					class="dropdown menu-items-wrapper"
+					aria-labelledby="my-dropdown-toggle"
+						data-dropdown-direction="right"
+				>
+					<li class="menu-item heading">My Account</li>
+					<li class="menu-item"><a href="#">Sign up</a></li>
+					<li class="menu-item"><a href="#">Login</a></li>
+					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+				</ul>
+			</div>
+			<div class="dropdown-wrapper">
+				<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+					Dropdown at top
+				</button>
+				<ul
+					class="dropdown menu-items-wrapper"
+					aria-labelledby="my-dropdown-toggle"
+						data-dropdown-direction="top"
+				>
+					<li class="menu-item heading">My Account</li>
+					<li class="menu-item"><a href="#">Sign up</a></li>
+					<li class="menu-item"><a href="#">Login</a></li>
+					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+				</ul>
+			</div>
+		</div>
+    </body>
+
+</html>
+'
+/>
+
+```html {3,10,17,24} title="index.html"
+<div class="dropdown-wrapper">
+	<button ...></button>
+	<ul ... data-dropdown-direction="bottom">
+		...
+	</ul>
+</div>
+
+<div class="dropdown-wrapper">
+	<button ...></button>
+	<ul ... data-dropdown-direction="left">
+		...
+	</ul>
+</div>
+
+<div class="dropdown-wrapper">
+	<button ...></button>
+	<ul ... data-dropdown-direction="top">
+		...
+	</ul>
+</div>
+
+<div class="dropdown-wrapper">
+	<button ...></button>
+	<ul ... data-dropdown-direction="right">
+		...
+	</ul>
+</div>
+```
+
+:::success Keyboard friendly
+Note that dropdowns are keyboard friendly, since pressing <kbd>ESC</kbd> will hide active dropdowns.
+:::

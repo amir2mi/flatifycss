@@ -14,7 +14,7 @@ function createDropdown(dropdown, toggle) {
 	}
 
 	Popper.createPopper(toggle, dropdown, {
-		placement: dropdown.getAttribute("data-dropdown-placement") || "bottom",
+		placement: dropdown.getAttribute("data-dropdown-direction") || "bottom",
 		modifiers: [
 			{
 				name: "computeStyles",
