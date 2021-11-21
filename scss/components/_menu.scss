@@ -74,8 +74,7 @@
 			padding: 0.75em;
 		}
 
-		&.separator,
-		&[role="separator"] {
+		&.separator{
 			height: var(--#{$CSS_VAR_PFX}border-width);
 			margin: 0.5em 0 !important;
 			background: var(--#{$CSS_VAR_PFX}local-border-color) !important;
@@ -87,7 +86,6 @@
 	&.submenu {
 		min-width: 12em;
 		background: var(--#{$CSS_VAR_PFX}local-bg-color);
-
 		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
 		border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
@@ -104,36 +102,37 @@
 			}
 		}
 
-		&:before {
+		.pointer-arrow,
+		&[class*="arrow-"]:before {
 			content: " ";
 			position: absolute;
-			top: -0.5em;
-
-			@if $SUPPORT_LTR {
-				left: 2em;
-			} @else {
-				right: 2em;
-			}
-
 			height: 0;
 			width: 0;
-			border-width: 0 0.64em 0.64em 0.64em;
 			border-style: solid;
+			will-change: top, bottom, left, right;
+		}
+
+		&[data-popper-placement="bottom"] .pointer-arrow,
+		&.arrow-top:before {
+			top: -0.5em;
+			bottom: -0.5em;
+			border-width: 0 0.64em 0.64em 0.64em;
 			border-color: var(--#{$CSS_VAR_PFX}local-bg-color) transparent;
 			filter: drop-shadow(
 				0 calc(var(--#{$CSS_VAR_PFX}border-width) * -1) 0 var(--#{$CSS_VAR_PFX}local-border-color)
 			);
 		}
 
-		&.at-top:before {
-			top: unset;
+		&[data-popper-placement="top"] .pointer-arrow,
+		&.arrow-bottom:before {
 			bottom: -0.5em;
 			border-width: 0.64em 0.64em 0 0.64em;
+			border-color: var(--#{$CSS_VAR_PFX}local-bg-color) transparent;
 			filter: drop-shadow(0 var(--#{$CSS_VAR_PFX}border-width) 0 var(--#{$CSS_VAR_PFX}local-border-color));
 		}
 
-		&.at-left:before {
-			top: unset;
+		&[data-popper-placement="right"] .pointer-arrow,
+		&.arrow-left:before {
 			left: -0.5em;
 			border-width: 0.64em 0.64em 0.64em 0;
 			border-color: transparent var(--#{$CSS_VAR_PFX}local-bg-color);
@@ -142,8 +141,8 @@
 			);
 		}
 
-		&.at-right:before {
-			top: unset;
+		&[data-popper-placement="left"] .pointer-arrow,
+		&.arrow-right:before {
 			right: -0.5em;
 			border-width: 0.64em 0 0.64em 0.64em;
 			border-color: transparent var(--#{$CSS_VAR_PFX}local-bg-color);

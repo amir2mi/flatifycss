@@ -13,40 +13,40 @@
 		mask: var(--#{$CSS_VAR_PFX}arrow-down-icon) no-repeat 50% 50%;
 		-webkit-mask: var(--#{$CSS_VAR_PFX}arrow-down-icon) no-repeat 50% 50%;
 		will-change: transform;
-		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+		transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
 	}
 
 	&.arrow-flip:after {
-		transform: rotateX(180deg);
+		transform: rotate(180deg);
 	}
 
 	&.arrow-top {
 		&:after {
-			transform: rotateX(180deg);
+			transform: rotate(180deg);
 		}
 
 		&.arrow-flip:after {
-			transform: rotateX(0);
+			transform: rotate(0);
 		}
 	}
 
 	&.arrow-left {
 		&:after {
-			transform: rotateY(90deg);
+			transform: rotate(90deg);
 		}
 
 		&.arrow-flip:after {
-			transform: rotateY(-90deg);
+			transform: rotate(-90deg);
 		}
 	}
 
 	&.arrow-right {
 		&:after {
-			transform: rotateY(-90deg);
+			transform: rotate(-90deg);
 		}
 
 		&.arrow-flip:after {
-			transform: rotateY(90deg);
+			transform: rotate(90deg);
 		}
 	}
 }

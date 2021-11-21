@@ -1,7 +1,4 @@
 :root {
-	--#{$CSS_VAR_PFX}dropdown-offset: 4.2em;
-	--#{$CSS_VAR_PFX}dropdown-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
-	--#{$CSS_VAR_PFX}dropdown-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
 	--#{$CSS_VAR_PFX}dropdown-show-animation-duration: #{$DROPDOWN_SHOW_ANIMATION_DURATION};
 	--#{$CSS_VAR_PFX}dropdown-hide-animation-duration: #{$DROPDOWN_HIDE_ANIMATION_DURATION};
 	--#{$CSS_VAR_PFX}dropdown-animation-show: flatify-dropdown-show
@@ -17,27 +14,15 @@
 
 .dropdown {
 	position: absolute;
-	// open at bottom as default
-	top: var(--#{$CSS_VAR_PFX}dropdown-offset);
 	z-index: $ZINDEX_DROPDOWN;
 	display: none;
 	width: 110%;
+	will-change: top, bottom, left, right;
 
 	@if $SUPPORT_LTR {
 		left: 0;
 	} @else {
 		right: 0;
-	}
-
-	color: var(--#{$CSS_VAR_PFX}dropdown-txt-color);
-	background: var(--#{$CSS_VAR_PFX}dropdown-bg-color);
-
-	&:before {
-		@if $SUPPORT_LTR {
-			left: var(--dropdown-arrow-x-offset) !important;
-		} @else {
-			right: var(--dropdown-arrow-x-offset) !important;
-		}
 	}
 
 	&.show {
@@ -55,7 +40,7 @@
 	}
 }
 
-// the arrow of dropdown toggle should have space only when it is a single button not when it is inside a button group
+// the arrow of dropdown toggle should have space only if it is a single button not when it is inside button group
 .dropdown-wrapper > .dropdown-toggle {
 	&.arrow-button:not(:empty) {
 		&:after {

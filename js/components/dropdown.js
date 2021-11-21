@@ -1,6 +1,43 @@
 import $ from "../utils/vent";
 import logger from "../utils/logger";
-import config from "../config.json";
+// import * as Popper from "@popperjs/core";
+
+/**
+ * Create a dropdown with Popper JS
+ * @param {Object} dropdown
+ * @param {Object} toggle
+ */
+function createDropdown(dropdown, toggle) {
+	if (typeof Popper === "undefined") {
+		throw new TypeError("Dropdowns require Popper (https://popper.js.org)");
+	}
+
+	Popper.createPopper(toggle, dropdown, {
+		placement: dropdown.getAttribute("data-dropdown-placement") || "bottom",
+		modifiers: [
+			{
+				name: "computeStyles",
+				options: {
+					// because of show/hide animation it should be false
+					gpuAcceleration: false,
+				},
+			},
+			{
+				name: "offset",
+				options: {
+					offset: [0, 20],
+				},
+			},
+			{
+				name: "arrow",
+				options: {
+					element: dropdown.querySelector(".pointer-arrow"),
+					padding: 15,
+				},
+			},
+		],
+	});
+}
 
 /**
  * Show given dropdown
@@ -13,14 +50,8 @@ function showDropdown(dropdown, toggle) {
 		toggle = findDropdownToggle(dropdown);
 	}
 
-	// set CSS a variable for dropdown x-axis position
-	let arrowOffset;
-	if (config.supportLTR) {
-		arrowOffset = toggle.offsetLeft - 15 + toggle.offsetWidth / 2;
-	} else {
-		arrowOffset = toggle.parentElement.offsetWidth - toggle.offsetWidth - 15 + toggle.offsetWidth / 2;
-	}
-	dropdown.style.setProperty("--dropdown-arrow-x-offset", arrowOffset + "px");
+	// create dropdown with Popper or update position
+	createDropdown(dropdown, toggle);
 
 	// show dropdown
 	dropdown.classList.add("show");
