@@ -94,8 +94,8 @@
 		font-size: 0.9em;
 		margin: 0;
 
-		&:not(:last-child) {
-			margin-bottom: 0.32em;
+		&:not(:first-child) {
+			margin-top: 0.32em;
 		}
 
 		a {

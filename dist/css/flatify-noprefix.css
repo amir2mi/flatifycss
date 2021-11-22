@@ -1232,9 +1232,9 @@ th {
   font-size: 0.9em;
   margin: 0;
 }
-.dropdown .menu-item:not(:last-child),
-.menu-items-wrapper .submenu .menu-item:not(:last-child) {
-  margin-bottom: 0.32em;
+.dropdown .menu-item:not(:first-child),
+.menu-items-wrapper .submenu .menu-item:not(:first-child) {
+  margin-top: 0.32em;
 }
 .dropdown .menu-item a,
 .menu-items-wrapper .submenu .menu-item a {
