@@ -143,3 +143,10 @@
 	position: sticky;
 	z-index: $ZINDEX_STICKY;
 }
+
+.fixed-bottom,
+.fixed-top,
+.sticky-bottom,
+.sticky-top {
+	left: 0;
+}

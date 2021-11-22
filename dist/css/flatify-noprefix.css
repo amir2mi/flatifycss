@@ -1136,14 +1136,29 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector
   overflow-x: auto;
   overflow-y: hidden;
   display: flex;
+  align-items: center;
   width: 100%;
+  height: 4.25em;
+  padding-left: 1.24em;
+  padding-right: 1.24em;
   border-bottom: var(--flatify__border-width) solid var(--flatify__menu-border-color);
 }
 .menu-items-wrapper.navbar .links {
+  white-space: nowrap;
   list-style: none;
   display: flex;
   padding: 0;
   margin-bottom: 0;
+}
+.menu-items-wrapper.navbar .links .menu-item {
+  border-radius: calc(var(--flatify__border-radius) * 0.9);
+}
+.menu-items-wrapper.navbar .navbar-logo {
+  height: 3em;
+  margin-right: 0.64em;
+}
+.menu-items-wrapper.navbar .navbar-logo img {
+  height: 100%;
 }
 .menu-items-wrapper[class*=style-] {
   --flatify__menu-item-bg-color: var(--flatify__local-bg-color);
@@ -1156,6 +1171,8 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector
   --flatify__menu-item-txt-color__focus: var(--flatify__local-txt-color);
 }
 .menu-items-wrapper .menu-item {
+  display: flex;
+  align-items: center;
   margin: 0 0.25em;
   color: var(--flatify__local-txt-color);
   background: var(--flatify__local-bg-color);
@@ -1164,7 +1181,7 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector
 }
 .menu-items-wrapper .menu-item a {
   display: block;
-  padding: 0.75em 1.2em;
+  padding: 0.64em 1em;
   color: inherit;
   text-decoration: none !important;
   outline: none;
@@ -2474,8 +2491,8 @@ textarea:not(.default) {
 }
 
 .style-light-light {
-  color: var(--flatify__color-light-darker) !important;
-  --flatify__local-txt-color: var(--flatify__color-light-darker) !important;
+  color: var(--flatify__txt-color) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color) !important;
   background-color: var(--flatify__color-light-light) !important;
   --flatify__local-bg-color: var(--flatify__color-light-light) !important;
   border-color: var(--flatify__color-light-primary) !important;
@@ -2870,6 +2887,13 @@ textarea:not(.default) {
 .sticky-top {
   position: sticky;
   z-index: 1010;
+}
+
+.fixed-bottom,
+.fixed-top,
+.sticky-bottom,
+.sticky-top {
+  left: 0;
 }
 
 .pulse {
