@@ -15,8 +15,8 @@
 }
 
 .menu-items-wrapper {
-	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}menu-txt-color);
 	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}menu-item-bg-color);
+	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}menu-txt-color);
 	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}menu-border-color);
 	list-style: none;
 	padding: 0.5em;
@@ -74,80 +74,76 @@
 			padding: 0.75em;
 		}
 
-		&.separator{
+		&.separator {
 			height: var(--#{$CSS_VAR_PFX}border-width);
 			margin: 0.5em 0 !important;
 			background: var(--#{$CSS_VAR_PFX}local-border-color) !important;
 			opacity: 0.5;
 		}
 	}
+}
 
-	&.dropdown,
-	&.submenu {
-		min-width: 12em;
-		background: var(--#{$CSS_VAR_PFX}local-bg-color);
-		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-		border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+.dropdown,
+.menu-items-wrapper .submenu {
+	min-width: 12em;
+	background: var(--#{$CSS_VAR_PFX}local-bg-color);
+	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
-		.menu-item {
-			font-size: 0.9em;
-			margin: 0;
+	.menu-item {
+		font-size: 0.9em;
+		margin: 0;
 
-			&:not(:last-child) {
-				margin-bottom: 0.32em;
-			}
-
-			a {
-				padding: 0.64em 1.25em;
-			}
+		&:not(:last-child) {
+			margin-bottom: 0.32em;
 		}
 
-		.pointer-arrow,
-		&[class*="arrow-"]:before {
-			content: " ";
-			position: absolute;
-			height: 0;
-			width: 0;
-			border-style: solid;
-			will-change: top, bottom, left, right;
+		a {
+			padding: 0.64em 1.25em;
 		}
+	}
 
-		&[data-popper-placement="bottom"] .pointer-arrow,
-		&.arrow-top:before {
-			top: -0.5em;
-			bottom: -0.5em;
-			border-width: 0 0.64em 0.64em 0.64em;
-			border-color: var(--#{$CSS_VAR_PFX}local-bg-color) transparent;
-			filter: drop-shadow(
-				0 calc(var(--#{$CSS_VAR_PFX}border-width) * -1) 0 var(--#{$CSS_VAR_PFX}local-border-color)
-			);
-		}
+	.pointer-arrow,
+	&[class*="arrow-"]:before {
+		content: " ";
+		position: absolute;
+		height: 0;
+		width: 0;
+		border-style: solid;
+		will-change: top, bottom, left, right;
+	}
 
-		&[data-popper-placement="top"] .pointer-arrow,
-		&.arrow-bottom:before {
-			bottom: -0.5em;
-			border-width: 0.64em 0.64em 0 0.64em;
-			border-color: var(--#{$CSS_VAR_PFX}local-bg-color) transparent;
-			filter: drop-shadow(0 var(--#{$CSS_VAR_PFX}border-width) 0 var(--#{$CSS_VAR_PFX}local-border-color));
-		}
+	&[data-popper-placement="bottom"] .pointer-arrow,
+	&.arrow-top:before {
+		top: -0.5em;
+		bottom: -0.5em;
+		border-width: 0 0.64em 0.64em 0.64em;
+		border-color: var(--#{$CSS_VAR_PFX}local-bg-color) transparent;
+		filter: drop-shadow(0 calc(var(--#{$CSS_VAR_PFX}border-width) * -1) 0 var(--#{$CSS_VAR_PFX}local-border-color));
+	}
 
-		&[data-popper-placement="right"] .pointer-arrow,
-		&.arrow-left:before {
-			left: -0.5em;
-			border-width: 0.64em 0.64em 0.64em 0;
-			border-color: transparent var(--#{$CSS_VAR_PFX}local-bg-color);
-			filter: drop-shadow(
-				calc(var(--#{$CSS_VAR_PFX}border-width) * -1) 0 0 var(--#{$CSS_VAR_PFX}local-border-color)
-			);
-		}
+	&[data-popper-placement="top"] .pointer-arrow,
+	&.arrow-bottom:before {
+		bottom: -0.5em;
+		border-width: 0.64em 0.64em 0 0.64em;
+		border-color: var(--#{$CSS_VAR_PFX}local-bg-color) transparent;
+		filter: drop-shadow(0 var(--#{$CSS_VAR_PFX}border-width) 0 var(--#{$CSS_VAR_PFX}local-border-color));
+	}
 
-		&[data-popper-placement="left"] .pointer-arrow,
-		&.arrow-right:before {
-			right: -0.5em;
-			border-width: 0.64em 0 0.64em 0.64em;
-			border-color: transparent var(--#{$CSS_VAR_PFX}local-bg-color);
-			filter: drop-shadow(var(--#{$CSS_VAR_PFX}border-width) 0 0 var(--#{$CSS_VAR_PFX}local-border-color));
-		}
+	&[data-popper-placement="right"] .pointer-arrow,
+	&.arrow-left:before {
+		left: -0.5em;
+		border-width: 0.64em 0.64em 0.64em 0;
+		border-color: transparent var(--#{$CSS_VAR_PFX}local-bg-color);
+		filter: drop-shadow(calc(var(--#{$CSS_VAR_PFX}border-width) * -1) 0 0 var(--#{$CSS_VAR_PFX}local-border-color));
+	}
+
+	&[data-popper-placement="left"] .pointer-arrow,
+	&.arrow-right:before {
+		right: -0.5em;
+		border-width: 0.64em 0 0.64em 0.64em;
+		border-color: transparent var(--#{$CSS_VAR_PFX}local-bg-color);
+		filter: drop-shadow(var(--#{$CSS_VAR_PFX}border-width) 0 0 var(--#{$CSS_VAR_PFX}local-border-color));
 	}
 }
 

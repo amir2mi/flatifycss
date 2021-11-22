@@ -1,6 +1,11 @@
 :root {
+	--#{$CSS_VAR_PFX}dropdown-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+	--#{$CSS_VAR_PFX}dropdown-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}dropdown-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+
 	--#{$CSS_VAR_PFX}dropdown-show-animation-duration: #{$DROPDOWN_SHOW_ANIMATION_DURATION};
 	--#{$CSS_VAR_PFX}dropdown-hide-animation-duration: #{$DROPDOWN_HIDE_ANIMATION_DURATION};
+
 	--#{$CSS_VAR_PFX}dropdown-animation-show: flatify-dropdown-show
 		var(--#{$CSS_VAR_PFX}dropdown-show-animation-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44);
 	--#{$CSS_VAR_PFX}dropdown-animation-hide: flatify-dropdown-hide
@@ -13,10 +18,14 @@
 }
 
 .dropdown {
+	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}dropdown-bg-color);
+	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}dropdown-txt-color);
+	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}dropdown-border-color);
 	position: absolute;
 	z-index: $ZINDEX_DROPDOWN;
 	display: none;
 	width: 110%;
+	color: var(--#{$CSS_VAR_PFX}local-txt-color);
 	will-change: top, bottom, left, right;
 
 	@if $SUPPORT_LTR {
