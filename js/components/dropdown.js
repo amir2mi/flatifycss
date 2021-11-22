@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 
-	// close dropdown when is clicked
+	// close dropdown when it is clicked
 	$(document).on("click", ".dropdown", function (e) {
 		const dropdown = e.target.closest(".dropdown");
 		const autoCloseType = dropdown.getAttribute("data-dropdown-auto-close");
@@ -130,6 +130,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (!autoCloseType || autoCloseType === "true" || autoCloseType === "inside") {
 			hideDropdown(dropdown);
 		}
+	});
+
+	// close dropdown when [.close-dropdown] button inside it is clicked (autoclose is false)
+	$(document).on("click", ".close-dropdown", function (e) {
+		const dropdown = e.target.closest(".dropdown");
+		// return if dropdown toggle does not have wrapper with [.dropdown-wrapper] class
+		if (!dropdown) return logger("error", "Dropdown close button should be inside '.dropdown-wrapper'");
+
+		hideDropdown(dropdown);
 	});
 
 	// close active dropdowns when outside of the dropdown area is clicked, it respects [data-dropdown-auto-close] option.

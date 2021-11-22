@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const wrapper = this.closest(".alert");
 
 		// return if close button does not have wrapper with [.alert] class
-		if (!wrapper) return logger("error", "Alert close button should be inside '.alert' wrapper");
+		if (!wrapper) return;
 
 		// add animation class to remove the alert
 		wrapper.classList.add("alert-will-be-removed");
