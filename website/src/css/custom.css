@@ -134,6 +134,7 @@ div[class*="codeBlockTitle_"],
 
 .table-of-contents__link {
 	display: block;
+	transition: all ease 0.25s !important;
 }
 
 .table-of-contents__link:not(.table-of-contents__link--active) {

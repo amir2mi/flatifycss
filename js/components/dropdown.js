@@ -58,7 +58,7 @@ function showDropdown(dropdown, toggle) {
 	dropdown.classList.add("show");
 
 	// flip dropdown toggle arrow
-	toggle.classList.add("arrow-flip");
+	toggle.classList.add("arrow-flip", "active");
 
 	// dropdown toggle [aria-expanded="true"] to indicate that dropdown is opened
 	toggle.setAttribute("aria-expanded", true);
@@ -82,7 +82,7 @@ function hideDropdown(dropdown, toggle) {
 		dropdown.classList.remove("dropdown-will-be-hidden", "show");
 
 		// remove flip for toggle arrow
-		toggle.classList.remove("arrow-flip");
+		toggle.classList.remove("arrow-flip", "active");
 
 		// dropdown toggle [aria-expanded="false"] to indicate that dropdown is closed
 		toggle.setAttribute("aria-expanded", false);
