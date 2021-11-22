@@ -5,13 +5,7 @@
 	--#{$CSS_VAR_PFX}button-txt-color__focus: var(--#{$CSS_VAR_PFX}txt-color);
 }
 
-// *** Just limit button style to class it, reduce the complexity and code will be cleaner.
-// input[type="reset"]:not(.default),
-// input[type="submit"]:not(.default),
-// input[type="button"]:not(.default),
-// *[role="button"]:not(.default),
-// button:not(.default),
-.button {
+%button {
 	appearance: none;
 	vertical-align: middle;
 	text-align: center;
@@ -110,4 +104,8 @@
 		filter: contrast(85%) brightness(85%) opacity(70%) !important;
 		transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
 	}
+}
+
+.button {
+	@extend %button;
 }

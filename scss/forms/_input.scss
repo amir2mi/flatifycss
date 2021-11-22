@@ -209,7 +209,7 @@ input[type="file"]:not(.default) {
 	filter: brightness(100%);
 
 	&::file-selector-button {
-		@extend .button;
+		@extend %button;
 		cursor: pointer;
 		font-size: 0.9em;
 		color: inherit;
