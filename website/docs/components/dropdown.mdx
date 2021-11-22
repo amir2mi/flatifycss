@@ -35,12 +35,12 @@ To create a simple dropdown, we need a [button](docs/components/button) with `.d
 				aria-labelledby="my-dropdown-toggle"
 			>
 				<li class="menu-item heading">My Account</li>
-				<li class="menu-item"><a href="#">Sign up</a></li>
-				<li class="menu-item"><a href="#">Login</a></li>
+				<li class="menu-item"><a>Sign up</a></li>
+				<li class="menu-item"><a>Login</a></li>
 				<li role="separator" class="menu-item separator"></li>
-				<li class="menu-item"><a href="#">About us</a></li>
-				<li class="menu-item"><a href="#">Contribute</a></li>
-				<li class="menu-item"><a href="#">Rate it!</a></li>
+				<li class="menu-item"><a>About us</a></li>
+				<li class="menu-item"><a>Contribute</a></li>
+				<li class="menu-item"><a>Rate it!</a></li>
 				<li aria-hidden="true"><span class="pointer-arrow"></span></li>
 			</ul>
 		</div>
@@ -63,12 +63,12 @@ To create a simple dropdown, we need a [button](docs/components/button) with `.d
 				data-dropdown-direction="top"
 			>
 				<li class="menu-item heading">My Account</li>
-				<li class="menu-item"><a href="#">Sign up</a></li>
-				<li class="menu-item"><a href="#">Login</a></li>
+				<li class="menu-item"><a>Sign up</a></li>
+				<li class="menu-item"><a>Login</a></li>
 				<li role="separator" class="menu-item separator"></li>
-				<li class="menu-item"><a href="#">About us</a></li>
-				<li class="menu-item"><a href="#">Contribute</a></li>
-				<li class="menu-item"><a href="#">Rate it!</a></li>
+				<li class="menu-item"><a>About us</a></li>
+				<li class="menu-item"><a>Contribute</a></li>
+				<li class="menu-item"><a>Rate it!</a></li>
 				<li aria-hidden="true"><span class="pointer-arrow"></span></li>
 			</ul>
 		</div>
@@ -132,8 +132,8 @@ We call them dropdown but they can come from left, right, or top as well. To set
 					aria-labelledby="my-dropdown-toggle"
 				>
 					<li class="menu-item heading">My Account</li>
-					<li class="menu-item"><a href="#">Sign up</a></li>
-					<li class="menu-item"><a href="#">Login</a></li>
+					<li class="menu-item"><a>Sign up</a></li>
+					<li class="menu-item"><a>Login</a></li>
 					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
 				</ul>
 			</div>
@@ -147,8 +147,8 @@ We call them dropdown but they can come from left, right, or top as well. To set
 						data-dropdown-direction="left"
 				>
 					<li class="menu-item heading">My Account</li>
-					<li class="menu-item"><a href="#">Sign up</a></li>
-					<li class="menu-item"><a href="#">Login</a></li>
+					<li class="menu-item"><a>Sign up</a></li>
+					<li class="menu-item"><a>Login</a></li>
 					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
 				</ul>
 			</div>
@@ -173,8 +173,8 @@ We call them dropdown but they can come from left, right, or top as well. To set
 						data-dropdown-direction="right"
 				>
 					<li class="menu-item heading">My Account</li>
-					<li class="menu-item"><a href="#">Sign up</a></li>
-					<li class="menu-item"><a href="#">Login</a></li>
+					<li class="menu-item"><a>Sign up</a></li>
+					<li class="menu-item"><a>Login</a></li>
 					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
 				</ul>
 			</div>
@@ -188,8 +188,8 @@ We call them dropdown but they can come from left, right, or top as well. To set
 						data-dropdown-direction="top"
 				>
 					<li class="menu-item heading">My Account</li>
-					<li class="menu-item"><a href="#">Sign up</a></li>
-					<li class="menu-item"><a href="#">Login</a></li>
+					<li class="menu-item"><a>Sign up</a></li>
+					<li class="menu-item"><a>Login</a></li>
 					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
 				</ul>
 			</div>
@@ -234,3 +234,430 @@ We call them dropdown but they can come from left, right, or top as well. To set
 Note that dropdowns are keyboard friendly, since pressing <kbd>ESC</kbd> will hide active dropdowns.
 :::
 
+## Autoclose
+
+Dropdowns by default will be closed on clicked outside and inside, you can change this behavior easily with `data-dropdown-auto-close` HTML attribute for `.dropdown` element, It accepts:
+
+`true` (as default) Close dropdown on click outside or inside.  
+`outside` Close dropdown when clicked outside of its area  
+`inside` Close dropdown when clicked inside of its area  
+`false` Do not close dropdown automatically (you need to handle closing dropdown manually or you can use the dropdown close button).
+
+:::success Handle closing dropdown with a button
+You might set `data-dropdown-auto-close` to `false` and handle dropdown manually, however, there is a button that handles closing dropdown on click, all you need to do is add a button inside `.dropdown-wrapper` with the `.close-dropdown` class.
+:::
+
+<PreviewBox
+	height="370px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Dropdown</title>
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+		<script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+	</head>
+	<body>
+		<div class="flex-center" style="justify-content: space-between">
+			<div class="dropdown-wrapper">
+				<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+					Outside & inside
+				</button>
+				<ul
+					class="dropdown menu-items-wrapper"
+					aria-labelledby="my-dropdown-toggle"
+					data-dropdown-auto-close="true"
+				>
+					<li class="menu-item heading">My Account</li>
+					<li class="menu-item"><a>Sign up</a></li>
+					<li class="menu-item"><a>Login</a></li>
+					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+				</ul>
+			</div>
+			<div class="dropdown-wrapper">
+				<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+					Outside
+				</button>
+				<ul
+					class="dropdown menu-items-wrapper"
+					aria-labelledby="my-dropdown-toggle"
+					data-dropdown-auto-close="outside"
+				>
+					<li class="menu-item heading">My Account</li>
+					<li class="menu-item"><a>Sign up</a></li>
+					<li class="menu-item"><a>Login</a></li>
+					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="flex-center" style="justify-content: space-between">
+			<div class="dropdown-wrapper">
+				<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+					Inside
+				</button>
+				<ul
+					class="dropdown menu-items-wrapper"
+					aria-labelledby="my-dropdown-toggle"
+					data-dropdown-auto-close="inside"
+				>
+					<li class="menu-item heading">My Account</li>
+					<li class="menu-item"><a>Sign up</a></li>
+					<li class="menu-item"><a>Login</a></li>
+					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+				</ul>
+			</div>
+			<div class="dropdown-wrapper">
+				<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+					Manually
+				</button>
+				<ul
+					class="dropdown menu-items-wrapper"
+					aria-labelledby="my-dropdown-toggle"
+					data-dropdown-auto-close="false"
+				>
+					<li class="menu-item heading">My Account</li>
+					<li class="menu-item"><a>Sign up</a></li>
+					<li class="menu-item"><a>Login</a></li>
+					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="flex-center">
+			<div class="dropdown-wrapper">
+				<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+					Close button
+				</button>
+				<ul
+					class="dropdown menu-items-wrapper"
+					aria-labelledby="my-dropdown-toggle"
+					data-dropdown-auto-close="false"
+				>
+					<li class="position-absolute place-top place-right">
+						<button class="close-dropdown 	close-button size-xs" style="margin: 1.2em 0.64em" aria-label="Close dropdown"></button>
+					</li>
+					<li class="menu-item heading">My Account</li>
+					<li class="menu-item"><a>Sign up</a></li>
+					<li class="menu-item"><a>Login</a></li>
+					<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+				</ul>
+			</div>
+		</div>
+    </body>
+
+</html>
+'
+/>
+
+```html title="dropdown-close-button.html"
+<div class="dropdown-wrapper">
+	<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+		Close button
+	</button>
+	<ul class="dropdown menu-items-wrapper" aria-labelledby="my-dropdown-toggle" data-dropdown-auto-close="false">
+		<li class="position-absolute place-top place-right">
+			<button
+				class="close-dropdown close-button size-xs"
+				style="margin: 1.2em 0.64em"
+				aria-label="Close dropdown"
+			></button>
+		</li>
+		<li class="menu-item heading">My Account</li>
+		<li class="menu-item"><a>Sign up</a></li>
+		<li class="menu-item"><a>Login</a></li>
+		<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+	</ul>
+</div>
+```
+
+## Split button
+
+This is common for dropdowns to be opened by an arrow button that is stuck with a button, they are called split buttons. It is simply doable with [buttons](/docs/components/button) and [button group](/docs/components/button-group).
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Dropdown</title>
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+		<script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+	</head>
+	<body class="flex-center">
+		<div class="dropdown-wrapper">
+			<div class="button-group">
+				<button class="button bordered">My button</button>
+				<button
+					class="button bordered dropdown-toggle arrow-button"
+					id="defaultDropdown"
+					aria-expanded="false"
+					aria-label="Toggle dropdown"
+				></button>
+			</div>
+			<ul
+				class="dropdown menu-items-wrapper"
+				aria-labelledby="defaultDropdown"
+			>
+				<li class="menu-item"><a>Item 1</a></li>
+				<li class="menu-item"><a>Item 2</a></li>
+				<li class="menu-item"><a>Item 3</a></li>
+				<li><span class="pointer-arrow"></span></li>
+			</ul>
+		</div>
+    </body>
+</html>
+'
+/>
+
+## Sizes
+
+To change the drop size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+
+<PreviewBox
+	height="360px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Dropdown</title>
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+		<script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+	</head>
+	<body class="flex-center">
+		<div class="dropdown-wrapper size-xs">
+			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+				Small
+			</button>
+			<ul
+				class="dropdown menu-items-wrapper"
+				aria-labelledby="my-dropdown-toggle"
+			>
+				<li class="menu-item heading">My Account</li>
+				<li class="menu-item"><a>Sign up</a></li>
+				<li class="menu-item"><a>Login</a></li>
+				<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+			</ul>
+		</div>
+        <div class="dropdown-wrapper">
+			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+				Medium
+			</button>
+			<ul
+				class="dropdown menu-items-wrapper"
+				aria-labelledby="my-dropdown-toggle"
+			>
+				<li class="menu-item heading">My Account</li>
+				<li class="menu-item"><a>Sign up</a></li>
+				<li class="menu-item"><a>Login</a></li>
+				<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+			</ul>
+		</div>
+		<div class="dropdown-wrapper size-2x">
+			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+				Large
+			</button>
+			<ul
+				class="dropdown menu-items-wrapper"
+				aria-labelledby="my-dropdown-toggle"
+			>
+				<li class="menu-item heading">My Account</li>
+				<li class="menu-item"><a>Sign up</a></li>
+				<li class="menu-item"><a>Login</a></li>
+				<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+			</ul>
+		</div>
+    </body>
+
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="dropdown-wrapper size-xs">...</div>
+<div class="dropdown-wrapper size-md">...</div>
+<div class="dropdown-wrapper size-2x">...</div>
+```
+
+## Colors
+
+There are helper classes for styling elements like dropdown, first read about [color setter classes](/docs/helpers/color-setters).
+
+:::warning
+Do not add color setter classes to `.dropdown-wrapper`, inside the wrapper there are a button and dropdown and they are generally separate components, so you should add color setter classes to button and dropdown separately.
+:::
+
+<PreviewBox
+	height="270px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Dropdown</title>
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+		<script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+	</head>
+	<body class="flex-center">
+		<div class="dropdown-wrapper">
+			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button style-dark" aria-expanded="false">
+				Small
+			</button>
+			<ul
+				class="dropdown menu-items-wrapper style-dark"
+				aria-labelledby="my-dropdown-toggle"
+			>
+				<li class="menu-item heading">My Account</li>
+				<li class="menu-item"><a>Sign up</a></li>
+				<li class="menu-item"><a>Login</a></li>
+				<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+			</ul>
+		</div>
+        <div class="dropdown-wrapper">
+			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button style-pink-light" aria-expanded="false">
+				Medium
+			</button>
+			<ul
+				class="dropdown menu-items-wrapper style-pink-light"
+				aria-labelledby="my-dropdown-toggle"
+			>
+				<li class="menu-item heading">My Account</li>
+				<li class="menu-item"><a>Sign up</a></li>
+				<li class="menu-item"><a>Login</a></li>
+				<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+			</ul>
+		</div>
+		<div class="dropdown-wrapper">
+			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button style-green" aria-expanded="false">
+				Large
+			</button>
+			<ul
+				class="dropdown menu-items-wrapper style-green-light"
+				aria-labelledby="my-dropdown-toggle"
+			>
+				<li class="menu-item heading">My Account</li>
+				<li class="menu-item"><a>Sign up</a></li>
+				<li class="menu-item"><a>Login</a></li>
+				<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+			</ul>
+		</div>
+    </body>
+
+</html>
+'
+/>
+
+```html {2,5} title="index.html"
+<div class="dropdown-wrapper">
+	<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button style-green" aria-expanded="false">
+		Large
+	</button>
+	<ul class="dropdown menu-items-wrapper style-green-light" aria-labelledby="my-dropdown-toggle">
+		<li class="menu-item heading">My Account</li>
+		<li class="menu-item"><a>Sign up</a></li>
+		<li class="menu-item"><a>Login</a></li>
+		<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+	</ul>
+</div>
+```
+
+## Customization
+
+You can customize dropdowns, they offer you CSS variables to change, as you might be noticed a typical dropdown uses menu items, so to customize them check [menu component documentation](/docs/components/menu).
+These are dropdowns CSS variables:
+
+`--flatify__dropdown-bg-color`  
+`--flatify__dropdown-txt-color`  
+`--flatify__dropdown-border-color`
+
+`--flatify__dropdown-show-animation-duration`  
+`--flatify__dropdown-hide-animation-duration`
+
+`--flatify__dropdown-animation-show`  
+`--flatify__dropdown-animation-hide`
+
+It is possible to change colors, animations duration, or change the whole animation, here is an example of customized dropdown:
+
+<PreviewBox
+	height="420px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Dropdown</title>
+		<style>
+			@keyframes my-dropdown-show-animation{
+				from{
+					opacity: 0;
+					transform: scale(1.2) rotate(90deg);
+				}
+				to{
+					opacity: 1;
+					transform: scale(1) rotate(0);
+				}
+			}
+			@keyframes my-dropdown-hide-animation{
+				from{
+					transform: scale(1);
+				}
+				50%{
+					transform: scale(1.2);
+				}
+				to{
+					transform: scale(0);
+				}
+			}
+    		.my-custom-dropdown{
+				--flatify__dropdown-bg-color: #D8334A;
+    			--flatify__dropdown-txt-color: #F5F7FA;
+    			--flatify__dropdown-border-color: #BF263C;
+    			--flatify__dropdown-animation-show: my-dropdown-show-animation 500ms ease;
+    			--flatify__dropdown-animation-hide: my-dropdown-hide-animation 500ms ease;
+			}
+    	</style>
+    	<script src="https://unpkg.com/@popperjs/core@2"></script>
+    	<script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-center">
+    	<div class="dropdown-wrapper my-custom-dropdown">
+    		<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+    			Custom dropdown
+    		</button>
+    		<ul
+    			class="dropdown menu-items-wrapper"
+    			aria-labelledby="my-dropdown-toggle"
+    		>
+    			<li class="menu-item heading">My Account</li>
+    			<li class="menu-item"><a>Sign up</a></li>
+    			<li class="menu-item"><a>Login</a></li>
+    			<li role="separator" class="menu-item separator"></li>
+    			<li class="menu-item"><a>About us</a></li>
+    			<li class="menu-item"><a>Contribute</a></li>
+    			<li class="menu-item"><a>Rate it!</a></li>
+    			<li aria-hidden="true"><span class="pointer-arrow"></span></li>
+    		</ul>
+    	</div>
+    </body>
+
+</html>
+'
+/>

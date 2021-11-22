@@ -296,9 +296,9 @@ a[href] {
   color: var(--flatify__link-color);
   -webkit-text-decoration: var(--flatify__link-decoration);
           text-decoration: var(--flatify__link-decoration);
-  -webkit-transition: all var(--flatify__simple-transition);
-  -o-transition: all var(--flatify__simple-transition);
-  transition: all var(--flatify__simple-transition);
+  -webkit-transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
+  -o-transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
+  transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
 }
 a[href]:hover {
   color: var(--flatify__link-color__hover);
@@ -1258,12 +1258,16 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
   margin: 0.25em 0.125em;
 }
 .button-group input[type=file]:not(.default)::-webkit-file-upload-button {
-  margin: 0 -1px;
   border-radius: 0;
 }
 .button-group .button, .button-group input[type=file]:not(.default)::file-selector-button {
-  margin: 0 -1px;
   border-radius: 0;
+}
+.button-group:not(.vertical) input[type=file]:not(.default)::-webkit-file-upload-button {
+  margin: 0 -1px;
+}
+.button-group:not(.vertical) .button, .button-group:not(.vertical) input[type=file]:not(.default)::file-selector-button {
+  margin: 0 -1px;
 }
 .button-group:not(.vertical) input[type=file]:first-child:not(.default)::-webkit-file-upload-button {
   border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
@@ -1278,6 +1282,7 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
   border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
 }
 .button-group.vertical {
+  margin: -1px 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;

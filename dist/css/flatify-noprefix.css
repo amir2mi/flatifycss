@@ -290,7 +290,7 @@ sup {
 a[href] {
   color: var(--flatify__link-color);
   text-decoration: var(--flatify__link-decoration);
-  transition: all var(--flatify__simple-transition);
+  transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
 }
 a[href]:hover {
   color: var(--flatify__link-color__hover);
@@ -1080,8 +1080,10 @@ th {
   margin: 0.25em 0.125em;
 }
 .button-group .button, .button-group input[type=file]:not(.default)::file-selector-button {
-  margin: 0 -1px;
   border-radius: 0;
+}
+.button-group:not(.vertical) .button, .button-group:not(.vertical) input[type=file]:not(.default)::file-selector-button {
+  margin: 0 -1px;
 }
 .button-group:not(.vertical) .button:first-child, .button-group:not(.vertical) input[type=file]:first-child:not(.default)::file-selector-button {
   border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
@@ -1090,6 +1092,7 @@ th {
   border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
 }
 .button-group.vertical {
+  margin: -1px 0;
   flex-direction: column;
 }
 .button-group.vertical .button:first-child, .button-group.vertical input[type=file]:first-child:not(.default)::file-selector-button {

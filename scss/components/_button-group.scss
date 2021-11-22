@@ -3,14 +3,15 @@
 	margin: 0.25em 0.125em;
 
 	.button {
-		// sometimes on active/focus-visible a white space will be create,
-		// to fix this -1px margin is practical.
-		margin: 0 -1px;
 		border-radius: 0;
 	}
 
 	&:not(.vertical) {
 		.button {
+			// sometimes on active/focus-visible a white space will be create,
+			// to fix this -1px margin is practical.
+			margin: 0 -1px;
+
 			@if $SUPPORT_LTR {
 				&:first-child {
 					border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
@@ -32,6 +33,9 @@
 	}
 
 	&.vertical {
+		// sometimes on active/focus-visible a white space will be create,
+		// to fix this -1px margin is practical.
+		margin: -1px 0;
 		flex-direction: column;
 		.button {
 			&:first-child {

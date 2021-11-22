@@ -214,7 +214,7 @@ sup {
 a[href] {
 	color: var(--#{$CSS_VAR_PFX}link-color);
 	text-decoration: var(--#{$CSS_VAR_PFX}link-decoration);
-	transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+	transition: color var(--#{$CSS_VAR_PFX}simple-transition), background var(--#{$CSS_VAR_PFX}simple-transition);
 
 	&:hover {
 		color: var(--#{$CSS_VAR_PFX}link-color__hover);
