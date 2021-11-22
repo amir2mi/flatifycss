@@ -1082,6 +1082,9 @@ th {
 .button-group .button, .button-group input[type=file]:not(.default)::file-selector-button {
   border-radius: 0;
 }
+.button-group .button.outline, .button-group input.outline[type=file]:not(.default)::file-selector-button, .button-group .button.bordered, .button-group input.bordered[type=file]:not(.default)::file-selector-button {
+  margin: 0 !important;
+}
 .button-group:not(.vertical) .button, .button-group:not(.vertical) input[type=file]:not(.default)::file-selector-button {
   margin: 0 -1px;
 }

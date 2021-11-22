@@ -4,6 +4,10 @@
 
 	.button {
 		border-radius: 0;
+		&.outline,
+		&.bordered {
+			margin: 0 !important;
+		}
 	}
 
 	&:not(.vertical) {

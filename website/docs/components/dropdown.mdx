@@ -637,7 +637,7 @@ It is possible to change colors, animations duration, or change the whole animat
 				--flatify__menu-item-bg-color__hover: #A0D468;
 				--flatify__menu-item-bg-color__active: #FFCE54;
 				--flatify__menu-item-bg-color__focus: #F6BB42;
-				--flatify__menu-item-txt-color__hover: #F5F7FA;
+				--flatify__menu-item-txt-color__hover: #3C3B3D;
 				--flatify__menu-item-txt-color__active: #BF263C;
 				--flatify__menu-item-txt-color__focus: #BF263C;
 			}
@@ -653,6 +653,7 @@ It is possible to change colors, animations duration, or change the whole animat
     		<ul
     			class="dropdown menu-items-wrapper"
     			aria-labelledby="my-dropdown-toggle"
+				data-dropdown-auto-close="outside"
     		>
     			<li class="menu-item heading">My Account</li>
     			<li class="menu-item"><a>Sign up</a></li>
@@ -669,3 +670,48 @@ It is possible to change colors, animations duration, or change the whole animat
 </html>
 '
 />
+
+```html title="index.html"
+<div class="dropdown-wrapper my-custom-dropdown">...</div>
+```
+
+```css title="style.css"
+@keyframes my-dropdown-show-animation {
+	from {
+		opacity: 0;
+		transform: scale(1.2) rotate(90deg);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1) rotate(0);
+	}
+}
+
+@keyframes my-dropdown-hide-animation {
+	from {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	to {
+		transform: scale(0);
+	}
+}
+
+.my-custom-dropdown {
+	/* dropdown */
+	--flatify__dropdown-bg-color: #d8334a;
+	--flatify__dropdown-txt-color: #f5f7fa;
+	--flatify__dropdown-border-color: #bf263c;
+	--flatify__dropdown-animation-show: my-dropdown-show-animation 500ms ease;
+	--flatify__dropdown-animation-hide: my-dropdown-hide-animation 500ms ease;
+	/* menu items */
+	--flatify__menu-item-bg-color__hover: #a0d468;
+	--flatify__menu-item-bg-color__active: #ffce54;
+	--flatify__menu-item-bg-color__focus: #f6bb42;
+	--flatify__menu-item-txt-color__hover: #3c3b3d;
+	--flatify__menu-item-txt-color__active: #bf263c;
+	--flatify__menu-item-txt-color__focus: #bf263c;
+}
+```

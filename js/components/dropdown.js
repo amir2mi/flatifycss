@@ -57,7 +57,7 @@ function showDropdown(dropdown, toggle) {
 	// show dropdown
 	dropdown.classList.add("show");
 
-	// flip dropdown toggle arrow
+	// flip dropdown toggle arrow and add active state
 	toggle.classList.add("arrow-flip", "active");
 
 	// dropdown toggle [aria-expanded="true"] to indicate that dropdown is opened
@@ -81,7 +81,7 @@ function hideDropdown(dropdown, toggle) {
 		// hide dropdown when animation is done
 		dropdown.classList.remove("dropdown-will-be-hidden", "show");
 
-		// remove flip for toggle arrow
+		// remove flip for toggle arrow and remove active state
 		toggle.classList.remove("arrow-flip", "active");
 
 		// dropdown toggle [aria-expanded="false"] to indicate that dropdown is closed
