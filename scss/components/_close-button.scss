@@ -1,17 +1,16 @@
 .close-button {
-	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
 	width: 2.5em;
 	height: 2.5em;
 	padding: 0.5em;
 	color: inherit;
-	background: var(--#{$CSS_VAR_PFX}local-bg-color);
+	background: var(--#{$CSS_VAR_PFX}bg-color-dark);
 	border: none;
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 	will-change: transform;
 	transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
-	@media (prefers-reduced-motion: no-preference) {
-		&:not(.button) {
+	&:not(.button) {
+		@media (prefers-reduced-motion: no-preference) {
 			&:focus-visible,
 			&:active {
 				transform: scale(0.85) !important;

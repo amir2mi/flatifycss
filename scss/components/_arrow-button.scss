@@ -1,6 +1,9 @@
 .arrow-button {
 	display: flex;
 	align-items: center;
+	background: var(--#{$CSS_VAR_PFX}bg-color-dark);
+	border: none;
+	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
 	&:after {
 		content: " ";

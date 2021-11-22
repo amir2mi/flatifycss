@@ -1011,6 +1011,9 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector
 .arrow-button {
   display: flex;
   align-items: center;
+  background: var(--flatify__bg-color-dark);
+  border: none;
+  border-radius: var(--flatify__border-radius);
 }
 .arrow-button:after {
   content: " ";
@@ -1048,12 +1051,11 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector
 }
 
 .close-button {
-  --flatify__local-bg-color: var(--flatify__bg-color-dark);
   width: 2.5em;
   height: 2.5em;
   padding: 0.5em;
   color: inherit;
-  background: var(--flatify__local-bg-color);
+  background: var(--flatify__bg-color-dark);
   border: none;
   border-radius: var(--flatify__border-radius);
   will-change: transform;
@@ -1321,6 +1323,7 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector
 }
 
 .modal {
+  --flatify__local-bg-color: var(--flatify__modal-bg-color);
   --flatify__local-border-color: var(--flatify__modal-border-color);
   overflow: hidden;
   position: fixed;
@@ -1426,6 +1429,9 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector
 }
 .modal[class*=width-] {
   max-width: unset;
+}
+.modal .close-modal {
+  background: var(--flatify__local-bg-color);
 }
 
 .modal-content {
