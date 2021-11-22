@@ -935,7 +935,7 @@ th {
   animation: flatify-fade-out var(--flatify__modal-hide-animation-duration) both;
 }
 .backdrop-layer.modal-backdrop {
-  z-index: 1050;
+  z-index: 1030;
   background: var(--flatify__modal-backdrop-color);
 }
 
@@ -1109,7 +1109,7 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector
 }
 
 :root {
-  --flatify__menu-bg-color: var(--flatify__bg-color);
+  --flatify__menu-bg-color: var(--flatify__bg-color-dark);
   --flatify__menu-txt-color: var(--flatify__txt-color);
   --flatify__menu-border-color: var(--flatify__bg-color-darker);
   --flatify__menu-item-bg-color: var(--flatify__bg-color);
@@ -1129,7 +1129,21 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector
   list-style: none;
   padding: 0.5em;
   margin: 0;
-  background: var(--flatify__local-bg-color);
+  color: var(--flatify__menu-txt-color);
+  background: var(--flatify__menu-bg-color);
+}
+.menu-items-wrapper.navbar {
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  width: 100%;
+  border-bottom: var(--flatify__border-width) solid var(--flatify__menu-border-color);
+}
+.menu-items-wrapper.navbar .links {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin-bottom: 0;
 }
 .menu-items-wrapper[class*=style-] {
   --flatify__menu-item-bg-color: var(--flatify__local-bg-color);
@@ -1150,7 +1164,7 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector
 }
 .menu-items-wrapper .menu-item a {
   display: block;
-  padding: 0.9em 1.4em;
+  padding: 0.75em 1.2em;
   color: inherit;
   text-decoration: none !important;
   outline: none;
@@ -1327,7 +1341,7 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector
   --flatify__local-border-color: var(--flatify__modal-border-color);
   overflow: hidden;
   position: fixed;
-  z-index: 1055;
+  z-index: 1040;
   top: 5em;
   left: 0;
   right: 0;
@@ -2480,8 +2494,8 @@ textarea:not(.default) {
 }
 
 .style-dark-light {
-  color: var(--flatify__color-dark-darker) !important;
-  --flatify__local-txt-color: var(--flatify__color-dark-darker) !important;
+  color: var(--flatify__txt-color-inverted) !important;
+  --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
   background-color: var(--flatify__color-dark-light) !important;
   --flatify__local-bg-color: var(--flatify__color-dark-light) !important;
   border-color: var(--flatify__color-dark-primary) !important;
@@ -2818,20 +2832,44 @@ textarea:not(.default) {
   bottom: 0;
 }
 
+.sticky-top,
+.fixed-top,
 .place-top {
   top: 0;
 }
 
+.sticky-bottom,
+.fixed-bottom,
 .place-bottom {
   bottom: 0;
 }
 
+.sticky-left,
+.fixed-left,
 .place-left {
   left: 0;
 }
 
+.sticky-right,
+.fixed-right,
 .place-right {
   right: 0;
+}
+
+.fixed-left,
+.fixed-right,
+.fixed-bottom,
+.fixed-top {
+  position: fixed;
+  z-index: 1020;
+}
+
+.sticky-left,
+.sticky-right,
+.sticky-bottom,
+.sticky-top {
+  position: sticky;
+  z-index: 1010;
 }
 
 .pulse {

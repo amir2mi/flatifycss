@@ -74,8 +74,10 @@ $LINK_DECORATION_FOCUS: none !default;
 
 // z-index
 $ZINDEX_DROPDOWN: 1000;
-$ZINDEX_MODAL_BACKDROP: 1050;
-$ZINDEX_MODAL: 1055;
+$ZINDEX_STICKY: 1010;
+$ZINDEX_FIXED: 1020;
+$ZINDEX_MODAL_BACKDROP: 1030;
+$ZINDEX_MODAL: 1040;
 
 // *** Colors: accent color, background color, text color, heading color, palette
 $BG_COLOR: #ffffff !default;

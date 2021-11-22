@@ -107,15 +107,39 @@
 	bottom: 0;
 }
 
+.sticky-top,
+.fixed-top,
 .place-top {
 	top: 0;
 }
+.sticky-bottom,
+.fixed-bottom,
 .place-bottom {
 	bottom: 0;
 }
+.sticky-left,
+.fixed-left,
 .place-left {
 	left: 0;
 }
+.sticky-right,
+.fixed-right,
 .place-right {
 	right: 0;
+}
+
+.fixed-left,
+.fixed-right,
+.fixed-bottom,
+.fixed-top {
+	position: fixed;
+	z-index: $ZINDEX_FIXED;
+}
+
+.sticky-left,
+.sticky-right,
+.sticky-bottom,
+.sticky-top {
+	position: sticky;
+	z-index: $ZINDEX_STICKY;
 }
