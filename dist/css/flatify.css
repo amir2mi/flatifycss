@@ -1302,53 +1302,6 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
 }
 
 :root {
-  --flatify__dropdown-bg-color: var(--flatify__bg-color);
-  --flatify__dropdown-txt-color: var(--flatify__txt-color);
-  --flatify__dropdown-border-color: var(--flatify__bg-color-darker);
-  --flatify__dropdown-show-animation-duration: 300ms;
-  --flatify__dropdown-hide-animation-duration: 200ms;
-  --flatify__dropdown-animation-show: flatify-dropdown-show
-  	var(--flatify__dropdown-show-animation-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44);
-  --flatify__dropdown-animation-hide: flatify-dropdown-hide
-  	var(--flatify__dropdown-hide-animation-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
-}
-
-.dropdown-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown {
-  --flatify__local-bg-color: var(--flatify__dropdown-bg-color);
-  --flatify__local-txt-color: var(--flatify__dropdown-txt-color);
-  --flatify__local-border-color: var(--flatify__dropdown-border-color);
-  position: absolute;
-  z-index: 1000;
-  display: none;
-  width: 110%;
-  color: var(--flatify__local-txt-color);
-  will-change: top, bottom, left, right;
-  left: 0;
-}
-.dropdown.show {
-  display: block;
-  -webkit-animation: var(--flatify__dropdown-animation-show);
-          animation: var(--flatify__dropdown-animation-show);
-}
-.dropdown.dropdown-will-be-hidden {
-  -webkit-animation: var(--flatify__dropdown-animation-hide);
-          animation: var(--flatify__dropdown-animation-hide);
-}
-.dropdown.at-top {
-  top: unset;
-  bottom: var(--flatify__dropdown-offset);
-}
-
-.dropdown-wrapper > .dropdown-toggle.arrow-button:not(:empty):after {
-  margin-left: 0.5em;
-}
-
-:root {
   --flatify__menu-bg-color: var(--flatify__bg-color);
   --flatify__menu-txt-color: var(--flatify__txt-color);
   --flatify__menu-border-color: var(--flatify__bg-color-darker);
@@ -1496,6 +1449,53 @@ input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-
 
 .menu-items-wrapper:not(.dropdown) {
   background: var(--flatify__local-bg-color);
+}
+
+:root {
+  --flatify__dropdown-bg-color: var(--flatify__bg-color);
+  --flatify__dropdown-txt-color: var(--flatify__txt-color);
+  --flatify__dropdown-border-color: var(--flatify__bg-color-darker);
+  --flatify__dropdown-show-animation-duration: 300ms;
+  --flatify__dropdown-hide-animation-duration: 200ms;
+  --flatify__dropdown-animation-show: flatify-dropdown-show
+  	var(--flatify__dropdown-show-animation-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44);
+  --flatify__dropdown-animation-hide: flatify-dropdown-hide
+  	var(--flatify__dropdown-hide-animation-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+}
+
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  --flatify__local-bg-color: var(--flatify__dropdown-bg-color);
+  --flatify__local-txt-color: var(--flatify__dropdown-txt-color);
+  --flatify__local-border-color: var(--flatify__dropdown-border-color);
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  width: 110%;
+  color: var(--flatify__local-txt-color);
+  will-change: top, bottom, left, right;
+  left: 0;
+}
+.dropdown.show {
+  display: block;
+  -webkit-animation: var(--flatify__dropdown-animation-show);
+          animation: var(--flatify__dropdown-animation-show);
+}
+.dropdown.dropdown-will-be-hidden {
+  -webkit-animation: var(--flatify__dropdown-animation-hide);
+          animation: var(--flatify__dropdown-animation-hide);
+}
+.dropdown.at-top {
+  top: unset;
+  bottom: var(--flatify__dropdown-offset);
+}
+
+.dropdown-wrapper > .dropdown-toggle.arrow-button:not(:empty):after {
+  margin-left: 0.5em;
 }
 
 :root {
