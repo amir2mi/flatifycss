@@ -268,6 +268,14 @@ code {
 	}
 }
 
+// focus-visible outline
+a,
+button {
+	&:focus-visible {
+		outline: 0.18em solid currentColor;
+	}
+}
+
 // ** Fixes
 // Media
 img,

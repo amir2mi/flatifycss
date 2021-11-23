@@ -3,6 +3,9 @@
 	--#{$CSS_VAR_PFX}menu-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}menu-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 
+	--#{$CSS_VAR_PFX}menu-active-item-bg-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+	--#{$CSS_VAR_PFX}menu-active-item-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+
 	--#{$CSS_VAR_PFX}menu-item-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
 	--#{$CSS_VAR_PFX}menu-item-bg-color__hover: var(--#{$CSS_VAR_PFX}bg-color-dark);
 	--#{$CSS_VAR_PFX}menu-item-bg-color__active: var(--#{$CSS_VAR_PFX}bg-color-dark);
@@ -33,6 +36,18 @@
 		padding-right: 1.24em;
 		border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}menu-border-color);
 
+		// it does not support dropdown or submenu,
+		// but it will be scrollable for the x-axis especially good for small screens
+		&.scrollable-navbar {
+			overflow-x: auto;
+			overflow-y: hidden;
+
+			// for small screen it should have a minimum width to prevent being compressed
+			.search-bar {
+				min-width: 12em;
+			}
+		}
+
 		.links {
 			white-space: nowrap;
 			list-style: none;
@@ -49,10 +64,15 @@
 					color: inherit;
 					font-size: 1em;
 					font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+					background: transparent;
 				}
 
 				&.active {
 					font-weight: var(--#{$CSS_VAR_PFX}bold-font-weight);
+				}
+
+				.submenu{
+				
 				}
 			}
 		}
@@ -98,12 +118,12 @@
 			opacity: 0.5;
 		}
 
-		a {
-			display: block;
+		& > button,
+		& > a {
+			width: 100%;
 			padding: 0.64em 1em;
 			color: inherit;
 			text-decoration: none !important;
-			outline: none;
 		}
 
 		&:not(.heading) {
@@ -112,10 +132,14 @@
 				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__hover);
 			}
 
-			&.active,
+			&.active {
+				color: var(--#{$CSS_VAR_PFX}menu-active-item-txt-color) !important;
+				background: var(--#{$CSS_VAR_PFX}menu-active-item-bg-color) !important;
+			}
+
 			&:active {
-				color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__active) !important;
-				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__active) !important;
+				color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__active);
+				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__active);
 			}
 
 			&:focus-within {
@@ -151,6 +175,11 @@
 
 		&:not(:first-child) {
 			margin-top: 0.32em;
+		}
+
+		&:hover,
+		&:focus-within {
+			filter: brightness(95%) !important;
 		}
 
 		a {

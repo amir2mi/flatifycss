@@ -1,4 +1,5 @@
 import $ from "../utils/vent";
+import config from "../config";
 import logger from "../utils/logger";
 // import * as Popper from "@popperjs/core";
 
@@ -26,7 +27,7 @@ function createDropdown(dropdown, toggle) {
 			{
 				name: "offset",
 				options: {
-					offset: [0, 20],
+					offset: dropdown.closest(".navbar") ? config.navDropdownOffset : config.dropdownOffset,
 				},
 			},
 			{
