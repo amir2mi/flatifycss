@@ -3,5 +3,5 @@
 	"enableLogging": true,
 	"supportLTR": true,
 	"dropdownOffset": [0, 20],
-	"navDropdownOffset": [0, 35]
+	"navDropdownOffset": [0, 0]
 }

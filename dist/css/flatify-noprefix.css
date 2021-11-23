@@ -1140,6 +1140,17 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   --flatify__menu-item-txt-color__hover: var(--flatify__txt-color);
   --flatify__menu-item-txt-color__active: var(--flatify__txt-color);
   --flatify__menu-item-txt-color__focus: var(--flatify__txt-color);
+  --flatify__submenu-bg-color: var(--flatify__bg-color);
+  --flatify__submenu-txt-color: var(--flatify__txt-color);
+  --flatify__submenu-border-color: var(--flatify__bg-color-darker);
+  --flatify__submenu-item-bg-color: var(--flatify__bg-color);
+  --flatify__submenu-item-bg-color__hover: var(--flatify__bg-color-dark);
+  --flatify__submenu-item-bg-color__active: var(--flatify__bg-color-dark);
+  --flatify__submenu-item-bg-color__focus: var(--flatify__bg-color-dark);
+  --flatify__submenu-item-txt-color: var(--flatify__txt-color);
+  --flatify__submenu-item-txt-color__hover: var(--flatify__txt-color);
+  --flatify__submenu-item-txt-color__active: var(--flatify__txt-color);
+  --flatify__submenu-item-txt-color__focus: var(--flatify__txt-color);
 }
 
 .menu-items-wrapper {
@@ -1176,6 +1187,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   margin-bottom: 0;
 }
 .menu-items-wrapper.navbar .links .menu-item {
+  position: relative;
   font-weight: var(--flatify__medium-font-weight);
   border-radius: calc(var(--flatify__border-radius) * 0.9);
 }
@@ -1188,6 +1200,30 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 }
 .menu-items-wrapper.navbar .links .menu-item.active {
   font-weight: var(--flatify__bold-font-weight);
+}
+.menu-items-wrapper.navbar .links .menu-item:hover > .submenu {
+  display: block;
+}
+.menu-items-wrapper.navbar .links .menu-item .submenu {
+  position: absolute;
+  top: 2.8em;
+  left: 0.5em;
+  z-index: 10;
+  display: none;
+}
+.menu-items-wrapper.navbar .links .menu-item .submenu .submenu {
+  top: -50%;
+  left: 115%;
+}
+.menu-items-wrapper.navbar .links .menu-item .submenu .submenu:after {
+  content: " ";
+  position: absolute;
+  top: 0.64em;
+  left: -2.18em;
+  width: 3.125em;
+  height: 4.37em;
+  background: transparent;
+  border-radius: 1em;
 }
 .menu-items-wrapper.navbar .navbar-logo {
   height: 3em;
@@ -1255,10 +1291,25 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 
 .dropdown,
 .menu-items-wrapper .submenu {
+  --flatify__local-bg-color: var(--flatify__submenu-item-bg-color);
+  --flatify__local-txt-color: var(--flatify__submenu-txt-color);
+  --flatify__local-border-color: var(--flatify__submenu-border-color);
   min-width: 12em;
-  background: var(--flatify__local-bg-color);
+  color: var(--flatify__submenu-txt-color);
+  background: var(--flatify__submenu-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
+}
+.dropdown[class*=style-],
+.menu-items-wrapper .submenu[class*=style-] {
+  --flatify__submenu-item-bg-color: var(--flatify__local-bg-color);
+  --flatify__submenu-item-bg-color__hover: var(--flatify__local-bg-color);
+  --flatify__submenu-item-bg-color__active: var(--flatify__local-bg-color);
+  --flatify__submenu-item-bg-color__focus: var(--flatify__local-bg-color);
+  --flatify__submenu-item-txt-color: var(--flatify__local-txt-color);
+  --flatify__submenu-item-txt-color__hover: var(--flatify__local-txt-color);
+  --flatify__submenu-item-txt-color__active: var(--flatify__local-txt-color);
+  --flatify__submenu-item-txt-color__focus: var(--flatify__local-txt-color);
 }
 .dropdown .menu-item,
 .menu-items-wrapper .submenu .menu-item {
@@ -1269,14 +1320,33 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 .menu-items-wrapper .submenu .menu-item:not(:first-child) {
   margin-top: 0.32em;
 }
-.dropdown .menu-item:hover, .dropdown .menu-item:focus-within,
-.menu-items-wrapper .submenu .menu-item:hover,
-.menu-items-wrapper .submenu .menu-item:focus-within {
-  filter: brightness(95%) !important;
-}
 .dropdown .menu-item a,
 .menu-items-wrapper .submenu .menu-item a {
   padding: 0.64em 1.25em;
+}
+.dropdown .menu-item:not(.heading):hover,
+.menu-items-wrapper .submenu .menu-item:not(.heading):hover {
+  color: var(--flatify__submenu-item-txt-color__hover);
+  background: var(--flatify__submenu-item-bg-color__hover);
+}
+.dropdown .menu-item:not(.heading).active,
+.menu-items-wrapper .submenu .menu-item:not(.heading).active {
+  color: var(--flatify__submenu-active-item-txt-color) !important;
+  background: var(--flatify__submenu-active-item-bg-color) !important;
+}
+.dropdown .menu-item:not(.heading):active,
+.menu-items-wrapper .submenu .menu-item:not(.heading):active {
+  color: var(--flatify__submenu-item-txt-color__active);
+  background: var(--flatify__submenu-item-bg-color__active);
+}
+.dropdown .menu-item:not(.heading):focus-within,
+.menu-items-wrapper .submenu .menu-item:not(.heading):focus-within {
+  color: var(--flatify__submenu-item-txt-color__focus);
+  background: var(--flatify__submenu-item-bg-color__focus);
+}
+.dropdown .menu-item.arrow-button:after,
+.menu-items-wrapper .submenu .menu-item.arrow-button:after {
+  margin-right: 0.75em;
 }
 .dropdown .pointer-arrow, .dropdown[class*=arrow-]:before,
 .menu-items-wrapper .submenu .pointer-arrow,
@@ -1320,6 +1390,16 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   border-width: 0.64em 0 0.64em 0.64em;
   border-color: transparent var(--flatify__local-bg-color);
   filter: drop-shadow(var(--flatify__border-width) 0 0 var(--flatify__local-border-color));
+}
+.dropdown.arrow-top:before, .dropdown.arrow-bottom:before,
+.menu-items-wrapper .submenu.arrow-top:before,
+.menu-items-wrapper .submenu.arrow-bottom:before {
+  left: 2em;
+}
+.dropdown.arrow-left:before, .dropdown.arrow-right:before,
+.menu-items-wrapper .submenu.arrow-left:before,
+.menu-items-wrapper .submenu.arrow-right:before {
+  top: 2em;
 }
 
 :root {
