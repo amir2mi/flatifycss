@@ -989,17 +989,21 @@ input.outline.active[type=file]:not(.default)::file-selector-button, .outline.ac
   box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
   transform: translateY(calc(var(--flatify__border-width) * 1.2));
 }
-input[class*=style-][class*=light][type=file]:not(.default)::file-selector-button, [class*=style-][class*=light].button {
+input[class*=style-][type=file]:not(.default)::file-selector-button, [class*=style-].button {
   --flatify__button-bg-color: var(--flatify__local-bg-color);
   --flatify__button-bg-color__focus: var(--flatify__local-border-color);
+}
+input[class*=style-][class*=light][type=file]:not(.default)::file-selector-button, [class*=style-][class*=light].button {
   --flatify__button-txt-color: var(--flatify__local-txt-color);
   --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
 }
 input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector-button, [class*=style-].button:not([class*=light]) {
-  --flatify__button-bg-color: var(--flatify__local-bg-color);
-  --flatify__button-bg-color__focus: var(--flatify__local-border-color);
   --flatify__button-txt-color: var(--flatify__local-border-color);
   --flatify__button-txt-color__focus: var(--flatify__local-border-color);
+}
+input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-selector-button, [class*=style-].outline.style-dark-light.button {
+  --flatify__button-txt-color: var(--flatify__txt-color);
+  --flatify__button-txt-color__focus: var(--flatify__txt-color);
 }
 .checkbox-button:disabled + input[type=file]:not(.default)::file-selector-button, .checkbox-button:disabled + .button, .radio-button:disabled + input[type=file]:not(.default)::file-selector-button, .radio-button:disabled + .button, input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button, input[type=file]:disabled:not(.default)::file-selector-button, .button:disabled {
   pointer-events: none;

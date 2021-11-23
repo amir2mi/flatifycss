@@ -31,6 +31,7 @@
 		filter: brightness(92%);
 	}
 
+	// active state
 	.checkbox-button:checked + &,
 	.radio-button:checked + &,
 	&.active,
@@ -57,6 +58,7 @@
 			calc(var(--#{$CSS_VAR_PFX}border-width) * -0.38) 0 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
 	}
 
+	// active state for outline & bordered
 	&.outline,
 	&.bordered {
 		&.active,
@@ -69,6 +71,7 @@
 		}
 	}
 
+	// active state for bordered & outline checkbox & radio button
 	.checkbox-button:checked + &.outline,
 	.radio-button:checked + &.outline,
 	.checkbox-button:checked + &.bordered,
@@ -79,21 +82,31 @@
 		transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.2));
 	}
 
+	// if has color setter class use local values
 	&[class*="style-"] {
+		--#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
+		--#{$CSS_VAR_PFX}button-bg-color__focus: var(--#{$CSS_VAR_PFX}local-border-color);
+
+		// if it is light color setter, use local text color for texts
 		&[class*="light"] {
-			--#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
-			--#{$CSS_VAR_PFX}button-bg-color__focus: var(--#{$CSS_VAR_PFX}local-border-color);
 			--#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
 			--#{$CSS_VAR_PFX}button-txt-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
 		}
+
+		// if it is default color setter, use local border color for texts
 		&:not([class*="light"]) {
-			--#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
-			--#{$CSS_VAR_PFX}button-bg-color__focus: var(--#{$CSS_VAR_PFX}local-border-color);
 			--#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}local-border-color);
 			--#{$CSS_VAR_PFX}button-txt-color__focus: var(--#{$CSS_VAR_PFX}local-border-color);
 		}
+
+		// Exception: for outline dark-light color setter use text color
+		&.outline.style-dark-light {
+			--#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+			--#{$CSS_VAR_PFX}button-txt-color__focus: var(--#{$CSS_VAR_PFX}txt-color);
+		}
 	}
 
+	// disabled button style
 	.checkbox-button:disabled + &,
 	.radio-button:disabled + &,
 	&.disabled,

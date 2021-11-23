@@ -1115,29 +1115,37 @@ input.outline.active[type=file]:not(.default)::file-selector-button, .outline.ac
       -ms-transform: translateY(calc(var(--flatify__border-width) * 1.2));
           transform: translateY(calc(var(--flatify__border-width) * 1.2));
 }
-input[class*=style-][class*=light][type=file]:not(.default)::-webkit-file-upload-button {
+input[class*=style-][type=file]:not(.default)::-webkit-file-upload-button {
   --flatify__button-bg-color: var(--flatify__local-bg-color);
   --flatify__button-bg-color__focus: var(--flatify__local-border-color);
+}
+input[class*=style-][type=file]:not(.default)::file-selector-button, [class*=style-].button {
+  --flatify__button-bg-color: var(--flatify__local-bg-color);
+  --flatify__button-bg-color__focus: var(--flatify__local-border-color);
+}
+input[class*=style-][class*=light][type=file]:not(.default)::-webkit-file-upload-button {
   --flatify__button-txt-color: var(--flatify__local-txt-color);
   --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
 }
 input[class*=style-][class*=light][type=file]:not(.default)::file-selector-button, [class*=style-][class*=light].button {
-  --flatify__button-bg-color: var(--flatify__local-bg-color);
-  --flatify__button-bg-color__focus: var(--flatify__local-border-color);
   --flatify__button-txt-color: var(--flatify__local-txt-color);
   --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
 }
 input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-upload-button {
-  --flatify__button-bg-color: var(--flatify__local-bg-color);
-  --flatify__button-bg-color__focus: var(--flatify__local-border-color);
   --flatify__button-txt-color: var(--flatify__local-border-color);
   --flatify__button-txt-color__focus: var(--flatify__local-border-color);
 }
 input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector-button, [class*=style-].button:not([class*=light]) {
-  --flatify__button-bg-color: var(--flatify__local-bg-color);
-  --flatify__button-bg-color__focus: var(--flatify__local-border-color);
   --flatify__button-txt-color: var(--flatify__local-border-color);
   --flatify__button-txt-color__focus: var(--flatify__local-border-color);
+}
+input[class*=style-].outline.style-dark-light[type=file]:not(.default)::-webkit-file-upload-button {
+  --flatify__button-txt-color: var(--flatify__txt-color);
+  --flatify__button-txt-color__focus: var(--flatify__txt-color);
+}
+input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-selector-button, [class*=style-].outline.style-dark-light.button {
+  --flatify__button-txt-color: var(--flatify__txt-color);
+  --flatify__button-txt-color__focus: var(--flatify__txt-color);
 }
 .checkbox-button:disabled + input[type=file]:not(.default)::-webkit-file-upload-button, .radio-button:disabled + input[type=file]:not(.default)::-webkit-file-upload-button, input.disabled[type=file]:not(.default)::-webkit-file-upload-button, input[type=file]:disabled:not(.default)::-webkit-file-upload-button {
   pointer-events: none;
