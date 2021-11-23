@@ -350,6 +350,11 @@ a > code {
   color: inherit;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 0.18em solid currentColor;
+}
+
 img,
 svg {
   vertical-align: middle;
@@ -1259,8 +1264,6 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   width: 100%;
   height: 100%;
   background-color: currentColor;
-  mask: var(--flatify__close-icon) no-repeat 50% 50%;
-  -webkit-mask: var(--flatify__close-icon) no-repeat 50% 50%;
 }
 
 .close-button:before {
@@ -1312,6 +1315,8 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   --flatify__menu-bg-color: var(--flatify__bg-color-dark);
   --flatify__menu-txt-color: var(--flatify__txt-color);
   --flatify__menu-border-color: var(--flatify__bg-color-darker);
+  --flatify__menu-active-item-bg-color: var(--flatify__bg-color-darker);
+  --flatify__menu-active-item-txt-color: var(--flatify__txt-color);
   --flatify__menu-item-bg-color: var(--flatify__bg-color-dark);
   --flatify__menu-item-bg-color__hover: var(--flatify__bg-color-dark);
   --flatify__menu-item-bg-color__active: var(--flatify__bg-color-dark);
@@ -1320,6 +1325,22 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   --flatify__menu-item-txt-color__hover: var(--flatify__txt-color);
   --flatify__menu-item-txt-color__active: var(--flatify__txt-color);
   --flatify__menu-item-txt-color__focus: var(--flatify__txt-color);
+  --flatify__submenu-bg-color: var(--flatify__bg-color);
+  --flatify__submenu-txt-color: var(--flatify__txt-color);
+  --flatify__submenu-border-color: var(--flatify__bg-color-darker);
+  --flatify__submenu-item-bg-color: var(--flatify__bg-color);
+  --flatify__submenu-item-bg-color__hover: var(--flatify__bg-color-dark);
+  --flatify__submenu-item-bg-color__active: var(--flatify__bg-color-dark);
+  --flatify__submenu-item-bg-color__focus: var(--flatify__bg-color-dark);
+  --flatify__submenu-item-txt-color: var(--flatify__txt-color);
+  --flatify__submenu-item-txt-color__hover: var(--flatify__txt-color);
+  --flatify__submenu-item-txt-color__active: var(--flatify__txt-color);
+  --flatify__submenu-item-txt-color__focus: var(--flatify__txt-color);
+  --flatify__submenu-show-animation-duration: 350ms;
+  --flatify__submenu-show-animation-delay: 350ms;
+  --flatify__submenu-animation-show: flatify-dropdown-show
+  	var(--flatify__dropdown-show-animation-duration) var(--flatify__submenu-show-animation-delay)
+  	cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .menu-items-wrapper {
@@ -1333,8 +1354,6 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   background: var(--flatify__menu-bg-color);
 }
 .menu-items-wrapper.navbar {
-  overflow-x: auto;
-  overflow-y: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1347,6 +1366,13 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   padding-right: 1.24em;
   border-bottom: var(--flatify__border-width) solid var(--flatify__menu-border-color);
 }
+.menu-items-wrapper.navbar.scrollable-navbar {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.menu-items-wrapper.navbar.scrollable-navbar .search-bar {
+  min-width: 12em;
+}
 .menu-items-wrapper.navbar .links {
   white-space: nowrap;
   list-style: none;
@@ -1357,11 +1383,45 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   margin-bottom: 0;
 }
 .menu-items-wrapper.navbar .links .menu-item {
+  position: relative;
   font-weight: var(--flatify__medium-font-weight);
   border-radius: calc(var(--flatify__border-radius) * 0.9);
 }
+.menu-items-wrapper.navbar .links .menu-item button,
+.menu-items-wrapper.navbar .links .menu-item a {
+  color: inherit;
+  font-size: 1em;
+  font-weight: var(--flatify__medium-font-weight);
+  background: transparent;
+}
 .menu-items-wrapper.navbar .links .menu-item.active {
   font-weight: var(--flatify__bold-font-weight);
+}
+.menu-items-wrapper.navbar .links .menu-item:hover > .submenu {
+  display: block;
+  -webkit-animation: var(--flatify__submenu-animation-show);
+          animation: var(--flatify__submenu-animation-show);
+}
+.menu-items-wrapper.navbar .links .menu-item .submenu {
+  position: absolute;
+  top: 2.8em;
+  left: 0.5em;
+  z-index: 10;
+  display: none;
+}
+.menu-items-wrapper.navbar .links .menu-item .submenu .submenu {
+  top: -50%;
+  left: 115%;
+}
+.menu-items-wrapper.navbar .links .menu-item .submenu .submenu:after {
+  content: " ";
+  position: absolute;
+  top: 0.64em;
+  left: -2.18em;
+  width: 3.125em;
+  height: 4.37em;
+  background: transparent;
+  border-radius: 1em;
 }
 .menu-items-wrapper.navbar .navbar-logo {
   height: 3em;
@@ -1403,30 +1463,27 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
           user-select: none;
   opacity: 0.5;
 }
-.menu-items-wrapper .menu-item a {
-  display: block;
+.menu-items-wrapper .menu-item > button, .menu-items-wrapper .menu-item > a {
+  width: 100%;
   padding: 0.64em 1em;
   color: inherit;
   text-decoration: none !important;
-  outline: none;
 }
 .menu-items-wrapper .menu-item:not(.heading):hover {
   color: var(--flatify__menu-item-txt-color__hover);
   background: var(--flatify__menu-item-bg-color__hover);
-  -webkit-filter: brightness(95%);
-          filter: brightness(95%);
 }
-.menu-items-wrapper .menu-item:not(.heading).active, .menu-items-wrapper .menu-item:not(.heading):active {
-  color: var(--flatify__menu-item-txt-color__active) !important;
-  background: var(--flatify__menu-item-bg-color__active) !important;
-  -webkit-filter: brightness(95%) !important;
-          filter: brightness(95%) !important;
+.menu-items-wrapper .menu-item:not(.heading).active {
+  color: var(--flatify__menu-active-item-txt-color) !important;
+  background: var(--flatify__menu-active-item-bg-color) !important;
+}
+.menu-items-wrapper .menu-item:not(.heading):active {
+  color: var(--flatify__menu-item-txt-color__active);
+  background: var(--flatify__menu-item-bg-color__active);
 }
 .menu-items-wrapper .menu-item:not(.heading):focus-within {
   color: var(--flatify__menu-item-txt-color__focus);
   background: var(--flatify__menu-item-bg-color__focus);
-  -webkit-filter: brightness(95%);
-          filter: brightness(95%);
 }
 .menu-items-wrapper .menu-item.heading {
   font-weight: var(--flatify__medium-font-weight);
@@ -1441,10 +1498,25 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 
 .dropdown,
 .menu-items-wrapper .submenu {
+  --flatify__local-bg-color: var(--flatify__submenu-item-bg-color);
+  --flatify__local-txt-color: var(--flatify__submenu-txt-color);
+  --flatify__local-border-color: var(--flatify__submenu-border-color);
   min-width: 12em;
-  background: var(--flatify__local-bg-color);
+  color: var(--flatify__submenu-txt-color);
+  background: var(--flatify__submenu-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
+}
+.dropdown[class*=style-],
+.menu-items-wrapper .submenu[class*=style-] {
+  --flatify__submenu-item-bg-color: var(--flatify__local-bg-color);
+  --flatify__submenu-item-bg-color__hover: var(--flatify__local-bg-color);
+  --flatify__submenu-item-bg-color__active: var(--flatify__local-bg-color);
+  --flatify__submenu-item-bg-color__focus: var(--flatify__local-bg-color);
+  --flatify__submenu-item-txt-color: var(--flatify__local-txt-color);
+  --flatify__submenu-item-txt-color__hover: var(--flatify__local-txt-color);
+  --flatify__submenu-item-txt-color__active: var(--flatify__local-txt-color);
+  --flatify__submenu-item-txt-color__focus: var(--flatify__local-txt-color);
 }
 .dropdown .menu-item,
 .menu-items-wrapper .submenu .menu-item {
@@ -1458,6 +1530,30 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 .dropdown .menu-item a,
 .menu-items-wrapper .submenu .menu-item a {
   padding: 0.64em 1.25em;
+}
+.dropdown .menu-item:not(.heading):hover,
+.menu-items-wrapper .submenu .menu-item:not(.heading):hover {
+  color: var(--flatify__submenu-item-txt-color__hover);
+  background: var(--flatify__submenu-item-bg-color__hover);
+}
+.dropdown .menu-item:not(.heading).active,
+.menu-items-wrapper .submenu .menu-item:not(.heading).active {
+  color: var(--flatify__submenu-active-item-txt-color) !important;
+  background: var(--flatify__submenu-active-item-bg-color) !important;
+}
+.dropdown .menu-item:not(.heading):active,
+.menu-items-wrapper .submenu .menu-item:not(.heading):active {
+  color: var(--flatify__submenu-item-txt-color__active);
+  background: var(--flatify__submenu-item-bg-color__active);
+}
+.dropdown .menu-item:not(.heading):focus-within,
+.menu-items-wrapper .submenu .menu-item:not(.heading):focus-within {
+  color: var(--flatify__submenu-item-txt-color__focus);
+  background: var(--flatify__submenu-item-bg-color__focus);
+}
+.dropdown .menu-item.arrow-button:after,
+.menu-items-wrapper .submenu .menu-item.arrow-button:after {
+  margin-right: 0.75em;
 }
 .dropdown .pointer-arrow, .dropdown[class*=arrow-]:before,
 .menu-items-wrapper .submenu .pointer-arrow,
@@ -1506,6 +1602,16 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   -webkit-filter: drop-shadow(var(--flatify__border-width) 0 0 var(--flatify__local-border-color));
           filter: drop-shadow(var(--flatify__border-width) 0 0 var(--flatify__local-border-color));
 }
+.dropdown.arrow-top:before, .dropdown.arrow-bottom:before,
+.menu-items-wrapper .submenu.arrow-top:before,
+.menu-items-wrapper .submenu.arrow-bottom:before {
+  left: 2em;
+}
+.dropdown.arrow-left:before, .dropdown.arrow-right:before,
+.menu-items-wrapper .submenu.arrow-left:before,
+.menu-items-wrapper .submenu.arrow-right:before {
+  top: 2em;
+}
 
 :root {
   --flatify__dropdown-bg-color: var(--flatify__bg-color);
@@ -1545,13 +1651,9 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   -webkit-animation: var(--flatify__dropdown-animation-hide);
           animation: var(--flatify__dropdown-animation-hide);
 }
-.dropdown.at-top {
-  top: unset;
-  bottom: var(--flatify__dropdown-offset);
-}
 
 .dropdown-wrapper > .dropdown-toggle.arrow-button:not(:empty):after {
-  margin-left: 0.5em;
+  margin-left: 0.32em;
 }
 
 :root {

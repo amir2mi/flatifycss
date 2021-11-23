@@ -1151,6 +1151,11 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   --flatify__submenu-item-txt-color__hover: var(--flatify__txt-color);
   --flatify__submenu-item-txt-color__active: var(--flatify__txt-color);
   --flatify__submenu-item-txt-color__focus: var(--flatify__txt-color);
+  --flatify__submenu-show-animation-duration: 350ms;
+  --flatify__submenu-show-animation-delay: 350ms;
+  --flatify__submenu-animation-show: flatify-dropdown-show
+  	var(--flatify__dropdown-show-animation-duration) var(--flatify__submenu-show-animation-delay)
+  	cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .menu-items-wrapper {
@@ -1203,6 +1208,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 }
 .menu-items-wrapper.navbar .links .menu-item:hover > .submenu {
   display: block;
+  animation: var(--flatify__submenu-animation-show);
 }
 .menu-items-wrapper.navbar .links .menu-item .submenu {
   position: absolute;
@@ -1437,10 +1443,6 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 }
 .dropdown.dropdown-will-be-hidden {
   animation: var(--flatify__dropdown-animation-hide);
-}
-.dropdown.at-top {
-  top: unset;
-  bottom: var(--flatify__dropdown-offset);
 }
 
 .dropdown-wrapper > .dropdown-toggle.arrow-button:not(:empty):after {

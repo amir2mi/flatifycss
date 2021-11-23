@@ -42,11 +42,6 @@
 	&.dropdown-will-be-hidden {
 		animation: var(--#{$CSS_VAR_PFX}dropdown-animation-hide);
 	}
-
-	&.at-top {
-		top: unset;
-		bottom: var(--#{$CSS_VAR_PFX}dropdown-offset);
-	}
 }
 
 // the arrow of dropdown toggle should have space only if it is a single button not when it is inside button group
