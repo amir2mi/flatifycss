@@ -8,9 +8,11 @@
 		} @else {
 			padding-left: 3.14em;
 		}
-		&:focus {
-			background: var(--#{$CSS_VAR_PFX}bg-color);
-			filter: none;
+
+		// on focus background should be lighter.
+		&.style-light:focus {
+			background: var(--#{$CSS_VAR_PFX}bg-color) !important;
+            filter: none !important;
 		}
 	}
 
