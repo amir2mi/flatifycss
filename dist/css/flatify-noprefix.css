@@ -1079,8 +1079,6 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   width: 100%;
   height: 100%;
   background-color: currentColor;
-  mask: var(--flatify__close-icon) no-repeat 50% 50%;
-  -webkit-mask: var(--flatify__close-icon) no-repeat 50% 50%;
 }
 
 .close-button:before {
