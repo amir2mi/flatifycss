@@ -1533,6 +1533,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   top: 0;
   bottom: 0;
   margin: auto 0;
+  font-size: 1em;
   color: var(--flatify__form-element-txt-color);
   border-radius: calc(var(--flatify__border-radius) * 0.75);
   right: 0.5em;

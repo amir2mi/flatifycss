@@ -7,7 +7,7 @@ import PreviewBox from "../../src/components/preview-box";
 Search bars are mixtures of input with search type and a [search button](/docs/components/buttons/search-button), they are so practical you can change their size of colors based on your needs.
 
 <PreviewBox
-	height="100px"
+	height="110px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -16,12 +16,7 @@ Search bars are mixtures of input with search type and a [search button](/docs/c
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Search button</title>
-		<style>
-			.search-button{
-				margin: 0 5px !important;
-			}
-		</style>
+		<title>Search bar</title>
 	</head>
 	<body>
 		<div class="search-bar">
@@ -39,3 +34,47 @@ Search bars are mixtures of input with search type and a [search button](/docs/c
 	<button class="search-button" aria-label="Search"></button>
 </div>
 ```
+
+
+### Sizes
+
+To change the input bar size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+
+<PreviewBox
+	height="200px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Search bar</title>
+        <style>
+            .search-bars-wrapper{
+                max-width: 20em
+            }
+        </style>
+	</head>
+	<body>
+        <div class="search-bars-wrapper">
+            <div class="search-bar size-xs">
+                <input type="search" placeholder="Search something..." />
+                <button class="search-button" aria-label="Search"></button>
+            </div>
+            <div class="search-bar size-lg">
+                <input type="search" placeholder="Search something..." />
+                <button class="search-button" aria-label="Search"></button>
+            </div>
+            <div class="search-bar size-2x">
+                <input type="search" placeholder="Search something..." />
+                <button class="search-button" aria-label="Search"></button>
+            </div>
+        </div>
+	</body>
+</html>
+'
+/>
+
