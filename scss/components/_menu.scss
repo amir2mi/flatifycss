@@ -25,8 +25,6 @@
 	background: var(--#{$CSS_VAR_PFX}menu-bg-color);
 
 	&.navbar {
-		overflow-x: auto;
-		overflow-y: hidden;
 		display: flex;
 		align-items: center;
 		width: 100%;
@@ -45,6 +43,13 @@
 			.menu-item {
 				font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
 				border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.9);
+
+				button,
+				a {
+					color: inherit;
+					font-size: 1em;
+					font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+				}
 
 				&.active {
 					font-weight: var(--#{$CSS_VAR_PFX}bold-font-weight);
@@ -105,20 +110,17 @@
 			&:hover {
 				color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__hover);
 				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__hover);
-				filter: brightness(95%);
 			}
 
 			&.active,
 			&:active {
 				color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__active) !important;
 				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__active) !important;
-				filter: brightness(95%) !important;
 			}
 
 			&:focus-within {
 				color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__focus);
 				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__focus);
-				filter: brightness(95%);
 			}
 		}
 

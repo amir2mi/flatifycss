@@ -54,9 +54,9 @@
 	&.arrow-button:not(:empty) {
 		&:after {
 			@if $SUPPORT_LTR {
-				margin-left: 0.5em;
+				margin-left: 0.32em;
 			} @else {
-				margin-right: 0.5em;
+				margin-right: 0.32em;
 			}
 		}
 	}
