@@ -1,4 +1,5 @@
-.close-button {
+// It is basically a button which accepts SVG icon for [::before] as mask.
+%icon-button {
 	width: 2.5em;
 	height: 2.5em;
 	padding: 0.5em;
@@ -28,5 +29,23 @@
 		background-color: currentColor;
 		mask: var(--#{$CSS_VAR_PFX}close-icon) no-repeat 50% 50%;
 		-webkit-mask: var(--#{$CSS_VAR_PFX}close-icon) no-repeat 50% 50%;
+	}
+}
+
+.close-button {
+	@extend %icon-button;
+
+	&:before {
+		mask: var(--#{$CSS_VAR_PFX}close-icon) no-repeat 50% 50%;
+		-webkit-mask: var(--#{$CSS_VAR_PFX}close-icon) no-repeat 50% 50%;
+	}
+}
+
+.search-button {
+	@extend %icon-button;
+
+	&:before {
+		mask: var(--#{$CSS_VAR_PFX}search-icon) no-repeat 50% 50%;
+		-webkit-mask: var(--#{$CSS_VAR_PFX}search-icon) no-repeat 50% 50%;
 	}
 }

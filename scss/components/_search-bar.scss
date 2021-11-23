@@ -1,0 +1,32 @@
+:root {
+	--#{$CSS_VAR_PFX}search-bar-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
+	--#{$CSS_VAR_PFX}search-bar-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}search-bar-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+}
+
+.search-bar {
+	position: relative;
+
+	input[type="text"],
+	input[type="search"] {
+		@if $SUPPORT_LTR {
+			padding-right: 3.14em;
+		} @else {
+			padding-left: 3.14em;
+		}
+	}
+
+	.search-button {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
+
+		@if $SUPPORT_LTR {
+			right: 0.5em;
+		} @else {
+			left: 0.5em;
+		}
+	}
+}
