@@ -1532,6 +1532,8 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   position: absolute;
   top: 0;
   bottom: 0;
+  width: 2.2em;
+  height: 2.2em;
   margin: auto 0;
   font-size: 1em;
   color: var(--flatify__form-element-txt-color);
