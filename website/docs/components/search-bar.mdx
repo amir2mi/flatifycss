@@ -1,0 +1,41 @@
+---
+title: Search bar
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Search bars are mixtures of input with search type and a [search button](/docs/components/buttons/search-button), they are so practical you can change their size of colors based on your needs.
+
+<PreviewBox
+	height="100px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Search button</title>
+		<style>
+			.search-button{
+				margin: 0 5px !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="search-bar">
+			<input type="search" placeholder="Search something..." />
+			<button class="search-button" aria-label="Search"></button>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html {1} title="index.html"
+<div class="search-bar">
+	<input type="search" placeholder="Search something..." />
+	<button class="search-button" aria-label="Search"></button>
+</div>
+```

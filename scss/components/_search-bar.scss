@@ -3,6 +3,8 @@
 
 	input[type="text"],
 	input[type="search"] {
+		width: 100%;
+
 		@if $SUPPORT_LTR {
 			padding-right: 3.14em;
 		} @else {
@@ -12,7 +14,7 @@
 		// on focus background should be lighter.
 		&.style-light:focus {
 			background: var(--#{$CSS_VAR_PFX}bg-color) !important;
-            filter: none !important;
+			filter: none !important;
 		}
 	}
 

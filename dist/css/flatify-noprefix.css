@@ -1520,6 +1520,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 }
 .search-bar input[type=text],
 .search-bar input[type=search] {
+  width: 100%;
   padding-right: 3.14em;
 }
 .search-bar input[type=text].style-light:focus,
