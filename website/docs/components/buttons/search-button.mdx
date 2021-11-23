@@ -1,0 +1,150 @@
+---
+title: Search button
+---
+
+import PreviewBox from "../../../src/components/preview-box";
+
+By adding `.close-button` to a `<button>` it will be a button with close icon.
+
+:::info Accessibility matters!
+You do not need to add anything inside the close button element but it is necessary to set an `aria-label` HTML attribute for accessibility purposes. [Read more about aria-label usage](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute).
+:::
+
+<PreviewBox
+	height="100px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Close button</title>
+		<style>
+			.close-button{
+				margin: 0 5px !important;
+			}
+		</style>
+	</head>
+	<body>
+        <div class="flex-center">
+			<button class="close-button" aria-label="Close"/></button>
+			<button class="button close-button" aria-label="Close"/></button>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<button class="close-button" aria-label="Close"></button>
+<button class="button close-button" aria-label="Close"/></button>
+```
+
+### Sizes
+
+To change the button size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+
+<PreviewBox
+	height="130px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Close button</title>
+		<style>
+			.close-button{
+				margin: 0 5px !important;
+			}
+		</style>
+	</head>
+	<body>
+        <div class="flex-center">
+			<button class="close-button size-xs" aria-label="Close"></button>
+			<button class="close-button size-lg" aria-label="Close"></button>
+			<button class="close-button size-2x" aria-label="Close"></button>
+			<button class="close-button size-3x" aria-label="Close"></button>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<button class="close-button" aria-label="Close"></button>
+<button class="close-button size-lg" aria-label="Close"></button>
+<button class="close-button size-2x" aria-label="Close"></button>
+```
+
+### Colors
+
+There are helper classes for styling elements like button, first read about [color setter classes](/docs/helpers/color-setters) for having button with diffrent background and text color.
+
+<PreviewBox
+	height="100px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Close button</title>
+		<style>
+			.close-button{
+				margin: 0 5px !important;
+			}
+		</style>
+	</head>
+	<body>
+        <div class="flex-center" style="flex-wrap: wrap">
+			<button class="close-button style-success" aria-label="Close"></button>
+			<button class="close-button style-warning" aria-label="Close"></button>
+			<button class="close-button style-purple" aria-label="Close"></button>
+			<button class="close-button style-red" aria-label="Close"/></button>
+			<button class="close-button color-success" aria-label="Close"></button>
+			<button class="close-button color-warning" aria-label="Close"></button>
+			<button class="close-button color-purple" aria-label="Close"></button>
+			<button class="close-button color-red" aria-label="Close"></button>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<button class="close-button style-success" aria-label="Close"></button>
+<button class="close-button style-warning" aria-label="Close"></button>
+<button class="close-button style-purple" aria-label="Close"></button>
+<button class="close-button style-red" aria-label="Close"></button>
+
+<button class="close-button color-success" aria-label="Close"></button>
+<button class="close-button color-warning" aria-label="Close"></button>
+<button class="close-button color-purple" aria-label="Close"></button>
+<button class="close-button color-red" aria-label="Close"></button>
+```
+
+### Change close icon
+
+It is possible to change the close button icon with both `_config.scss` and CSS variables.
+
+Inside `_config.scss` find `$CLOSE_ICON` and set svg of customized icon with this format:
+
+```scss title="_config.scss"
+$CLOSE_ICON: url("data:image/svg+xml; utf8, YOUR SVG CODE HERE");
+```
+
+or
+
+change its CSS variable:
+
+```css title="style.css"
+--flatify__close-icon: url("data:image/svg+xml; utf8, YOUR SVG CODE HERE");
+```
