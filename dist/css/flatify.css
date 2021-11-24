@@ -1500,6 +1500,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   --flatify__local-bg-color: var(--flatify__submenu-item-bg-color);
   --flatify__local-txt-color: var(--flatify__submenu-txt-color);
   --flatify__local-border-color: var(--flatify__submenu-border-color);
+  position: relative;
   min-width: 12em;
   padding: 0.5em;
   margin-bottom: 0;
