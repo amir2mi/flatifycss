@@ -1016,7 +1016,7 @@ input[type=file]:not(.default)::-webkit-file-upload-button {
   border-radius: var(--flatify__border-radius);
   -webkit-box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus);
           box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus);
-  outline: none;
+  outline: none !important;
   -webkit-filter: brightness(100%);
           filter: brightness(100%);
   will-change: transform, filter;
@@ -1043,7 +1043,7 @@ input[type=file]:not(.default)::file-selector-button, .button {
   border-radius: var(--flatify__border-radius);
   -webkit-box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus);
           box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus);
-  outline: none;
+  outline: none !important;
   -webkit-filter: brightness(100%);
           filter: brightness(100%);
   will-change: transform, filter;
@@ -1200,6 +1200,9 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   -o-transition: all var(--flatify__bouncing-transition);
   transition: all var(--flatify__bouncing-transition);
 }
+.arrow-button:not(:empty):after {
+  margin-left: 0.32em;
+}
 .arrow-button.arrow-flip:after {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
@@ -1337,7 +1340,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   --flatify__submenu-item-txt-color__active: var(--flatify__txt-color);
   --flatify__submenu-item-txt-color__focus: var(--flatify__txt-color);
   --flatify__submenu-show-animation-duration: 350ms;
-  --flatify__submenu-show-animation-delay: 350ms;
+  --flatify__submenu-show-animation-delay: 200ms;
   --flatify__submenu-animation-show: flatify-dropdown-show
   	var(--flatify__dropdown-show-animation-duration) var(--flatify__submenu-show-animation-delay)
   	cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
@@ -1397,7 +1400,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 .menu-items-wrapper.navbar .links .menu-item.active {
   font-weight: var(--flatify__bold-font-weight);
 }
-.menu-items-wrapper.navbar .links .menu-item:hover > .submenu {
+.menu-items-wrapper.navbar .links .menu-item:focus-within > .submenu, .menu-items-wrapper.navbar .links .menu-item:hover > .submenu {
   display: block;
   -webkit-animation: var(--flatify__submenu-animation-show);
           animation: var(--flatify__submenu-animation-show);
@@ -1419,8 +1422,8 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   top: 0.64em;
   left: -2.18em;
   width: 3.125em;
-  height: 4.37em;
-  background: transparent;
+  height: 90%;
+  background: transparent !important;
   border-radius: 1em;
 }
 .menu-items-wrapper.navbar .navbar-logo {
@@ -1650,10 +1653,6 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 .dropdown.dropdown-will-be-hidden {
   -webkit-animation: var(--flatify__dropdown-animation-hide);
           animation: var(--flatify__dropdown-animation-hide);
-}
-
-.dropdown-wrapper > .dropdown-toggle.arrow-button:not(:empty):after {
-  margin-left: 0.32em;
 }
 
 :root {
