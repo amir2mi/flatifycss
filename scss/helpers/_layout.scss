@@ -150,3 +150,16 @@
 .sticky-top {
 	left: 0;
 }
+
+// overflow classes
+.scrollable {
+	overflow: auto;
+}
+.scrollable-x {
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+.scrollable-y {
+	overflow-x: hidden;
+	overflow-y: auto;
+}

@@ -1369,11 +1369,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   padding-right: 1.24em;
   border-bottom: var(--flatify__border-width) solid var(--flatify__menu-border-color);
 }
-.menu-items-wrapper.navbar.scrollable-navbar {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-.menu-items-wrapper.navbar.scrollable-navbar .search-bar {
+.menu-items-wrapper.navbar.scrollable-x .search-bar, .menu-items-wrapper.navbar.scrollable .search-bar {
   min-width: 12em;
 }
 .menu-items-wrapper.navbar .links {
@@ -3780,6 +3776,20 @@ textarea:not(.default) {
 .sticky-bottom,
 .sticky-top {
   left: 0;
+}
+
+.scrollable {
+  overflow: auto;
+}
+
+.scrollable-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.scrollable-y {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .pulse {

@@ -59,12 +59,9 @@
 		padding-right: 1.24em;
 		border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}menu-border-color);
 
-		// it does not support dropdown or submenu,
-		// but it will be scrollable for the x-axis especially good for small screens
-		&.scrollable-navbar {
-			overflow-x: auto;
-			overflow-y: hidden;
-
+		// scrollable navbar does not support dropdown or submenu, but it a good choice especially for small screens
+		&.scrollable-x,
+		&.scrollable {
 			// for small screen it should have a minimum width to prevent being compressed
 			.search-bar {
 				min-width: 12em;
