@@ -28,12 +28,6 @@
 	color: var(--#{$CSS_VAR_PFX}local-txt-color);
 	will-change: top, bottom, left, right;
 
-	@if $SUPPORT_LTR {
-		left: 0;
-	} @else {
-		right: 0;
-	}
-
 	&.show {
 		display: block;
 		animation: var(--#{$CSS_VAR_PFX}dropdown-animation-show);

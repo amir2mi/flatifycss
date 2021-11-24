@@ -219,6 +219,8 @@
 	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}submenu-txt-color);
 	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}submenu-border-color);
 	min-width: 12em;
+	padding: 0.5em;
+	margin-bottom: 0;
 	color: var(--#{$CSS_VAR_PFX}submenu-txt-color);
 	background: var(--#{$CSS_VAR_PFX}submenu-bg-color);
 	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);

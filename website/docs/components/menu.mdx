@@ -1,0 +1,135 @@
+---
+title: Menu
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Menu is a handy components, by default [dropdown](/docs/components/dropdown) and [navigation bar](/docs/components/navbar) use this component and style it based on their usage.  
+Generally there is a `.menu-items-wrapper` parent element with `.menu-item` children.
+
+:::info Active & disabled states
+With `.active` and `.disabled` classes you can show active item of the list and disable a link.
+:::
+
+## Vertical
+
+<PreviewBox
+	height="270px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Menu</title>
+	</head>
+	<body>
+		<ul class="menu-items-wrapper">
+			<li class="menu-item active"><a>Home</a></li>
+			<li class="menu-item"><a>Articles</a></li>
+			<li class="menu-item"><a>Photos</a></li>
+			<li class="menu-item"><a>Videos</a></li>
+			<li class="menu-item disabled"><a>About Us</a></li>
+		</ul>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<ul class="menu-items-wrapper">
+	<li class="menu-item active"><a>Home</a></li>
+	<li class="menu-item"><a>Articles</a></li>
+	<li class="menu-item"><a>Photos</a></li>
+	<li class="menu-item"><a>Videos</a></li>
+	<li class="menu-item disabled"><a>About Us</a></li>
+</ul>
+```
+
+## Horizontal
+
+By adding the `.flex-center` menu will be horizontal.
+
+<PreviewBox
+	height="110px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Menu</title>
+	</head>
+	<body>
+		<ul class="menu-items-wrapper flex-center">
+			<li class="menu-item active"><a>Home</a></li>
+			<li class="menu-item"><a>Articles</a></li>
+			<li class="menu-item"><a>Photos</a></li>
+			<li class="menu-item"><a>Videos</a></li>
+			<li class="menu-item disabled"><a>About Us</a></li>
+		</ul>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<ul class="menu-items-wrapper flex-center">
+	<li class="menu-item active"><a>Home</a></li>
+	<li class="menu-item"><a>Articles</a></li>
+	<li class="menu-item"><a>Photos</a></li>
+	<li class="menu-item"><a>Videos</a></li>
+	<li class="menu-item disabled"><a>About Us</a></li>
+</ul>
+```
+
+## Submenu
+
+Submenu is the second level of menu. Generally it has show/hide functionality but inside [navigation bar](/docs/components/navbar) component.
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Menu</title>
+	</head>
+	<body>
+		<div class="menu-items-wrapper" style="padding: 50px">
+			<ul class="submenu arrow-top">
+				<li class="menu-item active"><a>Home</a></li>
+				<li class="menu-item"><a>Articles</a></li>
+				<li class="menu-item"><a>Photos</a></li>
+				<li class="menu-item"><a>Videos</a></li>
+				<li class="menu-item disabled"><a>About Us</a></li>
+			</ul>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="menu-items-wrapper">
+	<ul class="submenu">
+		<li class="menu-item active"><a>Home</a></li>
+		<li class="menu-item"><a>Articles</a></li>
+		<li class="menu-item"><a>Photos</a></li>
+		<li class="menu-item"><a>Videos</a></li>
+		<li class="menu-item disabled"><a>About Us</a></li>
+	</ul>
+</div>
+```
+
+## Customization
+
+Menu, menu items and submenu

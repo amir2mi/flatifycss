@@ -1300,6 +1300,8 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   --flatify__local-txt-color: var(--flatify__submenu-txt-color);
   --flatify__local-border-color: var(--flatify__submenu-border-color);
   min-width: 12em;
+  padding: 0.5em;
+  margin-bottom: 0;
   color: var(--flatify__submenu-txt-color);
   background: var(--flatify__submenu-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
@@ -1434,7 +1436,6 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   width: 110%;
   color: var(--flatify__local-txt-color);
   will-change: top, bottom, left, right;
-  left: 0;
 }
 .dropdown.show {
   display: block;
