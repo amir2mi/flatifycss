@@ -95,6 +95,8 @@
 					font-weight: var(--#{$CSS_VAR_PFX}bold-font-weight);
 				}
 
+				// show submenu on parent hover or when child is focused
+				&:focus-within > .submenu,
 				&:hover > .submenu {
 					display: block;
 					animation: var(--#{$CSS_VAR_PFX}submenu-animation-show);
@@ -120,8 +122,8 @@
 							top: 0.64em;
 							left: -2.18em;
 							width: 3.125em;
-							height: 4.37em;
-							background: transparent;
+							height: 90%;
+							background: transparent !important;
 							border-radius: 1em;
 						}
 					}

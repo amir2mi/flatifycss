@@ -19,7 +19,8 @@
 	border: none;
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 	box-shadow: 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38) 0 var(--#{$CSS_VAR_PFX}button-bg-color__focus);
-	outline: none;
+	// button has its special pressed effect, there is not need for outline
+	outline: none !important;
 	// filter affect box-shadow width, so it should be set as default to prevent bugs on hover
 	filter: brightness(100%);
 	will-change: transform, filter;
