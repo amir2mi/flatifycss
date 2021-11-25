@@ -4,7 +4,11 @@ title: Navigation bar
 
 import PreviewBox from "../../src/components/preview-box";
 
-Navigation bar contains links, logo and search bar typically. Flatify CSS use [menu component](/docs/components/menu) to extend navigation bar features. Navigation bars support submenu and dropdown and gives 
+The navigation bar contains links, brand logo, and search bar typically. Flatify CSS use [menu component](/docs/components/menu) to extend navigation bar features. Navigation bars also support submenu and dropdown components.
+
+## A simple navigation bar
+
+Just add `.menu-items-wrapper` and `.navbar` classes to an element. Inside this element can be links or other components.
 
 <PreviewBox
 	height="110px"
@@ -16,88 +20,65 @@ Navigation bar contains links, logo and search bar typically. Flatify CSS use [m
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Search bar</title>
+		<title>Navigation bar</title>
 	</head>
 	<body>
-		<div class="search-bar">
-			<input type="search" placeholder="Search something..." />
-			<button class="search-button" aria-label="Search"></button>
-		</div>
+		<nav class="menu-items-wrapper navbar">
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
 	</body>
 </html>
 '
 />
 
 ```html {1} title="index.html"
-<div class="search-bar">
-	<input type="search" placeholder="Search something..." />
-	<button class="search-button" aria-label="Search"></button>
-</div>
+<nav class="menu-items-wrapper navbar">
+	<ul class="links">
+		<li class="menu-item active">
+			<a href="#">Home</a>
+		</li>
+		<li class="menu-item">
+			<a href="#">Articles</a>
+		</li>
+		<li class="menu-item">
+			<a href="#">Photos</a>
+		</li>
+		<li class="menu-item">
+			<a href="#">Videos</a>
+		</li>
+		<li class="menu-item">
+			<a href="#">About us</a>
+		</li>
+	</ul>
+</nav>
 ```
 
 ### Sizes
 
-To change the input bar size use [size setter classes](/docs/helpers/size-setters).
+To change the navigation bar size use [size setter classes](/docs/helpers/size-setters).
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
-
-<PreviewBox
-	height="250px"
-	children='
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Search bar</title>
-        <style>
-            .search-bar{
-                max-width: 20em
-            }
-        </style>
-	</head>
-	<body>
-        <div class="search-bar size-sm">
-            <input type="search" placeholder="Search something..." />
-            <button class="search-button" aria-label="Search"></button>
-        </div>
-        <div class="search-bar size-lg">
-            <input type="search" placeholder="Search something..." />
-            <button class="search-button" aria-label="Search"></button>
-        </div>
-        <div class="search-bar size-2x">
-            <input type="search" placeholder="Search something..." />
-            <button class="search-button" aria-label="Search"></button>
-        </div>
-	</body>
-</html>
-'
-/>
-
-```html title="index.html"
-<div class="search-bar size-sm">
-	<input type="search" placeholder="Search something..." />
-	<button class="search-button" aria-label="Search"></button>
-</div>
-
-<div class="search-bar size-lg">
-	<input type="search" placeholder="Search something..." />
-	<button class="search-button" aria-label="Search"></button>
-</div>
-
-<div class="search-bar size-2x">
-	<input type="search" placeholder="Search something..." />
-	<button class="search-button" aria-label="Search"></button>
-</div>
-```
 
 ### Colors
 
-There are helper classes for styling search bar, first read about [color setter classes](/docs/helpers/color-setters). For search bars, you should add these classes to the button and input separately.
+There are helper classes for styling navigation bar, first read about [color setter classes](/docs/helpers/color-setters).
 
 <PreviewBox
-	height="250px"
+	height="500px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -106,39 +87,28 @@ There are helper classes for styling search bar, first read about [color setter 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Search bar</title>
-        <style>
-            .search-bar{
-                width: 45%;
-                margin: 5px;
-            }
-        </style>
+		<title>Navigation bar</title>
 	</head>
-	<body class="flex-center" style="flex-wrap: wrap">
-        <div class="search-bar">
-            <input class="style-dark" type="search" placeholder="Search something..." />
-            <button class="search-button style-dark" aria-label="Search"></button>
-        </div>
-        <div class="search-bar">
-            <input class="style-light" type="search" placeholder="Search something..." />
-            <button class="search-button style-light" aria-label="Search"></button>
-        </div>
-        <div class="search-bar">
-            <input class="style-green-light" type="search" placeholder="Search something..." />
-            <button class="search-button style-green" aria-label="Search"></button>
-        </div>
-        <div class="search-bar">
-            <input class="style-blue" type="search" placeholder="Search something..." />
-            <button class="search-button style-blue" aria-label="Search"></button>
-        </div>
-        <div class="search-bar">
-            <input class="style-red" type="search" placeholder="Search something..." />
-            <button class="search-button style-red-light" aria-label="Search"></button>
-        </div>
-        <div class="search-bar">
-            <input class="style-orange" type="search" placeholder="Search something..." />
-            <button class="search-button style-orange-light" aria-label="Search"></button>
-        </div>
+	<body>
+        <nav class="menu-items-wrapper navbar style-">
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
 	</body>
 </html>
 '

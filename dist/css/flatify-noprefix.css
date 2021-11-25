@@ -1231,6 +1231,8 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   height: 100%;
 }
 .menu-items-wrapper[class*=style-] {
+  --flatify__menu-active-item-bg-color: var(--flatify__local-border-color);
+  --flatify__menu-active-item-txt-color: var(--flatify__local-txt-color);
   --flatify__menu-item-bg-color: var(--flatify__local-bg-color);
   --flatify__menu-item-bg-color__hover: var(--flatify__local-bg-color);
   --flatify__menu-item-bg-color__focus: var(--flatify__local-bg-color);
