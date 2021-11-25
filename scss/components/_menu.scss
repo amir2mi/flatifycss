@@ -9,12 +9,10 @@
 
 	--#{$CSS_VAR_PFX}menu-item-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
 	--#{$CSS_VAR_PFX}menu-item-bg-color__hover: var(--#{$CSS_VAR_PFX}bg-color-dark);
-	--#{$CSS_VAR_PFX}menu-item-bg-color__active: var(--#{$CSS_VAR_PFX}bg-color-dark);
 	--#{$CSS_VAR_PFX}menu-item-bg-color__focus: var(--#{$CSS_VAR_PFX}bg-color-dark);
 
 	--#{$CSS_VAR_PFX}menu-item-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}menu-item-txt-color__hover: var(--#{$CSS_VAR_PFX}txt-color);
-	--#{$CSS_VAR_PFX}menu-item-txt-color__active: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}menu-item-txt-color__focus: var(--#{$CSS_VAR_PFX}txt-color);
 
 	// submenu and its items
@@ -24,12 +22,10 @@
 
 	--#{$CSS_VAR_PFX}submenu-item-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
 	--#{$CSS_VAR_PFX}submenu-item-bg-color__hover: var(--#{$CSS_VAR_PFX}bg-color-dark);
-	--#{$CSS_VAR_PFX}submenu-item-bg-color__active: var(--#{$CSS_VAR_PFX}bg-color-dark);
 	--#{$CSS_VAR_PFX}submenu-item-bg-color__focus: var(--#{$CSS_VAR_PFX}bg-color-dark);
 
 	--#{$CSS_VAR_PFX}submenu-item-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}submenu-item-txt-color__hover: var(--#{$CSS_VAR_PFX}txt-color);
-	--#{$CSS_VAR_PFX}submenu-item-txt-color__active: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}submenu-item-txt-color__focus: var(--#{$CSS_VAR_PFX}txt-color);
 
 	--#{$CSS_VAR_PFX}submenu-show-animation-duration: #{$SUBMENU_SHOW_ANIMATION_DURATION};
@@ -41,9 +37,6 @@
 }
 
 .menu-items-wrapper {
-	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}menu-item-bg-color);
-	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}menu-txt-color);
-	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}menu-border-color);
 	list-style: none;
 	padding: 0.5em;
 	margin: 0;
@@ -101,7 +94,7 @@
 
 				.submenu {
 					position: absolute;
-					top: 2.8em;
+					top: 100%;
 					left: 0.5em;
 					z-index: 10;
 					display: none;
@@ -146,11 +139,9 @@
 	&[class*="style-"] {
 		--#{$CSS_VAR_PFX}menu-item-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
 		--#{$CSS_VAR_PFX}menu-item-bg-color__hover: var(--#{$CSS_VAR_PFX}local-bg-color);
-		--#{$CSS_VAR_PFX}menu-item-bg-color__active: var(--#{$CSS_VAR_PFX}local-bg-color);
 		--#{$CSS_VAR_PFX}menu-item-bg-color__focus: var(--#{$CSS_VAR_PFX}local-bg-color);
 		--#{$CSS_VAR_PFX}menu-item-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
 		--#{$CSS_VAR_PFX}menu-item-txt-color__hover: var(--#{$CSS_VAR_PFX}local-txt-color);
-		--#{$CSS_VAR_PFX}menu-item-txt-color__active: var(--#{$CSS_VAR_PFX}local-txt-color);
 		--#{$CSS_VAR_PFX}menu-item-txt-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
 	}
 
@@ -158,8 +149,8 @@
 		display: flex;
 		align-items: center;
 		margin: 0 0.25em;
-		color: var(--#{$CSS_VAR_PFX}local-txt-color);
-		background: var(--#{$CSS_VAR_PFX}local-bg-color);
+		color: var(--#{$CSS_VAR_PFX}menu-item-txt-color);
+		background: var(--#{$CSS_VAR_PFX}menu-item-bg-color);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
 		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
@@ -184,13 +175,8 @@
 			}
 
 			&.active {
-				color: var(--#{$CSS_VAR_PFX}menu-active-item-txt-color) !important;
-				background: var(--#{$CSS_VAR_PFX}menu-active-item-bg-color) !important;
-			}
-
-			&:active {
-				color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__active);
-				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__active);
+				color: var(--#{$CSS_VAR_PFX}menu-active-item-txt-color);
+				background: var(--#{$CSS_VAR_PFX}menu-active-item-bg-color);
 			}
 
 			&:focus-within {
@@ -215,7 +201,7 @@
 
 .dropdown,
 .menu-items-wrapper .submenu {
-	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}submenu-item-bg-color);
+	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}submenu-bg-color);
 	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}submenu-txt-color);
 	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}submenu-border-color);
 	position: relative;
@@ -228,19 +214,22 @@
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
 	&[class*="style-"] {
+		--#{$CSS_VAR_PFX}submenu-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
+		--#{$CSS_VAR_PFX}submenu-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
+		--#{$CSS_VAR_PFX}submenu-border-color: var(--#{$CSS_VAR_PFX}local-border-color);
 		--#{$CSS_VAR_PFX}submenu-item-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
 		--#{$CSS_VAR_PFX}submenu-item-bg-color__hover: var(--#{$CSS_VAR_PFX}local-bg-color);
-		--#{$CSS_VAR_PFX}submenu-item-bg-color__active: var(--#{$CSS_VAR_PFX}local-bg-color);
 		--#{$CSS_VAR_PFX}submenu-item-bg-color__focus: var(--#{$CSS_VAR_PFX}local-bg-color);
 		--#{$CSS_VAR_PFX}submenu-item-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
 		--#{$CSS_VAR_PFX}submenu-item-txt-color__hover: var(--#{$CSS_VAR_PFX}local-txt-color);
-		--#{$CSS_VAR_PFX}submenu-item-txt-color__active: var(--#{$CSS_VAR_PFX}local-txt-color);
 		--#{$CSS_VAR_PFX}submenu-item-txt-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
 	}
 
 	.menu-item {
 		font-size: 0.9em;
 		margin: 0;
+		color: var(--#{$CSS_VAR_PFX}submenu-item-txt-color);
+		background: var(--#{$CSS_VAR_PFX}submenu-item-bg-color);
 
 		&:not(:first-child) {
 			margin-top: 0.32em;
@@ -257,13 +246,8 @@
 			}
 
 			&.active {
-				color: var(--#{$CSS_VAR_PFX}submenu-active-item-txt-color) !important;
-				background: var(--#{$CSS_VAR_PFX}submenu-active-item-bg-color) !important;
-			}
-
-			&:active {
-				color: var(--#{$CSS_VAR_PFX}submenu-item-txt-color__active);
-				background: var(--#{$CSS_VAR_PFX}submenu-item-bg-color__active);
+				color: var(--#{$CSS_VAR_PFX}submenu-active-item-txt-color);
+				background: var(--#{$CSS_VAR_PFX}submenu-active-item-bg-color);
 			}
 
 			&:focus-within {
