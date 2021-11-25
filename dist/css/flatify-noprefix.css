@@ -1217,9 +1217,9 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   content: " ";
   position: absolute;
   top: 0.64em;
-  left: -2.18em;
-  width: 3.125em;
-  height: 90%;
+  left: -3.6em;
+  width: 4em;
+  min-height: 4em;
   background: transparent !important;
   border-radius: 1em;
 }

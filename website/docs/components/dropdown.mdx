@@ -577,12 +577,12 @@ Do not add color setter classes to `.dropdown-wrapper`, inside the wrapper there
 
 ## Customization
 
-You can customize dropdowns, they offer you CSS variables to change, as you might be noticed a typical dropdown uses menu items, so to customize them check [menu component documentation](/docs/components/menu).
+You can customize dropdowns, they offer you CSS variables to change, as you might be noticed a typical dropdown uses menu items because it is a [submenu](/docs/components/menu#submenu), to customize them check [menu component customization](/docs/components/menu#customization).
 These are dropdowns CSS variables:
 
-`--flatify__dropdown-bg-color`  
-`--flatify__dropdown-txt-color`  
-`--flatify__dropdown-border-color`
+`--flatify__submenu-bg-color`  
+`--flatify__submenu-txt-color`  
+`--flatify__submenu-border-color`
 
 `--flatify__dropdown-show-animation-duration`  
 `--flatify__dropdown-hide-animation-duration`
@@ -627,9 +627,9 @@ It is possible to change colors, animations duration, or change the whole animat
 			}
     		.my-custom-dropdown{
 				/* dropdown */
-				--flatify__dropdown-bg-color: #D8334A;
-    			--flatify__dropdown-txt-color: #F5F7FA;
-    			--flatify__dropdown-border-color: #BF263C;
+				--flatify__submenu-bg-color: #D8334A;
+    			--flatify__submenu-txt-color: #F5F7FA;
+    			--flatify__submenu-border-color: #BF263C;
     			--flatify__dropdown-animation-show: my-dropdown-show-animation 500ms ease;
     			--flatify__dropdown-animation-hide: my-dropdown-hide-animation 500ms ease;
 				/* menu items */
@@ -700,9 +700,9 @@ It is possible to change colors, animations duration, or change the whole animat
 
 .my-custom-dropdown {
 	/* dropdown */
-	--flatify__dropdown-bg-color: #d8334a;
-	--flatify__dropdown-txt-color: #f5f7fa;
-	--flatify__dropdown-border-color: #bf263c;
+	--flatify__submenu-bg-color: #d8334a;
+	--flatify__submenu-txt-color: #f5f7fa;
+	--flatify__submenu-border-color: #bf263c;
 	--flatify__dropdown-animation-show: my-dropdown-show-animation 500ms ease;
 	--flatify__dropdown-animation-hide: my-dropdown-hide-animation 500ms ease;
 	/* menu items */
