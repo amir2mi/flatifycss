@@ -1469,7 +1469,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   color: var(--flatify__menu-active-item-txt-color);
   background: var(--flatify__menu-active-item-bg-color);
 }
-.menu-items-wrapper .menu-item:focus-within {
+.menu-items-wrapper .menu-item:focus {
   color: var(--flatify__menu-item-txt-color__focus);
   background: var(--flatify__menu-item-bg-color__focus);
 }
@@ -1538,8 +1538,8 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   color: var(--flatify__submenu-active-item-txt-color);
   background: var(--flatify__submenu-active-item-bg-color);
 }
-.dropdown .menu-item:focus-within,
-.menu-items-wrapper .submenu .menu-item:focus-within {
+.dropdown .menu-item:focus,
+.menu-items-wrapper .submenu .menu-item:focus {
   color: var(--flatify__submenu-item-txt-color__focus);
   background: var(--flatify__submenu-item-bg-color__focus);
 }
