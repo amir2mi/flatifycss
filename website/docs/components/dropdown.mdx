@@ -515,7 +515,7 @@ Do not add color setter classes to `.dropdown-wrapper`, inside the wrapper there
 	<body class="flex-center">
 		<div class="dropdown-wrapper">
 			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button style-dark" aria-expanded="false">
-				Small
+				Dark
 			</button>
 			<ul
 				class="dropdown menu-items-wrapper style-dark"
@@ -529,7 +529,7 @@ Do not add color setter classes to `.dropdown-wrapper`, inside the wrapper there
 		</div>
         <div class="dropdown-wrapper">
 			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button style-pink-light" aria-expanded="false">
-				Medium
+				Light pink
 			</button>
 			<ul
 				class="dropdown menu-items-wrapper style-pink-light"
@@ -543,7 +543,7 @@ Do not add color setter classes to `.dropdown-wrapper`, inside the wrapper there
 		</div>
 		<div class="dropdown-wrapper">
 			<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button style-green" aria-expanded="false">
-				Large
+				green & light green
 			</button>
 			<ul
 				class="dropdown menu-items-wrapper style-green-light"
@@ -627,18 +627,19 @@ It is possible to change colors, animations duration, or change the whole animat
 			}
     		.my-custom-dropdown{
 				/* dropdown */
+    			--flatify__dropdown-animation-show: my-dropdown-show-animation 500ms ease;
+    			--flatify__dropdown-animation-hide: my-dropdown-hide-animation 500ms ease;
+				/* submenu */
 				--flatify__submenu-bg-color: #D8334A;
     			--flatify__submenu-txt-color: #F5F7FA;
     			--flatify__submenu-border-color: #BF263C;
-    			--flatify__dropdown-animation-show: my-dropdown-show-animation 500ms ease;
-    			--flatify__dropdown-animation-hide: my-dropdown-hide-animation 500ms ease;
-				/* menu items */
-				--flatify__menu-item-bg-color__hover: #A0D468;
-				--flatify__menu-item-bg-color__active: #FFCE54;
-				--flatify__menu-item-bg-color__focus: #F6BB42;
-				--flatify__menu-item-txt-color__hover: #3C3B3D;
-				--flatify__menu-item-txt-color__active: #BF263C;
-				--flatify__menu-item-txt-color__focus: #BF263C;
+				/* submenu items */
+				--flatify__submenu-item-bg-color: #BF263C;
+				--flatify__submenu-item-txt-color: #F5F7FA;
+				--flatify__submenu-item-bg-color__hover: #A0D468;
+				--flatify__submenu-item-bg-color__focus: #FFCE54;
+				--flatify__submenu-item-txt-color__hover: #3C3B3D;
+				--flatify__submenu-item-txt-color__focus: #BF263C;
 			}
     	</style>
     	<script src="https://unpkg.com/@popperjs/core@2"></script>

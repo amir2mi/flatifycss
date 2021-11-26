@@ -41,6 +41,10 @@ Just add `.menu-items-wrapper` and `.navbar` classes to an element. Inside this 
 					<a>Disabled</a>
 				</li>
 			</ul>
+			<div class="search-bar push-right">
+				<input type="search" class="style-light" placeholder="Search something..." />
+				<button class="search-button" aria-label="Search"></button>
+			</div>
 	</body>
 </html>
 '
@@ -65,20 +69,23 @@ Just add `.menu-items-wrapper` and `.navbar` classes to an element. Inside this 
 			<a href="#">About us</a>
 		</li>
 	</ul>
+	<div class="search-bar push-right">
+		<input type="search" class="style-light" placeholder="Search something..." />
+		<button class="search-button" aria-label="Search"></button>
+	</div>
 </nav>
 ```
 
-### Sizes
+## Submenu & dropdown
 
-To change the navigation bar size use [size setter classes](/docs/helpers/size-setters).
-These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+:::info Difference between submenu & dropdown
+Generally, submenus in the navigation bar will be displayed on hover/focus however downtowns are togglable, which means you should click to show and click again to hide them, as mentioned in the [dropdowns autoclose feature documentation](/docs/components/dropdown#autoclose), you can control when dropdowns should be hidden.
+:::
 
-### Colors
-
-There are helper classes for styling navigation bar, first read about [color setter classes](/docs/helpers/color-setters).
+Here is an example of [submenu](/docs/components/menu#submenu) and [dropdown](/docs/components/dropdown). Navigation bar submenu will be displayed when you hover/focus its parents.
 
 <PreviewBox
-	height="500px"
+	height="300px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -88,9 +95,155 @@ There are helper classes for styling navigation bar, first read about [color set
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Navigation bar</title>
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+		<script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
 	</head>
 	<body>
-        <nav class="menu-items-wrapper navbar style-">
+		<nav class="menu-items-wrapper navbar">
+				<ul class="links">
+				<li class="menu-item"><a href="#">Articles</a></li>
+				<li class="menu-item"><a href="#">Photos</a></li>
+				<li class="menu-item dropdown-wrapper">
+					<button class="dropdown-toggle arrow-button" id="defaultDropdown" aria-expanded="false">
+						With dropdown
+					</button>
+					<ul class="dropdown menu-items-wrapper" aria-labelledby="defaultDropdown">
+						<li class="menu-item"><a href="#">Item 1</a></li>
+						<li class="menu-item"><a href="#">Item 2</a></li>
+						<li class="menu-item"><a href="#">Item 3</a></li>
+						<li class="menu-item"><a href="#">Item 4</a></li>
+						<li class="menu-item"><a href="#">Item 5</a></li>
+						<li><span class="pointer-arrow"></span></li>
+					</ul>
+				</li>
+				<li class="menu-item">
+					<a class="arrow-button">With submenu</a>
+					<ul class="submenu menu-items-wrapper arrow-top">
+						<li class="menu-item"><a href="#">Item 1</a></li>
+						<li class="menu-item"><a href="#">Item 2</a></li>
+						<li class="menu-item"><a href="#">Item 3</a></li>
+						<li class="menu-item arrow-button arrow-right">
+							<a href="#">Item 4</a>
+							<ul class="submenu menu-items-wrapper arrow-left">
+								<li class="menu-item"><a href="#">Item 1</a></li>
+								<li class="menu-item"><a href="#">Item 2</a></li>
+								<li class="menu-item"><a href="#">Item 3</a></li>
+								<li class="menu-item"><a href="#">Item 4</a></li>
+							</ul>
+					</li>
+    				</ul>
+    			</li>
+    			<li class="menu-item disabled"><a>About Us</a></li>
+    		</ul>
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<nav class="menu-items-wrapper navbar">
+	<ul class="links">
+		<li class="menu-item"><a href="#">Articles</a></li>
+		<li class="menu-item"><a href="#">Photos</a></li>
+		<li class="menu-item dropdown-wrapper">
+			<button class="dropdown-toggle arrow-button" id="defaultDropdown" aria-expanded="false">
+				With dropdown
+			</button>
+			<ul class="dropdown menu-items-wrapper" aria-labelledby="defaultDropdown">
+				<li class="menu-item"><a href="#">Item 1</a></li>
+				<li class="menu-item"><a href="#">Item 2</a></li>
+				<li class="menu-item"><a href="#">Item 3</a></li>
+				<li class="menu-item"><a href="#">Item 4</a></li>
+				<li class="menu-item"><a href="#">Item 5</a></li>
+				<li><span class="pointer-arrow"></span></li>
+			</ul>
+		</li>
+		<li class="menu-item">
+			<a href="#" class="arrow-button">With submenu</a>
+			<!-- level 2 -->
+			<ul class="submenu menu-items-wrapper arrow-top">
+				<li class="menu-item"><a href="#">Item 1</a></li>
+				<li class="menu-item"><a href="#">Item 2</a></li>
+				<li class="menu-item"><a href="#">Item 3</a></li>
+				<li class="menu-item arrow-button arrow-right">
+					<a href="#">Item 4</a>
+					<!-- level 3 -->
+					<ul class="submenu menu-items-wrapper arrow-left">
+						<li class="menu-item"><a href="#">Item 1</a></li>
+						<li class="menu-item"><a href="#">Item 2</a></li>
+						<li class="menu-item"><a href="#">Item 3</a></li>
+						<li class="menu-item"><a href="#">Item 4</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li class="menu-item disabled"><a>About Us</a></li>
+	</ul>
+</nav>
+```
+
+## Sizes
+
+To change the navigation bar size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+
+<PreviewBox
+	height="300px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Navigation bar</title>
+		<style>
+			.menu-items-wrapper:not(:last-child){
+				margin-bottom: 0.64em;
+			}
+		</style>
+	</head>
+	<body>
+        <nav class="menu-items-wrapper navbar size-sm">
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+		<nav class="menu-items-wrapper navbar size-lg">
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+		<nav class="menu-items-wrapper navbar size-2x">
 			<ul class="links">
 				<li class="menu-item active">
 					<a href="#">Active</a>
@@ -115,33 +268,137 @@ There are helper classes for styling navigation bar, first read about [color set
 />
 
 ```html title="index.html"
-<div class="search-bar">
-	<input class="style-dark" type="search" placeholder="Search something..." />
-	<button class="search-button style-dark" aria-label="Search"></button>
-</div>
+<nav class="menu-items-wrapper navbar size-sm">...</nav>
+<nav class="menu-items-wrapper navbar size-lg">...</nav>
+<nav class="menu-items-wrapper navbar size-2x">...</nav>
+```
 
-<div class="search-bar">
-	<input class="style-light" type="search" placeholder="Search something..." />
-	<button class="search-button style-light" aria-label="Search"></button>
-</div>
+## Colors
 
-<div class="search-bar">
-	<input class="style-green-light" type="search" placeholder="Search something..." />
-	<button class="search-button style-green" aria-label="Search"></button>
-</div>
+There are helper classes for styling navigation bar, first read about [color setter classes](/docs/helpers/color-setters).
 
-<div class="search-bar">
-	<input class="style-blue" type="search" placeholder="Search something..." />
-	<button class="search-button style-blue" aria-label="Search"></button>
-</div>
+<PreviewBox
+	height="400px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Navigation bar</title>
+		<style>
+			.menu-items-wrapper:not(:last-child){
+				margin-bottom: 0.64em;
+			}
+		</style>
+	</head>
+	<body>
+        <nav class="menu-items-wrapper navbar style-red">
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+		<nav class="menu-items-wrapper navbar style-blue">
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+		<nav class="menu-items-wrapper navbar style-green">
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+		<nav class="menu-items-wrapper navbar style-dark">
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+		<nav class="menu-items-wrapper navbar style-light-light">
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+	</body>
+</html>
+'
+/>
 
-<div class="search-bar">
-	<input class="style-red" type="search" placeholder="Search something..." />
-	<button class="search-button style-red-light" aria-label="Search"></button>
-</div>
-
-<div class="search-bar">
-	<input class="style-orange" type="search" placeholder="Search something..." />
-	<button class="search-button style-orange-light" aria-label="Search"></button>
-</div>
+```html title="index.html"
+<nav class="menu-items-wrapper navbar style-red">...</nav>
+<nav class="menu-items-wrapper navbar style-blue">...</nav>
+<nav class="menu-items-wrapper navbar style-green">...</nav>
+<nav class="menu-items-wrapper navbar style-dark">...</nav>
+<nav class="menu-items-wrapper navbar style-light-light">...</nav>
 ```

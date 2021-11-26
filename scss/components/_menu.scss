@@ -172,26 +172,19 @@
 			text-decoration: none !important;
 		}
 
-		&:not(.heading) {
-			&:hover {
-				color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__hover);
-				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__hover);
-			}
-
-			&.active {
-				color: var(--#{$CSS_VAR_PFX}menu-active-item-txt-color);
-				background: var(--#{$CSS_VAR_PFX}menu-active-item-bg-color);
-			}
-
-			&:focus-within {
-				color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__focus);
-				background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__focus);
-			}
+		&:hover {
+			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__hover);
+			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__hover);
 		}
 
-		&.heading {
-			font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
-			padding: 0.75em;
+		&.active {
+			color: var(--#{$CSS_VAR_PFX}menu-active-item-txt-color);
+			background: var(--#{$CSS_VAR_PFX}menu-active-item-bg-color);
+		}
+
+		&:focus-within {
+			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__focus);
+			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__focus);
 		}
 
 		&.separator {
@@ -243,21 +236,26 @@
 			padding: 0.64em 1.25em;
 		}
 
-		&:not(.heading) {
-			&:hover {
-				color: var(--#{$CSS_VAR_PFX}submenu-item-txt-color__hover);
-				background: var(--#{$CSS_VAR_PFX}submenu-item-bg-color__hover);
-			}
+		&.heading {
+			font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+			padding: 0.75em;
+			color: var(--#{$CSS_VAR_PFX}submenu-txt-color) !important;
+			background: var(--#{$CSS_VAR_PFX}submenu-bg-color) !important;
+		}
 
-			&.active {
-				color: var(--#{$CSS_VAR_PFX}submenu-active-item-txt-color);
-				background: var(--#{$CSS_VAR_PFX}submenu-active-item-bg-color);
-			}
+		&:hover {
+			color: var(--#{$CSS_VAR_PFX}submenu-item-txt-color__hover);
+			background: var(--#{$CSS_VAR_PFX}submenu-item-bg-color__hover);
+		}
 
-			&:focus-within {
-				color: var(--#{$CSS_VAR_PFX}submenu-item-txt-color__focus);
-				background: var(--#{$CSS_VAR_PFX}submenu-item-bg-color__focus);
-			}
+		&.active {
+			color: var(--#{$CSS_VAR_PFX}submenu-active-item-txt-color);
+			background: var(--#{$CSS_VAR_PFX}submenu-active-item-bg-color);
+		}
+
+		&:focus-within {
+			color: var(--#{$CSS_VAR_PFX}submenu-item-txt-color__focus);
+			background: var(--#{$CSS_VAR_PFX}submenu-item-bg-color__focus);
 		}
 
 		// additional space for menu item arrow

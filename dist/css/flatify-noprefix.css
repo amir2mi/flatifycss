@@ -1260,21 +1260,17 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   color: inherit;
   text-decoration: none !important;
 }
-.menu-items-wrapper .menu-item:not(.heading):hover {
+.menu-items-wrapper .menu-item:hover {
   color: var(--flatify__menu-item-txt-color__hover);
   background: var(--flatify__menu-item-bg-color__hover);
 }
-.menu-items-wrapper .menu-item:not(.heading).active {
+.menu-items-wrapper .menu-item.active {
   color: var(--flatify__menu-active-item-txt-color);
   background: var(--flatify__menu-active-item-bg-color);
 }
-.menu-items-wrapper .menu-item:not(.heading):focus-within {
+.menu-items-wrapper .menu-item:focus-within {
   color: var(--flatify__menu-item-txt-color__focus);
   background: var(--flatify__menu-item-bg-color__focus);
-}
-.menu-items-wrapper .menu-item.heading {
-  font-weight: var(--flatify__medium-font-weight);
-  padding: 0.75em;
 }
 .menu-items-wrapper .menu-item.separator {
   height: var(--flatify__border-width);
@@ -1324,18 +1320,25 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 .menu-items-wrapper .submenu .menu-item a {
   padding: 0.64em 1.25em;
 }
-.dropdown .menu-item:not(.heading):hover,
-.menu-items-wrapper .submenu .menu-item:not(.heading):hover {
+.dropdown .menu-item.heading,
+.menu-items-wrapper .submenu .menu-item.heading {
+  font-weight: var(--flatify__medium-font-weight);
+  padding: 0.75em;
+  color: var(--flatify__submenu-txt-color) !important;
+  background: var(--flatify__submenu-bg-color) !important;
+}
+.dropdown .menu-item:hover,
+.menu-items-wrapper .submenu .menu-item:hover {
   color: var(--flatify__submenu-item-txt-color__hover);
   background: var(--flatify__submenu-item-bg-color__hover);
 }
-.dropdown .menu-item:not(.heading).active,
-.menu-items-wrapper .submenu .menu-item:not(.heading).active {
+.dropdown .menu-item.active,
+.menu-items-wrapper .submenu .menu-item.active {
   color: var(--flatify__submenu-active-item-txt-color);
   background: var(--flatify__submenu-active-item-bg-color);
 }
-.dropdown .menu-item:not(.heading):focus-within,
-.menu-items-wrapper .submenu .menu-item:not(.heading):focus-within {
+.dropdown .menu-item:focus-within,
+.menu-items-wrapper .submenu .menu-item:focus-within {
   color: var(--flatify__submenu-item-txt-color__focus);
   background: var(--flatify__submenu-item-bg-color__focus);
 }
