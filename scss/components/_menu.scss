@@ -182,7 +182,9 @@
 			background: var(--#{$CSS_VAR_PFX}menu-active-item-bg-color);
 		}
 
-		&:focus {
+		// menu items are not focusable because they are usually <li>
+		&:focus,
+		&:focus-within {
 			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__focus);
 			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__focus);
 		}
@@ -253,7 +255,8 @@
 			background: var(--#{$CSS_VAR_PFX}submenu-active-item-bg-color);
 		}
 
-		&:focus {
+		&:focus,
+		&:focus-within {
 			color: var(--#{$CSS_VAR_PFX}submenu-item-txt-color__focus);
 			background: var(--#{$CSS_VAR_PFX}submenu-item-bg-color__focus);
 		}
