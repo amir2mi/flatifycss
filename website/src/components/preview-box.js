@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-export default function PreviewBox({ children, disableFullscreen, ...props }) {
+export default function PreviewBox({ children, disableFullscreen, limitWidth, ...props }) {
 	const [fullscreen, setFullscreen] = useState(false);
 
 	return (
-		<div className="preview-box-wrapper">
+		<div className="preview-box-wrapper" style={limitWidth ? { width: limitWidth,display:'table',margin: '0 auto' } : {}}>
 			{!disableFullscreen && (
 				<button
 					aria-label={fullscreen ? "Minimize the example" : "Fullscreen the example"}

@@ -28,12 +28,11 @@
 	--#{$CSS_VAR_PFX}submenu-item-txt-color__hover: var(--#{$CSS_VAR_PFX}txt-color);
 	--#{$CSS_VAR_PFX}submenu-item-txt-color__focus: var(--#{$CSS_VAR_PFX}txt-color);
 
-	--#{$CSS_VAR_PFX}submenu-show-animation-duration: #{$SUBMENU_SHOW_ANIMATION_DURATION};
-	--#{$CSS_VAR_PFX}submenu-show-animation-delay: #{$SUBMENU_SHOW_ANIMATION_DELAY};
+	--#{$CSS_VAR_PFX}submenu-animation-show-duration: #{$SUBMENU_SHOW_ANIMATION_DURATION};
+	--#{$CSS_VAR_PFX}submenu-animation-show-delay: #{$SUBMENU_SHOW_ANIMATION_DELAY};
 
-	--#{$CSS_VAR_PFX}submenu-animation-show: flatify-dropdown-show
-		var(--#{$CSS_VAR_PFX}dropdown-show-animation-duration) var(--#{$CSS_VAR_PFX}submenu-show-animation-delay)
-		cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+	--#{$CSS_VAR_PFX}submenu-animation-show: flatify-dropdown-show var(--#{$CSS_VAR_PFX}submenu-animation-show-duration)
+		var(--#{$CSS_VAR_PFX}submenu-animation-show-delay) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .menu-items-wrapper {
@@ -44,6 +43,7 @@
 	background: var(--#{$CSS_VAR_PFX}menu-bg-color);
 
 	&.navbar {
+		scrollbar-width: thin;
 		display: flex;
 		align-items: center;
 		width: 100%;

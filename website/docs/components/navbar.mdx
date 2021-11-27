@@ -45,6 +45,7 @@ Just add `.menu-items-wrapper` and `.navbar` classes to an element. Inside this 
 				<input type="search" class="style-light" placeholder="Search something..." />
 				<button class="search-button" aria-label="Search"></button>
 			</div>
+		</nav>
 	</body>
 </html>
 '
@@ -135,6 +136,7 @@ Here is an example of [submenu](/docs/components/menu#submenu) and [dropdown](/d
     			</li>
     			<li class="menu-item disabled"><a>About Us</a></li>
     		</ul>
+		</nav>
     </body>
 </html>
 '
@@ -178,6 +180,231 @@ Here is an example of [submenu](/docs/components/menu#submenu) and [dropdown](/d
 			</ul>
 		</li>
 		<li class="menu-item disabled"><a>About Us</a></li>
+	</ul>
+</nav>
+```
+
+## Logo
+
+It is possible to have a logo in the navigation bar with the `.navbar-logo` class. It takes care of height and fits the image to have the desired result you want.
+
+<PreviewBox
+	height="110px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Navigation bar</title>
+	</head>
+	<body>
+		<nav class="menu-items-wrapper navbar">
+			<a class="navbar-logo" href="#">
+				<img src="https://raw.githack.com/amir2mi/flatifycss/master/website/static/img/logo.svg" alt="logo" />
+			</a>
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+	</body>
+</html>
+'
+/>
+
+```html {2-4} title="index.html"
+<nav class="menu-items-wrapper navbar">
+	<a class="navbar-logo" href="#">
+		<img src="URL" alt="logo" />
+	</a>
+	<ul class="links">
+		...
+	</ul>
+</nav>
+```
+
+## Fixed & Sticky
+
+There are classes to set position for navigation bars, they can be either sticky or fixed.  
+Fixed classes: `.fixed-top` `.fixed-bottom` `.fixed-left` `.fixed-right`  
+Sticky classes: `.sticky-top` `.sticky-bottom` `.sticky-left` `.sticky-right`
+
+<PreviewBox
+	height="320px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Navigation bar</title>
+	</head>
+	<body>
+		<nav class="menu-items-wrapper navbar fixed-bottom style-dark">
+			<a class="navbar-logo" href="#">
+				<img src="https://raw.githack.com/amir2mi/flatifycss/master/website/static/img/logo.svg" alt="logo" />
+			</a>
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+		<h1>
+			Scroll Down
+		</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<nav class="menu-items-wrapper navbar sticky-top">
+			<a class="navbar-logo" href="#">
+				<img src="https://raw.githack.com/amir2mi/flatifycss/master/website/static/img/logo.svg" alt="logo" />
+			</a>
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		</p>
+	</body>
+</html>
+'
+/>
+
+## Scrollable
+
+Sometimes it is possible to have a long navigation bar (especially if you use the navigation bar for small screen sizes), so it is necessary to have the scrollable x-axis, you can have it by using scrollable classes.
+
+`.scrollable`  
+`.scrollable-x`  
+`.scrollable-y`
+
+<PreviewBox
+	height="110px"
+	limitWidth="420px"
+	disableFullscreen="true"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Navigation bar</title>
+	</head>
+	<body>
+		<nav class="menu-items-wrapper navbar scrollable-x">
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+	</body>
+</html>
+'
+/>
+
+:::warning
+Note that these classes limit overflow, so dropdowns and submenues will not work anymore if you want to have a
+scrollable navigation bar.
+:::
+
+```html {1} title="index.html"
+<nav class="menu-items-wrapper navbar scrollable-x">
+	<ul class="links">
+		...
 	</ul>
 </nav>
 ```
@@ -403,57 +630,6 @@ There are helper classes for styling navigation bar, first read about [color set
 <nav class="menu-items-wrapper navbar style-light-light">...</nav>
 ```
 
-## Logo
+## Customization
 
-It is possible to have a logo in the navigation bar with the `.navbar-logo` class. It takes care of height and fits the image to have the desired result you want.
-
-<PreviewBox
-	height="110px"
-	children='
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Navigation bar</title>
-	</head>
-	<body>
-		<nav class="menu-items-wrapper navbar">
-			<a class="navbar-logo" href="#">
-				<img src="https://raw.githubusercontent.com/amir2mi/flatifycss/master/website/static/img/logo.png" alt="logo" />
-			</a>
-			<ul class="links">
-				<li class="menu-item active">
-					<a href="#">Active</a>
-				</li>
-				<li class="menu-item">
-					<a href="#">Articles</a>
-				</li>
-				<li class="menu-item">
-					<a href="#">Photos</a>
-				</li>
-				<li class="menu-item">
-					<a href="#">Videos</a>
-				</li>
-				<li class="menu-item disabled">
-					<a>Disabled</a>
-				</li>
-			</ul>
-		</nav>
-	</body>
-</html>
-'
-/>
-
-```html {2-4} title="index.html"
-<nav class="menu-items-wrapper navbar">
-	<a class="navbar-logo" href="#">
-		<img src="https://raw.githubusercontent.com/amir2mi/flatifycss/master/website/static/img/logo.png" alt="logo" />
-	</a>
-	<ul class="links">
-		...
-	</ul>
-</nav>
-```
+As said above navigation bar is simply a menu with submenues, there is no special option for navigation bar customization, you can check [menu customization documentation](/docs/components/menu#customization).

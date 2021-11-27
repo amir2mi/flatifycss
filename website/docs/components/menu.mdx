@@ -109,7 +109,7 @@ Submenu can have arrow, you can use `.arrow-top`, `.arrow-bottom`, `.arrow-left`
 	</head>
 	<body>
 		<div class="menu-items-wrapper">
-			<ul class="menu-items-wrapper submenu arrow-top">
+			<ul class="submenu arrow-top">
 				<li class="menu-item active"><a>Home</a></li>
 				<li class="menu-item"><a>Articles</a></li>
 				<li class="menu-item"><a>Photos</a></li>
@@ -124,7 +124,7 @@ Submenu can have arrow, you can use `.arrow-top`, `.arrow-bottom`, `.arrow-left`
 
 ```html title="index.html"
 <div class="menu-items-wrapper">
-	<ul class="menu-items-wrapper submenu arrow-top">
+	<ul class="submenu arrow-top">
 		<li class="menu-item active"><a>Home</a></li>
 		<li class="menu-item"><a>Articles</a></li>
 		<li class="menu-item"><a>Photos</a></li>
@@ -136,37 +136,39 @@ Submenu can have arrow, you can use `.arrow-top`, `.arrow-bottom`, `.arrow-left`
 
 ## Customization
 
-Menu, menu items and submenu have their own CSS variables to be customized, you see all possible options below.  
+Menu, menu items and submenu have their own CSS variables to be customized, you see all possible options below.
 
 Menu items wrapper:  
 `--flatify__menu-bg-color`  
 `--flatify__menu-txt-color`  
-`--flatify__menu-border-color`  
+`--flatify__menu-border-color`
 
 Menu items:  
 `--flatify__menu-active-item-bg-color`  
 `--flatify__menu-active-item-txt-color`  
 `--flatify__menu-item-bg-color`  
-`--flatify__menu-item-bg-color__hover`    
+`--flatify__menu-item-bg-color__hover`  
 `--flatify__menu-item-bg-color__focus`  
 `--flatify__menu-item-txt-color`  
-`--flatify__menu-item-txt-color__hover`   
-`--flatify__menu-item-txt-color__focus`  
+`--flatify__menu-item-txt-color__hover`  
+`--flatify__menu-item-txt-color__focus`
 
 Submenu:  
 `--flatify__submenu-bg-color`  
 `--flatify__submenu-txt-color`  
-`--flatify__submenu-border-color`  
+`--flatify__submenu-border-color`
 
 Submenu items:  
 `--flatify__submenu-item-bg-color`  
-`--flatify__submenu-item-bg-color__hover`   
+`--flatify__submenu-item-bg-color__hover`  
 `--flatify__submenu-item-bg-color__focus`  
 `--flatify__submenu-item-txt-color`  
 `--flatify__submenu-item-txt-color__hover`  
-`--flatify__submenu-item-txt-color__focus`  
+`--flatify__submenu-item-txt-color__focus`
 
 Submenu animation (when they are inside [navigation bar](/docs/components/navbar)):  
-`--flatify__submenu-show-animation-duration`  
-`--flatify__submenu-show-animation-delay`  
-`--flatify__submenu-animation-show`  
+Change current animation:  
+`--flatify__submenu-animation-show-duration`  
+`--flatify__submenu-animation-show-delay`  
+Or set a new animation:  
+`--flatify__submenu-animation-show`
