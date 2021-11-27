@@ -57,7 +57,7 @@ const config = {
 					},
 					{ to: "/blog", label: "News", position: "left" },
 					{
-						href: "https://github.com/amir2mi/FlatifyCSS",
+						href: "https://github.com/amir2mi/flatifycss",
 						label: "Contribute",
 						position: "left",
 					},
