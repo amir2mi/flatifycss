@@ -1,6 +1,6 @@
 <p align="center">
   <a href="">
-    <img src="https://raw.githubusercontent.com/amir2mi/flatifycss/master/website/static/img/logo.png" alt="FlatifyCSS" width="200" height="200">
+    <img src="https://raw.githubusercontent.com/amir2mi/flatifycss/master/website/static/img/logo.png" alt="FlatifyCSS" width="160" height="160">
   </a>
 </p>
 
