@@ -854,9 +854,9 @@ th {
   --flatify__alert-bg-color: var(--flatify__bg-color-dark);
   --flatify__alert-txt-color: var(--flatify__txt-color);
   --flatify__alert-border-color: var(--flatify__bg-color-darker);
-  --flatify__alert-remove-animation-duration: 350ms;
-  --flatify__alert-remove-animation: flatify-alert-will-be-removed
-  	var(--flatify__alert-remove-animation-duration) ease;
+  --flatify__alert-animation-remove-duration: 350ms;
+  --flatify__alert-animation-remove: flatify-alert-will-be-removed
+  	var(--flatify__alert-animation-remove-duration) ease;
 }
 
 .alert {
@@ -873,8 +873,8 @@ th {
   border-radius: var(--flatify__border-radius);
 }
 .alert.alert-will-be-removed {
-  -webkit-animation: var(--flatify__alert-remove-animation) both;
-          animation: var(--flatify__alert-remove-animation) both;
+  -webkit-animation: var(--flatify__alert-animation-remove) both;
+          animation: var(--flatify__alert-animation-remove) both;
 }
 .alert:hover .close-button.floating {
   -webkit-transform: scale(1);
@@ -981,12 +981,12 @@ th {
 }
 .backdrop-layer.show {
   display: block;
-  -webkit-animation: flatify-backdrop-fade-in var(--flatify__modal-show-animation-duration);
-          animation: flatify-backdrop-fade-in var(--flatify__modal-show-animation-duration);
+  -webkit-animation: flatify-backdrop-fade-in var(--flatify__modal-animation-show-duration);
+          animation: flatify-backdrop-fade-in var(--flatify__modal-animation-show-duration);
 }
 .backdrop-layer.backdrop-will-be-removed {
-  -webkit-animation: flatify-fade-out var(--flatify__modal-hide-animation-duration) both;
-          animation: flatify-fade-out var(--flatify__modal-hide-animation-duration) both;
+  -webkit-animation: flatify-fade-out var(--flatify__modal-animation-hide-duration) both;
+          animation: flatify-fade-out var(--flatify__modal-animation-hide-duration) both;
 }
 .backdrop-layer.modal-backdrop {
   z-index: 1030;
@@ -1335,11 +1335,10 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   --flatify__submenu-item-txt-color: var(--flatify__txt-color);
   --flatify__submenu-item-txt-color__hover: var(--flatify__txt-color);
   --flatify__submenu-item-txt-color__focus: var(--flatify__txt-color);
-  --flatify__submenu-show-animation-duration: 350ms;
-  --flatify__submenu-show-animation-delay: 200ms;
-  --flatify__submenu-animation-show: flatify-dropdown-show
-  	var(--flatify__dropdown-show-animation-duration) var(--flatify__submenu-show-animation-delay)
-  	cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+  --flatify__submenu-animation-show-duration: 350ms;
+  --flatify__submenu-animation-show-delay: 200ms;
+  --flatify__submenu-animation-show: flatify-dropdown-show var(--flatify__submenu-animation-show-duration)
+  	var(--flatify__submenu-animation-show-delay) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .menu-items-wrapper {
@@ -1350,6 +1349,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   background: var(--flatify__menu-bg-color);
 }
 .menu-items-wrapper.navbar {
+  scrollbar-width: thin;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1607,12 +1607,12 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 }
 
 :root {
-  --flatify__dropdown-show-animation-duration: 300ms;
-  --flatify__dropdown-hide-animation-duration: 200ms;
+  --flatify__dropdown-animation-show-duration: 300ms;
+  --flatify__dropdown-animation-hide-duration: 200ms;
   --flatify__dropdown-animation-show: flatify-dropdown-show
-  	var(--flatify__dropdown-show-animation-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44);
+  	var(--flatify__dropdown-animation-show-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44);
   --flatify__dropdown-animation-hide: flatify-dropdown-hide
-  	var(--flatify__dropdown-hide-animation-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+  	var(--flatify__dropdown-animation-hide-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .dropdown-wrapper {
@@ -1641,28 +1641,28 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   --flatify__modal-bg-color: var(--flatify__bg-color);
   --flatify__modal-txt-color: var(--flatify__txt-color);
   --flatify__modal-border-color: var(--flatify__bg-color-darker);
-  --flatify__modal-show-animation-duration: 350ms;
-  --flatify__modal-hide-animation-duration: 250ms;
-  --flatify__modal-animation-default-show: flatify-blow-in var(--flatify__modal-show-animation-duration)
+  --flatify__modal-animation-show-duration: 350ms;
+  --flatify__modal-animation-hide-duration: 250ms;
+  --flatify__modal-animation-default-show: flatify-blow-in var(--flatify__modal-animation-show-duration)
   	cubic-bezier(0.52, 0.42, 0.44, 1.44);
-  --flatify__modal-animation-default-hide: flatify-blow-out var(--flatify__modal-hide-animation-duration)
+  --flatify__modal-animation-default-hide: flatify-blow-out var(--flatify__modal-animation-hide-duration)
   	cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
-  --flatify__modal-animation-top-show: flatify-slide-down-in var(--flatify__modal-show-animation-duration)
+  --flatify__modal-animation-top-show: flatify-slide-down-in var(--flatify__modal-animation-show-duration)
   	ease;
   --flatify__modal-animation-top-hide: flatify-slide-down-out
-  	var(--flatify__modal-hide-animation-duration) ease both;
+  	var(--flatify__modal-animation-hide-duration) ease both;
   --flatify__modal-animation-bottom-show: flatify-slide-up-in
-  	var(--flatify__modal-show-animation-duration) ease;
+  	var(--flatify__modal-animation-show-duration) ease;
   --flatify__modal-animation-bottom-hide: flatify-slide-up-out
-  	var(--flatify__modal-hide-animation-duration) ease both;
+  	var(--flatify__modal-animation-hide-duration) ease both;
   --flatify__modal-animation-left-show: flatify-slide-right-in
-  	var(--flatify__modal-show-animation-duration) ease;
+  	var(--flatify__modal-animation-show-duration) ease;
   --flatify__modal-animation-left-hide: flatify-slide-right-out
-  	var(--flatify__modal-hide-animation-duration) ease both;
+  	var(--flatify__modal-animation-hide-duration) ease both;
   --flatify__modal-animation-right-show: flatify-slide-left-in
-  	var(--flatify__modal-show-animation-duration) ease;
+  	var(--flatify__modal-animation-show-duration) ease;
   --flatify__modal-animation-right-hide: flatify-slide-left-out
-  	var(--flatify__modal-hide-animation-duration) ease both;
+  	var(--flatify__modal-animation-hide-duration) ease both;
 }
 
 .modal {
