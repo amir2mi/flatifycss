@@ -1,6 +1,15 @@
-# FlatifyCSS
+<p align="center">
+  <a href="">
+    <img src="https://imgur.com/zjgkuSB" alt="FlatifyCSS" width="200" height="200">
+  </a>
+</p>
 
-Modern flat design framework for the web — inspired by Duolingo design system.
+<h3 align="center">FlatifyCSS</h3>
+
+<p align="center">
+  Modern flat design framework for the web — inspired by Duolingo design system.
+</p>
+
 
 List of work in progress:
 
