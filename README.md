@@ -1,7 +1,9 @@
 <p align="center">
+    
 # FlatifyCSS
 [Imgur](https://imgur.com/zjgkuSB)
 Modern flat design framework for the web — inspired by Duolingo design system.
+    
 </p>
 
 
