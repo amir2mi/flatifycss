@@ -4,38 +4,38 @@
 	--#{$CSS_VAR_PFX}modal-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 
 	// *** modal animations
-	--#{$CSS_VAR_PFX}modal-show-animation-duration: #{$MODAL_SHOW_ANIMATION_DURATION};
-	--#{$CSS_VAR_PFX}modal-hide-animation-duration: #{$MODAL_HIDE_ANIMATION_DURATION};
+	--#{$CSS_VAR_PFX}modal-animation-show-duration: #{$MODAL_SHOW_ANIMATION_DURATION};
+	--#{$CSS_VAR_PFX}modal-animation-hide-duration: #{$MODAL_HIDE_ANIMATION_DURATION};
 
 	// default
-	--#{$CSS_VAR_PFX}modal-animation-default-show: flatify-blow-in var(--#{$CSS_VAR_PFX}modal-show-animation-duration)
+	--#{$CSS_VAR_PFX}modal-animation-default-show: flatify-blow-in var(--#{$CSS_VAR_PFX}modal-animation-show-duration)
 		cubic-bezier(0.52, 0.42, 0.44, 1.44);
-	--#{$CSS_VAR_PFX}modal-animation-default-hide: flatify-blow-out var(--#{$CSS_VAR_PFX}modal-hide-animation-duration)
+	--#{$CSS_VAR_PFX}modal-animation-default-hide: flatify-blow-out var(--#{$CSS_VAR_PFX}modal-animation-hide-duration)
 		cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 
 	// top
-	--#{$CSS_VAR_PFX}modal-animation-top-show: flatify-slide-down-in var(--#{$CSS_VAR_PFX}modal-show-animation-duration)
+	--#{$CSS_VAR_PFX}modal-animation-top-show: flatify-slide-down-in var(--#{$CSS_VAR_PFX}modal-animation-show-duration)
 		ease;
 	--#{$CSS_VAR_PFX}modal-animation-top-hide: flatify-slide-down-out
-		var(--#{$CSS_VAR_PFX}modal-hide-animation-duration) ease both;
+		var(--#{$CSS_VAR_PFX}modal-animation-hide-duration) ease both;
 
 	// bottom
 	--#{$CSS_VAR_PFX}modal-animation-bottom-show: flatify-slide-up-in
-		var(--#{$CSS_VAR_PFX}modal-show-animation-duration) ease;
+		var(--#{$CSS_VAR_PFX}modal-animation-show-duration) ease;
 	--#{$CSS_VAR_PFX}modal-animation-bottom-hide: flatify-slide-up-out
-		var(--#{$CSS_VAR_PFX}modal-hide-animation-duration) ease both;
+		var(--#{$CSS_VAR_PFX}modal-animation-hide-duration) ease both;
 
 	// left
 	--#{$CSS_VAR_PFX}modal-animation-left-show: flatify-slide-right-in
-		var(--#{$CSS_VAR_PFX}modal-show-animation-duration) ease;
+		var(--#{$CSS_VAR_PFX}modal-animation-show-duration) ease;
 	--#{$CSS_VAR_PFX}modal-animation-left-hide: flatify-slide-right-out
-		var(--#{$CSS_VAR_PFX}modal-hide-animation-duration) ease both;
+		var(--#{$CSS_VAR_PFX}modal-animation-hide-duration) ease both;
 
 	// right
 	--#{$CSS_VAR_PFX}modal-animation-right-show: flatify-slide-left-in
-		var(--#{$CSS_VAR_PFX}modal-show-animation-duration) ease;
+		var(--#{$CSS_VAR_PFX}modal-animation-show-duration) ease;
 	--#{$CSS_VAR_PFX}modal-animation-right-hide: flatify-slide-left-out
-		var(--#{$CSS_VAR_PFX}modal-hide-animation-duration) ease both;
+		var(--#{$CSS_VAR_PFX}modal-animation-hide-duration) ease both;
 }
 
 $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);

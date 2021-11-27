@@ -15,11 +15,11 @@
 
 	&.show {
 		display: block;
-		animation: flatify-backdrop-fade-in var(--#{$CSS_VAR_PFX}modal-show-animation-duration);
+		animation: flatify-backdrop-fade-in var(--#{$CSS_VAR_PFX}modal-animation-show-duration);
 	}
 
 	&.backdrop-will-be-removed {
-		animation: flatify-fade-out var(--#{$CSS_VAR_PFX}modal-hide-animation-duration) both;
+		animation: flatify-fade-out var(--#{$CSS_VAR_PFX}modal-animation-hide-duration) both;
 	}
 
 	&.modal-backdrop {
