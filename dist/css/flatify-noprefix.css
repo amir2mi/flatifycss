@@ -3247,6 +3247,13 @@ body .modal.show {
   body .menu-item:focus-within > .submenu, body .menu-item:hover > .submenu {
     animation-name: flatify-fade-in !important;
   }
+  body .loading {
+    animation: flatify-fade-in 2s infinite !important;
+  }
+  body .loading:before, body .loading:after {
+    opacity: 1 !important;
+    animation: none !important;
+  }
   body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden {
     animation-name: flatify-fade-out !important;
   }

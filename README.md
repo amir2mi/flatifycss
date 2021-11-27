@@ -40,7 +40,7 @@ List of work in progress:
 -   [x] Close Button
 -   [x] Button group
 -   [x] Dropdown
--   [ ] Loading
+-   [x] Loading
 -   [x] Menu
 -   [x] Modal
 -   [x] Navigation bar

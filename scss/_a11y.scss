@@ -14,7 +14,7 @@
 			--#{$CSS_VAR_PFX}bouncing-transition: 0s !important;
 		}
 
-		// Fade instead of custom animation
+		// Fade instead of custom animations
 		// Fade In
 		.dropdown,
 		.modal {
@@ -28,6 +28,15 @@
 				animation-name: flatify-fade-in !important;
 			}
 		}
+		.loading {
+			animation: flatify-fade-in 2s infinite !important;
+			&:before,
+			&:after {
+				opacity: 1 !important;
+				animation: none !important;
+			}
+		}
+
 		// Fade Out
 		.show {
 			&.alert-will-be-removed,

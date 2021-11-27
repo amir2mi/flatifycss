@@ -1001,6 +1001,7 @@ th {
 }
 
 input[type=file]:not(.default)::-webkit-file-upload-button {
+  --flatify__local-bg-color: var(--flatify__button-bg-color);
   -webkit-appearance: none;
           appearance: none;
   vertical-align: middle;
@@ -1027,6 +1028,7 @@ input[type=file]:not(.default)::-webkit-file-upload-button {
 }
 
 input[type=file]:not(.default)::file-selector-button, .button {
+  --flatify__local-bg-color: var(--flatify__button-bg-color);
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -1838,6 +1840,76 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0.5em 1.25em;
+}
+
+:root {
+  --flatify__loading-dot-width: 0.5em;
+  --flatify__loading-dot-height: 0.5em;
+  --flatify__loading-dot-color: currentColor;
+  --flatify__loading-dot-animation-start-scale: 1.5;
+  --flatify__loading-animation-duration: 1.5s;
+}
+
+.loading:before, .loading:after, .loading {
+  --flatify__local-txt-color: var(--flatify__loading-dot-color);
+  display: block;
+  width: var(--flatify__loading-dot-width);
+  height: var(--flatify__loading-dot-height);
+  background: var(--flatify__local-txt-color);
+  border-radius: 10em;
+  opacity: 0;
+}
+
+.loading {
+  position: relative;
+  margin-right: calc(var(--flatify__loading-dot-width) * 4);
+  -webkit-animation: flatify-loading-dot-first var(--flatify__loading-animation-duration) infinite;
+          animation: flatify-loading-dot-first var(--flatify__loading-animation-duration) infinite;
+}
+.loading.stop-animation {
+  opacity: 1 !important;
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+.loading.stop-animation:before, .loading.stop-animation:after {
+  opacity: 1 !important;
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+.loading:before, .loading:after {
+  content: " ";
+  position: absolute;
+}
+.loading:before {
+  left: calc(var(--flatify__loading-dot-width) * 2);
+  -webkit-animation: flatify-loading-dot-second var(--flatify__loading-animation-duration) infinite;
+          animation: flatify-loading-dot-second var(--flatify__loading-animation-duration) infinite;
+}
+.loading:after {
+  left: calc(var(--flatify__loading-dot-width) * 4);
+  -webkit-animation: flatify-loading-dot-third var(--flatify__loading-animation-duration) infinite;
+          animation: flatify-loading-dot-third var(--flatify__loading-animation-duration) infinite;
+}
+
+.overlay-loading:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: var(--flatify__local-bg-color);
+  border-radius: inherit;
+}
+.overlay-loading > .loading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--flatify__loading-dot-width) * -4);
+  right: 0;
+  z-index: 12;
+  margin: auto;
 }
 
 .search-bar {
@@ -3070,6 +3142,90 @@ textarea:not(.default) {
             transform: scaleY(1);
   }
 }
+@-webkit-keyframes flatify-loading-dot-first {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(var(--flatify__loading-dot-animation-start-scale)) translateX(-0.25em);
+            transform: scale(var(--flatify__loading-dot-animation-start-scale)) translateX(-0.25em);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes flatify-loading-dot-first {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(var(--flatify__loading-dot-animation-start-scale)) translateX(-0.25em);
+            transform: scale(var(--flatify__loading-dot-animation-start-scale)) translateX(-0.25em);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes flatify-loading-dot-second {
+  0%, 25% {
+    opacity: 0;
+    -webkit-transform: scale(var(--flatify__loading-dot-animation-start-scale));
+            transform: scale(var(--flatify__loading-dot-animation-start-scale));
+  }
+  65%, 100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes flatify-loading-dot-second {
+  0%, 25% {
+    opacity: 0;
+    -webkit-transform: scale(var(--flatify__loading-dot-animation-start-scale));
+            transform: scale(var(--flatify__loading-dot-animation-start-scale));
+  }
+  65%, 100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes flatify-loading-dot-third {
+  0%, 45% {
+    opacity: 0;
+    -webkit-transform: scale(var(--flatify__loading-dot-animation-start-scale)) translateX(0.25em);
+            transform: scale(var(--flatify__loading-dot-animation-start-scale)) translateX(0.25em);
+  }
+  85%, 100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes flatify-loading-dot-third {
+  0%, 45% {
+    opacity: 0;
+    -webkit-transform: scale(var(--flatify__loading-dot-animation-start-scale)) translateX(0.25em);
+            transform: scale(var(--flatify__loading-dot-animation-start-scale)) translateX(0.25em);
+  }
+  85%, 100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
 .style-blue {
   color: var(--flatify__txt-color-inverted) !important;
   --flatify__local-txt-color: var(--flatify__txt-color-inverted) !important;
@@ -3887,6 +4043,15 @@ body .modal.show {
   body .menu-item:focus-within > .submenu, body .menu-item:hover > .submenu {
     -webkit-animation-name: flatify-fade-in !important;
             animation-name: flatify-fade-in !important;
+  }
+  body .loading {
+    -webkit-animation: flatify-fade-in 2s infinite !important;
+            animation: flatify-fade-in 2s infinite !important;
+  }
+  body .loading:before, body .loading:after {
+    opacity: 1 !important;
+    -webkit-animation: none !important;
+            animation: none !important;
   }
   body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden {
     -webkit-animation-name: flatify-fade-out !important;
