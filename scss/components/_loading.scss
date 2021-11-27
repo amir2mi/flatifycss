@@ -1,0 +1,77 @@
+:root {
+	--#{$CSS_VAR_PFX}loading-dot-width: 0.5em;
+	--#{$CSS_VAR_PFX}loading-dot-height: 0.5em;
+	--#{$CSS_VAR_PFX}loading-dot-color: currentColor;
+	--#{$CSS_VAR_PFX}loading-dot-animation-start-scale: 1.5;
+	--#{$CSS_VAR_PFX}loading-animation-duration: 1.5s;
+}
+
+%loading-dot {
+	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}loading-dot-color);
+	display: block;
+	width: var(--#{$CSS_VAR_PFX}loading-dot-width);
+	height: var(--#{$CSS_VAR_PFX}loading-dot-height);
+	background: var(--#{$CSS_VAR_PFX}local-txt-color);
+	border-radius: 10em;
+	opacity: 0;
+}
+
+.loading {
+	@extend %loading-dot;
+	position: relative;
+	margin-right: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 4);
+	// first of all parent should be shown
+	animation: flatify-loading-dot-first var(--#{$CSS_VAR_PFX}loading-animation-duration) infinite;
+
+	&.stop-animation {
+		opacity: 1 !important;
+		animation-play-state: paused !important;
+
+		&:before,
+		&:after {
+			opacity: 1 !important;
+			animation-play-state: paused !important;
+		}
+	}
+
+	&:before,
+	&:after {
+		content: " ";
+		position: absolute;
+		@extend %loading-dot;
+	}
+
+	&:before {
+		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 2);
+		animation: flatify-loading-dot-second var(--#{$CSS_VAR_PFX}loading-animation-duration) infinite;
+	}
+
+	&:after {
+		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 4);
+		animation: flatify-loading-dot-third var(--#{$CSS_VAR_PFX}loading-animation-duration) infinite;
+	}
+}
+
+.overlay-loading {
+	&:before {
+		content: " ";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		width: 100%;
+		height: 100%;
+		background: var(--#{$CSS_VAR_PFX}local-bg-color);
+		border-radius: inherit;
+	}
+
+	& > .loading {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * -4);
+		right: 0;
+		z-index: 12;
+		margin: auto;
+	}
+}

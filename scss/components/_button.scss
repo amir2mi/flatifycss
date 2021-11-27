@@ -6,6 +6,7 @@
 }
 
 %button {
+	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}button-bg-color);
 	appearance: none;
 	vertical-align: middle;
 	text-align: center;

@@ -245,3 +245,47 @@
 		transform: scaleY(1);
 	}
 }
+
+// loading dots animation
+@keyframes flatify-loading-dot-first {
+	0% {
+		opacity: 0;
+		transform: scale(var(--#{$CSS_VAR_PFX}loading-dot-animation-start-scale)) translateX(-0.25em);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes flatify-loading-dot-second {
+	0%,
+	25% {
+		opacity: 0;
+		transform: scale(var(--#{$CSS_VAR_PFX}loading-dot-animation-start-scale));
+	}
+	65%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes flatify-loading-dot-third {
+	0%,
+	45% {
+		opacity: 0;
+		transform: scale(var(--#{$CSS_VAR_PFX}loading-dot-animation-start-scale)) translateX(0.25em);
+	}
+	85%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
