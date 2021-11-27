@@ -4,15 +4,13 @@
   </a>
 </p>
 
-<h1 align="center">FlatifyCSS</h1>
+<h3 align="center">FlatifyCSS</h3>
 
 <p align="center">
   Modern flat design framework for the web — inspired by Duolingo design system.
 </p>
 
-<br>
 <hr>
-<br>
 
 List of work in progress:
 
