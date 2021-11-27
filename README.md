@@ -1,6 +1,6 @@
 <p align="center">
   <a href="">
-    <img src="https://imgur.com/zjgkuSB" alt="FlatifyCSS" width="200" height="200">
+    <img src="https://raw.githubusercontent.com/amir2mi/flatifycss/master/website/static/img/logo.png" alt="FlatifyCSS" width="200" height="200">
   </a>
 </p>
 
@@ -10,6 +10,9 @@
   Modern flat design framework for the web — inspired by Duolingo design system.
 </p>
 
+<br>
+<hr>
+<br>
 
 List of work in progress:
 

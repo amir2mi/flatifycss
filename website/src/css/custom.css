@@ -251,3 +251,21 @@ div[class*="toggleTrack_"],
 	fill: #696969;
 	width: 25px;
 }
+
+.navbar.navbar--fixed-top .navbar__inner {
+	align-content: center;
+}
+
+#docsearch-input {
+	background: transparent !important;
+	border: none !important;
+}
+.DocSearch.DocSearch-Button,
+.DocSearch-Modal,
+.DocSearch-Form {
+	border-radius: 1em !important;
+}
+
+.DocSearch.DocSearch-Button {
+	padding: 1.5em 0.75em !important;
+}
