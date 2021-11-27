@@ -1,11 +1,11 @@
 :root {
-	--#{$CSS_VAR_PFX}dropdown-show-animation-duration: #{$DROPDOWN_SHOW_ANIMATION_DURATION};
-	--#{$CSS_VAR_PFX}dropdown-hide-animation-duration: #{$DROPDOWN_HIDE_ANIMATION_DURATION};
+	--#{$CSS_VAR_PFX}dropdown-animation-show-duration: #{$DROPDOWN_SHOW_ANIMATION_DURATION};
+	--#{$CSS_VAR_PFX}dropdown-animation-hide-duration: #{$DROPDOWN_HIDE_ANIMATION_DURATION};
 
 	--#{$CSS_VAR_PFX}dropdown-animation-show: flatify-dropdown-show
-		var(--#{$CSS_VAR_PFX}dropdown-show-animation-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44);
+		var(--#{$CSS_VAR_PFX}dropdown-animation-show-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44);
 	--#{$CSS_VAR_PFX}dropdown-animation-hide: flatify-dropdown-hide
-		var(--#{$CSS_VAR_PFX}dropdown-hide-animation-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+		var(--#{$CSS_VAR_PFX}dropdown-animation-hide-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .dropdown-wrapper {
