@@ -18,7 +18,13 @@
 		// Fade In
 		.dropdown,
 		.modal {
-			.show {
+			&.show {
+				animation-name: flatify-fade-in !important;
+			}
+		}
+		.menu-item {
+			&:focus-within > .submenu,
+			&:hover > .submenu {
 				animation-name: flatify-fade-in !important;
 			}
 		}

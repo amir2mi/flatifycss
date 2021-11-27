@@ -1711,6 +1711,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   margin: auto;
 }
 .modal.modal-top {
+  bottom: unset;
   top: 0;
   left: 0;
   right: 0;
@@ -1744,6 +1745,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
           animation: var(--flatify__modal-animation-bottom-hide);
 }
 .modal.modal-left {
+  right: unset;
   left: 0;
   top: 0;
   bottom: 0;
@@ -3877,8 +3879,12 @@ body ::after {
     --flatify__simple-transition: 0s !important;
     --flatify__bouncing-transition: 0s !important;
   }
-  body .dropdown .show,
-body .modal .show {
+  body .dropdown.show,
+body .modal.show {
+    -webkit-animation-name: flatify-fade-in !important;
+            animation-name: flatify-fade-in !important;
+  }
+  body .menu-item:focus-within > .submenu, body .menu-item:hover > .submenu {
     -webkit-animation-name: flatify-fade-in !important;
             animation-name: flatify-fade-in !important;
   }
