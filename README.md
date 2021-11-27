@@ -1,6 +1,6 @@
 <p align="center">
   <a href="">
-    <img src="https://imgur.com/zjgkuSB" alt="Bootstrap logo" width="200" height="200">
+    <img src="https://imgur.com/zjgkuSB" alt="FlatifyCSS" width="200" height="200">
   </a>
 </p>
 
