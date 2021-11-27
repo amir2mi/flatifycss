@@ -87,6 +87,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}loc
 		margin: auto;
 	}
 	&.modal-top {
+		bottom: unset;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -120,6 +121,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}loc
 		}
 	}
 	&.modal-left {
+		right: unset;
 		left: 0;
 		top: 0;
 		bottom: 0;

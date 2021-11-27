@@ -1503,6 +1503,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   margin: auto;
 }
 .modal.modal-top {
+  bottom: unset;
   top: 0;
   left: 0;
   right: 0;
@@ -1532,6 +1533,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   animation: var(--flatify__modal-animation-bottom-hide);
 }
 .modal.modal-left {
+  right: unset;
   left: 0;
   top: 0;
   bottom: 0;
