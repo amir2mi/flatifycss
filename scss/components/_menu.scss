@@ -95,14 +95,22 @@
 				.submenu {
 					position: absolute;
 					top: 100%;
-					left: 0.5em;
+					@if $SUPPORT_LTR {
+						left: 0.5em;
+					} @else {
+						right: 0.5em;
+					}
 					z-index: 10;
 					display: none;
 
 					// second level or more
 					.submenu {
 						top: -50%;
-						left: 115%;
+						@if $SUPPORT_LTR {
+							left: 115%;
+						} @else {
+							right: 115%;
+						}
 
 						// this a middleman to preserve connection between parent menu item
 						// and its children list on hover
@@ -110,7 +118,11 @@
 							content: " ";
 							position: absolute;
 							top: 0.64em;
-							left: -3.6em;
+							@if $SUPPORT_LTR {
+								left: -3.6em;
+							} @else {
+								right: -3.6em;
+							}
 							width: 4em;
 							min-height: 4em;
 							// it will block other submenus
