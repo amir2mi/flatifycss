@@ -8,7 +8,7 @@ The navigation bar contains links, brand logo, and search bar typically. Flatify
 
 ## A simple navigation bar
 
-Just add `.menu-items-wrapper` and `.navbar` classes to an element. Inside this element can be links or other components.
+Just add `.menu-items-wrapper` and `.navbar` classes to an element. Inside this element can be links or other components, In this example you will see [search bar](/docs/components/search-bar) as well.
 
 <PreviewBox
 	height="110px"
@@ -79,7 +79,7 @@ Just add `.menu-items-wrapper` and `.navbar` classes to an element. Inside this 
 ## Submenu & dropdown
 
 :::info Difference between submenu & dropdown
-Generally, submenus in the navigation bar will be displayed on hover/focus however downtowns are togglable, which means you should click to show and click again to hide them, as mentioned in the [dropdowns autoclose feature documentation](/docs/components/dropdown#autoclose), you can control when dropdowns should be hidden.
+Generally, submenus in the navigation bar will be displayed on hover/focus however downtowns are togglable, which means you should click to show and click again to hide them, as mentioned in the [dropdowns autoclose feature documentation](/docs/components/dropdown#autoclose), you can control when dropdowns should be closed.
 :::
 
 Here is an example of [submenu](/docs/components/menu#submenu) and [dropdown](/docs/components/dropdown). Navigation bar submenu will be displayed when you hover/focus its parents.
@@ -401,4 +401,59 @@ There are helper classes for styling navigation bar, first read about [color set
 <nav class="menu-items-wrapper navbar style-green">...</nav>
 <nav class="menu-items-wrapper navbar style-dark">...</nav>
 <nav class="menu-items-wrapper navbar style-light-light">...</nav>
+```
+
+## Logo
+
+It is possible to have a logo in the navigation bar with the `.navbar-logo` class. It takes care of height and fits the image to have the desired result you want.
+
+<PreviewBox
+	height="110px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Navigation bar</title>
+	</head>
+	<body>
+		<nav class="menu-items-wrapper navbar">
+			<a class="navbar-logo" href="#">
+				<img src="https://raw.githubusercontent.com/amir2mi/flatifycss/master/website/static/img/logo.png" alt="logo" />
+			</a>
+			<ul class="links">
+				<li class="menu-item active">
+					<a href="#">Active</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Articles</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Photos</a>
+				</li>
+				<li class="menu-item">
+					<a href="#">Videos</a>
+				</li>
+				<li class="menu-item disabled">
+					<a>Disabled</a>
+				</li>
+			</ul>
+		</nav>
+	</body>
+</html>
+'
+/>
+
+```html {2-4} title="index.html"
+<nav class="menu-items-wrapper navbar">
+	<a class="navbar-logo" href="#">
+		<img src="https://raw.githubusercontent.com/amir2mi/flatifycss/master/website/static/img/logo.png" alt="logo" />
+	</a>
+	<ul class="links">
+		...
+	</ul>
+</nav>
 ```
