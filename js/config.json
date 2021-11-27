@@ -1,5 +1,5 @@
 {
-	"name": "Flatify CSS",
+	"name": "FlatifyCSS",
 	"enableLogging": true,
 	"supportLTR": true,
 	"dropdownOffset": [0, 20],

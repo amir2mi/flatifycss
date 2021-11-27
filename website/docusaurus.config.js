@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/palenight");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-	title: "Flatify CSS",
+	title: "FlatifyCSS",
 	tagline: "Modern Flat Design Framework",
 	onBrokenLinks: "throw",
 	onBrokenMarkdownLinks: "warn",
@@ -43,9 +43,9 @@ const config = {
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		({
 			navbar: {
-				title: "Flatify CSS",
+				title: "FlatifyCSS",
 				logo: {
-					alt: "Flatify CSS logo",
+					alt: "FlatifyCSS logo",
 					src: "img/logo.svg",
 				},
 				items: [
@@ -55,10 +55,10 @@ const config = {
 						position: "left",
 						label: "Documentation",
 					},
-					{ to: "/blog", label: "Blog", position: "left" },
+					{ to: "/blog", label: "News", position: "left" },
 					{
 						href: "https://github.com/amir2mi/FlatifyCSS",
-						label: "GitHub",
+						label: "Contribute",
 						position: "right",
 					},
 				],

@@ -4,7 +4,7 @@ title: Dropdowns
 
 import PreviewBox from "../../src/components/preview-box";
 
-Dropdowns typically provide a list of items to interact with, however, it is possible to have a complex UI inside dropdowns. Flatify CSS uses [Popper](https://popper.js.org/) library for positioning dropdowns dynamically, so dropdowns need this library to work as expected and you should include it inside your webpage before Flatify CSS's JavaScript file.
+Dropdowns typically provide a list of items to interact with, however, it is possible to have a complex UI inside dropdowns. FlatifyCSS uses [Popper](https://popper.js.org/) library for positioning dropdowns dynamically, so dropdowns need this library to work as expected and you should include it inside your webpage before FlatifyCSS's JavaScript file.
 
 ## A simple dropdown
 
@@ -656,12 +656,11 @@ It is possible to change colors, animations duration, or change the whole animat
 				data-dropdown-auto-close="outside"
     		>
     			<li class="menu-item heading">My Account</li>
-    			<li class="menu-item"><a>Sign up</a></li>
-    			<li class="menu-item"><a>Login</a></li>
-    			<li role="separator" class="menu-item separator"></li>
-    			<li class="menu-item"><a>About us</a></li>
-    			<li class="menu-item"><a>Contribute</a></li>
-    			<li class="menu-item"><a>Rate it!</a></li>
+    			<li class="menu-item"><a href="#">Sign up</a></li>
+    			<li class="menu-item"><a href="#">Login</a></li>
+    			<li class="menu-item"><a href="#">About us</a></li>
+    			<li class="menu-item"><a href="#">Contribute</a></li>
+    			<li class="menu-item"><a href="#">Rate it!</a></li>
     			<li aria-hidden="true"><span class="pointer-arrow"></span></li>
     		</ul>
     	</div>
@@ -701,17 +700,18 @@ It is possible to change colors, animations duration, or change the whole animat
 
 .my-custom-dropdown {
 	/* dropdown */
+	--flatify__dropdown-animation-show: my-dropdown-show-animation 500ms ease;
+	--flatify__dropdown-animation-hide: my-dropdown-hide-animation 500ms ease;
+	/* submenu */
 	--flatify__submenu-bg-color: #d8334a;
 	--flatify__submenu-txt-color: #f5f7fa;
 	--flatify__submenu-border-color: #bf263c;
-	--flatify__dropdown-animation-show: my-dropdown-show-animation 500ms ease;
-	--flatify__dropdown-animation-hide: my-dropdown-hide-animation 500ms ease;
-	/* menu items */
-	--flatify__menu-item-bg-color__hover: #a0d468;
-	--flatify__menu-item-bg-color__active: #ffce54;
-	--flatify__menu-item-bg-color__focus: #f6bb42;
-	--flatify__menu-item-txt-color__hover: #3c3b3d;
-	--flatify__menu-item-txt-color__active: #bf263c;
-	--flatify__menu-item-txt-color__focus: #bf263c;
+	/* submenu items */
+	--flatify__submenu-item-bg-color: #bf263c;
+	--flatify__submenu-item-txt-color: #f5f7fa;
+	--flatify__submenu-item-bg-color__hover: #a0d468;
+	--flatify__submenu-item-bg-color__focus: #ffce54;
+	--flatify__submenu-item-txt-color__hover: #3c3b3d;
+	--flatify__submenu-item-txt-color__focus: #bf263c;
 }
 ```
