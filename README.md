@@ -41,12 +41,14 @@ List of work in progress:
 -   [x] Button
 -   [x] Close Button
 -   [x] Button group
--   [x] Dropdowns
+-   [x] Dropdown
 -   [ ] Loading
--   [ ] Menu
+-   [x] Menu
 -   [x] Modal
+-   [x] Navigation bar
 -   [ ] Pagination
 -   [ ] Popover
+-   [x] Search bar
 -   [ ] Tabs
 -   [ ] Toast
 -   [ ] Tooltip
