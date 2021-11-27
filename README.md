@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h3 align="center">FlatifyCSS</h3>
+<h1 align="center">FlatifyCSS</h1>
 
 <p align="center">
   Modern flat design framework for the web — inspired by Duolingo design system.
