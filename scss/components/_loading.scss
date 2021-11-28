@@ -1,13 +1,13 @@
 :root {
+	--#{$CSS_VAR_PFX}loading-color: currentColor;
 	--#{$CSS_VAR_PFX}loading-dot-width: 0.5em;
 	--#{$CSS_VAR_PFX}loading-dot-height: 0.5em;
-	--#{$CSS_VAR_PFX}loading-dot-color: currentColor;
 	--#{$CSS_VAR_PFX}loading-dot-animation-start-scale: 1.5;
 	--#{$CSS_VAR_PFX}loading-animation-duration: 1.5s;
 }
 
 %loading-dot {
-	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}loading-dot-color);
+	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}loading-color);
 	display: block;
 	width: var(--#{$CSS_VAR_PFX}loading-dot-width);
 	height: var(--#{$CSS_VAR_PFX}loading-dot-height);
@@ -65,17 +65,44 @@
 		border-radius: inherit;
 	}
 
+	& > .spinner,
 	& > .loading {
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * -4);
+		left: 0;
 		right: 0;
 		z-index: 12;
 		margin: auto;
 	}
+
+	& > .spinner {
+		font-size: 0.9em;
+	}
+
+	& > .loading {
+		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * -4);
+	}
 }
 
-.spinner{
-	
+.spinner {
+	display: flex;
+	justify-content: space-between;
+	width: 1.75em;
+	height: 1.75em;
+	animation: flatify-spin 1s linear infinite;
+
+	&:before {
+		content: " ";
+		position: relative;
+		width: 100%;
+		height: 100%;
+		border: 0.25em solid var(--#{$CSS_VAR_PFX}loading-color);
+		@if $SUPPORT_LTR {
+			border-left-color: transparent;
+		} @else {
+			border-right-color: transparent;
+		}
+		border-radius: 50em;
+	}
 }

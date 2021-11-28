@@ -102,11 +102,23 @@
   --flatify__bouncing-transition: 0.35s cubic-bezier(0.59, -0.39, 0.36, 1.38);
 }
 
+/*
+* CSS Reset and basic styles
+* Most of the fixes are from Bootstrap [_reboot.scss]:
+  https://github.com/twbs/bootstrap/blob/main/scss/_reboot.scss
+
+* and thanks to Josh's Custom CSS Reset:
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
 *,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+* {
+  margin: 0;
 }
 
 @media (max-width: 575.98px) {
@@ -130,6 +142,11 @@
   }
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: var(--flatify__primary-font-family);
@@ -139,7 +156,18 @@ body {
   background-color: var(--flatify__bg-color);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: var(--flatify__tap-highlight-color);
+  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 h6, h5, h4, h3, h2, h1 {
@@ -360,12 +388,28 @@ svg {
   vertical-align: middle;
 }
 
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
 label {
   display: inline-block;
 }
 
 button:focus:not(:focus-visible) {
   outline: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 input,
@@ -1843,15 +1887,15 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 }
 
 :root {
+  --flatify__loading-color: currentColor;
   --flatify__loading-dot-width: 0.5em;
   --flatify__loading-dot-height: 0.5em;
-  --flatify__loading-dot-color: currentColor;
   --flatify__loading-dot-animation-start-scale: 1.5;
   --flatify__loading-animation-duration: 1.5s;
 }
 
 .loading:before, .loading:after, .loading {
-  --flatify__local-txt-color: var(--flatify__loading-dot-color);
+  --flatify__local-txt-color: var(--flatify__loading-color);
   display: block;
   width: var(--flatify__loading-dot-width);
   height: var(--flatify__loading-dot-height);
@@ -1902,14 +1946,42 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   background: var(--flatify__local-bg-color);
   border-radius: inherit;
 }
-.overlay-loading > .loading {
+.overlay-loading > .spinner, .overlay-loading > .loading {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: calc(var(--flatify__loading-dot-width) * -4);
+  left: 0;
   right: 0;
   z-index: 12;
   margin: auto;
+}
+.overlay-loading > .spinner {
+  font-size: 0.9em;
+}
+.overlay-loading > .loading {
+  left: calc(var(--flatify__loading-dot-width) * -4);
+}
+
+.spinner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1.75em;
+  height: 1.75em;
+  -webkit-animation: flatify-spin 1s linear infinite;
+          animation: flatify-spin 1s linear infinite;
+}
+.spinner:before {
+  content: " ";
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 0.25em solid var(--flatify__loading-color);
+  border-left-color: transparent;
+  border-radius: 50em;
 }
 
 .search-bar {
@@ -2841,6 +2913,32 @@ textarea:not(.default) {
 .anim-required {
   -webkit-animation: flatify-heart 1s ease 2 !important;
           animation: flatify-heart 1s ease 2 !important;
+}
+
+@-webkit-keyframes flatify-spin {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+@keyframes flatify-spin {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+.anim-spin {
+  -webkit-animation: flatify-spin 0.75s linear infinite !important;
+          animation: flatify-spin 0.75s linear infinite !important;
 }
 
 @-webkit-keyframes flatify-slide-up-in {

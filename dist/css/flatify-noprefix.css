@@ -1648,15 +1648,15 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 }
 
 :root {
+  --flatify__loading-color: currentColor;
   --flatify__loading-dot-width: 0.5em;
   --flatify__loading-dot-height: 0.5em;
-  --flatify__loading-dot-color: currentColor;
   --flatify__loading-dot-animation-start-scale: 1.5;
   --flatify__loading-animation-duration: 1.5s;
 }
 
 .loading:before, .loading:after, .loading {
-  --flatify__local-txt-color: var(--flatify__loading-dot-color);
+  --flatify__local-txt-color: var(--flatify__loading-color);
   display: block;
   width: var(--flatify__loading-dot-width);
   height: var(--flatify__loading-dot-height);
@@ -1702,14 +1702,37 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   background: var(--flatify__local-bg-color);
   border-radius: inherit;
 }
-.overlay-loading > .loading {
+.overlay-loading > .spinner, .overlay-loading > .loading {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: calc(var(--flatify__loading-dot-width) * -4);
+  left: 0;
   right: 0;
   z-index: 12;
   margin: auto;
+}
+.overlay-loading > .spinner {
+  font-size: 0.9em;
+}
+.overlay-loading > .loading {
+  left: calc(var(--flatify__loading-dot-width) * -4);
+}
+
+.spinner {
+  display: flex;
+  justify-content: space-between;
+  width: 1.75em;
+  height: 1.75em;
+  animation: flatify-spin 1s linear infinite;
+}
+.spinner:before {
+  content: " ";
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 0.25em solid var(--flatify__loading-color);
+  border-left-color: transparent;
+  border-radius: 50em;
 }
 
 .search-bar {
@@ -2372,7 +2395,7 @@ textarea:not(.default) {
   }
 }
 .anim-spin {
-  animation: flatify-spin 0.75s linear infinite;
+  animation: flatify-spin 0.75s linear infinite !important;
 }
 
 @keyframes flatify-slide-up-in {
