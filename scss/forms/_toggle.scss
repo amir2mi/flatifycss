@@ -1,5 +1,7 @@
 .toggle-wrapper {
 	.check {
+		// force minimum width for limited space cases
+		min-width: 3em;
 		width: 3em;
 
 		&:after {

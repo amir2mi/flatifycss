@@ -2259,6 +2259,7 @@ select option {
 }
 
 .toggle-wrapper .check {
+  min-width: 3em;
   width: 3em;
 }
 .toggle-wrapper .check:after {
