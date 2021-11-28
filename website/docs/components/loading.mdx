@@ -88,6 +88,92 @@ Spinners are another kind of loadings, add `.spinner` class to an element to hav
 <span class="spinner"></span> <span class="spinner stop-animation"></span>
 ```
 
+## Overlay loading
+
+This a situation that happens for any front end developer, let's dive in.  
+Imagine you use loading component inside a button and expect when data is fetching, having a loading inside that button. However if you use loading button directly layout undoubetedly will shift. Check the example below to unerstand the situation:
+
+<div className="flex-center" style={{ gap: 20 }}>
+	
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Loading</title>
+	</head>
+	<body>
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+		Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		<br>
+		<button class="button style-red">Toggle me!</button>
+		<br>
+		Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod
+		in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus
+		faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam
+		dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+	</body>
+	<script>
+		const button = document.querySelector(".button");
+		button.addEventListener("click", function(){
+			if(button.querySelector(".loading")){
+				button.innerHTML = `Toggle me!`;
+    		}else{
+    			button.innerHTML = `<span class="loading"></span>`;
+    		}
+    	});
+    </script>
+</html>
+'/>
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Loading</title>
+	</head>
+	<body>
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+		Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+		<br>
+		<button class="button style-green">Toggle me!</button>
+		<br>
+		Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod
+		in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus
+		faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam
+		dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+	</body>
+	<script>
+		const button = document.querySelector(".button");
+		button.addEventListener("click", function(){
+			if(button.querySelector(".loading")){
+				button.innerHTML = `Toggle me!`;
+				button.classList.remove(`overlay-layer`);
+    		}else{
+    			button.innerHTML = `Toggle me!<span class="loading"></span>`;
+				button.classList.add(`overlay-layer`);
+    		}
+    	});
+    </script>
+</html>
+'
+/>
+</div>
+
+In the first example on fetch there is just loading component inside button and it changes button width and height, so layout shifts and it is a bad user experience.  
+Otherwise second example use [overlay layer helper class](/docs/helpers/overlay-layer), adds `.overlay-layer` class to the button and appends `<span class="loading"></span>` inside button. Technically it creates an overlay layer that hides button content and just show loading, it will prevent unwanted layout shifts and changes will be done in a smooth way!
+
 ## Sizes
 
 To change the loading component size use [size setter classes](/docs/helpers/size-setters).
