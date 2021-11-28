@@ -17,7 +17,7 @@
 @mixin break-sm() {
 	$sm-bp: map-get($RESPONSIVE_BREAKPOINTS, "sm");
 	$md-bp: map-get($RESPONSIVE_BREAKPOINTS, "md");
-	@media screen and (min-width: $sm-bp) and (max-width: $md-bp - 1px) {
+	@media screen and (min-width: $sm-bp) and (max-width: ($md-bp - 1px)) {
 		@content;
 	}
 }
@@ -25,7 +25,7 @@
 @mixin break-md() {
 	$md-bp: map-get($RESPONSIVE_BREAKPOINTS, "md");
 	$lg-bp: map-get($RESPONSIVE_BREAKPOINTS, "lg");
-	@media screen and (min-width: $md-bp) and (max-width: $lg-bp - 1px) {
+	@media screen and (min-width: $md-bp) and (max-width: ($lg-bp - 1px)) {
 		@content;
 	}
 }
@@ -33,7 +33,7 @@
 @mixin break-lg() {
 	$lg-bp: map-get($RESPONSIVE_BREAKPOINTS, "lg");
 	$xl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xl");
-	@media screen and (min-width: $lg-bp) and (max-width: $xl-bp - 1px) {
+	@media screen and (min-width: $lg-bp) and (max-width: ($xl-bp - 1px)) {
 		@content;
 	}
 }
@@ -41,7 +41,7 @@
 @mixin break-xl() {
 	$xl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xl");
 	$xxl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xxl");
-	@media screen and (min-width: $xl-bp) and (max-width: $xxl-bp - 1px) {
+	@media screen and (min-width: $xl-bp) and (max-width: ($xxl-bp - 1px)) {
 		@content;
 	}
 }
