@@ -1955,11 +1955,11 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   z-index: 12;
   margin: auto;
 }
-.overlay-loading > .spinner {
-  font-size: 0.9em;
-}
 .overlay-loading > .loading {
   left: calc(var(--flatify__loading-dot-width) * -4);
+}
+.overlay-loading.button > .spinner {
+  font-size: 0.75em;
 }
 
 .spinner {

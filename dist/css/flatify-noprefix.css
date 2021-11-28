@@ -1691,18 +1691,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   animation: flatify-loading-dot-third var(--flatify__loading-animation-duration) infinite;
 }
 
-.overlay-loading:before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  background: var(--flatify__local-bg-color);
-  border-radius: inherit;
-}
-.overlay-loading > .spinner, .overlay-loading > .loading {
+.overlay-layer > .spinner, .overlay-layer > .loading {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1711,11 +1700,11 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   z-index: 12;
   margin: auto;
 }
-.overlay-loading > .spinner {
-  font-size: 0.9em;
-}
-.overlay-loading > .loading {
+.overlay-layer > .loading {
   left: calc(var(--flatify__loading-dot-width) * -4);
+}
+.overlay-layer.button > .spinner {
+  font-size: 0.75em;
 }
 
 .spinner {
@@ -3052,6 +3041,18 @@ textarea:not(.default) {
 
 .height-100p {
   height: 100% !important;
+}
+
+.overlay-layer:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: var(--flatify__local-bg-color);
+  border-radius: inherit;
 }
 
 .inline-flex {
