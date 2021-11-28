@@ -25,12 +25,11 @@
 
 	&.stop-animation {
 		opacity: 1 !important;
-		animation-play-state: paused !important;
 
 		&:before,
 		&:after {
 			opacity: 1 !important;
-			animation-play-state: paused !important;
+			animation: none !important;
 		}
 	}
 

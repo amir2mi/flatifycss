@@ -1,5 +1,13 @@
-.stop-animation {
+.play-animation {
+	animation-play-state: running !important;
+}
+
+.pause-animation {
 	animation-play-state: paused !important;
+}
+
+.stop-animation {
+	animation: none !important;
 }
 
 .anim-spin {

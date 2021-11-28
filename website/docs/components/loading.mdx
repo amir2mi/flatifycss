@@ -8,6 +8,12 @@ The loading component is useful when you want a delay between fetching data and 
 
 ## Dots
 
+Dots loading provide three dots with order for being shown, note that you can change the inital scale of dots value, so instead of zome out we can have zoom in! We will talk about customizing later.
+
+:::info Stop the animation!
+By adding the `.stop-animation` class, the loading animation will be paused.
+:::
+
 <PreviewBox
 	height="110px"
 	children='
@@ -22,7 +28,7 @@ The loading component is useful when you want a delay between fetching data and 
 	</head>
 	<body>
 		<span class="loading"></span>
-		<span class="loading stop"></span>
+		<span class="loading stop-animation"></span>
 	</body>
 </html>
 '

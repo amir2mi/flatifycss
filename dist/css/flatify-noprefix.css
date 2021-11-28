@@ -1672,11 +1672,10 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 }
 .loading.stop-animation {
   opacity: 1 !important;
-  animation-play-state: paused !important;
 }
 .loading.stop-animation:before, .loading.stop-animation:after {
   opacity: 1 !important;
-  animation-play-state: paused !important;
+  animation: none !important;
 }
 .loading:before, .loading:after {
   content: " ";
@@ -2288,8 +2287,16 @@ textarea:not(.default) {
   transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
 }
 
-.stop-animation {
+.play-animation {
+  animation-play-state: running !important;
+}
+
+.pause-animation {
   animation-play-state: paused !important;
+}
+
+.stop-animation {
+  animation: none !important;
 }
 
 .anim-spin {
