@@ -2,6 +2,18 @@
 	animation-play-state: paused !important;
 }
 
+.anim-spin {
+	animation: flatify-spin 0.75s linear infinite !important;
+}
+
+.anim-heart {
+	animation: flatify-heart 1s ease infinite !important;
+}
+
+.anim-required {
+	animation: flatify-heart 1s ease 2 !important;
+}
+
 // A simple fade out animation,
 // it is a great choice for reduced-motion situations in [a11y.scss]
 @keyframes flatify-fade-in {
@@ -96,14 +108,6 @@
 	}
 }
 
-.anim-heart {
-	animation: flatify-heart 1s ease infinite !important;
-}
-
-.anim-required {
-	animation: flatify-heart 1s ease 2 !important;
-}
-
 // Spin animation
 @keyframes flatify-spin {
 	from {
@@ -112,10 +116,6 @@
 	to {
 		transform: rotate(1turn);
 	}
-}
-
-.anim-spin {
-	animation: flatify-spin 0.75s linear infinite !important;
 }
 
 // Slide animations

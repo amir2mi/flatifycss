@@ -2292,6 +2292,18 @@ textarea:not(.default) {
   animation-play-state: paused !important;
 }
 
+.anim-spin {
+  animation: flatify-spin 0.75s linear infinite !important;
+}
+
+.anim-heart {
+  animation: flatify-heart 1s ease infinite !important;
+}
+
+.anim-required {
+  animation: flatify-heart 1s ease 2 !important;
+}
+
 @keyframes flatify-fade-in {
   from {
     opacity: 0;
@@ -2371,14 +2383,6 @@ textarea:not(.default) {
     transform: scale(1);
   }
 }
-.anim-heart {
-  animation: flatify-heart 1s ease infinite !important;
-}
-
-.anim-required {
-  animation: flatify-heart 1s ease 2 !important;
-}
-
 @keyframes flatify-spin {
   from {
     transform: rotate(0);
@@ -2387,10 +2391,6 @@ textarea:not(.default) {
     transform: rotate(1turn);
   }
 }
-.anim-spin {
-  animation: flatify-spin 0.75s linear infinite !important;
-}
-
 @keyframes flatify-slide-up-in {
   from {
     transform: translateY(100%) scale(0.95);

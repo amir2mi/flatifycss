@@ -2707,6 +2707,26 @@ textarea:not(.default) {
   transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
 }
 
+.stop-animation {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+
+.anim-spin {
+  -webkit-animation: flatify-spin 0.75s linear infinite !important;
+          animation: flatify-spin 0.75s linear infinite !important;
+}
+
+.anim-heart {
+  -webkit-animation: flatify-heart 1s ease infinite !important;
+          animation: flatify-heart 1s ease infinite !important;
+}
+
+.anim-required {
+  -webkit-animation: flatify-heart 1s ease 2 !important;
+          animation: flatify-heart 1s ease 2 !important;
+}
+
 @-webkit-keyframes flatify-fade-in {
   from {
     opacity: 0;
@@ -2894,16 +2914,6 @@ textarea:not(.default) {
             transform: scale(1);
   }
 }
-.anim-heart {
-  -webkit-animation: flatify-heart 1s ease infinite !important;
-          animation: flatify-heart 1s ease infinite !important;
-}
-
-.anim-required {
-  -webkit-animation: flatify-heart 1s ease 2 !important;
-          animation: flatify-heart 1s ease 2 !important;
-}
-
 @-webkit-keyframes flatify-spin {
   from {
     -webkit-transform: rotate(0);
@@ -2914,7 +2924,6 @@ textarea:not(.default) {
             transform: rotate(1turn);
   }
 }
-
 @keyframes flatify-spin {
   from {
     -webkit-transform: rotate(0);
@@ -2925,11 +2934,6 @@ textarea:not(.default) {
             transform: rotate(1turn);
   }
 }
-.anim-spin {
-  -webkit-animation: flatify-spin 0.75s linear infinite !important;
-          animation: flatify-spin 0.75s linear infinite !important;
-}
-
 @-webkit-keyframes flatify-slide-up-in {
   from {
     -webkit-transform: translateY(100%) scale(0.95);
@@ -2940,7 +2944,6 @@ textarea:not(.default) {
             transform: translateY(0);
   }
 }
-
 @keyframes flatify-slide-up-in {
   from {
     -webkit-transform: translateY(100%) scale(0.95);
