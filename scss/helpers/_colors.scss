@@ -1,4 +1,4 @@
-// .style-[color] is a bg, color and border color setter that can be practical for table items and other elements
+// .style-[color] is a background, color and border color setter that can be practical for table items and other elements
 @each $name, $colors in $PALETTE {
 	// Original version
 	.style-#{"" + $name} {
@@ -55,11 +55,14 @@
 	}
 }
 
+// .color-[color] is a text color setter
 @each $name, $colors in $PALETTE {
+	// Original version
 	.color-#{"" + $name} {
 		color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 	}
 
+	// Light version
 	.color-#{"" + $name}-light {
 		color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "light"}) !important;
 	}
