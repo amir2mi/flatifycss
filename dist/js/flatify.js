@@ -164,10 +164,10 @@ eval("module.exports = JSON.parse('{\"name\":\"FlatifyCSS\",\"enableLogging\":tr
 /******/ 	__webpack_require__("./js/components/alert.js");
 /******/ 	__webpack_require__("./js/components/dropdown.js");
 /******/ 	__webpack_require__("./js/components/modal.js");
+/******/ 	__webpack_require__("./js/forms/show-password-button.js");
 /******/ 	__webpack_require__("./js/helpers/truncate.js");
 /******/ 	__webpack_require__("./js/utils/logger.js");
-/******/ 	__webpack_require__("./js/utils/vent.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./js/forms/show-password-button.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./js/utils/vent.js");
 /******/ 	
 /******/ })()
 ;

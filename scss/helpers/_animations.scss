@@ -100,6 +100,20 @@
 	animation: flatify-heart 1s ease 2 !important;
 }
 
+// Spin animation
+@keyframes flatify-spin {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+.anim-spin {
+	animation: flatify-spin 0.75s linear infinite;
+}
+
 // Slide animations
 @keyframes flatify-slide-up-in {
 	from {
