@@ -11,12 +11,6 @@ for example a button, table item, div, etc.
 What they do is pretty simple:
 set background, color, and border based on the color palette.
 
-### Main colors
-
-<ColorIndicator color="#1cb0f6" title=".style-accent" inline={true} /> UI primary color.
-<br />
-<ColorIndicator color="#60c8f9" title=".style-accent-lighter" inline={true} /> Brings the UI primary color but lighter.
-
 <PreviewBox
 	height="165px"
 	children='<!DOCTYPE html>
@@ -75,101 +69,164 @@ set background, color, and border based on the color palette.
 }
 ```
 
-### Palette colors
+## Main colors
+
+<ColorIndicator className="style-accent" title=".style-accent" inline={true} /> UI primary color.
+<br />
+<ColorIndicator className="style-accent-light" title=".style-accent-light" inline={true} /> Brings the UI primary color
+but lighter.
+
+## Palette colors
 
 These colors can be declared from the `_config.scss` file or reset with CSS,
 for more information [read this page](#).
 
-<ColorIndicator color="#60c8f9" title=".style-blue-light" />
-<ColorIndicator color="#1cb0f6" title=".style-blue" />
-<ColorIndicator color="#8adb4e" title=".style-green-light" />
-<ColorIndicator color="#58cc02" title=".style-green" />
-<ColorIndicator color="#ffe84d" title=".style-yellow-light" />
-<ColorIndicator color="#ffde00" title=".style-yellow" />
-<ColorIndicator color="#ffb64d" title=".style-orange-light" />
-<ColorIndicator color="#ff9600" title=".style-orange" />
-<ColorIndicator color="#ff8181" title=".style-red-light" />
-<ColorIndicator color="#ff4b4b" title=".style-red" />
-<ColorIndicator color="#ffaade" title=".style-pink-light" />
-<ColorIndicator color="#ff86d0" title=".style-pink" />
-<ColorIndicator color="#d493ff" title=".style-purple-light" />
-<ColorIndicator color="#ce82ff" title=".style-purple" />
+<ColorIndicator className="style-blue-light" title=".style-blue-light" />
+<ColorIndicator className="style-blue" title=".style-blue" />
+<ColorIndicator className="style-green-light" title=".style-green-light" />
+<ColorIndicator className="style-green" title=".style-green" />
+<ColorIndicator className="style-yellow-light" title=".style-yellow-light" />
+<ColorIndicator className="style-yellow" title=".style-yellow" />
+<ColorIndicator className="style-orange-light" title=".style-orange-light" />
+<ColorIndicator className="style-orange" title=".style-orange" />
+<ColorIndicator className="style-red-light" title=".style-red-light" />
+<ColorIndicator className="style-red" title=".style-red" />
+<ColorIndicator className="style-pink-light" title=".style-pink-light" />
+<ColorIndicator className="style-pink" title=".style-pink" />
+<ColorIndicator className="style-purple-light" title=".style-purple-light" />
+<ColorIndicator className="style-purple" title=".style-purple" />
+<ColorIndicator className="style-light-light" title=".style-light-light" />
+<ColorIndicator className="style-light" title=".style-light" />
+<ColorIndicator className="style-dark-light" title=".style-dark-light" />
+<ColorIndicator className="style-dark" title=".style-dark" />
 
-### State colors
+## State colors
 
 Colors are an important part of expressing feelings in the process of designing a UI,
 this helper classes are specifically here to help you achieve it.
 
-<ColorIndicator color="#8adb4e" title=".style-success-light" />
-<ColorIndicator color="#58cc02" title=".style-success" />
-<ColorIndicator color="#60c8f9" title=".style-info-light" />
-<ColorIndicator color="#1cb0f6" title=".style-info" />
-<ColorIndicator color="#ffb64d" title=".style-warning-light" />
-<ColorIndicator color="#ff9600" title=".style-warning" />
-<ColorIndicator color="#ff8181" title=".style-danger-light" />
-<ColorIndicator color="#ff4b4b" title=".style-danger" />
-<ColorIndicator color="#ffffff" title=".style-light-light" />
-<ColorIndicator color="#f1f4f7" title=".style-light" />
-<ColorIndicator color="#97a0a8" title=".style-dark-light" />
-<ColorIndicator color="#2e4051" title=".style-dark" />
+<ColorIndicator className="style-success-light" title=".style-success-light" />
+<ColorIndicator className="style-success" title=".style-success" />
+<ColorIndicator className="style-info-light" title=".style-info-light" />
+<ColorIndicator className="style-info" title=".style-info" />
+<ColorIndicator className="style-warning-light" title=".style-warning-light" />
+<ColorIndicator className="style-warning" title=".style-warning" />
+<ColorIndicator className="style-danger-light" title=".style-danger-light" />
+<ColorIndicator className="style-danger" title=".style-danger" />
 
-### Text colors
+## Text colors
 
 There are also some useful classes for changing texts color.
 
+<p className="color-accent-light">
+	<code>.color-accent-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
+</p>
 <p className="color-accent">
 	<code>.color-accent</code>
 	&nbsp; Lorem ipsum dolor sit amet.
 </p>
 <br />
+<p className="color-blue-light">
+	<code>.color-blue-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
+</p>
 <p className="color-blue">
 	<code>.color-blue</code>
 	&nbsp; Lorem ipsum dolor sit amet.
+</p>
+<p className="color-green-light">
+	<code>.color-green-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
 </p>
 <p className="color-green">
 	<code>.color-green</code>
 	&nbsp; Lorem ipsum dolor sit amet.
 </p>
+<p className="color-yellow-light">
+	<code>.color-yellow-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
+</p>
 <p className="color-yellow">
 	<code>.color-yellow</code>
 	&nbsp; Lorem ipsum dolor sit amet.
+</p>
+<p className="color-orange-light">
+	<code>.color-orange-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
 </p>
 <p className="color-orange">
 	<code>.color-orange</code>
 	&nbsp; Lorem ipsum dolor sit amet.
 </p>
+<p className="color-red-light">
+	<code>.color-red-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
+</p>
 <p className="color-red">
 	<code>.color-red</code>
 	&nbsp; Lorem ipsum dolor sit amet.
 </p>
+<p className="color-pink-light">
+	<code>.color-pink-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
+</p>
 <p className="color-pink">
 	<code>.color-pink</code>
 	&nbsp; Lorem ipsum dolor sit amet.
+</p>
+<p className="color-purple-light">
+	<code>.color-purple-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
 </p>
 <p className="color-purple">
 	<code>.color-purple</code>
 	&nbsp; Lorem ipsum dolor sit amet.
 </p>
 <br />
+<p className="color-success-light">
+	<code>.color-success-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
+</p>
 <p className="color-success">
 	<code>.color-success</code>
 	&nbsp; Lorem ipsum dolor sit amet.
+</p>
+<p className="color-info-light">
+	<code>.color-info-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
 </p>
 <p className="color-info">
 	<code>.color-info</code>
 	&nbsp; Lorem ipsum dolor sit amet.
 </p>
+<p className="color-warning-light">
+	<code>.color-warning-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
+</p>
 <p className="color-warning">
 	<code>.color-warning</code>
 	&nbsp; Lorem ipsum dolor sit amet.
+</p>
+<p className="color-danger-light">
+	<code>.color-danger-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
 </p>
 <p className="color-danger">
 	<code>.color-danger</code>
 	&nbsp; Lorem ipsum dolor sit amet.
 </p>
+<p className="color-light-light">
+	<code style={{ background: "#292b36" }}>.color-light-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
+</p>
 <p className="color-light">
 	<code style={{ background: "#292b36" }}>.color-light</code>
 	&nbsp; Lorem ipsum dolor sit amet.
+</p>
+<p className="color-dark-light">
+	<code style={{ background: "#ced9e3" }}>.color-dark-light</code>
+	&nbsp; Light lorem ipsum dolor sit amet.
 </p>
 <p className="color-dark">
 	<code style={{ background: "#ced9e3" }}>.color-dark</code>
