@@ -1149,7 +1149,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   margin: 0 !important;
 }
 .button-group:not(.vertical) .button {
-  margin: 0 -1px;
+  margin: 0 -1px !important;
 }
 .button-group:not(.vertical) .button:first-child {
   border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
@@ -1158,7 +1158,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
 }
 .button-group.vertical {
-  margin: -1px 0;
+  margin: -1px 0 !important;
   flex-direction: column;
 }
 .button-group.vertical .button:first-child {
