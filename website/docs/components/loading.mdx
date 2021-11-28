@@ -324,7 +324,7 @@ Here is a list of loading component CSS variables to customize it.
 `--flatify__loading-dot-width`  
 `--flatify__loading-dot-height`  
 `--flatify__loading-dot-animation-start-scale`  
-`--flatify__loading-dots-animation-duration`  
+`--flatify__loading-dot-animation-duration`  
 `--flatify__loading-spinner-animation-duration`
 
 <PreviewBox
@@ -339,29 +339,78 @@ Here is a list of loading component CSS variables to customize it.
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Loading</title>
 		<style>
-			body{
-				flex-wrap: wrap;
-			}
 			.my-dots-loading-1{
 				--flatify__loading-color: #48CFAD;
 				--flatify__loading-dot-width: 1em;
 				--flatify__loading-dot-height: 0.5em;
 				--flatify__loading-dot-animation-start-scale: 0;
-				--flatify__loading-dots-animation-duration: 0.75s;
+				--flatify__loading-dot-animation-duration: 0.75s;
 			}
 			.my-dots-loading-2{
-				--flatify__loading-color: #BF263C;
+				--flatify__loading-color: #FC6E51;
 				--flatify__loading-dot-width: 0.5em;
 				--flatify__loading-dot-height: 2em;
 				--flatify__loading-dot-animation-start-scale: 2;
-				--flatify__loading-dots-animation-duration: 2s;
+				--flatify__loading-dot-animation-duration: 2s;
+			}
+			.my-spinner-loading-1{
+				--flatify__loading-color: #6A50A7;
+				--flatify__loading-spinner-animation-duration: 2s;
+			}
+			.my-spinner-loading-2{
+				--flatify__loading-color: #AA8E69;
+				--flatify__loading-spinner-animation-duration: 0.35s;
 			}
 		</style>
 	</head>
 	<body class="flex-center">
-		<span class="loading my-dots-loading-1"></span>	
-		<span class="loading my-dots-loading-2"></span>	
+		<div class="flex-center" style="gap: 30px">
+			<span class="loading my-dots-loading-1"></span>	
+			<span class="loading my-dots-loading-2"></span>	
+			<span class="spinner my-spinner-loading-1"></span>	
+			<span class="spinner my-spinner-loading-2"></span>	
+		</div>
 	</body>
 </html>
 '
 />
+
+```html title="index.html"
+<!-- Custom Dots loadings -->
+<span class="loading my-dots-loading-1"></span>
+<span class="loading my-dots-loading-2"></span>
+
+<!-- Custom spinner loadings -->
+<span class="spinner my-spinner-loading-1"></span>
+<span class="spinner my-spinner-loading-2"></span>
+```
+
+```css title="style.css"
+/*  Custom Dots loading */
+.my-dots-loading-1 {
+	--flatify__loading-color: #48cfad;
+	--flatify__loading-dot-width: 1em;
+	--flatify__loading-dot-height: 0.5em;
+	--flatify__loading-dot-animation-start-scale: 0;
+	--flatify__loading-dot-animation-duration: 0.75s;
+}
+
+.my-dots-loading-2 {
+	--flatify__loading-color: #fc6e51;
+	--flatify__loading-dot-width: 0.5em;
+	--flatify__loading-dot-height: 2em;
+	--flatify__loading-dot-animation-start-scale: 2;
+	--flatify__loading-dot-animation-duration: 2s;
+}
+
+/* Custom spinner loadings */
+.my-spinner-loading-1 {
+	--flatify__loading-color: #6a50a7;
+	--flatify__loading-spinner-animation-duration: 2s;
+}
+
+.my-spinner-loading-2 {
+	--flatify__loading-color: #aa8e69;
+	--flatify__loading-spinner-animation-duration: 0.35s;
+}
+```

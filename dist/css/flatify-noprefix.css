@@ -1651,7 +1651,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   --flatify__loading-dot-width: 0.5em;
   --flatify__loading-dot-height: 0.5em;
   --flatify__loading-dot-animation-start-scale: 1.5;
-  --flatify__loading-dots-animation-duration: 1.2s;
+  --flatify__loading-dot-animation-duration: 1.2s;
   --flatify__loading-spinner-animation-duration: 0.75s;
 }
 
