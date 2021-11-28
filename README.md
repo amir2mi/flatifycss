@@ -37,6 +37,7 @@ List of work in progress:
 -   [x] Badge
 -   [ ] Breadcrumb
 -   [x] Button
+-   [x] Arrow Button
 -   [x] Close Button
 -   [x] Button group
 -   [x] Dropdown
@@ -83,4 +84,5 @@ List of work in progress:
 -   [x] Roundness setters
 -   [x] Size setters
 -   [x] Width & height setters
+-   [x] Overlay layer
 -   [x] Text truncation
