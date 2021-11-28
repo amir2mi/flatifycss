@@ -1651,7 +1651,8 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   --flatify__loading-dot-width: 0.5em;
   --flatify__loading-dot-height: 0.5em;
   --flatify__loading-dot-animation-start-scale: 1.5;
-  --flatify__loading-animation-duration: 1.5s;
+  --flatify__loading-dots-animation-duration: 1.2s;
+  --flatify__loading-spinner-animation-duration: 0.75s;
 }
 
 .loading:before, .loading:after, .loading {
@@ -1667,7 +1668,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 .loading {
   position: relative;
   margin-right: calc(var(--flatify__loading-dot-width) * 4);
-  animation: flatify-loading-dot-first var(--flatify__loading-animation-duration) infinite;
+  animation: flatify-loading-dot-first var(--flatify__loading-dots-animation-duration) infinite;
 }
 .loading.stop-animation {
   opacity: 1 !important;
@@ -1682,11 +1683,11 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 }
 .loading:before {
   left: calc(var(--flatify__loading-dot-width) * 2);
-  animation: flatify-loading-dot-second var(--flatify__loading-animation-duration) infinite;
+  animation: flatify-loading-dot-second var(--flatify__loading-dots-animation-duration) infinite;
 }
 .loading:after {
   left: calc(var(--flatify__loading-dot-width) * 4);
-  animation: flatify-loading-dot-third var(--flatify__loading-animation-duration) infinite;
+  animation: flatify-loading-dot-third var(--flatify__loading-dots-animation-duration) infinite;
 }
 
 .overlay-layer > .spinner, .overlay-layer > .loading {
@@ -1702,24 +1703,30 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   left: calc(var(--flatify__loading-dot-width) * -4);
 }
 .overlay-layer.button > .spinner {
-  font-size: 0.75em;
+  font-size: 0.9em;
 }
 
 .spinner {
+  --flatify__local-txt-color: var(--flatify__loading-color);
   display: flex;
   justify-content: space-between;
-  width: 1.75em;
-  height: 1.75em;
-  animation: flatify-spin 1s linear infinite;
+  width: 2em;
+  height: 2em;
+  border: 0.25em solid transparent;
+  border-radius: 50em;
+}
+.spinner[class*=style-] {
+  border-color: transparent !important;
 }
 .spinner:before {
   content: " ";
   position: relative;
   width: 100%;
   height: 100%;
-  border: 0.25em solid var(--flatify__loading-color);
+  border: 0.25em solid var(--flatify__local-txt-color);
   border-left-color: transparent;
   border-radius: 50em;
+  animation: flatify-spin var(--flatify__loading-spinner-animation-duration) linear infinite;
 }
 
 .search-bar {

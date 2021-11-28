@@ -3,7 +3,8 @@
 	--#{$CSS_VAR_PFX}loading-dot-width: 0.5em;
 	--#{$CSS_VAR_PFX}loading-dot-height: 0.5em;
 	--#{$CSS_VAR_PFX}loading-dot-animation-start-scale: 1.5;
-	--#{$CSS_VAR_PFX}loading-animation-duration: 1.5s;
+	--#{$CSS_VAR_PFX}loading-dots-animation-duration: 1.2s;
+	--#{$CSS_VAR_PFX}loading-spinner-animation-duration: 0.75s;
 }
 
 %loading-dot {
@@ -21,7 +22,7 @@
 	position: relative;
 	margin-right: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 4);
 	// first of all parent should be shown
-	animation: flatify-loading-dot-first var(--#{$CSS_VAR_PFX}loading-animation-duration) infinite;
+	animation: flatify-loading-dot-first var(--#{$CSS_VAR_PFX}loading-dots-animation-duration) infinite;
 
 	&.stop-animation {
 		opacity: 1 !important;
@@ -42,12 +43,12 @@
 
 	&:before {
 		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 2);
-		animation: flatify-loading-dot-second var(--#{$CSS_VAR_PFX}loading-animation-duration) infinite;
+		animation: flatify-loading-dot-second var(--#{$CSS_VAR_PFX}loading-dots-animation-duration) infinite;
 	}
 
 	&:after {
 		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 4);
-		animation: flatify-loading-dot-third var(--#{$CSS_VAR_PFX}loading-animation-duration) infinite;
+		animation: flatify-loading-dot-third var(--#{$CSS_VAR_PFX}loading-dots-animation-duration) infinite;
 	}
 }
 
@@ -69,28 +70,36 @@
 
 	// if spinner is inside button make it smaller
 	&.button > .spinner {
-		font-size: 0.75em;
+		font-size: 0.9em;
 	}
 }
 
 .spinner {
+	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}loading-color);
 	display: flex;
 	justify-content: space-between;
-	width: 1.75em;
-	height: 1.75em;
-	animation: flatify-spin 1s linear infinite;
+	width: 2em;
+	height: 2em;
+	// padding: 0.25em; // is not a wise choice with EM and spin animation, it ruins the circle radius
+	border: 0.25em solid transparent;
+	border-radius: 50em;
+
+	&[class*="style-"] {
+		border-color: transparent !important;
+	}
 
 	&:before {
 		content: " ";
 		position: relative;
 		width: 100%;
 		height: 100%;
-		border: 0.25em solid var(--#{$CSS_VAR_PFX}loading-color);
+		border: 0.25em solid var(--#{$CSS_VAR_PFX}local-txt-color);
 		@if $SUPPORT_LTR {
 			border-left-color: transparent;
 		} @else {
 			border-right-color: transparent;
 		}
 		border-radius: 50em;
+		animation: flatify-spin var(--#{$CSS_VAR_PFX}loading-spinner-animation-duration) linear infinite;
 	}
 }
