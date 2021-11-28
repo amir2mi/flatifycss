@@ -12,3 +12,4 @@ Brain by Adrien Coquet from the Noun Project
 Fullscreen by Landan Lloyd from the Noun Project
 Exit Fullscreen by Sophia Bai from the Noun Project
 Search by Graphik Designz from the Noun Project
+Check by James Kocsis from the Noun Project

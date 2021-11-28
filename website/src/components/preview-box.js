@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 
-export default function PreviewBox({ children, disableFullscreen, limitWidth, ...props }) {
+export default function PreviewBox({ isBad, isGood, children, disableFullscreen, limitWidth, ...props }) {
 	const [fullscreen, setFullscreen] = useState(false);
 
 	return (
-		<div className="preview-box-wrapper" style={limitWidth ? { width: limitWidth,display:'table',margin: '0 auto' } : {}}>
+		<div
+			className="preview-box-wrapper"
+			style={limitWidth ? { width: limitWidth, display: "table", margin: "0 auto" } : {}}
+		>
 			{!disableFullscreen && (
 				<button
 					aria-label={fullscreen ? "Minimize the example" : "Fullscreen the example"}
@@ -45,6 +48,21 @@ export default function PreviewBox({ children, disableFullscreen, limitWidth, ..
 						</svg>
 					)}
 				</button>
+			)}
+			{isBad && (
+				<div className="is-bad-example style-red">
+					<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="2 2 12 12">
+						<path d="M3.3 12.7c.2.2.4.3.7.3s.5-.1.7-.3L8 9.4l3.3 3.3c.2.2.5.3.7.3s.5-.1.7-.3c.4-.4.4-1 0-1.4L9.4 8l3.3-3.3c.4-.4.4-1 0-1.4s-1-.4-1.4 0L8 6.6 4.7 3.3c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4L6.6 8l-3.3 3.3c-.4.4-.4 1 0 1.4z"></path>
+					</svg>
+				</div>
+			)}
+
+			{isGood && (
+				<div className="is-good-example style-green">
+					<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 18 18">
+						<path d="M5.056 15.04a1.5 1.5 0 002.217-.119l10.17-12.476A1.5 1.5 0 0015.118.55L6.007 11.758l-3.453-3.41a1.5 1.5 0 10-2.109 2.133l4.611 4.56"></path>
+					</svg>
+				</div>
 			)}
 			<iframe
 				width="100%"

@@ -93,9 +93,11 @@ Spinners are another kind of loadings, add `.spinner` class to an element to hav
 This is a situation that happens for any web developer, let's dive in.  
 Imagine you use the loading component inside a button and expect when data is fetching, having a loading inside that button instead of the button text. However, if you use the loading component inside the button directly, the layout undoubtedly will shift. Check the example below to understand this case:
 
-<div className="flex-center" style={{ gap: 20 }}>
+<div className="flex-center dual-example">
 	
 <PreviewBox
+	disableFullscreen={true}
+	isBad={true}
 	height="250px"
 	children='
 <!DOCTYPE html>
@@ -111,7 +113,7 @@ Imagine you use the loading component inside a button and expect when data is fe
 		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
 		Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
 		<br>
-		<button class="button size-lg style-red">Toggle me!</button>
+		<button class="button size-lg style-dark">Toggle me!</button>
 		<br>
 		Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod
 		in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus
@@ -132,6 +134,8 @@ Imagine you use the loading component inside a button and expect when data is fe
 '/>
 
 <PreviewBox
+	disableFullscreen={true}
+	isGood={true}
 	height="250px"
 	children='
 <!DOCTYPE html>
@@ -147,7 +151,7 @@ Imagine you use the loading component inside a button and expect when data is fe
 		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
 		Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
 		<br>
-		<button class="button size-lg style-green">Toggle me!</button>
+		<button class="button size-lg style-dark">Toggle me!</button>
 		<br>
 		Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod
 		in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus
@@ -171,9 +175,12 @@ Imagine you use the loading component inside a button and expect when data is fe
 />
 </div>
 
-In the first example on click, there is just a loading component inside the button, and button width and height changed based on it, so layout shifts and it is the bad user experience we were talking about.  
-Otherwise second example use [overlay layer helper class](/docs/helpers/overlay-layer), adds `.overlay-layer` class to the button and appends `<span class="loading"></span>` inside button next to button text.  
-Technically it creates an overlay layer that hides button content and just shows loading, it will prevent unwanted layout shifts and changes will be done smoothly!
+In the first example on click, there is just a loading component inside the button, and button width and height change based on it, so layout shifts and it is the bad user experience we were talking about.  
+Otherwise second example use [overlay layer helper class](/docs/helpers/overlay-layer), adds `.overlay-layer` class to the button and appends `<span class="loading"></span>` inside button next to the button text.
+
+:::success How it works
+Technically it creates an overlay element with CSS `::before` that hides button content and just shows loading element, it will prevent unwanted layout shifts and changes will be done smoothly!
+:::
 
 ## Sizes
 
@@ -307,3 +314,54 @@ By default loading component use element or its parent text color, so instead of
 <span class="spinner color-blue"></span>
 <span class="spinner style-blue"></span>
 ```
+
+## Customization
+
+It is possible to change loading component (both dots and spinner) color, duration and animation.  
+Here is a list of loading component CSS variables to customize it.
+
+`--flatify__loading-color`  
+`--flatify__loading-dot-width`  
+`--flatify__loading-dot-height`  
+`--flatify__loading-dot-animation-start-scale`  
+`--flatify__loading-dots-animation-duration`  
+`--flatify__loading-spinner-animation-duration`
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Loading</title>
+		<style>
+			body{
+				flex-wrap: wrap;
+			}
+			.my-dots-loading-1{
+				--flatify__loading-color: #48CFAD;
+				--flatify__loading-dot-width: 1em;
+				--flatify__loading-dot-height: 0.5em;
+				--flatify__loading-dot-animation-start-scale: 0;
+				--flatify__loading-dots-animation-duration: 0.75s;
+			}
+			.my-dots-loading-2{
+				--flatify__loading-color: #BF263C;
+				--flatify__loading-dot-width: 0.5em;
+				--flatify__loading-dot-height: 2em;
+				--flatify__loading-dot-animation-start-scale: 2;
+				--flatify__loading-dots-animation-duration: 2s;
+			}
+		</style>
+	</head>
+	<body class="flex-center">
+		<span class="loading my-dots-loading-1"></span>	
+		<span class="loading my-dots-loading-2"></span>	
+	</body>
+</html>
+'
+/>

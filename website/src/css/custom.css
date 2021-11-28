@@ -273,3 +273,34 @@ div[class*="toggleTrack_"],
 .navbar__logo {
 	height: 2.5em !important;
 }
+
+.is-good-example,
+.is-bad-example {
+	position: relative;
+	top: 1.75em;
+	left: 1.75em;
+	width: 4em;
+	height: 4em;
+	padding: 1em;
+	border: 0.2em solid;
+	border-radius: 1em;
+	transform: rotate(-8deg);
+}
+
+.is-good-example svg,
+.is-bad-example svg {
+	fill: #fff;
+	width: 100%;
+	height: 100%;
+}
+
+.dual-example {
+	gap: 0 20px;
+}
+
+@media screen and (max-width: 650px) {
+	.dual-example {
+		flex-wrap: wrap;
+		gap: 0;
+	}
+}
