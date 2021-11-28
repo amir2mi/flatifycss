@@ -1670,12 +1670,8 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   margin-right: calc(var(--flatify__loading-dot-width) * 4);
   animation: flatify-loading-dot-first var(--flatify__loading-dots-animation-duration) infinite;
 }
-.loading.stop-animation {
+.loading.stop-animation:before, .loading.stop-animation:after, .loading.stop-animation {
   opacity: 1 !important;
-}
-.loading.stop-animation:before, .loading.stop-animation:after {
-  opacity: 1 !important;
-  animation: none !important;
 }
 .loading:before, .loading:after {
   content: " ";
@@ -2294,14 +2290,20 @@ textarea:not(.default) {
   transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
 }
 
+.play-animation:before,
+.play-animation:after,
 .play-animation {
   animation-play-state: running !important;
 }
 
+.pause-animation:before,
+.pause-animation:after,
 .pause-animation {
   animation-play-state: paused !important;
 }
 
+.stop-animation:before,
+.stop-animation:after,
 .stop-animation {
   animation: none !important;
 }

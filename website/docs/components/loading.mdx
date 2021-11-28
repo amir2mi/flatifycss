@@ -90,8 +90,8 @@ Spinners are another kind of loadings, add `.spinner` class to an element to hav
 
 ## Overlay loading
 
-This a situation that happens for any front end developer, let's dive in.  
-Imagine you use loading component inside a button and expect when data is fetching, having a loading inside that button. However if you use loading button directly layout undoubetedly will shift. Check the example below to unerstand the situation:
+This is a situation that happens for any web developer, let's dive in.  
+Imagine you use the loading component inside a button and expect when data is fetching, having a loading inside that button instead of the button text. However, if you use the loading component inside the button directly, the layout undoubtedly will shift. Check the example below to understand this case:
 
 <div className="flex-center" style={{ gap: 20 }}>
 	
@@ -171,8 +171,9 @@ Imagine you use loading component inside a button and expect when data is fetchi
 />
 </div>
 
-In the first example on fetch there is just loading component inside button and it changes button width and height, so layout shifts and it is a bad user experience.  
-Otherwise second example use [overlay layer helper class](/docs/helpers/overlay-layer), adds `.overlay-layer` class to the button and appends `<span class="loading"></span>` inside button. Technically it creates an overlay layer that hides button content and just show loading, it will prevent unwanted layout shifts and changes will be done in a smooth way!
+In the first example on click, there is just a loading component inside the button, and button width and height changed based on it, so layout shifts and it is the bad user experience we were talking about.  
+Otherwise second example use [overlay layer helper class](/docs/helpers/overlay-layer), adds `.overlay-layer` class to the button and appends `<span class="loading"></span>` inside button next to button text.  
+Technically it creates an overlay layer that hides button content and just shows loading, it will prevent unwanted layout shifts and changes will be done smoothly!
 
 ## Sizes
 
@@ -180,7 +181,7 @@ To change the loading component size use [size setter classes](/docs/helpers/siz
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
 
 <PreviewBox
-	height="250px"
+	height="270px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -244,7 +245,7 @@ By default loading component use element or its parent text color, so instead of
 :::
 
 <PreviewBox
-	height="220px"
+	height="230px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -267,18 +268,22 @@ By default loading component use element or its parent text color, so instead of
 		<div class="flex-center">
 			<span class="loading color-red"></span>	
 			<span class="spinner color-red"></span>	
+			<span class="spinner style-red"></span>	
 		</div>
 		<div class="flex-center">
 			<span class="loading color-orange"></span>	
 			<span class="spinner color-orange"></span>	
+			<span class="spinner style-orange"></span>	
 		</div>
 		<div class="flex-center">
 			<span class="loading color-green"></span>	
 			<span class="spinner color-green"></span>	
+			<span class="spinner style-green"></span>	
 		</div>
 		<div class="flex-center">
 			<span class="loading color-blue"></span>	
 			<span class="spinner color-blue"></span>	
+			<span class="spinner style-blue"></span>	
 		</div>
 	</body>
 </html>
@@ -288,13 +293,17 @@ By default loading component use element or its parent text color, so instead of
 ```html title="index.html"
 <span class="loading color-red"></span>
 <span class="spinner color-red"></span>
+<span class="spinner style-red"></span>
 
 <span class="loading color-orange"></span>
 <span class="spinner color-orange"></span>
+<span class="spinner style-orange"></span>
 
 <span class="loading color-green"></span>
 <span class="spinner color-green"></span>
+<span class="spinner style-green"></span>
 
 <span class="loading color-blue"></span>
 <span class="spinner color-blue"></span>
+<span class="spinner style-blue"></span>
 ```

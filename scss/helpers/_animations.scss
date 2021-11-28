@@ -1,11 +1,17 @@
+.play-animation:before,
+.play-animation:after,
 .play-animation {
 	animation-play-state: running !important;
 }
 
+.pause-animation:before,
+.pause-animation:after,
 .pause-animation {
 	animation-play-state: paused !important;
 }
 
+.stop-animation:before,
+.stop-animation:after,
 .stop-animation {
 	animation: none !important;
 }

@@ -24,14 +24,10 @@
 	// first of all parent should be shown
 	animation: flatify-loading-dot-first var(--#{$CSS_VAR_PFX}loading-dots-animation-duration) infinite;
 
+	&.stop-animation:before,
+	&.stop-animation:after,
 	&.stop-animation {
 		opacity: 1 !important;
-
-		&:before,
-		&:after {
-			opacity: 1 !important;
-			animation: none !important;
-		}
 	}
 
 	&:before,
