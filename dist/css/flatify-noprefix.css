@@ -102,10 +102,22 @@
   --flatify__bouncing-transition: 0.35s cubic-bezier(0.59, -0.39, 0.36, 1.38);
 }
 
+/*
+* CSS Reset and basic styles
+* Most of the fixes are from Bootstrap [_reboot.scss]:
+  https://github.com/twbs/bootstrap/blob/main/scss/_reboot.scss
+
+* and thanks to Josh's Custom CSS Reset:
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+* {
+  margin: 0;
 }
 
 @media (max-width: 575.98px) {
@@ -129,6 +141,11 @@
   }
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: var(--flatify__primary-font-family);
@@ -138,7 +155,18 @@ body {
   background-color: var(--flatify__bg-color);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: var(--flatify__tap-highlight-color);
+  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 h6, h5, h4, h3, h2, h1 {
@@ -350,12 +378,28 @@ svg {
   vertical-align: middle;
 }
 
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
 label {
   display: inline-block;
 }
 
 button:focus:not(:focus-visible) {
   outline: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 input,
