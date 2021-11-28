@@ -59,4 +59,8 @@
 	.color-#{"" + $name} {
 		color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 	}
+
+	.color-#{"" + $name}-light {
+		color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "light"}) !important;
+	}
 }

@@ -381,8 +381,7 @@ svg {
 img,
 picture,
 video,
-canvas,
-svg {
+canvas {
   display: block;
   max-width: 100%;
 }
@@ -2838,56 +2837,112 @@ textarea:not(.default) {
   color: var(--flatify__color-blue-primary) !important;
 }
 
+.color-blue-light {
+  color: var(--flatify__color-blue-light) !important;
+}
+
 .color-green {
   color: var(--flatify__color-green-primary) !important;
+}
+
+.color-green-light {
+  color: var(--flatify__color-green-light) !important;
 }
 
 .color-yellow {
   color: var(--flatify__color-yellow-primary) !important;
 }
 
+.color-yellow-light {
+  color: var(--flatify__color-yellow-light) !important;
+}
+
 .color-orange {
   color: var(--flatify__color-orange-primary) !important;
+}
+
+.color-orange-light {
+  color: var(--flatify__color-orange-light) !important;
 }
 
 .color-red {
   color: var(--flatify__color-red-primary) !important;
 }
 
+.color-red-light {
+  color: var(--flatify__color-red-light) !important;
+}
+
 .color-pink {
   color: var(--flatify__color-pink-primary) !important;
+}
+
+.color-pink-light {
+  color: var(--flatify__color-pink-light) !important;
 }
 
 .color-purple {
   color: var(--flatify__color-purple-primary) !important;
 }
 
+.color-purple-light {
+  color: var(--flatify__color-purple-light) !important;
+}
+
 .color-accent {
   color: var(--flatify__color-accent-primary) !important;
+}
+
+.color-accent-light {
+  color: var(--flatify__color-accent-light) !important;
 }
 
 .color-success {
   color: var(--flatify__color-success-primary) !important;
 }
 
+.color-success-light {
+  color: var(--flatify__color-success-light) !important;
+}
+
 .color-info {
   color: var(--flatify__color-info-primary) !important;
+}
+
+.color-info-light {
+  color: var(--flatify__color-info-light) !important;
 }
 
 .color-warning {
   color: var(--flatify__color-warning-primary) !important;
 }
 
+.color-warning-light {
+  color: var(--flatify__color-warning-light) !important;
+}
+
 .color-danger {
   color: var(--flatify__color-danger-primary) !important;
+}
+
+.color-danger-light {
+  color: var(--flatify__color-danger-light) !important;
 }
 
 .color-light {
   color: var(--flatify__color-light-primary) !important;
 }
 
+.color-light-light {
+  color: var(--flatify__color-light-light) !important;
+}
+
 .color-dark {
   color: var(--flatify__color-dark-primary) !important;
+}
+
+.color-dark-light {
+  color: var(--flatify__color-dark-light) !important;
 }
 
 .opacity-0 {

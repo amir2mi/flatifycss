@@ -4,15 +4,15 @@ title: Loading
 
 import PreviewBox from "../../src/components/preview-box";
 
-The loading component is useful when you want a delay between fetching data and showing it. It offers some classes to fit various situations, you can have loadings with different colors and sizes or customize it yourself.
+## Types
 
-## Dots
+Generally, FlatifyCSS has two types of loading: dots and spinners.  
+The loading component is useful when you want a delay between fetching data and showing it. It offers classes to fit various situations, you can have loadings with different colors and sizes or customize it yourself.
 
+### Dots
+
+Create an element with the `.loading` class, it is a three-dot loader.  
 Dots loading provide three dots with order for being shown, note that you can change the inital scale of dots value, so instead of zome out we can have zoom in! We will talk about customizing later.
-
-:::info Stop the animation!
-By adding the `.stop-animation` class, the loading animation will be paused.
-:::
 
 <PreviewBox
 	height="110px"
@@ -26,24 +26,71 @@ By adding the `.stop-animation` class, the loading animation will be paused.
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Loading</title>
 	</head>
-	<body>
-		<span class="loading"></span>
-		<span class="loading stop-animation"></span>
+	<body class="flex-center">
+		<span class="loading"></span>	
 	</body>
 </html>
 '
 />
 
-```html {1} title="index.html"
-<div class="search-bar">
-	<input type="search" placeholder="Search something..." />
-	<button class="search-button" aria-label="Search"></button>
-</div>
+```html title="index.html"
+<span class="loading"></span>
 ```
 
-### Sizes
+:::info Stop the animation!
+To pause the loading use `.pause-animation` also by adding the `.stop-animation` class, the loading animation will be stopped.
 
-To change the input bar size use [size setter classes](/docs/helpers/size-setters).
+<PreviewBox
+	height="110px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Loading</title>
+	</head>
+	<body class="flex-center">
+		<span class="loading stop-animation"></span>	
+	</body>
+</html>
+'
+/>
+:::
+
+### Spinner
+
+Spinners are another kind of loadings, add `.spinner` class to an element to have a spinner loading. Spinners also support animation state changer classes like `.pause-animation` and `.stop-animation`.
+
+<PreviewBox
+	height="110px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Loading</title>
+	</head>
+	<body class="flex-center" style="gap: 30px">
+		<span class="spinner"></span>	
+		<span class="spinner stop-animation"></span>	
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<span class="spinner"></span> <span class="spinner stop-animation"></span>
+```
+
+## Sizes
+
+To change the loading component size use [size setter classes](/docs/helpers/size-setters).
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
 
 <PreviewBox
@@ -56,54 +103,62 @@ These classes just set a `font-size` property so it is possible to change it you
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Search bar</title>
-        <style>
-            .search-bar{
-                max-width: 20em
-            }
-        </style>
+		<title>Loading</title>
+		<style>
+			.flex-center{
+				gap: 2em;
+			}
+			.flex-center:not(:last-child){
+				margin-bottom: 1.4em;
+			}
+		</style>
 	</head>
 	<body>
-        <div class="search-bar size-sm">
-            <input type="search" placeholder="Search something..." />
-            <button class="search-button" aria-label="Search"></button>
-        </div>
-        <div class="search-bar size-lg">
-            <input type="search" placeholder="Search something..." />
-            <button class="search-button" aria-label="Search"></button>
-        </div>
-        <div class="search-bar size-2x">
-            <input type="search" placeholder="Search something..." />
-            <button class="search-button" aria-label="Search"></button>
-        </div>
+		<div class="flex-center">
+			<span class="loading size-xs"></span>	
+			<span class="spinner size-xs"></span>	
+		</div>
+		<div class="flex-center">
+			<span class="loading size-md"></span>	
+			<span class="spinner size-md"></span>	
+		</div>
+		<div class="flex-center">
+			<span class="loading size-lg"></span>	
+			<span class="spinner size-lg"></span>	
+		</div>
+		<div class="flex-center">
+			<span class="loading size-3x"></span>	
+			<span class="spinner size-3x"></span>	
+		</div>
 	</body>
 </html>
 '
 />
 
 ```html title="index.html"
-<div class="search-bar size-sm">
-	<input type="search" placeholder="Search something..." />
-	<button class="search-button" aria-label="Search"></button>
-</div>
+<span class="loading size-xs"></span>
+<span class="spinner size-xs"></span>
 
-<div class="search-bar size-lg">
-	<input type="search" placeholder="Search something..." />
-	<button class="search-button" aria-label="Search"></button>
-</div>
+<span class="loading size-md"></span>
+<span class="spinner size-md"></span>
 
-<div class="search-bar size-2x">
-	<input type="search" placeholder="Search something..." />
-	<button class="search-button" aria-label="Search"></button>
-</div>
+<span class="loading size-lg"></span>
+<span class="spinner size-lg"></span>
+
+<span class="loading size-3x"></span>
+<span class="spinner size-3x"></span>
 ```
 
-### Colors
+## Colors
 
-There are helper classes for styling search bar, first read about [color setter classes](/docs/helpers/color-setters). For search bars, you should add these classes to the button and input separately.
+There are helper classes for styling loading component, first read about [color setter classes](/docs/helpers/color-setters).
+
+:::info Change loading color
+By default loading component use element or its parent text color, so instead of using `.style-red` use `.color-red` to change the loading color.
+:::
 
 <PreviewBox
-	height="250px"
+	height="220px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -112,72 +167,48 @@ There are helper classes for styling search bar, first read about [color setter 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Search bar</title>
-        <style>
-            .search-bar{
-                width: 45%;
-                margin: 5px;
-            }
-        </style>
+		<title>Loading</title>
+		<style>
+			.flex-center{
+				gap: 2em;
+			}
+			.flex-center:not(:last-child){
+				margin-bottom: 1.4em;
+			}
+		</style>
 	</head>
-	<body class="flex-center" style="flex-wrap: wrap">
-        <div class="search-bar">
-            <input class="style-dark" type="search" placeholder="Search something..." />
-            <button class="search-button style-dark" aria-label="Search"></button>
-        </div>
-        <div class="search-bar">
-            <input class="style-light" type="search" placeholder="Search something..." />
-            <button class="search-button style-light" aria-label="Search"></button>
-        </div>
-        <div class="search-bar">
-            <input class="style-green-light" type="search" placeholder="Search something..." />
-            <button class="search-button style-green" aria-label="Search"></button>
-        </div>
-        <div class="search-bar">
-            <input class="style-blue" type="search" placeholder="Search something..." />
-            <button class="search-button style-blue" aria-label="Search"></button>
-        </div>
-        <div class="search-bar">
-            <input class="style-red" type="search" placeholder="Search something..." />
-            <button class="search-button style-red-light" aria-label="Search"></button>
-        </div>
-        <div class="search-bar">
-            <input class="style-orange" type="search" placeholder="Search something..." />
-            <button class="search-button style-orange-light" aria-label="Search"></button>
-        </div>
+	<body>
+		<div class="flex-center">
+			<span class="loading color-red"></span>	
+			<span class="spinner color-red"></span>	
+		</div>
+		<div class="flex-center">
+			<span class="loading color-orange"></span>	
+			<span class="spinner color-orange"></span>	
+		</div>
+		<div class="flex-center">
+			<span class="loading color-green"></span>	
+			<span class="spinner color-green"></span>	
+		</div>
+		<div class="flex-center">
+			<span class="loading color-blue"></span>	
+			<span class="spinner color-blue"></span>	
+		</div>
 	</body>
 </html>
 '
 />
 
 ```html title="index.html"
-<div class="search-bar">
-	<input class="style-dark" type="search" placeholder="Search something..." />
-	<button class="search-button style-dark" aria-label="Search"></button>
-</div>
+<span class="loading color-red"></span>
+<span class="spinner color-red"></span>
 
-<div class="search-bar">
-	<input class="style-light" type="search" placeholder="Search something..." />
-	<button class="search-button style-light" aria-label="Search"></button>
-</div>
+<span class="loading color-orange"></span>
+<span class="spinner color-orange"></span>
 
-<div class="search-bar">
-	<input class="style-green-light" type="search" placeholder="Search something..." />
-	<button class="search-button style-green" aria-label="Search"></button>
-</div>
+<span class="loading color-green"></span>
+<span class="spinner color-green"></span>
 
-<div class="search-bar">
-	<input class="style-blue" type="search" placeholder="Search something..." />
-	<button class="search-button style-blue" aria-label="Search"></button>
-</div>
-
-<div class="search-bar">
-	<input class="style-red" type="search" placeholder="Search something..." />
-	<button class="search-button style-red-light" aria-label="Search"></button>
-</div>
-
-<div class="search-bar">
-	<input class="style-orange" type="search" placeholder="Search something..." />
-	<button class="search-button style-orange-light" aria-label="Search"></button>
-</div>
+<span class="loading color-blue"></span>
+<span class="spinner color-blue"></span>
 ```
