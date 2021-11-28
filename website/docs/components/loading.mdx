@@ -1,0 +1,177 @@
+---
+title: Loading
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+The loading component is useful when you want a delay between fetching data and showing it. It offers some classes to fit various situations, you can have loadings with different colors and sizes or customize it yourself.
+
+## Dots
+
+<PreviewBox
+	height="110px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Loading</title>
+	</head>
+	<body>
+		<span class="loading"></span>
+		<span class="loading stop"></span>
+	</body>
+</html>
+'
+/>
+
+```html {1} title="index.html"
+<div class="search-bar">
+	<input type="search" placeholder="Search something..." />
+	<button class="search-button" aria-label="Search"></button>
+</div>
+```
+
+### Sizes
+
+To change the input bar size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Search bar</title>
+        <style>
+            .search-bar{
+                max-width: 20em
+            }
+        </style>
+	</head>
+	<body>
+        <div class="search-bar size-sm">
+            <input type="search" placeholder="Search something..." />
+            <button class="search-button" aria-label="Search"></button>
+        </div>
+        <div class="search-bar size-lg">
+            <input type="search" placeholder="Search something..." />
+            <button class="search-button" aria-label="Search"></button>
+        </div>
+        <div class="search-bar size-2x">
+            <input type="search" placeholder="Search something..." />
+            <button class="search-button" aria-label="Search"></button>
+        </div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="search-bar size-sm">
+	<input type="search" placeholder="Search something..." />
+	<button class="search-button" aria-label="Search"></button>
+</div>
+
+<div class="search-bar size-lg">
+	<input type="search" placeholder="Search something..." />
+	<button class="search-button" aria-label="Search"></button>
+</div>
+
+<div class="search-bar size-2x">
+	<input type="search" placeholder="Search something..." />
+	<button class="search-button" aria-label="Search"></button>
+</div>
+```
+
+### Colors
+
+There are helper classes for styling search bar, first read about [color setter classes](/docs/helpers/color-setters). For search bars, you should add these classes to the button and input separately.
+
+<PreviewBox
+	height="250px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Search bar</title>
+        <style>
+            .search-bar{
+                width: 45%;
+                margin: 5px;
+            }
+        </style>
+	</head>
+	<body class="flex-center" style="flex-wrap: wrap">
+        <div class="search-bar">
+            <input class="style-dark" type="search" placeholder="Search something..." />
+            <button class="search-button style-dark" aria-label="Search"></button>
+        </div>
+        <div class="search-bar">
+            <input class="style-light" type="search" placeholder="Search something..." />
+            <button class="search-button style-light" aria-label="Search"></button>
+        </div>
+        <div class="search-bar">
+            <input class="style-green-light" type="search" placeholder="Search something..." />
+            <button class="search-button style-green" aria-label="Search"></button>
+        </div>
+        <div class="search-bar">
+            <input class="style-blue" type="search" placeholder="Search something..." />
+            <button class="search-button style-blue" aria-label="Search"></button>
+        </div>
+        <div class="search-bar">
+            <input class="style-red" type="search" placeholder="Search something..." />
+            <button class="search-button style-red-light" aria-label="Search"></button>
+        </div>
+        <div class="search-bar">
+            <input class="style-orange" type="search" placeholder="Search something..." />
+            <button class="search-button style-orange-light" aria-label="Search"></button>
+        </div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="search-bar">
+	<input class="style-dark" type="search" placeholder="Search something..." />
+	<button class="search-button style-dark" aria-label="Search"></button>
+</div>
+
+<div class="search-bar">
+	<input class="style-light" type="search" placeholder="Search something..." />
+	<button class="search-button style-light" aria-label="Search"></button>
+</div>
+
+<div class="search-bar">
+	<input class="style-green-light" type="search" placeholder="Search something..." />
+	<button class="search-button style-green" aria-label="Search"></button>
+</div>
+
+<div class="search-bar">
+	<input class="style-blue" type="search" placeholder="Search something..." />
+	<button class="search-button style-blue" aria-label="Search"></button>
+</div>
+
+<div class="search-bar">
+	<input class="style-red" type="search" placeholder="Search something..." />
+	<button class="search-button style-red-light" aria-label="Search"></button>
+</div>
+
+<div class="search-bar">
+	<input class="style-orange" type="search" placeholder="Search something..." />
+	<button class="search-button style-orange-light" aria-label="Search"></button>
+</div>
+```

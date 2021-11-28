@@ -2288,6 +2288,10 @@ textarea:not(.default) {
   transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
 }
 
+.stop-animation {
+  animation-play-state: paused !important;
+}
+
 @keyframes flatify-fade-in {
   from {
     opacity: 0;
