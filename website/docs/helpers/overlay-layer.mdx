@@ -18,7 +18,7 @@ Overlay layers have couple of CSS variables to make them more flexible, here the
 In the example below we have a box with an image inside it, basically we need and overlay layer to change image color with [`mix-blend-mode` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode).
 
 <PreviewBox
-	height="300px"
+	height="750px"
 	children='<!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -34,23 +34,56 @@ In the example below we have a box with an image inside it, basically we need an
                 height: 150px;
 				margin: 0.5em;
                 border-radius: 1em;
-                --flatify__overlay-layer-bg-color: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-                --flatify__overlay-blending-mode: overlay;
             }
             .my-img-fx img{
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
+            .fx-1{
+                 --flatify__overlay-layer-bg-color: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+                --flatify__overlay-blending-mode: overlay;
+            }
+            .fx-2{
+                --flatify__overlay-layer-bg-color: linear-gradient(to right, #8e2de2, #4a00e0);
+                --flatify__overlay-blending-mode: diffrence;
+            }
+            .fx-3{
+                --flatify__overlay-layer-bg-color: linear-gradient(to right, #f12711, #f5af19);
+                --flatify__overlay-blending-mode: color-dodge;
+                --flatify__overlay-opacity: 0.2;
+            }
+            .fx-4{
+                --flatify__overlay-layer-bg-color: #212121;
+                --flatify__overlay-opacity: 0.9;
+            }
         </style>
     </head>
-    <body class="flex-center">
-    	<div class="my-img-fx flex-center">
-    		<img src="https://picsum.photos/500/300" alt="a random image"/>
-    	</div>
-        <div class="my-img-fx flex-center overlay-layer">
-    		<img src="https://picsum.photos/500/300" alt="a random image"/>
-    	</div>
+    <body>
+    	<div class="flex-center">
+            <div class="my-img-fx">
+    		    <img src="https://picsum.photos/500/300" alt="a random image"/>
+    	    </div>
+            <div class="my-img-fx fx-1 overlay-layer">
+    		    <img src="https://picsum.photos/500/300" alt="a random image"/>
+    	    </div>
+        </div>
+    	<div class="flex-center">
+            <div class="my-img-fx fx-2 overlay-layer">
+    		    <img src="https://picsum.photos/500/300" alt="a random image"/>
+    	    </div>
+            <div class="my-img-fx fx-3 overlay-layer">
+    		    <img src="https://picsum.photos/500/300" alt="a random image"/>
+    	    </div>
+        </div>
+        <div class="flex-center">
+            <div class="my-img-fx fx-4 overlay-layer">
+    		    <img src="https://picsum.photos/500/300" alt="a random image"/>
+    	    </div>
+            <div class="my-img-fx fx-5 overlay-layer">
+    		    <img src="https://picsum.photos/500/300" alt="a random image"/>
+    	    </div>
+        </div>
     </body>
 
 </html>'

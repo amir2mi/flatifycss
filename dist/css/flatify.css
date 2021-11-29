@@ -4096,7 +4096,7 @@ textarea:not(.default) {
 :root {
   --flatify__overlay-layer-priority: 10;
   --flatify__overlay-layer-opacity: 1;
-  --flatify__overlay-blending-mode: normal;
+  --flatify__overlay-layer-blending-mode: normal;
   --flatify__overlay-layer-bg-color: var(--flatify__bg-color);
 }
 
