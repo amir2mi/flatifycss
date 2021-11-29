@@ -12,6 +12,7 @@ Overlay layers have couple of CSS variables to make them more flexible, here the
 
 `--flatify__overlay-layer-priority` `z-index` property of the overlay layer, default is 10  
 `--flatify__overlay-layer-opacity` Default is 1 which means 100%  
+`--flatify__overlay-blending-mode` Default is normal  
 `--flatify__overlay-layer-bg-color` By default inherits darker background color
 
 In the example below we have a box with an image inside it, basically we need and overlay layer to change image color with [`mix-blend-mode` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode).
@@ -33,10 +34,8 @@ In the example below we have a box with an image inside it, basically we need an
                 height: 150px;
 				margin: 0.5em;
                 border-radius: 1em;
-            }
-            .my-img-fx::before{
-                background: red;
-                mix-blend-mode: overlay;
+                --flatify__overlay-layer-bg-color: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+                --flatify__overlay-blending-mode: overlay;
             }
             .my-img-fx img{
                 width: 100%;
@@ -44,14 +43,15 @@ In the example below we have a box with an image inside it, basically we need an
                 object-fit: cover;
             }
         </style>
-	</head>
-	<body class="flex-center">
-		<div class="my-img-fx flex-center">
-			<img src="https://picsum.photos/500/300" alt="a random image"/>
-		</div>
+    </head>
+    <body class="flex-center">
+    	<div class="my-img-fx flex-center">
+    		<img src="https://picsum.photos/500/300" alt="a random image"/>
+    	</div>
         <div class="my-img-fx flex-center overlay-layer">
-			<img src="https://picsum.photos/500/300" alt="a random image"/>
-		</div>
-	</body>
+    		<img src="https://picsum.photos/500/300" alt="a random image"/>
+    	</div>
+    </body>
+
 </html>'
 />
