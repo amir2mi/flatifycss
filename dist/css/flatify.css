@@ -3883,18 +3883,6 @@ textarea:not(.default) {
   height: 100% !important;
 }
 
-.overlay-layer:before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  background: var(--flatify__local-bg-color);
-  border-radius: inherit;
-}
-
 .inline-flex {
   display: -webkit-inline-box !important;
   display: -ms-inline-flexbox !important;
@@ -4103,6 +4091,29 @@ textarea:not(.default) {
 .scrollable-y {
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+:root {
+  --flatify__overlay-layer-priority: 10;
+  --flatify__overlay-layer-opacity: 0.5;
+  --flatify__overlay-layer-bg-color: var(--flatify__bg-color);
+}
+
+.overlay-layer {
+  --flatify__local-bg-color: var(--flatify__overlay-layer-bg-color);
+  position: relative;
+}
+.overlay-layer:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: var(--flatify__overlay-layer-priority);
+  width: 100%;
+  height: 100%;
+  background: var(--flatify__local-bg-color);
+  border-radius: inherit;
+  opacity: var(--flatify__overlay-layer-opacity);
 }
 
 .pulse {

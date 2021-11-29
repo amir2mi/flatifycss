@@ -1,0 +1,57 @@
+---
+title: Overlay layer
+sidebar_position: 2
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+It happens that you might want to have a layer that comes over the element content, it can be done with CSS `::before` pseudo-element, however, it is a common use case, creating this layer each time is not a logical choice.  
+FlatifyCSS gives you a helper class called `.overlay-layer`, it does the same thing and you can just customize it easily without writing boilerplates.
+
+Overlay layers have couple of CSS variables to make them more flexible, here they are:
+
+`--flatify__overlay-layer-priority` `z-index` property of the overlay layer, default is 10  
+`--flatify__overlay-layer-opacity` Default is 1 which means 100%  
+`--flatify__overlay-layer-bg-color` By default inherits darker background color
+
+In the example below we have a box with an image inside it, basically we need and overlay layer to change image color with [`mix-blend-mode` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode).
+
+<PreviewBox
+	height="300px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Overlay layer</title>
+        <style>
+            .my-img-fx{
+                overflow: hidden;
+                width: 300px;
+                height: 150px;
+				margin: 0.5em;
+                border-radius: 1em;
+            }
+            .my-img-fx::before{
+                background: red;
+                mix-blend-mode: overlay;
+            }
+            .my-img-fx img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        </style>
+	</head>
+	<body class="flex-center">
+		<div class="my-img-fx flex-center">
+			<img src="https://picsum.photos/500/300" alt="a random image"/>
+		</div>
+        <div class="my-img-fx flex-center overlay-layer">
+			<img src="https://picsum.photos/500/300" alt="a random image"/>
+		</div>
+	</body>
+</html>'
+/>
