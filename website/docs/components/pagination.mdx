@@ -5,18 +5,15 @@ sidebar_position: 2
 
 import PreviewBox from "../../src/components/preview-box";
 
-Buttons can be in a parent with the `.button-group` class to create a button group.  
-Basically in a button group just, the first and last buttons have roundness and it seems like they are stick together.  
-If you don't know about buttons in FlatifyCSS, first [read more about creating buttons](/docs/components/buttons/button).
-
-Button groups can have both horizontal and vertical variations with different kinds of button styles.
+Paginations are button groups that are customized for thier special purpose: showing page numbers.  
+So before continue first read about [buttons](/docs/components/buttons/button) and [button groups](/docs/components/buttons/button-group)
 
 ### Horizontal
 
 By default, button groups are horizontal and they can have active buttons just by adding the `.active` class to each.
 
 <PreviewBox
-	height="100px"
+	height="220px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -28,13 +25,25 @@ By default, button groups are horizontal and they can have active buttons just b
 		<title>Button group</title>
 	</head>
 	<body>
-        <div class="flex-center">
+		<div class="flex-center">
 			<div class="button-group">
-				<button class="button">Click Here</button>
-				<button class="button style-success">Click Here</button>
-				<button class="button style-info active">Click Here</button>
-				<button class="button style-warning">Click Here</button>
-				<button class="button style-danger">Click Here</button>
+				<a href="#" class="button bordered">First</a>
+				<a href="#" class="button bordered">12</a>
+				<a href="#" class="button bordered active style-accent">13</a>
+				<a href="#" class="button bordered">14</a>
+				<a href="#" class="button bordered">Last</a>
+			</div>
+		</div>
+		<br>
+		<div class="flex-center">
+			<div class="button-group">
+				<a href="#" class="button">1</a>
+				<a href="#" class="button active">2</a>
+				<a href="#" class="button">3</a>
+				<span class="button">...</span>
+				<a href="#" class="button">97</a>
+				<a href="#" class="button">98</a>
+				<a href="#" class="button">99</a>
 			</div>
 		</div>
 	</body>

@@ -23,7 +23,7 @@
 	--ifm-global-shadow-lw: none;
 	--ifm-menu-link-padding-vertical: 12px;
 	--ifm-pre-padding: 1.5em;
-	--flatify__button-bg-color__focus: none;
+	--flatify__button-border-color: none;
 }
 html[data-theme="dark"] {
 	--docus-bd: 2px solid #2e4051;

@@ -355,10 +355,9 @@ To make a button disabled you can add the `.disabled` class or HTML `disabled` a
 
 Each button has these CSS variables for customization, they can be set as `:root` for all buttons default style or just for an specific selector.
 
-`--flatify__button-bg-color` Button background color  
-`--flatify__button-txt-color` Button text color  
-`--flatify__button-bg-color__focus` Button background color for border and focus  
-`--flatify__button-txt-color__focus` Button text color for focus
+`--flatify__button-txt-color`  
+`--flatify__button-bg-color`  
+`--flatify__button-border-color`
 
 <PreviewBox
 	height="330px"
@@ -376,22 +375,19 @@ Each button has these CSS variables for customization, they can be set as `:root
 				margin: 0.5em !important;
 				--flatify__button-bg-color: linear-gradient(15deg, #03001e, #7303c0, #ec38bc, #fdeff9);
 				--flatify__button-txt-color: white;
-				--flatify__button-bg-color__focus: linear-gradient(25deg, #03001e, #7303c0, #ec38bc, #fdeff9);
-				--flatify__button-txt-color__focus: white;
+				--flatify__button-border-color: linear-gradient(25deg, #03001e, #7303c0, #ec38bc, #fdeff9);
 			}
 			.my-button-2{
 				margin: 0.5em !important;
 				--flatify__button-bg-color: #48CFAD;
 				--flatify__button-txt-color: #fff;
-				--flatify__button-bg-color__focus: #37BC9B;
-				--flatify__button-txt-color__focus: #fff;
+				--flatify__button-border-color: #37BC9B;
 			}
 			.my-button-3{
 				margin: 0.5em !important;
 				--flatify__button-bg-color: #EC87C0;
 				--flatify__button-txt-color: #d770ad;
-				--flatify__button-bg-color__focus: #D770AD;
-				--flatify__button-txt-color__focus: #fff;
+				--flatify__button-border-color: #D770AD;
 			}
 		</style>
     </head>
@@ -415,23 +411,20 @@ Each button has these CSS variables for customization, they can be set as `:root
 
 ```css title="style.css"
 .my-button-1 {
-	--flatify__button-bg-color: linear-gradient(15deg, #03001e, #7303c0, #ec38bc, #fdeff9);
 	--flatify__button-txt-color: white;
-	--flatify__button-bg-color__focus: linear-gradient(25deg, #03001e, #7303c0, #ec38bc, #fdeff9);
-	--flatify__button-txt-color__focus: white;
+	--flatify__button-bg-color: linear-gradient(15deg, #03001e, #7303c0, #ec38bc, #fdeff9);
+	--flatify__button-border-color: linear-gradient(25deg, #03001e, #7303c0, #ec38bc, #fdeff9);
 }
 
 .my-button-2 {
-	--flatify__button-bg-color: #48cfad;
 	--flatify__button-txt-color: #fff;
-	--flatify__button-bg-color__focus: #37bc9b;
-	--flatify__button-txt-color__focus: #fff;
+	--flatify__button-bg-color: #48cfad;
+	--flatify__button-border-color: #37bc9b;
 }
 
 .my-button-3 {
-	--flatify__button-bg-color: #ec87c0;
 	--flatify__button-txt-color: #d770ad;
-	--flatify__button-bg-color__focus: #d770ad;
-	--flatify__button-txt-color__focus: #fff;
+	--flatify__button-bg-color: #ec87c0;
+	--flatify__button-border-color: #d770ad;
 }
 ```

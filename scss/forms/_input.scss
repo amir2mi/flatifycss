@@ -213,6 +213,7 @@ input[type="file"]:not(.default) {
 		cursor: pointer;
 		font-size: 0.9em;
 		color: inherit;
+		background: inherit !important;
 		filter: brightness(92%);
 		vertical-align: baseline;
 
