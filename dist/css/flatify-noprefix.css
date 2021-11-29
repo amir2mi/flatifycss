@@ -1158,8 +1158,10 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
   border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
 }
 .button-group.vertical {
-  margin: -1px 0 !important;
   flex-direction: column;
+}
+.button-group.vertical .button {
+  margin: -1px 0 !important;
 }
 .button-group.vertical .button:first-child {
   border-radius: var(--flatify__border-radius) var(--flatify__border-radius) 0 0;

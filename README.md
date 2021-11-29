@@ -45,7 +45,7 @@ List of work in progress:
 -   [x] Menu
 -   [x] Modal
 -   [x] Navigation bar
--   [ ] Pagination
+-   [x] Pagination
 -   [ ] Popover
 -   [x] Search bar
 -   [ ] Tabs

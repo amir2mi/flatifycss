@@ -39,9 +39,11 @@
 	&.vertical {
 		// sometimes on active/focus-visible a white space will be create,
 		// to fix this -1px margin is practical.
-		margin: -1px 0 !important;
 		flex-direction: column;
+
 		.button {
+			margin: -1px 0 !important;
+
 			&:first-child {
 				border-radius: var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0 0;
 			}
