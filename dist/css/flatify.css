@@ -316,7 +316,7 @@ sup {
   top: -0.5em;
 }
 
-a[href] {
+a[href]:not(.button) {
   color: var(--flatify__link-color);
   -webkit-text-decoration: var(--flatify__link-decoration);
           text-decoration: var(--flatify__link-decoration);
@@ -324,12 +324,12 @@ a[href] {
   -o-transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
   transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
 }
-a[href]:hover {
+a[href]:not(.button):hover {
   color: var(--flatify__link-color__hover);
   -webkit-text-decoration: var(--flatify__link-decoration__hover);
           text-decoration: var(--flatify__link-decoration__hover);
 }
-a[href]:focus {
+a[href]:not(.button):focus {
   color: var(--flatify__link-color__focus);
   -webkit-text-decoration: var(--flatify__link-decoration__focus);
           text-decoration: var(--flatify__link-decoration__focus);

@@ -234,7 +234,7 @@ sup {
 }
 
 // Anchor
-a[href] {
+a[href]:not(.button) {
 	color: var(--#{$CSS_VAR_PFX}link-color);
 	text-decoration: var(--#{$CSS_VAR_PFX}link-decoration);
 	transition: color var(--#{$CSS_VAR_PFX}simple-transition), background var(--#{$CSS_VAR_PFX}simple-transition);

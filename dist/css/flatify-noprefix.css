@@ -311,16 +311,16 @@ sup {
   top: -0.5em;
 }
 
-a[href] {
+a[href]:not(.button) {
   color: var(--flatify__link-color);
   text-decoration: var(--flatify__link-decoration);
   transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
 }
-a[href]:hover {
+a[href]:not(.button):hover {
   color: var(--flatify__link-color__hover);
   text-decoration: var(--flatify__link-decoration__hover);
 }
-a[href]:focus {
+a[href]:not(.button):focus {
   color: var(--flatify__link-color__focus);
   text-decoration: var(--flatify__link-decoration__focus);
 }
