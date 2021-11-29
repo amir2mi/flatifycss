@@ -4095,9 +4095,10 @@ textarea:not(.default) {
 
 :root {
   --flatify__overlay-layer-priority: 10;
+  --flatify__overlay-layer-bg-color: var(--flatify__bg-color);
   --flatify__overlay-layer-opacity: 1;
   --flatify__overlay-layer-blending-mode: normal;
-  --flatify__overlay-layer-bg-color: var(--flatify__bg-color);
+  --flatify__overlay-layer-backdrop-filter: none;
 }
 
 .overlay-layer {
@@ -4116,6 +4117,8 @@ textarea:not(.default) {
   border-radius: inherit;
   opacity: var(--flatify__overlay-layer-opacity);
   mix-blend-mode: var(--flatify__overlay-blending-mode);
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
 }
 
 .pulse {

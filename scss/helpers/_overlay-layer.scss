@@ -2,9 +2,10 @@
 // class should be added to the wrapper, and wrapper should have [--flatify__local-bg-color] set.
 :root {
 	--#{$CSS_VAR_PFX}overlay-layer-priority: 10;
+	--#{$CSS_VAR_PFX}overlay-layer-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
 	--#{$CSS_VAR_PFX}overlay-layer-opacity: 1;
 	--#{$CSS_VAR_PFX}overlay-layer-blending-mode: normal;
-	--#{$CSS_VAR_PFX}overlay-layer-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+	--#{$CSS_VAR_PFX}overlay-layer-backdrop-filter: none;
 }
 
 .overlay-layer {
@@ -23,5 +24,6 @@
 		border-radius: inherit;
 		opacity: var(--#{$CSS_VAR_PFX}overlay-layer-opacity);
 		mix-blend-mode: var(--#{$CSS_VAR_PFX}overlay-blending-mode);
+		backdrop-filter: none;
 	}
 }
