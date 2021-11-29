@@ -11,11 +11,12 @@ FlatifyCSS gives you a helper class called `.overlay-layer`, it does the same th
 Overlay layers have couple of CSS variables to make them more flexible, here they are:
 
 `--flatify__overlay-layer-priority` `z-index` property of the overlay layer, default is 10  
-`--flatify__overlay-layer-opacity` Default is 1 which means 100%  
-`--flatify__overlay-blending-mode` Default is normal  
 `--flatify__overlay-layer-bg-color` By default inherits darker background color
+`--flatify__overlay-layer-opacity` Default is 1 which means 100%  
+`--flatify__overlay-layer-blending-mode` Default is `normal`  
+`--flatify__overlay-layer-backdrop-filter` Default is `none`
 
-In the example below we have a box with an image inside it, basically we need and overlay layer to change image color with [`mix-blend-mode` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode).
+In the below example, we have a box with an image inside it, basically, we need an overlay layer to change image color with [`mix-blend-mode` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode) and add some effect with [`backdrop-filter` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter).
 
 <PreviewBox
 	height="750px"
@@ -55,7 +56,13 @@ In the example below we have a box with an image inside it, basically we need an
             }
             .fx-4{
                 --flatify__overlay-layer-bg-color: #212121;
-                --flatify__overlay-layer-opacity: 0.75;
+                --flatify__overlay-layer-opacity: 0.6;
+                --flatify__overlay-layer-backdrop-filter: blur(10px);
+            }
+            .fx-5{
+                --flatify__overlay-layer-bg-color: trasparent;
+                --flatify__overlay-layer-opacity: 0.6;
+                --flatify__overlay-layer-backdrop-filter: saturation(500%) contrast(500%) grayscale(100%);
             }
         </style>
     </head>
