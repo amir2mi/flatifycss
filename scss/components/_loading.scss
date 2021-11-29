@@ -22,7 +22,7 @@
 	position: relative;
 	margin-right: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 4);
 	// first of all parent should be shown
-	animation: flatify-loading-dot-first var(--#{$CSS_VAR_PFX}loading-dots-animation-duration) infinite;
+	animation: flatify-loading-dot-first var(--#{$CSS_VAR_PFX}loading-dot-animation-duration) infinite;
 
 	&.stop-animation:before,
 	&.stop-animation:after,
@@ -39,12 +39,12 @@
 
 	&:before {
 		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 2);
-		animation: flatify-loading-dot-second var(--#{$CSS_VAR_PFX}loading-dots-animation-duration) infinite;
+		animation: flatify-loading-dot-second var(--#{$CSS_VAR_PFX}loading-dot-animation-duration) infinite;
 	}
 
 	&:after {
 		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 4);
-		animation: flatify-loading-dot-third var(--#{$CSS_VAR_PFX}loading-dots-animation-duration) infinite;
+		animation: flatify-loading-dot-third var(--#{$CSS_VAR_PFX}loading-dot-animation-duration) infinite;
 	}
 }
 

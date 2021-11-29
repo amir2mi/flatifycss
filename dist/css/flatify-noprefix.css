@@ -1663,7 +1663,7 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 .loading {
   position: relative;
   margin-right: calc(var(--flatify__loading-dot-width) * 4);
-  animation: flatify-loading-dot-first var(--flatify__loading-dots-animation-duration) infinite;
+  animation: flatify-loading-dot-first var(--flatify__loading-dot-animation-duration) infinite;
 }
 .loading.stop-animation:before, .loading.stop-animation:after, .loading.stop-animation {
   opacity: 1 !important;
@@ -1674,11 +1674,11 @@ input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-sel
 }
 .loading:before {
   left: calc(var(--flatify__loading-dot-width) * 2);
-  animation: flatify-loading-dot-second var(--flatify__loading-dots-animation-duration) infinite;
+  animation: flatify-loading-dot-second var(--flatify__loading-dot-animation-duration) infinite;
 }
 .loading:after {
   left: calc(var(--flatify__loading-dot-width) * 4);
-  animation: flatify-loading-dot-third var(--flatify__loading-dots-animation-duration) infinite;
+  animation: flatify-loading-dot-third var(--flatify__loading-dot-animation-duration) infinite;
 }
 
 .overlay-layer > .spinner, .overlay-layer > .loading {
