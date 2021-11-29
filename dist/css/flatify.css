@@ -1032,18 +1032,20 @@ th {
 }
 
 :root {
-  --flatify__button-bg-color: var(--flatify__bg-color-dark);
-  --flatify__button-bg-color__focus: var(--flatify__bg-color-darker);
   --flatify__button-txt-color: var(--flatify__txt-color);
-  --flatify__button-txt-color__focus: var(--flatify__txt-color);
+  --flatify__button-bg-color: var(--flatify__bg-color-dark);
+  --flatify__button-border-color: var(--flatify__bg-color-darker);
 }
 
 input[type=file]:not(.default)::-webkit-file-upload-button {
   --flatify__local-bg-color: var(--flatify__button-bg-color);
+  -webkit-user-select: none;
+          user-select: none;
   -webkit-appearance: none;
           appearance: none;
   vertical-align: middle;
   text-align: center;
+  text-decoration: none !important;
   font-size: 1em;
   font-weight: normal;
   display: inline-block;
@@ -1053,8 +1055,8 @@ input[type=file]:not(.default)::-webkit-file-upload-button {
   background: var(--flatify__button-bg-color);
   border: none;
   border-radius: var(--flatify__border-radius);
-  -webkit-box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus);
-          box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus);
+  -webkit-box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-border-color);
+          box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-border-color);
   outline: none !important;
   -webkit-filter: brightness(100%);
           filter: brightness(100%);
@@ -1067,11 +1069,16 @@ input[type=file]:not(.default)::-webkit-file-upload-button {
 
 input[type=file]:not(.default)::file-selector-button, .button {
   --flatify__local-bg-color: var(--flatify__button-bg-color);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   vertical-align: middle;
   text-align: center;
+  text-decoration: none !important;
   font-size: 1em;
   font-weight: normal;
   display: inline-block;
@@ -1081,8 +1088,8 @@ input[type=file]:not(.default)::file-selector-button, .button {
   background: var(--flatify__button-bg-color);
   border: none;
   border-radius: var(--flatify__border-radius);
-  -webkit-box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus);
-          box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus);
+  -webkit-box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-border-color);
+          box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-border-color);
   outline: none !important;
   -webkit-filter: brightness(100%);
           filter: brightness(100%);
@@ -1093,25 +1100,25 @@ input[type=file]:not(.default)::file-selector-button, .button {
   transition: filter var(--flatify__simple-transition) !important;
   transition: filter var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition) !important;
 }
-.radio-button:focus + input[type=file]:not(.default)::-webkit-file-upload-button, input[type=file]:hover:not(.default)::-webkit-file-upload-button {
+.radio-button:focus + input[type=file]:not(.default)::-webkit-file-upload-button, input[type=file]:not(.static):hover:not(.default)::-webkit-file-upload-button {
   -webkit-filter: brightness(92%);
           filter: brightness(92%);
 }
-.radio-button:focus + input[type=file]:not(.default)::file-selector-button, .radio-button:focus + .button, input[type=file]:hover:not(.default)::file-selector-button, .button:hover {
+.radio-button:focus + input[type=file]:not(.default)::file-selector-button, .radio-button:focus + .button, input[type=file]:not(.static):hover:not(.default)::file-selector-button, .button:not(.static):hover {
   -webkit-filter: brightness(92%);
           filter: brightness(92%);
 }
-.checkbox-button:checked + input[type=file]:not(.default)::-webkit-file-upload-button, .radio-button:checked + input[type=file]:not(.default)::-webkit-file-upload-button, input.active[type=file]:not(.default)::-webkit-file-upload-button, input[type=file]:focus-visible:not(.default)::-webkit-file-upload-button, input[type=file]:active:not(.default)::-webkit-file-upload-button {
-  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-          box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
+.checkbox-button:checked + input[type=file]:not(.default)::-webkit-file-upload-button, .radio-button:checked + input[type=file]:not(.default)::-webkit-file-upload-button, input.active[type=file]:not(.default)::-webkit-file-upload-button, input[type=file]:not(.static):focus-visible:not(.default)::-webkit-file-upload-button, input[type=file]:not(.static):active:not(.default)::-webkit-file-upload-button {
+  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-border-color);
+          box-shadow: inset 0 0 0 var(--flatify__button-border-color);
   -webkit-filter: brightness(92%);
           filter: brightness(92%);
   -webkit-transform: translateY(calc(var(--flatify__border-width) * 1.38));
           transform: translateY(calc(var(--flatify__border-width) * 1.38));
 }
-.checkbox-button:checked + input[type=file]:not(.default)::file-selector-button, .checkbox-button:checked + .button, .radio-button:checked + input[type=file]:not(.default)::file-selector-button, .radio-button:checked + .button, input.active[type=file]:not(.default)::file-selector-button, .active.button, input[type=file]:focus-visible:not(.default)::file-selector-button, .button:focus-visible, input[type=file]:active:not(.default)::file-selector-button, .button:active {
-  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-          box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
+.checkbox-button:checked + input[type=file]:not(.default)::file-selector-button, .checkbox-button:checked + .button, .radio-button:checked + input[type=file]:not(.default)::file-selector-button, .radio-button:checked + .button, input.active[type=file]:not(.default)::file-selector-button, .active.button, input[type=file]:not(.static):focus-visible:not(.default)::file-selector-button, .button:not(.static):focus-visible, input[type=file]:not(.static):active:not(.default)::file-selector-button, .button:not(.static):active {
+  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-border-color);
+          box-shadow: inset 0 0 0 var(--flatify__button-border-color);
   -webkit-filter: brightness(92%);
           filter: brightness(92%);
   -webkit-transform: translateY(calc(var(--flatify__border-width) * 1.38));
@@ -1127,86 +1134,86 @@ input.outline[type=file]:not(.default)::file-selector-button, .outline.button {
   background: transparent !important;
 }
 input.outline[type=file]:not(.default)::-webkit-file-upload-button, input.bordered[type=file]:not(.default)::-webkit-file-upload-button {
-  -webkit-box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus), inset 0 calc(var(--flatify__border-width) * 0.38) 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-bg-color__focus), 0 calc(var(--flatify__border-width) * -0.38) 0 var(--flatify__button-bg-color__focus), calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-bg-color__focus), calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-bg-color__focus);
-          box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus), inset 0 calc(var(--flatify__border-width) * 0.38) 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-bg-color__focus), 0 calc(var(--flatify__border-width) * -0.38) 0 var(--flatify__button-bg-color__focus), calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-bg-color__focus), calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-bg-color__focus);
+  -webkit-box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-border-color), inset 0 calc(var(--flatify__border-width) * 0.38) 0 var(--flatify__button-border-color), inset calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-border-color), inset calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-border-color), 0 calc(var(--flatify__border-width) * -0.38) 0 var(--flatify__button-border-color), calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-border-color), calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-border-color);
+          box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-border-color), inset 0 calc(var(--flatify__border-width) * 0.38) 0 var(--flatify__button-border-color), inset calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-border-color), inset calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-border-color), 0 calc(var(--flatify__border-width) * -0.38) 0 var(--flatify__button-border-color), calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-border-color), calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-border-color);
 }
 input.outline[type=file]:not(.default)::file-selector-button, .outline.button, input.bordered[type=file]:not(.default)::file-selector-button, .bordered.button {
-  -webkit-box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus), inset 0 calc(var(--flatify__border-width) * 0.38) 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-bg-color__focus), 0 calc(var(--flatify__border-width) * -0.38) 0 var(--flatify__button-bg-color__focus), calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-bg-color__focus), calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-bg-color__focus);
-          box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-bg-color__focus), inset 0 calc(var(--flatify__border-width) * 0.38) 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-bg-color__focus), inset calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-bg-color__focus), 0 calc(var(--flatify__border-width) * -0.38) 0 var(--flatify__button-bg-color__focus), calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-bg-color__focus), calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-bg-color__focus);
+  -webkit-box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-border-color), inset 0 calc(var(--flatify__border-width) * 0.38) 0 var(--flatify__button-border-color), inset calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-border-color), inset calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-border-color), 0 calc(var(--flatify__border-width) * -0.38) 0 var(--flatify__button-border-color), calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-border-color), calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-border-color);
+          box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-border-color), inset 0 calc(var(--flatify__border-width) * 0.38) 0 var(--flatify__button-border-color), inset calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-border-color), inset calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-border-color), 0 calc(var(--flatify__border-width) * -0.38) 0 var(--flatify__button-border-color), calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-border-color), calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-border-color);
 }
-input.outline.active[type=file]:not(.default)::-webkit-file-upload-button, input.outline[type=file]:focus-visible:not(.default)::-webkit-file-upload-button, input.outline[type=file]:active:not(.default)::-webkit-file-upload-button, input.bordered.active[type=file]:not(.default)::-webkit-file-upload-button, input.bordered[type=file]:focus-visible:not(.default)::-webkit-file-upload-button, input.bordered[type=file]:active:not(.default)::-webkit-file-upload-button {
-  -webkit-box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
-          box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
+input.outline.active[type=file]:not(.default)::-webkit-file-upload-button, input.outline[type=file]:not(.static):focus-visible:not(.default)::-webkit-file-upload-button, input.outline[type=file]:not(.static):active:not(.default)::-webkit-file-upload-button, input.bordered.active[type=file]:not(.default)::-webkit-file-upload-button, input.bordered[type=file]:not(.static):focus-visible:not(.default)::-webkit-file-upload-button, input.bordered[type=file]:not(.static):active:not(.default)::-webkit-file-upload-button {
+  -webkit-box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color);
+          box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color);
   -webkit-transform: translateY(calc(var(--flatify__border-width) * 1.2));
           transform: translateY(calc(var(--flatify__border-width) * 1.2));
 }
-input.outline.active[type=file]:not(.default)::file-selector-button, .outline.active.button, input.outline[type=file]:focus-visible:not(.default)::file-selector-button, .outline.button:focus-visible, input.outline[type=file]:active:not(.default)::file-selector-button, .outline.button:active, input.bordered.active[type=file]:not(.default)::file-selector-button, .bordered.active.button, input.bordered[type=file]:focus-visible:not(.default)::file-selector-button, .bordered.button:focus-visible, input.bordered[type=file]:active:not(.default)::file-selector-button, .bordered.button:active {
-  -webkit-box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
-          box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
-  -webkit-transform: translateY(calc(var(--flatify__border-width) * 1.2));
-      -ms-transform: translateY(calc(var(--flatify__border-width) * 1.2));
-          transform: translateY(calc(var(--flatify__border-width) * 1.2));
-}
-.checkbox-button:checked + input.outline[type=file]:not(.default)::-webkit-file-upload-button, .radio-button:checked + input.outline[type=file]:not(.default)::-webkit-file-upload-button, .checkbox-button:checked + input.bordered[type=file]:not(.default)::-webkit-file-upload-button, .radio-button:checked + input.bordered[type=file]:not(.default)::-webkit-file-upload-button {
-  -webkit-box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
-          box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
-  -webkit-transform: translateY(calc(var(--flatify__border-width) * 1.2));
-          transform: translateY(calc(var(--flatify__border-width) * 1.2));
-}
-.checkbox-button:checked + input.outline[type=file]:not(.default)::file-selector-button, .checkbox-button:checked + .outline.button, .radio-button:checked + input.outline[type=file]:not(.default)::file-selector-button, .radio-button:checked + .outline.button, .checkbox-button:checked + input.bordered[type=file]:not(.default)::file-selector-button, .checkbox-button:checked + .bordered.button, .radio-button:checked + input.bordered[type=file]:not(.default)::file-selector-button, .radio-button:checked + .bordered.button {
-  -webkit-box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
-          box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-bg-color__focus);
+input.outline.active[type=file]:not(.default)::file-selector-button, .outline.active.button, input.outline[type=file]:not(.static):focus-visible:not(.default)::file-selector-button, .outline.button:not(.static):focus-visible, input.outline[type=file]:not(.static):active:not(.default)::file-selector-button, .outline.button:not(.static):active, input.bordered.active[type=file]:not(.default)::file-selector-button, .bordered.active.button, input.bordered[type=file]:not(.static):focus-visible:not(.default)::file-selector-button, .bordered.button:not(.static):focus-visible, input.bordered[type=file]:not(.static):active:not(.default)::file-selector-button, .bordered.button:not(.static):active {
+  -webkit-box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color);
+          box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color);
   -webkit-transform: translateY(calc(var(--flatify__border-width) * 1.2));
       -ms-transform: translateY(calc(var(--flatify__border-width) * 1.2));
           transform: translateY(calc(var(--flatify__border-width) * 1.2));
 }
 input[class*=style-][type=file]:not(.default)::-webkit-file-upload-button {
   --flatify__button-bg-color: var(--flatify__local-bg-color);
-  --flatify__button-bg-color__focus: var(--flatify__local-border-color);
+  --flatify__button-border-color: var(--flatify__local-border-color);
 }
 input[class*=style-][type=file]:not(.default)::file-selector-button, [class*=style-].button {
   --flatify__button-bg-color: var(--flatify__local-bg-color);
-  --flatify__button-bg-color__focus: var(--flatify__local-border-color);
+  --flatify__button-border-color: var(--flatify__local-border-color);
 }
 input[class*=style-][class*=light][type=file]:not(.default)::-webkit-file-upload-button {
   --flatify__button-txt-color: var(--flatify__local-txt-color);
-  --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
 }
 input[class*=style-][class*=light][type=file]:not(.default)::file-selector-button, [class*=style-][class*=light].button {
   --flatify__button-txt-color: var(--flatify__local-txt-color);
-  --flatify__button-txt-color__focus: var(--flatify__local-txt-color);
 }
 input[class*=style-][type=file]:not([class*=light]):not(.default)::-webkit-file-upload-button {
   --flatify__button-txt-color: var(--flatify__local-border-color);
-  --flatify__button-txt-color__focus: var(--flatify__local-border-color);
 }
 input[class*=style-][type=file]:not([class*=light]):not(.default)::file-selector-button, [class*=style-].button:not([class*=light]) {
   --flatify__button-txt-color: var(--flatify__local-border-color);
-  --flatify__button-txt-color__focus: var(--flatify__local-border-color);
 }
 input[class*=style-].outline.style-dark-light[type=file]:not(.default)::-webkit-file-upload-button {
   --flatify__button-txt-color: var(--flatify__txt-color);
-  --flatify__button-txt-color__focus: var(--flatify__txt-color);
 }
 input[class*=style-].outline.style-dark-light[type=file]:not(.default)::file-selector-button, [class*=style-].outline.style-dark-light.button {
   --flatify__button-txt-color: var(--flatify__txt-color);
-  --flatify__button-txt-color__focus: var(--flatify__txt-color);
 }
-.checkbox-button:disabled + input[type=file]:not(.default)::-webkit-file-upload-button, .radio-button:disabled + input[type=file]:not(.default)::-webkit-file-upload-button, input.disabled[type=file]:not(.default)::-webkit-file-upload-button, input[type=file]:disabled:not(.default)::-webkit-file-upload-button {
+input.disabled[type=file]:not(.default)::-webkit-file-upload-button, input[type=file]:disabled:not(.default)::-webkit-file-upload-button {
   pointer-events: none;
-  background: var(--flatify__button-bg-color__focus) !important;
-  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-          box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
+  background: var(--flatify__button-border-color) !important;
+  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-border-color);
+          box-shadow: inset 0 0 0 var(--flatify__button-border-color);
   -webkit-filter: contrast(85%) brightness(85%) opacity(70%) !important;
           filter: contrast(85%) brightness(85%) opacity(70%) !important;
   -webkit-transform: translateY(calc(var(--flatify__border-width) * 1.38));
           transform: translateY(calc(var(--flatify__border-width) * 1.38));
 }
-.checkbox-button:disabled + input[type=file]:not(.default)::file-selector-button, .checkbox-button:disabled + .button, .radio-button:disabled + input[type=file]:not(.default)::file-selector-button, .radio-button:disabled + .button, input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button, input[type=file]:disabled:not(.default)::file-selector-button, .button:disabled {
+input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button, input[type=file]:disabled:not(.default)::file-selector-button, .button:disabled {
   pointer-events: none;
-  background: var(--flatify__button-bg-color__focus) !important;
-  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
-          box-shadow: inset 0 0 0 var(--flatify__button-bg-color__focus);
+  background: var(--flatify__button-border-color) !important;
+  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-border-color);
+          box-shadow: inset 0 0 0 var(--flatify__button-border-color);
+  -webkit-filter: contrast(85%) brightness(85%) opacity(70%) !important;
+          filter: contrast(85%) brightness(85%) opacity(70%) !important;
+  -webkit-transform: translateY(calc(var(--flatify__border-width) * 1.38));
+      -ms-transform: translateY(calc(var(--flatify__border-width) * 1.38));
+          transform: translateY(calc(var(--flatify__border-width) * 1.38));
+}
+
+.checkbox-button:checked + .button.outline, .radio-button:checked + .button.outline, .checkbox-button:checked + .button.bordered, .radio-button:checked + .button.bordered {
+  -webkit-box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color);
+          box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color);
+  -webkit-transform: translateY(calc(var(--flatify__border-width) * 1.2));
+      -ms-transform: translateY(calc(var(--flatify__border-width) * 1.2));
+          transform: translateY(calc(var(--flatify__border-width) * 1.2));
+}
+.checkbox-button:disabled + .button, .radio-button:disabled + .button {
+  pointer-events: none;
+  background: var(--flatify__button-border-color) !important;
+  -webkit-box-shadow: inset 0 0 0 var(--flatify__button-border-color);
+          box-shadow: inset 0 0 0 var(--flatify__button-border-color);
   -webkit-filter: contrast(85%) brightness(85%) opacity(70%) !important;
           filter: contrast(85%) brightness(85%) opacity(70%) !important;
   -webkit-transform: translateY(calc(var(--flatify__border-width) * 1.38));
@@ -2460,6 +2467,7 @@ input[type=file]:not(.default)::-webkit-file-upload-button {
   cursor: pointer;
   font-size: 0.9em;
   color: inherit;
+  background: inherit !important;
   -webkit-filter: brightness(92%);
           filter: brightness(92%);
   vertical-align: baseline;
@@ -2469,6 +2477,7 @@ input[type=file]:not(.default)::file-selector-button {
   cursor: pointer;
   font-size: 0.9em;
   color: inherit;
+  background: inherit !important;
   -webkit-filter: brightness(92%);
           filter: brightness(92%);
   vertical-align: baseline;

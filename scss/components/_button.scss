@@ -4,6 +4,11 @@
 	--#{$CSS_VAR_PFX}button-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 }
 
+// .static for prevent hover/active/focus/focus-visible effects
+// .bordered for buttons with border
+// .outline for buttons with transparent background and just border
+// .active for setting pressed button style
+// .disabled for setting disabled button style
 %button {
 	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}button-bg-color);
 	user-select: none;
@@ -30,7 +35,7 @@
 	transition: filter var(--#{$CSS_VAR_PFX}simple-transition) !important;
 
 	.radio-button:focus + &,
-	&:hover {
+	&:not(.static):hover {
 		filter: brightness(92%);
 	}
 
@@ -38,8 +43,8 @@
 	.checkbox-button:checked + &,
 	.radio-button:checked + &,
 	&.active,
-	&:focus-visible,
-	&:active {
+	&:not(.static):focus-visible,
+	&:not(.static):active {
 		box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-border-color);
 		filter: brightness(92%);
 		transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
@@ -65,8 +70,8 @@
 	&.outline,
 	&.bordered {
 		&.active,
-		&:focus-visible,
-		&:active {
+		&:not(.static):focus-visible,
+		&:not(.static):active {
 			box-shadow: inset 0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38)
 					var(--#{$CSS_VAR_PFX}button-border-color),
 				0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) var(--#{$CSS_VAR_PFX}button-border-color);

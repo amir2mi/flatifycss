@@ -1011,10 +1011,10 @@ input[type=file]:not(.default)::file-selector-button, .button {
   will-change: transform, filter;
   transition: filter var(--flatify__simple-transition) !important;
 }
-.radio-button:focus + input[type=file]:not(.default)::file-selector-button, .radio-button:focus + .button, input[type=file]:hover:not(.default)::file-selector-button, .button:hover {
+.radio-button:focus + input[type=file]:not(.default)::file-selector-button, .radio-button:focus + .button, input[type=file]:not(.static):hover:not(.default)::file-selector-button, .button:not(.static):hover {
   filter: brightness(92%);
 }
-.checkbox-button:checked + input[type=file]:not(.default)::file-selector-button, .checkbox-button:checked + .button, .radio-button:checked + input[type=file]:not(.default)::file-selector-button, .radio-button:checked + .button, input.active[type=file]:not(.default)::file-selector-button, .active.button, input[type=file]:focus-visible:not(.default)::file-selector-button, .button:focus-visible, input[type=file]:active:not(.default)::file-selector-button, .button:active {
+.checkbox-button:checked + input[type=file]:not(.default)::file-selector-button, .checkbox-button:checked + .button, .radio-button:checked + input[type=file]:not(.default)::file-selector-button, .radio-button:checked + .button, input.active[type=file]:not(.default)::file-selector-button, .active.button, input[type=file]:not(.static):focus-visible:not(.default)::file-selector-button, .button:not(.static):focus-visible, input[type=file]:not(.static):active:not(.default)::file-selector-button, .button:not(.static):active {
   box-shadow: inset 0 0 0 var(--flatify__button-border-color);
   filter: brightness(92%);
   transform: translateY(calc(var(--flatify__border-width) * 1.38));
@@ -1026,7 +1026,7 @@ input.outline[type=file]:not(.default)::file-selector-button, .outline.button {
 input.outline[type=file]:not(.default)::file-selector-button, .outline.button, input.bordered[type=file]:not(.default)::file-selector-button, .bordered.button {
   box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-border-color), inset 0 calc(var(--flatify__border-width) * 0.38) 0 var(--flatify__button-border-color), inset calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-border-color), inset calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-border-color), 0 calc(var(--flatify__border-width) * -0.38) 0 var(--flatify__button-border-color), calc(var(--flatify__border-width) * 0.38) 0 0 var(--flatify__button-border-color), calc(var(--flatify__border-width) * -0.38) 0 0 var(--flatify__button-border-color);
 }
-input.outline.active[type=file]:not(.default)::file-selector-button, .outline.active.button, input.outline[type=file]:focus-visible:not(.default)::file-selector-button, .outline.button:focus-visible, input.outline[type=file]:active:not(.default)::file-selector-button, .outline.button:active, input.bordered.active[type=file]:not(.default)::file-selector-button, .bordered.active.button, input.bordered[type=file]:focus-visible:not(.default)::file-selector-button, .bordered.button:focus-visible, input.bordered[type=file]:active:not(.default)::file-selector-button, .bordered.button:active {
+input.outline.active[type=file]:not(.default)::file-selector-button, .outline.active.button, input.outline[type=file]:not(.static):focus-visible:not(.default)::file-selector-button, .outline.button:not(.static):focus-visible, input.outline[type=file]:not(.static):active:not(.default)::file-selector-button, .outline.button:not(.static):active, input.bordered.active[type=file]:not(.default)::file-selector-button, .bordered.active.button, input.bordered[type=file]:not(.static):focus-visible:not(.default)::file-selector-button, .bordered.button:not(.static):focus-visible, input.bordered[type=file]:not(.static):active:not(.default)::file-selector-button, .bordered.button:not(.static):active {
   box-shadow: inset 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color), 0 0 0 calc(var(--flatify__border-width) * 0.38) var(--flatify__button-border-color);
   transform: translateY(calc(var(--flatify__border-width) * 1.2));
 }
