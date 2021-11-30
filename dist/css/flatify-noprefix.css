@@ -1361,13 +1361,6 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .menu-items-wrapper .submenu .menu-item a {
   padding: 0.64em 1.25em;
 }
-.dropdown .menu-item.heading,
-.menu-items-wrapper .submenu .menu-item.heading {
-  font-weight: var(--flatify__medium-font-weight);
-  padding: 0.75em;
-  color: var(--flatify__submenu-txt-color) !important;
-  background: var(--flatify__submenu-bg-color) !important;
-}
 .dropdown .menu-item:hover,
 .menu-items-wrapper .submenu .menu-item:hover {
   color: var(--flatify__submenu-item-txt-color__hover);
@@ -1387,6 +1380,13 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .dropdown .menu-item.arrow-button:after,
 .menu-items-wrapper .submenu .menu-item.arrow-button:after {
   margin-right: 0.75em;
+}
+.dropdown .menu-item.heading,
+.menu-items-wrapper .submenu .menu-item.heading {
+  font-weight: var(--flatify__medium-font-weight);
+  padding: 0.75em;
+  color: var(--flatify__submenu-txt-color) !important;
+  background: var(--flatify__submenu-bg-color) !important;
 }
 .dropdown .menu-item.separator,
 .menu-items-wrapper .submenu .menu-item.separator {
@@ -2119,21 +2119,21 @@ input[type=button].button {
   content: " ";
   position: absolute;
   top: 0.7em;
-  left: 0.1em;
+  left: 0.16em;
   z-index: 1;
   border-radius: var(--flatify__border-radius);
   transition: all var(--flatify__simple-transition);
   animation: flatify-fade-in 0.35s;
-  width: 0.64em;
-  height: 0.25em;
+  width: 0.5em;
+  height: 0.22em;
   background: var(--flatify__form-element-border-color__valid);
   transform: rotate(45deg);
 }
 .checkbox-wrapper input:checked:not(:indeterminate) + .check:after {
-  top: 0.45em;
-  left: 0.25em;
-  width: 1.2em;
-  height: 0.25em;
+  top: 0.52em;
+  left: 0.3em;
+  width: 0.9em;
+  height: 0.22em;
   background: var(--flatify__form-element-border-color__valid);
   clip-path: circle(200% at bottom);
   transform: rotate(-55deg);
@@ -2161,8 +2161,8 @@ input[type=button].button {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 0.64em;
-  height: 0.64em;
+  width: 0.5em;
+  height: 0.5em;
   margin: auto;
   border-radius: calc(var(--flatify__border-radius) * 0.2);
 }

@@ -243,13 +243,6 @@
 			padding: 0.64em 1.25em;
 		}
 
-		&.heading {
-			font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
-			padding: 0.75em;
-			color: var(--#{$CSS_VAR_PFX}submenu-txt-color) !important;
-			background: var(--#{$CSS_VAR_PFX}submenu-bg-color) !important;
-		}
-
 		&:hover {
 			color: var(--#{$CSS_VAR_PFX}submenu-item-txt-color__hover);
 			background: var(--#{$CSS_VAR_PFX}submenu-item-bg-color__hover);
@@ -273,6 +266,13 @@
 			} @else {
 				margin-left: 0.75em;
 			}
+		}
+
+		&.heading {
+			font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+			padding: 0.75em;
+			color: var(--#{$CSS_VAR_PFX}submenu-txt-color) !important;
+			background: var(--#{$CSS_VAR_PFX}submenu-bg-color) !important;
 		}
 
 		&.separator {

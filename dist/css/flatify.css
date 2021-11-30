@@ -316,7 +316,7 @@ sup {
   top: -0.5em;
 }
 
-a[href]:not(.button) {
+a:not(.button) {
   color: var(--flatify__link-color);
   -webkit-text-decoration: var(--flatify__link-decoration);
           text-decoration: var(--flatify__link-decoration);
@@ -324,12 +324,12 @@ a[href]:not(.button) {
   -o-transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
   transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
 }
-a[href]:not(.button):hover {
+a:not(.button):hover {
   color: var(--flatify__link-color__hover);
   -webkit-text-decoration: var(--flatify__link-decoration__hover);
           text-decoration: var(--flatify__link-decoration__hover);
 }
-a[href]:not(.button):focus {
+a:not(.button):focus {
   color: var(--flatify__link-color__focus);
   -webkit-text-decoration: var(--flatify__link-decoration__focus);
           text-decoration: var(--flatify__link-decoration__focus);
@@ -1522,12 +1522,6 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   color: var(--flatify__menu-item-txt-color__focus);
   background: var(--flatify__menu-item-bg-color__focus);
 }
-.menu-items-wrapper .menu-item.separator {
-  height: var(--flatify__border-width);
-  margin: 0.5em 0 !important;
-  background: var(--flatify__local-border-color) !important;
-  opacity: 0.5;
-}
 
 .dropdown,
 .menu-items-wrapper .submenu {
@@ -1570,13 +1564,6 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .menu-items-wrapper .submenu .menu-item a {
   padding: 0.64em 1.25em;
 }
-.dropdown .menu-item.heading,
-.menu-items-wrapper .submenu .menu-item.heading {
-  font-weight: var(--flatify__medium-font-weight);
-  padding: 0.75em;
-  color: var(--flatify__submenu-txt-color) !important;
-  background: var(--flatify__submenu-bg-color) !important;
-}
 .dropdown .menu-item:hover,
 .menu-items-wrapper .submenu .menu-item:hover {
   color: var(--flatify__submenu-item-txt-color__hover);
@@ -1596,6 +1583,20 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .dropdown .menu-item.arrow-button:after,
 .menu-items-wrapper .submenu .menu-item.arrow-button:after {
   margin-right: 0.75em;
+}
+.dropdown .menu-item.heading,
+.menu-items-wrapper .submenu .menu-item.heading {
+  font-weight: var(--flatify__medium-font-weight);
+  padding: 0.75em;
+  color: var(--flatify__submenu-txt-color) !important;
+  background: var(--flatify__submenu-bg-color) !important;
+}
+.dropdown .menu-item.separator,
+.menu-items-wrapper .submenu .menu-item.separator {
+  height: var(--flatify__border-width);
+  margin: 0.5em 0 !important;
+  background: var(--flatify__local-border-color) !important;
+  opacity: 0.5;
 }
 .dropdown .pointer-arrow, .dropdown[class*=arrow-]:before,
 .menu-items-wrapper .submenu .pointer-arrow,
@@ -2498,7 +2499,7 @@ input[type=button].button {
   content: " ";
   position: absolute;
   top: 0.7em;
-  left: 0.1em;
+  left: 0.16em;
   z-index: 1;
   border-radius: var(--flatify__border-radius);
   -webkit-transition: all var(--flatify__simple-transition);
@@ -2506,18 +2507,18 @@ input[type=button].button {
   transition: all var(--flatify__simple-transition);
   -webkit-animation: flatify-fade-in 0.35s;
           animation: flatify-fade-in 0.35s;
-  width: 0.64em;
-  height: 0.25em;
+  width: 0.5em;
+  height: 0.22em;
   background: var(--flatify__form-element-border-color__valid);
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 .checkbox-wrapper input:checked:not(:indeterminate) + .check:after {
-  top: 0.45em;
-  left: 0.25em;
-  width: 1.2em;
-  height: 0.25em;
+  top: 0.52em;
+  left: 0.3em;
+  width: 0.9em;
+  height: 0.22em;
   background: var(--flatify__form-element-border-color__valid);
   -webkit-clip-path: circle(200% at bottom);
           clip-path: circle(200% at bottom);
@@ -2558,8 +2559,8 @@ input[type=button].button {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 0.64em;
-  height: 0.64em;
+  width: 0.5em;
+  height: 0.5em;
   margin: auto;
   border-radius: calc(var(--flatify__border-radius) * 0.2);
 }
