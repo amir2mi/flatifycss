@@ -1014,10 +1014,12 @@ input[type=file]:not(.default)::file-selector-button, .button {
   border: none;
   border-radius: var(--flatify__border-radius);
   box-shadow: 0 calc(var(--flatify__border-width) * 1.38) 0 var(--flatify__button-border-color);
-  outline: none !important;
   filter: brightness(100%);
   will-change: transform, filter;
   transition: filter var(--flatify__simple-transition) !important;
+}
+input[type=file]:not(.static):not(.default)::file-selector-button, .button:not(.static) {
+  outline: none !important;
 }
 .radio-button:focus + input[type=file]:not(.default)::file-selector-button, .radio-button:focus + .button, input[type=file]:not(.static):hover:not(.default)::file-selector-button, .button:not(.static):hover {
   filter: brightness(92%);

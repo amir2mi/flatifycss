@@ -26,13 +26,17 @@
 	border: none;
 	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 	box-shadow: 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38) 0 var(--#{$CSS_VAR_PFX}button-border-color);
-	// button has its special pressed effect, there is not need for outline
-	outline: none !important;
 	// filter affect box-shadow width, so it should be set as default to prevent bugs on hover
 	filter: brightness(100%);
 	will-change: transform, filter;
 	// !important to replace input transition
 	transition: filter var(--#{$CSS_VAR_PFX}simple-transition) !important;
+
+	&:not(.static) {
+		// button has its special pressed effect, there is no need for outline,
+		// unless the button is static which does not support hover/focus
+		outline: none !important;
+	}
 
 	.radio-button:focus + &,
 	&:not(.static):hover {

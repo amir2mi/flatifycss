@@ -309,12 +309,12 @@ Buttons with outline style get more transition time because of background and te
 <button class="button style-dark-light outline">Click Here</button>
 ```
 
-### Disabled & active
+### States
 
-To make a button disabled you can add the `.disabled` class or HTML `disabled` attribute, also to keep the button in pressed style use the `.active` class.
+To make a button disabled you can add the `.disabled` class or HTML `disabled` attribute, also to keep the button in pressed style use the `.active` class. There is a class called `.static` specially for buttons when you need to have the style of FlatifyCSS buttons but not styles for hover/focus.
 
 <PreviewBox
-	height="240px"
+	height="180px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -334,10 +334,9 @@ To make a button disabled you can add the `.disabled` class or HTML `disabled` a
 	</head>
 	<body>
         <div class="flex-center" style="flex-wrap: wrap">
-			<button style="width: 200px; margin: 10px" class="button style-accent disabled">Click Here</button>
-			<button style="width: 200px; margin: 10px" class="button style-purple" disabled>Click Here</button>
-			<button style="width: 420px; margin: 10px 0" class="button style-green">Click Here</button>
-			<button style="width: 420px; margin: 10px 0" class="button style-green active">Click Here</button>
+			<button disabled style="width: 220px; margin: 10px" class="button style-accent disabled">Disabled</button>
+			<button style="width: 220px; margin: 10px" class="button style-accent active">Active</button>
+			<button style="width: 220px; margin: 10px" class="button style-accent static">Static</button>
 		</div>
 	</body>
 </html>
@@ -345,10 +344,10 @@ To make a button disabled you can add the `.disabled` class or HTML `disabled` a
 />
 
 ```html title="index.html"
-<button class="button style-accent disabled">Click Here</button>
-<button class="button style-purple" disabled>Click Here</button>
-<button class="button style-green">Click Here</button>
-<button class="button style-green active">Click Here</button>
+<button class="button style-accent disabled">Disabled</button>
+<button disabled class="button style-accent">Disabled</button>
+<button class="button style-accent active">Active</button>
+<button class="button style-accent static">Static</button>
 ```
 
 ### Customization
