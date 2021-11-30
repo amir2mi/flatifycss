@@ -200,13 +200,6 @@
 			color: var(--#{$CSS_VAR_PFX}menu-item-txt-color__focus);
 			background: var(--#{$CSS_VAR_PFX}menu-item-bg-color__focus);
 		}
-
-		&.separator {
-			height: var(--#{$CSS_VAR_PFX}border-width);
-			margin: 0.5em 0 !important;
-			background: var(--#{$CSS_VAR_PFX}local-border-color) !important;
-			opacity: 0.5;
-		}
 	}
 }
 
@@ -280,6 +273,13 @@
 			} @else {
 				margin-left: 0.75em;
 			}
+		}
+
+		&.separator {
+			height: var(--#{$CSS_VAR_PFX}border-width);
+			margin: 0.5em 0 !important;
+			background: var(--#{$CSS_VAR_PFX}local-border-color) !important;
+			opacity: 0.5;
 		}
 	}
 

@@ -1319,12 +1319,6 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   color: var(--flatify__menu-item-txt-color__focus);
   background: var(--flatify__menu-item-bg-color__focus);
 }
-.menu-items-wrapper .menu-item.separator {
-  height: var(--flatify__border-width);
-  margin: 0.5em 0 !important;
-  background: var(--flatify__local-border-color) !important;
-  opacity: 0.5;
-}
 
 .dropdown,
 .menu-items-wrapper .submenu {
@@ -1393,6 +1387,13 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .dropdown .menu-item.arrow-button:after,
 .menu-items-wrapper .submenu .menu-item.arrow-button:after {
   margin-right: 0.75em;
+}
+.dropdown .menu-item.separator,
+.menu-items-wrapper .submenu .menu-item.separator {
+  height: var(--flatify__border-width);
+  margin: 0.5em 0 !important;
+  background: var(--flatify__local-border-color) !important;
+  opacity: 0.5;
 }
 .dropdown .pointer-arrow, .dropdown[class*=arrow-]:before,
 .menu-items-wrapper .submenu .pointer-arrow,
