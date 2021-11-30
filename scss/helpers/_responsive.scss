@@ -21,10 +21,38 @@
 	}
 }
 
+@mixin break-sm-min() {
+	$sm-bp: map-get($RESPONSIVE_BREAKPOINTS, "sm");
+	@media screen and (min-width: $sm-bp) {
+		@content;
+	}
+}
+
+@mixin break-sm-max() {
+	$sm-bp: map-get($RESPONSIVE_BREAKPOINTS, "sm");
+	@media screen and (max-width: $sm-bp) {
+		@content;
+	}
+}
+
 @mixin break-md() {
 	$md-bp: map-get($RESPONSIVE_BREAKPOINTS, "md");
 	$lg-bp: map-get($RESPONSIVE_BREAKPOINTS, "lg");
 	@media screen and (min-width: $md-bp) and (max-width: ($lg-bp - 1px)) {
+		@content;
+	}
+}
+
+@mixin break-md-min() {
+	$md-bp: map-get($RESPONSIVE_BREAKPOINTS, "md");
+	@media screen and (min-width: $md-bp) {
+		@content;
+	}
+}
+
+@mixin break-md-max() {
+	$md-bp: map-get($RESPONSIVE_BREAKPOINTS, "md");
+	@media screen and (max-width: $md-bp) {
 		@content;
 	}
 }
@@ -37,6 +65,20 @@
 	}
 }
 
+@mixin break-lg-min() {
+	$lg-bp: map-get($RESPONSIVE_BREAKPOINTS, "lg");
+	@media screen and (min-width: $lg-bp) {
+		@content;
+	}
+}
+
+@mixin break-lg-max() {
+	$lg-bp: map-get($RESPONSIVE_BREAKPOINTS, "lg");
+	@media screen and (max-width: $lg-bp) {
+		@content;
+	}
+}
+
 @mixin break-xl() {
 	$xl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xl");
 	$xxl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xxl");
@@ -45,9 +87,30 @@
 	}
 }
 
+@mixin break-xl-min() {
+	$xl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xl");
+	@media screen and (min-width: $xl-bp) {
+		@content;
+	}
+}
+
+@mixin break-xl-max() {
+	$xl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xl");
+	@media screen and (max-width: $xl-bp) {
+		@content;
+	}
+}
+
 @mixin break-xxl() {
 	$xxl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xxl");
 	@media screen and(min-width: $xxl-bp) {
+		@content;
+	}
+}
+
+@mixin break-xxl-max() {
+	$xxl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xxl");
+	@media screen and(max-width: $xxl-bp) {
 		@content;
 	}
 }

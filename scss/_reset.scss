@@ -21,7 +21,10 @@
 
 // *** Root
 :root {
-	@media (max-width: 575.98px) {
+
+
+
+	@include break-xs {
 		font-size: var(--#{$CSS_VAR_PFX}min-font-size-with-unit);
 	}
 
@@ -29,7 +32,7 @@
 		font-size: #{"calc( var(--#{$CSS_VAR_PFX}min-font-size-with-unit) + ( var(--#{$CSS_VAR_PFX}max-font-size) - var(--#{$CSS_VAR_PFX}min-font-size) ) * ( ( 100vw - 575px ) / ( 1200 - 575 ) ) )"};
 	}
 
-	@media (min-width: 1200px) {
+	@include break-xl {
 		font-size: var(--#{$CSS_VAR_PFX}max-font-size-with-unit);
 	}
 
