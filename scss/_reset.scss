@@ -21,18 +21,17 @@
 
 // *** Root
 :root {
-
-
-
 	@include break-xs {
 		font-size: var(--#{$CSS_VAR_PFX}min-font-size-with-unit);
 	}
 
-	@media (min-width: 576px) and (max-width: 1200px) {
-		font-size: #{"calc( var(--#{$CSS_VAR_PFX}min-font-size-with-unit) + ( var(--#{$CSS_VAR_PFX}max-font-size) - var(--#{$CSS_VAR_PFX}min-font-size) ) * ( ( 100vw - 575px ) / ( 1200 - 575 ) ) )"};
+	$sm-bp: map-get($RESPONSIVE_BREAKPOINTS, "sm");
+	$xl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xl");
+	@media (min-width: $sm-bp) and (max-width: $xl-bp) {
+		font-size: #{"calc( var(--#{$CSS_VAR_PFX}min-font-size-with-unit) + ( var(--#{$CSS_VAR_PFX}max-font-size) - var(--#{$CSS_VAR_PFX}min-font-size) ) * ( ( 100vw - #{$sm-bp} ) / ( #{$xl-bp / 1px} - #{$sm-bp / 1px} ) ) )"};
 	}
 
-	@include break-xl {
+	@include break-xl-min {
 		font-size: var(--#{$CSS_VAR_PFX}max-font-size-with-unit);
 	}
 
@@ -55,8 +54,8 @@ body {
 	text-align: var(--#{$CSS_VAR_PFX}body-text-align);
 	color: var(--#{$CSS_VAR_PFX}txt-color);
 	background-color: var(--#{$CSS_VAR_PFX}bg-color);
-	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: var(--#{$CSS_VAR_PFX}tap-highlight-color);
+	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 }

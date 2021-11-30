@@ -135,10 +135,10 @@
 }
 @media (min-width: 576px) and (max-width: 1200px) {
   :root {
-    font-size: calc( var(--flatify__min-font-size-with-unit) + ( var(--flatify__max-font-size) - var(--flatify__min-font-size) ) * ( ( 100vw - 575px ) / ( 1200 - 575 ) ) );
+    font-size: calc( var(--flatify__min-font-size-with-unit) + ( var(--flatify__max-font-size) - var(--flatify__min-font-size) ) * ( ( 100vw - 576px ) / ( 1200 - 576 ) ) );
   }
 }
-@media screen and (min-width: 1200px) and (max-width: 1399px) {
+@media screen and (min-width: 1200px) {
   :root {
     font-size: var(--flatify__max-font-size-with-unit);
   }
@@ -156,8 +156,8 @@ body {
   text-align: var(--flatify__body-text-align);
   color: var(--flatify__txt-color);
   background-color: var(--flatify__bg-color);
-  -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: var(--flatify__tap-highlight-color);
+  -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
