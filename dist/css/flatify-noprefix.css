@@ -1773,6 +1773,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 }
 
 .tabs-wrapper {
+  margin: 1em 0;
   border: var(--flatify__border-width) solid var(--flatify__bg-color-darker);
   border-radius: var(--flatify__border-radius);
 }
@@ -1780,6 +1781,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .tabs-header {
   display: flex;
   align-items: center;
+  padding: 0 1em;
   border-bottom: var(--flatify__border-width) solid var(--flatify__bg-color-darker);
 }
 .tabs-header .tab-button {
@@ -1802,7 +1804,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   opacity: 1;
 }
 .tabs-header .tab-button:hover:not(.active):before, .tabs-header .tab-button:focus:not(.active):before {
-  transform: scaleY(1.3) scaleX(0.9);
+  transform: scaleY(1.2) scaleX(0.85);
 }
 .tabs-header .tab-button:before {
   content: " ";
@@ -1816,12 +1818,21 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   transform-origin: bottom center;
   transition: all var(--flatify__simple-transition) !important;
 }
+.tabs-header .tab-button:not(.active):before {
+  transform: scaleY(0);
+}
 .tabs-header .tab-button.active {
   color: var(--flatify__color-accent-primary);
   opacity: 1;
 }
 .tabs-header .tab-button.active:before {
   background: var(--flatify__color-accent-primary);
+}
+.tabs-header.line-at-top .tab-button:before {
+  bottom: unset;
+  top: calc(var(--flatify__border-width) * -0.5);
+  border-radius: 0 0 calc(var(--flatify__border-radius) * 0.32) calc(var(--flatify__border-radius) * 0.32);
+  transform-origin: top center;
 }
 
 .tabs-content {
@@ -1831,18 +1842,30 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .tabs-content .tab-pane:not(.show) {
   display: none !important;
 }
+.tabs-content.slide-animation .tab-pane.show.slide-left {
+  animation: flatify-slide-left-in-min var(--flatify__tab-animation-show-duration) ease;
+}
+.tabs-content.slide-animation .tab-pane.show.slide-left.tab-will-be-hidden {
+  animation: flatify-slide-left-out-min var(--flatify__tab-animation-hide-duration) ease;
+}
+.tabs-content.slide-animation .tab-pane.show.slide-right {
+  animation: flatify-slide-right-in-min var(--flatify__tab-animation-show-duration) ease;
+}
+.tabs-content.slide-animation .tab-pane.show.slide-right.tab-will-be-hidden {
+  animation: flatify-slide-right-out-min var(--flatify__tab-animation-hide-duration) ease;
+}
+.tabs-content.fade-animation .tab-pane.show {
+  animation: flatify-fade-in var(--flatify__tab-animation-show-duration) ease;
+}
+.tabs-content.fade-animation .tab-pane.show.tab-will-be-hidden {
+  animation: flatify-fade-out var(--flatify__tab-animation-hide-duration) ease;
+}
 
 .tab-pane.show {
   animation: var(--flatify__tab-animation-show);
 }
 .tab-pane.show.tab-will-be-hidden {
   animation: var(--flatify__tab-animation-hide);
-}
-.tab-pane.show.swipeable.slide-left {
-  animation: flatify-slide-left-in-min var(--flatify__tab-animation-show-duration) ease;
-}
-.tab-pane.show.swipeable.slide-right {
-  animation: flatify-slide-right-in-min var(--flatify__tab-animation-show-duration) ease;
 }
 
 :root {
@@ -2544,20 +2567,30 @@ textarea:not(.default) {
 }
 @keyframes flatify-slide-left-in-min {
   from {
-    transform: translateX(10em);
+    opacity: 0;
+    transform: translateX(15em);
   }
   to {
+    opacity: 1;
     transform: translateX(0);
   }
 }
 @keyframes flatify-slide-left-out {
   from {
-    opacity: 0;
     transform: translateX(0);
   }
   to {
-    opacity: 1;
     transform: translateX(100%) scale(0.95);
+  }
+}
+@keyframes flatify-slide-left-out-min {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(15em);
   }
 }
 @keyframes flatify-slide-right-in {
@@ -2571,7 +2604,7 @@ textarea:not(.default) {
 @keyframes flatify-slide-right-in-min {
   from {
     opacity: 0;
-    transform: translateX(-10em);
+    transform: translateX(-15em);
   }
   to {
     opacity: 1;
@@ -2584,6 +2617,16 @@ textarea:not(.default) {
   }
   to {
     transform: translateX(-100%) scale(0.95);
+  }
+}
+@keyframes flatify-slide-right-out-min {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-15em);
   }
 }
 @keyframes flatify-alert-will-be-removed {

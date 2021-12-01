@@ -2,6 +2,23 @@ import $ from "../utils/vent";
 import logger from "../utils/logger";
 import { getChildIndex } from "../utils/dom";
 
+function showTab(targetTab, clickedButton, currentButton) {
+	// active tab button
+	clickedButton.classList.add("active");
+	// show tab pane
+	targetTab.classList.add("show");
+
+	/**
+	 * Determine if the currently active tab button is after or before clicked tab button,
+	 * if it is before, it is [.slide-left], otherwise, the user slid right [.slide-right]
+	 */
+	if (currentButton && getChildIndex(currentButton) < getChildIndex(clickedButton)) {
+		targetTab.classList.add("slide-left");
+	} else {
+		targetTab.classList.add("slide-right");
+	}
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	$(document).on("click", ".tab-button", function (e) {
 		const targetSelector = e.target.closest(".tab-button").getAttribute("data-tab-target");
@@ -30,8 +47,16 @@ document.addEventListener("DOMContentLoaded", () => {
 			currentActiveButton.classList.remove("active");
 		}
 
-		// hide current active tab inside [.tabs-content] element
+		// if there is an active tab hide it then show clicked tab, or just show requested tab
 		if (currentActiveTab) {
+			// remove old swipe direction and add new based on clicked tab button index
+			currentActiveTab.classList.remove("slide-left", "slide-right");
+			if (currentActiveButton && getChildIndex(currentActiveButton) < getChildIndex(this)) {
+				currentActiveTab.classList.add("slide-right");
+			} else {
+				currentActiveTab.classList.add("slide-left");
+			}
+
 			// add hide animation class
 			currentActiveTab.classList.add("tab-will-be-hidden");
 
@@ -39,19 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			$(currentActiveTab).once("animationend", () => {
 				currentActiveTab.classList.remove("show", "tab-will-be-hidden", "slide-left", "slide-right");
 
-				this.classList.add("active");
-				target.classList.add("show");
-
-				/**
-				 * Determine if the currently active tab button is after or before clicked tab button,
-				 * if it is before, it is [.slide-left], otherwise, the user slid right [.slide-right]
-				 */
-				if (getChildIndex(currentActiveButton) < getChildIndex(this)) {
-					target.classList.add("slide-left");
-				} else {
-					target.classList.add("slide-right");
-				}
+				showTab(target, this, currentActiveButton);
 			});
+		} else {
+			showTab(target, this, currentActiveButton);
 		}
 	});
 });
