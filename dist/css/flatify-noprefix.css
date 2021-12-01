@@ -3570,7 +3570,8 @@ body ::after {
     --flatify__bouncing-transition: 0s !important;
   }
   body .dropdown.show,
-body .modal.show {
+body .modal.show,
+body .tab-pane.show {
     animation-name: flatify-fade-in !important;
   }
   body .menu-item:focus-within > .submenu, body .menu-item:hover > .submenu {
@@ -3583,7 +3584,7 @@ body .modal.show {
     opacity: 1 !important;
     animation: none !important;
   }
-  body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden {
+  body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden, body .show.tab-will-be-hidden {
     animation-name: flatify-fade-out !important;
   }
   body .spinner:before {

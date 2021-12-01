@@ -4469,7 +4469,8 @@ body ::after {
     --flatify__bouncing-transition: 0s !important;
   }
   body .dropdown.show,
-body .modal.show {
+body .modal.show,
+body .tab-pane.show {
     -webkit-animation-name: flatify-fade-in !important;
             animation-name: flatify-fade-in !important;
   }
@@ -4486,7 +4487,7 @@ body .modal.show {
     -webkit-animation: none !important;
             animation: none !important;
   }
-  body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden {
+  body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden, body .show.tab-will-be-hidden {
     -webkit-animation-name: flatify-fade-out !important;
             animation-name: flatify-fade-out !important;
   }

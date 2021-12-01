@@ -17,7 +17,8 @@
 		// Fade instead of custom animations
 		// Fade In
 		.dropdown,
-		.modal {
+		.modal,
+		.tab-pane {
 			&.show {
 				animation-name: flatify-fade-in !important;
 			}
@@ -41,7 +42,8 @@
 		.show {
 			&.alert-will-be-removed,
 			&.dropdown-will-be-hidden,
-			&.modal-will-be-hidden {
+			&.modal-will-be-hidden,
+			&.tab-will-be-hidden {
 				animation-name: flatify-fade-out !important;
 			}
 		}
