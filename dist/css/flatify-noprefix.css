@@ -3440,6 +3440,10 @@ body .modal.show {
     opacity: 1 !important;
     animation: none !important;
   }
+  body .spinner:before {
+    animation-timing-function: steps(4, end) !important;
+    animation-duration: 2s !important;
+  }
   body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden {
     animation-name: flatify-fade-out !important;
   }

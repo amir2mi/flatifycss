@@ -36,6 +36,10 @@
 				animation: none !important;
 			}
 		}
+		.spinner:before {
+			animation-timing-function: steps(4, end) !important;
+			animation-duration: 2s !important;
+		}
 
 		// Fade Out
 		.show {
