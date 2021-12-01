@@ -43,7 +43,7 @@
 		}
 	}
 
-	@if not $SUPPORT_LTR {
+	@if not $IS_LTR {
 		direction: rtl;
 	}
 }
@@ -210,7 +210,7 @@ mark {
 			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.38);
 			opacity: 0.9;
 
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				transform: rotate(-3deg) scale(1.1, 1.2) skew(-10deg);
 			} @else {
 				transform: rotate(3deg) scale(1.1, 1.2) skew(10deg);

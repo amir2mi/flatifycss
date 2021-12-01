@@ -251,7 +251,7 @@
 	100% {
 		opacity: 0;
 
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			transform-origin: top right;
 			transform: scale(0.92) rotate(-0.5deg);
 		} @else {
@@ -265,7 +265,7 @@
 @keyframes flatify-dropdown-show {
 	from {
 		opacity: 0;
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			transform: scale(0.9) rotate(3deg);
 		} @else {
 			transform: scale(0.9) rotate(-3deg);

@@ -7,7 +7,7 @@ select:not(.default) {
 	min-width: 15em;
 	max-width: 100%;
 
-	@if $SUPPORT_LTR {
+	@if $IS_LTR {
 		padding-right: 2.5em;
 	} @else {
 		padding-left: 2.5em;
@@ -15,7 +15,7 @@ select:not(.default) {
 
 	background-image: var(--#{$CSS_VAR_PFX}select-icon);
 	background-repeat: no-repeat;
-	@if $SUPPORT_LTR {
+	@if $IS_LTR {
 		background-position: right 0.64em center;
 	} @else {
 		background-position: left 0.64em center;

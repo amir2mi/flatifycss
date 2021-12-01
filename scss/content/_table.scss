@@ -45,7 +45,7 @@ table {
 
 		td,
 		th {
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				border-left: $table_border;
 
 				&:last-child {
@@ -79,7 +79,7 @@ table {
 			white-space: nowrap;
 		}
 		thead {
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				float: left;
 			} @else {
 				float: right;
@@ -108,7 +108,7 @@ table {
 			thead {
 				tr {
 					display: block;
-					@if $SUPPORT_LTR {
+					@if $IS_LTR {
 						border-right: $table_border;
 					} @else {
 						border-left: $table_border;
@@ -116,7 +116,7 @@ table {
 				}
 				td,
 				th {
-					@if $SUPPORT_LTR {
+					@if $IS_LTR {
 						border-left: $table_border;
 					} @else {
 						border-right: $table_border;
@@ -126,7 +126,7 @@ table {
 			tbody {
 				th,
 				td {
-					@if $SUPPORT_LTR {
+					@if $IS_LTR {
 						border-right: $table_border;
 					} @else {
 						border-left: $table_border;
@@ -143,7 +143,7 @@ table {
 		}
 
 		// horizontal border radius
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			thead tr {
 				th,
 				td {
@@ -194,7 +194,7 @@ table {
 
 	// vertical border radius
 	&:not(.horizontal) {
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			tr:last-child {
 				th {
 					&:first-child {

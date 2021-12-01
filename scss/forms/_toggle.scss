@@ -8,7 +8,7 @@
 			top: 0;
 			bottom: 0;
 
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				left: 0.18em;
 			} @else {
 				right: 0.18em;
@@ -25,7 +25,7 @@
 
 	input:checked + .check {
 		&:after {
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				transform: translateX(1.4em);
 			} @else {
 				transform: translateX(-1.4em);
@@ -46,7 +46,7 @@
 			}
 
 			input:checked + .check:after {
-				@if $SUPPORT_LTR {
+				@if $IS_LTR {
 					transform: translateX(1.2em) scaleY(0.7) scaleX(1.4);
 				} @else {
 					transform: translateX(-1.2em) scaleY(0.7) scaleX(1.4);

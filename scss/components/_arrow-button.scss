@@ -22,7 +22,7 @@
 	// the arrow should space when there is text
 	&:not(:empty) {
 		&:after {
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				margin-left: 0.32em;
 			} @else {
 				margin-right: 0.32em;

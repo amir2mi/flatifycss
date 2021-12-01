@@ -29,7 +29,7 @@ figure {
 		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
 
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			right: 1em;
 		} @else {
 			left: 1em;

@@ -7,7 +7,7 @@
 	input {
 		width: 100%;
 
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			padding-right: 3em;
 		} @else {
 			padding-left: 3em;
@@ -19,7 +19,7 @@
 	&.warning,
 	&.valid {
 		input {
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				padding-right: 3.5em;
 			} @else {
 				padding-left: 3.5em;
@@ -40,7 +40,7 @@
 
 	&.invalid {
 		&:after {
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				right: 1.35em;
 			} @else {
 				left: 1.35em;
@@ -54,7 +54,7 @@
 
 	&.warning {
 		&:after {
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				right: 1.55em;
 			} @else {
 				left: 1.55em;
@@ -84,7 +84,7 @@
 			// does not have [::before] so it will get flashed without this animation, that is bad.
 			animation: flatify-fade-in 0.35s;
 
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				right: 1.75em;
 			} @else {
 				left: 0.8em;
@@ -97,7 +97,7 @@
 		}
 
 		&:after {
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				right: 1em;
 			} @else {
 				left: 1em;
@@ -116,7 +116,7 @@
 		bottom: 0;
 		// should be over [.input-wrapper] ::before and ::after
 		z-index: 3;
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			right: 0.5em;
 		} @else {
 			left: 0.5em;
@@ -154,7 +154,7 @@
 		&:after {
 			content: " ";
 			position: absolute;
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				right: 0.5em;
 			} @else {
 				left: 0.5em;
@@ -217,7 +217,7 @@ input[type="file"]:not(.default) {
 		filter: brightness(92%);
 		vertical-align: baseline;
 
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			margin: 0 0.75em 0 0;
 		} @else {
 			margin: 0 0 0 0.75em;

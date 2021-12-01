@@ -16,7 +16,7 @@
 			// to fix this -1px margin is practical.
 			margin: 0 -1px !important;
 
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				&:first-child {
 					border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
 				}

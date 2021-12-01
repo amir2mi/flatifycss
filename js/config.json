@@ -1,7 +1,7 @@
 {
 	"name": "FlatifyCSS",
 	"enableLogging": true,
-	"supportLTR": true,
+	"isLTR": true,
 	"dropdownOffset": [0, 20],
 	"navDropdownOffset": [0, 0]
 }

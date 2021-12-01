@@ -34,7 +34,7 @@
 		position: relative;
 		top: -0.38em;
 
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			float: right;
 			right: -0.38em;
 		} @else {
@@ -46,7 +46,7 @@
 			position: absolute;
 			top: 0.75em;
 
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				right: 0.75em;
 			} @else {
 				left: 0.75em;
@@ -79,7 +79,7 @@
 	}
 
 	&.has-icon {
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			padding-left: 2.75em;
 			margin-left: 1.5em;
 		} @else {
@@ -96,7 +96,7 @@
 		bottom: 0;
 		filter: brightness(115%);
 
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			left: -1.4em;
 		} @else {
 			right: -1.4em;

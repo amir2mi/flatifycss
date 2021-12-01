@@ -95,7 +95,7 @@
 				.submenu {
 					position: absolute;
 					top: 100%;
-					@if $SUPPORT_LTR {
+					@if $IS_LTR {
 						left: 0.5em;
 					} @else {
 						right: 0.5em;
@@ -106,7 +106,7 @@
 					// second level or more
 					.submenu {
 						top: -50%;
-						@if $SUPPORT_LTR {
+						@if $IS_LTR {
 							left: 115%;
 						} @else {
 							right: 115%;
@@ -118,7 +118,7 @@
 							content: " ";
 							position: absolute;
 							top: 0.64em;
-							@if $SUPPORT_LTR {
+							@if $IS_LTR {
 								left: -3.6em;
 							} @else {
 								right: -3.6em;
@@ -142,7 +142,7 @@
 				height: 100%;
 			}
 
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				margin-right: 0.64em;
 			} @else {
 				margin-left: 0.64em;
@@ -261,7 +261,7 @@
 
 		// additional space for menu item arrow
 		&.arrow-button:after {
-			@if $SUPPORT_LTR {
+			@if $IS_LTR {
 				margin-right: 0.75em;
 			} @else {
 				margin-left: 0.75em;
@@ -328,7 +328,7 @@
 
 	&.arrow-top:before,
 	&.arrow-bottom:before {
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			left: 2em;
 		} @else {
 			right: 2em;

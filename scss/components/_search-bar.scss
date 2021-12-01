@@ -5,7 +5,7 @@
 	input[type="search"] {
 		width: 100%;
 
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			padding-right: 3.14em;
 		} @else {
 			padding-left: 3.14em;
@@ -29,7 +29,7 @@
 		color: var(--#{$CSS_VAR_PFX}form-element-txt-color);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
 
-		@if $SUPPORT_LTR {
+		@if $IS_LTR {
 			right: 0.5em;
 		} @else {
 			left: 0.5em;
