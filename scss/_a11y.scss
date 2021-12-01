@@ -36,10 +36,6 @@
 				animation: none !important;
 			}
 		}
-		.spinner:before {
-			animation-timing-function: steps(4, end) !important;
-			animation-duration: 2s !important;
-		}
 
 		// Fade Out
 		.show {
@@ -48,6 +44,12 @@
 			&.modal-will-be-hidden {
 				animation-name: flatify-fade-out !important;
 			}
+		}
+
+		// limit steps for to have a simple animation
+		.spinner:before {
+			animation-timing-function: steps(4, end) !important;
+			animation-duration: 2s !important;
 		}
 	}
 

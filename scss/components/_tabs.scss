@@ -1,0 +1,92 @@
+:root {
+	--#{$CSS_VAR_PFX}tab-animation-show-duration: #{$TAB_SHOW_ANIMATION_DURATION};
+	--#{$CSS_VAR_PFX}tab-animation-hide-duration: #{$TAB_HIDE_ANIMATION_DURATION};
+	--#{$CSS_VAR_PFX}tab-animation-show: flatify-blow-in var(--#{$CSS_VAR_PFX}tab-animation-show-duration) ease;
+	--#{$CSS_VAR_PFX}tab-animation-hide: flatify-blow-out var(--#{$CSS_VAR_PFX}tab-animation-hide-duration)
+		cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+}
+
+.tabs-wrapper {
+	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}bg-color-darker);
+	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+}
+
+.tabs-header {
+	display: flex;
+	align-items: center;
+	border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}bg-color-darker);
+
+	.tab-button {
+		position: relative;
+		text-align: center;
+		font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+		appearance: none;
+		vertical-align: middle;
+		width: auto;
+		height: 100%;
+		padding: 0.9em 1.5em;
+		margin: 0 0.38em;
+		background: transparent;
+		border: none;
+		opacity: 0.6;
+		transition: all var(--#{$CSS_VAR_PFX}simple-transition) !important;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+			filter: brightness(92%);
+
+			&:not(.active):before {
+				transform: scaleY(1.3) scaleX(0.9);
+			}
+		}
+
+		&:before {
+			content: " ";
+			position: absolute;
+			bottom: calc(var(--#{$CSS_VAR_PFX}border-width) * -0.5);
+			left: 0;
+			width: 100%;
+			height: calc(var(--#{$CSS_VAR_PFX}border-width) * 1.5);
+			background: var(--#{$CSS_VAR_PFX}bg-color-darker);
+			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.32)
+				calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.32) 0 0;
+			transform-origin: bottom center;
+			transition: all var(--#{$CSS_VAR_PFX}simple-transition) !important;
+		}
+
+		&.active {
+			color: var(--#{$CSS_VAR_PFX}color-accent-primary);
+			opacity: 1;
+
+			&:before {
+				background: var(--#{$CSS_VAR_PFX}color-accent-primary);
+			}
+		}
+	}
+}
+
+.tabs-content {
+	overflow: hidden;
+
+	.tab-pane:not(.show) {
+		display: none !important;
+	}
+}
+
+.tab-pane.show {
+	animation: var(--#{$CSS_VAR_PFX}tab-animation-show);
+
+	&.tab-will-be-hidden {
+		animation: var(--#{$CSS_VAR_PFX}tab-animation-hide);
+	}
+
+	&.swipeable {
+		&.slide-left {
+			animation: flatify-slide-left-in-min var(--#{$CSS_VAR_PFX}tab-animation-show-duration) ease;
+		}
+		&.slide-right {
+			animation: flatify-slide-right-in-min var(--#{$CSS_VAR_PFX}tab-animation-show-duration) ease;
+		}
+	}
+}

@@ -40,6 +40,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _uti
 
 /***/ }),
 
+/***/ "./js/components/tabs.js":
+/*!*******************************!*\
+  !*** ./js/components/tabs.js ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils_vent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/vent */ \"./js/utils/vent.js\");\n/* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/logger */ \"./js/utils/logger.js\");\n/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/dom */ \"./js/utils/dom.js\");\n\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n\t(0,_utils_vent__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(document).on(\"click\", \".tab-button\", function (e) {\n\t\tconst targetSelector = e.target.closest(\".tab-button\").getAttribute(\"data-tab-target\");\n\t\tconst target = document.querySelector(targetSelector);\n\t\tconst currentActiveTab = target.closest(\".tabs-content\").querySelector(\".tab-pane.show\");\n\t\tconst currentActiveButton = e.target.closest(\".tabs-header\").querySelector(\".tab-button.active\");\n\n\t\t// if tab button does not have target return an error\n\t\tif (!targetSelector) {\n\t\t\treturn (0,_utils_logger__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(\n\t\t\t\t\"error\",\n\t\t\t\t\"Tab button should have 'data-tab-target' HTML attribute to specify the target tab pane\"\n\t\t\t);\n\t\t}\n\n\t\t// if provided target does not exist return an error\n\t\tif (!target) {\n\t\t\treturn (0,_utils_logger__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(\"error\", \"Provided target for tab button does not exist on this page\");\n\t\t}\n\n\t\t// return if the tab button is already active and target tab pane is shown\n\t\tif (this.classList.contains(\"active\") && target.classList.contains(\"show\")) return;\n\n\t\t// remove active class for tab button that has active tab pane\n\t\tif (currentActiveButton) {\n\t\t\tcurrentActiveButton.classList.remove(\"active\");\n\t\t}\n\n\t\t// hide current active tab inside [.tabs-content] element\n\t\tif (currentActiveTab) {\n\t\t\t// add hide animation class\n\t\t\tcurrentActiveTab.classList.add(\"tab-will-be-hidden\");\n\n\t\t\t// hide current active tab after animation\n\t\t\t(0,_utils_vent__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(currentActiveTab).once(\"animationend\", () => {\n\t\t\t\tcurrentActiveTab.classList.remove(\"show\", \"tab-will-be-hidden\", \"slide-left\", \"slide-right\");\n\n\t\t\t\tthis.classList.add(\"active\");\n\t\t\t\ttarget.classList.add(\"show\");\n\n\t\t\t\t/**\n\t\t\t\t * Determine if the currently active tab button is after or before clicked tab button,\n\t\t\t\t * if it is before, it is [.slide-left], otherwise, the user slid right [.slide-right]\n\t\t\t\t */\n\t\t\t\tif ((0,_utils_dom__WEBPACK_IMPORTED_MODULE_2__.getChildIndex)(currentActiveButton) < (0,_utils_dom__WEBPACK_IMPORTED_MODULE_2__.getChildIndex)(this)) {\n\t\t\t\t\ttarget.classList.add(\"slide-left\");\n\t\t\t\t} else {\n\t\t\t\t\ttarget.classList.add(\"slide-right\");\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t});\n});\n\n\n//# sourceURL=webpack://flatifycss/./js/components/tabs.js?");
+
+/***/ }),
+
 /***/ "./js/flatify.js":
 /*!***********************!*\
   !*** ./js/flatify.js ***!
@@ -67,6 +77,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _uti
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils_vent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/vent */ \"./js/utils/vent.js\");\n/* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/logger */ \"./js/utils/logger.js\");\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n\t(0,_utils_vent__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(document).on(\"click\", \".toggle-truncate\", function (e) {\n\t\tlet text;\n\n\t\tif (e.target.classList.contains(\"truncate\")) {\n\t\t\t// if truncate class was added directly to the element\n\t\t\ttext = e.target;\n\t\t} else {\n\t\t\t// if there is a target that should be truncated\n\t\t\tconst target = e.target.getAttribute(\"data-truncation-target\");\n\t\t\tif (target && document.querySelector(target)) {\n\t\t\t\ttext = document.querySelector(target);\n\t\t\t} else {\n\t\t\t\t// if target was not found\n\t\t\t\treturn (0,_utils_logger__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(\n\t\t\t\t\t\"error\",\n\t\t\t\t\t\"No target found for truncation, try to add or edit 'data-truncation-target' attribute of '.toggle-truncate'\"\n\t\t\t\t);\n\t\t\t}\n\t\t}\n\n\t\tif (text.classList.contains(\"show-text\")) {\n\t\t\t// remove class to truncate text\n\t\t\ttext.classList.remove(\"show-text\");\n\t\t} else {\n\t\t\t// add class to show full text\n\t\t\ttext.classList.add(\"show-text\");\n\t\t}\n\t});\n});\n\n\n//# sourceURL=webpack://flatifycss/./js/helpers/truncate.js?");
+
+/***/ }),
+
+/***/ "./js/utils/dom.js":
+/*!*************************!*\
+  !*** ./js/utils/dom.js ***!
+  \*************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getChildIndex\": function() { return /* binding */ getChildIndex; }\n/* harmony export */ });\n/**\n * Get node index inside parent\n * @param {Object} node\n * @returns {number}\n * @author gsnedders <https://stackoverflow.com/a/4649781/15172167>\n */\nfunction getChildIndex(node) {\n\treturn Array.prototype.indexOf.call(node.parentNode.children, node);\n}\n\n\n//# sourceURL=webpack://flatifycss/./js/utils/dom.js?");
 
 /***/ }),
 
@@ -164,8 +184,10 @@ eval("module.exports = JSON.parse('{\"name\":\"FlatifyCSS\",\"enableLogging\":tr
 /******/ 	__webpack_require__("./js/components/alert.js");
 /******/ 	__webpack_require__("./js/components/dropdown.js");
 /******/ 	__webpack_require__("./js/components/modal.js");
+/******/ 	__webpack_require__("./js/components/tabs.js");
 /******/ 	__webpack_require__("./js/forms/show-password-button.js");
 /******/ 	__webpack_require__("./js/helpers/truncate.js");
+/******/ 	__webpack_require__("./js/utils/dom.js");
 /******/ 	__webpack_require__("./js/utils/logger.js");
 /******/ 	var __webpack_exports__ = __webpack_require__("./js/utils/vent.js");
 /******/ 	

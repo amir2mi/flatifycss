@@ -271,6 +271,8 @@ $MODAL_HIDE_ANIMATION_DURATION: 250ms !default;
 // submenu works with CSS, so it is not possible to set hide animation.
 $SUBMENU_SHOW_ANIMATION_DURATION: 350ms !default;
 $SUBMENU_SHOW_ANIMATION_DELAY: 200ms !default;
+$TAB_SHOW_ANIMATION_DURATION: 300ms !default;
+$TAB_HIDE_ANIMATION_DURATION: 200ms !default;
 
 // *** Typography: font size, font family, line height
 $MAX_FONT_SIZE: 16 !default; // must be without unit
