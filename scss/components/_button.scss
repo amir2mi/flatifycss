@@ -17,7 +17,7 @@
 	text-align: center;
 	text-decoration: none !important;
 	font-size: 1em;
-	font-weight: normal;
+	font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
 	display: inline-block;
 	padding: 0.75em 0.85em 0.5em;
 	margin: 0.32em 0.32em 0.5em;
