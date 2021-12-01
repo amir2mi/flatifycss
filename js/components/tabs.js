@@ -1,3 +1,4 @@
+import config from "../config";
 import $ from "../utils/vent";
 import logger from "../utils/logger";
 import { getChildIndex } from "../utils/dom";
@@ -13,9 +14,9 @@ function showTab(targetTab, clickedButton, currentButton) {
 	 * if it is before, it is [.slide-left], otherwise, the user slid right [.slide-right]
 	 */
 	if (currentButton && getChildIndex(currentButton) < getChildIndex(clickedButton)) {
-		targetTab.classList.add("slide-left");
+		config.isLTR ? targetTab.classList.add("slide-left") : targetTab.classList.add("slide-right");
 	} else {
-		targetTab.classList.add("slide-right");
+		config.isLTR ? targetTab.classList.add("slide-right") : targetTab.classList.add("slide-left");
 	}
 }
 
@@ -52,9 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			// remove old swipe direction and add new based on clicked tab button index
 			currentActiveTab.classList.remove("slide-left", "slide-right");
 			if (currentActiveButton && getChildIndex(currentActiveButton) < getChildIndex(this)) {
-				currentActiveTab.classList.add("slide-right");
+				config.isLTR
+					? currentActiveTab.classList.add("slide-right")
+					: currentActiveTab.classList.add("slide-left");
 			} else {
-				currentActiveTab.classList.add("slide-left");
+				config.isLTR
+					? currentActiveTab.classList.add("slide-left")
+					: currentActiveTab.classList.add("slide-right");
 			}
 
 			// add hide animation class
