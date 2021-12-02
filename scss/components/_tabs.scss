@@ -10,6 +10,7 @@
 		cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
+// if color setter classes are used, reset tab CSS variables to local
 .tabs-wrapper[class*="style-"],
 .tabs-header[class*="style-"],
 .tabs-content[class*="style-"] {

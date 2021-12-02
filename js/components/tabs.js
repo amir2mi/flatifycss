@@ -11,12 +11,12 @@ function showTab(targetTab, clickedButton, currentButton) {
 
 	/**
 	 * Determine if the currently active tab button is after or before clicked tab button,
-	 * if it is before, it is [.slide-left], otherwise, the user slid right [.slide-right]
+	 * if it is before, it is [.slide-right], otherwise, the user slid right [.slide-left]
 	 */
 	if (currentButton && getChildIndex(currentButton) < getChildIndex(clickedButton)) {
-		config.isLTR ? targetTab.classList.add("slide-left") : targetTab.classList.add("slide-right");
-	} else {
 		config.isLTR ? targetTab.classList.add("slide-right") : targetTab.classList.add("slide-left");
+	} else {
+		config.isLTR ? targetTab.classList.add("slide-left") : targetTab.classList.add("slide-right");
 	}
 }
 
@@ -54,12 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
 			currentActiveTab.classList.remove("slide-left", "slide-right");
 			if (currentActiveButton && getChildIndex(currentActiveButton) < getChildIndex(this)) {
 				config.isLTR
-					? currentActiveTab.classList.add("slide-right")
-					: currentActiveTab.classList.add("slide-left");
-			} else {
-				config.isLTR
 					? currentActiveTab.classList.add("slide-left")
 					: currentActiveTab.classList.add("slide-right");
+			} else {
+				config.isLTR
+					? currentActiveTab.classList.add("slide-right")
+					: currentActiveTab.classList.add("slide-left");
 			}
 
 			// add hide animation class

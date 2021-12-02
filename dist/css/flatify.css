@@ -35,6 +35,7 @@
   --flatify__bg-color: #ffffff;
   --flatify__bg-color-dark: #f1f4f7;
   --flatify__bg-color-darker: #ced9e3;
+  --flatify__bg-color-darkest: #809cb6;
   --flatify__txt-color: #2e4051;
   --flatify__txt-color-light: #77838e;
   --flatify__txt-color-dark: #1e2a35;
@@ -278,7 +279,7 @@ strong {
 }
 
 mark {
-  color: var(--flatify__text-color-darker);
+  color: var(--flatify__txt-color-dark);
 }
 mark:not(.inline) {
   border-radius: calc(var(--flatify__border-radius) * 0.38);
@@ -2015,6 +2016,9 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 }
 
 :root {
+  --flatify__tab-txt-color: var(--flatify__txt-color);
+  --flatify__tab-bg-color: var(--flatify__bg-color);
+  --flatify__tab-border-color: var(--flatify__bg-color-darker);
   --flatify__tab-animation-show-duration: 300ms;
   --flatify__tab-animation-hide-duration: 200ms;
   --flatify__tab-animation-show: flatify-blow-in var(--flatify__tab-animation-show-duration) ease;
@@ -2022,9 +2026,21 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   	cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
+.tabs-wrapper[class*=style-],
+.tabs-header[class*=style-],
+.tabs-content[class*=style-] {
+  --flatify__tab-txt-color: var(--flatify__local-txt-color);
+  --flatify__tab-bg-color: var(--flatify__local-bg-color);
+  --flatify__tab-border-color: var(--flatify__local-border-color);
+  --flatify__color-accent-primary: var(--flatify__local-border-color-dark);
+}
+
 .tabs-wrapper {
+  overflow: hidden;
   margin: 1em 0;
-  border: var(--flatify__border-width) solid var(--flatify__bg-color-darker);
+  color: var(--flatify__tab-txt-color);
+  background: var(--flatify__tab-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__tab-border-color);
   border-radius: var(--flatify__border-radius);
 }
 
@@ -2036,7 +2052,9 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
       -ms-flex-align: center;
           align-items: center;
   padding: 0 1em;
-  border-bottom: var(--flatify__border-width) solid var(--flatify__bg-color-darker);
+  color: var(--flatify__tab-txt-color);
+  background: var(--flatify__tab-bg-color);
+  border-bottom: var(--flatify__border-width) solid var(--flatify__tab-border-color);
 }
 .tabs-header .tab-button {
   position: relative;
@@ -2050,6 +2068,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   height: 100%;
   padding: 0.75em 1.5em;
   margin: 0 0.38em;
+  color: inherit;
   background: transparent;
   border: none;
   outline: none;
@@ -2073,7 +2092,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   left: 0;
   width: 100%;
   height: calc(var(--flatify__border-width) * 1.5);
-  background: var(--flatify__bg-color-darker);
+  background: var(--flatify__tab-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.32) calc(var(--flatify__border-radius) * 0.32) 0 0;
   -webkit-transform-origin: bottom center;
       -ms-transform-origin: bottom center;
@@ -2096,7 +2115,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 }
 .tabs-header.line-at-top .tab-button:before {
   bottom: unset;
-  top: calc(var(--flatify__border-width) * -0.5);
+  top: 0;
   border-radius: 0 0 calc(var(--flatify__border-radius) * 0.32) calc(var(--flatify__border-radius) * 0.32);
   -webkit-transform-origin: top center;
       -ms-transform-origin: top center;
@@ -2106,6 +2125,8 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .tabs-content {
   overflow: hidden;
   padding: 1em;
+  color: var(--flatify__tab-txt-color);
+  background: var(--flatify__tab-bg-color);
 }
 .tabs-content .tab-pane:not(.show) {
   display: none !important;
