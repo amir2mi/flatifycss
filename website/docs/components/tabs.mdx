@@ -9,7 +9,7 @@ With Tabs we can have different layers of content in the same place, users can c
 Each tabs component is wrapped with `.tabs-wrapper` (which is not necessary), there is a header and content area. Inside the header area buttons are represented, they have target tab panel selectors that are inside the content area.
 
 <PreviewBox
-	height="400px"
+	height="310px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -24,24 +24,24 @@ Each tabs component is wrapped with `.tabs-wrapper` (which is not necessary), th
     <body class="flex-column-center">
 		<div class="tabs-wrapper">
 			<div class="tabs-header" role="tablist">
-				<button role="tab" class="tab-button active" data-tab-target="#tab-kafka" aria-controls="tab-kafka" aria-selected="true">
+				<button role="tab" class="tab-button active"  aria-controls="panel-kafka" aria-selected="true">
 					Kafka
 				</button>
-				<button role="tab" class="tab-button" aria-controls="tab-werther" aria-selected="false">
+				<button role="tab" class="tab-button" aria-controls="panel-werther" aria-selected="false">
 					Werther
 				</button>
-				<button role="tab" class="tab-button" aria-controls="tab-cicero" aria-selected="false">
+				<button role="tab" class="tab-button" aria-controls="panel-cicero" data-tab-target=".cicero-tab-panel" aria-selected="false">
 					Cicero
 				</button>
 			</div>
 			<div class="tabs-content">
-				<div id="tab-kafka" class="tab-panel show">
+				<div id="panel-kafka" class="tab-panel show">
 					One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What is happened to me?" he thought. It was not a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
 				</div>
-				<div id="tab-werther" class="tab-panel">
+				<div id="panel-werther" class="tab-panel">
 					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.
 				</div>
-				<div id="tab-cicero" class="tab-panel">
+				<div id="panel-cicero" class="tab-panel cicero-tab-panel">
 					But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
 				</div>
 			</div>
@@ -51,3 +51,37 @@ Each tabs component is wrapped with `.tabs-wrapper` (which is not necessary), th
 </html>
 '
 />
+
+:::info Accessibility matters!
+Try to apply guides for a perfect tab component, first read [W3C Working Groups Notes about tabs](https://www.w3.org/TR/wai-aria-practices/#tabpanel). The code of the example above has done the things that you should do, for example, the active tab button will get `aria-selected="true"` automatically, you just need to determine the basics `aria-` HTML attributes.
+:::
+
+```html title="index.html"
+<div class="tabs-wrapper">
+	<div class="tabs-header" role="tablist">
+		<button role="tab" class="tab-button active" aria-controls="panel-kafka" aria-selected="true">Kafka</button>
+		<button role="tab" class="tab-button" aria-controls="panel-werther" aria-selected="false">Werther</button>
+		<button
+			role="tab"
+			class="tab-button"
+			aria-controls="panel-cicero"
+			data-tab-target=".cicero-tab-panel"
+			aria-selected="false"
+		>
+			Cicero
+		</button>
+	</div>
+	<div class="tabs-content">
+		<div id="panel-kafka" class="tab-panel show">1 ...</div>
+		<div id="panel-werther" class="tab-panel">2 ...</div>
+		<div id="panel-cicero" class="tab-panel cicero-tab-panel">3 ...</div>
+	</div>
+</div>
+```
+
+:::success Determine the target panel
+A tab button should determine the target tab panel that will be displayed when the tab button is clicked.  
+It can be defined with both `data-tab-target` and `aria-controls` HTML attributes.  
+Note that `data-tab-target` has more priority and it accepts any kind of selectors like `data-tab-target=".my-panel"` so you should determine if the selector is class or ID.  
+On the other hand, `aria-controls="my-panel"` is an HTML attribute for accessibility purposes it should have the ID of the target panel so it can be used to determine the target as well (when `data-tab-target` is not set).
+:::
