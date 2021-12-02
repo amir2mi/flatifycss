@@ -1796,6 +1796,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 
 .tabs-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 0 1em;
   color: var(--flatify__tab-txt-color);
