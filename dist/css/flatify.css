@@ -2178,7 +2178,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   --flatify__form-element-border-color__invalid: var(--flatify__color-danger-primary);
 }
 
-.form-label {
+.form-label:not(:first-of-type) {
   margin-top: 0.9em;
 }
 .form-label.inline:not(:first-child) {
