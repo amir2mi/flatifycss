@@ -22,21 +22,27 @@ Each tabs component is wrapped with `.tabs-wrapper` (which is not necessary), th
         <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
     </head>
     <body class="flex-column-center">
-			<div class="tabs-wrapper">
+		<div class="tabs-wrapper">
 			<div class="tabs-header" role="tablist">
-				<button role="tab" id="kafka-button" class="tab-button active" data-tab-target="#tab-kafka">
+				<button role="tab" class="tab-button active" data-tab-target="#tab-kafka" aria-controls="tab-kafka" aria-selected="true">
 					Kafka
 				</button>
-				<button role="tab" id="werther-button" class="tab-button" data-tab-target="#tab-werther">
+				<button role="tab" class="tab-button" aria-controls="tab-werther" aria-selected="false">
 					Werther
+				</button>
+				<button role="tab" class="tab-button" aria-controls="tab-cicero" aria-selected="false">
+					Cicero
 				</button>
 			</div>
 			<div class="tabs-content">
-				<div id="tab-kafka" class="tab-panel show" aria-labelledby="kafka-button">
+				<div id="tab-kafka" class="tab-panel show">
 					One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What is happened to me?" he thought. It was not a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
 				</div>
-				<div id="tab-werther" class="tab-panel" aria-labelledby="werther-button">
+				<div id="tab-werther" class="tab-panel">
 					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.
+				</div>
+				<div id="tab-cicero" class="tab-panel">
+					But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
 				</div>
 			</div>
 		</div>

@@ -24,26 +24,33 @@ function showTab(targetTab, clickedButton, currentButton) {
 
 document.addEventListener("DOMContentLoaded", () => {
 	$(document).on("click", ".tab-button", function (e) {
-		const targetSelector = e.target.closest(".tab-button").getAttribute("data-tab-target");
-		const target = document.querySelector(targetSelector);
-		const currentActiveTab = target.closest(".tabs-content").querySelector(".tab-panel.show");
-		const currentActiveButton = e.target.closest(".tabs-header").querySelector(".tab-button.active");
-
+		/**
+		 * Target panel selector should be defined for tab button,
+		 * either with [data-tab-target] or [aria-controls] HTML attribute
+		 */
+		const targetSelector =
+			e.target.closest(".tab-button").getAttribute("data-tab-target") ||
+			"#" + e.target.closest(".tab-button").getAttribute("aria-controls");
 		// if tab button does not have target return an error
-		if (!targetSelector) {
+		if ((targetSelector && targetSelector === "#null") || !targetSelector) {
 			return logger(
 				"error",
-				"Tab button should have 'data-tab-target' HTML attribute to specify the target tab panel"
+				"Tab button should have 'data-tab-target' or 'aria-controls' HTML attribute to specify the target tab panel"
 			);
 		}
 
+		const targetPanel = document.querySelector(targetSelector);
 		// if provided target does not exist return an error
-		if (!target) {
+		if (!targetPanel) {
 			return logger("error", "Provided target for tab button does not exist on this page");
 		}
 
 		// return if the tab button is already active and target tab panel is shown
-		if (this.classList.contains("active") && target.classList.contains("show")) return;
+		if (this.classList.contains("active") && targetPanel.classList.contains("show")) return;
+
+		// get current active tab with its button
+		const currentActiveTab = targetPanel.closest(".tabs-content").querySelector(".tab-panel.show");
+		const currentActiveButton = e.target.closest(".tabs-header").querySelector(".tab-button.active");
 
 		// remove active class for tab button that has active tab panel
 		if (currentActiveButton) {
@@ -72,10 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			$(currentActiveTab).once("animationend", () => {
 				currentActiveTab.classList.remove("show", "tab-will-be-hidden", "slide-left", "slide-right");
 
-				showTab(target, this, currentActiveButton);
+				showTab(targetPanel, this, currentActiveButton);
 			});
 		} else {
-			showTab(target, this, currentActiveButton);
+			showTab(targetPanel, this, currentActiveButton);
 		}
 	});
 });
