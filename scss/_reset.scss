@@ -183,7 +183,7 @@ strong {
 }
 
 mark {
-	color: var(--#{$CSS_VAR_PFX}text-color-darker);
+	color: var(--#{$CSS_VAR_PFX}txt-color-dark);
 
 	&:not(.inline) {
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.38);
