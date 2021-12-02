@@ -18,7 +18,7 @@
 		// Fade In
 		.dropdown,
 		.modal,
-		.tab-pane {
+		.tab-panel {
 			&.show {
 				animation-name: flatify-fade-in !important;
 			}

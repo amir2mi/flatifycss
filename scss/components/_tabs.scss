@@ -109,12 +109,12 @@
 	color: var(--#{$CSS_VAR_PFX}tab-txt-color);
 	background: var(--#{$CSS_VAR_PFX}tab-bg-color);
 
-	.tab-pane:not(.show) {
+	.tab-panel:not(.show) {
 		display: none !important;
 	}
 
 	&.slide-animation {
-		.tab-pane.show {
+		.tab-panel.show {
 			&.slide-left {
 				animation: flatify-slide-left-in-min var(--#{$CSS_VAR_PFX}tab-animation-show-duration) ease;
 				&.tab-will-be-hidden {
@@ -131,7 +131,7 @@
 	}
 
 	&.fade-animation {
-		.tab-pane.show {
+		.tab-panel.show {
 			animation: flatify-fade-in var(--#{$CSS_VAR_PFX}tab-animation-show-duration) ease;
 
 			&.tab-will-be-hidden {
@@ -141,7 +141,7 @@
 	}
 }
 
-.tab-pane.show {
+.tab-panel.show {
 	animation: var(--#{$CSS_VAR_PFX}tab-animation-show);
 
 	&.tab-will-be-hidden {

@@ -2128,39 +2128,39 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   color: var(--flatify__tab-txt-color);
   background: var(--flatify__tab-bg-color);
 }
-.tabs-content .tab-pane:not(.show) {
+.tabs-content .tab-panel:not(.show) {
   display: none !important;
 }
-.tabs-content.slide-animation .tab-pane.show.slide-left {
+.tabs-content.slide-animation .tab-panel.show.slide-left {
   -webkit-animation: flatify-slide-left-in-min var(--flatify__tab-animation-show-duration) ease;
           animation: flatify-slide-left-in-min var(--flatify__tab-animation-show-duration) ease;
 }
-.tabs-content.slide-animation .tab-pane.show.slide-left.tab-will-be-hidden {
+.tabs-content.slide-animation .tab-panel.show.slide-left.tab-will-be-hidden {
   -webkit-animation: flatify-slide-left-out-min var(--flatify__tab-animation-hide-duration) ease;
           animation: flatify-slide-left-out-min var(--flatify__tab-animation-hide-duration) ease;
 }
-.tabs-content.slide-animation .tab-pane.show.slide-right {
+.tabs-content.slide-animation .tab-panel.show.slide-right {
   -webkit-animation: flatify-slide-right-in-min var(--flatify__tab-animation-show-duration) ease;
           animation: flatify-slide-right-in-min var(--flatify__tab-animation-show-duration) ease;
 }
-.tabs-content.slide-animation .tab-pane.show.slide-right.tab-will-be-hidden {
+.tabs-content.slide-animation .tab-panel.show.slide-right.tab-will-be-hidden {
   -webkit-animation: flatify-slide-right-out-min var(--flatify__tab-animation-hide-duration) ease;
           animation: flatify-slide-right-out-min var(--flatify__tab-animation-hide-duration) ease;
 }
-.tabs-content.fade-animation .tab-pane.show {
+.tabs-content.fade-animation .tab-panel.show {
   -webkit-animation: flatify-fade-in var(--flatify__tab-animation-show-duration) ease;
           animation: flatify-fade-in var(--flatify__tab-animation-show-duration) ease;
 }
-.tabs-content.fade-animation .tab-pane.show.tab-will-be-hidden {
+.tabs-content.fade-animation .tab-panel.show.tab-will-be-hidden {
   -webkit-animation: flatify-fade-out var(--flatify__tab-animation-hide-duration) ease;
           animation: flatify-fade-out var(--flatify__tab-animation-hide-duration) ease;
 }
 
-.tab-pane.show {
+.tab-panel.show {
   -webkit-animation: var(--flatify__tab-animation-show);
           animation: var(--flatify__tab-animation-show);
 }
-.tab-pane.show.tab-will-be-hidden {
+.tab-panel.show.tab-will-be-hidden {
   -webkit-animation: var(--flatify__tab-animation-hide);
           animation: var(--flatify__tab-animation-hide);
 }
@@ -4491,7 +4491,7 @@ body ::after {
   }
   body .dropdown.show,
 body .modal.show,
-body .tab-pane.show {
+body .tab-panel.show {
     -webkit-animation-name: flatify-fade-in !important;
             animation-name: flatify-fade-in !important;
   }
