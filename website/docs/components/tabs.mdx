@@ -89,8 +89,14 @@ On the other hand, `aria-controls="my-panel"` is an HTML attribute for accessibi
 
 ## Animations
 
-Tabs by default has blow in/out animation, however you can add `.slide-animation`, `.fade-animation`, `no-animation` to `.tabs-content`; they changes the default animations.  
-By the way, it is possible to use a brand new animation to show/hide tabs, you can use CSS variables that are defined for this purpose.
+Tabs by default has blow in/out animation, however you can add `.slide-animation`, `.fade-animation`, `.no-animation` to `.tabs-content`.  
+By the way, it is possible to use a brand new animation to show/hide tabs, you can use CSS variables — that are defined for this purpose — to create your gorgeous animation.
+
+### Predefined animations
+
+`.slide-animation`  
+`.fade-animation`  
+`.no-animation`  
 
 ### Custom animations
 
@@ -352,8 +358,14 @@ The examples above has the same HTML for different types, **the only point is th
 For [reduced motion users](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion), all animations will be fade in/out.
 
 <div class="flex-center comparison-gifs">
-	<img src="/static/img/docs/tabs/original-tab-animation.gif" />
-	<img src="/static/img/docs/tabs/reduced-motion-tab-animation.gif" />
+	<figure>
+		<img src="/static/img/docs/tabs/original-tab-animation.gif" />
+		<figcaption>Original</figcaption>
+	</figure>
+	<figure>
+		<img src="/static/img/docs/tabs/reduced-motion-tab-animation.gif" />
+		<figcaption>Reduced motion</figcaption>
+	</figure>
 </div>
 :::
 
@@ -363,7 +375,7 @@ To change tabs size use [size setter classes](/docs/helpers/size-setters).
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
 
 <PreviewBox
-	height="540px"
+	height="510px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -375,7 +387,7 @@ These classes just set a `font-size` property so it is possible to change it you
 		<title>Tabs</title>
         <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
     </head>
-    <body class="flex-column-center">
+    <body>
 		<div class="tabs-wrapper size-xs">
 			<div class="tabs-header" role="tablist">
 				<button role="tab" class="tab-button active"  aria-controls="panel-kafka" aria-selected="true">
@@ -452,6 +464,12 @@ These classes just set a `font-size` property so it is possible to change it you
 </html>
 '
 />
+
+```html title="index.html"
+<div class="tabs-wrapper size-xs">...</div>
+<div class="tabs-wrapper size-md">...</div>
+<div class="tabs-wrapper size-2x">...</div>
+```
 
 ## Colors
 
@@ -539,6 +557,79 @@ There are helper classes for styling elements like tabs, first read about [color
 					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
 				</div>
 				<div id="panel-cicero-3" class="tab-panel cicero-tab-panel-3">
+					But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="tabs-wrapper style-dark">...</div>
+<div class="tabs-wrapper style-blue-light">...</div>
+<div class="tabs-wrapper style-pink">...</div>
+```
+
+## Customization
+
+FlatifyCSS has some CSS variables for customizing tabs, as we talked earlier about animations you can also change the colors of tabs with these variables.
+
+`--flatify__tab-txt-color`  
+`--flatify__tab-bg-color`  
+`--flatify__tab-border-color`  
+`--flatify__color-accent-primary` (to customize active tab color)
+
+and also animation CSS variables as [we talked about them above](#animations):
+
+`--flatify__tab-animation-show-duration`  
+`--flatify__tab-animation-hide-duration`  
+`--flatify__tab-animation-show`  
+`--flatify__tab-animation-hide`
+
+<PreviewBox
+	height="200px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Tabs</title>
+		<style>
+			.my-custom-tabs{
+				--flatify__tab-txt-color: #F5F7FA;
+				--flatify__tab-bg-color: #AA8E69;
+				--flatify__tab-border-color: #BAA286;
+				--flatify__color-accent-primary: #FFCE54;
+			}
+		</style>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-column-center">
+		<div class="tabs-wrapper my-custom-tabs">
+			<div class="tabs-header" role="tablist">
+				<button role="tab" class="tab-button active"  aria-controls="panel-kafka" aria-selected="true">
+					Kafka
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-werther" aria-selected="false">
+					Werther
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-cicero" data-tab-target=".cicero-tab-panel" aria-selected="false">
+					Cicero
+				</button>
+			</div>
+			<div class="tabs-content">
+				<div id="panel-kafka" class="tab-panel show">
+					One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+				</div>
+				<div id="panel-werther" class="tab-panel">
+					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+				</div>
+				<div id="panel-cicero" class="tab-panel cicero-tab-panel">
 					But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.
 				</div>
 			</div>

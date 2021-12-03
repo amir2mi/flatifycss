@@ -307,10 +307,16 @@ div[class*="toggleTrack_"],
 
 .comparison-gifs img {
 	width: 100%;
-	margin: 0.5em 0;
 	border-radius: 1em;
 }
-
-.comparison-gifs img + img {
+.comparison-gifs figure {
+	margin: 0.5em 0;
+}
+.comparison-gifs figure + figure {
 	margin-left: 1em;
+}
+.comparison-gifs figcaption {
+	text-align: center;
+	font-size: 0.8em;
+	margin-top: 0.25em;
 }
