@@ -1784,6 +1784,11 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   --flatify__tab-border-color: var(--flatify__local-border-color);
   --flatify__color-accent-primary: var(--flatify__local-border-color-dark);
 }
+.tabs-wrapper[class*=style-] .tab-button.active,
+.tabs-header[class*=style-] .tab-button.active,
+.tabs-content[class*=style-] .tab-button.active {
+  color: var(--flatify__tab-txt-color);
+}
 
 .tabs-wrapper {
   overflow: hidden;

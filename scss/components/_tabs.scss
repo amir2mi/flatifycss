@@ -18,6 +18,10 @@
 	--#{$CSS_VAR_PFX}tab-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
 	--#{$CSS_VAR_PFX}tab-border-color: var(--#{$CSS_VAR_PFX}local-border-color);
 	--#{$CSS_VAR_PFX}color-accent-primary: var(--#{$CSS_VAR_PFX}local-border-color-dark);
+
+	.tab-button.active {
+		color: var(--#{$CSS_VAR_PFX}tab-txt-color);
+	}
 }
 
 .tabs-wrapper {
@@ -116,7 +120,7 @@
 
 	&.no-animation {
 		.tab-panel {
-			animation-duration: 0s!important;
+			animation-duration: 0s !important;
 		}
 	}
 

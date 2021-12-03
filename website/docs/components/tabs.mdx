@@ -356,3 +356,194 @@ For [reduced motion users](https://developer.mozilla.org/en-US/docs/Web/CSS/@med
 	<img src="/static/img/docs/tabs/reduced-motion-tab-animation.gif" />
 </div>
 :::
+
+## Sizes
+
+To change tabs size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+
+<PreviewBox
+	height="540px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Tabs</title>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-column-center">
+		<div class="tabs-wrapper size-xs">
+			<div class="tabs-header" role="tablist">
+				<button role="tab" class="tab-button active"  aria-controls="panel-kafka" aria-selected="true">
+					Kafka
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-werther" aria-selected="false">
+					Werther
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-cicero" data-tab-target=".cicero-tab-panel" aria-selected="false">
+					Cicero
+				</button>
+			</div>
+			<div class="tabs-content">
+				<div id="panel-kafka" class="tab-panel show">
+					One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+				</div>
+				<div id="panel-werther" class="tab-panel">
+					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+				</div>
+				<div id="panel-cicero" class="tab-panel cicero-tab-panel">
+					But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.
+				</div>
+			</div>
+		</div>
+		<div class="tabs-wrapper size-md">
+			<div class="tabs-header" role="tablist">
+				<button role="tab" class="tab-button active" aria-controls="panel-kafka-2" aria-selected="true">
+					Kafka
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-werther-2" aria-selected="false">
+					Werther
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-cicero-2" data-tab-target=".cicero-tab-panel-2" aria-selected="false">
+					Cicero
+				</button>
+			</div>
+			<div class="tabs-content">
+				<div id="panel-kafka-2" class="tab-panel show">
+					One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+				</div>
+				<div id="panel-werther-2" class="tab-panel">
+					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+				</div>
+				<div id="panel-cicero-2" class="tab-panel cicero-tab-panel-2">
+					But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.
+				</div>
+			</div>
+		</div>
+		<div class="tabs-wrapper size-2x">
+			<div class="tabs-header" role="tablist">
+				<button role="tab" class="tab-button active" aria-controls="panel-kafka-3" aria-selected="true">
+					Kafka
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-werther-3" aria-selected="false">
+					Werther
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-cicero-3" data-tab-target=".cicero-tab-panel-3" aria-selected="false">
+					Cicero
+				</button>
+			</div>
+			<div class="tabs-content">
+				<div id="panel-kafka-3" class="tab-panel show">
+					One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+				</div>
+				<div id="panel-werther-3" class="tab-panel">
+					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+				</div>
+				<div id="panel-cicero-3" class="tab-panel cicero-tab-panel-3">
+					But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
+'
+/>
+
+## Colors
+
+There are helper classes for styling elements like tabs, first read about [color setter classes](/docs/helpers/color-setters). Note that you should add classes to the `.tabs-wrapper`.
+
+<PreviewBox
+	height="540px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Tabs</title>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-column-center">
+		<div class="tabs-wrapper style-dark">
+			<div class="tabs-header" role="tablist">
+				<button role="tab" class="tab-button active"  aria-controls="panel-kafka" aria-selected="true">
+					Kafka
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-werther" aria-selected="false">
+					Werther
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-cicero" data-tab-target=".cicero-tab-panel" aria-selected="false">
+					Cicero
+				</button>
+			</div>
+			<div class="tabs-content">
+				<div id="panel-kafka" class="tab-panel show">
+					One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+				</div>
+				<div id="panel-werther" class="tab-panel">
+					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+				</div>
+				<div id="panel-cicero" class="tab-panel cicero-tab-panel">
+					But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.
+				</div>
+			</div>
+		</div>
+		<div class="tabs-wrapper style-blue-light">
+			<div class="tabs-header" role="tablist">
+				<button role="tab" class="tab-button active" aria-controls="panel-kafka-2" aria-selected="true">
+					Kafka
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-werther-2" aria-selected="false">
+					Werther
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-cicero-2" data-tab-target=".cicero-tab-panel-2" aria-selected="false">
+					Cicero
+				</button>
+			</div>
+			<div class="tabs-content">
+				<div id="panel-kafka-2" class="tab-panel show">
+					One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+				</div>
+				<div id="panel-werther-2" class="tab-panel">
+					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+				</div>
+				<div id="panel-cicero-2" class="tab-panel cicero-tab-panel-2">
+					But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.
+				</div>
+			</div>
+		</div>
+		<div class="tabs-wrapper style-pink">
+			<div class="tabs-header" role="tablist">
+				<button role="tab" class="tab-button active" aria-controls="panel-kafka-3" aria-selected="true">
+					Kafka
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-werther-3" aria-selected="false">
+					Werther
+				</button>
+				<button role="tab" class="tab-button" aria-controls="panel-cicero-3" data-tab-target=".cicero-tab-panel-3" aria-selected="false">
+					Cicero
+				</button>
+			</div>
+			<div class="tabs-content">
+				<div id="panel-kafka-3" class="tab-panel show">
+					One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+				</div>
+				<div id="panel-werther-3" class="tab-panel">
+					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+				</div>
+				<div id="panel-cicero-3" class="tab-panel cicero-tab-panel-3">
+					But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
+'
+/>

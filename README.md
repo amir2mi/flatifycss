@@ -48,7 +48,7 @@ List of work in progress:
 -   [x] Pagination
 -   [ ] Popover
 -   [x] Search bar
--   [ ] Tabs
+-   [x] Tabs
 -   [ ] Toast
 -   [ ] Tooltip
 
