@@ -455,10 +455,10 @@ These classes just set a `font-size` property so it is possible to change it you
 
 ## Colors
 
-There are helper classes for styling elements like tabs, first read about [color setter classes](/docs/helpers/color-setters). Note that you should add classes to the `.tabs-wrapper`.
+There are helper classes for styling elements like tabs, first read about [color setter classes](/docs/helpers/color-setters). Note that you should add classes to the `.tabs-wrapper` or `.tabs-header` and `.tabs-content` separately.
 
 <PreviewBox
-	height="540px"
+	height="500px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -471,7 +471,7 @@ There are helper classes for styling elements like tabs, first read about [color
         <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
     </head>
     <body class="flex-column-center">
-		<div class="tabs-wrapper style-dark">
+		<div class="tabs-wrapper style-dark-light">
 			<div class="tabs-header" role="tablist">
 				<button role="tab" class="tab-button active"  aria-controls="panel-kafka" aria-selected="true">
 					Kafka

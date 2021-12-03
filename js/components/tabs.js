@@ -3,7 +3,41 @@ import $ from "../utils/vent";
 import logger from "../utils/logger";
 import { getChildIndex } from "../utils/dom";
 
+/**
+ * Hide all active tabs based on given tab button and tab panel
+ * @param {Object} targetTab The tab panel that should be shown
+ * @param {Object} clickedButton The tab button that is clicked on
+ */
+function hideActiveTabs(targetTab, clickedButton) {
+	const tabButtons = clickedButton.closest(".tabs-header").querySelectorAll(".tab-button");
+	if (tabButtons) {
+		tabButtons.forEach((tabButton) => {
+			tabButton.classList.remove("active");
+		});
+	}
+
+	const tabPanels = targetTab.closest(".tabs-content").querySelectorAll(".tab-panel");
+	if (tabPanels) {
+		tabPanels.forEach((tabPanel) => {
+			tabPanel.classList.remove("show", "tab-will-be-hidden", "slide-left", "slide-right");
+		});
+	}
+}
+
+/**
+ * Show given tab
+ * @param {Object} targetTab The tab panel that should be shown
+ * @param {Object} clickedButton The tab button that is clicked on
+ * @param {Object} currentButton The currently active tab button that should be deactivated
+ */
 function showTab(targetTab, clickedButton, currentButton) {
+	/**
+	 * Sometimes before the animation end event,
+	 * users might click on another tab button, so the current tab is still active,
+	 * which means we will have more than one active tab and they should be deactivated.
+	 */
+	hideActiveTabs(targetTab, clickedButton);
+
 	// active tab button
 	clickedButton.classList.add("active");
 	clickedButton.setAttribute("aria-selected", true);
@@ -12,8 +46,8 @@ function showTab(targetTab, clickedButton, currentButton) {
 	targetTab.classList.add("show");
 
 	/**
-	 * Determine if the currently active tab button is after or before clicked tab button,
-	 * if it is before, it is [.slide-right], otherwise, the user slid right [.slide-left]
+	 * Determine if the currently active tab button is after or before clicked tab button
+	 * and based on this fact add slide animation classes.
 	 */
 	if (currentButton && getChildIndex(currentButton) < getChildIndex(clickedButton)) {
 		config.isLTR ? targetTab.classList.add("slide-right") : targetTab.classList.add("slide-left");
