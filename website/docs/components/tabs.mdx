@@ -6,6 +6,8 @@ import PreviewBox from "../../src/components/preview-box";
 
 With Tabs we can have different layers of content in the same place, users can choose which layer they want to see. To use tabs, it is necessary to load the JavaScript file of FlatifyCSS, so without this file, you just have the component which does not work on click.
 
+## A simple tabs component
+
 Each tabs component is wrapped with `.tabs-wrapper` (which is not necessary), there is a header and content area. Inside the header area buttons are represented, they have target tab panel selectors that are inside the content area.
 
 <PreviewBox
@@ -87,12 +89,10 @@ On the other hand, `aria-controls="my-panel"` is an HTML attribute for accessibi
 
 ## Animations
 
-:::success Accessibility matters!
-For [reduced motion users](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion), all animations will be fade in/out.
-:::
-
 Tabs by default has blow in/out animation, however you can add `.slide-animation`, `.fade-animation`, `no-animation` to `.tabs-content`; they changes the default animations.  
 By the way, it is possible to use a brand new animation to show/hide tabs, you can use CSS variables that are defined for this purpose.
+
+### Custom animations
 
 To change current animations duration:  
 `--flatify__tab-animation-show-duration`  
@@ -105,6 +105,8 @@ Or set custom animations:
 :::danger Do not use `none` for animations!
 Never use `none` for these kinds of animations, because FlatifyCSS JavaScript listens to [animationend event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationend_event), so if you set `none` there won't be an animation, it means `animationend` is not going to be triggered. If you want to disable an animation just set `animation-duration` to `0s`.
 :::
+
+### Animations example
 
 Check out the examples below to understand use cases:
 
@@ -343,3 +345,14 @@ The examples above has the same HTML for different types, **the only point is th
 	--flatify__tab-animation-hide: my-slide-bottom-anim-hide 0.2s linear;
 }
 ```
+
+### Animations for reduced motion users
+
+:::success Accessibility matters!
+For [reduced motion users](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion), all animations will be fade in/out.
+
+<div class="flex-center comparison-gifs">
+	<img src="/static/img/docs/tabs/original-tab-animation.gif" />
+	<img src="/static/img/docs/tabs/reduced-motion-tab-animation.gif" />
+</div>
+:::
