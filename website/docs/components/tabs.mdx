@@ -78,7 +78,7 @@ Try to apply guides for a perfect tab component, first read [W3C Working Groups 
 </div>
 ```
 
-:::success Determine the target panel
+:::info Determine the target panel
 A tab button should determine the target tab panel that will be displayed when the tab button is clicked.  
 It can be defined with both `data-tab-target` and `aria-controls` HTML attributes.  
 Note that `data-tab-target` has more priority and it accepts any kind of selectors like `data-tab-target=".my-panel"` so you should determine if the selector is class or ID.  
@@ -86,6 +86,10 @@ On the other hand, `aria-controls="my-panel"` is an HTML attribute for accessibi
 :::
 
 ## Animations
+
+:::success Accessibility matters!
+For [reduced motion users](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion), all animations will be fade in/out.
+:::
 
 Tabs by default has blow in/out animation, however you can add `.slide-animation`, `.fade-animation`, `no-animation` to `.tabs-content`; they changes the default animations.  
 By the way, it is possible to use a brand new animation to show/hide tabs, you can use CSS variables that are defined for this purpose.
@@ -102,10 +106,10 @@ Or set custom animations:
 Never use `none` for these kinds of animations, because FlatifyCSS JavaScript listens to [animationend event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationend_event), so if you set `none` there won't be an animation, it means `animationend` is not going to be triggered. If you want to disable an animation just set `animation-duration` to `0s`.
 :::
 
-Check out the example below to understand use cases:
+Check out the examples below to understand use cases:
 
 <PreviewBox
-	height="600px"
+	height="1630px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -115,37 +119,50 @@ Check out the example below to understand use cases:
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Tabs</title>
+		<style>
+			@keyframes my-asteroid-anim-show{
+				from{
+					opacity: 0;
+					transform: scale(3) rotate(180deg);
+				}
+				to{
+					opacity: 1;
+					transform: scale(1) rotate(0);
+				}
+			}
+			.my-custom-asteroid-animation{
+				--flatify__tab-animation-show: my-asteroid-anim-show 1s cubic-bezier(0.59, -0.39, 0.36, 1.38);
+				--flatify__tab-animation-hide: flatify-fade-out 0s;
+			}
+			@keyframes my-slide-top-anim-show{
+				from{
+					opacity: 0;
+					transform: translateY(-50%);
+				}
+				to{
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			@keyframes my-slide-bottom-anim-hide{
+				from{
+					opacity: 1
+					transform: translateY(0);
+				}
+				to{
+					opacity: 0;
+					transform: translateY(50%);
+				}
+			}
+			.my-custom-slide-animation{
+				--flatify__tab-animation-show: my-slide-top-anim-show 0.2s linear;
+				--flatify__tab-animation-hide: my-slide-bottom-anim-hide 0.2s linear;
+			}
+		</style>
         <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
     </head>
     <body class="flex-column-center">
-		<div class="tabs-wrapper">
-			<h2>Slide animation</h2>
-			<div class="tabs-header" role="tablist">
-				<button role="tab" class="tab-button active"  aria-controls="panel-kafka-2" aria-selected="true">
-					Kafka
-				</button>
-				<button role="tab" class="tab-button" aria-controls="panel-werther-2" aria-selected="false">
-					Werther
-				</button>
-				<button role="tab" class="tab-button" aria-controls="panel-cicero-2" data-tab-target=".cicero-tab-panel-2" aria-selected="false">
-					Cicero
-				</button>
-			</div>
-			<h2>Fade animation</h2>
-			<div class="tabs-content slide-animation">
-				<div id="panel-kafka-2" class="tab-panel show">
-					One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What is happened to me?" he thought. It was not a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
-				</div>
-				<div id="panel-werther-2" class="tab-panel">
-					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.
-				</div>
-				<div id="panel-cicero-2" class="tab-panel cicero-tab-panel-2">
-					But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
-				</div>
-			</div>
-			<h2>No animation</h2>
-
-    	</div>
+		<h3>Slide animation</h3>
     	<div class="tabs-wrapper">
     		<div class="tabs-header" role="tablist">
     			<button role="tab" class="tab-button active"  aria-controls="panel-kafka" aria-selected="true">
@@ -158,7 +175,7 @@ Check out the example below to understand use cases:
     				Cicero
     			</button>
     		</div>
-    		<div class="tabs-content fade-animation">
+    		<div class="tabs-content slide-animation">
     			<div id="panel-kafka" class="tab-panel show">
     				One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What is happened to me?" he thought. It was not a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
     			</div>
@@ -170,8 +187,159 @@ Check out the example below to understand use cases:
     			</div>
     		</div>
     	</div>
+		<h3>Fade animation</h3>
+    	<div class="tabs-wrapper">
+    		<div class="tabs-header" role="tablist">
+    			<button role="tab" class="tab-button active"  aria-controls="panel-kafka-2" aria-selected="true">
+    				Kafka
+    			</button>
+    			<button role="tab" class="tab-button" aria-controls="panel-werther-2" aria-selected="false">
+    				Werther
+    			</button>
+    			<button role="tab" class="tab-button" aria-controls="panel-cicero-2" data-tab-target=".cicero-tab-panel-2" aria-selected="false">
+    				Cicero
+    			</button>
+    		</div>
+    		<div class="tabs-content fade-animation">
+    			<div id="panel-kafka-2" class="tab-panel show">
+    				One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What is happened to me?" he thought. It was not a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
+    			</div>
+    			<div id="panel-werther-2" class="tab-panel">
+    				A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.
+    			</div>
+    			<div id="panel-cicero-2" class="tab-panel cicero-tab-panel-2">
+    				But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
+    			</div>
+    		</div>
+    	</div>
+		<h3>No animation</h3>
+    	<div class="tabs-wrapper">
+    		<div class="tabs-header" role="tablist">
+    			<button role="tab" class="tab-button active"  aria-controls="panel-kafka-3" aria-selected="true">
+    				Kafka
+    			</button>
+    			<button role="tab" class="tab-button" aria-controls="panel-werther-3" aria-selected="false">
+    				Werther
+    			</button>
+    			<button role="tab" class="tab-button" aria-controls="panel-cicero-3" data-tab-target=".cicero-tab-panel-3" aria-selected="false">
+    				Cicero
+    			</button>
+    		</div>
+    		<div class="tabs-content no-animation">
+    			<div id="panel-kafka-3" class="tab-panel show">
+    				One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What is happened to me?" he thought. It was not a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
+    			</div>
+    			<div id="panel-werther-3" class="tab-panel">
+    				A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.
+    			</div>
+    			<div id="panel-cicero-3" class="tab-panel cicero-tab-panel-3">
+    				But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
+    			</div>
+    		</div>
+    	</div>
+		<h3>Custom: Asteroid animation</h3>
+    	<div class="tabs-wrapper">
+    		<div class="tabs-header" role="tablist">
+    			<button role="tab" class="tab-button active"  aria-controls="panel-kafka-4" aria-selected="true">
+    				Kafka
+    			</button>
+    			<button role="tab" class="tab-button" aria-controls="panel-werther-4" aria-selected="false">
+    				Werther
+    			</button>
+    			<button role="tab" class="tab-button" aria-controls="panel-cicero-4" data-tab-target=".cicero-tab-panel-4" aria-selected="false">
+    				Cicero
+    			</button>
+    		</div>
+    		<div class="tabs-content my-custom-asteroid-animation">
+    			<div id="panel-kafka-4" class="tab-panel show">
+    				One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What is happened to me?" he thought. It was not a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
+    			</div>
+    			<div id="panel-werther-4" class="tab-panel">
+    				A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.
+    			</div>
+    			<div id="panel-cicero-4" class="tab-panel cicero-tab-panel-4">
+    				But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
+    			</div>
+    		</div>
+    	</div>
+		<h3>Custom: Y axis slide animation</h3>
+    	<div class="tabs-wrapper">
+    		<div class="tabs-header" role="tablist">
+    			<button role="tab" class="tab-button active"  aria-controls="panel-kafka-5" aria-selected="true">
+    				Kafka
+    			</button>
+    			<button role="tab" class="tab-button" aria-controls="panel-werther-5" aria-selected="false">
+    				Werther
+    			</button>
+    			<button role="tab" class="tab-button" aria-controls="panel-cicero-5" data-tab-target=".cicero-tab-panel-5" aria-selected="false">
+    				Cicero
+    			</button>
+    		</div>
+    		<div class="tabs-content my-custom-slide-animation">
+    			<div id="panel-kafka-5" class="tab-panel show">
+    				One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What is happened to me?" he thought. It was not a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
+    			</div>
+    			<div id="panel-werther-5" class="tab-panel">
+    				A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.
+    			</div>
+    			<div id="panel-cicero-5" class="tab-panel cicero-tab-panel-5">
+    				But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
+    			</div>
+    		</div>
+    	</div>
     </body>
 
 </html>
 '
 />
+
+:::info HTML
+The examples above has the same HTML for different types, **the only point is that animation classes should be added to the `.tabs-content` element**.
+:::
+
+```css title="style.css"
+/* Asteroid animation */
+@keyframes my-asteroid-anim-show {
+	from {
+			opacity: 0;
+			transform: scale(3) rotate(180deg);
+	}
+	to {
+			opacity: 1;
+			transform: scale(1) rotate(0);
+	}
+}
+
+.my-custom-asteroid-animation {
+	--flatify__tab-animation-show: my-asteroid-anim-show 1s cubic-bezier(0.59, -0.39, 0.36, 1.38);
+	--flatify__tab-animation-hide: flatify-fade-out 0s;
+}
+
+/* Y asix slide animation */
+@keyframes my-slide-top-anim-show {
+	from {
+		opacity: 0;
+		transform: translateY(-50%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes my-slide-bottom-anim-hide {
+	from {
+		opacity: 1
+		transform: translateY(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(50%);
+	}
+}
+
+.my-custom-slide-animation {
+	--flatify__tab-animation-show: my-slide-top-anim-show 0.2s linear;
+	--flatify__tab-animation-hide: my-slide-bottom-anim-hide 0.2s linear;
+}
+```
