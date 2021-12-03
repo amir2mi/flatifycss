@@ -1864,6 +1864,9 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .tabs-content .tab-panel:not(.show) {
   display: none !important;
 }
+.tabs-content.no-animation .tab-panel {
+  animation-duration: 0s !important;
+}
 .tabs-content.slide-animation .tab-panel.show.slide-left {
   animation: flatify-slide-left-in-min var(--flatify__tab-animation-show-duration) ease;
 }
@@ -2428,6 +2431,14 @@ select option {
 textarea:not(.default) {
   font-size: 1em;
   transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
+}
+
+.no-transition {
+  transition-duration: 0s !important;
+}
+
+.no-animation {
+  animation-duration: 0s !important;
 }
 
 .play-animation:before,

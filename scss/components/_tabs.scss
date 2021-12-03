@@ -114,6 +114,12 @@
 		display: none !important;
 	}
 
+	&.no-animation {
+		.tab-panel {
+			animation-duration: 0s!important;
+		}
+	}
+
 	&.slide-animation {
 		.tab-panel.show {
 			&.slide-left {

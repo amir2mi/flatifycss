@@ -2133,6 +2133,10 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .tabs-content .tab-panel:not(.show) {
   display: none !important;
 }
+.tabs-content.no-animation .tab-panel {
+  -webkit-animation-duration: 0s !important;
+          animation-duration: 0s !important;
+}
 .tabs-content.slide-animation .tab-panel.show.slide-left {
   -webkit-animation: flatify-slide-left-in-min var(--flatify__tab-animation-show-duration) ease;
           animation: flatify-slide-left-in-min var(--flatify__tab-animation-show-duration) ease;
@@ -2875,6 +2879,17 @@ textarea:not(.default) {
   -o-transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
   transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
   transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition), -webkit-filter var(--flatify__simple-transition);
+}
+
+.no-transition {
+  -webkit-transition-duration: 0s !important;
+       -o-transition-duration: 0s !important;
+          transition-duration: 0s !important;
+}
+
+.no-animation {
+  -webkit-animation-duration: 0s !important;
+          animation-duration: 0s !important;
 }
 
 .play-animation:before,
