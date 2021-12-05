@@ -25,6 +25,8 @@
 		// Local border color can be used as color of box shadow e.g. buttons
 		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
 		--#{$CSS_VAR_PFX}local-border-color-dark: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"}) !important;
+		// accent color
+		--#{$CSS_VAR_PFX}color-accent-primary: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "darker"});
 	}
 
 	// Light version
@@ -52,6 +54,8 @@
 		// Local border color can be used as color of box shadow e.g. buttons
 		--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "primary"}) !important;
 		--#{$CSS_VAR_PFX}local-border-color-dark: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"}) !important;
+		// accent color
+		--#{$CSS_VAR_PFX}color-accent-primary: var(--#{$CSS_VAR_PFX + "color-" + $name + "-" + "dark"});
 	}
 }
 
