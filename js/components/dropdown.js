@@ -14,6 +14,14 @@ function createDropdown(dropdown, toggle) {
 		return logger("error", "Dropdowns require Popper (https://popper.js.org)");
 	}
 
+	let offset = config.dropdownOffset;
+	if (dropdown.closest(".navbar")) {
+		offset = config.navDropdownOffset;
+	}
+	if (dropdown.closest(".popover")) {
+		offset = config.popoverOffset;
+	}
+
 	Popper.createPopper(toggle, dropdown, {
 		placement: dropdown.getAttribute("data-dropdown-direction") || "bottom",
 		modifiers: [
@@ -27,7 +35,7 @@ function createDropdown(dropdown, toggle) {
 			{
 				name: "offset",
 				options: {
-					offset: dropdown.closest(".navbar") ? config.navDropdownOffset : config.dropdownOffset,
+					offset: offset,
 				},
 			},
 			{

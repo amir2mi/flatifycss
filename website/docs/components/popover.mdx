@@ -4,10 +4,8 @@ title: Popovers
 
 import PreviewBox from "../../src/components/preview-box";
 
-Popovers are the same as FlatifyCSS's [dropdown component](/docs/components/dropdown), make sure first you read and learn about dropdowns.
+In fact popovers are [dropdown component](/docs/components/dropdown), make sure first you read and learn about dropdowns.
 FlatifyCSS uses [Popper](https://popper.js.org/) library for positioning popovers dynamically, so popovers need this library to work as expected and you should include it inside your webpage before FlatifyCSS's JavaScript file.
-
-## A simple popover
 
 <PreviewBox
 	height="150px"
@@ -46,11 +44,15 @@ FlatifyCSS uses [Popper](https://popper.js.org/) library for positioning popover
 '
 />
 
+:::info The same as a dropdown
+The HTML structure of popover is like a dropdown as said above, for offset and special styles you can add the `.popover` class to the `.dropdown-wrapper`.
+:::
+
 ```html title="index.html"
 <div>
 	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
 	erat ut turpis.
-	<div class="dropdown-wrapper">
+	<div class="dropdown-wrapper popover">
 		<b id="my-popover-toggle" class="dropdown-toggle" aria-expanded="false"> Click me! </b>
 		<div class="dropdown" aria-labelledby="my-popover-toggle">
 			Hello world!

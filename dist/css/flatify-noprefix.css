@@ -1488,6 +1488,10 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   animation: var(--flatify__dropdown-animation-hide);
 }
 
+.popover .dropdown {
+  font-size: 0.9em;
+}
+
 :root {
   --flatify__modal-bg-color: var(--flatify__bg-color);
   --flatify__modal-txt-color: var(--flatify__txt-color);
