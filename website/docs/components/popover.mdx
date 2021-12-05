@@ -1,0 +1,62 @@
+---
+title: Popovers
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Popovers are the same as FlatifyCSS's [dropdown component](/docs/components/dropdown), make sure first you read and learn about dropdowns.
+FlatifyCSS uses [Popper](https://popper.js.org/) library for positioning popovers dynamically, so popovers need this library to work as expected and you should include it inside your webpage before FlatifyCSS's JavaScript file.
+
+## A simple popover
+
+<PreviewBox
+	height="150px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Dropdown</title>
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+		<script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+	</head>
+	<body>
+		<div>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+			<div class="dropdown-wrapper">
+				<b id="my-popover-toggle" class="dropdown-toggle" aria-expanded="false">
+					Click me!
+				</b>
+				<div
+					class="dropdown"
+					aria-labelledby="my-popover-toggle"
+				>
+					Hello world!
+					<span aria-hidden="true" class="pointer-arrow" style="position: absolute; left: 93px;"></span>
+				</div>
+			</div>
+			Donec nec justo eget felis facilisis fermentum.
+		</div>
+    </body>
+
+</html>
+'
+/>
+
+```html title="index.html"
+<div>
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+	erat ut turpis.
+	<div class="dropdown-wrapper">
+		<b id="my-popover-toggle" class="dropdown-toggle" aria-expanded="false"> Click me! </b>
+		<div class="dropdown" aria-labelledby="my-popover-toggle">
+			Hello world!
+			<span aria-hidden="true" class="pointer-arrow" style="position: absolute; left: 93px;"></span>
+		</div>
+	</div>
+	Donec nec justo eget felis facilisis fermentum.
+</div>
+```

@@ -46,7 +46,7 @@ List of work in progress:
 -   [x] Modal
 -   [x] Navigation bar
 -   [x] Pagination
--   [ ] Popover
+-   [x] Popover
 -   [x] Search bar
 -   [x] Tabs
 -   [ ] Toast
