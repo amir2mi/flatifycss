@@ -993,6 +993,62 @@ th {
 }
 
 :root {
+  --flatify__breadcrumb-txt-color: var(--flatify__txt-color);
+  --flatify__breadcrumb-bg-color: var(--flatify__bg-color);
+  --flatify__breadcrumb-border-color: var(--flatify__bg-color-darker);
+}
+
+.breadcrumb {
+  --flatify__local-txt-color: var(--flatify__breadcrumb-txt-color);
+  --flatify__local-bg-color: var(--flatify__breadcrumb-bg-color);
+  --flatify__local-border-color: var(--flatify__breadcrumb-border-color);
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0;
+  background: transparent !important;
+}
+.breadcrumb .breadcrumb-item {
+  overflow: hidden;
+  position: relative;
+  padding: 0.64em 1em;
+  color: var(--flatify__local-txt-color);
+  background: var(--flatify__local-bg-color);
+  border-top: var(--flatify__border-width) solid;
+  border-bottom: var(--flatify__border-width) solid;
+  border-color: var(--flatify__local-border-color);
+}
+.breadcrumb .breadcrumb-item:not(:first-child) {
+  padding-left: 3em;
+}
+.breadcrumb .breadcrumb-item:not(:first-child):before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1.2em;
+  display: block;
+  width: 2.5em;
+  height: 2.5em;
+  margin: auto 0;
+  background: transparent;
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  border-radius: 0.18em;
+  transform: rotate(45deg);
+}
+.breadcrumb .breadcrumb-item:first-child {
+  padding-left: 2em;
+  border-left: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
+}
+.breadcrumb .breadcrumb-item:last-child {
+  padding-right: 2em;
+  border-right: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
+}
+
+:root {
   --flatify__button-txt-color: var(--flatify__txt-color);
   --flatify__button-bg-color: var(--flatify__bg-color-dark);
   --flatify__button-border-color: var(--flatify__bg-color-darker);

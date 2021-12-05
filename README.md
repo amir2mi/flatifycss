@@ -35,7 +35,7 @@ List of work in progress:
 
 -   [x] Alert
 -   [x] Badge
--   [ ] Breadcrumb
+-   [x] Breadcrumb
 -   [x] Button
 -   [x] Arrow Button
 -   [x] Close Button
@@ -50,7 +50,6 @@ List of work in progress:
 -   [x] Search bar
 -   [x] Tabs
 -   [ ] Toast
--   [ ] Tooltip
 
 ## Forms
 

@@ -116,7 +116,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/**\n * Vent, jQuery inspired
   \************************/
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse('{\"name\":\"FlatifyCSS\",\"enableLogging\":true,\"isLTR\":true,\"dropdownOffset\":[0,20],\"navDropdownOffset\":[0,0],\"popoverOffset\":[0,10],\"tooltipOffset\":[0,10]}');\n\n//# sourceURL=webpack://flatifycss/./js/config.json?");
+eval("module.exports = JSON.parse('{\"name\":\"FlatifyCSS\",\"enableLogging\":true,\"isLTR\":true,\"dropdownOffset\":[0,20],\"navDropdownOffset\":[0,0],\"popoverOffset\":[0,10]}');\n\n//# sourceURL=webpack://flatifycss/./js/config.json?");
 
 /***/ })
 

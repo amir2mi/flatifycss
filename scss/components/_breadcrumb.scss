@@ -1,0 +1,76 @@
+:root {
+	--#{$CSS_VAR_PFX}breadcrumb-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+	--#{$CSS_VAR_PFX}breadcrumb-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+	--#{$CSS_VAR_PFX}breadcrumb-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+}
+
+.breadcrumb {
+	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}breadcrumb-txt-color);
+	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}breadcrumb-bg-color);
+	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}breadcrumb-border-color);
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: 0;
+	margin: 0.5em 0;
+	background: transparent !important;
+
+	.breadcrumb-item {
+		overflow: hidden;
+		position: relative;
+		padding: 0.64em 1em;
+		color: var(--#{$CSS_VAR_PFX}local-txt-color);
+		background: var(--#{$CSS_VAR_PFX}local-bg-color);
+		border-top: var(--#{$CSS_VAR_PFX}border-width) solid;
+		border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid;
+		border-color: var(--#{$CSS_VAR_PFX}local-border-color);
+
+		&:not(:first-child) {
+			padding-left: 3em;
+
+			&:before {
+				content: " ";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				@if $IS_LTR {
+					left: -1.2em;
+				} @else {
+					right: -1.2em;
+				}
+				display: block;
+				width: 2.5em;
+				height: 2.5em;
+				margin: auto 0;
+				background: transparent;
+				border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+				border-radius: 0.18em;
+				transform: rotate(45deg);
+			}
+		}
+
+		&:first-child {
+			@if $IS_LTR {
+				padding-left: 2em;
+				border-left: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+				border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+			} @else {
+				padding-right: 2em;
+				border-right: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+				border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+			}
+		}
+
+		&:last-child {
+			@if $IS_LTR {
+				padding-right: 2em;
+				border-right: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+				border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+			} @else {
+				padding-left: 2em;
+				border-left: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+				border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+			}
+		}
+	}
+}
