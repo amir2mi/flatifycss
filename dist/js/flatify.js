@@ -56,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _con
   \***********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_alert__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/alert */ \"./js/components/alert.js\");\n/* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/dropdown */ \"./js/components/dropdown.js\");\n/* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/modal */ \"./js/components/modal.js\");\n/* harmony import */ var _forms_show_password_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./forms/show-password-button */ \"./js/forms/show-password-button.js\");\n// Components\n\n\n\n\n// Forms\n\n\n\n//# sourceURL=webpack://flatifycss/./js/flatify.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_alert__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/alert */ \"./js/components/alert.js\");\n/* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/dropdown */ \"./js/components/dropdown.js\");\n/* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/modal */ \"./js/components/modal.js\");\n/* harmony import */ var _components_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/tabs */ \"./js/components/tabs.js\");\n/* harmony import */ var _forms_show_password_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./forms/show-password-button */ \"./js/forms/show-password-button.js\");\n/* harmony import */ var _helpers_truncate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./helpers/truncate */ \"./js/helpers/truncate.js\");\n// Components\n\n\n\n\n\n// Forms\n\n\n// Helpers\n\n\n\n//# sourceURL=webpack://flatifycss/./js/flatify.js?");
 
 /***/ }),
 
@@ -116,7 +116,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/**\n * Vent, jQuery inspired
   \************************/
 /***/ (function(module) {
 
-eval("module.exports = JSON.parse('{\"name\":\"FlatifyCSS\",\"enableLogging\":true,\"isLTR\":true,\"dropdownOffset\":[0,20],\"navDropdownOffset\":[0,0],\"popoverOffset\":[0,10]}');\n\n//# sourceURL=webpack://flatifycss/./js/config.json?");
+eval("module.exports = JSON.parse('{\"name\":\"FlatifyCSS\",\"enableLogging\":true,\"isLTR\":true,\"dropdownOffset\":[0,20],\"navDropdownOffset\":[0,0],\"popoverOffset\":[0,10],\"tooltipOffset\":[0,10]}');\n\n//# sourceURL=webpack://flatifycss/./js/config.json?");
 
 /***/ })
 
