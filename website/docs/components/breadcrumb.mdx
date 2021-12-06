@@ -43,3 +43,55 @@ It is easy to create one just add `.breadcrumb` class and create children with `
 	</ol>
 </nav>
 ```
+
+:::success Accesibility matters!
+Always add [`aria-current="location"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current) for the last breadcrumb item, it determines it is the current page which helps screen reader users a lot.
+:::
+
+## Sizes
+
+To change the breadcrumb size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+
+
+<PreviewBox
+	height="350px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Breadcrumb</title>
+	</head>
+	<body class="flex-column-center">
+        <nav aria-label="It is a breadcrumb">
+			<ol class="breadcrumb size-sm">
+				<li class="breadcrumb-item"><a href="#">Home</a></li>
+				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
+				<li class="breadcrumb-item"><a href="#">Videos</a></li>
+				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+			</ol>
+		</nav>
+        <nav aria-label="It is a breadcrumb">
+			<ol class="breadcrumb size-lg">
+				<li class="breadcrumb-item"><a href="#">Home</a></li>
+				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
+				<li class="breadcrumb-item"><a href="#">Videos</a></li>
+				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+			</ol>
+		</nav>
+        <nav aria-label="It is a breadcrumb">
+			<ol class="breadcrumb size-2x">
+				<li class="breadcrumb-item"><a href="#">Home</a></li>
+				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
+				<li class="breadcrumb-item"><a href="#">Videos</a></li>
+				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+			</ol>
+		</nav>
+	</body>
+</html>
+'
+/>

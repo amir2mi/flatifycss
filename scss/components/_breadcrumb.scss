@@ -8,8 +8,7 @@
 	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}breadcrumb-txt-color);
 	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}breadcrumb-bg-color);
 	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}breadcrumb-border-color);
-	display: flex;
-	flex-wrap: wrap;
+	overflow-x: auto;
 	list-style: none;
 	padding: 0;
 	margin: 0.5em 0;
@@ -21,6 +20,7 @@
 	.breadcrumb-item {
 		overflow: hidden;
 		position: relative;
+		display: table-cell;
 		padding: 0.64em 1em;
 		color: var(--#{$CSS_VAR_PFX}local-txt-color);
 		background: var(--#{$CSS_VAR_PFX}local-bg-color);
