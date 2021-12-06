@@ -23,7 +23,7 @@
 		background: var(--#{$CSS_VAR_PFX}local-bg-color);
 		border-radius: inherit;
 		opacity: var(--#{$CSS_VAR_PFX}overlay-layer-opacity);
-		mix-blend-mode: var(--#{$CSS_VAR_PFX}overlay-blending-mode);
-		backdrop-filter: none;
+		mix-blend-mode: var(--#{$CSS_VAR_PFX}overlay-layer-blending-mode);
+		backdrop-filter: var(--#{$CSS_VAR_PFX}overlay-layer-backdrop-filter);
 	}
 }
