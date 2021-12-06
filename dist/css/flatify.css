@@ -1057,6 +1057,7 @@ th {
   --flatify__local-border-color: var(--flatify__breadcrumb-border-color);
   overflow-x: auto;
   overflow-y: hidden;
+  scrollbar-width: thin;
   list-style: none;
   padding: 0;
   margin: 0.5em 0;

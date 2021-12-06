@@ -25,7 +25,7 @@ It is easy to create one just add `.breadcrumb` class and create children with `
 				<li class="breadcrumb-item"><a href="#">Home</a></li>
 				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
 				<li class="breadcrumb-item"><a href="#">Videos</a></li>
-				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+				<li class="breadcrumb-item active" aria-current="location">How to create videos</li>
 			</ol>
 		</nav>
 	</body>
@@ -39,7 +39,7 @@ It is easy to create one just add `.breadcrumb` class and create children with `
 		<li class="breadcrumb-item"><a href="#">Home</a></li>
 		<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
 		<li class="breadcrumb-item"><a href="#">Videos</a></li>
-		<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+		<li class="breadcrumb-item active" aria-current="location">How to create videos</li>
 	</ol>
 </nav>
 ```
@@ -105,7 +105,7 @@ These classes just set a `font-size` property so it is possible to change it you
 				<li class="breadcrumb-item"><a href="#">Home</a></li>
 				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
 				<li class="breadcrumb-item"><a href="#">Videos</a></li>
-				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+				<li class="breadcrumb-item active" aria-current="location">How to create videos</li>
 			</ol>
 		</nav>
         <nav class="breadcrumb-wrapper" aria-label="It is a breadcrumb">
@@ -113,7 +113,7 @@ These classes just set a `font-size` property so it is possible to change it you
 				<li class="breadcrumb-item"><a href="#">Home</a></li>
 				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
 				<li class="breadcrumb-item"><a href="#">Videos</a></li>
-				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+				<li class="breadcrumb-item active" aria-current="location">How to create videos</li>
 			</ol>
 		</nav>
         <nav class="breadcrumb-wrapper" aria-label="It is a breadcrumb">
@@ -121,7 +121,7 @@ These classes just set a `font-size` property so it is possible to change it you
 				<li class="breadcrumb-item"><a href="#">Home</a></li>
 				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
 				<li class="breadcrumb-item"><a href="#">Videos</a></li>
-				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+				<li class="breadcrumb-item active" aria-current="location">How to create videos</li>
 			</ol>
 		</nav>
 	</body>
@@ -171,7 +171,7 @@ There are helper classes for styling elements like breadcrumb, first read about 
 				<li class="breadcrumb-item"><a href="#">Home</a></li>
 				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
 				<li class="breadcrumb-item"><a href="#">Videos</a></li>
-				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+				<li class="breadcrumb-item active" aria-current="location">How to create videos</li>
 			</ol>
 		</nav>
         <nav class="breadcrumb-wrapper" aria-label="It is a breadcrumb">
@@ -179,7 +179,7 @@ There are helper classes for styling elements like breadcrumb, first read about 
 				<li class="breadcrumb-item"><a href="#">Home</a></li>
 				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
 				<li class="breadcrumb-item"><a href="#">Videos</a></li>
-				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+				<li class="breadcrumb-item active" aria-current="location">How to create videos</li>
 			</ol>
 		</nav>
         <nav class="breadcrumb-wrapper" aria-label="It is a breadcrumb">
@@ -187,7 +187,7 @@ There are helper classes for styling elements like breadcrumb, first read about 
 				<li class="breadcrumb-item"><a href="#">Home</a></li>
 				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
 				<li class="breadcrumb-item"><a href="#">Videos</a></li>
-				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+				<li class="breadcrumb-item active" aria-current="location">How to create videos</li>
 			</ol>
 		</nav>
            <nav class="breadcrumb-wrapper" aria-label="It is a breadcrumb">
@@ -195,7 +195,7 @@ There are helper classes for styling elements like breadcrumb, first read about 
 				<li class="breadcrumb-item"><a href="#">Home</a></li>
 				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
 				<li class="breadcrumb-item"><a href="#">Videos</a></li>
-				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+				<li class="breadcrumb-item active" aria-current="location">How to create videos</li>
 			</ol>
 		</nav>
 	</body>
@@ -227,4 +227,73 @@ There are helper classes for styling elements like breadcrumb, first read about 
 		...
 	</ol>
 </nav>
+```
+
+## Customization
+
+Each breadcrumb has these CSS variables for customization, they can be set as `:root` for all breadcrumbs default style or just for an specific selector.
+
+`--flatify__breadcrumb-txt-color`  
+`--flatify__breadcrumb-bg-color`  
+`--flatify__breadcrumb-border-color`
+
+<PreviewBox
+	height="110px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Breadcrumb</title>
+        <style>
+            .my-custom-breadcrumb{
+                --flatify__breadcrumb-txt-color: #F5F7FA;
+                --flatify__breadcrumb-bg-color: #AA8E69;
+                --flatify__breadcrumb-border-color: #BAA286;
+                --flatify__link-color: #FFCE54;
+                --flatify__link-color__hover: #F6BB42;
+                --flatify__link-color__focus: #A0D468;
+            }
+        </style>
+	</head>
+	<body class="flex-center">
+        <nav class="breadcrumb-wrapper" aria-label="It is a breadcrumb">
+			<ol class="breadcrumb my-custom-breadcrumb">
+				<li class="breadcrumb-item"><a href="#">Home</a></li>
+				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
+				<li class="breadcrumb-item"><a href="#">Videos</a></li>
+				<li class="breadcrumb-item active" aria-current="location">How to create videos</li>
+			</ol>
+		</nav>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<nav class="breadcrumb-wrapper" aria-label="It is a breadcrumb">
+	<ol class="breadcrumb my-custom-breadcrumb">
+		<li class="breadcrumb-item"><a href="#">Home</a></li>
+		<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
+		<li class="breadcrumb-item"><a href="#">Videos</a></li>
+		<li class="breadcrumb-item active" aria-current="location">How to create videos</li>
+	</ol>
+</nav>
+```
+
+```css title="style.css"
+.my-custom-breadcrumb {
+	/* custom breadcrumb colors */
+	--flatify__breadcrumb-txt-color: #f5f7fa;
+	--flatify__breadcrumb-bg-color: #aa8e69;
+	--flatify__breadcrumb-border-color: #baa286;
+
+	/* custom breadcrumb links */
+	--flatify__link-color: #ffce54;
+	--flatify__link-color__hover: #f6bb42;
+	--flatify__link-color__focus: #a0d468;
+}
 ```

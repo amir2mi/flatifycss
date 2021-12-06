@@ -14,6 +14,7 @@
 	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}breadcrumb-border-color);
 	overflow-x: auto;
 	overflow-y: hidden;
+	scrollbar-width: thin;
 	list-style: none;
 	padding: 0;
 	margin: 0.5em 0;
