@@ -1,0 +1,45 @@
+---
+title: Breadcrumb
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Breadcrumbs are a necessary part of any website they determine where users are so they can navigate.  
+It is easy to create one just add `.breadcrumb` class and create children with `.breadcrumb-item`, here is an example:
+
+<PreviewBox
+	height="110px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Breadcrumb</title>
+	</head>
+	<body class="flex-center">
+        <nav aria-label="It is a breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="#">Home</a></li>
+				<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
+				<li class="breadcrumb-item"><a href="#">Videos</a></li>
+				<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+			</ol>
+		</nav>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="#">Home</a></li>
+		<li class="breadcrumb-item"><a href="#">Tutorials</a></li>
+		<li class="breadcrumb-item"><a href="#">Videos</a></li>
+		<li class="breadcrumb-item active" aria-current="location">How to create video</li>
+	</ol>
+</nav>
+```

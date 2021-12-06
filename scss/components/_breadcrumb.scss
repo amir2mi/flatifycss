@@ -29,7 +29,11 @@
 		border-color: var(--#{$CSS_VAR_PFX}local-border-color);
 
 		&:not(:first-child) {
-			padding-left: 3em;
+			@if $IS_LTR {
+				padding-left: 3em;
+			} @else {
+				padding-right: 3em;
+			}
 
 			&:before {
 				content: " ";
@@ -49,6 +53,7 @@
 				border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
 				border-radius: 0.18em;
 				transform: rotate(45deg);
+				transition: transform var(--#{$CSS_VAR_PFX}simple-transition);
 			}
 		}
 
@@ -73,6 +78,13 @@
 				padding-left: 2em;
 				border-left: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
 				border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+			}
+		}
+
+		&:hover,
+		&:focus-within {
+			&:before {
+				transform: rotate(45deg) scale(1.15);
 			}
 		}
 	}

@@ -1092,6 +1092,11 @@ th {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
+  -webkit-transition: -webkit-transform var(--flatify__simple-transition);
+  transition: -webkit-transform var(--flatify__simple-transition);
+  -o-transition: transform var(--flatify__simple-transition);
+  transition: transform var(--flatify__simple-transition);
+  transition: transform var(--flatify__simple-transition), -webkit-transform var(--flatify__simple-transition);
 }
 .breadcrumb .breadcrumb-item:first-child {
   padding-left: 2em;
@@ -1102,6 +1107,11 @@ th {
   padding-right: 2em;
   border-right: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
+}
+.breadcrumb .breadcrumb-item:hover:before, .breadcrumb .breadcrumb-item:focus-within:before {
+  -webkit-transform: rotate(45deg) scale(1.15);
+      -ms-transform: rotate(45deg) scale(1.15);
+          transform: rotate(45deg) scale(1.15);
 }
 
 :root {
