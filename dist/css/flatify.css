@@ -1047,6 +1047,10 @@ th {
   --flatify__breadcrumb-border-color: var(--flatify__bg-color-darker);
 }
 
+.breadcrumb-wrapper {
+  width: 100%;
+}
+
 .breadcrumb {
   --flatify__local-txt-color: var(--flatify__breadcrumb-txt-color);
   --flatify__local-bg-color: var(--flatify__breadcrumb-bg-color);
