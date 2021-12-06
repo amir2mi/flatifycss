@@ -1004,9 +1004,11 @@ th {
   --flatify__local-bg-color: var(--flatify__breadcrumb-bg-color);
   --flatify__local-border-color: var(--flatify__breadcrumb-border-color);
   overflow-x: auto;
+  overflow-y: hidden;
   list-style: none;
   padding: 0;
   margin: 0.5em 0;
+  border-radius: var(--flatify__border-radius);
 }
 .breadcrumb[class*=style-] {
   background: transparent !important;
@@ -1014,6 +1016,7 @@ th {
 .breadcrumb .breadcrumb-item {
   overflow: hidden;
   position: relative;
+  white-space: nowrap;
   display: table-cell;
   padding: 0.64em 1em;
   color: var(--flatify__local-txt-color);

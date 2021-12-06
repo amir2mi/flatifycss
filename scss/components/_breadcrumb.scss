@@ -9,9 +9,11 @@
 	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}breadcrumb-bg-color);
 	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}breadcrumb-border-color);
 	overflow-x: auto;
+	overflow-y: hidden;
 	list-style: none;
 	padding: 0;
 	margin: 0.5em 0;
+	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
 	&[class*="style-"] {
 		background: transparent !important;
@@ -20,6 +22,7 @@
 	.breadcrumb-item {
 		overflow: hidden;
 		position: relative;
+		white-space: nowrap;
 		display: table-cell;
 		padding: 0.64em 1em;
 		color: var(--#{$CSS_VAR_PFX}local-txt-color);
