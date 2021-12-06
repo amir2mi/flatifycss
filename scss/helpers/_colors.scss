@@ -62,7 +62,7 @@
 	--#{$CSS_VAR_PFX}link-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
 }
 
-[class*="style-"]:not([class*="style-accent-"]) {
+[class*="style-"]:not([class*="style-accent"]) {
 	// reset accent color when class is not accent color,
 	// for example for style-red accent color should be red.
 	--#{$CSS_VAR_PFX}color-accent-light: var(--#{$CSS_VAR_PFX}local-border-color);

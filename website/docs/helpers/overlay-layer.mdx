@@ -19,7 +19,7 @@ Overlay layers have a couple of CSS variables to make them more flexible:
 In the below example, we have a box with an image inside it, basically, we need an overlay layer to change image color with [`mix-blend-mode` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode) and add some effect with [`backdrop-filter` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter).
 
 <PreviewBox
-	height="550px"
+	height="710px"
 	children='<!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -63,9 +63,12 @@ In the below example, we have a box with an image inside it, basically, we need 
                 --flatify__overlay-layer-backdrop-filter: contrast(400%) saturate(400%) grayscale(50%) sepia(50%) hue-rotate(10deg);
             }
 			.fx-6{
-                --flatify__overlay-layer-bg-color: trasparent;
-                --flatify__overlay-layer-opacity: 0.6;
-                --flatify__overlay-layer-backdrop-filter: contrast(1000%) saturate(1000%) grayscale(50%) sepia(50%) hue-rotate(10deg);
+				--flatify__overlay-layer-bg-color: trasparent;
+                --flatify__overlay-layer-backdrop-filter: sepia(75%) hue-rotate(-25deg);
+            }
+			.fx-7{
+				--flatify__overlay-layer-bg-color: trasparent;
+                --flatify__overlay-layer-backdrop-filter: grayscale(100%) contrast(140%) brightness(85%);
             }
         </style>
     </head>
@@ -91,6 +94,14 @@ In the below example, we have a box with an image inside it, basically, we need 
     		    <img src="https://picsum.photos/500/300" alt="a random image"/>
     	    </div>
             <div class="my-img-fx fx-5 overlay-layer">
+    		    <img src="https://picsum.photos/500/300" alt="a random image"/>
+    	    </div>
+        </div>
+		<div class="flex-center">
+            <div class="my-img-fx fx-6 overlay-layer">
+    		    <img src="https://picsum.photos/500/300" alt="a random image"/>
+    	    </div>
+            <div class="my-img-fx fx-7 overlay-layer">
     		    <img src="https://picsum.photos/500/300" alt="a random image"/>
     	    </div>
         </div>
@@ -123,6 +134,14 @@ In the below example, we have a box with an image inside it, basically, we need 
 <div class="my-img-fx fx-5 overlay-layer">
 	<img src="https://picsum.photos/500/300" alt="a random image" />
 </div>
+
+<div class="my-img-fx fx-6 overlay-layer">
+	<img src="https://picsum.photos/500/300" alt="a random image" />
+</div>
+
+<div class="my-img-fx fx-7 overlay-layer">
+	<img src="https://picsum.photos/500/300" alt="a random image" />
+</div>
 ```
 
 ```css title="style.scss"
@@ -143,23 +162,35 @@ In the below example, we have a box with an image inside it, basically, we need 
 	--flatify__overlay-layer-bg-color: linear-gradient(to right, #2c5364, #203a43, #0f2027);
 	--flatify__overlay-layer-blending-mode: overlay;
 }
+
 .fx-2 {
 	--flatify__overlay-layer-bg-color: linear-gradient(to right, #8e2de2, #4a00e0);
-	--flatify__overlay-layer-blending-mode: diffrence;
+	--flatify__overlay-layer-blending-mode: hard-light;
 }
+
 .fx-3 {
 	--flatify__overlay-layer-bg-color: linear-gradient(to right, #f12711, #f5af19);
-	--flatify__overlay-layer-blending-mode: color-dodge;
-	--flatify__overlay-layer-opacity: 0.5;
+	--flatify__overlay-layer-blending-mode: multiply;
+	--flatify__overlay-layer-opacity: 0.75;
 }
+
 .fx-4 {
-	--flatify__overlay-layer-bg-color: #212121;
-	--flatify__overlay-layer-opacity: 0.6;
-	--flatify__overlay-layer-backdrop-filter: blur(10px);
+	--flatify__overlay-layer-bg-color: rgba(255, 255, 255, 0.5);
+	--flatify__overlay-layer-backdrop-filter: blur(3px) contrast(120%);
 }
+
 .fx-5 {
 	--flatify__overlay-layer-bg-color: trasparent;
-	--flatify__overlay-layer-opacity: 0.6;
-	--flatify__overlay-layer-backdrop-filter: saturation(500%) contrast(500%) grayscale(100%);
+	--flatify__overlay-layer-backdrop-filter: contrast(400%) saturate(400%) grayscale(50%) sepia(50%) hue-rotate(10deg);
+}
+
+.fx-6 {
+	--flatify__overlay-layer-bg-color: trasparent;
+	--flatify__overlay-layer-backdrop-filter: sepia(75%) hue-rotate(-25deg);
+}
+
+.fx-7 {
+	--flatify__overlay-layer-bg-color: trasparent;
+	--flatify__overlay-layer-backdrop-filter: grayscale(100%) contrast(140%) brightness(85%);
 }
 ```
