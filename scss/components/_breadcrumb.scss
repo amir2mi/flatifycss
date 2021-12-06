@@ -13,7 +13,10 @@
 	list-style: none;
 	padding: 0;
 	margin: 0.5em 0;
-	background: transparent !important;
+
+	&[class*="style-"] {
+		background: transparent !important;
+	}
 
 	.breadcrumb-item {
 		overflow: hidden;
