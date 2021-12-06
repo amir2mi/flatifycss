@@ -55,11 +55,15 @@
 	}
 }
 
-// change link text color for color setter classes
 [class*="style-"] {
+	// change link text color for color setter classes
 	--#{$CSS_VAR_PFX}link-color: var(--#{$CSS_VAR_PFX}local-txt-color);
 	--#{$CSS_VAR_PFX}link-color__hover: var(--#{$CSS_VAR_PFX}local-txt-color);
 	--#{$CSS_VAR_PFX}link-color__focus: var(--#{$CSS_VAR_PFX}local-txt-color);
+	// accent color
+	--#{$CSS_VAR_PFX}color-accent-light: var(--#{$CSS_VAR_PFX}local-border-color);
+	--#{$CSS_VAR_PFX}color-accent-primary: var(--#{$CSS_VAR_PFX}local-border-color-dark);
+	--#{$CSS_VAR_PFX}color-accent-dark: var(--#{$CSS_VAR_PFX}local-border-color-dark);
 }
 
 // .color-[color] is a text color setter

@@ -3105,6 +3105,9 @@ textarea:not(.default) {
   --flatify__link-color: var(--flatify__local-txt-color);
   --flatify__link-color__hover: var(--flatify__local-txt-color);
   --flatify__link-color__focus: var(--flatify__local-txt-color);
+  --flatify__color-accent-light: var(--flatify__local-border-color);
+  --flatify__color-accent-primary: var(--flatify__local-border-color-dark);
+  --flatify__color-accent-dark: var(--flatify__local-border-color-dark);
 }
 
 .color-blue {

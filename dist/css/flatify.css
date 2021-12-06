@@ -329,6 +329,7 @@ a:not(.button) {
   color: var(--flatify__link-color);
   -webkit-text-decoration: var(--flatify__link-decoration);
           text-decoration: var(--flatify__link-decoration);
+  text-underline-position: under;
   -webkit-transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
   -o-transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
   transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
@@ -1058,6 +1059,8 @@ th {
   list-style: none;
   padding: 0;
   margin: 0.5em 0;
+}
+.breadcrumb[class*=style-] {
   background: transparent !important;
 }
 .breadcrumb .breadcrumb-item {
@@ -3690,7 +3693,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-blue-dark) !important;
   --flatify__local-border-color: var(--flatify__color-blue-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-blue-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-blue-darker);
 }
 
 .style-blue-light {
@@ -3701,7 +3703,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-blue-primary) !important;
   --flatify__local-border-color: var(--flatify__color-blue-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-blue-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-blue-dark);
 }
 
 .style-green {
@@ -3712,7 +3713,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-green-dark) !important;
   --flatify__local-border-color: var(--flatify__color-green-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-green-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-green-darker);
 }
 
 .style-green-light {
@@ -3723,7 +3723,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-green-primary) !important;
   --flatify__local-border-color: var(--flatify__color-green-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-green-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-green-dark);
 }
 
 .style-yellow {
@@ -3734,7 +3733,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-yellow-dark) !important;
   --flatify__local-border-color: var(--flatify__color-yellow-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-yellow-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-yellow-darker);
 }
 
 .style-yellow-light {
@@ -3745,7 +3743,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-yellow-primary) !important;
   --flatify__local-border-color: var(--flatify__color-yellow-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-yellow-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-yellow-dark);
 }
 
 .style-orange {
@@ -3756,7 +3753,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-orange-dark) !important;
   --flatify__local-border-color: var(--flatify__color-orange-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-orange-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-orange-darker);
 }
 
 .style-orange-light {
@@ -3767,7 +3763,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-orange-primary) !important;
   --flatify__local-border-color: var(--flatify__color-orange-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-orange-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-orange-dark);
 }
 
 .style-red {
@@ -3778,7 +3773,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-red-dark) !important;
   --flatify__local-border-color: var(--flatify__color-red-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-red-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-red-darker);
 }
 
 .style-red-light {
@@ -3789,7 +3783,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-red-primary) !important;
   --flatify__local-border-color: var(--flatify__color-red-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-red-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-red-dark);
 }
 
 .style-pink {
@@ -3800,7 +3793,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-pink-dark) !important;
   --flatify__local-border-color: var(--flatify__color-pink-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-pink-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-pink-darker);
 }
 
 .style-pink-light {
@@ -3811,7 +3803,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-pink-primary) !important;
   --flatify__local-border-color: var(--flatify__color-pink-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-pink-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-pink-dark);
 }
 
 .style-purple {
@@ -3822,7 +3813,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-purple-dark) !important;
   --flatify__local-border-color: var(--flatify__color-purple-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-purple-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-purple-darker);
 }
 
 .style-purple-light {
@@ -3833,7 +3823,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-purple-primary) !important;
   --flatify__local-border-color: var(--flatify__color-purple-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-purple-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-purple-dark);
 }
 
 .style-accent {
@@ -3844,7 +3833,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-accent-dark) !important;
   --flatify__local-border-color: var(--flatify__color-accent-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-accent-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-accent-darker);
 }
 
 .style-accent-light {
@@ -3855,7 +3843,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-accent-primary) !important;
   --flatify__local-border-color: var(--flatify__color-accent-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-accent-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-accent-dark);
 }
 
 .style-success {
@@ -3866,7 +3853,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-success-dark) !important;
   --flatify__local-border-color: var(--flatify__color-success-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-success-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-success-darker);
 }
 
 .style-success-light {
@@ -3877,7 +3863,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-success-primary) !important;
   --flatify__local-border-color: var(--flatify__color-success-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-success-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-success-dark);
 }
 
 .style-info {
@@ -3888,7 +3873,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-info-dark) !important;
   --flatify__local-border-color: var(--flatify__color-info-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-info-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-info-darker);
 }
 
 .style-info-light {
@@ -3899,7 +3883,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-info-primary) !important;
   --flatify__local-border-color: var(--flatify__color-info-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-info-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-info-dark);
 }
 
 .style-warning {
@@ -3910,7 +3893,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-warning-dark) !important;
   --flatify__local-border-color: var(--flatify__color-warning-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-warning-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-warning-darker);
 }
 
 .style-warning-light {
@@ -3921,7 +3903,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-warning-primary) !important;
   --flatify__local-border-color: var(--flatify__color-warning-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-warning-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-warning-dark);
 }
 
 .style-danger {
@@ -3932,7 +3913,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-danger-dark) !important;
   --flatify__local-border-color: var(--flatify__color-danger-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-danger-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-danger-darker);
 }
 
 .style-danger-light {
@@ -3943,7 +3923,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-danger-primary) !important;
   --flatify__local-border-color: var(--flatify__color-danger-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-danger-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-danger-dark);
 }
 
 .style-light {
@@ -3954,7 +3933,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-light-dark) !important;
   --flatify__local-border-color: var(--flatify__color-light-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-light-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-light-darker);
 }
 
 .style-light-light {
@@ -3965,7 +3943,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-light-primary) !important;
   --flatify__local-border-color: var(--flatify__color-light-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-light-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-light-dark);
 }
 
 .style-dark {
@@ -3976,7 +3953,6 @@ textarea:not(.default) {
   border-color: var(--flatify__color-dark-dark) !important;
   --flatify__local-border-color: var(--flatify__color-dark-dark) !important;
   --flatify__local-border-color-dark: var(--flatify__color-dark-darker) !important;
-  --flatify__color-accent-primary: var(--flatify__color-dark-darker);
 }
 
 .style-dark-light {
@@ -3987,7 +3963,15 @@ textarea:not(.default) {
   border-color: var(--flatify__color-dark-primary) !important;
   --flatify__local-border-color: var(--flatify__color-dark-primary) !important;
   --flatify__local-border-color-dark: var(--flatify__color-dark-dark) !important;
-  --flatify__color-accent-primary: var(--flatify__color-dark-dark);
+}
+
+[class*=style-] {
+  --flatify__link-color: var(--flatify__local-txt-color);
+  --flatify__link-color__hover: var(--flatify__local-txt-color);
+  --flatify__link-color__focus: var(--flatify__local-txt-color);
+  --flatify__color-accent-light: var(--flatify__local-border-color);
+  --flatify__color-accent-primary: var(--flatify__local-border-color-dark);
+  --flatify__color-accent-dark: var(--flatify__local-border-color-dark);
 }
 
 .color-blue {
