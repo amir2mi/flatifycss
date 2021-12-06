@@ -3575,7 +3575,7 @@ textarea:not(.default) {
   --flatify__overlay-layer-priority: 10;
   --flatify__overlay-layer-bg-color: var(--flatify__bg-color);
   --flatify__overlay-layer-opacity: 1;
-  --flatify__overlay-layer-blending-mode: normal;
+  --flatify__overlay-layer-blending-mode: none;
   --flatify__overlay-layer-backdrop-filter: none;
 }
 
