@@ -20,12 +20,12 @@ const webpack = require("webpack-stream");
 
 // File path variables
 const files = {
-	scssMain: "scss/**/*.scss",
+	sassMain: "scss/**/*.scss",
 	jsMain: "js/**/*js",
 };
 
 // Task creators
-function scssTask(file, fileName, minify = true, prefixed = true) {
+function sassTask(file, fileName, minify = true, prefixed = true) {
 	let postcssPlugins = [];
 	if (minify) {
 		postcssPlugins.push(cssnano());
@@ -96,12 +96,13 @@ function watchTask(filesArr, tasksArr) {
 	}
 }
 
-// Tasks
-const mainScssTask__noprefix = () => scssTask(files.scssMain, distFileName, false, false); // dev
-const mainScssTask__prefixed = () => scssTask(files.scssMain, distFileName, false, true);
-const mainScssTask__minified__noprefix = () => scssTask(files.scssMain, distFileName, true, false);
-const mainScssTask__minified__prefixed = () => scssTask(files.scssMain, distFileName, true, true); // production
+// SASS tasks
+const mainSassTask__noprefix = () => sassTask(files.sassMain, distFileName, false, false); // dev
+const mainSassTask__prefixed = () => sassTask(files.sassMain, distFileName, false, true);
+const mainSassTask__minified__noprefix = () => sassTask(files.sassMain, distFileName, true, false);
+const mainSassTask__minified__prefixed = () => sassTask(files.sassMain, distFileName, true, true); // production
 
+// JavaScript tasks
 const mainJsTask_dev = () => jsTask(files.jsMain, distFileName, false, false);
 const mainJsTask_production = () => jsTask(files.jsMain, distFileName, false, true);
 const mainJsTask__minified_production = () => jsTask(files.jsMain, distFileName, true, true);
@@ -110,18 +111,18 @@ const bumpVersionDefault = () => bumper(bumpVersionFiles, "prerelease");
 const bumpVersionRelease = () => bumper(bumpVersionFiles, "patch");
 
 // Watch
-const defaultWatchTasks = () => watchTask([files.scssMain, files.jsMain], [mainScssTask__noprefix, mainJsTask_dev]);
-exports.watch = series(parallel(mainScssTask__noprefix, mainJsTask_dev), defaultWatchTasks);
+const defaultWatchTasks = () => watchTask([files.sassMain, files.jsMain], [mainSassTask__noprefix, mainJsTask_dev]);
+exports.watch = series(parallel(mainSassTask__noprefix, mainJsTask_dev), defaultWatchTasks);
 
 // Default
 exports.default = series(
 	parallel(
 		bumpVersionDefault,
 		// css
-		mainScssTask__noprefix,
-		mainScssTask__prefixed,
-		mainScssTask__minified__noprefix,
-		mainScssTask__minified__prefixed,
+		mainSassTask__noprefix,
+		mainSassTask__prefixed,
+		mainSassTask__minified__noprefix,
+		mainSassTask__minified__prefixed,
 		// js
 		mainJsTask_production,
 		mainJsTask__minified_production
@@ -133,10 +134,10 @@ exports.release = series(
 	parallel(
 		bumpVersionRelease,
 		// css
-		mainScssTask__noprefix,
-		mainScssTask__prefixed,
-		mainScssTask__minified__noprefix,
-		mainScssTask__minified__prefixed,
+		mainSassTask__noprefix,
+		mainSassTask__prefixed,
+		mainSassTask__minified__noprefix,
+		mainSassTask__minified__prefixed,
 		// js
 		mainJsTask_production,
 		mainJsTask__minified_production
