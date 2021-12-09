@@ -88,7 +88,7 @@ function jsTask(file, fileName, minify = true, production = true) {
 		.pipe(dest("dist/js"));
 }
 
-// calcuate the next version
+// calculate the next version
 function nextVersion(type = "patch") {
 	const pkg = JSON.parse(fs.readFileSync(bumpVersionFiles[0], "utf8"));
 	return semver.inc(pkg.version, argv.type || type);
@@ -115,7 +115,8 @@ function commitAll(desc) {
 
 // Add git tag for current version
 function addGitVersionTag(type, desc) {
-	git.tag(`v${argv.ver || nextVersion(type)}`, argv.desc || desc);
+	const pkg = JSON.parse(fs.readFileSync(bumpVersionFiles[0], "utf8"));
+	git.tag(`v${argv.ver || pkg.version}`, argv.desc || desc);
 }
 
 // Watch task
