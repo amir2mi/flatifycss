@@ -939,6 +939,7 @@ th {
   position: absolute;
   top: 0.75em;
   right: 0.75em;
+  background: transparent !important;
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);

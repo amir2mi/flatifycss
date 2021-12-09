@@ -903,6 +903,7 @@ th {
   position: absolute;
   top: 0.75em;
   right: 0.75em;
+  background: transparent !important;
   transform: scale(0);
 }
 .alert .close-button.floating:after {

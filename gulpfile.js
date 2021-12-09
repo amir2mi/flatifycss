@@ -49,11 +49,11 @@ function scssTask(file, fileName, minify = true, prefixed = true) {
 		.pipe(dest("dist/css"));
 }
 
-function jsTask(file, fileName, minify = true) {
+function jsTask(file, fileName, minify = true, production = true) {
 	return src(file)
 		.pipe(
 			webpack({
-				mode: "development",
+				mode: production ? "production" : "development",
 			})
 		)
 		.pipe(sourcemaps.init())
@@ -84,11 +84,12 @@ const mainScssTask__prefixed = () => scssTask(files.scssMain, distFileName, fals
 const mainScssTask__minified__noprefix = () => scssTask(files.scssMain, distFileName, true, false);
 const mainScssTask__minified__prefixed = () => scssTask(files.scssMain, distFileName, true, true); // production
 
-const mainJsTask = () => jsTask(files.jsMain, distFileName, false);
-const mainJsTask__minified = () => jsTask(files.jsMain, distFileName, true);
+const mainJsTask_dev = () => jsTask(files.jsMain, distFileName, false, false);
+const mainJsTask_production = () => jsTask(files.jsMain, distFileName, false, true);
+const mainJsTask__minified_production = () => jsTask(files.jsMain, distFileName, true, true);
 
 // Watch
-const defaultWatchTasks = () => watchTask([files.scssMain, files.jsMain], [mainScssTask__noprefix, mainJsTask]);
+const defaultWatchTasks = () => watchTask([files.scssMain, files.jsMain], [mainScssTask__noprefix, mainJsTask_dev]);
 
 // Default
 exports.default = series(
@@ -99,8 +100,8 @@ exports.default = series(
 		mainScssTask__minified__noprefix,
 		mainScssTask__minified__prefixed,
 		// js
-		mainJsTask,
-		mainJsTask__minified
+		mainJsTask_production,
+		mainJsTask__minified_production
 	)
 );
-exports.watch = series(parallel(mainScssTask__noprefix, mainJsTask), defaultWatchTasks);
+exports.watch = series(parallel(mainScssTask__noprefix, mainJsTask_dev), defaultWatchTasks);

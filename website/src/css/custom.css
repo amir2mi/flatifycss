@@ -320,3 +320,14 @@ div[class*="toggleTrack_"],
 	font-size: 0.8em;
 	margin-top: 0.25em;
 }
+.menu__list .menu__list {
+	padding: 0  0 10px 10px;
+	margin-bottom: 20px;
+	border-left: var(--docus-bd);
+	border-bottom: var(--docus-bd);
+	border-bottom-color: transparent !important;
+	border-radius: 0 0 0 20px;
+}
+.menu__list .menu__list a {
+	font-weight: 600 !important;
+}
