@@ -1,5 +1,6 @@
 {
 	"name": "FlatifyCSS",
+	"version": "0.6.0",
 	"enableLogging": true,
 	"isLTR": true,
 	"dropdownOffset": [0, 20],
