@@ -162,17 +162,15 @@ exports.default = series(
 
 // Release
 exports.release = series(
-	parallel(
-		bumpVersionRelease,
-		// css
-		mainSassTask__noprefix,
-		mainSassTask__prefixed,
-		mainSassTask__minified__noprefix,
-		mainSassTask__minified__prefixed,
-		// js
-		mainJsTask_production,
-		mainJsTask__minified_production,
-		commitAll,
-		addReleaseTag
-	)
+	bumpVersionRelease,
+	// css
+	mainSassTask__noprefix,
+	mainSassTask__prefixed,
+	mainSassTask__minified__noprefix,
+	mainSassTask__minified__prefixed,
+	// js
+	mainJsTask_production,
+	mainJsTask__minified_production,
+	commitAll,
+	addReleaseTag
 );
