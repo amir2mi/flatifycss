@@ -2,7 +2,7 @@
 const distFileName = "flatify";
 const bumpVersionFiles = ["./package.json"];
 
-const { src, dest, watch, series, parallel } = require("gulp");
+const { src, dest, watch, series, parallel, task } = require("gulp");
 const argv = require("yargs").argv;
 const autoprefixer = require("autoprefixer");
 const babel = require("gulp-babel");
@@ -88,23 +88,30 @@ function jsTask(file, fileName, minify = true, production = true) {
 		.pipe(dest("dist/js"));
 }
 
+// give the next version
+function nextVersion(type = "patch") {
+	const pkg = JSON.parse(fs.readFileSync(bumpVersionFiles[0], "utf8"));
+	return semver.inc(pkg.version, argv.type || type);
+}
+
 // bump version
 function bumper(files, type = "patch", value) {
 	// command gulp release --ver 1.0.0
 	// OR
 	// command gulp release --type major | minor | patch | prerelease
-	const pkg = JSON.parse(fs.readFileSync(files[0], "utf8"));
-	const newVer = semver.inc(pkg.version, argv.type || type);
-
 	return src(files)
-		.pipe(bump({ version: value || argv.ver || newVer }))
+		.pipe(bump({ version: value || argv.ver || nextVersion(type) }))
 		.pipe(dest("./"));
 }
 
 // Git tasks
-// create a new tag on Gulp release
-function addVersionTag(version) {
-	return git.tag(version, "Version message with signed key", { signed: true });
+function addCommitAll(type, desc) {
+	return gulp.src('./')
+    .pipe(git.add({args: '-A'}));
+}
+
+function addGitVersionTag(type, desc) {
+	git.tag(`v${nextVersion(type)}`, argv.desc || desc);
 }
 
 // Watch task
@@ -125,6 +132,10 @@ const mainJsTask__minified_production = () => jsTask(files.jsMain, distFileName,
 
 const bumpVersionDefault = () => bumper(bumpVersionFiles, "prerelease");
 const bumpVersionRelease = () => bumper(bumpVersionFiles, "patch");
+const addReleaseTag = (done) => {
+	addGitVersionTag("patch");
+	done();
+};
 
 // Watch
 const defaultWatchTasks = () => watchTask([files.sassMain, files.jsMain], [mainSassTask__noprefix, mainJsTask_dev]);
@@ -156,6 +167,7 @@ exports.release = series(
 		mainSassTask__minified__prefixed,
 		// js
 		mainJsTask_production,
-		mainJsTask__minified_production
+		mainJsTask__minified_production,
+		addReleaseTag
 	)
 );
