@@ -88,7 +88,7 @@ function jsTask(file, fileName, minify = true, production = true) {
 		.pipe(dest("dist/js"));
 }
 
-// give the next version
+// calcuate the next version
 function nextVersion(type = "patch") {
 	const pkg = JSON.parse(fs.readFileSync(bumpVersionFiles[0], "utf8"));
 	return semver.inc(pkg.version, argv.type || type);
@@ -105,14 +105,17 @@ function bumper(files, type = "patch", value) {
 }
 
 // Git tasks
+// set description for release commit with --desc command
+// if description is empty it will not commit
 function commitAll(desc) {
 	return src("./")
 		.pipe(git.add({ args: "-A" }))
 		.pipe(git.commit(argv.desc || desc));
 }
 
+// Add git tag for current version
 function addGitVersionTag(type, desc) {
-	git.tag(`v${nextVersion(type)}`, argv.desc || desc);
+	git.tag(`v${argv.ver || nextVersion(type)}`, argv.desc || desc);
 }
 
 // Watch task
@@ -153,7 +156,7 @@ exports.default = series(
 		mainSassTask__minified__prefixed,
 		// js
 		mainJsTask_production,
-		mainJsTask__minified_production,
+		mainJsTask__minified_production
 	)
 );
 
