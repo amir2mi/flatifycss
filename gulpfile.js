@@ -2,13 +2,15 @@
 const distFileName = "flatify";
 const bumpVersionFiles = ["./package.json"];
 
-const { src, dest, watch, series, parallel, task } = require("gulp");
+const { src, dest, watch, series, parallel } = require("gulp");
 const argv = require("yargs").argv;
 const autoprefixer = require("autoprefixer");
+const babel = require("gulp-babel");
 const bump = require("gulp-bump");
 const cssnano = require("cssnano");
 const concat = require("gulp-concat");
 const fs = require("fs");
+const git = require("gulp-git");
 const noop = require("gulp-noop");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
@@ -54,15 +56,25 @@ function sassTask(file, fileName, minify = true, prefixed = true) {
 		.pipe(dest("dist/css"));
 }
 
-function jsTask(file, fileName, minify = true, production = true, isLtr = true) {
+function jsTask(file, fileName, minify = true, production = true) {
 	return src(file)
 		.pipe(
 			webpack({
 				mode: production ? "production" : "development",
+				optimization: {
+					minimize: minify,
+				},
 			})
 		)
 		.pipe(sourcemaps.init())
 		.pipe(concat(fileName))
+		.pipe(
+			production
+				? babel({
+						presets: ["@babel/env"],
+				  })
+				: noop()
+		)
 		.pipe(minify ? uglify() : noop())
 		.pipe(
 			rename((file) => {
@@ -89,11 +101,15 @@ function bumper(files, type = "patch", value) {
 		.pipe(dest("./"));
 }
 
+// Git tasks
+// create a new tag on Gulp release
+function addVersionTag(version) {
+	return git.tag(version, "Version message with signed key", { signed: true });
+}
+
 // Watch task
 function watchTask(filesArr, tasksArr) {
-	if (filesArr && tasksArr) {
-		watch(filesArr, parallel(...tasksArr));
-	}
+	watch(filesArr, parallel(...tasksArr));
 }
 
 // SASS tasks
@@ -143,4 +159,3 @@ exports.release = series(
 		mainJsTask__minified_production
 	)
 );
-

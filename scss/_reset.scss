@@ -243,7 +243,8 @@ a:not(.button) {
 	color: var(--#{$CSS_VAR_PFX}link-color);
 	text-decoration: var(--#{$CSS_VAR_PFX}link-decoration);
 	text-underline-position: under;
-	transition: color var(--#{$CSS_VAR_PFX}simple-transition), background var(--#{$CSS_VAR_PFX}simple-transition);
+	transition: color var(--#{$CSS_VAR_PFX}simple-transition), background var(--#{$CSS_VAR_PFX}simple-transition),
+		border var(--#{$CSS_VAR_PFX}simple-transition);
 
 	&:hover {
 		color: var(--#{$CSS_VAR_PFX}link-color__hover);

@@ -327,7 +327,7 @@ a:not(.button) {
   -webkit-text-decoration: var(--flatify__link-decoration);
           text-decoration: var(--flatify__link-decoration);
   text-underline-position: under;
-  transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition);
+  transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition), border var(--flatify__simple-transition);
 }
 a:not(.button):hover {
   color: var(--flatify__link-color__hover);
