@@ -105,9 +105,10 @@ function bumper(files, type = "patch", value) {
 }
 
 // Git tasks
-function addCommitAll(type, desc) {
-	return gulp.src('./')
-    .pipe(git.add({args: '-A'}));
+function commitAll(desc) {
+	return src("./")
+		.pipe(git.add({ args: "-A" }))
+		.pipe(git.commit(argv.desc || desc));
 }
 
 function addGitVersionTag(type, desc) {
@@ -152,7 +153,7 @@ exports.default = series(
 		mainSassTask__minified__prefixed,
 		// js
 		mainJsTask_production,
-		mainJsTask__minified_production
+		mainJsTask__minified_production,
 	)
 );
 
@@ -168,6 +169,7 @@ exports.release = series(
 		// js
 		mainJsTask_production,
 		mainJsTask__minified_production,
+		commitAll,
 		addReleaseTag
 	)
 );
