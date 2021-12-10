@@ -1819,16 +1819,17 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   --flatify__progress-bg-color: var(--flatify__bg-color);
   --flatify__progress-txt-color: var(--flatify__txt-color-inverted);
   --flatify__progress-border-color: var(--flatify__bg-color-darker);
-  --flatify__progress-animation-duration: 3s;
+  --flatify__progress-animation-duration: 2.5s;
 }
 
 .progress {
+  --flatify__local-txt-color: var(--flatify__progress-txt-color);
   overflow: hidden;
   display: block;
   width: 100%;
   padding: 0.25em;
   margin: 0.5em 0;
-  color: var(--flatify__progress-txt-color);
+  color: var(--flatify__local-txt-color);
   background: var(--flatify__progress-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__progress-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.75);
@@ -1836,10 +1837,10 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .progress .progress-bar {
   overflow: hidden;
   position: relative;
-  font-size: 0.9em;
+  font-size: 0.75em;
   min-height: 0.75em;
   padding: 0.125em 0.5em;
-  color: inherit;
+  color: var(--flatify__local-txt-color);
   background: var(--flatify__color-accent-primary);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
 }
@@ -1852,7 +1853,6 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   width: 100%;
   height: 110%;
   background: var(--flatify__color-accent-light);
-  mix-blend-mode: color-dodge;
   animation: flatify-processing linear var(--flatify__progress-animation-duration) infinite;
 }
 
@@ -2650,11 +2650,8 @@ textarea:not(.default) {
 }
 @keyframes flatify-processing {
   from {
-    opacity: 0.6;
+    opacity: 0.85;
     transform: scaleX(0);
-  }
-  90% {
-    opacity: 0;
   }
   100% {
     opacity: 0;

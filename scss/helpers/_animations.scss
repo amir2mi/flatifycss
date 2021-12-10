@@ -108,11 +108,8 @@
 // Progress bar processing
 @keyframes flatify-processing {
 	from {
-		opacity: 0.6;
+		opacity: 0.85;
 		transform: scaleX(0);
-	}
-	90% {
-		opacity: 0;
 	}
 	100% {
 		opacity: 0;
