@@ -24,7 +24,7 @@
 		padding: 0.125em 0.5em;
 		color: inherit;
 		background: var(--#{$CSS_VAR_PFX}color-accent-primary);
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.6);
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 	}
 
 	&.processing {
