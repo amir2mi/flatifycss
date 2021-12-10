@@ -2776,6 +2776,11 @@ textarea:not(.default) {
           animation: flatify-heart 1s ease 2 !important;
 }
 
+.anim-pulse {
+  -webkit-animation: flatify-pulse ease 1.5s !important;
+          animation: flatify-pulse ease 1.5s !important;
+}
+
 .anim-fade-in {
   -webkit-animation: flatify-fade-in 0.3s ease !important;
           animation: flatify-fade-in 0.3s ease !important;

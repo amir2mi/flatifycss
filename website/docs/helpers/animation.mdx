@@ -6,24 +6,92 @@ sidebar_position: 1
 import PreviewBox from "../../src/components/preview-box";
 
 FlatifyCSS comes with a couple of built-in CSS animations.  
-Generally, components use these animations to work as expected, however, you can use them as well!
+Generally, components use these animations to work as expected, however, you can use them as well!  
+Before startign on it is necessary to learn about CSS animations, [read more here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations).
+
+## Animations
+
+All available animations are listed below by their names, you can set them to the element that you wish like this:
+
+```css title="style.css"
+animation: my-animation-name ease 1s infinite;
+```
+
+### Fade
+
+`flatify-fade-in`  
+`flatify-fade-in-out`  
+`flatify-backdrop-fade-in` (Fade in - the final opacity is `--flatify__backdrop-opacity`)  
+`flatify-fade-out`
+
+### Scale
+
+`flatify-grow`  
+`flatify-grow-x`  
+`flatify-grow-y`
+
+`flatify-blow-in`  
+`flatify-blow-out`
+
+`flatify-heart`
+`flatify-pulse`
+
+### Rotation
+
+`flatify-spin`
+
+### Movement
+
+`flatify-slide-up-in`  
+`flatify-slide-up-out`
+
+`flatify-slide-down-in`  
+`flatify-slide-down-out`
+
+`flatify-slide-left-in`  
+`flatify-slide-left-out`  
+`flatify-slide-left-in-min`  
+`flatify-slide-left-out-min`
+
+`flatify-slide-right-in`  
+`flatify-slide-right-out`  
+`flatify-slide-right-in-min`  
+`flatify-slide-right-out-min`
+
+### Misc
+
+These animations are just special to thier usecases:
+
+`flatify-processing` The animation for [progress bar processing state](/docs/components/progress#processing).  
+`flatify-alert-will-be-removed`  
+`flatify-dropdown-show`  
+`flatify-dropdown-hide`
 
 ## Helper classes
-So it is possible to change animation state with helper classes, for example play, pause or stop.
+
+It is possible to change the animation state with helper classes, for example, play, pause, or stop.
 
 These are helper classes that you can use:  
 `.no-transition` Remove transition for an element.  
-`.no-animation` Remove aniamtion for an element.  
+`.no-animation` Remove aniamtion for an element.
 
-`.play-animation` Play current animation   
-`.pause-animation` Pause current animation   
-`.stop-animation` Stop the animation    
+`.play-animation` Play current animation  
+`.pause-animation` Pause current animation  
+`.stop-animation` Stop the animation
 
 ## Animation classes
-Some predefined classes help you set animations directly,
+
+Some predefined classes help you set animations directly:
+
+`.anim-spin` (infinite)  
+`.anim-heart` (infinite)  
+`.anim-required` Heart animation but repeats just two times.  
+`.anim-pulse`  
+`.anim-fade-in` (one time)  
+`.anim-fade-out` (one time)
 
 <PreviewBox
-	height="165px"
+	height="110px"
 	children='<!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -31,27 +99,36 @@ Some predefined classes help you set animations directly,
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Colors helper classes</title>
+		<title>Animations</title>
         <style>
             .my-box{
-                width: 200px;
-                height: 100px;
+                width: 3em;
+                height: 3em;
 				margin: 0.5em;
                 border: 0.25em solid;
-                border-radius: 1em;
+                border-radius: 0.5em;
+                animation-iteration-count: infinite !important;
+            }
+            @media (prefers-reduced-motion: reduce){
+                .my-box{
+                    animation: none !important;
+                }
+                 body:after{
+                     content: "These animations are not available for reduced motion users.";
+                     text-align: center;
+                     width: 100%;
+                     opacity: 0.7;
+                 }
             }
         </style>
 	</head>
-	<body class="flex-center">
-		<div class="my-box flex-center style-blue">
-			<p class="text-centered">Hello Everybody!</p>
-		</div>
-		<div class="my-box flex-center style-red">
-			<p class="text-centered">Hello Everybody!</p>
-		</div>
-		<div class="my-box flex-center style-green">
-			<p class="text-centered">Hello Everybody!</p>
-		</div>
+	<body class="flex-center" style="flex-wrap: wrap">
+		<div class="my-box flex-center style-accent anim-spin"></div>
+		<div class="my-box flex-center style-accent anim-heart"></div>
+		<div class="my-box flex-center style-accent anim-required"></div>
+		<div class="my-box flex-center style-accent anim-pulse"></div>
+		<div class="my-box flex-center style-accent anim-fade-in"></div>
+		<div class="my-box flex-center style-accent anim-fade-out"></div>
 	</body>
 </html>'
 />
