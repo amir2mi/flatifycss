@@ -109,7 +109,7 @@
   --flatify__select-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" fill="%23CED3D6" viewBox="0 -16 32 64"><path d="M23.805 17.56H8.2a.78.78 0 00-.552 1.332l7.803 7.802a.778.778 0 001.103 0l7.802-7.802a.78.78 0 00-.551-1.332zM8.2 14.44H23.82a.78.78 0 00.452-1.417l-7.718-7.717a.78.78 0 00-1.103 0l-7.803 7.802A.78.78 0 008.2 14.44z"></path></svg>');
   --flatify__simple-transition: 0.15s ease-in-out;
   --flatify__bouncing-transition: 0.35s cubic-bezier(0.59, -0.39, 0.36, 1.38);
-  --flatify__linear-transition: 0.2s ease;
+  --flatify__long-transition: 1s ease-in-out;
 }
 
 /*
@@ -1845,7 +1845,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   background: var(--flatify__color-accent-primary);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
   will-change: width, transform;
-  transition: width var(--flatify__linear-transition), transform var(--flatify__linear-transition);
+  transition: width var(--flatify__long-transition), transform var(--flatify__long-transition), background var(--flatify__simple-transition);
 }
 .progress.processing .progress-bar:before {
   content: " ";
@@ -3757,7 +3757,7 @@ body ::after {
   }
   body * {
     --flatify__simple-transition: 0s !important;
-    --flatify__linear-transition: 0s !important;
+    --flatify__long-transition: 0s !important;
     --flatify__bouncing-transition: 0s !important;
   }
   body .dropdown.show,

@@ -25,35 +25,47 @@ Note that the progress bar should be styled by its share for example if 25% of t
 	</head>
 	<body>
 		<div class="progress">
-			<div class="progress-bar dynamic-progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+			<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 		</div>
 		<div class="progress">
 			<div class="progress-bar width-75p" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
 		</div>
 		<div class="progress" style="margin-bottom: 0">
-			<div class="progress-bar width-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% is done...</div>
+			<div class="progress-bar flex-center dynamic-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Loading...</div>
 		</div>
 	</body>
 	<script>
 		var progress = document.querySelector(".dynamic-progress-bar");
 		progress.style.width = 0;
+		progress.setAttribute("aria-valuenow",0);
 		function setProgressbar(){
 			setTimeout(function(){
 				progress.style.width = "10%";
+				progress.setAttribute("aria-valuenow",10);
 				progress.closest(".progress").classList.add("processing");
+				progress.classList.remove("style-green");
 			},500);
 			setTimeout(function(){
 				progress.style.width = "15%";
+				progress.setAttribute("aria-valuenow",15);
 			},2000);
 			setTimeout(function(){
 				progress.style.width = "30%";
+				progress.setAttribute("aria-valuenow",30);
 			},3000);
 			setTimeout(function(){
-				progress.style.width = "80%";
+				progress.style.width = "90%";
+				progress.setAttribute("aria-valuenow",90);
+				setTimeout(function(){
+					progress.classList.add("style-red");
+				},4000);
 			},5000);
 			setTimeout(function(){
 				progress.style.width = "100%";
+				progress.setAttribute("aria-valuenow",100);
 				progress.closest(".progress").classList.remove("processing");
+				progress.classList.remove("style-red");
+				progress.classList.add("style-green");
 			},12000);
 		}
 		setInterval(setProgressbar,15000);
@@ -87,9 +99,9 @@ A comprehensive progress bar must have these attributes:
 	></div>
 </div>
 
-<div class="progress">
-	<div class="progress-bar width-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-		25% is done...
+<div class="progress" style="margin-bottom: 0">
+	<div class="progress-bar flex-center" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+		Loading...
 	</div>
 </div>
 ```
