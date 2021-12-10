@@ -12,13 +12,13 @@
 			top: 0.7em;
 			left: 0.16em;
 			z-index: 1;
-			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
-			animation: flatify-fade-in 0.35s;
 			width: 0.5em;
 			height: 0.22em;
 			background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 			transform: rotate(45deg);
+			animation: flatify-fade-in 0.35s;
 		}
 
 		&:after {

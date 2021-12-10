@@ -1815,6 +1815,22 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   animation: flatify-spin var(--flatify__loading-spinner-animation-duration) linear infinite;
 }
 
+.progress {
+  --flatify__local-border-color: var(--flatify__bg-color-darker);
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  margin: 0.5em 0;
+  background: var(--flatify__bg-color-dark);
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.75);
+}
+.progress .progress-bar {
+  font-size: 0.9em;
+  min-height: 0.75em;
+  padding: 0.125em 0.5em;
+  background: var(--flatify__color-accent-primary);
+}
 .search-bar {
   position: relative;
 }
@@ -2339,13 +2355,13 @@ input[type=button].button {
   top: 0.7em;
   left: 0.16em;
   z-index: 1;
-  border-radius: var(--flatify__border-radius);
-  transition: all var(--flatify__simple-transition);
-  animation: flatify-fade-in 0.35s;
   width: 0.5em;
   height: 0.22em;
   background: var(--flatify__form-element-border-color__valid);
+  border-radius: var(--flatify__border-radius);
+  transition: all var(--flatify__simple-transition);
   transform: rotate(45deg);
+  animation: flatify-fade-in 0.35s;
 }
 .checkbox-wrapper input:checked:not(:indeterminate) + .check:after {
   top: 0.52em;

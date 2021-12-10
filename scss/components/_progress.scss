@@ -1,0 +1,21 @@
+.progress {
+	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+    overflow: hidden;
+	display: block;
+	width: 100%;
+    margin: 0.5em 0;
+	background: var(--#{$CSS_VAR_PFX}bg-color-dark);
+	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+	border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
+
+	.progress-bar {
+        font-size: 0.9em;
+        min-height: 0.75em;
+        padding: 0.125em 0.5em;
+		background: var(--#{$CSS_VAR_PFX}color-accent-primary);
+
+        &.processing{
+            
+        }
+	}
+}
