@@ -37,6 +37,14 @@
 	animation: flatify-heart 1s ease 2 !important;
 }
 
+.anim-fade-in {
+	animation: flatify-fade-in 0.3s ease !important;
+}
+
+.anim-fade-out {
+	animation: flatify-fade-out 0.3s ease !important;
+}
+
 // A simple fade out animation,
 // it is a great choice for reduced-motion situations in [a11y.scss]
 @keyframes flatify-fade-in {

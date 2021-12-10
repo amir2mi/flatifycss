@@ -33,6 +33,7 @@
 
 	&.processing {
 		cursor: wait;
+        
 		.progress-bar {
 			&:before {
 				content: " ";

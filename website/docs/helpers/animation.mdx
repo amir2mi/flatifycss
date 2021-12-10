@@ -1,0 +1,57 @@
+---
+title: Animations
+sidebar_position: 1
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+FlatifyCSS comes with a couple of built-in CSS animations.  
+Generally, components use these animations to work as expected, however, you can use them as well!
+
+## Helper classes
+So it is possible to change animation state with helper classes, for example play, pause or stop.
+
+These are helper classes that you can use:  
+`.no-transition` Remove transition for an element.  
+`.no-animation` Remove aniamtion for an element.  
+
+`.play-animation` Play current animation   
+`.pause-animation` Pause current animation   
+`.stop-animation` Stop the animation    
+
+## Animation classes
+Some predefined classes help you set some animation
+
+<PreviewBox
+	height="165px"
+	children='<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Colors helper classes</title>
+        <style>
+            .my-box{
+                width: 200px;
+                height: 100px;
+				margin: 0.5em;
+                border: 0.25em solid;
+                border-radius: 1em;
+            }
+        </style>
+	</head>
+	<body class="flex-center">
+		<div class="my-box flex-center style-blue">
+			<p class="text-centered">Hello Everybody!</p>
+		</div>
+		<div class="my-box flex-center style-red">
+			<p class="text-centered">Hello Everybody!</p>
+		</div>
+		<div class="my-box flex-center style-green">
+			<p class="text-centered">Hello Everybody!</p>
+		</div>
+	</body>
+</html>'
+/>
