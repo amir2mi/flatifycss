@@ -29,13 +29,20 @@
 				animation-name: flatify-fade-in !important;
 			}
 		}
+
+		// Fade in out like a fresh breath
 		.loading {
-			animation: flatify-fade-in 2s infinite !important;
+			animation: flatify-fade-in-out 2s infinite !important;
+
 			&:before,
 			&:after {
 				opacity: 1 !important;
 				animation: none !important;
 			}
+		}
+		.progress-bar:before {
+			filter: opacity(60%);
+			animation: flatify-fade-in-out 3s infinite !important;
 		}
 
 		// Fade Out

@@ -1826,11 +1826,28 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   border-radius: calc(var(--flatify__border-radius) * 0.75);
 }
 .progress .progress-bar {
+  overflow: hidden;
+  position: relative;
   font-size: 0.9em;
   min-height: 0.75em;
   padding: 0.125em 0.5em;
+  color: var(--flatify__txt-color-inverted);
   background: var(--flatify__color-accent-primary);
+  border-radius: calc(var(--flatify__border-radius) * 0.6);
 }
+.progress.processing .progress-bar:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--flatify__color-accent-light);
+  mix-blend-mode: color-dodge;
+  left: 0;
+  transform-origin: left;
+  animation: flatify-processing linear 3s infinite;
+}
+
 .search-bar {
   position: relative;
 }
@@ -2575,6 +2592,17 @@ textarea:not(.default) {
     opacity: 1;
   }
 }
+@keyframes flatify-fade-in-out {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 @keyframes flatify-backdrop-fade-in {
   from {
     opacity: 0;
@@ -2610,6 +2638,19 @@ textarea:not(.default) {
   }
   to {
     transform: scaleY(1);
+  }
+}
+@keyframes flatify-processing {
+  from {
+    opacity: 0.6;
+    transform: scaleX(0);
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(1);
   }
 }
 @keyframes flatify-blow-in {
@@ -3719,11 +3760,15 @@ body .tab-panel.show {
     animation-name: flatify-fade-in !important;
   }
   body .loading {
-    animation: flatify-fade-in 2s infinite !important;
+    animation: flatify-fade-in-out 2s infinite !important;
   }
   body .loading:before, body .loading:after {
     opacity: 1 !important;
     animation: none !important;
+  }
+  body .progress-bar:before {
+    filter: opacity(60%);
+    animation: flatify-fade-in-out 3s infinite !important;
   }
   body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden, body .show.tab-will-be-hidden {
     animation-name: flatify-fade-out !important;

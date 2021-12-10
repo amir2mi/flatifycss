@@ -48,6 +48,18 @@
 	}
 }
 
+@keyframes flatify-fade-in-out {
+	from {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
 // Fade in animation for backdrop, it will set the backdrop opacity instead of static value.
 @keyframes flatify-backdrop-fade-in {
 	from {
@@ -90,6 +102,21 @@
 	}
 	to {
 		transform: scaleY(1);
+	}
+}
+
+// Progress bar processing
+@keyframes flatify-processing {
+	from {
+		opacity: 0.6;
+		transform: scaleX(0);
+	}
+	90% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+		transform: scaleX(1);
 	}
 }
 
