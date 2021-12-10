@@ -1,6 +1,6 @@
 :root {
 	--#{$CSS_VAR_PFX}progress-bg-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
-	--#{$CSS_VAR_PFX}progress-txt-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+	--#{$CSS_VAR_PFX}progress-txt-color: var(--#{$CSS_VAR_PFX}txt-color-inverted);
 	--#{$CSS_VAR_PFX}progress-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 	--#{$CSS_VAR_PFX}progress-animation-duration: 3s;
 }

@@ -1926,7 +1926,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 
 :root {
   --flatify__progress-bg-color: var(--flatify__bg-color-darker);
-  --flatify__progress-txt-color: var(--flatify__bg-color-darker);
+  --flatify__progress-txt-color: var(--flatify__txt-color-inverted);
   --flatify__progress-border-color: var(--flatify__bg-color-darker);
   --flatify__progress-animation-duration: 3s;
 }
