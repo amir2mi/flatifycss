@@ -1956,6 +1956,9 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   will-change: width, transform;
   transition: width var(--flatify__long-transition), transform var(--flatify__long-transition), background var(--flatify__simple-transition);
 }
+.progress.processing {
+  cursor: wait;
+}
 .progress.processing .progress-bar:before {
   content: " ";
   position: absolute;

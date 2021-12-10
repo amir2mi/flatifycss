@@ -12,7 +12,7 @@ To have a progress component we must have two elements: `.progress` and inside i
 Note that the progress bar should be styled by its share for example if 25% of the job is done you should set `width: 25%` or use [width setter helper classes](/docs/helpers/width-and-height-setters).
 
 <PreviewBox
-	height="140px"
+	height="270px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -33,43 +33,73 @@ Note that the progress bar should be styled by its share for example if 25% of t
 		<div class="progress" style="margin-bottom: 0">
 			<div class="progress-bar flex-center dynamic-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Loading...</div>
 		</div>
+		<div class="logger" style="padding: 10px"></div>
 	</body>
 	<script>
 		var progress = document.querySelector(".dynamic-progress-bar");
+		var logger = document.querySelector(".logger");
 		progress.style.width = 0;
 		progress.setAttribute("aria-valuenow",0);
-		function setProgressbar(){
-			setTimeout(function(){
+		function setProgressBar() {
+			setTimeout(function () {
 				progress.style.width = "10%";
-				progress.setAttribute("aria-valuenow",10);
+				progress.setAttribute("aria-valuenow", 10);
 				progress.closest(".progress").classList.add("processing");
 				progress.classList.remove("style-green");
-			},500);
-			setTimeout(function(){
+				logger.innerHTML = `
+				width: 10% <br>
+				aria-valuenow: 10 <br>
+				Added ".processing" class <br>
+				Removed ".style-green" class <br>
+				`;
+			}, 500);
+			setTimeout(function () {
 				progress.style.width = "15%";
-				progress.setAttribute("aria-valuenow",15);
-			},2000);
-			setTimeout(function(){
+				progress.setAttribute("aria-valuenow", 15);
+				logger.innerHTML = `
+				width: 15% <br>
+				aria-valuenow: 15 <br>
+				`;
+			}, 2000);
+			setTimeout(function () {
 				progress.style.width = "30%";
-				progress.setAttribute("aria-valuenow",30);
-			},3000);
-			setTimeout(function(){
+				progress.setAttribute("aria-valuenow", 30);
+				logger.innerHTML = `
+				width: 30% <br>
+				aria-valuenow: 30 <br>
+				`;
+			}, 3000);
+			setTimeout(function () {
 				progress.style.width = "90%";
-				progress.setAttribute("aria-valuenow",90);
-				setTimeout(function(){
+				progress.setAttribute("aria-valuenow", 90);
+				logger.innerHTML = `
+				width: 90% <br>
+				aria-valuenow: 90 <br>
+				`;
+				setTimeout(function () {
 					progress.classList.add("style-red");
-				},4000);
-			},5000);
-			setTimeout(function(){
+					logger.innerHTML += `
+					Added ".style-red" class <br>
+					`;
+				}, 4000);
+			}, 5000);
+			setTimeout(function () {
 				progress.style.width = "100%";
-				progress.setAttribute("aria-valuenow",100);
+				progress.setAttribute("aria-valuenow", 100);
 				progress.closest(".progress").classList.remove("processing");
 				progress.classList.remove("style-red");
 				progress.classList.add("style-green");
-			},12000);
+				logger.innerHTML = `
+				width: 100% <br>
+				aria-valuenow: 100 <br>
+				Added ".style-green" class <br>
+				Removed ".style-red" class <br>
+				Removed ".processing" class <br>
+				`;
+			}, 12000);
 		}
-		setInterval(setProgressbar,15000);
-		setProgressbar();
+		setInterval(setProgressBar,15000);
+		setProgressBar();
 	</script>
 </html>
 '

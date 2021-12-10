@@ -27,10 +27,12 @@
 		background: var(--#{$CSS_VAR_PFX}color-accent-primary);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 		will-change: width, transform;
-		transition: width var(--#{$CSS_VAR_PFX}long-transition), transform var(--#{$CSS_VAR_PFX}long-transition), background var(--#{$CSS_VAR_PFX}simple-transition);
+		transition: width var(--#{$CSS_VAR_PFX}long-transition), transform var(--#{$CSS_VAR_PFX}long-transition),
+			background var(--#{$CSS_VAR_PFX}simple-transition);
 	}
 
 	&.processing {
+		cursor: wait;
 		.progress-bar {
 			&:before {
 				content: " ";
