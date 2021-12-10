@@ -1,15 +1,18 @@
-:root{
-`
+:root {
+	--#{$CSS_VAR_PFX}progress-bg-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+	--#{$CSS_VAR_PFX}progress-txt-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+	--#{$CSS_VAR_PFX}progress-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+	--#{$CSS_VAR_PFX}progress-animation-duration: 3s;
 }
 
 .progress {
-	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 	overflow: hidden;
 	display: block;
 	width: 100%;
 	margin: 0.5em 0;
-	background: var(--#{$CSS_VAR_PFX}bg-color-dark);
-	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+	color: var(--#{$CSS_VAR_PFX}progress-txt-color);
+	background: var(--#{$CSS_VAR_PFX}progress-bg-color);
+	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}progress-border-color);
 	border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
 
 	.progress-bar {
@@ -18,7 +21,7 @@
 		font-size: 0.9em;
 		min-height: 0.75em;
 		padding: 0.125em 0.5em;
-		color: var(--#{$CSS_VAR_PFX}txt-color-inverted);
+		color: inherit;
 		background: var(--#{$CSS_VAR_PFX}color-accent-primary);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.6);
 	}
@@ -42,7 +45,7 @@
 				height: 110%;
 				background: var(--#{$CSS_VAR_PFX}color-accent-light);
 				mix-blend-mode: color-dodge;
-				animation: flatify-processing linear 3s infinite;
+				animation: flatify-processing linear var(--#{$CSS_VAR_PFX}progress-animation-duration) infinite;
 			}
 		}
 	}

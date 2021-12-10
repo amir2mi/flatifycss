@@ -1815,14 +1815,21 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   animation: flatify-spin var(--flatify__loading-spinner-animation-duration) linear infinite;
 }
 
+:root {
+  --flatify__progress-bg-color: var(--flatify__bg-color-darker);
+  --flatify__progress-txt-color: var(--flatify__bg-color-darker);
+  --flatify__progress-border-color: var(--flatify__bg-color-darker);
+  --flatify__progress-animation-duration: 3s;
+}
+
 .progress {
-  --flatify__local-border-color: var(--flatify__bg-color-darker);
   overflow: hidden;
   display: block;
   width: 100%;
   margin: 0.5em 0;
-  background: var(--flatify__bg-color-dark);
-  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  color: var(--flatify__progress-txt-color);
+  background: var(--flatify__progress-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__progress-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.75);
 }
 .progress .progress-bar {
@@ -1831,7 +1838,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   font-size: 0.9em;
   min-height: 0.75em;
   padding: 0.125em 0.5em;
-  color: var(--flatify__txt-color-inverted);
+  color: inherit;
   background: var(--flatify__color-accent-primary);
   border-radius: calc(var(--flatify__border-radius) * 0.6);
 }
@@ -1845,7 +1852,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   height: 110%;
   background: var(--flatify__color-accent-light);
   mix-blend-mode: color-dodge;
-  animation: flatify-processing linear 3s infinite;
+  animation: flatify-processing linear var(--flatify__progress-animation-duration) infinite;
 }
 
 .search-bar {
