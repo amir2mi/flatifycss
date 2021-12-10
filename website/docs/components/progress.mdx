@@ -12,7 +12,7 @@ To have a progress component we must have two elements: `.progress` and inside i
 Note that the progress bar should be styled by its share for example if 25% of the job is done you should set `width: 25%` or use [width setter helper classes](/docs/helpers/width-and-height-setters).
 
 <PreviewBox
-	height="130px"
+	height="140px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +25,7 @@ Note that the progress bar should be styled by its share for example if 25% of t
 	</head>
 	<body>
 		<div class="progress">
-			<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+			<div class="progress-bar dynamic-progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 		</div>
 		<div class="progress">
 			<div class="progress-bar width-75p" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
@@ -34,6 +34,29 @@ Note that the progress bar should be styled by its share for example if 25% of t
 			<div class="progress-bar width-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% is done...</div>
 		</div>
 	</body>
+	<script>
+		var progress = document.querySelector(".dynamic-progress-bar");
+		progress.style.width = 0;
+		function setProgressbar(){
+			setTimeout(function(){
+				progress.style.width = "10%";
+			},500);
+			setTimeout(function(){
+				progress.style.width = "15%";
+			},2000);
+			setTimeout(function(){
+				progress.style.width = "30%";
+			},3000);
+			setTimeout(function(){
+				progress.style.width = "80%";
+			},5000);
+			setTimeout(function(){
+				progress.style.width = "100%";
+			},12000);
+		}
+		setInterval(setProgressbar,15000);
+		setProgressbar();
+	</script>
 </html>
 '
 />
@@ -74,7 +97,7 @@ A comprehensive progress bar must have these attributes:
 There is a class called `.processing` for adding the effect that the work is in progress.
 
 <PreviewBox
-	height="130px"
+	height="140px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +133,7 @@ To change the progress size use [size setter classes](/docs/helpers/size-setters
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
 
 <PreviewBox
-	height="210px"
+	height="230px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -238,3 +261,36 @@ The progress bar uses accent color as the background color which can be customiz
 </html>
 '
 />
+
+```html title="index.html"
+<div class="progress my-custom-progress-bar">
+	<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<div class="progress processing my-custom-progress-bar">
+	<div
+		class="progress-bar width-75p"
+		role="progressbar"
+		aria-valuenow="75"
+		aria-valuemin="0"
+		aria-valuemax="100"
+	></div>
+</div>
+
+<div class="progress processing my-custom-progress-bar" style="margin-bottom: 0">
+	<div class="progress-bar width-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+		25% is done...
+	</div>
+</div>
+```
+
+```css title="style.css"
+.my-custom-progress-bar {
+	--flatify__color-accent-primary: linear-gradient(to right, #8a2387, #e94057, #f27121);
+	--flatify__color-accent-light: rgba(255, 255, 255, 0.75);
+	--flatify__progress-bg-color: #f5f7fa;
+	--flatify__progress-txt-color: #fff;
+	--flatify__progress-border-color: #f0c2ee;
+	--flatify__progress-animation-duration: 1s;
+}
+```

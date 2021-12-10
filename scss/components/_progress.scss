@@ -26,7 +26,8 @@
 		color: var(--#{$CSS_VAR_PFX}local-txt-color);
 		background: var(--#{$CSS_VAR_PFX}color-accent-primary);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
-		transition: width var(--#{$CSS_VAR_PFX}simple-transition), transform var(--#{$CSS_VAR_PFX}simple-transition);
+		will-change: width, transform;
+		transition: width ease 2s, transform ease 2s;
 	}
 
 	&.processing {
