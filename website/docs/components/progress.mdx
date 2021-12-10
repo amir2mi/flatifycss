@@ -40,6 +40,7 @@ Note that the progress bar should be styled by its share for example if 25% of t
 		function setProgressbar(){
 			setTimeout(function(){
 				progress.style.width = "10%";
+				progress.closest(".progress").classList.add("processing");
 			},500);
 			setTimeout(function(){
 				progress.style.width = "15%";
@@ -52,6 +53,7 @@ Note that the progress bar should be styled by its share for example if 25% of t
 			},5000);
 			setTimeout(function(){
 				progress.style.width = "100%";
+				progress.closest(".progress").classList.remove("processing");
 			},12000);
 		}
 		setInterval(setProgressbar,15000);

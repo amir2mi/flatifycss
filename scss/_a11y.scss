@@ -11,6 +11,7 @@
 		// Do not need transition in this case
 		* {
 			--#{$CSS_VAR_PFX}simple-transition: 0s !important;
+			--#{$CSS_VAR_PFX}linear-transition: 0s !important;
 			--#{$CSS_VAR_PFX}bouncing-transition: 0s !important;
 		}
 

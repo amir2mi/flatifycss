@@ -27,7 +27,7 @@
 		background: var(--#{$CSS_VAR_PFX}color-accent-primary);
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 		will-change: width, transform;
-		transition: width ease 2s, transform ease 2s;
+		transition: width var(--#{$CSS_VAR_PFX}linear-transition), transform var(--#{$CSS_VAR_PFX}linear-transition);
 	}
 
 	&.processing {
