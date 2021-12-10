@@ -1843,6 +1843,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   color: var(--flatify__local-txt-color);
   background: var(--flatify__color-accent-primary);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
+  transition: width var(--flatify__simple-transition), transform var(--flatify__simple-transition);
 }
 .progress.processing .progress-bar:before {
   content: " ";
