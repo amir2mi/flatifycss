@@ -1,6 +1,6 @@
 {
 	"name": "flatifycss",
-	"version": "0.9.7-0",
+	"version": "0.9.7-1",
 	"description": "Modern flat design framework for the web — inspired by Duolingo design system.",
 	"main": "index.html",
 	"repository": {
@@ -9,7 +9,9 @@
 	},
 	"keywords": [
 		"css",
+		"duolingo",
 		"flat",
+		"flat-design",
 		"front-end"
 	],
 	"author": "Amir M. Mohamadi",
@@ -18,11 +20,13 @@
 		"url": "https://github.com/amir2mi/FlatifyCSS/issues"
 	},
 	"homepage": "https://github.com/amir2mi/FlatifyCSS#readme",
+	"dependencies": {},
 	"devDependencies": {
 		"@babel/core": "^7.16.0",
 		"@babel/preset-env": "^7.16.4",
 		"autoprefixer": "^10.3.7",
 		"cssnano": "^5.0.8",
+		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-bump": "^3.2.0",
 		"gulp-concat": "^2.6.1",
@@ -36,9 +40,5 @@
 		"sass": "^1.43.4",
 		"webpack-stream": "^7.0.0",
 		"yargs": "^17.3.0"
-	},
-	"dependencies": {
-		"@popperjs/core": "^2.10.2",
-		"gulp": "^4.0.2"
 	}
 }
