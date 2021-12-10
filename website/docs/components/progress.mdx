@@ -1,0 +1,103 @@
+---
+title: Progress
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Show the state of something with the progress component of FlatifyCSS, it has its custom HTML, this is not a `<progress>` because customizing it is kind of a mess so we create our custom progress.
+
+## Simple progress examples
+
+To have a progress component we must have two elements: `.progress` and inside it a `.progress-bar` element.  
+Note that the progress bar should be styled by its share for example if 25% of the job is done you should set `width: 25%` or use [width setter helper classes](/docs/helpers/width-and-height-setters).  
+
+<PreviewBox
+	height="130px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Progress</title>
+	</head>
+	<body>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+		<div class="progress">
+			<div class="progress-bar width-75p" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+		<div class="progress" style="margin-bottom: 0">
+			<div class="progress-bar width-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% is done...</div>
+		</div>
+	</body>
+</html>
+'
+/>
+
+:::success Accessibility matters!
+We have a custom progress component with the custom HTML structure, by default they are just some `<div>`s, so they do not make sense for accessibility.
+
+A comprehensive progress bar must have these attributes:  
+`role="progressbar"` for progress bar element to define it is the progress bar.  
+`aria-valuenow="0"` it is the same as `<progress value="0">` that should be added to the progress bar.  
+`aria-valuemin="0"` & `aria-valuemax="100"` like `<progress min="0" max="100">`
+:::
+
+```html title="index.html"
+<div class="progress">
+	<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<div class="progress">
+	<div
+		class="progress-bar width-75p"
+		role="progressbar"
+		aria-valuenow="0"
+		aria-valuemin="0"
+		aria-valuemax="100"
+	></div>
+</div>
+
+<div class="progress">
+	<div class="progress-bar width-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+		25% is done...
+	</div>
+</div>
+```
+
+## Processing
+
+There is a class called `.processing` for adding the effect that the work is in progress.
+
+
+<PreviewBox
+	height="130px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Progress</title>
+	</head>
+	<body>
+		<div class="progress processing">
+			<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+		<div class="progress processing">
+			<div class="progress-bar width-75p" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+		<div class="progress processing" style="margin-bottom: 0">
+			<div class="progress-bar width-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% is done...</div>
+		</div>
+	</body>
+</html>
+'
+/>
+

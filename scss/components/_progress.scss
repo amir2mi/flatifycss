@@ -1,3 +1,7 @@
+:root{
+`
+}
+
 .progress {
 	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 	overflow: hidden;
@@ -25,10 +29,6 @@
 				content: " ";
 				position: absolute;
 				top: 0;
-				width: 100%;
-				height: 100%;
-				background: var(--#{$CSS_VAR_PFX}color-accent-light);
-				mix-blend-mode: color-dodge;
 				@if $IS_LTR {
 					left: 0;
 					transform-origin: left;
@@ -36,6 +36,12 @@
 					right: 0;
 					transform-origin: right;
 				}
+
+				width: 100%;
+				// 110% because of FireFox bug
+				height: 110%;
+				background: var(--#{$CSS_VAR_PFX}color-accent-light);
+				mix-blend-mode: color-dodge;
 				animation: flatify-processing linear 3s infinite;
 			}
 		}

@@ -1839,12 +1839,12 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   content: " ";
   position: absolute;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--flatify__color-accent-light);
-  mix-blend-mode: color-dodge;
   left: 0;
   transform-origin: left;
+  width: 100%;
+  height: 110%;
+  background: var(--flatify__color-accent-light);
+  mix-blend-mode: color-dodge;
   animation: flatify-processing linear 3s infinite;
 }
 

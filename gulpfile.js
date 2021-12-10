@@ -105,18 +105,19 @@ function bumper(files, type = "patch", value) {
 }
 
 // Git tasks
-// set description for release commit with --desc command
+// set description for release commit with --desc or --m command
 // if description is empty it will not commit
 function commitAll(desc) {
 	return src("./")
 		.pipe(git.add({ args: "-A" }))
-		.pipe(git.commit(argv.desc || desc));
+		.pipe(git.commit(argv.m || argv.desc || desc));
 }
 
 // Add git tag for current version
-function addGitVersionTag(type, desc) {
+function addGitVersionTag(desc) {
+	// get the current version
 	const pkg = JSON.parse(fs.readFileSync(bumpVersionFiles[0], "utf8"));
-	git.tag(`v${argv.ver || pkg.version}`, argv.desc || desc);
+	git.tag(`v${argv.ver || pkg.version}`, argv.m || argv.desc || desc);
 }
 
 // Watch task

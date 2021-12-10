@@ -164,7 +164,9 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 		display: none !important;
 	}
 }
-
+.navbar__inner div[class*="toggleTrackThumb"] {
+	display: none !important;
+}
 div[class*="toggleTrack_"],
 .toggleTrack_node_modules-\@docusaurus-theme-classic-lib-next-theme-Toggle-styles-module {
 	background: var(--flatify__bg-color-dark) !important;
@@ -262,15 +264,38 @@ div[class*="toggleTrack_"],
 	background: transparent !important;
 	border: none !important;
 }
+.navbar__inner div[class*="toggleTrack_"] {
+	width: 2.5em;
+	height: 2.5em;
+	background: var(--docsearch-searchbox-background) !important;
+}
+
+.navbar__inner div[class*="toggleTrack_"] * {
+	background: transparent;
+}
+.navbar__inner div[class*="toggleTrack"] {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.navbar__inner div[class*="toggleTrack_"],
 .DocSearch.DocSearch-Button,
-.DocSearch-Modal,
 .DocSearch-Form {
 	border-radius: 1em !important;
 }
 
-.DocSearch.DocSearch-Button {
-	padding: 1.5em 0.75em !important;
+@media screen and (min-width: 751px) {
+	.DocSearch-Modal {
+		border-radius: 1em !important;
+	}
 }
+
+.DocSearch.DocSearch-Button {
+	padding: 1.3em 0.75em !important;
+}
+
 .navbar__logo {
 	height: 2.5em !important;
 }
@@ -322,7 +347,7 @@ div[class*="toggleTrack_"],
 	margin-top: 0.25em;
 }
 .menu__list .menu__list {
-	padding: 0  0 10px 10px;
+	padding: 0 0 10px 10px;
 	border-left: var(--docus-bd);
 	border-bottom: var(--docus-bd);
 	border-bottom-color: transparent !important;
