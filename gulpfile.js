@@ -1,8 +1,8 @@
 // Initial modules
 const distFileName = "flatify";
-const bumpVersionFiles = ["./package.json"];
+const bumpVersionFiles = ["./package.json","./composer.json"];
 
-const { src, dest, watch, series, parallel, task } = require("gulp");
+const { src, dest, watch, series, parallel } = require("gulp");
 const argv = require("yargs").argv;
 const autoprefixer = require("autoprefixer");
 const babel = require("gulp-babel");
