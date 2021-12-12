@@ -15,10 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
 		const input = wrapper.querySelector("input");
 		// return if show password button does not have wrapper with [.input-wrapper] class
 		if (!input) {
-			return logger("error", "Show password button should be inside '.input-wrapper' with input type password", this.parentElement);
+			return logger(
+				"error",
+				"Show password button should be inside '.input-wrapper' with input type password",
+				this.parentElement
+			);
 		}
 
 		wrapper.classList.toggle("visible-password");
-		input.type = wrapper.classList.contains("visible-password") ? "password" : "text";
+		input.type = wrapper.classList.contains("visible-password") ? "text" : "password";
 	});
 });

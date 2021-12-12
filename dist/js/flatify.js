@@ -616,7 +616,7 @@
           }
 
           wrapper.classList.toggle("visible-password");
-          input.type = wrapper.classList.contains("visible-password") ? "password" : "text";
+          input.type = wrapper.classList.contains("visible-password") ? "text" : "password";
         });
       });
       /***/
