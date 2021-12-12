@@ -40,6 +40,34 @@ A button with FlatifyCSS style can be defined in several ways as mentioned in th
 <button class="button">Click Here</button>
 ```
 
+## Buttons priority
+
+A great design system must give different priorities for buttons, each button should have its priority based on what it does.
+Generally, there are primary, secondary, and tertiary buttons (link buttons), you can see them in the example below:
+
+<PreviewBox
+	height="350px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Buttons</title>
+	</head>
+	<body>
+        <div class="flex-center">
+			<button class="button style-accent">Primary</button>
+			<button class="button style-light">Secondary</button>
+			<button class="link-button">Link button</button>
+		</div>
+	</body>
+</html>
+'
+/>
+
 ## Sizes
 
 To change the button size use [size setter classes](/docs/helpers/size-setters).

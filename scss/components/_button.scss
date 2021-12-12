@@ -140,6 +140,7 @@
 
 .link-button {
 	@extend %anchor-style;
-	border: none;
+	padding: 0.75em 0.85em;
 	background: transparent;
+	border: none;
 }

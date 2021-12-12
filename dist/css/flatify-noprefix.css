@@ -1139,8 +1139,9 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 }
 
 .link-button {
-  border: none;
+  padding: 0.75em 0.85em;
   background: transparent;
+  border: none;
 }
 
 .arrow-button {
