@@ -1,0 +1,26 @@
+{
+	"name": "amir2mi/flatifycss",
+	"description": "Modern flat design framework for the web — inspired by Duolingo design system.",
+	"keywords": [
+		"css",
+		"js",
+		"sass",
+		"duolingo",
+		"flat",
+		"flat-design",
+		"front-end",
+		"responsive",
+		"web"
+	],
+	"homepage": "https://amir2mi.github.io/flatifycss/",
+	"authors": [
+		{
+			"name": "Amir M. Mohamadi",
+			"email": "mail.amir2mi@gmail.com"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/amir2mi/flatifycss/issues"
+	},
+	"license": "MIT"
+}
