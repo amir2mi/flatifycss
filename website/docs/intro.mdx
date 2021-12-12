@@ -3,11 +3,13 @@ title: Getting started
 sidebar_position: 1
 ---
 
+## Introduction
+
 FlatifyCSS is the web modern and minimalist flat design library for clever and stylish developers, inspired by [Duolingo](https://www.duolingo.com/) design system. It respects accessibility and good practices are provided to acknowledge that "the web is for everyone".
 
 When we talk about flat design, you might think about the creepy palette and some old-fashioned web trends, but no, flat design is a wide term and in this case for FlatifyCSS, there are some principles that shape it clearly you will understand it easily.
 
-<div class="flex-center" style={{ marginBottom: 30 }}>
+<div class="flex-center" style={{ marginBottom: 50 }}>
 	<div class="flex-column-center">
 		<img src="/static/img/docs/intro/blur.png" />
 		1- No blurred shadows
@@ -22,26 +24,38 @@ When we talk about flat design, you might think about the creepy palette and som
 	</div>
 </div>
 
-## Download & Intall
+## Download
+
+FlatifyCSS is available for users in many ways, you can install it using package managers, directly from CDN, or even downloading project archive.
 
 ### CDN
 
 Here is [jsDelivr](https://www.jsdelivr.com/), you can add FlatifyCSS just with a single line of code:
 
-```html
+```html title="index.html"
 <!-- CSS -->
 <link
-	href="https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css" rel="stylesheet" crossorigin="anonymous"
+	href="https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css"
+	rel="stylesheet"
+	crossorigin="anonymous"
 />
 
 <!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/flatifycss/dist/js/flatify.min.js" crossorigin="anonymous"></script>
 ```
 
-### npm
+### Package managers
 
-You can include FlatifyCSS in your project with npm:
+You can include FlatifyCSS in your project with npm or yarn:
 
-```bash
+#### npm
+
+```bash title="command line"
 npm install flatifycss
+```
+
+#### Yarn
+
+```bash title="command line"
+yarn add flatifycss
 ```
