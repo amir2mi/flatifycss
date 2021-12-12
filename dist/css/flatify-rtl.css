@@ -1,12 +1,4 @@
 @charset "UTF-8";
-/* Responsive breakpoints media query helper functions
- * How to use:
- @include break-xs() {
-    body {
-        background: red;
-    }
- }
-*/
 :root {
   --flatify__border-width: max(2px, 0.18em);
   --flatify__border-radius: 1em;
@@ -326,19 +318,19 @@ sup {
   top: -0.5em;
 }
 
-a:not(.button) {
+.link-button, a:not(.button) {
   color: var(--flatify__link-color);
   -webkit-text-decoration: var(--flatify__link-decoration);
           text-decoration: var(--flatify__link-decoration);
   text-underline-position: under;
   transition: color var(--flatify__simple-transition), background var(--flatify__simple-transition), border var(--flatify__simple-transition);
 }
-a:not(.button):hover {
+.link-button:hover, a:hover:not(.button) {
   color: var(--flatify__link-color__hover);
   -webkit-text-decoration: var(--flatify__link-decoration__hover);
           text-decoration: var(--flatify__link-decoration__hover);
 }
-a:not(.button):focus {
+.link-button:focus, a:focus:not(.button) {
   color: var(--flatify__link-color__focus);
   -webkit-text-decoration: var(--flatify__link-decoration__focus);
           text-decoration: var(--flatify__link-decoration__focus);
@@ -1235,6 +1227,11 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   box-shadow: inset 0 0 0 var(--flatify__button-border-color);
   filter: contrast(85%) brightness(85%) opacity(70%) !important;
   transform: translateY(calc(var(--flatify__border-width) * 1.38));
+}
+
+.link-button {
+  border: none;
+  background: transparent;
 }
 
 .arrow-button {

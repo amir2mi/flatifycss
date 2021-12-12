@@ -468,13 +468,9 @@
         .o)(currentButton) < (0, _utils_dom__WEBPACK_IMPORTED_MODULE_3__
         /* .getChildIndex */
         .o)(clickedButton)) {
-          _config__WEBPACK_IMPORTED_MODULE_0__
-          /* .isLTR */
-          .zT ? targetTab.classList.add("slide-right") : targetTab.classList.add("slide-left");
+          targetTab.classList.add("slide-right");
         } else {
-          _config__WEBPACK_IMPORTED_MODULE_0__
-          /* .isLTR */
-          .zT ? targetTab.classList.add("slide-left") : targetTab.classList.add("slide-right");
+          targetTab.classList.add("slide-left");
         }
       }
 
@@ -523,13 +519,9 @@
             .o)(currentActiveButton) < (0, _utils_dom__WEBPACK_IMPORTED_MODULE_3__
             /* .getChildIndex */
             .o)(this)) {
-              _config__WEBPACK_IMPORTED_MODULE_0__
-              /* .isLTR */
-              .zT ? currentActiveTab.classList.add("slide-left") : currentActiveTab.classList.add("slide-right");
+              currentActiveTab.classList.add("slide-left");
             } else {
-              _config__WEBPACK_IMPORTED_MODULE_0__
-              /* .isLTR */
-              .zT ? currentActiveTab.classList.add("slide-right") : currentActiveTab.classList.add("slide-left");
+              currentActiveTab.classList.add("slide-right");
             } // add hide animation class
 
 
@@ -1148,7 +1140,7 @@
     162:
     /***/
     function (module) {
-      module.exports = JSON.parse('{"u2":"FlatifyCSS","U7":true,"zT":true,"q5":[0,20],"FL":[0,0],"pq":[0,10]}');
+      module.exports = JSON.parse('{"u2":"FlatifyCSS","U7":true,"q5":[0,20],"FL":[0,0],"pq":[0,10]}');
       /***/
     }
     /******/

@@ -238,8 +238,7 @@ sup {
 }
 
 // Anchor
-// a[href]:not(.button) this selector just add higher priority so customizing links will be harder with !important
-a:not(.button) {
+%anchor-style{
 	color: var(--#{$CSS_VAR_PFX}link-color);
 	text-decoration: var(--#{$CSS_VAR_PFX}link-decoration);
 	text-underline-position: under;
@@ -255,6 +254,10 @@ a:not(.button) {
 		color: var(--#{$CSS_VAR_PFX}link-color__focus);
 		text-decoration: var(--#{$CSS_VAR_PFX}link-decoration__focus);
 	}
+}
+
+a:not(.button){
+	@extend %anchor-style;
 }
 
 // Code

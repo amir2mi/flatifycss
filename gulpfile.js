@@ -147,6 +147,7 @@ const mainJsTask__minified_production = () => jsTask(files.jsMain, distFileName,
 const bumpVersionDefault = () => bumper(bumpVersionFiles, "prerelease");
 const bumpVersionRelease = () => bumper(bumpVersionFiles, "patch");
 const addReleaseTag = (done) => {
+	// patch is the default versioning type for release however it can be changed with --type command: gulp release --type "major"
 	addGitVersionTag("patch");
 	done();
 };

@@ -50,9 +50,9 @@ function showTab(targetTab, clickedButton, currentButton) {
 	 * and based on this fact add slide animation classes.
 	 */
 	if (currentButton && getChildIndex(currentButton) < getChildIndex(clickedButton)) {
-		config.isLTR ? targetTab.classList.add("slide-right") : targetTab.classList.add("slide-left");
+		targetTab.classList.add("slide-right");
 	} else {
-		config.isLTR ? targetTab.classList.add("slide-left") : targetTab.classList.add("slide-right");
+		targetTab.classList.add("slide-left");
 	}
 }
 
@@ -97,13 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			// remove old swipe direction and add new based on clicked tab button index
 			currentActiveTab.classList.remove("slide-left", "slide-right");
 			if (currentActiveButton && getChildIndex(currentActiveButton) < getChildIndex(this)) {
-				config.isLTR
-					? currentActiveTab.classList.add("slide-left")
-					: currentActiveTab.classList.add("slide-right");
+				currentActiveTab.classList.add("slide-left");
 			} else {
-				config.isLTR
-					? currentActiveTab.classList.add("slide-right")
-					: currentActiveTab.classList.add("slide-left");
+				currentActiveTab.classList.add("slide-right");
 			}
 
 			// add hide animation class

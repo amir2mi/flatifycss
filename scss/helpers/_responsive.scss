@@ -1,11 +1,10 @@
-/* Responsive breakpoints media query helper functions
- * How to use:
- @include break-xs() {
-    body {
-        background: red;
-    }
- }
-*/
+// Responsive breakpoints media query helper functions
+// How to use:
+// @include break-xs() {
+//    body {
+//        background: red;
+//    }
+// }
 @mixin break-xs() {
 	$xs-bp: map-get($RESPONSIVE_BREAKPOINTS, "xs");
 	@media screen and (max-width: $xs-bp) {

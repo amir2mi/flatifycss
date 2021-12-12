@@ -137,3 +137,9 @@
 		transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
 	}
 }
+
+.link-button {
+	@extend %anchor-style;
+	border: none;
+	background: transparent;
+}
