@@ -43,10 +43,10 @@ A button with FlatifyCSS style can be defined in several ways as mentioned in th
 ## Buttons priority
 
 A great design system must give different priorities for buttons, each button should have its priority based on what it does.
-Generally, there are primary, secondary, and tertiary buttons (link buttons), you can see them in the example below:
+Generally, there are primary, secondary, and tertiary buttons (link buttons `.link-button`), you can see them in the example below:
 
 <PreviewBox
-	height="350px"
+	height="100px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -67,6 +67,12 @@ Generally, there are primary, secondary, and tertiary buttons (link buttons), yo
 </html>
 '
 />
+
+```html title="index.html"
+<button class="button style-accent">Primary</button>
+<button class="button style-light">Secondary</button>
+<button class="link-button">Link button</button>
+```
 
 ## Sizes
 

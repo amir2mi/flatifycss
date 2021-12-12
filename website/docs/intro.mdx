@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Introduction
 sidebar_position: 1
 ---
 
@@ -47,7 +47,7 @@ Here is [jsDelivr](https://www.jsdelivr.com/), you can add FlatifyCSS just with 
 
 ### Package managers
 
-You can include FlatifyCSS in your project with npm or yarn:
+You can include FlatifyCSS in your project with npm, yarn or composer:
 
 #### npm
 
@@ -66,3 +66,27 @@ yarn add flatifycss
 ```bash title="command line"
 composer require amir2mi/flatifycss
 ```
+
+## Contents
+
+After installing FlatifyCSS with package managers or downloading the archive file there is a folder called /dist, where compiled CSS, JS and their map files are there, inside this folder these files are provided:
+
+### CSS
+
+CSS files come with some options, files with `-noprefix` suffix, do not have [PostCSS Autoprefixer](https://github.com/postcss/autoprefixer), while `-min` means this file is minified and `-rtl` is the special file for languages like Arabic, Persian, Hebrew, etc which direction is right to left.
+
+`flatify.css`  
+`flatify-min.css`  
+`flatify-noprefix.css`  
+`flatify-noprefix-min.css`  
+`flatify-rtl.css`  
+`flatify-rtl-min.css`  
+`flatify-rtl-noprefix.css`  
+`flatify-rtl-noprefix-min.css`
+
+### JS
+
+Note that FlatifyCSS needs [Popperjs](https://popper.js.org/) for dropdowns and popovers, but this library is not included inside the JavaScript file of FlatifyCSS, so it is up to you to include it inside your webpage.
+
+`flatify.js`  
+`flatify-min.js`
