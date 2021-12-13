@@ -1,10 +1,9 @@
 ---
-title: Alignment
+title: Alignment & positioning
 sidebar_position: 3
 ---
 
 import PreviewBox from "../../src/components/preview-box";
-import ColorIndicator from "../../src/components/color-indicator";
 
 Alignment in CSS is a dilemma for beginners, there are tons of ways to achieve it
 but helpers classes are life savers.
@@ -21,7 +20,7 @@ For alignment with flexbox, **the helper class should be applied to the wrapper 
 without flex parent do nothing.
 :::
 
-`.inline-flex` Treat as inline flex.
+`.inline-flex` Treats as inline flex.
 
 ### Children in a row
 
@@ -345,3 +344,16 @@ Let see what is the better way:
 	<div class="position-absolute place-bottom place-right style-green"></div>
 </div>
 ```
+
+## Sticky & Fixed
+Sticky and fixed positions have their helper classes. The main use case for these classes is related to nav bar component.
+
+`.sticky-top`  
+`.sticky-bottom`  
+`.sticky-left`  
+`.sticky-right`  
+
+`.fixed-top`  
+`.fixed-bottom`  
+`.fixed-left`  
+`.fixed-right`  

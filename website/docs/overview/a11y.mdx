@@ -1,0 +1,34 @@
+---
+title: Accessibility
+sidebar_position: 1
+---
+
+FlatifyCSS respects accessibility. For documentation, attributes like `aria-` are included with examples and there is always a note for accessibilty.
+
+## Reduced motion
+
+Based on [this article](https://css-tricks.com/introduction-reduced-motion-media-query/): "Vestibular disorders can cause your vestibular system to struggle to make sense of what is happening, resulting in loss of balance and vertigo, migraines, nausea, and hearing loss. Anyone who has spun around too quickly is familiar with a confused vestibular system."  
+As web developers, we should consider this and define or reset current animation and transitions with limited movement.  
+In favor of [prefers-reduced-motion media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion), it is possible to know if the user wants reduced motion or not.
+
+FlatifyCSS takes car about this fact and modify these from `a11y.scss` file:
+
+#### Background
+
+Depends on [web.dev article](https://web.dev/prefers-reduced-motion/):  
+"There are decorative effects like animated gradients, parallax scrolling, background videos, and several others. While many users enjoy such animations, some users dislike them because they feel distracted or slowed down by them. In the worst case, users may even suffer from motion sickness as if it were a real life experience, so for these users reducing animations is a medical necessity."
+
+We fix the issue with: `background-attachment: initial;`
+
+### Transitions
+
+No transition is necessary for reduced motion so we reset FlatifyCSS defined transitions duration to 0:
+`-flatify__simple-transition`  
+`-flatify__long-transition`  
+`-flatify__bouncing-transition`
+
+### Animations
+
+<img width="100" style={{ float: "right" }} src="/static/img/docs/a11y/loading-reduced-motion.gif" />
+
+We use `flatify-fade-in`, `flatify-fade-in-out` and `flatify-fade-out` animations instead of primary, also it is a good pratice to reduced animation steps for complex animations like what we do for [loadings](/docs/components/loading):
