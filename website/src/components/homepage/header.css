@@ -1,0 +1,80 @@
+.homepage-header {
+	position: relative;
+	text-align: center;
+	padding: 12em 1em;
+	isolation: isolate;
+}
+
+.homepage-title {
+	font-size: 4em;
+}
+
+.homepage-subtitle {
+	font-size: 1.2em;
+	opacity: 0.8;
+}
+
+.animated-logo {
+	position: absolute;
+	top: -75%;
+	left: 0;
+	right: 0;
+	aspect-ratio: 1 / 1;
+	max-width: 150%;
+	max-height: 150%;
+	padding: 4em;
+	margin: 0 auto;
+	z-index: -1;
+	background: #1895d0;
+	border: 1.25em solid rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	opacity: 0.4;
+}
+
+.animated-logo:before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    width: 60%;
+    height: 60%;
+    margin: auto;
+    background: #1caff5;
+    border: 1.25em solid #168dc4;
+    border-radius: 5em;
+}
+
+.animated-logo:after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    width: 25%;
+    height: 25%;
+    margin: auto;
+    background: #76cff9;
+    border: 1.1em solid #1da0de;
+    border-radius: 1em;
+    animation: flatify-spin linear 10s infinite;
+}
+
+
+html[data-theme="light"] .animated-logo{
+    filter: contrast(120%);
+}
+
+html[data-theme="dark"] .animated-logo{
+    filter: brightness(75%);
+}
+
+@media screen and (max-width: 480px){
+    .animated-logo{
+        top: -40%;
+        font-size: 0.6em;
+        margin: 0 1.5em;
+    }
+}
