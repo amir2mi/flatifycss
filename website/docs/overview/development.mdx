@@ -1,0 +1,48 @@
+---
+title: Development
+---
+
+FlatifyCSS is written in [Sass](https://sass-lang.com/), which we compile to CSS using Gulp tasks, in this page we will cover the development process.
+
+## Setup
+
+To use Gulp, we need to install it globally with `npm i gulp-cli -g`, and then run `npm install` in the root directory of FlatifyCSS. If everything is okay, we can run `gulp` in the root directory to compile the FlatifyCSS stylesheet and JavaScript file.
+
+## Sass
+
+In the root directory of FlatifyCSS, we have a `/scss` directory, which contains the Sass files we will use to build the FlatifyCSS stylesheet.
+There are two files in this directory: `flatify.scss` and `flatify-rtl.scss`. The `flatify.scss` file is the main file we use to extend the base stylesheet, and the `flatify-rtl.scss` file is used to compile stylesheets for RTL.
+Afterward to write your code to extend the current features create a file e.g. `_my-file.scss` and import it into the `flatify.scss` file.
+
+## JavaScript
+
+JavaScript is the same as Sass, in the `/js` directory use the `flatify.js` file to extend features, we use Webpack so it is possible to use [the import and export feature of ES6](https://webpack.js.org/api/module-methods/#es6-recommended).
+
+## Gulp tasks
+
+Inside the `gulpfile.js` all tasks are defined, you can use these tasks to compile files or watch for changes automatically.
+
+### gulp
+
+Run a single task to compile `scss` and `js` files, this is the default task and consider changes as **prerelease**.
+
+:::info Parameters
+You can use the `--ver` parameter to set the desired version or use `--type` to change the bump version type. For example: `--ver "1.0.0"` or `--type "minor"`. The default bump version type is prerelease.
+:::
+
+### gulp watch
+
+Use this task to watch for changes in the `scss` and `js` directories to compile them, note that this task use development settings to speed up the compile process, so generated files are not safe for product usage.
+
+### gulp release
+
+This task will create a release candidate, it will compile the `scss` and `js` files, bump version with **patch** type, commit all changes and create a tag.
+
+:::info Parameters
+You can use the `--ver` parameter to set the desired version or use `--type` to change the bump version type. For example: `--ver "1.0.0"` or `--type "minor"`. The default bump version type is patch.  
+To change the commit and tag label you can set either `--m` or `--desc` parameters. For example: `--m "Release 1.0.0"` or `--desc "Release 1.0.0"`.
+:::
+
+:::success Prevent auto commit and tag
+To prevent auto commit and tag you can set `--desc` or `--m` parameters to empty string, for example: `gulp release --m ""`.
+:::
