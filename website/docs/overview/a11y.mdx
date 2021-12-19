@@ -11,9 +11,9 @@ Based on [this article](https://css-tricks.com/introduction-reduced-motion-media
 As web developers, we should consider this and define or reset current animation and transitions with limited movement.  
 In favor of [prefers-reduced-motion media feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion), it is possible to know if the user wants reduced motion or not.
 
-FlatifyCSS takes car about this fact and modify these from `a11y.scss` file:
+FlatifyCSS takes these facts over inside `a11y.scss` file these rules are applied:
 
-#### Background
+### Background
 
 Depends on [web.dev article](https://web.dev/prefers-reduced-motion/):  
 "There are decorative effects like animated gradients, parallax scrolling, background videos, and several others. While many users enjoy such animations, some users dislike them because they feel distracted or slowed down by them. In the worst case, users may even suffer from motion sickness as if it were a real life experience, so for these users reducing animations is a medical necessity."
