@@ -20,3 +20,12 @@ Check by James Kocsis from the Noun Project
 
 Flat check icon made by Freepik from flaticon.com
 Flat decline icon made by Freepik from flaticon.com
+
+## Illustration
+
+<!-- Icon8 -->
+
+Virtual reality by Murat Kalkavan from Ouch!
+Online art course by Tatyana Krasutskaya from Ouch!
+Logged out by Murat Kalkavan from Ouch!
+Molecular chain by Victoria Chepkasova from Ouch!

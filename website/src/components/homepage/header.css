@@ -1,12 +1,14 @@
 .homepage-header {
 	position: relative;
 	text-align: center;
+	height: 90vh;
 	padding: 12em 1em;
 	isolation: isolate;
 }
 
 .homepage-title {
-	font-size: 4em;
+	font-size: 5em;
+	font-weight: bold;
 }
 
 .homepage-subtitle {
@@ -14,14 +16,35 @@
 	opacity: 0.8;
 }
 
+.homepage-h2 {
+	font-size: 3.5em;
+}
+
+.homepage-h3 {
+	font-size: 1.5em;
+	margin: 2em 0 0;
+}
+
+.homepage-container {
+	max-width: 980px;
+	padding: 0 1em;
+	margin: 0 auto;
+}
+
+.homepage-para {
+	opacity: 0.8;
+	font-size: 0.9em;
+	margin-bottom: 0.5em !important;
+}
+
 .animated-logo {
 	position: absolute;
-	top: -75%;
+	top: -92%;
 	left: 0;
 	right: 0;
 	aspect-ratio: 1 / 1;
-	max-width: 150%;
-	max-height: 150%;
+	max-width: 180%;
+	max-height: 180%;
 	padding: 4em;
 	margin: 0 auto;
 	z-index: -1;
@@ -38,12 +61,12 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-    width: 60%;
-    height: 60%;
-    margin: auto;
-    background: #1caff5;
-    border: 1.25em solid #168dc4;
-    border-radius: 5em;
+	width: 60%;
+	height: 60%;
+	margin: auto;
+	background: #1caff5;
+	border: 1.25em solid #168dc4;
+	border-radius: 5em;
 }
 
 .animated-logo:after {
@@ -53,28 +76,61 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-    width: 25%;
-    height: 25%;
-    margin: auto;
-    background: #76cff9;
-    border: 1.1em solid #1da0de;
-    border-radius: 1em;
-    animation: flatify-spin linear 10s infinite;
+	width: 25%;
+	height: 25%;
+	margin: auto;
+	background: #76cff9;
+	border: 1.1em solid #1da0de;
+	border-radius: 1em;
+	animation: logo-spin linear 5s infinite;
+	transform: rotate(45deg);
 }
 
-
-html[data-theme="light"] .animated-logo{
-    filter: contrast(120%);
+@keyframes logo-spin {
+	0% {
+		transform: rotate(-45deg);
+	}
+	100% {
+		transform: rotate(45);
+	}
 }
 
-html[data-theme="dark"] .animated-logo{
-    filter: brightness(75%);
+html[data-theme="light"] .animated-logo {
+	filter: contrast(120%) opacity(50%);
 }
 
-@media screen and (max-width: 480px){
-    .animated-logo{
-        top: -40%;
-        font-size: 0.6em;
-        margin: 0 1.5em;
-    }
+html[data-theme="dark"] .animated-logo {
+	filter: brightness(75%);
+}
+
+@media screen and (max-width: 575px) {
+	.homepage-title{
+		font-size: 4em;
+	}
+	.homepage-subtitle{
+		font-size: 1em;
+	}
+	.get-started-button{
+		font-size: 1.2em !important; 
+	}
+}
+@media screen and (max-width: 480px) {
+	.animated-logo {
+		top: -40%;
+		font-size: 0.6em;
+		margin: 0 1.5em;
+	}
+}
+
+.featured-button,
+.get-started-button {
+	min-width: 10em;
+	margin-top: 2.5em;
+}
+
+.button,
+.get-started-button {
+	padding: 0.75em 0.85em 0.5em !important;
+	border: none !important;
+	border-radius: 0.9em !important;
 }
