@@ -1818,7 +1818,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 }
 
 :root {
-  --flatify__progress-bg-color: var(--flatify__bg-color);
+  --flatify__progress-bg-color: var(--flatify__bg-color-dark);
   --flatify__progress-txt-color: var(--flatify__txt-color-inverted);
   --flatify__progress-border-color: var(--flatify__bg-color-darker);
   --flatify__progress-animation-duration: 2.5s;
@@ -1829,24 +1829,38 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   overflow: hidden;
   display: block;
   width: 100%;
-  padding: 0.25em;
   margin: 0.5em 0;
   color: var(--flatify__local-txt-color);
   background: var(--flatify__progress-bg-color);
+  border-radius: var(--flatify__border-radius);
+}
+.progress.bordered {
   border: var(--flatify__border-width) solid var(--flatify__progress-border-color);
-  border-radius: calc(var(--flatify__border-radius) * 0.75);
 }
 .progress .progress-bar {
   overflow: hidden;
   position: relative;
   font-size: 0.75em;
-  min-height: 0.75em;
+  min-height: 1.4em;
   padding: 0.125em 0.5em;
   color: var(--flatify__local-txt-color);
   background: var(--flatify__color-accent-primary);
-  border-radius: calc(var(--flatify__border-radius) * 0.5);
+  border-radius: var(--flatify__border-radius);
   will-change: width, transform;
   transition: width var(--flatify__long-transition), transform var(--flatify__long-transition), background var(--flatify__simple-transition);
+}
+.progress .progress-bar:after {
+  content: " ";
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  width: min(90%, 100% - 2em);
+  height: 0.32em;
+  margin: 0 auto;
+  background: currentColor;
+  border-radius: var(--flatify__border-radius);
+  opacity: 0.2;
 }
 .progress.processing {
   cursor: wait;

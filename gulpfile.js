@@ -23,6 +23,7 @@ const webpack = require("webpack-stream");
 
 // File path variables
 const files = {
+	sassFiles: "scss/**/*.scss", // for watch task
 	sassMain: "scss/flatify.scss",
 	sassMainRTL: "scss/flatify-rtl.scss",
 	jsMain: "js/**/*js",
@@ -153,7 +154,7 @@ const addReleaseTag = (done) => {
 };
 
 // Watch
-const defaultWatchTasks = () => watchTask([files.sassMain, files.jsMain], [mainSassTask__noprefix, mainJsTask_dev]);
+const defaultWatchTasks = () => watchTask([files.sassFiles, files.jsMain], [mainSassTask__noprefix, mainJsTask_dev]);
 exports.watch = series(parallel(mainSassTask__noprefix, mainJsTask_dev), defaultWatchTasks);
 
 // Default
