@@ -324,6 +324,16 @@ div[class*="toggleTrack_"],
 	gap: 0 20px;
 }
 
+@media screen and (max-width: 575px) {
+	.colors-wrapper {
+		width: 50% !important;
+	}
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	.colors-wrapper {
+		width: 33% !important;
+	}
+}
 @media screen and (max-width: 650px) {
 	.dual-example {
 		flex-wrap: wrap;

@@ -21,7 +21,7 @@ Check by James Kocsis from the Noun Project
 Flat check icon made by Freepik from flaticon.com  
 Flat decline icon made by Freepik from flaticon.com
 
-## Illustration
+## Illustrations
 
 ### Icon8
 
