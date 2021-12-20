@@ -1,0 +1,24 @@
+---
+title: Customization
+---
+
+If you read about [development tools](/docs/overview/development) you will find out that you can use Sass, so it is possible to customize the basic styles of FlatifyCSS.
+
+## Sass
+
+The first level of customization happens in the `_config.scss` file, in this file variables for colors, fonts, and other basic configs are defined, for example, by changing the `$CSS_VAR_PFX` variable all generated CSS variables will be prefixed with this value.
+
+Take a look at [the config file](https://github.com/amir2mi/flatifycss/blob/master/scss/_config.scss) to see how it works.
+Variables in this file are categorized by their type, general, design, colors, motion, typography, and icons.
+So you can change their value and see how the changes affect the generated CSS and frontend.
+
+## CSS
+
+The next level after customization with Sass is CSS variables. These variables get their values from Sass variables, so if you just want to work with compiled CSS, it is the best choice to change them. The benefits of CSS variables are they can be customized modularly, which means you can have different components with different colors, fonts, etc, just by changing the value of the variables.
+
+Default CSS variables are defined as `:root`, most of them are defined in the `_root.scss` file, the rest are defined inside each file which is a separate component, for example, table CSS variables are inside the `_table.scss` file.
+
+The example of customization each component is provided in the component's documentation page. For example check the [table component customization guide](/docs/content/table#customization).
+
+## JavaScript
+There is a JSON file inside the `/js` folder called `config.json`, which provides you the most important configuration options for the JavaScript code, for example, you can disable logging errors in the console when something goes wrong.

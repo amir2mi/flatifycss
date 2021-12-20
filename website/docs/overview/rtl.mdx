@@ -1,0 +1,37 @@
+---
+title: Right to left
+---
+
+FlatifyCSS supports the right to left languages, we provide files with the `-rtl` suffix. on [development page](/docs/overview/development) we have disgusted how files are compiled. if you run `gulp` or `gulp release` you will get the RTL files, **however `gulp watch` does not compile files to RTL**.
+
+There is a file called `flatify-rtl.scss` it is just the main file but `$IS_LTR` is set to `FALSE` so we will get the RTL version of the files.
+
+With Sass we decide values based on the `$IS_LTR` variable, for example:
+
+```scss
+body {
+	@if $IS_LTR {
+		direction: ltr;
+	} @else {
+		direction: rtl;
+	}
+}
+```
+
+The snippet above will be compiled to (Left to right):
+
+```css
+body {
+	direction: ltr;
+}
+```
+
+and for (Right to left):
+
+```css
+body {
+	direction: rtl;
+}
+```
+
+So you can extend features for both LTR and RTL with this condition easily.
