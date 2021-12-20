@@ -357,3 +357,20 @@ div[class*="toggleTrack_"],
 	font-size: 0.9em;
 	font-weight: 600 !important;
 }
+
+.colors-wrapper-columns {
+	flex-wrap: wrap;
+}
+
+.colors-wrapper {
+	width: 25%;
+}
+
+.colors-wrapper div {
+	text-align: center;
+	width: 10em;
+	padding: 1em;
+	margin: 0.4em;
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	border-radius: 1em;
+}
