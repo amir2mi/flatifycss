@@ -103,20 +103,30 @@ html[data-theme="dark"] .animated-logo {
 	filter: brightness(75%);
 }
 
+@media screen and (min-width: 768px) and(max-width: 991px) {
+	.animated-logo {
+		top: -75%;
+	}
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+	.animated-logo {
+		top: -50%;
+	}
+}
 @media screen and (max-width: 575px) {
-	.homepage-title{
+	.homepage-title {
 		font-size: 4em;
 	}
-	.homepage-subtitle{
+	.homepage-subtitle {
 		font-size: 1em;
 	}
-	.get-started-button{
-		font-size: 1.2em !important; 
+	.get-started-button {
+		font-size: 1.2em !important;
 	}
 }
 @media screen and (max-width: 480px) {
 	.animated-logo {
-		top: -40%;
+		top: -32%;
 		font-size: 0.6em;
 		margin: 0 1.5em;
 	}
