@@ -1,0 +1,86 @@
+---
+title: Responsive
+---
+
+FlatifyCSS comes with some helper mixins to make your website responsive, if you use Sass in this case these mixins simplify the process of writing [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries).
+
+## Responsive breakpoints
+
+First read about [customization](/docs/overview/customization). Responsive breakpoints are defined inside the `_config.scss` file, and based on these breakpoints the mixins will be generated.
+
+```scss title="_config.scss"
+$RESPONSIVE_BREAKPOINTS: (
+	xs: 575.98px,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+) !default;
+```
+
+## Responsive mixins
+
+Here is the list of all available responsive mixins:
+
+### Extra small
+
+`break-xs()`
+
+### Small
+
+`break-sm()`  
+`break-sm-min()`  
+`break-sm-max()`
+
+### Medium
+
+`break-md()`  
+`break-md-min()`  
+`break-md-max()`
+
+### Large
+
+`break-lg()`  
+`break-lg-min()`  
+`break-lg-max()`
+
+### Extra large
+
+`break-xl()`  
+`break-xl-min()`  
+`break-xl-max()`
+
+### Extra extra large
+
+`break-xxl()`  
+`break-xxl-max()`
+
+## Use responsive mixins
+
+The example below indicates how to use the mixins to make conditions for responsive design.
+
+```scss title="custom-style.scss"
+body {
+	padding: 50px;
+
+	@include break-sm {
+		padding: 10px;
+	}
+}
+```
+
+What will be compiled is:
+
+```css title="custom-style.css"
+body {
+	padding: 50px;
+}
+
+/* Small breakpoint */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	body {
+		padding: 10px;
+	}
+}
+```
