@@ -1232,6 +1232,52 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   border: none;
 }
 
+.hamburger {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  background: transparent;
+  border: none;
+}
+.hamburger:before, .hamburger:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  height: 0.25em;
+  background: currentColor;
+  border-radius: var(--flatify__border-radius);
+  will-change: width, transform;
+  transition: transform var(--flatify__simple-transition), width var(--flatify__simple-transition);
+}
+.hamburger:not(.active):before {
+  top: 0.5em;
+  width: 100%;
+}
+.hamburger:not(.active):after {
+  bottom: 0.5em;
+  width: 75%;
+}
+.hamburger:not(.active):hover:before, .hamburger:not(.active):focus:before {
+  width: 75%;
+}
+.hamburger:not(.active):hover:after, .hamburger:not(.active):focus:after {
+  width: 100%;
+}
+.hamburger.active:before, .hamburger.active:after {
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  margin: auto 0;
+  -webkit-animation: flatify-fade-in 0.25s ease-in-out;
+          animation: flatify-fade-in 0.25s ease-in-out;
+}
+.hamburger.active:before {
+  transform: rotate(45deg);
+}
+.hamburger.active:after {
+  transform: rotate(-45deg);
+}
+
 .arrow-button {
   display: flex;
   align-items: center;
