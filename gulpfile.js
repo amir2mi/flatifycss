@@ -1,7 +1,7 @@
 // Initial modules
 const distFileName = "flatify";
 const distFileNameRTL = "flatify-rtl";
-const bumpVersionFiles = ["./package.json", "./composer.json"];
+const bumpVersionFiles = ["./package.json", "./composer.json", "./scss/flatify.scss", "./js/flatify.js"];
 
 const { src, dest, watch, series, parallel } = require("gulp");
 const argv = require("yargs").argv;
@@ -104,7 +104,7 @@ function bumper(files, type = "patch", value) {
 	// command gulp release --type major | minor | patch | prerelease
 	return src(files)
 		.pipe(bump({ version: value || argv.ver || nextVersion(type) }))
-		.pipe(dest("./"));
+		.pipe(dest((file) => file.base));
 }
 
 // Git tasks
@@ -159,22 +159,20 @@ exports.watch = series(parallel(mainSassTask__noprefix, mainJsTask_dev), default
 
 // Default
 exports.default = series(
-	parallel(
-		bumpVersionDefault,
-		// css - ltr
-		mainSassTask__noprefix,
-		mainSassTask__prefixed,
-		mainSassTask__minified__noprefix,
-		mainSassTask__minified__prefixed,
-		// css - rtl
-		mainSassTask_rtl__noprefix,
-		mainSassTask_rtl__prefixed,
-		mainSassTask_rtl__minified__noprefix,
-		mainSassTask_rtl__minified__prefixed,
-		// js
-		mainJsTask_production,
-		mainJsTask__minified_production
-	)
+	bumpVersionDefault,
+	// css - ltr
+	mainSassTask__noprefix,
+	mainSassTask__prefixed,
+	mainSassTask__minified__noprefix,
+	mainSassTask__minified__prefixed,
+	// css - rtl
+	mainSassTask_rtl__noprefix,
+	mainSassTask_rtl__prefixed,
+	mainSassTask_rtl__minified__noprefix,
+	mainSassTask_rtl__minified__prefixed,
+	// js
+	mainJsTask_production,
+	mainJsTask__minified_production
 );
 
 // Release
