@@ -1,3 +1,10 @@
+/*!
+ * FlatifyCSS v0.9.7-7
+ * Modern flat design framework for the web — inspired by Duolingo design system.
+ * Copyright 2021-2022 The FlatifyCSS Authors
+ * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
+ */
+
 // Components
 import "./components/alert";
 import "./components/dropdown";
