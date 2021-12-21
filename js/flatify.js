@@ -1,5 +1,5 @@
 /*!
- * FlatifyCSS version 0.9.7-8
+ * FlatifyCSS version 0.9.7-9
  * Modern flat design framework for the web — inspired by Duolingo design system.
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)

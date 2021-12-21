@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 0.9.7-8
+ * FlatifyCSS version 0.9.7-9
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -1398,6 +1398,82 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 }
 .button-group.vertical .button:last-child {
   border-radius: 0 0 var(--flatify__border-radius) var(--flatify__border-radius);
+}
+
+:root {
+  --flatify__card-txt-color: var(--flatify__txt-color);
+  --flatify__card-bg-color: var(--flatify__bg-color);
+  --flatify__card-border-color: var(--flatify__bg-color-darker);
+}
+
+.card {
+  --flatify__local-txt-color: var(--flatify__card-txt-color);
+  --flatify__local-bg-color: var(--flatify__card-bg-color);
+  --flatify__local-border-color: var(--flatify__card-border-color);
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  padding: 0.75em;
+  color: var(--flatify__local-txt-color);
+  background: var(--flatify__local-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  border-radius: var(--flatify__border-radius);
+}
+.card:not(.horizontal) {
+  flex-direction: column;
+  width: 20em;
+}
+.card.horizontal {
+  gap: 1em;
+}
+.card.horizontal .card-header {
+  width: 40%;
+}
+.card.horizontal .card-right {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 60%;
+}
+.card .card-header {
+  overflow: hidden;
+  position: relative;
+  font-size: 1.2em;
+  border-radius: calc(var(--flatify__border-radius) * 0.6);
+}
+.card .card-header .card-badges {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  display: flex;
+  gap: 0.38em;
+}
+.card .card-body {
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  height: 100%;
+  filter: opacity(0.75);
+}
+.card .card-footer {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  padding-top: 0.75em;
+}
+.card .card-footer .button {
+  padding-top: 0.64em;
+  padding-bottom: 0.32em;
+}
+.card .card-image {
+  width: 100%;
+  height: 10em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: calc(var(--flatify__border-radius) * 0.6);
+}
+.card .card-title {
+  font-size: 1.2em;
+  margin: 0.75em 0 0.38em;
 }
 
 :root {
@@ -4236,6 +4312,7 @@ textarea:not(.default) {
 
 .pulse {
   position: relative;
+  isolation: isolate;
 }
 .pulse:after {
   content: " ";

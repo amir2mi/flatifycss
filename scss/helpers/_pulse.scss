@@ -1,5 +1,6 @@
 .pulse {
 	position: relative;
+	isolation: isolate;
 
 	&:after {
 		content: " ";

@@ -8,8 +8,9 @@
 	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}card-txt-color);
 	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}card-bg-color);
 	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}card-border-color);
+	position: relative;
 	display: flex;
-    width: 20em;
+	flex-grow: 1;
 	padding: 0.75em;
 	color: var(--#{$CSS_VAR_PFX}local-txt-color);
 	background: var(--#{$CSS_VAR_PFX}local-bg-color);
@@ -18,22 +19,59 @@
 
 	&:not(.horizontal) {
 		flex-direction: column;
+		width: 20em;
 	}
 
 	&.horizontal {
+		gap: 1em;
+
+		.card-header {
+			width: 40%;
+		}
+
+		.card-right {
+            display: flex;
+            flex-direction: column;
+			flex-grow: 1;
+            width: 60%;
+		}
 	}
 
 	.card-header {
+		overflow: hidden;
+		position: relative;
 		font-size: 1.2em;
+		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.6);
+
+		.card-badges {
+			position: absolute;
+			top: 0.5em;
+			@if $IS_LTR {
+				right: 0.5em;
+			} @else {
+				left: 0.5em;
+			}
+			display: flex;
+			gap: 0.38em;
+		}
 	}
 
 	.card-body {
-		flex-grow: 1;
-        filter: opacity(0.75);
+        hyphens: auto;
+        height: 100%;
+		filter: opacity(0.75);
 	}
 
 	.card-footer {
+		display: flex;
+		align-items: center;
 		font-size: 0.9em;
+		padding-top: 0.75em;
+
+		.button {
+			padding-top: 0.64em;
+			padding-bottom: 0.32em;
+		}
 	}
 
 	.card-image {
@@ -43,8 +81,8 @@
 		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.6);
 	}
 
-    .card-title{
-        font-size: 1.2em;
-        margin: 0.75em 0 0.38em;
-    }
+	.card-title {
+		font-size: 1.2em;
+		margin: 0.75em 0 0.38em;
+	}
 }
