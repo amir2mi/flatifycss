@@ -32,7 +32,7 @@
 
 [![Packagist Prerelease](https://img.shields.io/packagist/v/amir2mi/flatifycss)](https://packagist.org/packages/amir2mi/flatifycss)
 
-[![CSS gzip size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/css/flatify-min.css?compression=gzip&label=CSS Gzip)](#)
+[![CSS gzip size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/css/flatify-min.css?compression=gzip&label=CSS%20Gzip)](#)
 
 [![CSS brotli size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/css/flatify-min.css?compression=brotli&label=CSS Brotli)](https://github.com/amir2mi/flatifycss/blob/master/dist/css/flatify-min.css)
 [![JS gzip size](https://img.badgesize.io/https://raw.githubusercontent.com/amir2mi/flatifycss/master/dist/js/flatify-min.js?compression=gzip?compression=gzip&label=JS Gzip)](https://github.com/amir2mi/flatifycss/blob/master/dist/js/flatify-min.js)
