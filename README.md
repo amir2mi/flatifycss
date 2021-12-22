@@ -40,10 +40,7 @@ Here is [jsDelivr](https://www.jsdelivr.com/), you can add FlatifyCSS just with 
 
 ```html
 <!-- CSS -->
-<link
-	href="https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css"
-	rel="stylesheet"
-	crossorigin="anonymous"
+<link href="https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css" rel="stylesheet" crossorigin="anonymous"
 />
 
 <!-- JavaScript : Popperjs + FlatifyCSS -->
