@@ -1,7 +1,7 @@
 // Initial modules
 const distFileName = "flatify";
 const distFileNameRTL = "flatify-rtl";
-const bumpVersionFiles = ["./package.json", "./composer.json", "./scss/flatify.scss", "./js/flatify.js"];
+const bumpVersionFiles = ["./package.json", "./scss/flatify.scss", "./js/flatify.js"];
 
 const { src, dest, watch, series, parallel } = require("gulp");
 const argv = require("yargs").argv;

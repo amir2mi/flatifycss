@@ -19,7 +19,7 @@
 	"bugs": {
 		"url": "https://github.com/amir2mi/FlatifyCSS/issues"
 	},
-	"homepage": "https://github.com/amir2mi/FlatifyCSS#readme",
+	"homepage": "https://amir2mi.github.io/flatifycss/",
 	"dependencies": {},
 	"devDependencies": {
 		"@babel/core": "^7.16.0",
