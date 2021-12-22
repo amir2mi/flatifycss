@@ -28,7 +28,7 @@
   </a>
 </p>
 
-[![npm version](https://img.shields.io/npm/v/flatifycss]](https://www.npmjs.com/package/flatifycss)
+[![npm version](https://img.shields.io/npm/v/flatifycss](https://www.npmjs.com/package/flatifycss)]
 [![Packagist Prerelease](https://img.shields.io/packagist/v/amir2mi/flatifycss)](https://packagist.org/packages/amir2mi/flatifycss)
 [![CSS gzip size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/css/flatify-min.css?compression=gzip&label=CSS Gzip)]
   (https://github.com/amir2mi/flatifycss/blob/master/dist/css/flatify-min.css)
