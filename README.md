@@ -28,13 +28,13 @@
   </a>
 </p>
 
-![npm version](https://img.shields.io/npm/v/flatifycss](https://www.npmjs.com/package/flatifycss)
-![Packagist Prerelease](https://img.shields.io/packagist/v/amir2mi/flatifycss)](https://packagist.org/packages/amir2mi/flatifycss)
-![CSS gzip size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/css/flatify-min.css?compression=gzip&label=CSS Gzip)
+[![npm version](https://img.shields.io/npm/v/flatifycss]](https://www.npmjs.com/package/flatifycss)
+[![Packagist Prerelease](https://img.shields.io/packagist/v/amir2mi/flatifycss)](https://packagist.org/packages/amir2mi/flatifycss)
+[![CSS gzip size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/css/flatify-min.css?compression=gzip&label=CSS Gzip)]
   (https://github.com/amir2mi/flatifycss/blob/master/dist/css/flatify-min.css)
-![CSS brotli size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/css/flatify-min.css?compression=brotli&label=CSS Brotli)(https://github.com/amir2mi/flatifycss/blob/master/dist/css/flatify-min.css)
-![JS gzip size](https://img.badgesize.io/https://raw.githubusercontent.com/amir2mi/flatifycss/master/dist/js/flatify-min.js?compression=gzip?compression=gzip&label=JS Gzip)(https://github.com/amir2mi/flatifycss/blob/master/dist/js/flatify-min.js)
-![JS brotli size](https://img.badgesize.io/https://raw.githubusercontent.com/amir2mi/flatifycss/master/dist/js/flatify-min.js?compression=brotli&label=JS Brotli)(https://github.com/amir2mi/flatifycss/blob/master/dist/js/flatify-min.js)
+[![CSS brotli size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/css/flatify-min.css?compression=brotli&label=CSS Brotli)](https://github.com/amir2mi/flatifycss/blob/master/dist/css/flatify-min.css)
+[![JS gzip size](https://img.badgesize.io/https://raw.githubusercontent.com/amir2mi/flatifycss/master/dist/js/flatify-min.js?compression=gzip?compression=gzip&label=JS Gzip)](https://github.com/amir2mi/flatifycss/blob/master/dist/js/flatify-min.js)
+[![JS brotli size](https://img.badgesize.io/https://raw.githubusercontent.com/amir2mi/flatifycss/master/dist/js/flatify-min.js?compression=brotli&label=JS Brotli)](https://github.com/amir2mi/flatifycss/blob/master/dist/js/flatify-min.js)
 
 
 <hr>
