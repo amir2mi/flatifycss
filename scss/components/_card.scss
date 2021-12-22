@@ -8,6 +8,7 @@
 	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}card-txt-color);
 	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}card-bg-color);
 	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}card-border-color);
+	overflow: hidden;
 	position: relative;
 	display: flex;
 	flex-grow: 1;
@@ -21,6 +22,14 @@
 	&:not(.horizontal) {
 		flex-direction: column;
 		width: 20em;
+
+		.card-badges {
+			@if $IS_LTR {
+				right: 0.5em;
+			} @else {
+				left: 0.5em;
+			}
+		}
 	}
 
 	&.horizontal {
@@ -28,6 +37,18 @@
 
 		.card-header {
 			width: 40%;
+
+			.card-badges {
+				@if $IS_LTR {
+					left: 0.5em;
+				} @else {
+					right: 0.5em;
+				}
+			}
+		}
+
+		.card-image {
+			height: 100%;
 		}
 
 		.card-right {
@@ -47,11 +68,6 @@
 		.card-badges {
 			position: absolute;
 			top: 0.5em;
-			@if $IS_LTR {
-				right: 0.5em;
-			} @else {
-				left: 0.5em;
-			}
 			display: flex;
 			gap: 0.38em;
 		}

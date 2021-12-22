@@ -9,6 +9,8 @@ Each card has a header, body, and footer, it can be vertical or horizontal based
 
 ## Vertical
 
+The card is displayed vertically by default, just add the necessary part and, voilà! we have a vertical card.
+
 <PreviewBox
 	height="420px"
 	children='
@@ -66,65 +68,53 @@ Each card has a header, body, and footer, it can be vertical or horizontal based
 '
 />
 
+:::success Consider using semantic HTML
+We can give our card semantic HTML, it is a good practice to use semantic HTML, because it is easier to read and understand both for screen readers and robots.  
+So we have `<header>` HTML tag for our the card header and `<footer>` HTML tag for our card footer. The whole card is wrapped in `<article>` HTML tag and cards can be inside a parent with `<section>` HTML tag.
+:::
+
 ```html title="index.html"
-<ul class="menu-items-wrapper">
-	<li class="menu-item active"><a>Home</a></li>
-	<li class="menu-item"><a>Articles</a></li>
-	<li class="menu-item"><a>Photos</a></li>
-	<li class="menu-item"><a>Videos</a></li>
-	<li class="menu-item disabled"><a>About Us</a></li>
-</ul>
+<article class="card" style="max-width: 320px">
+	<header class="card-header">
+		<div class="card-badges">
+			<a href="#" class="badge style-green">Sundays</a>
+			<a href="#" class="badge style-accent">Cards</a>
+		</div>
+
+		<img class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
+		<h2 class="card-title">Hello, I am a new card</h2>
+	</header>
+
+	<div class="card-body">
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+		malesuada erat ut turpis.
+	</div>
+
+	<footer class="card-footer">
+		<div class="button-group">
+			<button class="button bordered style-light-light" aria-label="Like">
+				<!-- Like svg ... -->
+			</button>
+			<button class="button bordered style-light-light" aria-label="Share">
+				<!-- Share svg ... -->
+			</button>
+		</div>
+
+		<a href="#" class="button style-accent push-right">Read more</a>
+	</footer>
+</article>
 ```
 
 ## Horizontal
 
-By adding the `.flex-center` menu will be horizontal.
+By adding the `.horizontal` class to the `.card` element, it will be horizontal, also its HTML structure is a little different from vertical.
 
-<PreviewBox
-	height="110px"
-	children='
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Menu</title>
-	</head>
-	<body>
-		<ul class="menu-items-wrapper flex-center">
-			<li class="menu-item active"><a>Home</a></li>
-			<li class="menu-item"><a>Articles</a></li>
-			<li class="menu-item"><a>Photos</a></li>
-			<li class="menu-item"><a>Videos</a></li>
-			<li class="menu-item disabled"><a>About Us</a></li>
-		</ul>
-	</body>
-</html>
-'
-/>
-
-```html title="index.html"
-<ul class="menu-items-wrapper flex-center">
-	<li class="menu-item active"><a>Home</a></li>
-	<li class="menu-item"><a>Articles</a></li>
-	<li class="menu-item"><a>Photos</a></li>
-	<li class="menu-item"><a>Videos</a></li>
-	<li class="menu-item disabled"><a>About Us</a></li>
-</ul>
-```
-
-## Submenu
-
-Submenu is the second level of menu. Generally it has show/hide functionality but inside [navigation bar](/docs/components/navbar) component.
-
-:::success Submenu arrow
-Submenu can have arrow, you can use `.arrow-top`, `.arrow-bottom`, `.arrow-left`, `.arrow-right` classes for different directions.
+:::info Limit the card height
+It is suggested to set a fixed height or maximum height for the card with the `.horizontal` class, to prevent the image height affect the height of the card, or you can set a fixed image size.
 :::
 
 <PreviewBox
-	height="280px"
+	height="275px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -133,70 +123,314 @@ Submenu can have arrow, you can use `.arrow-top`, `.arrow-bottom`, `.arrow-left`
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Menu</title>
+		<title>Card</title>
+		<style>
+			.card-action-buttons svg{
+				fill: currentColor;
+				width: 1.5em;
+			}
+		</style>
 	</head>
-	<body>
-		<div class="menu-items-wrapper">
-			<ul class="submenu arrow-top">
-				<li class="menu-item active"><a>Home</a></li>
-				<li class="menu-item"><a>Articles</a></li>
-				<li class="menu-item"><a>Photos</a></li>
-				<li class="menu-item"><a>Videos</a></li>
-				<li class="menu-item disabled"><a>About Us</a></li>
-			</ul>
+	<body class="flex-center">
+		<article class="card horizontal" style="max-width: 500px;">
+			<header class="card-header">
+				<div class="card-badges">
+					<a href="#" class="badge style-green">Sundays</a>
+					<a href="#" class="badge style-accent">Cards</a>
+				</div>
+				<img style="height: 200px" class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
+			</header>
+			<div class="card-right">
+				<div class="card-body">
+    				<h2 class="card-title">Hello, I am a new card</h2>
+    				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+    				Nullam malesuada erat ut turpis.
+    			</div>
+    			<footer class="card-footer">
+    				<div class="button-group card-action-buttons">
+    					<button class="button bordered style-light-light" aria-label="Like">
+    						<svg aria-hidden="true" version="1.1" viewBox="175 120 350 350" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    							<g>
+    							<path d="m463.09 186.1c-13.52-11.176-30.867-17.328-48.836-17.328-20.77 0-40.879 8.2812-55.156 22.703-2.5742 2.5977-4.9766 5.3828-7.2266 8.3984-17.488-23.254-46.645-35.207-75.602-29.938-23.969 4.3516-42.801 17.539-55.988 39.156-18.574 30.504-20.086 59.914-4.4922 87.441 8.3516 14.758 19.18 29.109 33.078 43.859 25.484 27.102 55.66 52.836 95.023 80.996 2.5 1.7656 5.1797 2.6602 7.9688 2.6602 4.3125 0 7.2383-2.1797 8.6758-3.2539 34.965-24.953 63.645-48.992 87.68-73.496 13.605-13.859 29.039-30.898 40.324-52.152 4.832-9.1016 10.352-21.336 10.012-35.312-0.71484-30.078-12.648-54.883-35.461-73.734z"/>
+    							</g>
+    						</svg>
+    					</button>
+    					<button class="button bordered style-light-light" aria-label="Share">
+    						<svg aria-hidden="true" version="1.1" viewBox="120 40 475 475" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    							<g>
+    							<path d="m456.01 202.83c19.488 0.042969 38.012-8.4727 50.664-23.293 12.656-14.824 18.16-34.453 15.059-53.695-3.1016-19.238-14.5-36.145-31.168-46.238-16.672-10.094-36.934-12.359-55.418-6.1914-18.488 6.168-33.332 20.141-40.605 38.223-7.2695 18.082-6.2344 38.441 2.8359 55.691l-110.43 65.855c-12.914-11.039-29.57-16.699-46.535-15.812-16.965 0.88281-32.941 8.2461-44.637 20.566-11.695 12.32-18.215 28.66-18.215 45.648 0 16.984 6.5195 33.324 18.215 45.645 11.695 12.32 27.672 19.684 44.637 20.566 16.965 0.88672 33.621-4.7734 46.535-15.812l107.86 63.617c-8.5469 20.078-6.7383 43.066 4.8438 61.562 11.578 18.496 31.469 30.164 53.262 31.246 21.797 1.082 42.742-8.5547 56.102-25.812 13.355-17.254 17.434-39.949 10.922-60.777-6.5117-20.828-22.789-37.156-43.598-43.73-20.809-6.5742-43.516-2.5625-60.812 10.742l-109.31-64.68c5.4258-14.613 5.4258-30.691 0-45.305l114.52-68.32c10.543 6.7148 22.781 10.289 35.281 10.305z"/>
+    							</g>
+    						</svg>
+    					</button>
+    				</div>
+    				<a href="#" class="button style-accent push-right">Read more</a>
+    			</footer>
+    		</div>
+		</article>
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<article class="card horizontal" style="max-width: 500px;">
+	<header class="card-header">
+		<div class="card-badges">
+			<a href="#" class="badge style-green">Sundays</a>
+			<a href="#" class="badge style-accent">Cards</a>
 		</div>
+		<img style="height: 200px" class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
+	</header>
+	<div class="card-right">
+		<div class="card-body">
+			<h2 class="card-title">Hello, I am a new card</h2>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+			malesuada erat ut turpis.
+		</div>
+
+		<footer class="card-footer">
+			<div class="button-group">
+				<button class="button bordered style-light-light" aria-label="Like">
+					<!-- Like svg ... -->
+				</button>
+				<button class="button bordered style-light-light" aria-label="Share">
+					<!-- Share svg ... -->
+				</button>
+			</div>
+
+			<a href="#" class="button style-accent push-right">Read more</a>
+		</footer>
+	</div>
+</article>
+```
+
+## Sizes
+
+To change the card size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+
+<PreviewBox
+	height="330px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Card</title>
+		<style>
+			.card-action-buttons svg{
+				fill: currentColor;
+				width: 1.5em;
+			}
+		</style>
+	</head>
+	<body class="flex-center">
+		<article class="card size-xs" style="max-width: 200px">
+			<header class="card-header">
+				<div class="card-badges">
+					<a href="#" class="badge style-green">Sundays</a>
+					<a href="#" class="badge style-accent">Cards</a>
+				</div>
+				<img class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
+				<h2 class="card-title">Hello, I am a new card</h2>
+			</header>
+			<div class="card-body">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+			</div>
+			<footer class="card-footer">
+				<div class="button-group card-action-buttons">
+					<button class="button bordered style-light-light" aria-label="Like">
+						<svg aria-hidden="true" version="1.1" viewBox="175 120 350 350" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g>
+							<path d="m463.09 186.1c-13.52-11.176-30.867-17.328-48.836-17.328-20.77 0-40.879 8.2812-55.156 22.703-2.5742 2.5977-4.9766 5.3828-7.2266 8.3984-17.488-23.254-46.645-35.207-75.602-29.938-23.969 4.3516-42.801 17.539-55.988 39.156-18.574 30.504-20.086 59.914-4.4922 87.441 8.3516 14.758 19.18 29.109 33.078 43.859 25.484 27.102 55.66 52.836 95.023 80.996 2.5 1.7656 5.1797 2.6602 7.9688 2.6602 4.3125 0 7.2383-2.1797 8.6758-3.2539 34.965-24.953 63.645-48.992 87.68-73.496 13.605-13.859 29.039-30.898 40.324-52.152 4.832-9.1016 10.352-21.336 10.012-35.312-0.71484-30.078-12.648-54.883-35.461-73.734z"/>
+							</g>
+						</svg>
+					</button>
+					<button class="button bordered style-light-light" aria-label="Share">
+						<svg aria-hidden="true" version="1.1" viewBox="120 40 475 475" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g>
+							<path d="m456.01 202.83c19.488 0.042969 38.012-8.4727 50.664-23.293 12.656-14.824 18.16-34.453 15.059-53.695-3.1016-19.238-14.5-36.145-31.168-46.238-16.672-10.094-36.934-12.359-55.418-6.1914-18.488 6.168-33.332 20.141-40.605 38.223-7.2695 18.082-6.2344 38.441 2.8359 55.691l-110.43 65.855c-12.914-11.039-29.57-16.699-46.535-15.812-16.965 0.88281-32.941 8.2461-44.637 20.566-11.695 12.32-18.215 28.66-18.215 45.648 0 16.984 6.5195 33.324 18.215 45.645 11.695 12.32 27.672 19.684 44.637 20.566 16.965 0.88672 33.621-4.7734 46.535-15.812l107.86 63.617c-8.5469 20.078-6.7383 43.066 4.8438 61.562 11.578 18.496 31.469 30.164 53.262 31.246 21.797 1.082 42.742-8.5547 56.102-25.812 13.355-17.254 17.434-39.949 10.922-60.777-6.5117-20.828-22.789-37.156-43.598-43.73-20.809-6.5742-43.516-2.5625-60.812 10.742l-109.31-64.68c5.4258-14.613 5.4258-30.691 0-45.305l114.52-68.32c10.543 6.7148 22.781 10.289 35.281 10.305z"/>
+							</g>
+						</svg>
+					</button>
+				</div>
+				<a href="#" class="button style-accent push-right">Read more</a>
+			</footer>
+			</article>
 	</body>
 </html>
 '
 />
 
 ```html title="index.html"
-<div class="menu-items-wrapper">
-	<ul class="submenu arrow-top">
-		<li class="menu-item active"><a>Home</a></li>
-		<li class="menu-item"><a>Articles</a></li>
-		<li class="menu-item"><a>Photos</a></li>
-		<li class="menu-item"><a>Videos</a></li>
-		<li class="menu-item disabled"><a>About Us</a></li>
-	</ul>
-</div>
+<article class="card size-xs" style="max-width: 200px">...</article>
 ```
 
-## Customization
+## Colors & customization
 
-Menu, menu items and submenu have their own CSS variables to be customized, you see all possible options below.
+You can use [color setter helpr classes](/docs/helpers/color-setters) or change the CSS variables of cards:
 
-Menu items wrapper:  
-`--flatify__menu-bg-color`  
-`--flatify__menu-txt-color`  
-`--flatify__menu-border-color`
+`--flatify__card-txt-color`  
+`--flatify__card-bg-color`  
+`--flatify__card-border-color`
 
-Menu items:  
-`--flatify__menu-active-item-bg-color`  
-`--flatify__menu-active-item-txt-color`  
-`--flatify__menu-item-bg-color`  
-`--flatify__menu-item-bg-color__hover`  
-`--flatify__menu-item-bg-color__focus`  
-`--flatify__menu-item-txt-color`  
-`--flatify__menu-item-txt-color__hover`  
-`--flatify__menu-item-txt-color__focus`
+Here is an example of how to use the variables:
 
-Submenu:  
-`--flatify__submenu-bg-color`  
-`--flatify__submenu-txt-color`  
-`--flatify__submenu-border-color`
+<PreviewBox
+	height="420px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Card</title>
+		<style>
+			.card-action-buttons svg{
+				fill: currentColor;
+				width: 1.5em;
+			}
+			.my-custom-card{
+				--flatify__card-txt-color: #E6E9ED;
+				--flatify__card-bg-color: #D8334A;
+				--flatify__card-border-color: #BF263C;
+			}
+		</style>
+	</head>
+	<body class="flex-center">
+		<article class="card my-custom-card" style="max-width: 320px">
+			<header class="card-header">
+				<div class="card-badges">
+					<a href="#" class="badge style-green">Sundays</a>
+					<a href="#" class="badge style-accent">Cards</a>
+				</div>
+				<img class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
+				<h2 class="card-title">Hello, I am a new card</h2>
+			</header>
+			<div class="card-body">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+				Nullam malesuada erat ut turpis.
+			</div>
+			<footer class="card-footer">
+				<a href="#" class="button style-dark push-center">Read more</a>
+			</footer>
+			</article>
+	</body>
+</html>
+'
+/>
 
-Submenu items:  
-`--flatify__submenu-item-bg-color`  
-`--flatify__submenu-item-bg-color__hover`  
-`--flatify__submenu-item-bg-color__focus`  
-`--flatify__submenu-item-txt-color`  
-`--flatify__submenu-item-txt-color__hover`  
-`--flatify__submenu-item-txt-color__focus`
+```html title="index.html"
+<article class="card my-custom-card" style="max-width: 320px">...</article>
+```
 
-Submenu animation (when they are inside [navigation bar](/docs/components/navbar)):  
-Change current animation:  
-`--flatify__submenu-animation-show-duration`  
-`--flatify__submenu-animation-show-delay`  
-Or set a new animation:  
-`--flatify__submenu-animation-show`
+```css title="style.css"
+.my-custom-card {
+	--flatify__card-txt-color: #e6e9ed;
+	--flatify__card-bg-color: #d8334a;
+	--flatify__card-border-color: #bf263c;
+}
+```
+
+We can go further and move the title over the image and use [overlay layer](/docs/helpers/overlay-layer) for clarifying the title:
+
+<PreviewBox
+	height="320px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Card</title>
+		<style>
+			.card-action-buttons svg{
+				fill: currentColor;
+				width: 1.5em;
+			}
+			.my-custom-card{
+				--flatify__card-txt-color: #E6E9ED;
+				--flatify__card-bg-color: #323133;
+				--flatify__card-border-color: #434A54;
+				--flatify__overlay-layer-bg-color: linear-gradient(40deg, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.08) 50%);
+				--flatify__overlay-layer-backdrop-filter: blur(5px) brightness(0.75) contrast(0.75);
+				--flatify__overlay-layer-priority: 0;
+			}
+			.my-custom-card .card-header{
+				margin-bottom: 0.5em;
+			}
+			.my-custom-card .card-title{
+				position: absolute;
+				bottom: 0.25em;
+				left: 0.75em;
+			}
+		</style>
+	</head>
+	<body class="flex-center">
+		<article class="card my-custom-card" style="max-width: 320px">
+			<header class="card-header overlay-layer">
+				<div class="card-badges">
+					<a href="#" class="badge style-dark-light">Sundays</a>
+					<a href="#" class="badge style-dark-light">Cards</a>
+				</div>
+				<img class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
+				<h2 class="card-title">Hello, I am a new card</h2>
+			</header>
+			<div class="card-body">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+				Nullam malesuada erat ut turpis.
+			</div>
+		</article>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<article class="card my-custom-card" style="max-width: 320px">
+	<header class="card-header overlay-layer">
+		<div class="card-badges">
+			<a href="#" class="badge style-dark-light">Sundays</a>
+			<a href="#" class="badge style-dark-light">Cards</a>
+		</div>
+		<img class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
+		<h2 class="card-title">Hello, I am a new card</h2>
+	</header>
+	<div class="card-body">
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+		malesuada erat ut turpis.
+	</div>
+</article>
+```
+
+```css title="style.css"
+.my-custom-card {
+	--flatify__card-txt-color: #e6e9ed;
+	--flatify__card-bg-color: #323133;
+	--flatify__card-border-color: #434a54;
+	--flatify__overlay-layer-bg-color: linear-gradient(
+		40deg,
+		rgba(255, 255, 255, 0.18) 50%,
+		rgba(255, 255, 255, 0.08) 50%
+	);
+	--flatify__overlay-layer-backdrop-filter: blur(5px) brightness(0.75) contrast(0.75);
+	--flatify__overlay-layer-priority: 0;
+}
+
+.my-custom-card .card-header {
+	margin-bottom: 0.5em;
+}
+
+.my-custom-card .card-title {
+	position: absolute;
+	bottom: 0.25em;
+	left: 0.75em;
+}
+```
