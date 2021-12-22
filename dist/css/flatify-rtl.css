@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 0.9.7-10
+ * FlatifyCSS version 0.9.7-11
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -976,13 +976,14 @@ th {
   min-width: 1.35em;
   min-height: 1.35em;
   padding: 0.35em 0.65em;
+  text-decoration: none;
   font-size: 0.64em;
   font-weight: var(--flatify__medium-font-weight);
   line-height: 1;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: calc(var(--flatify__border-radius) * 0.25);
+  border-radius: calc(var(--flatify__border-radius) * 0.5);
 }
 
 :root {
@@ -1413,6 +1414,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   position: relative;
   display: flex;
   flex-grow: 1;
+  max-width: 100%;
   padding: 0.75em;
   color: var(--flatify__local-txt-color);
   background: var(--flatify__local-bg-color);
