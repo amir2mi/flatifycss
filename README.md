@@ -11,15 +11,15 @@
 </p>
 
 <p align="center">
-  <a target="_blank" href="#Getting_stated">
-    Getting started
-  </a>
   <a target="_blank" href="https://amir2mi.github.io/flatifycss/docs/intro">
-    Documentation
-  </a>
+    Getting started
+  </a>•
+  <a target="_blank" href="https://amir2mi.github.io/flatifycss/">
+    Homepage
+  </a>•
   <a target="_blank" href="https://amir2mi.github.io/flatifycss/blog">
     News
-  </a>
+  </a>•
   <a target="_blank" href="https://github.com/amir2mi/flatifycss/issues">
     Issues
   </a>
