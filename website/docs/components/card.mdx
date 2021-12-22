@@ -10,7 +10,7 @@ Each card has a header, body, and footer, it can be vertical or horizontal based
 ## Vertical
 
 <PreviewBox
-	height="320px"
+	height="420px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -20,13 +20,19 @@ Each card has a header, body, and footer, it can be vertical or horizontal based
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Card</title>
+		<style>
+			.card-action-buttons svg{
+				fill: currentColor;
+				width: 1.5em;
+			}
+		</style>
 	</head>
 	<body class="flex-center">
 		<article class="card" style="max-width: 320px">
 			<header class="card-header">
 				<div class="card-badges">
-					<span class="badge style-green">Sundays</span>
-					<span class="badge style-accent">Cards</span>
+					<a href="#" class="badge style-green">Sundays</a>
+					<a href="#" class="badge style-accent">Cards</a>
 				</div>
 				<img class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
 				<h2 class="card-title">Hello, I am a new card</h2>
@@ -36,12 +42,23 @@ Each card has a header, body, and footer, it can be vertical or horizontal based
 				Nullam malesuada erat ut turpis.
 			</div>
 			<footer class="card-footer">
-				<div class="button-group">
-					<button class="button style-red-light">Like</button>
-					<button class="button style-green-light">Share</button>
-					<button class="button style-orange-light">Report</button>
+				<div class="button-group card-action-buttons">
+					<button class="button bordered style-light-light" aria-label="Like">
+						<svg aria-hidden="true" version="1.1" viewBox="175 120 350 350" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g>
+							<path d="m463.09 186.1c-13.52-11.176-30.867-17.328-48.836-17.328-20.77 0-40.879 8.2812-55.156 22.703-2.5742 2.5977-4.9766 5.3828-7.2266 8.3984-17.488-23.254-46.645-35.207-75.602-29.938-23.969 4.3516-42.801 17.539-55.988 39.156-18.574 30.504-20.086 59.914-4.4922 87.441 8.3516 14.758 19.18 29.109 33.078 43.859 25.484 27.102 55.66 52.836 95.023 80.996 2.5 1.7656 5.1797 2.6602 7.9688 2.6602 4.3125 0 7.2383-2.1797 8.6758-3.2539 34.965-24.953 63.645-48.992 87.68-73.496 13.605-13.859 29.039-30.898 40.324-52.152 4.832-9.1016 10.352-21.336 10.012-35.312-0.71484-30.078-12.648-54.883-35.461-73.734z"/>
+							</g>
+						</svg>
+					</button>
+					<button class="button bordered style-light-light" aria-label="Share">
+						<svg aria-hidden="true" version="1.1" viewBox="120 40 475 475" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g>
+							<path d="m456.01 202.83c19.488 0.042969 38.012-8.4727 50.664-23.293 12.656-14.824 18.16-34.453 15.059-53.695-3.1016-19.238-14.5-36.145-31.168-46.238-16.672-10.094-36.934-12.359-55.418-6.1914-18.488 6.168-33.332 20.141-40.605 38.223-7.2695 18.082-6.2344 38.441 2.8359 55.691l-110.43 65.855c-12.914-11.039-29.57-16.699-46.535-15.812-16.965 0.88281-32.941 8.2461-44.637 20.566-11.695 12.32-18.215 28.66-18.215 45.648 0 16.984 6.5195 33.324 18.215 45.645 11.695 12.32 27.672 19.684 44.637 20.566 16.965 0.88672 33.621-4.7734 46.535-15.812l107.86 63.617c-8.5469 20.078-6.7383 43.066 4.8438 61.562 11.578 18.496 31.469 30.164 53.262 31.246 21.797 1.082 42.742-8.5547 56.102-25.812 13.355-17.254 17.434-39.949 10.922-60.777-6.5117-20.828-22.789-37.156-43.598-43.73-20.809-6.5742-43.516-2.5625-60.812 10.742l-109.31-64.68c5.4258-14.613 5.4258-30.691 0-45.305l114.52-68.32c10.543 6.7148 22.781 10.289 35.281 10.305z"/>
+							</g>
+						</svg>
+					</button>
 				</div>
-				<button class="button style-accent push-right">Read more</button>
+				<a href="#" class="button style-accent push-right">Read more</a>
 			</footer>
 			</article>
 	</body>
