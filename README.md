@@ -28,15 +28,13 @@
   </a>
 </p>
 
+<hr>
 [![npm version](https://img.shields.io/npm/v/flatifycss)](https://www.npmjs.com/package/flatifycss)
 [![Packagist Prerelease](https://img.shields.io/packagist/v/amir2mi/flatifycss)](https://packagist.org/packages/amir2mi/flatifycss)
 [![CSS Gzip size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/css/flatify-min.css?compression=gzip&label=CSS%20Gzip)](https://github.com/amir2mi/flatifycss/blob/master/dist/css/flatify-min.css)
 [![CSS Brotli size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/css/flatify-min.css?compression=brotli&label=CSS%20Brotli)](https://github.com/amir2mi/flatifycss/blob/master/dist/css/flatify-min.css)
 [![JS Gzip size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/js/flatify-min.js?label=JS%20Gzip&compression=gzip)](https://github.com/amir2mi/flatifycss/blob/master/dist/js/flatify-min.js)
 [![JS Brotli size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/js/flatify-min.js?label=JS%20Brotli&compression=brotli)](https://github.com/amir2mi/flatifycss/blob/master/dist/js/flatify-min.js)
-
-
-<hr>
 
 # Getting stated
 
