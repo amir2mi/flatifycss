@@ -32,8 +32,6 @@
 
 # Getting stated
 
-## Download
-
 FlatifyCSS is available for users in many ways, you can install it using package managers, directly from CDN, or even downloading [lastest project archive](https://github.com/amir2mi/flatifycss/archive/master.zip).
 
 ## CDN
