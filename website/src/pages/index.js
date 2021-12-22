@@ -26,7 +26,7 @@ export default function Home() {
 	const { siteConfig } = useDocusaurusContext();
 	return (
 		<Layout
-			title={`Hello from ${siteConfig.title}`}
+			title={`${siteConfig.title} - The web flat design framework`}
 			description="Modern flat design framework for the web — inspired by Duolingo design system."
 		>
 			<HomepageHeader />

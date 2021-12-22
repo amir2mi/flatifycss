@@ -1,20 +1,16 @@
 ---
-title: Menu
+title: Cards
 ---
 
 import PreviewBox from "../../src/components/preview-box";
 
-Menu is a handy component, by default [dropdown](/docs/components/dropdown) and [navigation bar](/docs/components/navbar) use this component and style it based on their usage.  
-Generally there is a `.menu-items-wrapper` parent element with `.menu-item` children.
-
-:::info Active & disabled states
-With `.active` and `.disabled` classes you can show active item of the list and disable a link.
-:::
+Cards are flexible components that let you cleanly display items. Generally, cards should be simple because they will be repeated and they must not be too complicated for users.
+Each card has a header, body, and footer, it can be vertical or horizontal based on the content and the layout.
 
 ## Vertical
 
 <PreviewBox
-	height="270px"
+	height="320px"
 	children='
 <!DOCTYPE html>
 <html lang="en">
@@ -23,16 +19,31 @@ With `.active` and `.disabled` classes you can show active item of the list and 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Menu</title>
+		<title>Card</title>
 	</head>
-	<body>
-		<ul class="menu-items-wrapper">
-			<li class="menu-item active"><a>Home</a></li>
-			<li class="menu-item"><a>Articles</a></li>
-			<li class="menu-item"><a>Photos</a></li>
-			<li class="menu-item"><a>Videos</a></li>
-			<li class="menu-item disabled"><a>About Us</a></li>
-		</ul>
+	<body class="flex-center">
+		<article class="card" style="max-width: 320px">
+			<header class="card-header">
+				<div class="card-badges">
+					<span class="badge style-green">Sundays</span>
+					<span class="badge style-accent">Cards</span>
+				</div>
+				<img class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
+				<h2 class="card-title">Hello, I am a new card</h2>
+			</header>
+			<div class="card-body">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+				Nullam malesuada erat ut turpis.
+			</div>
+			<footer class="card-footer">
+				<div class="button-group">
+					<button class="button style-red-light">Like</button>
+					<button class="button style-green-light">Share</button>
+					<button class="button style-orange-light">Report</button>
+				</div>
+				<button class="button style-accent push-right">Read more</button>
+			</footer>
+			</article>
 	</body>
 </html>
 '
