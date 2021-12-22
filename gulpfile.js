@@ -112,7 +112,7 @@ function bumper(files, type = "patch", value) {
 // if description is empty it will not commit
 function commitAll(desc) {
 	return src("./")
-		.pipe(git.add({ args: "-A" }))
+		.pipe(git.add({ args: "--all" }))
 		.pipe(git.commit(argv.m || argv.desc || desc));
 }
 
