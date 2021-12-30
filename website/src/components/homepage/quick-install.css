@@ -1,21 +1,21 @@
 .quick-install-codes {
-	max-width: 32em;
+  max-width: 32em;
 }
 
 pre {
-	scrollbar-width: thin;
+  scrollbar-width: thin;
 }
 
 .quick-start-img {
-	padding-right: 3em;
+  padding-right: 3em;
 }
 
 @media screen and (max-width: 767px) {
-	.quick-install-item {
-		width: 100%;
-	}
+  .quick-install-item {
+    width: 100%;
+  }
 
-	.quick-start-img {
-		display: none;
-	}
+  .quick-start-img {
+    display: none;
+  }
 }

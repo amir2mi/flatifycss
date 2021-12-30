@@ -1,83 +1,83 @@
 .homepage-features {
-	overflow: hidden;
-	max-width: 50em;
-	padding: 0 1em;
-	margin: 0 auto 5em;
+  overflow: hidden;
+  max-width: 50em;
+  padding: 0 1em;
+  margin: 0 auto 5em;
 }
 
 .feature-item img,
 .feature-item svg {
-	padding: 3em;
-	width: 100%;
-	height: 20em;
-	max-width: 25em;
+  padding: 3em;
+  width: 100%;
+  height: 20em;
+  max-width: 25em;
 }
 
 @media screen and (max-width: 575px) {
-	.feature-item {
-		flex-direction: column !important;
-	}
-	.feature-texts {
-		text-align: center;
-	}
+  .feature-item {
+    flex-direction: column !important;
+  }
+  .feature-texts {
+    text-align: center;
+  }
 }
 
 .feature-desc {
-	opacity: 0.8;
-	max-width: 30em;
+  opacity: 0.8;
+  max-width: 30em;
 }
 
 .feature-item:nth-child(even) {
-	flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .feature-media {
-	position: relative;
+  position: relative;
 }
 
 .feature-media:before {
-	content: " ";
-	position: absolute;
-	top: 5%;
-	left: 5%;
-	z-index: -1;
-	width: 75%;
-	height: 75%;
-	background: var(--feature-item-bg-color, #1cb0f6);
-	opacity: var(--feature-item-bg-opacity, 0.1);
-	border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+  content: " ";
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  z-index: -1;
+  width: 75%;
+  height: 75%;
+  background: var(--feature-item-bg-color, #1cb0f6);
+  opacity: var(--feature-item-bg-opacity, 0.1);
+  border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
 }
 
 .feature-media:after {
-	content: " ";
-	position: absolute;
-	bottom: 5%;
-	right: 5%;
-	z-index: -1;
-	width: 75%;
-	height: 75%;
-	background: var(--feature-item-bg-2-color, #77d0fa);
-	opacity: var(--feature-item-bg-2-opacity, 0.1);
-	border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+  content: " ";
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  z-index: -1;
+  width: 75%;
+  height: 75%;
+  background: var(--feature-item-bg-2-color, #77d0fa);
+  opacity: var(--feature-item-bg-2-opacity, 0.1);
+  border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	.feature-2 .feature-media:after,
-	.feature-1 .feature-media:before {
-		animation: morph 15s linear infinite alternate, flatify-spin 20s linear infinite;
-	}
+  .feature-2 .feature-media:after,
+  .feature-1 .feature-media:before {
+    animation: morph 15s linear infinite alternate, flatify-spin 20s linear infinite;
+  }
 
-	.feature-1 .feature-media:after,
-	.feature-2 .feature-media:before {
-		animation: morph 20s linear infinite alternate, flatify-spin 15s linear infinite reverse;
-	}
+  .feature-1 .feature-media:after,
+  .feature-2 .feature-media:before {
+    animation: morph 20s linear infinite alternate, flatify-spin 15s linear infinite reverse;
+  }
 }
 
 @keyframes morph {
-	0% {
-		border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
-	}
-	100% {
-		border-radius: 40% 60%;
-	}
+  0% {
+    border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+  }
+  100% {
+    border-radius: 40% 60%;
+  }
 }

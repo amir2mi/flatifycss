@@ -1,43 +1,42 @@
 .homepage-contribute {
-	position: relative;
-	padding: 0 3em;
+  position: relative;
+  padding: 0 3em;
 }
 
 .homepage-contribute .featured-button {
-	position: relative;
-	z-index: 3;
+  position: relative;
+  z-index: 3;
 }
 
 .contribute-texts {
-	position: relative;
-	top: 10em;
+  position: relative;
+  top: 10em;
 }
 
 .contributor-svg svg {
-	width: 18em;
+  width: 18em;
 }
 
 .chain-svg svg {
-	width: 13em;
+  width: 13em;
 }
 
 .contribute-icons {
-	display: flex;
-	justify-content: space-between;
-	padding-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1em;
 }
 
 @media screen and (max-width: 767px) {
-    .contributor-svg svg {
-        width: 10em;
-    }
-    
-    .chain-svg svg {
-        width: 7em;
-    }
-    
+  .contributor-svg svg {
+    width: 10em;
+  }
 
-	.contribute-icons {
-		opacity: 0.3;
-	}
+  .chain-svg svg {
+    width: 7em;
+  }
+
+  .contribute-icons {
+    opacity: 0.3;
+  }
 }
