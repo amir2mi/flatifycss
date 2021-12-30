@@ -1,82 +1,82 @@
 @media (prefers-reduced-motion: reduce) {
-	// mentions body for higher priority
-	body {
-		*,
-		::before,
-		::after {
-			background-attachment: initial !important;
-			scroll-behavior: auto !important;
-		}
+  // mentions body for higher priority
+  body {
+    *,
+    ::before,
+    ::after {
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+    }
 
-		// Do not need transition in this case
-		* {
-			--#{$CSS_VAR_PFX}simple-transition: 0s !important;
-			--#{$CSS_VAR_PFX}long-transition: 0s !important;
-			--#{$CSS_VAR_PFX}bouncing-transition: 0s !important;
-		}
+    // Do not need transition in this case
+    * {
+      --#{$CSS_VAR_PFX}simple-transition: 0s !important;
+      --#{$CSS_VAR_PFX}long-transition: 0s !important;
+      --#{$CSS_VAR_PFX}bouncing-transition: 0s !important;
+    }
 
-		// Fade instead of custom animations
-		// Fade In
-		.dropdown,
-		.modal,
-		.tab-panel {
-			&.show {
-				animation-name: flatify-fade-in !important;
-			}
-		}
-		.menu-item {
-			&:focus-within > .submenu,
-			&:hover > .submenu {
-				animation-name: flatify-fade-in !important;
-			}
-		}
+    // Fade instead of custom animations
+    // Fade In
+    .dropdown,
+    .modal,
+    .tab-panel {
+      &.show {
+        animation-name: flatify-fade-in !important;
+      }
+    }
+    .menu-item {
+      &:focus-within > .submenu,
+      &:hover > .submenu {
+        animation-name: flatify-fade-in !important;
+      }
+    }
 
-		// Fade in out like a fresh breath
-		.loading {
-			animation: flatify-fade-in-out 2s infinite !important;
+    // Fade in out like a fresh breath
+    .loading {
+      animation: flatify-fade-in-out 2s infinite !important;
 
-			&:before,
-			&:after {
-				opacity: 1 !important;
-				animation: none !important;
-			}
-		}
-		.progress-bar:before {
-			filter: opacity(60%);
-			animation: flatify-fade-in-out 3s infinite !important;
-		}
+      &:before,
+      &:after {
+        opacity: 1 !important;
+        animation: none !important;
+      }
+    }
+    .progress-bar:before {
+      filter: opacity(60%);
+      animation: flatify-fade-in-out 3s infinite !important;
+    }
 
-		// Fade Out
-		.show {
-			&.alert-will-be-removed,
-			&.dropdown-will-be-hidden,
-			&.modal-will-be-hidden,
-			&.tab-will-be-hidden {
-				animation-name: flatify-fade-out !important;
-			}
-		}
+    // Fade Out
+    .show {
+      &.alert-will-be-removed,
+      &.dropdown-will-be-hidden,
+      &.modal-will-be-hidden,
+      &.tab-will-be-hidden {
+        animation-name: flatify-fade-out !important;
+      }
+    }
 
-		// limit steps for to have a simple animation
-		.spinner:before {
-			animation-timing-function: steps(4, end) !important;
-			animation-duration: 2s !important;
-		}
-	}
+    // limit steps for to have a simple animation
+    .spinner:before {
+      animation-timing-function: steps(4, end) !important;
+      animation-duration: 2s !important;
+    }
+  }
 
-	// Custom pulse animation
-	@keyframes flatify-pulse {
-		0% {
-			transform: scale(1.25);
-			opacity: 0.2;
-		}
-		40% {
-			transform: scale(1.25);
-			opacity: 0.5;
-		}
-		100% {
-			opacity: 0;
-			transform: scale(1.25);
-			opacity: 0.2;
-		}
-	}
+  // Custom pulse animation
+  @keyframes flatify-pulse {
+    0% {
+      transform: scale(1.25);
+      opacity: 0.2;
+    }
+    40% {
+      transform: scale(1.25);
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.25);
+      opacity: 0.2;
+    }
+  }
 }

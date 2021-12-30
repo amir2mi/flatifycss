@@ -1,74 +1,74 @@
 input[type="range"]:not(.default) {
-	-webkit-appearance: none;
-	width: 100%;
-	background: transparent !important;
-	border: none;
-	filter: none !important;
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent !important;
+  border: none;
+  filter: none !important;
 
-	&::-moz-range-track {
-		cursor: pointer;
-		width: 100%;
-		height: max(3px, calc(var(--#{$CSS_VAR_PFX}border-width) * 1.5));
-		background: var(--#{$CSS_VAR_PFX}form-element-border-color);
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
-	}
+  &::-moz-range-track {
+    cursor: pointer;
+    width: 100%;
+    height: max(3px, calc(var(--#{$CSS_VAR_PFX}border-width) * 1.5));
+    background: var(--#{$CSS_VAR_PFX}form-element-border-color);
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+  }
 
-	&::-webkit-slider-runnable-track {
-		cursor: pointer;
-		width: 100%;
-		height: max(3px, calc(var(--#{$CSS_VAR_PFX}border-width) * 1.5));
-		background: var(--#{$CSS_VAR_PFX}form-element-border-color);
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
-	}
+  &::-webkit-slider-runnable-track {
+    cursor: pointer;
+    width: 100%;
+    height: max(3px, calc(var(--#{$CSS_VAR_PFX}border-width) * 1.5));
+    background: var(--#{$CSS_VAR_PFX}form-element-border-color);
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+  }
 
-	&::-moz-range-thumb {
-		-webkit-appearance: none;
-		cursor: pointer;
-		height: 1.24em;
-		width: 1.24em;
-		background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
-		border: max(1px, var(--#{$CSS_VAR_PFX}border-width)) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
-		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
-	}
+  &::-moz-range-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+    height: 1.24em;
+    width: 1.24em;
+    background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+    border: max(1px, var(--#{$CSS_VAR_PFX}border-width)) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
+    transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+  }
 
-	&::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		cursor: pointer;
-		height: 1.24em;
-		width: 1.24em;
-		margin: -0.55em; // webkit thumb should be positioned manually
-		background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
-		border: max(1px, var(--#{$CSS_VAR_PFX}border-width)) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
-		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
-	}
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+    height: 1.24em;
+    width: 1.24em;
+    margin: -0.55em; // webkit thumb should be positioned manually
+    background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+    border: max(1px, var(--#{$CSS_VAR_PFX}border-width)) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
+    transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+  }
 
-	&:hover::-moz-range-thumb {
-		filter: brightness(90%);
-	}
+  &:hover::-moz-range-thumb {
+    filter: brightness(90%);
+  }
 
-	&:hover::-webkit-slider-thumb {
-		filter: brightness(90%);
-	}
+  &:hover::-webkit-slider-thumb {
+    filter: brightness(90%);
+  }
 
-	@media (prefers-reduced-motion: no-preference) {
-		&:active::-moz-range-thumb {
-			transform: scale(0.85);
-		}
+  @media (prefers-reduced-motion: no-preference) {
+    &:active::-moz-range-thumb {
+      transform: scale(0.85);
+    }
 
-		&:active::-webkit-slider-thumb {
-			transform: scale(0.85);
-		}
-	}
+    &:active::-webkit-slider-thumb {
+      transform: scale(0.85);
+    }
+  }
 
-	&:focus::-moz-range-thumb {
-		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__focus);
-		filter: brightness(90%);
-	}
+  &:focus::-moz-range-thumb {
+    border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__focus);
+    filter: brightness(90%);
+  }
 
-	&:focus::-webkit-slider-thumb {
-		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__focus);
-		filter: brightness(90%);
-	}
+  &:focus::-webkit-slider-thumb {
+    border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__focus);
+    filter: brightness(90%);
+  }
 }

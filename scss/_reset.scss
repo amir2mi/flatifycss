@@ -14,52 +14,52 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 // Remove default margin
 * {
-	margin: 0;
+  margin: 0;
 }
 
 // *** Root
 :root {
-	@include break-xs {
-		font-size: var(--#{$CSS_VAR_PFX}min-font-size-with-unit);
-	}
+  @include break-xs {
+    font-size: var(--#{$CSS_VAR_PFX}min-font-size-with-unit);
+  }
 
-	$sm-bp: map-get($RESPONSIVE_BREAKPOINTS, "sm");
-	$xl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xl");
-	@media (min-width: $sm-bp) and (max-width: $xl-bp) {
-		font-size: #{"calc( var(--#{$CSS_VAR_PFX}min-font-size-with-unit) + ( var(--#{$CSS_VAR_PFX}max-font-size) - var(--#{$CSS_VAR_PFX}min-font-size) ) * ( ( 100vw - #{$sm-bp} ) / ( #{math.div($xl-bp,1px)} - #{math.div($sm-bp,1px)} ) ) )"};
-	}
+  $sm-bp: map-get($RESPONSIVE_BREAKPOINTS, "sm");
+  $xl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xl");
+  @media (min-width: $sm-bp) and (max-width: $xl-bp) {
+    font-size: #{"calc( var(--#{$CSS_VAR_PFX}min-font-size-with-unit) + ( var(--#{$CSS_VAR_PFX}max-font-size) - var(--#{$CSS_VAR_PFX}min-font-size) ) * ( ( 100vw - #{$sm-bp} ) / ( #{math.div($xl-bp,1px)} - #{math.div($sm-bp,1px)} ) ) )"};
+  }
 
-	@include break-xl-min {
-		font-size: var(--#{$CSS_VAR_PFX}max-font-size-with-unit);
-	}
+  @include break-xl-min {
+    font-size: var(--#{$CSS_VAR_PFX}max-font-size-with-unit);
+  }
 
-	@if $SUPPORT_SMOOTH_SCROLL {
-		@media (prefers-reduced-motion: no-preference) {
-			scroll-behavior: smooth;
-		}
-	}
+  @if $SUPPORT_SMOOTH_SCROLL {
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
 
-	@if not $IS_LTR {
-		direction: rtl;
-	}
+  @if not $IS_LTR {
+    direction: rtl;
+  }
 }
 
 // *** Body
 body {
-	margin: 0;
-	font-family: var(--#{$CSS_VAR_PFX}primary-font-family);
-	line-height: var(--#{$CSS_VAR_PFX}base-line-height);
-	text-align: var(--#{$CSS_VAR_PFX}body-text-align);
-	color: var(--#{$CSS_VAR_PFX}txt-color);
-	background-color: var(--#{$CSS_VAR_PFX}bg-color);
-	-webkit-tap-highlight-color: var(--#{$CSS_VAR_PFX}tap-highlight-color);
-	-webkit-text-size-adjust: 100%;
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
+  margin: 0;
+  font-family: var(--#{$CSS_VAR_PFX}primary-font-family);
+  line-height: var(--#{$CSS_VAR_PFX}base-line-height);
+  text-align: var(--#{$CSS_VAR_PFX}body-text-align);
+  color: var(--#{$CSS_VAR_PFX}txt-color);
+  background-color: var(--#{$CSS_VAR_PFX}bg-color);
+  -webkit-tap-highlight-color: var(--#{$CSS_VAR_PFX}tap-highlight-color);
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 // *** Typography
@@ -71,193 +71,193 @@ h3,
 h4,
 h5,
 h6 {
-	overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 %heading {
-	margin-top: 0;
-	margin-bottom: var(--#{$CSS_VAR_PFX}heading-mb);
-	font-family: var(--#{$CSS_VAR_PFX}heading-font-family, --#{$CSS_VAR_PFX}primary-font-family);
-	font-style: var(--#{$CSS_VAR_PFX}heading-font-style);
-	font-weight: var(--#{$CSS_VAR_PFX}heading-font-weight);
-	color: var(--#{$CSS_VAR_PFX}heading-color);
+  margin-top: 0;
+  margin-bottom: var(--#{$CSS_VAR_PFX}heading-mb);
+  font-family: var(--#{$CSS_VAR_PFX}heading-font-family, --#{$CSS_VAR_PFX}primary-font-family);
+  font-style: var(--#{$CSS_VAR_PFX}heading-font-style);
+  font-weight: var(--#{$CSS_VAR_PFX}heading-font-weight);
+  color: var(--#{$CSS_VAR_PFX}heading-color);
 
-	strong,
-	b {
-		font-weight: var(--#{$CSS_VAR_PFX}extra-bold-font-weight);
-	}
+  strong,
+  b {
+    font-weight: var(--#{$CSS_VAR_PFX}extra-bold-font-weight);
+  }
 }
 
 h1 {
-	@extend %heading;
-	font-size: 3.5em;
-	line-height: var(--#{$CSS_VAR_PFX}small-line-height);
+  @extend %heading;
+  font-size: 3.5em;
+  line-height: var(--#{$CSS_VAR_PFX}small-line-height);
 }
 
 h2 {
-	@extend %heading;
-	font-size: 3em;
-	line-height: var(--#{$CSS_VAR_PFX}small-line-height);
+  @extend %heading;
+  font-size: 3em;
+  line-height: var(--#{$CSS_VAR_PFX}small-line-height);
 }
 
 h3 {
-	@extend %heading;
-	font-size: 2.35em;
-	line-height: var(--#{$CSS_VAR_PFX}small-line-height);
+  @extend %heading;
+  font-size: 2.35em;
+  line-height: var(--#{$CSS_VAR_PFX}small-line-height);
 }
 
 h4 {
-	@extend %heading;
-	font-size: 2em;
-	line-height: var(--#{$CSS_VAR_PFX}base-line-height);
+  @extend %heading;
+  font-size: 2em;
+  line-height: var(--#{$CSS_VAR_PFX}base-line-height);
 }
 
 h5 {
-	@extend %heading;
-	font-size: 1.65em;
-	line-height: var(--#{$CSS_VAR_PFX}base-line-height);
+  @extend %heading;
+  font-size: 1.65em;
+  line-height: var(--#{$CSS_VAR_PFX}base-line-height);
 }
 
 h6 {
-	@extend %heading;
-	font-size: 1.35em;
-	line-height: var(--#{$CSS_VAR_PFX}base-line-height);
+  @extend %heading;
+  font-size: 1.35em;
+  line-height: var(--#{$CSS_VAR_PFX}base-line-height);
 }
 
 p {
-	line-height: var(--#{$CSS_VAR_PFX}large-line-height);
-	margin-top: 0;
-	margin-bottom: var(--#{$CSS_VAR_PFX}paragraph-mb);
+  line-height: var(--#{$CSS_VAR_PFX}large-line-height);
+  margin-top: 0;
+  margin-bottom: var(--#{$CSS_VAR_PFX}paragraph-mb);
 
-	// last p in the parent should not have margin e.g. the paragraph in a button
-	&:last-of-type {
-		margin-bottom: 0;
-	}
+  // last p in the parent should not have margin e.g. the paragraph in a button
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 abbr[title] {
-	cursor: help;
-	text-decoration: var(--#{$CSS_VAR_PFX}txt-color-light) underline dotted 0.125em;
-	text-decoration-skip-ink: none;
+  cursor: help;
+  text-decoration: var(--#{$CSS_VAR_PFX}txt-color-light) underline dotted 0.125em;
+  text-decoration-skip-ink: none;
 }
 
 address {
-	margin-bottom: 1em;
-	font-style: normal;
-	line-height: inherit;
+  margin-bottom: 1em;
+  font-style: normal;
+  line-height: inherit;
 }
 
 // *** Lists
 ol,
 ul {
-	padding-left: 2em;
+  padding-left: 2em;
 }
 
 ol,
 ul,
 dl {
-	margin-top: 0;
-	margin-bottom: 1em;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 
 ol ol,
 ul ul,
 ol ul,
 ul ol {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 dt {
-	font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+  font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
 }
 
 dd {
-	margin-bottom: 0.5em;
-	margin-left: 0;
+  margin-bottom: 0.5em;
+  margin-left: 0;
 }
 
 // *** Text formatting
 b,
 strong {
-	font-weight: var(--#{$CSS_VAR_PFX}bold-font-weight);
+  font-weight: var(--#{$CSS_VAR_PFX}bold-font-weight);
 }
 
 mark {
-	color: var(--#{$CSS_VAR_PFX}txt-color-dark);
+  color: var(--#{$CSS_VAR_PFX}txt-color-dark);
 
-	&:not(.inline) {
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.38);
-		padding: 0 0.32em;
-		background: var(--#{$CSS_VAR_PFX}color-yellow-light);
-	}
+  &:not(.inline) {
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.38);
+    padding: 0 0.32em;
+    background: var(--#{$CSS_VAR_PFX}color-yellow-light);
+  }
 
-	&.inline {
-		--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}color-yellow-light);
-		position: relative;
-		white-space: nowrap;
-		margin: 0 0.32em;
-		background: transparent !important;
+  &.inline {
+    --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}color-yellow-light);
+    position: relative;
+    white-space: nowrap;
+    margin: 0 0.32em;
+    background: transparent !important;
 
-		&:before {
-			content: " ";
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: -1;
-			width: 100%;
-			height: 100%;
-			background: var(--#{$CSS_VAR_PFX}local-bg-color);
-			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.38);
-			opacity: 0.9;
+    &:before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: var(--#{$CSS_VAR_PFX}local-bg-color);
+      border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.38);
+      opacity: 0.9;
 
-			@if $IS_LTR {
-				transform: rotate(-3deg) scale(1.1, 1.2) skew(-10deg);
-			} @else {
-				transform: rotate(3deg) scale(1.1, 1.2) skew(10deg);
-			}
-		}
-	}
+      @if $IS_LTR {
+        transform: rotate(-3deg) scale(1.1, 1.2) skew(-10deg);
+      } @else {
+        transform: rotate(3deg) scale(1.1, 1.2) skew(10deg);
+      }
+    }
+  }
 
-	// color: var(--#{$CSS_VAR_PFX}txt-color-inverted);
+  // color: var(--#{$CSS_VAR_PFX}txt-color-inverted);
 }
 
 // Sub & Sup
 sub,
 sup {
-	position: relative;
-	font-size: 0.75em;
-	line-height: 0;
-	vertical-align: baseline;
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
 }
 
 sub {
-	bottom: -0.25em;
+  bottom: -0.25em;
 }
 sup {
-	top: -0.5em;
+  top: -0.5em;
 }
 
 // Anchor
-%anchor-style{
-	color: var(--#{$CSS_VAR_PFX}link-color);
-	text-decoration: var(--#{$CSS_VAR_PFX}link-decoration);
-	text-underline-position: under;
-	transition: color var(--#{$CSS_VAR_PFX}simple-transition), background var(--#{$CSS_VAR_PFX}simple-transition),
-		border var(--#{$CSS_VAR_PFX}simple-transition);
+%anchor-style {
+  color: var(--#{$CSS_VAR_PFX}link-color);
+  text-decoration: var(--#{$CSS_VAR_PFX}link-decoration);
+  text-underline-position: under;
+  transition: color var(--#{$CSS_VAR_PFX}simple-transition), background var(--#{$CSS_VAR_PFX}simple-transition),
+    border var(--#{$CSS_VAR_PFX}simple-transition);
 
-	&:hover {
-		color: var(--#{$CSS_VAR_PFX}link-color__hover);
-		text-decoration: var(--#{$CSS_VAR_PFX}link-decoration__hover);
-	}
+  &:hover {
+    color: var(--#{$CSS_VAR_PFX}link-color__hover);
+    text-decoration: var(--#{$CSS_VAR_PFX}link-decoration__hover);
+  }
 
-	&:focus {
-		color: var(--#{$CSS_VAR_PFX}link-color__focus);
-		text-decoration: var(--#{$CSS_VAR_PFX}link-decoration__focus);
-	}
+  &:focus {
+    color: var(--#{$CSS_VAR_PFX}link-color__focus);
+    text-decoration: var(--#{$CSS_VAR_PFX}link-decoration__focus);
+  }
 }
 
-a:not(.button){
-	@extend %anchor-style;
+a:not(.button) {
+  @extend %anchor-style;
 }
 
 // Code
@@ -265,55 +265,55 @@ pre,
 code,
 kbd,
 samp {
-	direction: ltr;
-	unicode-bidi: bidi-override;
-	font-size: 1em;
-	font-family: var(--#{$CSS_VAR_PFX}code-font-family);
+  direction: ltr;
+  unicode-bidi: bidi-override;
+  font-size: 1em;
+  font-family: var(--#{$CSS_VAR_PFX}code-font-family);
 }
 
 pre {
-	overflow: auto;
-	display: block;
-	padding: 1em;
-	margin-top: 0;
-	margin-bottom: 1em;
-	background: var(--#{$CSS_VAR_PFX}bg-color-dark);
-	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}bg-color-darker);
-	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+  overflow: auto;
+  display: block;
+  padding: 1em;
+  margin-top: 0;
+  margin-bottom: 1em;
+  background: var(--#{$CSS_VAR_PFX}bg-color-dark);
+  border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}bg-color-darker);
+  border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
-	code {
-		color: inherit;
-		word-break: normal;
-	}
+  code {
+    color: inherit;
+    word-break: normal;
+  }
 }
 
 code {
-	vertical-align: middle;
-	font-size: 0.85em;
-	word-wrap: break-word;
-	padding: 0.18em 0.32em;
-	background: var(--#{$CSS_VAR_PFX}bg-color-dark);
-	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}bg-color-darker);
-	border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+  vertical-align: middle;
+  font-size: 0.85em;
+  word-wrap: break-word;
+  padding: 0.18em 0.32em;
+  background: var(--#{$CSS_VAR_PFX}bg-color-dark);
+  border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}bg-color-darker);
+  border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 
-	a > & {
-		color: inherit;
-	}
+  a > & {
+    color: inherit;
+  }
 }
 
 // focus-visible outline
 a,
 button {
-	&:focus-visible {
-		outline: 0.18em solid currentColor;
-	}
+  &:focus-visible {
+    outline: 0.18em solid currentColor;
+  }
 }
 
 // ** Fixes
 // Media
 img,
 svg {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 // Improve media defaults
@@ -321,8 +321,8 @@ img,
 picture,
 video,
 canvas {
-	display: block;
-	max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 // Forms
@@ -330,7 +330,7 @@ canvas {
 // 1. Allow labels to use `margin` for spacing.
 
 label {
-	display: inline-block; // 1
+  display: inline-block; // 1
 }
 
 // Explicitly remove focus outline in Chromium when it shouldn't be
@@ -339,7 +339,7 @@ label {
 // confused and applies its very visible two-tone outline anyway.
 
 button:focus:not(:focus-visible) {
-	outline: 0;
+  outline: 0;
 }
 
 // Remove built-in form typography styles
@@ -347,7 +347,7 @@ input,
 button,
 textarea,
 select {
-	font: inherit;
+  font: inherit;
 }
 
 // 1. Remove the margin in Firefox and Safari
@@ -357,36 +357,36 @@ button,
 select,
 optgroup,
 textarea {
-	margin: 0; // 1
-	font-family: inherit;
-	line-height: inherit;
+  margin: 0; // 1
+  font-family: inherit;
+  line-height: inherit;
 }
 
 // Remove the inheritance of text transform in Firefox
 button,
 select {
-	text-transform: none;
+  text-transform: none;
 }
 // Set the cursor for non-`<button>` buttons
 [role="button"] {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 select {
-	// Remove the inheritance of word-wrap in Safari.
-	word-wrap: normal;
+  // Remove the inheritance of word-wrap in Safari.
+  word-wrap: normal;
 
-	// Undo the opacity change from Chrome
-	&:disabled {
-		opacity: 1;
-	}
+  // Undo the opacity change from Chrome
+  &:disabled {
+    opacity: 1;
+  }
 }
 
 // Remove the dropdown arrow in Chrome from inputs built with datalists.
 // See https://stackoverflow.com/a/54997118
 
 [list]::-webkit-calendar-picker-indicator {
-	display: none;
+  display: none;
 }
 
 // 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
@@ -398,24 +398,24 @@ button,
   [type="button"], // 1
   [type="reset"],
   [type="submit"] {
-	-webkit-appearance: button; // 2
+  -webkit-appearance: button; // 2
 
-	&:not(:disabled) {
-		cursor: pointer; // 3
-	}
+  &:not(:disabled) {
+    cursor: pointer; // 3
+  }
 }
 
 // Remove inner border and padding from Firefox, but don't restore the outline like Normalize.
 
 ::-moz-focus-inner {
-	padding: 0;
-	border-style: none;
+  padding: 0;
+  border-style: none;
 }
 
 // 1. Textareas should really only resize vertically so they don't break their (horizontal) containers.
 
 textarea {
-	resize: vertical; // 1
+  resize: vertical; // 1
 }
 
 // 1. Browsers set a default `min-width: min-content;` on fieldsets,
@@ -425,26 +425,26 @@ textarea {
 // 2. Reset the default outline behavior of fieldsets so they don't affect page layout.
 
 fieldset {
-	min-width: 0; // 1
-	padding: 0; // 2
-	margin: 0; // 2
-	border: 0; // 2
+  min-width: 0; // 1
+  padding: 0; // 2
+  margin: 0; // 2
+  border: 0; // 2
 }
 
 // 1. By using `float: left`, the legend will behave like a block element.
 //    This way the border of a fieldset wraps around the legend if present.
 
 legend {
-	float: left; // 1
-	width: 100%;
-	padding: 0;
-	margin-bottom: 0.5em;
-	font-weight: var(--#{$CSS_VAR_PFX}bold-font-weight);
-	line-height: inherit;
+  float: left; // 1
+  width: 100%;
+  padding: 0;
+  margin-bottom: 0.5em;
+  font-weight: var(--#{$CSS_VAR_PFX}bold-font-weight);
+  line-height: inherit;
 
-	+ * {
-		clear: left;
-	}
+  + * {
+    clear: left;
+  }
 }
 
 // Fix height of inputs with a type of datetime-local, date, month, week, or time
@@ -456,11 +456,11 @@ legend {
 ::-webkit-datetime-edit-day-field,
 ::-webkit-datetime-edit-month-field,
 ::-webkit-datetime-edit-year-field {
-	padding: 0;
+  padding: 0;
 }
 
 ::-webkit-inner-spin-button {
-	height: auto;
+  height: auto;
 }
 // 1. Correct the outline style in Safari.
 // 2. This overrides the extra rounded corners on search inputs in iOS so that our
@@ -468,8 +468,8 @@ legend {
 //    be added to `.form-control` as it's not specific enough. For details, see
 
 [type="search"] {
-	outline-offset: -2px; // 1
-	-webkit-appearance: textfield; // 2
+  outline-offset: -2px; // 1
+  -webkit-appearance: textfield; // 2
 }
 // 1. A few input types should stay LTR
 // See https://rtlstyling.com/posts/rtl-styling#form-inputs
@@ -480,45 +480,45 @@ legend {
 [type="url"],
 [type="email"],
 [type="number"] {
-	direction: ltr;
+  direction: ltr;
 }
 
 // Remove the inner padding in Chrome and Safari on macOS.
 
 ::-webkit-search-decoration {
-	-webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 // Remove padding around color pickers in webkit browsers
 
 ::-webkit-color-swatch-wrapper {
-	padding: 0;
+  padding: 0;
 }
 
 // Inherit font family and line height for file input buttons
 
 ::file-selector-button {
-	font: inherit;
+  font: inherit;
 }
 
 // 1. Change font properties to `inherit`
 // 2. Correct the inability to style clickable types in iOS and Safari.
 
 ::-webkit-file-upload-button {
-	font: inherit; // 1
-	-webkit-appearance: button; // 2
+  font: inherit; // 1
+  -webkit-appearance: button; // 2
 }
 
 // Correct element displays
 
 output {
-	display: inline-block;
+  display: inline-block;
 }
 
 // Remove border from iframe
 
 iframe {
-	border: 0;
+  border: 0;
 }
 
 // Summary
@@ -526,8 +526,8 @@ iframe {
 // 1. Add the correct display in all browsers
 
 summary {
-	display: list-item; // 1
-	cursor: pointer;
+  display: list-item; // 1
+  cursor: pointer;
 }
 
 // Progress
@@ -535,7 +535,7 @@ summary {
 // Add the correct vertical alignment in Chrome, Firefox, and Opera.
 
 progress {
-	vertical-align: baseline;
+  vertical-align: baseline;
 }
 
 // Hidden attribute
@@ -543,5 +543,5 @@ progress {
 // Always hide an element with the `hidden` HTML attribute.
 
 [hidden] {
-	display: none !important;
+  display: none !important;
 }

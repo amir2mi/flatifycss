@@ -1,56 +1,56 @@
 .button-group {
-	display: flex;
-	margin: 0.25em 0.125em;
+  display: flex;
+  margin: 0.25em 0.125em;
 
-	.button {
-		border-radius: 0;
-		&.outline,
-		&.bordered {
-			margin: 0 !important;
-		}
-	}
+  .button {
+    border-radius: 0;
+    &.outline,
+    &.bordered {
+      margin: 0 !important;
+    }
+  }
 
-	&:not(.vertical) {
-		.button {
-			// sometimes on active/focus-visible a white space will be create,
-			// to fix this -1px margin is practical.
-			margin: 0 -1px !important;
+  &:not(.vertical) {
+    .button {
+      // sometimes on active/focus-visible a white space will be create,
+      // to fix this -1px margin is practical.
+      margin: 0 -1px !important;
 
-			@if $IS_LTR {
-				&:first-child {
-					border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
-				}
+      @if $IS_LTR {
+        &:first-child {
+          border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+        }
 
-				&:last-child {
-					border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
-				}
-			} @else {
-				&:first-child {
-					border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
-				}
+        &:last-child {
+          border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+        }
+      } @else {
+        &:first-child {
+          border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+        }
 
-				&:last-child {
-					border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
-				}
-			}
-		}
-	}
+        &:last-child {
+          border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+        }
+      }
+    }
+  }
 
-	&.vertical {
-		// sometimes on active/focus-visible a white space will be create,
-		// to fix this -1px margin is practical.
-		flex-direction: column;
+  &.vertical {
+    // sometimes on active/focus-visible a white space will be create,
+    // to fix this -1px margin is practical.
+    flex-direction: column;
 
-		.button {
-			margin: -1px 0 !important;
+    .button {
+      margin: -1px 0 !important;
 
-			&:first-child {
-				border-radius: var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0 0;
-			}
+      &:first-child {
+        border-radius: var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0 0;
+      }
 
-			&:last-child {
-				border-radius: 0 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius);
-			}
-		}
-	}
+      &:last-child {
+        border-radius: 0 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius);
+      }
+    }
+  }
 }

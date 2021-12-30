@@ -1,57 +1,57 @@
 .toggle-wrapper {
-	.check {
-		// force minimum width for limited space cases
-		min-width: 3em;
-		width: 3em;
+  .check {
+    // force minimum width for limited space cases
+    min-width: 3em;
+    width: 3em;
 
-		&:after {
-			top: 0;
-			bottom: 0;
+    &:after {
+      top: 0;
+      bottom: 0;
 
-			@if $IS_LTR {
-				left: 0.18em;
-			} @else {
-				right: 0.18em;
-			}
+      @if $IS_LTR {
+        left: 0.18em;
+      } @else {
+        right: 0.18em;
+      }
 
-			width: 0.9em;
-			height: 0.9em;
-			margin: auto 0;
-			background: var(--#{$CSS_VAR_PFX}form-element-border-color);
-			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.3);
-			transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
-		}
-	}
+      width: 0.9em;
+      height: 0.9em;
+      margin: auto 0;
+      background: var(--#{$CSS_VAR_PFX}form-element-border-color);
+      border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.3);
+      transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
+    }
+  }
 
-	input:checked + .check {
-		&:after {
-			@if $IS_LTR {
-				transform: translateX(1.4em);
-			} @else {
-				transform: translateX(-1.4em);
-			}
-			background: var(--#{$CSS_VAR_PFX}form-element-accent-color);
-		}
-	}
+  input:checked + .check {
+    &:after {
+      @if $IS_LTR {
+        transform: translateX(1.4em);
+      } @else {
+        transform: translateX(-1.4em);
+      }
+      background: var(--#{$CSS_VAR_PFX}form-element-accent-color);
+    }
+  }
 
-	// To prevent delayed animation it is not available for touch users
-	@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
-		&:active {
-			.check:after {
-				transition: all 0.1s 0.05s;
-			}
+  // To prevent delayed animation it is not available for touch users
+  @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    &:active {
+      .check:after {
+        transition: all 0.1s 0.05s;
+      }
 
-			input:not(:checked) + .check:after {
-				transform: scaleX(1.2) scaleY(0.7);
-			}
+      input:not(:checked) + .check:after {
+        transform: scaleX(1.2) scaleY(0.7);
+      }
 
-			input:checked + .check:after {
-				@if $IS_LTR {
-					transform: translateX(1.2em) scaleY(0.7) scaleX(1.4);
-				} @else {
-					transform: translateX(-1.2em) scaleY(0.7) scaleX(1.4);
-				}
-			}
-		}
-	}
+      input:checked + .check:after {
+        @if $IS_LTR {
+          transform: translateX(1.2em) scaleY(0.7) scaleX(1.4);
+        } @else {
+          transform: translateX(-1.2em) scaleY(0.7) scaleX(1.4);
+        }
+      }
+    }
+  }
 }

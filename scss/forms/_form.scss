@@ -1,250 +1,250 @@
 :root {
-	--#{$CSS_VAR_PFX}form-element-accent-color: var(--#{$CSS_VAR_PFX}color-accent-primary);
-	--#{$CSS_VAR_PFX}form-element-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
-	--#{$CSS_VAR_PFX}form-element-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
-	--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
-	--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}form-element-accent-color);
-	--#{$CSS_VAR_PFX}form-element-border-color__valid: var(--#{$CSS_VAR_PFX}color-success-primary);
-	--#{$CSS_VAR_PFX}form-element-border-color__warning: var(--#{$CSS_VAR_PFX}color-warning-primary);
-	--#{$CSS_VAR_PFX}form-element-border-color__invalid: var(--#{$CSS_VAR_PFX}color-danger-primary);
+  --#{$CSS_VAR_PFX}form-element-accent-color: var(--#{$CSS_VAR_PFX}color-accent-primary);
+  --#{$CSS_VAR_PFX}form-element-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
+  --#{$CSS_VAR_PFX}form-element-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+  --#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}form-element-accent-color);
+  --#{$CSS_VAR_PFX}form-element-border-color__valid: var(--#{$CSS_VAR_PFX}color-success-primary);
+  --#{$CSS_VAR_PFX}form-element-border-color__warning: var(--#{$CSS_VAR_PFX}color-warning-primary);
+  --#{$CSS_VAR_PFX}form-element-border-color__invalid: var(--#{$CSS_VAR_PFX}color-danger-primary);
 }
 
 .form-label {
-	&:not(:first-of-type) {
-		margin-top: 0.9em;
-	}
+  &:not(:first-of-type) {
+    margin-top: 0.9em;
+  }
 
-	&.inline:not(:first-child) {
-		@if $IS_LTR {
-			margin-left: 0.38em;
-		} @else {
-			margin-right: 0.38em;
-		}
-	}
+  &.inline:not(:first-child) {
+    @if $IS_LTR {
+      margin-left: 0.38em;
+    } @else {
+      margin-right: 0.38em;
+    }
+  }
 
-	&:not(.inline) {
-		display: block;
-		@if $IS_LTR {
-			margin-left: 0.38em;
-		} @else {
-			margin-right: 0.38em;
-		}
-	}
+  &:not(.inline) {
+    display: block;
+    @if $IS_LTR {
+      margin-left: 0.38em;
+    } @else {
+      margin-right: 0.38em;
+    }
+  }
 }
 
 // [.floating-label] should added to [.input-wrapper]
 .floating-label {
-	textarea,
-	input {
-		padding: 1.64em 1em 0.5em !important;
+  textarea,
+  input {
+    padding: 1.64em 1em 0.5em !important;
 
-		&:not(:placeholder-shown) + .form-label,
-		&:focus + .form-label {
-			opacity: 0.5;
-			transform: scale(0.75) translateY(-0.9em);
-		}
+    &:not(:placeholder-shown) + .form-label,
+    &:focus + .form-label {
+      opacity: 0.5;
+      transform: scale(0.75) translateY(-0.9em);
+    }
 
-		&::placeholder {
-			opacity: 0 !important;
-		}
-	}
+    &::placeholder {
+      opacity: 0 !important;
+    }
+  }
 
-	.form-label {
-		pointer-events: none;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		margin: auto 0;
-		height: fit-content;
-		opacity: 0.8;
-		will-change: opacity, transform;
-		transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
+  .form-label {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    height: fit-content;
+    opacity: 0.8;
+    will-change: opacity, transform;
+    transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
 
-		@if $IS_LTR {
-			transform-origin: top left;
-			left: 1em;
-		} @else {
-			transform-origin: top right;
-			right: 1em;
-		}
-	}
+    @if $IS_LTR {
+      transform-origin: top left;
+      left: 1em;
+    } @else {
+      transform-origin: top right;
+      right: 1em;
+    }
+  }
 
-	&.is-textarea {
-		.form-label {
-			top: 1.5em;
-			bottom: unset;
-		}
-	}
+  &.is-textarea {
+    .form-label {
+      top: 1.5em;
+      bottom: unset;
+    }
+  }
 }
 
 %form-element {
-	font-size: 0.9em;
-	padding: 0.8em 1em;
-	margin: 0.38em 0;
-	color: var(--#{$CSS_VAR_PFX}form-element-txt-color);
-	background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
-	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
-	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-	filter: brightness(100%);
-	outline: none !important;
-	will-change: filter;
-	transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+  font-size: 0.9em;
+  padding: 0.8em 1em;
+  margin: 0.38em 0;
+  color: var(--#{$CSS_VAR_PFX}form-element-txt-color);
+  background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
+  border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
+  border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+  filter: brightness(100%);
+  outline: none !important;
+  will-change: filter;
+  transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
-	&:hover,
-	&:focus {
-		filter: brightness(96%);
-	}
+  &:hover,
+  &:focus {
+    filter: brightness(96%);
+  }
 
-	&:focus {
-		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__focus) !important;
-	}
+  &:focus {
+    border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__focus) !important;
+  }
 
-	&::placeholder {
-		color: inherit;
-		opacity: 0.45;
-		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
-	}
+  &::placeholder {
+    color: inherit;
+    opacity: 0.45;
+    transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+  }
 
-	&:focus::placeholder {
-		// hide placeholder on focus
-		opacity: 0;
-	}
+  &:focus::placeholder {
+    // hide placeholder on focus
+    opacity: 0;
+  }
 
-	&[class*="style-"] {
-		--#{$CSS_VAR_PFX}form-element-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
-		--#{$CSS_VAR_PFX}form-element-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
-		--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}local-border-color);
-		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}local-border-color-dark);
-	}
+  &[class*="style-"] {
+    --#{$CSS_VAR_PFX}form-element-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
+    --#{$CSS_VAR_PFX}form-element-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
+    --#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}local-border-color);
+    --#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}local-border-color-dark);
+  }
 
-	.input-wrapper.invalid &,
-	&.invalid {
-		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
-		--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid) !important;
-		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(
-			--#{$CSS_VAR_PFX}form-element-border-color__invalid
-		) !important;
-	}
+  .input-wrapper.invalid &,
+  &.invalid {
+    border-color: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
+    --#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid) !important;
+    --#{$CSS_VAR_PFX}form-element-border-color__focus: var(
+      --#{$CSS_VAR_PFX}form-element-border-color__invalid
+    ) !important;
+  }
 
-	&:focus:invalid {
-		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(
-			--#{$CSS_VAR_PFX}form-element-border-color__invalid
-		) !important;
-	}
+  &:focus:invalid {
+    --#{$CSS_VAR_PFX}form-element-border-color__focus: var(
+      --#{$CSS_VAR_PFX}form-element-border-color__invalid
+    ) !important;
+  }
 
-	.input-wrapper.warning &,
-	&.warning {
-		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
-		--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__warning) !important;
-		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(
-			--#{$CSS_VAR_PFX}form-element-border-color__warning
-		) !important;
-	}
+  .input-wrapper.warning &,
+  &.warning {
+    border-color: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
+    --#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__warning) !important;
+    --#{$CSS_VAR_PFX}form-element-border-color__focus: var(
+      --#{$CSS_VAR_PFX}form-element-border-color__warning
+    ) !important;
+  }
 
-	.input-wrapper.valid &,
-	&.valid {
-		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
-		--#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
-		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
-	}
+  .input-wrapper.valid &,
+  &.valid {
+    border-color: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
+    --#{$CSS_VAR_PFX}form-element-border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+    --#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+  }
 
-	// Just elements with [readonly] attribute instead of CSS [:read-only] that also considers [disabled] elements.
-	&[readonly] {
-		filter: none !important;
-		--#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
-	}
+  // Just elements with [readonly] attribute instead of CSS [:read-only] that also considers [disabled] elements.
+  &[readonly] {
+    filter: none !important;
+    --#{$CSS_VAR_PFX}form-element-border-color__focus: var(--#{$CSS_VAR_PFX}form-element-border-color) !important;
+  }
 
-	&.disabled,
-	&:disabled {
-		pointer-events: none;
-		filter: contrast(85%) brightness(85%) opacity(70%) !important;
-	}
+  &.disabled,
+  &:disabled {
+    pointer-events: none;
+    filter: contrast(85%) brightness(85%) opacity(70%) !important;
+  }
 }
 
 .checkbox-wrapper,
 .radio-wrapper,
 .toggle-wrapper {
-	position: relative;
-	display: flex;
-	align-items: center;
-	margin: 0.75em 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0.75em 0;
 
-	&:hover,
-	&:focus-within {
-		.check {
-			filter: brightness(95%);
-		}
-	}
+  &:hover,
+  &:focus-within {
+    .check {
+      filter: brightness(95%);
+    }
+  }
 
-	&.valid {
-		.check {
-			border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
-		}
-	}
-	&.warning {
-		.check {
-			border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__warning);
-		}
-	}
-	input:invalid + .check,
-	&.invalid .check {
-		border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid);
-	}
+  &.valid {
+    .check {
+      border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+    }
+  }
+  &.warning {
+    .check {
+      border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__warning);
+    }
+  }
+  input:invalid + .check,
+  &.invalid .check {
+    border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid);
+  }
 
-	.check {
-		position: relative;
-		display: inline-block;
-		width: 1.5em;
-		height: 1.5em;
-		background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
-		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
-		transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+  .check {
+    position: relative;
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
+    border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}form-element-border-color);
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+    transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
-		@if $IS_LTR {
-			margin-right: 0.5em;
-		} @else {
-			margin-left: 0.5em;
-		}
+    @if $IS_LTR {
+      margin-right: 0.5em;
+    } @else {
+      margin-left: 0.5em;
+    }
 
-		&:after {
-			content: " ";
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 1;
-			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
-		}
-	}
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+      transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+    }
+  }
 
-	input:not(:disabled) + .check {
-		cursor: pointer;
-	}
+  input:not(:disabled) + .check {
+    cursor: pointer;
+  }
 
-	input:disabled + .check {
-		pointer-events: none;
-		filter: contrast(85%) brightness(85%) opacity(70%) !important;
+  input:disabled + .check {
+    pointer-events: none;
+    filter: contrast(85%) brightness(85%) opacity(70%) !important;
 
-		&:after {
-			background: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid);
-		}
-	}
+    &:after {
+      background: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid);
+    }
+  }
 
-	input {
-		position: absolute;
-		top: 0;
-		left: 0;
-		opacity: 0;
-	}
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
 }
 
 .radio-button,
 .checkbox-button {
-	appearance: none !important;
-	width: 0 !important;
-	height: 0 !important;
-	padding: 0 !important;
-	border: none !important;
-	opacity: 0 !important;
+  appearance: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  opacity: 0 !important;
 }

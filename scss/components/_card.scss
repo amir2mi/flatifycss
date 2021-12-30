@@ -1,105 +1,105 @@
 :root {
-	--#{$CSS_VAR_PFX}card-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
-	--#{$CSS_VAR_PFX}card-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
-	--#{$CSS_VAR_PFX}card-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+  --#{$CSS_VAR_PFX}card-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}card-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+  --#{$CSS_VAR_PFX}card-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 }
 
 .card {
-	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}card-txt-color);
-	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}card-bg-color);
-	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}card-border-color);
-	overflow: hidden;
-	position: relative;
-	display: flex;
-	flex-grow: 1;
-	max-width: 100%;
-	padding: 0.75em;
-	color: var(--#{$CSS_VAR_PFX}local-txt-color);
-	background: var(--#{$CSS_VAR_PFX}local-bg-color);
-	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+  --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}card-txt-color);
+  --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}card-bg-color);
+  --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}card-border-color);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  max-width: 100%;
+  padding: 0.75em;
+  color: var(--#{$CSS_VAR_PFX}local-txt-color);
+  background: var(--#{$CSS_VAR_PFX}local-bg-color);
+  border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+  border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
-	&:not(.horizontal) {
-		flex-direction: column;
-		width: 20em;
+  &:not(.horizontal) {
+    flex-direction: column;
+    width: 20em;
 
-		.card-badges {
-			@if $IS_LTR {
-				right: 0.5em;
-			} @else {
-				left: 0.5em;
-			}
-		}
-	}
+    .card-badges {
+      @if $IS_LTR {
+        right: 0.5em;
+      } @else {
+        left: 0.5em;
+      }
+    }
+  }
 
-	&.horizontal {
-		gap: 1em;
+  &.horizontal {
+    gap: 1em;
 
-		.card-header {
-			width: 40%;
+    .card-header {
+      width: 40%;
 
-			.card-badges {
-				@if $IS_LTR {
-					left: 0.5em;
-				} @else {
-					right: 0.5em;
-				}
-			}
-		}
+      .card-badges {
+        @if $IS_LTR {
+          left: 0.5em;
+        } @else {
+          right: 0.5em;
+        }
+      }
+    }
 
-		.card-image {
-			height: 100%;
-		}
+    .card-image {
+      height: 100%;
+    }
 
-		.card-right {
-			display: flex;
-			flex-direction: column;
-			flex-grow: 1;
-			width: 60%;
-		}
-	}
+    .card-right {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: 60%;
+    }
+  }
 
-	.card-header {
-		overflow: hidden;
-		position: relative;
-		font-size: 1.2em;
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.6);
+  .card-header {
+    overflow: hidden;
+    position: relative;
+    font-size: 1.2em;
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.6);
 
-		.card-badges {
-			position: absolute;
-			top: 0.5em;
-			display: flex;
-			gap: 0.38em;
-		}
-	}
+    .card-badges {
+      position: absolute;
+      top: 0.5em;
+      display: flex;
+      gap: 0.38em;
+    }
+  }
 
-	.card-body {
-		hyphens: auto;
-		height: 100%;
-		filter: opacity(0.75);
-	}
+  .card-body {
+    hyphens: auto;
+    height: 100%;
+    filter: opacity(0.75);
+  }
 
-	.card-footer {
-		display: flex;
-		align-items: center;
-		font-size: 0.9em;
-		padding-top: 0.75em;
+  .card-footer {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    padding-top: 0.75em;
 
-		.button {
-			padding-top: 0.64em;
-			padding-bottom: 0.32em;
-		}
-	}
+    .button {
+      padding-top: 0.64em;
+      padding-bottom: 0.32em;
+    }
+  }
 
-	.card-image {
-		width: 100%;
-		height: 10em;
-		object-fit: cover;
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.6);
-	}
+  .card-image {
+    width: 100%;
+    height: 10em;
+    object-fit: cover;
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.6);
+  }
 
-	.card-title {
-		font-size: 1.2em;
-		margin: 0.75em 0 0.38em;
-	}
+  .card-title {
+    font-size: 1.2em;
+    margin: 0.75em 0 0.38em;
+  }
 }

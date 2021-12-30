@@ -1,57 +1,57 @@
 .checkbox-wrapper {
-	input:not(:checked) + .check {
-		&:after {
-			clip-path: circle(0% at left);
-		}
-	}
+  input:not(:checked) + .check {
+    &:after {
+      clip-path: circle(0% at left);
+    }
+  }
 
-	input:checked:not(:indeterminate) + .check {
-		&:before {
-			content: " ";
-			position: absolute;
-			top: 0.7em;
-			left: 0.16em;
-			z-index: 1;
-			width: 0.5em;
-			height: 0.22em;
-			background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
-			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
-			transform: rotate(45deg);
-			animation: flatify-fade-in 0.35s;
-		}
+  input:checked:not(:indeterminate) + .check {
+    &:before {
+      content: " ";
+      position: absolute;
+      top: 0.7em;
+      left: 0.16em;
+      z-index: 1;
+      width: 0.5em;
+      height: 0.22em;
+      background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+      border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+      transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+      transform: rotate(45deg);
+      animation: flatify-fade-in 0.35s;
+    }
 
-		&:after {
-			top: 0.52em;
-			left: 0.3em;
-			width: 0.9em;
-			height: 0.22em;
-			background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
-			clip-path: circle(200% at bottom);
-			transform: rotate(-55deg);
-			transition: clip-path linear 0.5s 0.1s;
-		}
-	}
+    &:after {
+      top: 0.52em;
+      left: 0.3em;
+      width: 0.9em;
+      height: 0.22em;
+      background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+      clip-path: circle(200% at bottom);
+      transform: rotate(-55deg);
+      transition: clip-path linear 0.5s 0.1s;
+    }
+  }
 
-	input:indeterminate + .check {
-		&:after {
-			background: var(--#{$CSS_VAR_PFX}form-element-accent-color);
-		}
-	}
+  input:indeterminate + .check {
+    &:after {
+      background: var(--#{$CSS_VAR_PFX}form-element-accent-color);
+    }
+  }
 
-	input:indeterminate + .check,
-	input:disabled:not(:checked) + .check {
-		&:after {
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			width: 0.75em;
-			height: 0.2em;
-			margin: auto;
-			clip-path: circle(200% at bottom);
-			transition: clip-path linear 0.4s 0.1s;
-			animation: flatify-grow-x 0.2s both;
-		}
-	}
+  input:indeterminate + .check,
+  input:disabled:not(:checked) + .check {
+    &:after {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0.75em;
+      height: 0.2em;
+      margin: auto;
+      clip-path: circle(200% at bottom);
+      transition: clip-path linear 0.4s 0.1s;
+      animation: flatify-grow-x 0.2s both;
+    }
+  }
 }

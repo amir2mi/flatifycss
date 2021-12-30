@@ -1,59 +1,59 @@
 .hamburger {
-	position: relative;
-	width: 2em;
-	height: 2em;
-	background: transparent;
-	border: none;
+  position: relative;
+  width: 2em;
+  height: 2em;
+  background: transparent;
+  border: none;
 
-	&:before,
-	&:after {
-		content: " ";
-		position: absolute;
-		left: 0;
-		height: 0.25em;
-		background: currentColor;
-		border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-		will-change: width, transform;
-		transition: transform var(--#{$CSS_VAR_PFX}simple-transition), width var(--#{$CSS_VAR_PFX}simple-transition);
-	}
+  &:before,
+  &:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    height: 0.25em;
+    background: currentColor;
+    border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+    will-change: width, transform;
+    transition: transform var(--#{$CSS_VAR_PFX}simple-transition), width var(--#{$CSS_VAR_PFX}simple-transition);
+  }
 
-	&:not(.active) {
-		&:before {
-			top: 0.5em;
-			width: 100%;
-		}
+  &:not(.active) {
+    &:before {
+      top: 0.5em;
+      width: 100%;
+    }
 
-		&:after {
-			bottom: 0.5em;
-			width: 75%;
-		}
+    &:after {
+      bottom: 0.5em;
+      width: 75%;
+    }
 
-		&:hover,
-		&:focus {
-			&:before {
-				width: 75%;
-			}
+    &:hover,
+    &:focus {
+      &:before {
+        width: 75%;
+      }
 
-			&:after {
-				width: 100%;
-			}
-		}
-	}
+      &:after {
+        width: 100%;
+      }
+    }
+  }
 
-	&.active {
-		&:before,
-		&:after {
-			top: 0;
-			bottom: 0;
-			width: 100%;
-			margin: auto 0;
-			animation: flatify-fade-in 0.25s ease-in-out;
-		}
-		&:before {
-			transform: rotate(45deg);
-		}
-		&:after {
-			transform: rotate(-45deg);
-		}
-	}
+  &.active {
+    &:before,
+    &:after {
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      margin: auto 0;
+      animation: flatify-fade-in 0.25s ease-in-out;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
 }

@@ -1,29 +1,29 @@
 // overlay layer that hide content
 // class should be added to the wrapper, and wrapper should have [--flatify__local-bg-color] set.
 :root {
-	--#{$CSS_VAR_PFX}overlay-layer-priority: 10;
-	--#{$CSS_VAR_PFX}overlay-layer-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
-	--#{$CSS_VAR_PFX}overlay-layer-opacity: 1;
-	--#{$CSS_VAR_PFX}overlay-layer-blending-mode: normal;
-	--#{$CSS_VAR_PFX}overlay-layer-backdrop-filter: none;
+  --#{$CSS_VAR_PFX}overlay-layer-priority: 10;
+  --#{$CSS_VAR_PFX}overlay-layer-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+  --#{$CSS_VAR_PFX}overlay-layer-opacity: 1;
+  --#{$CSS_VAR_PFX}overlay-layer-blending-mode: normal;
+  --#{$CSS_VAR_PFX}overlay-layer-backdrop-filter: none;
 }
 
 .overlay-layer {
-	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}overlay-layer-bg-color);
-	position: relative;
+  --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}overlay-layer-bg-color);
+  position: relative;
 
-	&:before {
-		content: " ";
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: var(--#{$CSS_VAR_PFX}overlay-layer-priority);
-		width: 100%;
-		height: 100%;
-		background: var(--#{$CSS_VAR_PFX}local-bg-color);
-		border-radius: inherit;
-		opacity: var(--#{$CSS_VAR_PFX}overlay-layer-opacity);
-		mix-blend-mode: var(--#{$CSS_VAR_PFX}overlay-layer-blending-mode);
-		backdrop-filter: var(--#{$CSS_VAR_PFX}overlay-layer-backdrop-filter);
-	}
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: var(--#{$CSS_VAR_PFX}overlay-layer-priority);
+    width: 100%;
+    height: 100%;
+    background: var(--#{$CSS_VAR_PFX}local-bg-color);
+    border-radius: inherit;
+    opacity: var(--#{$CSS_VAR_PFX}overlay-layer-opacity);
+    mix-blend-mode: var(--#{$CSS_VAR_PFX}overlay-layer-blending-mode);
+    backdrop-filter: var(--#{$CSS_VAR_PFX}overlay-layer-backdrop-filter);
+  }
 }

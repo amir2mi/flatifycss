@@ -1,31 +1,31 @@
 :root {
-	--#{$CSS_VAR_PFX}dropdown-animation-show-duration: #{$DROPDOWN_SHOW_ANIMATION_DURATION};
-	--#{$CSS_VAR_PFX}dropdown-animation-hide-duration: #{$DROPDOWN_HIDE_ANIMATION_DURATION};
+  --#{$CSS_VAR_PFX}dropdown-animation-show-duration: #{$DROPDOWN_SHOW_ANIMATION_DURATION};
+  --#{$CSS_VAR_PFX}dropdown-animation-hide-duration: #{$DROPDOWN_HIDE_ANIMATION_DURATION};
 
-	--#{$CSS_VAR_PFX}dropdown-animation-show: flatify-dropdown-show
-		var(--#{$CSS_VAR_PFX}dropdown-animation-show-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44);
-	--#{$CSS_VAR_PFX}dropdown-animation-hide: flatify-dropdown-hide
-		var(--#{$CSS_VAR_PFX}dropdown-animation-hide-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+  --#{$CSS_VAR_PFX}dropdown-animation-show: flatify-dropdown-show var(--#{$CSS_VAR_PFX}dropdown-animation-show-duration)
+    cubic-bezier(0.52, 0.42, 0.44, 1.44);
+  --#{$CSS_VAR_PFX}dropdown-animation-hide: flatify-dropdown-hide var(--#{$CSS_VAR_PFX}dropdown-animation-hide-duration)
+    cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .dropdown-wrapper {
-	position: relative;
-	display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown {
-	position: absolute;
-	z-index: $ZINDEX_DROPDOWN;
-	display: none;
-	width: 110%;
-	will-change: top, bottom, left, right;
+  position: absolute;
+  z-index: $ZINDEX_DROPDOWN;
+  display: none;
+  width: 110%;
+  will-change: top, bottom, left, right;
 
-	&.show {
-		display: block;
-		animation: var(--#{$CSS_VAR_PFX}dropdown-animation-show);
-	}
+  &.show {
+    display: block;
+    animation: var(--#{$CSS_VAR_PFX}dropdown-animation-show);
+  }
 
-	&.dropdown-will-be-hidden {
-		animation: var(--#{$CSS_VAR_PFX}dropdown-animation-hide);
-	}
+  &.dropdown-will-be-hidden {
+    animation: var(--#{$CSS_VAR_PFX}dropdown-animation-hide);
+  }
 }

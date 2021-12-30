@@ -1,94 +1,94 @@
 :root {
-	--#{$CSS_VAR_PFX}blockquote-accent-color: var(--#{$CSS_VAR_PFX}color-accent-primary);
+  --#{$CSS_VAR_PFX}blockquote-accent-color: var(--#{$CSS_VAR_PFX}color-accent-primary);
 }
 
 blockquote {
-	position: relative;
-	z-index: 0;
-	overflow: hidden;
-	line-height: var(--#{$CSS_VAR_PFX}large-line-height);
-	margin: 0 0 var(--#{$CSS_VAR_PFX}paragraph-mb);
-	border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
-	border-style: solid;
-	border-color: var(--#{$CSS_VAR_PFX}blockquote-accent-color);
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  line-height: var(--#{$CSS_VAR_PFX}large-line-height);
+  margin: 0 0 var(--#{$CSS_VAR_PFX}paragraph-mb);
+  border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+  border-style: solid;
+  border-color: var(--#{$CSS_VAR_PFX}blockquote-accent-color);
 
-	@if $IS_LTR {
-		border-width: 0 0 0 0.5em;
-	} @else {
-		border-width: 0 0.5em 0 0;
-	}
+  @if $IS_LTR {
+    border-width: 0 0 0 0.5em;
+  } @else {
+    border-width: 0 0.5em 0 0;
+  }
 
-	&:not(.no-icon):before {
-		content: " ";
-		position: absolute;
-		z-index: -1;
-		opacity: 0.1;
-		background-color: currentColor;
-		mask: var(--#{$CSS_VAR_PFX}blockquote-icon) no-repeat 50% 50%;
-		-webkit-mask: var(--#{$CSS_VAR_PFX}blockquote-icon) no-repeat 50% 50%;
-		filter: brightness(100%);
-	}
+  &:not(.no-icon):before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    opacity: 0.1;
+    background-color: currentColor;
+    mask: var(--#{$CSS_VAR_PFX}blockquote-icon) no-repeat 50% 50%;
+    -webkit-mask: var(--#{$CSS_VAR_PFX}blockquote-icon) no-repeat 50% 50%;
+    filter: brightness(100%);
+  }
 
-	&:not(.large) {
-		font-size: 1em;
-		line-height: var(--#{$CSS_VAR_PFX}large-line-height);
-		padding: 0.75em 1.25em;
+  &:not(.large) {
+    font-size: 1em;
+    line-height: var(--#{$CSS_VAR_PFX}large-line-height);
+    padding: 0.75em 1.25em;
 
-		@if $IS_LTR {
-			border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
-				var(--#{$CSS_VAR_PFX}border-radius)
-				var(--#{$CSS_VAR_PFX}border-radius)
-				calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
-		} @else {
-			border-radius: var(--#{$CSS_VAR_PFX}border-radius)
-				calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
-				calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
-				var(--#{$CSS_VAR_PFX}border-radius);
-		}
+    @if $IS_LTR {
+      border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
+        var(--#{$CSS_VAR_PFX}border-radius)
+        var(--#{$CSS_VAR_PFX}border-radius)
+        calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+    } @else {
+      border-radius: var(--#{$CSS_VAR_PFX}border-radius)
+        calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
+        calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
+        var(--#{$CSS_VAR_PFX}border-radius);
+    }
 
-		&:before {
-			// blockquote icon
-			top: 1em;
-			width: 7em;
-			height: 7em;
+    &:before {
+      // blockquote icon
+      top: 1em;
+      width: 7em;
+      height: 7em;
 
-			@if $IS_LTR {
-				left: 1em;
-			} @else {
-				right: 1em;
-			}
-		}
-	}
+      @if $IS_LTR {
+        left: 1em;
+      } @else {
+        right: 1em;
+      }
+    }
+  }
 
-	&.large {
-		font-size: 1.25em;
-		border-width: 0.5em 0;
-		padding: 1.25em 0.75em;
-		margin-top: 2em;
+  &.large {
+    font-size: 1.25em;
+    border-width: 0.5em 0;
+    padding: 1.25em 0.75em;
+    margin-top: 2em;
 
-		&:before {
-			// blockquote icon
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			width: 15em;
-			height: 15em;
-			margin: auto;
-		}
-	}
+    &:before {
+      // blockquote icon
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 15em;
+      height: 15em;
+      margin: auto;
+    }
+  }
 
-	&.large:not(.text-align-fill) {
-		text-align: center;
-	}
+  &.large:not(.text-align-fill) {
+    text-align: center;
+  }
 
-	cite {
-		display: block;
-		font-size: 0.64em;
-		font-style: normal;
-		letter-spacing: 0.18em;
-		text-transform: uppercase;
-		padding-top: 1.5em;
-		opacity: 0.8;
-	}
+  cite {
+    display: block;
+    font-size: 0.64em;
+    font-style: normal;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding-top: 1.5em;
+    opacity: 0.8;
+  }
 }

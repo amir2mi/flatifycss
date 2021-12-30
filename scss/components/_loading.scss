@@ -1,101 +1,101 @@
 :root {
-	--#{$CSS_VAR_PFX}loading-color: currentColor;
-	--#{$CSS_VAR_PFX}loading-dot-width: 0.5em;
-	--#{$CSS_VAR_PFX}loading-dot-height: 0.5em;
-	--#{$CSS_VAR_PFX}loading-dot-animation-start-scale: 1.5;
-	--#{$CSS_VAR_PFX}loading-dot-animation-duration: 1.2s;
-	--#{$CSS_VAR_PFX}loading-spinner-animation-duration: 0.75s;
+  --#{$CSS_VAR_PFX}loading-color: currentColor;
+  --#{$CSS_VAR_PFX}loading-dot-width: 0.5em;
+  --#{$CSS_VAR_PFX}loading-dot-height: 0.5em;
+  --#{$CSS_VAR_PFX}loading-dot-animation-start-scale: 1.5;
+  --#{$CSS_VAR_PFX}loading-dot-animation-duration: 1.2s;
+  --#{$CSS_VAR_PFX}loading-spinner-animation-duration: 0.75s;
 }
 
 %loading-dot {
-	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}loading-color);
-	display: block;
-	width: var(--#{$CSS_VAR_PFX}loading-dot-width);
-	height: var(--#{$CSS_VAR_PFX}loading-dot-height);
-	background: var(--#{$CSS_VAR_PFX}local-txt-color);
-	border-radius: 10em;
-	opacity: 0;
+  --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}loading-color);
+  display: block;
+  width: var(--#{$CSS_VAR_PFX}loading-dot-width);
+  height: var(--#{$CSS_VAR_PFX}loading-dot-height);
+  background: var(--#{$CSS_VAR_PFX}local-txt-color);
+  border-radius: 10em;
+  opacity: 0;
 }
 
 .loading {
-	@extend %loading-dot;
-	position: relative;
-	margin-right: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 4);
-	// first of all parent should be shown
-	animation: flatify-loading-dot-first var(--#{$CSS_VAR_PFX}loading-dot-animation-duration) infinite;
+  @extend %loading-dot;
+  position: relative;
+  margin-right: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 4);
+  // first of all parent should be shown
+  animation: flatify-loading-dot-first var(--#{$CSS_VAR_PFX}loading-dot-animation-duration) infinite;
 
-	&.stop-animation:before,
-	&.stop-animation:after,
-	&.stop-animation {
-		opacity: 1 !important;
-	}
+  &.stop-animation:before,
+  &.stop-animation:after,
+  &.stop-animation {
+    opacity: 1 !important;
+  }
 
-	&:before,
-	&:after {
-		content: " ";
-		position: absolute;
-		@extend %loading-dot;
-	}
+  &:before,
+  &:after {
+    content: " ";
+    position: absolute;
+    @extend %loading-dot;
+  }
 
-	&:before {
-		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 2);
-		animation: flatify-loading-dot-second var(--#{$CSS_VAR_PFX}loading-dot-animation-duration) infinite;
-	}
+  &:before {
+    left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 2);
+    animation: flatify-loading-dot-second var(--#{$CSS_VAR_PFX}loading-dot-animation-duration) infinite;
+  }
 
-	&:after {
-		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 4);
-		animation: flatify-loading-dot-third var(--#{$CSS_VAR_PFX}loading-dot-animation-duration) infinite;
-	}
+  &:after {
+    left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * 4);
+    animation: flatify-loading-dot-third var(--#{$CSS_VAR_PFX}loading-dot-animation-duration) infinite;
+  }
 }
 
 .overlay-layer {
-	& > .spinner,
-	& > .loading {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		z-index: 12;
-		margin: auto;
-	}
+  & > .spinner,
+  & > .loading {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 12;
+    margin: auto;
+  }
 
-	& > .loading {
-		left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * -4);
-	}
+  & > .loading {
+    left: calc(var(--#{$CSS_VAR_PFX}loading-dot-width) * -4);
+  }
 
-	// if spinner is inside button make it smaller
-	&.button > .spinner {
-		font-size: 0.9em;
-	}
+  // if spinner is inside button make it smaller
+  &.button > .spinner {
+    font-size: 0.9em;
+  }
 }
 
 .spinner {
-	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}loading-color);
-	display: flex;
-	justify-content: space-between;
-	width: 2em;
-	height: 2em;
-	// padding: 0.25em; // is not a wise choice with EM and spin animation, it ruins the circle radius
-	border: 0.25em solid transparent;
-	border-radius: 50em;
+  --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}loading-color);
+  display: flex;
+  justify-content: space-between;
+  width: 2em;
+  height: 2em;
+  // padding: 0.25em; // is not a wise choice with EM and spin animation, it ruins the circle radius
+  border: 0.25em solid transparent;
+  border-radius: 50em;
 
-	&[class*="style-"] {
-		border-color: transparent !important;
-	}
+  &[class*="style-"] {
+    border-color: transparent !important;
+  }
 
-	&:before {
-		content: " ";
-		position: relative;
-		width: 100%;
-		height: 100%;
-		border: 0.25em solid var(--#{$CSS_VAR_PFX}local-txt-color);
-		@if $IS_LTR {
-			border-left-color: transparent;
-		} @else {
-			border-right-color: transparent;
-		}
-		border-radius: 50em;
-		animation: flatify-spin var(--#{$CSS_VAR_PFX}loading-spinner-animation-duration) linear infinite;
-	}
+  &:before {
+    content: " ";
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 0.25em solid var(--#{$CSS_VAR_PFX}local-txt-color);
+    @if $IS_LTR {
+      border-left-color: transparent;
+    } @else {
+      border-right-color: transparent;
+    }
+    border-radius: 50em;
+    animation: flatify-spin var(--#{$CSS_VAR_PFX}loading-spinner-animation-duration) linear infinite;
+  }
 }

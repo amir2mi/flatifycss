@@ -1,66 +1,66 @@
 .arrow-button {
-	display: flex;
-	align-items: center;
-	background: var(--#{$CSS_VAR_PFX}bg-color-dark);
-	border: none;
-	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+  display: flex;
+  align-items: center;
+  background: var(--#{$CSS_VAR_PFX}bg-color-dark);
+  border: none;
+  border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
-	&:after {
-		content: " ";
-		position: relative;
-		z-index: 1;
-		display: inline-block;
-		width: 1.2em;
-		height: 1.2em;
-		background-color: currentColor;
-		mask: var(--#{$CSS_VAR_PFX}arrow-down-icon) no-repeat 50% 50%;
-		-webkit-mask: var(--#{$CSS_VAR_PFX}arrow-down-icon) no-repeat 50% 50%;
-		will-change: transform;
-		transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
-	}
+  &:after {
+    content: " ";
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: currentColor;
+    mask: var(--#{$CSS_VAR_PFX}arrow-down-icon) no-repeat 50% 50%;
+    -webkit-mask: var(--#{$CSS_VAR_PFX}arrow-down-icon) no-repeat 50% 50%;
+    will-change: transform;
+    transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
+  }
 
-	// the arrow should space when there is text
-	&:not(:empty) {
-		&:after {
-			@if $IS_LTR {
-				margin-left: 0.32em;
-			} @else {
-				margin-right: 0.32em;
-			}
-		}
-	}
+  // the arrow should space when there is text
+  &:not(:empty) {
+    &:after {
+      @if $IS_LTR {
+        margin-left: 0.32em;
+      } @else {
+        margin-right: 0.32em;
+      }
+    }
+  }
 
-	&.arrow-flip:after {
-		transform: rotate(180deg);
-	}
+  &.arrow-flip:after {
+    transform: rotate(180deg);
+  }
 
-	&.arrow-top {
-		&:after {
-			transform: rotate(180deg);
-		}
+  &.arrow-top {
+    &:after {
+      transform: rotate(180deg);
+    }
 
-		&.arrow-flip:after {
-			transform: rotate(0);
-		}
-	}
+    &.arrow-flip:after {
+      transform: rotate(0);
+    }
+  }
 
-	&.arrow-left {
-		&:after {
-			transform: rotate(90deg);
-		}
+  &.arrow-left {
+    &:after {
+      transform: rotate(90deg);
+    }
 
-		&.arrow-flip:after {
-			transform: rotate(-90deg);
-		}
-	}
+    &.arrow-flip:after {
+      transform: rotate(-90deg);
+    }
+  }
 
-	&.arrow-right {
-		&:after {
-			transform: rotate(-90deg);
-		}
+  &.arrow-right {
+    &:after {
+      transform: rotate(-90deg);
+    }
 
-		&.arrow-flip:after {
-			transform: rotate(90deg);
-		}
-	}
+    &.arrow-flip:after {
+      transform: rotate(90deg);
+    }
+  }
 }

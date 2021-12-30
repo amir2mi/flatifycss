@@ -1,123 +1,123 @@
 :root {
-	--#{$CSS_VAR_PFX}alert-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
-	--#{$CSS_VAR_PFX}alert-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
-	--#{$CSS_VAR_PFX}alert-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
-	--#{$CSS_VAR_PFX}alert-animation-remove-duration: #{$ALERT_REMOVE_ANIMATION_DURATION};
-	--#{$CSS_VAR_PFX}alert-animation-remove: flatify-alert-will-be-removed
-		var(--#{$CSS_VAR_PFX}alert-animation-remove-duration) ease;
+  --#{$CSS_VAR_PFX}alert-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
+  --#{$CSS_VAR_PFX}alert-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}alert-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+  --#{$CSS_VAR_PFX}alert-animation-remove-duration: #{$ALERT_REMOVE_ANIMATION_DURATION};
+  --#{$CSS_VAR_PFX}alert-animation-remove: flatify-alert-will-be-removed
+    var(--#{$CSS_VAR_PFX}alert-animation-remove-duration) ease;
 }
 
 .alert {
-	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}alert-bg-color);
-	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}alert-border-color);
-	position: relative;
-	font-size: 0.9em;
-	line-height: var(--#{$CSS_VAR_PFX}large-line-height);
-	padding: 1.25em;
-	margin-bottom: 1em;
-	color: var(--#{$CSS_VAR_PFX}alert-txt-color);
-	background: var(--#{$CSS_VAR_PFX}alert-bg-color);
-	border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+  --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}alert-bg-color);
+  --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}alert-border-color);
+  position: relative;
+  font-size: 0.9em;
+  line-height: var(--#{$CSS_VAR_PFX}large-line-height);
+  padding: 1.25em;
+  margin-bottom: 1em;
+  color: var(--#{$CSS_VAR_PFX}alert-txt-color);
+  background: var(--#{$CSS_VAR_PFX}alert-bg-color);
+  border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+  border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
-	&.alert-will-be-removed {
-		animation: var(--#{$CSS_VAR_PFX}alert-animation-remove) both;
-	}
+  &.alert-will-be-removed {
+    animation: var(--#{$CSS_VAR_PFX}alert-animation-remove) both;
+  }
 
-	&:hover {
-		.close-button.floating {
-			transform: scale(1);
-		}
-	}
+  &:hover {
+    .close-button.floating {
+      transform: scale(1);
+    }
+  }
 
-	.close-button {
-		position: relative;
-		top: -0.38em;
+  .close-button {
+    position: relative;
+    top: -0.38em;
 
-		@if $IS_LTR {
-			float: right;
-			right: -0.38em;
-		} @else {
-			float: left;
-			left: -0.38em;
-		}
+    @if $IS_LTR {
+      float: right;
+      right: -0.38em;
+    } @else {
+      float: left;
+      left: -0.38em;
+    }
 
-		&.floating {
-			position: absolute;
-			top: 0.75em;
+    &.floating {
+      position: absolute;
+      top: 0.75em;
 
-			@if $IS_LTR {
-				right: 0.75em;
-			} @else {
-				left: 0.75em;
-			}
+      @if $IS_LTR {
+        right: 0.75em;
+      } @else {
+        left: 0.75em;
+      }
 
-			background: transparent !important;
-			transform: scale(0);
+      background: transparent !important;
+      transform: scale(0);
 
-			&:after {
-				content: " ";
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 0;
-				display: block;
-				width: 100%;
-				height: 100%;
-				border-radius: 100em;
-				background: var(--#{$CSS_VAR_PFX}local-bg-color);
-				box-shadow: 0 0 0.64em 0.5em var(--flatify__local-bg-color);
-			}
-		}
+      &:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 100em;
+        background: var(--#{$CSS_VAR_PFX}local-bg-color);
+        box-shadow: 0 0 0.64em 0.5em var(--flatify__local-bg-color);
+      }
+    }
 
-		&:focus {
-			transform: scale(1);
-		}
-	}
+    &:focus {
+      transform: scale(1);
+    }
+  }
 
-	&:not(.has-icon) {
-		width: 100%;
-	}
+  &:not(.has-icon) {
+    width: 100%;
+  }
 
-	&.has-icon {
-		@if $IS_LTR {
-			padding-left: 2.75em;
-			margin-left: 1.5em;
-		} @else {
-			padding-right: 2.75em;
-			margin-right: 1.5em;
-		}
-	}
+  &.has-icon {
+    @if $IS_LTR {
+      padding-left: 2.75em;
+      margin-left: 1.5em;
+    } @else {
+      padding-right: 2.75em;
+      margin-right: 1.5em;
+    }
+  }
 
-	.alert-svg {
-		position: absolute;
-		height: 3.3em;
-		margin: auto 0;
-		top: 0;
-		bottom: 0;
-		filter: brightness(115%);
+  .alert-svg {
+    position: absolute;
+    height: 3.3em;
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    filter: brightness(115%);
 
-		@if $IS_LTR {
-			left: -1.4em;
-		} @else {
-			right: -1.4em;
-		}
+    @if $IS_LTR {
+      left: -1.4em;
+    } @else {
+      right: -1.4em;
+    }
 
-		padding: 0.5em;
-		color: inherit;
-		background: var(--#{$CSS_VAR_PFX}local-bg-color);
-		border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.9);
+    padding: 0.5em;
+    color: inherit;
+    background: var(--#{$CSS_VAR_PFX}local-bg-color);
+    border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.9);
 
-		svg {
-			width: 2em;
-			height: 2em;
-			fill: currentColor;
-		}
-	}
+    svg {
+      width: 2em;
+      height: 2em;
+      fill: currentColor;
+    }
+  }
 
-	// It should be darker
-	&.style-light-light .alert-svg {
-		filter: brightness(95%);
-	}
+  // It should be darker
+  &.style-light-light .alert-svg {
+    filter: brightness(95%);
+  }
 }

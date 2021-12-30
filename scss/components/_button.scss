@@ -1,7 +1,7 @@
 :root {
-	--#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
-	--#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
-	--#{$CSS_VAR_PFX}button-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+  --#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}bg-color-dark);
+  --#{$CSS_VAR_PFX}button-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 }
 
 // .static for prevent hover/active/focus/focus-visible effects
@@ -10,137 +10,135 @@
 // .active for setting pressed button style
 // .disabled for setting disabled button style
 %button {
-	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}button-bg-color);
-	user-select: none;
-	appearance: none;
-	vertical-align: middle;
-	text-align: center;
-	text-decoration: none !important;
-	font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
-	display: inline-block;
-	padding: 0.75em 0.85em 0.5em;
-	margin: 0.32em 0.32em 0.5em;
-	color: var(--#{$CSS_VAR_PFX}button-txt-color);
-	background: var(--#{$CSS_VAR_PFX}button-bg-color);
-	border: none;
-	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-	box-shadow: 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38) 0 var(--#{$CSS_VAR_PFX}button-border-color);
-	// filter affect box-shadow width, so it should be set as default to prevent bugs on hover
-	filter: brightness(100%);
-	will-change: transform, filter;
-	// !important to replace input transition
-	transition: filter var(--#{$CSS_VAR_PFX}simple-transition) !important;
+  --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}button-bg-color);
+  user-select: none;
+  appearance: none;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none !important;
+  font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+  display: inline-block;
+  padding: 0.75em 0.85em 0.5em;
+  margin: 0.32em 0.32em 0.5em;
+  color: var(--#{$CSS_VAR_PFX}button-txt-color);
+  background: var(--#{$CSS_VAR_PFX}button-bg-color);
+  border: none;
+  border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+  box-shadow: 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38) 0 var(--#{$CSS_VAR_PFX}button-border-color);
+  // filter affect box-shadow width, so it should be set as default to prevent bugs on hover
+  filter: brightness(100%);
+  will-change: transform, filter;
+  // !important to replace input transition
+  transition: filter var(--#{$CSS_VAR_PFX}simple-transition) !important;
 
-	&:not(.static) {
-		// button has its special pressed effect, there is no need for outline,
-		// unless the button is static which does not support hover/focus
-		outline: none !important;
-	}
+  &:not(.static) {
+    // button has its special pressed effect, there is no need for outline,
+    // unless the button is static which does not support hover/focus
+    outline: none !important;
+  }
 
-	.radio-button:focus + &,
-	&:not(.static):hover {
-		filter: brightness(92%);
-	}
+  .radio-button:focus + &,
+  &:not(.static):hover {
+    filter: brightness(92%);
+  }
 
-	// active state
-	.checkbox-button:checked + &,
-	.radio-button:checked + &,
-	&.active,
-	&:not(.static):focus-visible,
-	&:not(.static):active {
-		box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-border-color);
-		filter: brightness(92%);
-		transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
-	}
+  // active state
+  .checkbox-button:checked + &,
+  .radio-button:checked + &,
+  &.active,
+  &:not(.static):focus-visible,
+  &:not(.static):active {
+    box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-border-color);
+    filter: brightness(92%);
+    transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
+  }
 
-	&.outline {
-		color: var(--#{$CSS_VAR_PFX}button-txt-color) !important;
-		background: transparent !important;
-	}
+  &.outline {
+    color: var(--#{$CSS_VAR_PFX}button-txt-color) !important;
+    background: transparent !important;
+  }
 
-	&.outline,
-	&.bordered {
-		box-shadow: 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38) 0 var(--#{$CSS_VAR_PFX}button-border-color),
-			inset 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) 0 var(--#{$CSS_VAR_PFX}button-border-color),
-			inset calc(var(--#{$CSS_VAR_PFX}border-width) * -0.38) 0 0 var(--#{$CSS_VAR_PFX}button-border-color),
-			inset calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) 0 0 var(--#{$CSS_VAR_PFX}button-border-color),
-			0 calc(var(--#{$CSS_VAR_PFX}border-width) * -0.38) 0 var(--#{$CSS_VAR_PFX}button-border-color),
-			calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) 0 0 var(--#{$CSS_VAR_PFX}button-border-color),
-			calc(var(--#{$CSS_VAR_PFX}border-width) * -0.38) 0 0 var(--#{$CSS_VAR_PFX}button-border-color);
-	}
+  &.outline,
+  &.bordered {
+    box-shadow: 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38) 0 var(--#{$CSS_VAR_PFX}button-border-color),
+      inset 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) 0 var(--#{$CSS_VAR_PFX}button-border-color),
+      inset calc(var(--#{$CSS_VAR_PFX}border-width) * -0.38) 0 0 var(--#{$CSS_VAR_PFX}button-border-color),
+      inset calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) 0 0 var(--#{$CSS_VAR_PFX}button-border-color),
+      0 calc(var(--#{$CSS_VAR_PFX}border-width) * -0.38) 0 var(--#{$CSS_VAR_PFX}button-border-color),
+      calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) 0 0 var(--#{$CSS_VAR_PFX}button-border-color),
+      calc(var(--#{$CSS_VAR_PFX}border-width) * -0.38) 0 0 var(--#{$CSS_VAR_PFX}button-border-color);
+  }
 
-	// active state for outline & bordered
-	&.outline,
-	&.bordered {
-		&.active,
-		&:not(.static):focus-visible,
-		&:not(.static):active {
-			box-shadow: inset 0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38)
-					var(--#{$CSS_VAR_PFX}button-border-color),
-				0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) var(--#{$CSS_VAR_PFX}button-border-color);
-			transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.2));
-		}
-	}
+  // active state for outline & bordered
+  &.outline,
+  &.bordered {
+    &.active,
+    &:not(.static):focus-visible,
+    &:not(.static):active {
+      box-shadow: inset 0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) var(--#{$CSS_VAR_PFX}button-border-color),
+        0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) var(--#{$CSS_VAR_PFX}button-border-color);
+      transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.2));
+    }
+  }
 
-	// if has color setter class use local values
-	&[class*="style-"] {
-		--#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
-		--#{$CSS_VAR_PFX}button-border-color: var(--#{$CSS_VAR_PFX}local-border-color);
+  // if has color setter class use local values
+  &[class*="style-"] {
+    --#{$CSS_VAR_PFX}button-bg-color: var(--#{$CSS_VAR_PFX}local-bg-color);
+    --#{$CSS_VAR_PFX}button-border-color: var(--#{$CSS_VAR_PFX}local-border-color);
 
-		// if it is light color setter, use local text color for texts
-		&[class*="light"] {
-			--#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
-		}
+    // if it is light color setter, use local text color for texts
+    &[class*="light"] {
+      --#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}local-txt-color);
+    }
 
-		// if it is default color setter, use local border color for texts
-		&:not([class*="light"]) {
-			--#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}local-border-color);
-		}
+    // if it is default color setter, use local border color for texts
+    &:not([class*="light"]) {
+      --#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}local-border-color);
+    }
 
-		// Exception: for outline dark-light color setter use text color
-		&.outline.style-dark-light {
-			--#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
-		}
-	}
+    // Exception: for outline dark-light color setter use text color
+    &.outline.style-dark-light {
+      --#{$CSS_VAR_PFX}button-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+    }
+  }
 
-	&.disabled,
-	&:disabled {
-		pointer-events: none;
-		background: var(--#{$CSS_VAR_PFX}button-border-color) !important;
-		box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-border-color);
-		filter: contrast(85%) brightness(85%) opacity(70%) !important;
-		transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
-	}
+  &.disabled,
+  &:disabled {
+    pointer-events: none;
+    background: var(--#{$CSS_VAR_PFX}button-border-color) !important;
+    box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-border-color);
+    filter: contrast(85%) brightness(85%) opacity(70%) !important;
+    transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
+  }
 }
 
 .button {
-	@extend %button;
+  @extend %button;
 
-	// active state for bordered & outline checkbox & radio button
-	.checkbox-button:checked + &.outline,
-	.radio-button:checked + &.outline,
-	.checkbox-button:checked + &.bordered,
-	.radio-button:checked + &.bordered {
-		box-shadow: inset 0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38)
-				var(--#{$CSS_VAR_PFX}button-border-color),
-			0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) var(--#{$CSS_VAR_PFX}button-border-color);
-		transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.2));
-	}
+  // active state for bordered & outline checkbox & radio button
+  .checkbox-button:checked + &.outline,
+  .radio-button:checked + &.outline,
+  .checkbox-button:checked + &.bordered,
+  .radio-button:checked + &.bordered {
+    box-shadow: inset 0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) var(--#{$CSS_VAR_PFX}button-border-color),
+      0 0 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 0.38) var(--#{$CSS_VAR_PFX}button-border-color);
+    transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.2));
+  }
 
-	// disabled button style
-	.checkbox-button:disabled + &,
-	.radio-button:disabled + & {
-		pointer-events: none;
-		background: var(--#{$CSS_VAR_PFX}button-border-color) !important;
-		box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-border-color);
-		filter: contrast(85%) brightness(85%) opacity(70%) !important;
-		transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
-	}
+  // disabled button style
+  .checkbox-button:disabled + &,
+  .radio-button:disabled + & {
+    pointer-events: none;
+    background: var(--#{$CSS_VAR_PFX}button-border-color) !important;
+    box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-border-color);
+    filter: contrast(85%) brightness(85%) opacity(70%) !important;
+    transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
+  }
 }
 
 .link-button {
-	@extend %anchor-style;
-	padding: 0.75em 0.85em;
-	background: transparent;
-	border: none;
+  @extend %anchor-style;
+  padding: 0.75em 0.85em;
+  background: transparent;
+  border: none;
 }

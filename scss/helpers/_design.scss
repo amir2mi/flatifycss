@@ -2,29 +2,29 @@
 
 // List of opacity helper classes
 @each $value in $OPACITY_LIST {
-	// e.g. [.opacity-10]
-	.opacity-#{$value} {
-		opacity: math.div($value, 100);
-	}
+  // e.g. [.opacity-10]
+  .opacity-#{$value} {
+    opacity: math.div($value, 100);
+  }
 }
 
 // List of border-radius helper classes
 @each $type, $value in $BORDER_RADIUS_LIST {
-	.edge-#{$type} {
-		border-radius: #{$value} !important;
-	}
+  .edge-#{$type} {
+    border-radius: #{$value} !important;
+  }
 }
 
 // List of width helper classes
 @each $type, $value in $WIDTH_LIST {
-	.width-#{$type} {
-		width: #{$value} !important;
-	}
+  .width-#{$type} {
+    width: #{$value} !important;
+  }
 }
 
 // List of height helper classes
 @each $type, $value in $HEIGHT_LIST {
-	.height-#{$type} {
-		height: #{$value} !important;
-	}
+  .height-#{$type} {
+    height: #{$value} !important;
+  }
 }

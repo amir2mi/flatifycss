@@ -1,19 +1,19 @@
 .pulse {
-	position: relative;
-	isolation: isolate;
+  position: relative;
+  isolation: isolate;
 
-	&:after {
-		content: " ";
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: -1;
-		display: block;
-		width: 100%;
-		height: 100%;
-		background: inherit;
-		border-radius: inherit;
-		will-change: opacity, transform;
-		animation: flatify-pulse 1s infinite;
-	}
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    will-change: opacity, transform;
+    animation: flatify-pulse 1s infinite;
+  }
 }

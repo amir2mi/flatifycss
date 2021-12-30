@@ -1,408 +1,408 @@
 .no-transition {
-	transition-duration: 0s !important;
+  transition-duration: 0s !important;
 }
 
 .no-animation {
-	// FlatifyCSS's JS listen to [animationend] event, so [animation: none] will break the functionality.
-	animation-duration: 0s !important;
+  // FlatifyCSS's JS listen to [animationend] event, so [animation: none] will break the functionality.
+  animation-duration: 0s !important;
 }
 
 .play-animation:before,
 .play-animation:after,
 .play-animation {
-	animation-play-state: running !important;
+  animation-play-state: running !important;
 }
 
 .pause-animation:before,
 .pause-animation:after,
 .pause-animation {
-	animation-play-state: paused !important;
+  animation-play-state: paused !important;
 }
 
 .stop-animation:before,
 .stop-animation:after,
 .stop-animation {
-	animation: none !important;
+  animation: none !important;
 }
 
 .anim-spin {
-	animation: flatify-spin 0.75s linear infinite !important;
+  animation: flatify-spin 0.75s linear infinite !important;
 }
 
 .anim-heart {
-	animation: flatify-heart 1s ease infinite !important;
+  animation: flatify-heart 1s ease infinite !important;
 }
 
 .anim-required {
-	animation: flatify-heart 1s ease 2 !important;
+  animation: flatify-heart 1s ease 2 !important;
 }
 
 .anim-pulse {
-	animation: flatify-pulse ease 1.5s !important;
+  animation: flatify-pulse ease 1.5s !important;
 }
 
 .anim-fade-in {
-	animation: flatify-fade-in 0.3s ease !important;
+  animation: flatify-fade-in 0.3s ease !important;
 }
 
 .anim-fade-out {
-	animation: flatify-fade-out 0.3s ease !important;
+  animation: flatify-fade-out 0.3s ease !important;
 }
 
 // A simple fade out animation,
 // it is a great choice for reduced-motion situations in [a11y.scss]
 @keyframes flatify-fade-in {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes flatify-fade-in-out {
-	from {
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-	}
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 // Fade in animation for backdrop, it will set the backdrop opacity instead of static value.
 @keyframes flatify-backdrop-fade-in {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: var(--#{$CSS_VAR_PFX}backdrop-opacity);
-	}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: var(--#{$CSS_VAR_PFX}backdrop-opacity);
+  }
 }
 
 // A simple fade out animation,
 // it is a great choice for reduced-motion situations in [a11y.scss]
 @keyframes flatify-fade-out {
-	to {
-		opacity: 0;
-	}
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes flatify-grow {
-	from {
-		transform: scale(0);
-	}
-	to {
-		transform: scale(1);
-	}
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 @keyframes flatify-grow-x {
-	from {
-		transform: scaleX(0);
-	}
-	to {
-		transform: scaleX(1);
-	}
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes flatify-grow-y {
-	from {
-		transform: scaleY(0);
-	}
-	to {
-		transform: scaleY(1);
-	}
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }
 
 // Progress bar processing
 @keyframes flatify-processing {
-	from {
-		opacity: 0.85;
-		transform: scaleX(0);
-	}
-	100% {
-		opacity: 0;
-		transform: scaleX(1);
-	}
+  from {
+    opacity: 0.85;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
 }
 
 // Blow in & Blow out animation (it will be cool with cubic bezier)
 @keyframes flatify-blow-in {
-	0% {
-		opacity: 0;
-		transform: scale(0.9);
-	}
-	100% {
-		opacity: 1;
-		transform: scale(1);
-	}
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 @keyframes flatify-blow-out {
-	0% {
-		opacity: 1;
-		transform: scale(1);
-	}
-	100% {
-		opacity: 0;
-		transform: scale(0.95);
-	}
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
 }
 
 // Heart animation
 @keyframes flatify-heart {
-	0% {
-		transform: scale(1);
-	}
-	65% {
-		transform: scale(1.05);
-	}
-	80% {
-		transform: scale(1.1);
-	}
-	100% {
-		transform: scale(1);
-	}
+  0% {
+    transform: scale(1);
+  }
+  65% {
+    transform: scale(1.05);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 // Spin animation
 @keyframes flatify-spin {
-	from {
-		transform: rotate(0);
-	}
-	to {
-		transform: rotate(1turn);
-	}
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 // Slide animations
 @keyframes flatify-slide-up-in {
-	from {
-		transform: translateY(100%) scale(0.95);
-	}
-	to {
-		transform: translateY(0);
-	}
+  from {
+    transform: translateY(100%) scale(0.95);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 @keyframes flatify-slide-up-out {
-	from {
-		transform: translateY(0);
-	}
-	to {
-		transform: translateY(100%) scale(0.95);
-	}
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%) scale(0.95);
+  }
 }
 
 @keyframes flatify-slide-down-in {
-	from {
-		transform: translateY(-100%) scale(0.95);
-	}
-	to {
-		transform: translateY(0);
-	}
+  from {
+    transform: translateY(-100%) scale(0.95);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 @keyframes flatify-slide-down-out {
-	from {
-		transform: translateY(0);
-	}
-	to {
-		transform: translateY(-100%) scale(0.95);
-	}
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%) scale(0.95);
+  }
 }
 
 @keyframes flatify-slide-left-in {
-	from {
-		transform: translateX(100%) scale(0.95);
-	}
-	to {
-		transform: translateX(0);
-	}
+  from {
+    transform: translateX(100%) scale(0.95);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 @keyframes flatify-slide-left-in-min {
-	from {
-		opacity: 0;
-		transform: translateX(15em);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(0);
-	}
+  from {
+    opacity: 0;
+    transform: translateX(15em);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 @keyframes flatify-slide-left-out {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(100%) scale(0.95);
-	}
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%) scale(0.95);
+  }
 }
 @keyframes flatify-slide-left-out-min {
-	from {
-		opacity: 1;
-		transform: translateX(0);
-	}
-	to {
-		opacity: 0;
-		transform: translateX(15em);
-	}
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(15em);
+  }
 }
 
 @keyframes flatify-slide-right-in {
-	from {
-		transform: translateX(-100%) scale(0.95);
-	}
-	to {
-		transform: translateX(0);
-	}
+  from {
+    transform: translateX(-100%) scale(0.95);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 @keyframes flatify-slide-right-in-min {
-	from {
-		opacity: 0;
-		transform: translateX(-15em);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(0);
-	}
+  from {
+    opacity: 0;
+    transform: translateX(-15em);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 @keyframes flatify-slide-right-out {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(-100%) scale(0.95);
-	}
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%) scale(0.95);
+  }
 }
 @keyframes flatify-slide-right-out-min {
-	from {
-		opacity: 1;
-		transform: translateX(0);
-	}
-	to {
-		opacity: 0;
-		transform: translateX(-15em);
-	}
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-15em);
+  }
 }
 
 // Default animation before removing elements,
 // It can be customized both with [_config.scss] and [--flatify__remove-animation-duration] CSS var.
 
 @keyframes flatify-alert-will-be-removed {
-	85% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
 
-		@if $IS_LTR {
-			transform-origin: top right;
-			transform: scale(0.92) rotate(-0.5deg);
-		} @else {
-			transform-origin: top left;
-			transform: scale(0.92) rotate(0.5deg);
-		}
-	}
+    @if $IS_LTR {
+      transform-origin: top right;
+      transform: scale(0.92) rotate(-0.5deg);
+    } @else {
+      transform-origin: top left;
+      transform: scale(0.92) rotate(0.5deg);
+    }
+  }
 }
 
 // Dropdown show & hide
 @keyframes flatify-dropdown-show {
-	from {
-		opacity: 0;
-		@if $IS_LTR {
-			transform: scale(0.9) rotate(3deg);
-		} @else {
-			transform: scale(0.9) rotate(-3deg);
-		}
-	}
-	to {
-		opacity: 1;
-		transform: scale(1);
-	}
+  from {
+    opacity: 0;
+    @if $IS_LTR {
+      transform: scale(0.9) rotate(3deg);
+    } @else {
+      transform: scale(0.9) rotate(-3deg);
+    }
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes flatify-dropdown-hide {
-	from {
-		opacity: 1;
-		transform: scale(1);
-	}
-	to {
-		opacity: 0;
-		transform: scale(0.85);
-	}
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.85);
+  }
 }
 
 // Pulse animation for .pulse
 @keyframes flatify-pulse {
-	0% {
-		transform: scale(1);
-	}
-	100% {
-		opacity: 0;
-		transform: scale(1.75);
-	}
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.75);
+  }
 }
 
 // animation for eyes blinking
 @keyframes flatify-eye-blink {
-	0% {
-		transform: scaleY(1);
-	}
-	40% {
-		transform: scaleY(1);
-	}
-	42% {
-		transform: scaleY(0.3);
-	}
-	45% {
-		transform: scaleY(1);
-	}
-	100% {
-		transform: scaleY(1);
-	}
+  0% {
+    transform: scaleY(1);
+  }
+  40% {
+    transform: scaleY(1);
+  }
+  42% {
+    transform: scaleY(0.3);
+  }
+  45% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 // loading dots animation
 @keyframes flatify-loading-dot-first {
-	0% {
-		opacity: 0;
-		transform: scale(var(--#{$CSS_VAR_PFX}loading-dot-animation-start-scale)) translateX(-0.25em);
-	}
-	50% {
-		opacity: 1;
-		transform: scale(1);
-	}
-	90% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
+  0% {
+    opacity: 0;
+    transform: scale(var(--#{$CSS_VAR_PFX}loading-dot-animation-start-scale)) translateX(-0.25em);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes flatify-loading-dot-second {
-	0%,
-	25% {
-		opacity: 0;
-		transform: scale(var(--#{$CSS_VAR_PFX}loading-dot-animation-start-scale));
-	}
-	65%,
-	100% {
-		opacity: 1;
-		transform: scale(1);
-	}
+  0%,
+  25% {
+    opacity: 0;
+    transform: scale(var(--#{$CSS_VAR_PFX}loading-dot-animation-start-scale));
+  }
+  65%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes flatify-loading-dot-third {
-	0%,
-	45% {
-		opacity: 0;
-		transform: scale(var(--#{$CSS_VAR_PFX}loading-dot-animation-start-scale)) translateX(0.25em);
-	}
-	85%,
-	100% {
-		opacity: 1;
-		transform: scale(1);
-	}
+  0%,
+  45% {
+    opacity: 0;
+    transform: scale(var(--#{$CSS_VAR_PFX}loading-dot-animation-start-scale)) translateX(0.25em);
+  }
+  85%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

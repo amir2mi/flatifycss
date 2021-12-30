@@ -1,206 +1,206 @@
 :root {
-	--#{$CSS_VAR_PFX}modal-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
-	--#{$CSS_VAR_PFX}modal-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
-	--#{$CSS_VAR_PFX}modal-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+  --#{$CSS_VAR_PFX}modal-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+  --#{$CSS_VAR_PFX}modal-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}modal-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 
-	// *** modal animations
-	--#{$CSS_VAR_PFX}modal-animation-show-duration: #{$MODAL_SHOW_ANIMATION_DURATION};
-	--#{$CSS_VAR_PFX}modal-animation-hide-duration: #{$MODAL_HIDE_ANIMATION_DURATION};
+  // *** modal animations
+  --#{$CSS_VAR_PFX}modal-animation-show-duration: #{$MODAL_SHOW_ANIMATION_DURATION};
+  --#{$CSS_VAR_PFX}modal-animation-hide-duration: #{$MODAL_HIDE_ANIMATION_DURATION};
 
-	// default
-	--#{$CSS_VAR_PFX}modal-animation-default-show: flatify-blow-in var(--#{$CSS_VAR_PFX}modal-animation-show-duration)
-		cubic-bezier(0.52, 0.42, 0.44, 1.44);
-	--#{$CSS_VAR_PFX}modal-animation-default-hide: flatify-blow-out var(--#{$CSS_VAR_PFX}modal-animation-hide-duration)
-		cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+  // default
+  --#{$CSS_VAR_PFX}modal-animation-default-show: flatify-blow-in var(--#{$CSS_VAR_PFX}modal-animation-show-duration)
+    cubic-bezier(0.52, 0.42, 0.44, 1.44);
+  --#{$CSS_VAR_PFX}modal-animation-default-hide: flatify-blow-out var(--#{$CSS_VAR_PFX}modal-animation-hide-duration)
+    cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 
-	// top
-	--#{$CSS_VAR_PFX}modal-animation-top-show: flatify-slide-down-in var(--#{$CSS_VAR_PFX}modal-animation-show-duration)
-		ease;
-	--#{$CSS_VAR_PFX}modal-animation-top-hide: flatify-slide-down-out
-		var(--#{$CSS_VAR_PFX}modal-animation-hide-duration) ease both;
+  // top
+  --#{$CSS_VAR_PFX}modal-animation-top-show: flatify-slide-down-in var(--#{$CSS_VAR_PFX}modal-animation-show-duration)
+    ease;
+  --#{$CSS_VAR_PFX}modal-animation-top-hide: flatify-slide-down-out var(--#{$CSS_VAR_PFX}modal-animation-hide-duration)
+    ease both;
 
-	// bottom
-	--#{$CSS_VAR_PFX}modal-animation-bottom-show: flatify-slide-up-in
-		var(--#{$CSS_VAR_PFX}modal-animation-show-duration) ease;
-	--#{$CSS_VAR_PFX}modal-animation-bottom-hide: flatify-slide-up-out
-		var(--#{$CSS_VAR_PFX}modal-animation-hide-duration) ease both;
+  // bottom
+  --#{$CSS_VAR_PFX}modal-animation-bottom-show: flatify-slide-up-in var(--#{$CSS_VAR_PFX}modal-animation-show-duration)
+    ease;
+  --#{$CSS_VAR_PFX}modal-animation-bottom-hide: flatify-slide-up-out var(--#{$CSS_VAR_PFX}modal-animation-hide-duration)
+    ease both;
 
-	// left
-	--#{$CSS_VAR_PFX}modal-animation-left-show: flatify-slide-right-in
-		var(--#{$CSS_VAR_PFX}modal-animation-show-duration) ease;
-	--#{$CSS_VAR_PFX}modal-animation-left-hide: flatify-slide-right-out
-		var(--#{$CSS_VAR_PFX}modal-animation-hide-duration) ease both;
+  // left
+  --#{$CSS_VAR_PFX}modal-animation-left-show: flatify-slide-right-in var(--#{$CSS_VAR_PFX}modal-animation-show-duration)
+    ease;
+  --#{$CSS_VAR_PFX}modal-animation-left-hide: flatify-slide-right-out
+    var(--#{$CSS_VAR_PFX}modal-animation-hide-duration) ease both;
 
-	// right
-	--#{$CSS_VAR_PFX}modal-animation-right-show: flatify-slide-left-in
-		var(--#{$CSS_VAR_PFX}modal-animation-show-duration) ease;
-	--#{$CSS_VAR_PFX}modal-animation-right-hide: flatify-slide-left-out
-		var(--#{$CSS_VAR_PFX}modal-animation-hide-duration) ease both;
+  // right
+  --#{$CSS_VAR_PFX}modal-animation-right-show: flatify-slide-left-in var(--#{$CSS_VAR_PFX}modal-animation-show-duration)
+    ease;
+  --#{$CSS_VAR_PFX}modal-animation-right-hide: flatify-slide-left-out
+    var(--#{$CSS_VAR_PFX}modal-animation-hide-duration) ease both;
 }
 
 $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
 
 .modal {
-	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}modal-bg-color);
-	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}modal-border-color);
-	// Basically there is no need for scrolling, if there is it should be the [.modal-body] not the modal itself.
-	overflow: hidden;
-	position: fixed;
-	z-index: $ZINDEX_MODAL;
-	top: 5em;
-	left: 0;
-	right: 0;
-	display: none;
-	width: 90%;
-	height: fit-content;
-	max-width: 32em; // 512px
-	margin: 0 auto;
-	color: var(--#{$CSS_VAR_PFX}modal-txt-color);
-	background: var(--#{$CSS_VAR_PFX}modal-bg-color);
-	border: $modal-border;
-	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+  --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}modal-bg-color);
+  --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}modal-border-color);
+  // Basically there is no need for scrolling, if there is it should be the [.modal-body] not the modal itself.
+  overflow: hidden;
+  position: fixed;
+  z-index: $ZINDEX_MODAL;
+  top: 5em;
+  left: 0;
+  right: 0;
+  display: none;
+  width: 90%;
+  height: fit-content;
+  max-width: 32em; // 512px
+  margin: 0 auto;
+  color: var(--#{$CSS_VAR_PFX}modal-txt-color);
+  background: var(--#{$CSS_VAR_PFX}modal-bg-color);
+  border: $modal-border;
+  border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
-	&.modal-sm {
-		font-size: 0.9em;
-		max-width: 20em;
-	}
+  &.modal-sm {
+    font-size: 0.9em;
+    max-width: 20em;
+  }
 
-	&.modal-lg {
-		font-size: 1.2em;
-		max-width: 45em;
-	}
+  &.modal-lg {
+    font-size: 1.2em;
+    max-width: 45em;
+  }
 
-	&.show {
-		display: block;
-		animation: var(--#{$CSS_VAR_PFX}modal-animation-default-show);
-	}
+  &.show {
+    display: block;
+    animation: var(--#{$CSS_VAR_PFX}modal-animation-default-show);
+  }
 
-	&.modal-will-be-hidden {
-		animation: var(--#{$CSS_VAR_PFX}modal-animation-default-hide);
-	}
+  &.modal-will-be-hidden {
+    animation: var(--#{$CSS_VAR_PFX}modal-animation-default-hide);
+  }
 
-	&.modal-center {
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: auto;
-	}
-	&.modal-top {
-		bottom: unset;
-		top: 0;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
-		border-radius: 0 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius);
-		border-top: none !important;
+  &.modal-center {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  &.modal-top {
+    bottom: unset;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 0 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius);
+    border-top: none !important;
 
-		&.show {
-			animation: var(--#{$CSS_VAR_PFX}modal-animation-top-show);
-		}
+    &.show {
+      animation: var(--#{$CSS_VAR_PFX}modal-animation-top-show);
+    }
 
-		&.modal-will-be-hidden {
-			animation: var(--#{$CSS_VAR_PFX}modal-animation-top-hide);
-		}
-	}
-	&.modal-bottom {
-		top: unset;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
-		border-radius: var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0 0;
-		border-bottom: none !important;
+    &.modal-will-be-hidden {
+      animation: var(--#{$CSS_VAR_PFX}modal-animation-top-hide);
+    }
+  }
+  &.modal-bottom {
+    top: unset;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0 0;
+    border-bottom: none !important;
 
-		&.show {
-			animation: var(--#{$CSS_VAR_PFX}modal-animation-bottom-show);
-		}
+    &.show {
+      animation: var(--#{$CSS_VAR_PFX}modal-animation-bottom-show);
+    }
 
-		&.modal-will-be-hidden {
-			animation: var(--#{$CSS_VAR_PFX}modal-animation-bottom-hide);
-		}
-	}
-	&.modal-left {
-		right: unset;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		margin: auto 0;
-		border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
-		border-left: none !important;
+    &.modal-will-be-hidden {
+      animation: var(--#{$CSS_VAR_PFX}modal-animation-bottom-hide);
+    }
+  }
+  &.modal-left {
+    right: unset;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+    border-left: none !important;
 
-		&.show {
-			animation: var(--#{$CSS_VAR_PFX}modal-animation-left-show);
-		}
+    &.show {
+      animation: var(--#{$CSS_VAR_PFX}modal-animation-left-show);
+    }
 
-		&.modal-will-be-hidden {
-			animation: var(--#{$CSS_VAR_PFX}modal-animation-left-hide);
-		}
-	}
-	&.modal-right {
-		left: unset;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		margin: auto 0;
-		border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
-		border-right: none !important;
+    &.modal-will-be-hidden {
+      animation: var(--#{$CSS_VAR_PFX}modal-animation-left-hide);
+    }
+  }
+  &.modal-right {
+    left: unset;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+    border-right: none !important;
 
-		&.show {
-			animation: var(--#{$CSS_VAR_PFX}modal-animation-right-show);
-		}
+    &.show {
+      animation: var(--#{$CSS_VAR_PFX}modal-animation-right-show);
+    }
 
-		&.modal-will-be-hidden {
-			animation: var(--#{$CSS_VAR_PFX}modal-animation-right-hide);
-		}
-	}
+    &.modal-will-be-hidden {
+      animation: var(--#{$CSS_VAR_PFX}modal-animation-right-hide);
+    }
+  }
 
-	&.bordered {
-		.modal-header {
-			border-bottom: $modal-border;
-		}
-		.modal-footer {
-			border-top: $modal-border;
-		}
-	}
+  &.bordered {
+    .modal-header {
+      border-bottom: $modal-border;
+    }
+    .modal-footer {
+      border-top: $modal-border;
+    }
+  }
 
-	// Do not limit width when width setter class is added.
-	&[class*="width-"] {
-		max-width: unset;
-	}
+  // Do not limit width when width setter class is added.
+  &[class*="width-"] {
+    max-width: unset;
+  }
 
-	.close-modal {
-		background: var(--#{$CSS_VAR_PFX}local-bg-color);
-	}
+  .close-modal {
+    background: var(--#{$CSS_VAR_PFX}local-bg-color);
+  }
 }
 
 .modal-content {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .modal-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0.75em 1.25em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75em 1.25em;
 
-	.modal-title {
-		font-size: 1.4em;
-		font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
-		margin-bottom: 0;
-	}
+  .modal-title {
+    font-size: 1.4em;
+    font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
+    margin-bottom: 0;
+  }
 }
 
 .modal-body {
-	flex-grow: 1; // fill the space when height is 100%
-	padding: 1.25em;
+  flex-grow: 1; // fill the space when height is 100%
+  padding: 1.25em;
 }
 
 .modal-footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0.5em 1.25em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em 1.25em;
 }

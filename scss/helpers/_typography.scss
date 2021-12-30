@@ -1,37 +1,37 @@
 // though justify is not a good practice for text align, but with it hyphens becomes better.
 .text-filled {
-	hyphens: auto;
-	text-align: justify;
+  hyphens: auto;
+  text-align: justify;
 }
 
 .text-center {
-	text-align: center;
+  text-align: center;
 }
 
 .text-left {
-	text-align: left;
+  text-align: left;
 }
 
 .text-right {
-	text-align: right;
+  text-align: right;
 }
 
 // text sizes
 @each $size, $value in $FONT_SIZE_LIST {
-	.size-#{$size},
-	.text-#{$size} {
-		font-size: $value !important;
-	}
+  .size-#{$size},
+  .text-#{$size} {
+    font-size: $value !important;
+  }
 }
 
 // text truncation
 .truncate {
-	&:not(.show-text) {
-		white-space: nowrap !important;
-		overflow: hidden !important;
-		text-overflow: ellipsis !important;
-	}
-	&.add-space {
-		padding: 0.18em 0;
-	}
+  &:not(.show-text) {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  &.add-space {
+    padding: 0.18em 0;
+  }
 }

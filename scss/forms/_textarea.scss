@@ -1,6 +1,6 @@
 textarea:not(.default) {
-	@extend %form-element;
-	font-size: 1em;
-	// height should not have transition.
-	transition: border-color var(--#{$CSS_VAR_PFX}simple-transition), filter var(--#{$CSS_VAR_PFX}simple-transition);
+  @extend %form-element;
+  font-size: 1em;
+  // height should not have transition.
+  transition: border-color var(--#{$CSS_VAR_PFX}simple-transition), filter var(--#{$CSS_VAR_PFX}simple-transition);
 }

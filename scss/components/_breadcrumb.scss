@@ -1,99 +1,99 @@
 :root {
-	--#{$CSS_VAR_PFX}breadcrumb-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
-	--#{$CSS_VAR_PFX}breadcrumb-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
-	--#{$CSS_VAR_PFX}breadcrumb-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+  --#{$CSS_VAR_PFX}breadcrumb-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}breadcrumb-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+  --#{$CSS_VAR_PFX}breadcrumb-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 }
 
 .breadcrumb-wrapper {
-	width: 100%;
+  width: 100%;
 }
 
 .breadcrumb {
-	--#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}breadcrumb-txt-color);
-	--#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}breadcrumb-bg-color);
-	--#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}breadcrumb-border-color);
-	overflow-x: auto;
-	overflow-y: hidden;
-	scrollbar-width: thin;
-	list-style: none;
-	padding: 0;
-	margin: 0.5em 0;
-	border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+  --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}breadcrumb-txt-color);
+  --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}breadcrumb-bg-color);
+  --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}breadcrumb-border-color);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0;
+  border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
-	&[class*="style-"] {
-		background: transparent !important;
-	}
+  &[class*="style-"] {
+    background: transparent !important;
+  }
 
-	.breadcrumb-item {
-		overflow: hidden;
-		position: relative;
-		white-space: nowrap;
-		display: table-cell;
-		padding: 0.64em 1em;
-		color: var(--#{$CSS_VAR_PFX}local-txt-color);
-		background: var(--#{$CSS_VAR_PFX}local-bg-color);
-		border-top: var(--#{$CSS_VAR_PFX}border-width) solid;
-		border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid;
-		border-color: var(--#{$CSS_VAR_PFX}local-border-color);
+  .breadcrumb-item {
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    display: table-cell;
+    padding: 0.64em 1em;
+    color: var(--#{$CSS_VAR_PFX}local-txt-color);
+    background: var(--#{$CSS_VAR_PFX}local-bg-color);
+    border-top: var(--#{$CSS_VAR_PFX}border-width) solid;
+    border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid;
+    border-color: var(--#{$CSS_VAR_PFX}local-border-color);
 
-		&:not(:first-child) {
-			@if $IS_LTR {
-				padding-left: 3em;
-			} @else {
-				padding-right: 3em;
-			}
+    &:not(:first-child) {
+      @if $IS_LTR {
+        padding-left: 3em;
+      } @else {
+        padding-right: 3em;
+      }
 
-			&:before {
-				content: " ";
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				@if $IS_LTR {
-					left: -1.2em;
-				} @else {
-					right: -1.2em;
-				}
-				display: block;
-				width: 2.5em;
-				height: 2.5em;
-				margin: auto 0;
-				background: transparent;
-				border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-				border-radius: 0.18em;
-				transform: rotate(45deg);
-				transition: transform var(--#{$CSS_VAR_PFX}simple-transition);
-			}
-		}
+      &:before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        @if $IS_LTR {
+          left: -1.2em;
+        } @else {
+          right: -1.2em;
+        }
+        display: block;
+        width: 2.5em;
+        height: 2.5em;
+        margin: auto 0;
+        background: transparent;
+        border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+        border-radius: 0.18em;
+        transform: rotate(45deg);
+        transition: transform var(--#{$CSS_VAR_PFX}simple-transition);
+      }
+    }
 
-		&:first-child {
-			@if $IS_LTR {
-				padding-left: 2em;
-				border-left: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-				border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
-			} @else {
-				padding-right: 2em;
-				border-right: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-				border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
-			}
-		}
+    &:first-child {
+      @if $IS_LTR {
+        padding-left: 2em;
+        border-left: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+        border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+      } @else {
+        padding-right: 2em;
+        border-right: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+        border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+      }
+    }
 
-		&:last-child {
-			@if $IS_LTR {
-				padding-right: 2em;
-				border-right: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-				border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
-			} @else {
-				padding-left: 2em;
-				border-left: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-				border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
-			}
-		}
+    &:last-child {
+      @if $IS_LTR {
+        padding-right: 2em;
+        border-right: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+        border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
+      } @else {
+        padding-left: 2em;
+        border-left: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+        border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
+      }
+    }
 
-		&:hover,
-		&:focus-within {
-			&:before {
-				transform: rotate(45deg) scale(1.15);
-			}
-		}
-	}
+    &:hover,
+    &:focus-within {
+      &:before {
+        transform: rotate(45deg) scale(1.15);
+      }
+    }
+  }
 }

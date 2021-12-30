@@ -1,235 +1,235 @@
 // Input wrapper to add [::before] & [::after] for input styles
 .input-wrapper {
-	position: relative;
-	display: flex;
-	align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 
-	input {
-		width: 100%;
+  input {
+    width: 100%;
 
-		@if $IS_LTR {
-			padding-right: 3em;
-		} @else {
-			padding-left: 3em;
-		}
-	}
+    @if $IS_LTR {
+      padding-right: 3em;
+    } @else {
+      padding-left: 3em;
+    }
+  }
 
-	&.toggle-password,
-	&.invalid,
-	&.warning,
-	&.valid {
-		input {
-			@if $IS_LTR {
-				padding-right: 3.5em;
-			} @else {
-				padding-left: 3.5em;
-			}
-		}
+  &.toggle-password,
+  &.invalid,
+  &.warning,
+  &.valid {
+    input {
+      @if $IS_LTR {
+        padding-right: 3.5em;
+      } @else {
+        padding-left: 3.5em;
+      }
+    }
 
-		&:after {
-			content: " ";
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			z-index: 1;
-			margin: auto 0;
-			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
-		}
-	}
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      margin: auto 0;
+      border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+      transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+    }
+  }
 
-	&.invalid {
-		&:after {
-			@if $IS_LTR {
-				right: 1.35em;
-			} @else {
-				left: 1.35em;
-			}
+  &.invalid {
+    &:after {
+      @if $IS_LTR {
+        right: 1.35em;
+      } @else {
+        left: 1.35em;
+      }
 
-			width: 1em;
-			height: 0.25em;
-			background: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid);
-		}
-	}
+      width: 1em;
+      height: 0.25em;
+      background: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid);
+    }
+  }
 
-	&.warning {
-		&:after {
-			@if $IS_LTR {
-				right: 1.55em;
-			} @else {
-				left: 1.55em;
-			}
+  &.warning {
+    &:after {
+      @if $IS_LTR {
+        right: 1.55em;
+      } @else {
+        left: 1.55em;
+      }
 
-			width: 0.5em;
-			height: 0.5em;
-			background: var(--#{$CSS_VAR_PFX}form-element-border-color__warning);
-		}
+      width: 0.5em;
+      height: 0.5em;
+      background: var(--#{$CSS_VAR_PFX}form-element-border-color__warning);
+    }
 
-		&:focus-within:after {
-			animation: flatify-fade-out 1s infinite;
-		}
-	}
+    &:focus-within:after {
+      animation: flatify-fade-out 1s infinite;
+    }
+  }
 
-	&.valid {
-		&:before {
-			content: " ";
-			position: absolute;
-			top: 0.45em;
-			bottom: 0;
-			z-index: 1;
-			margin: auto 0;
-			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
-			// This animation will be played on state change because invalid or warning
-			// does not have [::before] so it will get flashed without this animation, that is bad.
-			animation: flatify-fade-in 0.35s;
+  &.valid {
+    &:before {
+      content: " ";
+      position: absolute;
+      top: 0.45em;
+      bottom: 0;
+      z-index: 1;
+      margin: auto 0;
+      border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+      transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+      // This animation will be played on state change because invalid or warning
+      // does not have [::before] so it will get flashed without this animation, that is bad.
+      animation: flatify-fade-in 0.35s;
 
-			@if $IS_LTR {
-				right: 1.75em;
-			} @else {
-				left: 0.8em;
-			}
+      @if $IS_LTR {
+        right: 1.75em;
+      } @else {
+        left: 0.8em;
+      }
 
-			width: 0.64em;
-			height: 0.25em;
-			background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
-			transform: rotate(45deg);
-		}
+      width: 0.64em;
+      height: 0.25em;
+      background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+      transform: rotate(45deg);
+    }
 
-		&:after {
-			@if $IS_LTR {
-				right: 1em;
-			} @else {
-				left: 1em;
-			}
+    &:after {
+      @if $IS_LTR {
+        right: 1em;
+      } @else {
+        left: 1em;
+      }
 
-			width: 1.2em;
-			height: 0.25em;
-			background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
-			transform: rotate(-55deg);
-		}
-	}
+      width: 1.2em;
+      height: 0.25em;
+      background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
+      transform: rotate(-55deg);
+    }
+  }
 
-	.show-password-button {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		// should be over [.input-wrapper] ::before and ::after
-		z-index: 3;
-		@if $IS_LTR {
-			right: 0.5em;
-		} @else {
-			left: 0.5em;
-		}
-		font-size: 1em;
-		width: 2.5em;
-		height: 2.5em;
-		padding: 0.5em;
-		margin: auto 0;
-		color: var(--#{$CSS_VAR_PFX}form-element-txt-color);
-		background: transparent;
-		border: none;
-		border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
+  .show-password-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    // should be over [.input-wrapper] ::before and ::after
+    z-index: 3;
+    @if $IS_LTR {
+      right: 0.5em;
+    } @else {
+      left: 0.5em;
+    }
+    font-size: 1em;
+    width: 2.5em;
+    height: 2.5em;
+    padding: 0.5em;
+    margin: auto 0;
+    color: var(--#{$CSS_VAR_PFX}form-element-txt-color);
+    background: transparent;
+    border: none;
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
 
-		@media (prefers-reduced-motion: no-preference) {
-			&:active,
-			&:focus-visible {
-				&:before {
-					transform: scale(0.85) !important;
-				}
-			}
-		}
+    @media (prefers-reduced-motion: no-preference) {
+      &:active,
+      &:focus-visible {
+        &:before {
+          transform: scale(0.85) !important;
+        }
+      }
+    }
 
-		&:before {
-			content: "";
-			display: block;
-			width: 100%;
-			height: 100%;
-			background-color: currentColor;
-			mask: var(--#{$CSS_VAR_PFX}eye-icon) no-repeat 50% 50%;
-			-webkit-mask: var(--#{$CSS_VAR_PFX}eye-icon) no-repeat 50% 50%;
-			transition: all var(--#{$CSS_VAR_PFX}simple-transition);
-		}
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: currentColor;
+      mask: var(--#{$CSS_VAR_PFX}eye-icon) no-repeat 50% 50%;
+      -webkit-mask: var(--#{$CSS_VAR_PFX}eye-icon) no-repeat 50% 50%;
+      transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+    }
 
-		&:after {
-			content: " ";
-			position: absolute;
-			@if $IS_LTR {
-				right: 0.5em;
-			} @else {
-				left: 0.5em;
-			}
-			top: 0;
-			bottom: 0;
-			z-index: 1;
-			width: 1.5em;
-			height: 0.18em;
-			margin: auto 0;
-			background: currentColor;
-			border-radius: var(--#{$CSS_VAR_PFX}border-radius);
-			transform: rotate(-30deg);
-			clip-path: circle(200% at right);
-			transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
-		}
-	}
+    &:after {
+      content: " ";
+      position: absolute;
+      @if $IS_LTR {
+        right: 0.5em;
+      } @else {
+        left: 0.5em;
+      }
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 1.5em;
+      height: 0.18em;
+      margin: auto 0;
+      background: currentColor;
+      border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+      transform: rotate(-30deg);
+      clip-path: circle(200% at right);
+      transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
+    }
+  }
 
-	&.visible-password .show-password-button {
-		&:after {
-			clip-path: circle(0% at right);
-		}
-	}
+  &.visible-password .show-password-button {
+    &:after {
+      clip-path: circle(0% at right);
+    }
+  }
 
-	// blink eye icon every 7s when password is shown.
-	@media (prefers-reduced-motion: no-preference) {
-		&.visible-password .show-password-button:not(:active) {
-			&:before {
-				animation: flatify-eye-blink 7s infinite;
-			}
-		}
-	}
+  // blink eye icon every 7s when password is shown.
+  @media (prefers-reduced-motion: no-preference) {
+    &.visible-password .show-password-button:not(:active) {
+      &:before {
+        animation: flatify-eye-blink 7s infinite;
+      }
+    }
+  }
 }
 
 input:not(.default) {
-	@extend %form-element;
+  @extend %form-element;
 }
 
 // when password is entered give letters more space.
 input[type="password"]:not(:placeholder-shown) {
-	letter-spacing: 0.18em;
+  letter-spacing: 0.18em;
 }
 
 input[type="color"]:not(.default) {
-	width: 3.14em;
-	height: 2.75em;
-	padding: 0.5em;
-	border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
+  width: 3.14em;
+  height: 2.75em;
+  padding: 0.5em;
+  border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.75);
 }
 
 input[type="file"]:not(.default) {
-	filter: brightness(100%);
+  filter: brightness(100%);
 
-	&::file-selector-button {
-		@extend %button;
-		cursor: pointer;
-		font-size: 0.9em;
-		color: inherit;
-		background: inherit !important;
-		filter: brightness(92%);
-		vertical-align: baseline;
+  &::file-selector-button {
+    @extend %button;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: inherit;
+    background: inherit !important;
+    filter: brightness(92%);
+    vertical-align: baseline;
 
-		@if $IS_LTR {
-			margin: 0 0.75em 0 0;
-		} @else {
-			margin: 0 0 0 0.75em;
-		}
-	}
+    @if $IS_LTR {
+      margin: 0 0.75em 0 0;
+    } @else {
+      margin: 0 0 0 0.75em;
+    }
+  }
 }
 
 // Buttons with [.button] should not have border
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-	&.button {
-		border: none !important;
-	}
+  &.button {
+    border: none !important;
+  }
 }
