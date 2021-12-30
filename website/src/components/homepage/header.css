@@ -1,9 +1,21 @@
+@media screen and (min-width: 575px) {
+  html:not(.docs-version-current) .navbar.navbar--fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .homepage-header {
+    z-index: 99999;
+  }
+}
+
 .homepage-header {
   isolation: isolate;
   position: relative;
   text-align: center;
   height: 100vh;
   padding: 12em 1em;
+  background: var(--flatify__bg-color);
 }
 
 .homepage-title {
@@ -109,6 +121,9 @@ html[data-theme="dark"] .animated-logo {
   }
 }
 @media screen and (max-width: 575px) {
+  .homepage-header {
+    height: 75vh;
+  }
   .homepage-title {
     font-size: 4em;
   }

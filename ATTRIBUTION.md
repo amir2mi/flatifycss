@@ -22,6 +22,9 @@ Share by shaurya from NounProject.com
 
 Flat check icon made by Freepik from flaticon.com  
 Flat decline icon made by Freepik from flaticon.com
+Tile icon made by Pixel perfect from flaticon.com
+Screwdriver icon made by Pixel perfect from flaticon.com
+Web Page icon made by Pixel perfect from flaticon.com
 
 ## Illustrations
 

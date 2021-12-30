@@ -14,6 +14,9 @@
 }
 
 @media screen and (max-width: 575px) {
+  .homepage-features{
+    padding-top: 1em;
+  }
   .feature-item {
     flex-direction: column !important;
   }
@@ -33,6 +36,7 @@
 
 .feature-media {
   position: relative;
+  isolation: isolate;
 }
 
 .feature-media:before {

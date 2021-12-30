@@ -1,7 +1,8 @@
 .homepage-contribute {
   overflow: hidden;
   position: relative;
-  padding: 0 3em;
+  padding: 0 3em 21em;
+  margin-top: 5em;
   isolation: isolate;
 }
 
@@ -46,6 +47,11 @@
 .contribute-texts {
   position: relative;
   top: 10em;
+  font-size: 0.85em;
+}
+
+.contribute-texts .homepage-para {
+  margin-bottom: 1.5em !important;
 }
 
 .contributor-svg svg {
@@ -57,21 +63,35 @@
 }
 
 .contribute-icons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
+  width: 95%;
   padding-bottom: 1em;
+  margin: 0 auto;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .contribute-icons {
+    font-size: 0.85em;
+  }
+}
 @media screen and (max-width: 767px) {
-  .contributor-svg svg {
-    width: 10em;
+  .contribute-icons {
+    font-size: 0.85em;
   }
-
-  .chain-svg svg {
-    width: 7em;
-  }
-
   .contribute-icons {
     opacity: 0.3;
+  }
+}
+@media screen and (max-width: 575px) {
+  .homepage-contribute {
+    padding-bottom: 12em;
+  }
+  .contribute-icons {
+    font-size: 0.5em;
   }
 }

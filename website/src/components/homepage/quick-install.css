@@ -1,13 +1,33 @@
 .quick-install-codes {
   max-width: 32em;
 }
-
+.quick-install-codes pre {
+  user-select: all;
+}
 pre {
   scrollbar-width: thin;
 }
 
 .quick-start-img {
   padding-right: 3em;
+}
+
+.quick-install-item {
+  position: relative;
+}
+
+.quick-install-item:before {
+  content: " ";
+  position: absolute;
+  top: -5%;
+  left: -30%;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: var(--flatify__bg-color-dark);
+  border-radius: 5em;
+  opacity: 0.5;
+  transform: scale(1) rotate(5deg);
 }
 
 @media screen and (max-width: 767px) {

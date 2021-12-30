@@ -25,7 +25,16 @@
   --ifm-pre-padding: 1.5em;
   --flatify__button-border-color: none;
   --doc-sidebar-width: 275px !important;
+  --ifm-footer-background-color: #141f23;
 }
+
+html:not(.docs-version-current) .footer {
+  color: #fff !important;
+}
+.docs-version-current .footer {
+  --ifm-footer-background-color: var(--flatify__bg-color);
+}
+
 html[data-theme="dark"] {
   --docus-bd: 2px solid #2e4051;
   --ifm-background-surface-color: #141f23;
@@ -97,6 +106,8 @@ div[class*="codeBlockTitle_"],
 
 .docs-doc-page div > aside {
   border-right: var(--docus-bd);
+  border-bottom: var(--docus-bd);
+  border-bottom-right-radius: 1em;
 }
 
 .theme-doc-sidebar-menu.menu__list a {
@@ -384,4 +395,35 @@ div[class*="toggleTrack_"],
   margin: 0.4em;
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 1em;
+}
+
+/* News */
+.blog-wrapper {
+  padding-top: 4em;
+}
+.blog-list-page article[itemprop="blogPost"] .avatar__name a,
+.blog-list-page article[itemprop="blogPost"] [itemprop="headline"] a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.blog-list-page article[itemprop="blogPost"] {
+  padding: 2em;
+  border: var(--docus-bd);
+  border-radius: 0 3em 3em;
+}
+
+@media screen and (min-width: 576px) {
+  .blog-list-page article[itemprop="blogPost"] header h2 {
+    width: 100%;
+  }
+  .blog-list-page article[itemprop="blogPost"] header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .blog-list-page article[itemprop="blogPost"] header div[class*="blogPostData"] {
+    order: 7;
+  }
 }
