@@ -5,12 +5,12 @@ $IS_LTR: true !default;
 
 // do not change names, just values
 $RESPONSIVE_BREAKPOINTS: (
-	xs: 575.98px,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-	xxl: 1400px,
+  xs: 575.98px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
 ) !default;
 
 // *** Design: border width, radius, opacity, links
@@ -20,46 +20,46 @@ $BORDER_RADIUS: 1em !default;
 // This list will be converted to helper classes.
 // .edge-[]
 $BORDER_RADIUS_LIST: (
-	sharp: 0em,
-	round-xs: 0.32em,
-	round-sm: 0.5em,
-	round-md: 0.75em,
-	round-lg: 1em,
-	circle: 50em,
-	oval: 50%,
-	triangle: 100% 50% 50% 100% / 75% 69% 69% 75%,
+  sharp: 0em,
+  round-xs: 0.32em,
+  round-sm: 0.5em,
+  round-md: 0.75em,
+  round-lg: 1em,
+  circle: 50em,
+  oval: 50%,
+  triangle: 100% 50% 50% 100% / 75% 69% 69% 75%,
 ) !default;
 
 // This list will be converted to helper classes.
 // .width-[]
 $WIDTH_LIST: (
-	0p: 0,
-	10p: 10%,
-	15p: 15%,
-	25p: 25%,
-	30p: 30%,
-	50p: 50%,
-	60p: 60%,
-	75p: 75%,
-	90p: 90%,
-	95p: 95%,
-	100p: 100%,
+  0p: 0,
+  10p: 10%,
+  15p: 15%,
+  25p: 25%,
+  30p: 30%,
+  50p: 50%,
+  60p: 60%,
+  75p: 75%,
+  90p: 90%,
+  95p: 95%,
+  100p: 100%,
 ) !default;
 
 // This list will be converted to helper classes.
 // .height-[]
 $HEIGHT_LIST: (
-	0p: 0,
-	10p: 10%,
-	15p: 15%,
-	25p: 25%,
-	30p: 30%,
-	50p: 50%,
-	60p: 60%,
-	75p: 75%,
-	90p: 90%,
-	95p: 95%,
-	100p: 100%,
+  0p: 0,
+  10p: 10%,
+  15p: 15%,
+  25p: 25%,
+  30p: 30%,
+  50p: 50%,
+  60p: 60%,
+  75p: 75%,
+  90p: 90%,
+  95p: 95%,
+  100p: 100%,
 ) !default;
 
 // This list will be converted to helper classes.
@@ -171,90 +171,90 @@ $TAP_HIGHLIGHT_COLOR: transparent !default;
 
 // Do not modify this palette directly
 $PALETTE: (
-	blue: (
-		primary: $BLUE,
-		light: $BLUE_LIGHT,
-		dark: $BLUE_DARK,
-		darker: $BLUE_DARKER,
-	),
-	green: (
-		primary: $GREEN,
-		light: $GREEN_LIGHT,
-		dark: $GREEN_DARK,
-		darker: $GREEN_DARKER,
-	),
-	yellow: (
-		primary: $YELLOW,
-		light: $YELLOW_LIGHT,
-		dark: $YELLOW_DARK,
-		darker: $YELLOW_DARKER,
-	),
-	orange: (
-		primary: $ORANGE,
-		light: $ORANGE_LIGHT,
-		dark: $ORANGE_DARK,
-		darker: $ORANGE_DARKER,
-	),
-	red: (
-		primary: $RED,
-		light: $RED_LIGHT,
-		dark: $RED_DARK,
-		darker: $RED_DARKER,
-	),
-	pink: (
-		primary: $PINK,
-		light: $PINK_LIGHT,
-		dark: $PINK_DARK,
-		darker: $PINK_DARKER,
-	),
-	purple: (
-		primary: $PURPLE,
-		light: $PURPLE_LIGHT,
-		dark: $PURPLE_DARK,
-		darker: $PURPLE_DARKER,
-	),
-	accent: (
-		primary: $ACCENT_COLOR,
-		light: $ACCENT_COLOR_LIGHT,
-		dark: $ACCENT_COLOR_DARK,
-		darker: $ACCENT_COLOR_DARKER,
-	),
-	success: (
-		primary: $SUCCESS_COLOR,
-		light: $SUCCESS_COLOR_LIGHT,
-		dark: $SUCCESS_COLOR_DARK,
-		darker: $SUCCESS_COLOR_DARKER,
-	),
-	info: (
-		primary: $INFO_COLOR,
-		light: $INFO_COLOR_LIGHT,
-		dark: $INFO_COLOR_DARK,
-		darker: $INFO_COLOR_DARKER,
-	),
-	warning: (
-		primary: $WARNING_COLOR,
-		light: $WARNING_COLOR_LIGHT,
-		dark: $WARNING_COLOR_DARK,
-		darker: $WARNING_COLOR_DARKER,
-	),
-	danger: (
-		primary: $DANGER_COLOR,
-		light: $DANGER_COLOR_LIGHT,
-		dark: $DANGER_COLOR_DARK,
-		darker: $DANGER_COLOR_DARKER,
-	),
-	light: (
-		primary: $LIGHT_COLOR,
-		light: $LIGHT_COLOR_LIGHT,
-		dark: $LIGHT_COLOR_DARK,
-		darker: $LIGHT_COLOR_DARKER,
-	),
-	dark: (
-		primary: $DARK_COLOR,
-		light: $DARK_COLOR_LIGHT,
-		dark: $DARK_COLOR_DARK,
-		darker: $DARK_COLOR_DARKER,
-	),
+  blue: (
+    primary: $BLUE,
+    light: $BLUE_LIGHT,
+    dark: $BLUE_DARK,
+    darker: $BLUE_DARKER,
+  ),
+  green: (
+    primary: $GREEN,
+    light: $GREEN_LIGHT,
+    dark: $GREEN_DARK,
+    darker: $GREEN_DARKER,
+  ),
+  yellow: (
+    primary: $YELLOW,
+    light: $YELLOW_LIGHT,
+    dark: $YELLOW_DARK,
+    darker: $YELLOW_DARKER,
+  ),
+  orange: (
+    primary: $ORANGE,
+    light: $ORANGE_LIGHT,
+    dark: $ORANGE_DARK,
+    darker: $ORANGE_DARKER,
+  ),
+  red: (
+    primary: $RED,
+    light: $RED_LIGHT,
+    dark: $RED_DARK,
+    darker: $RED_DARKER,
+  ),
+  pink: (
+    primary: $PINK,
+    light: $PINK_LIGHT,
+    dark: $PINK_DARK,
+    darker: $PINK_DARKER,
+  ),
+  purple: (
+    primary: $PURPLE,
+    light: $PURPLE_LIGHT,
+    dark: $PURPLE_DARK,
+    darker: $PURPLE_DARKER,
+  ),
+  accent: (
+    primary: $ACCENT_COLOR,
+    light: $ACCENT_COLOR_LIGHT,
+    dark: $ACCENT_COLOR_DARK,
+    darker: $ACCENT_COLOR_DARKER,
+  ),
+  success: (
+    primary: $SUCCESS_COLOR,
+    light: $SUCCESS_COLOR_LIGHT,
+    dark: $SUCCESS_COLOR_DARK,
+    darker: $SUCCESS_COLOR_DARKER,
+  ),
+  info: (
+    primary: $INFO_COLOR,
+    light: $INFO_COLOR_LIGHT,
+    dark: $INFO_COLOR_DARK,
+    darker: $INFO_COLOR_DARKER,
+  ),
+  warning: (
+    primary: $WARNING_COLOR,
+    light: $WARNING_COLOR_LIGHT,
+    dark: $WARNING_COLOR_DARK,
+    darker: $WARNING_COLOR_DARKER,
+  ),
+  danger: (
+    primary: $DANGER_COLOR,
+    light: $DANGER_COLOR_LIGHT,
+    dark: $DANGER_COLOR_DARK,
+    darker: $DANGER_COLOR_DARKER,
+  ),
+  light: (
+    primary: $LIGHT_COLOR,
+    light: $LIGHT_COLOR_LIGHT,
+    dark: $LIGHT_COLOR_DARK,
+    darker: $LIGHT_COLOR_DARKER,
+  ),
+  dark: (
+    primary: $DARK_COLOR,
+    light: $DARK_COLOR_LIGHT,
+    dark: $DARK_COLOR_DARK,
+    darker: $DARK_COLOR_DARKER,
+  ),
 );
 
 // *** Motion: animations, transitions
@@ -285,14 +285,14 @@ $CODE_FONT_FAMILY: "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Cou
 // This list will be converted to helper classes.
 // .size-[] | .text-[]
 $FONT_SIZE_LIST: (
-	xs: 0.75em,
-	sm: 0.9em,
-	md: 1em,
-	lg: 1.25em,
-	2x: 1.5em,
-	3x: 2.2em,
-	4x: 2.5em,
-	5x: 3.14em,
+  xs: 0.75em,
+  sm: 0.9em,
+  md: 1em,
+  lg: 1.25em,
+  2x: 1.5em,
+  3x: 2.2em,
+  4x: 2.5em,
+  5x: 3.14em,
 ) !default;
 
 $BASE_LINE_HEIGHT: 1.5 !default;
