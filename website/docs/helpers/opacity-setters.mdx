@@ -19,9 +19,9 @@ you can change the impact an element can have on others by adjusting opacity.
 <ColorIndicator className="opacity-70" color="#1cb0f6" title=".opacity-70" />
 <ColorIndicator className="opacity-80" color="#1cb0f6" title=".opacity-80" />
 <ColorIndicator className="opacity-90" color="#1cb0f6" title=".opacity-90" />
-<ColorIndicator className="opacity-100" color="#1cb0f6" title=".opacity-100" />  
+<ColorIndicator className="opacity-100" color="#1cb0f6" title=".opacity-100" />{" "}
 
-<br/>
+<br />
 
 :::info Custom helper classes
 Note that these classes can be customized in `_config.scss` file, there is a variable called `$OPACITY_LIST`,
@@ -32,20 +32,5 @@ So it is possible to create customized helper classes for opacity simply!
 ```scss {5,6,12} title="_config.scss"
 // This list will be converted to helper classes.
 // .opacity-[]
-$OPACITY_LIST: (
-	0,
-	5,
-	8,
- 	10,
-  	20,
-	30,
-    40,
-	50, 
-	55,
-	60, 
-	70, 
-	80, 
-	90, 
-	100
-);
+$OPACITY_LIST: (0, 5, 8, 10, 20, 30, 40, 50, 55, 60, 70, 80, 90, 100);
 ```

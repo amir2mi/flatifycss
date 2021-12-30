@@ -14,8 +14,8 @@ On this page we will talk about how to style inputs for a form with FlatifyCSS, 
 By default input labels are inline until you add `.form-label` which is necessary, in this case, if you add the `.inline` class to the `<label>` it will be inline.
 
 <PreviewBox
-	height="200px"
-	children='<!DOCTYPE html>
+  height="200px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -52,8 +52,8 @@ Note that if you want to have the floating label for `<textarea>` should add the
 :::
 
 <PreviewBox
-	height="260px"
-	children='<!DOCTYPE html>
+  height="260px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -78,14 +78,14 @@ Note that if you want to have the floating label for `<textarea>` should add the
 ```html {2,4,8,10} title="index.html"
 <!-- input -->
 <div class="input-wrapper floating-label">
-	<input id="my-text-input" type="text" placeholder="Enter you name" />
-	<label for="my-text-input" class="form-label">Enter you name</label>
+  <input id="my-text-input" type="text" placeholder="Enter you name" />
+  <label for="my-text-input" class="form-label">Enter you name</label>
 </div>
 
 <!-- textarea -->
 <div class="input-wrapper is-textarea floating-label">
-	<textarea id="thoughts" name="thoughts" rows="4" placeholder="What do you think?"></textarea>
-	<label id="thoughts" class="form-label" name="thoughts" for="yourname">What do you think?</label>
+  <textarea id="thoughts" name="thoughts" rows="4" placeholder="What do you think?"></textarea>
+  <label id="thoughts" class="form-label" name="thoughts" for="yourname">What do you think?</label>
 </div>
 ```
 
@@ -94,8 +94,8 @@ Note that if you want to have the floating label for `<textarea>` should add the
 Input invalid state is red by default however you can have valid and warning states as well. You can use `.valid`, `.warning`, `.invalid` classes both for input or input wrapper. The diffrence between them is simple if you add these classes to the `.input-wrapper` it will show an indicator icon.
 
 <PreviewBox
-	height="620px"
-	children='<!DOCTYPE html>
+  height="620px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -138,41 +138,41 @@ Input invalid state is red by default however you can have valid and warning sta
 <!-- Validation classes added to the input -->
 <label for="my-text-input-1" class="form-label">Enter you name</label>
 <div class="input-wrapper">
-	<input class="valid" id="my-text-input-1" type="text" placeholder="Enter you name" />
+  <input class="valid" id="my-text-input-1" type="text" placeholder="Enter you name" />
 </div>
 
 <label for="my-text-input-2" class="form-label">Enter you name</label>
 <div class="input-wrapper">
-	<input class="warning" id="my-text-input-2" type="text" placeholder="Enter you name" />
+  <input class="warning" id="my-text-input-2" type="text" placeholder="Enter you name" />
 </div>
 
 <label for="my-text-input-3" class="form-label">Enter you name</label>
 <div class="input-wrapper">
-	<input class="invalid" id="my-text-input-3" type="text" placeholder="Enter you name" />
+  <input class="invalid" id="my-text-input-3" type="text" placeholder="Enter you name" />
 </div>
 
 <!-- Validation classes added to the .input-wrapper -->
 <label for="my-text-input-4" class="form-label">Enter you name</label>
 <div class="input-wrapper valid">
-	<input id="my-text-input-4" type="text" placeholder="Enter you name" />
+  <input id="my-text-input-4" type="text" placeholder="Enter you name" />
 </div>
 
 <label for="my-text-input-5" class="form-label">Enter you name</label>
 <div class="input-wrapper warning">
-	<input id="my-text-input-5" type="text" placeholder="Enter you name" />
+  <input id="my-text-input-5" type="text" placeholder="Enter you name" />
 </div>
 
 <label for="my-text-input-6" class="form-label">Enter you name</label>
 <div class="input-wrapper invalid">
-	<input id="my-text-input-6" type="text" placeholder="Enter you name" />
+  <input id="my-text-input-6" type="text" placeholder="Enter you name" />
 </div>
 ```
 
 Here is an example of how to use validation classes to have a dynamic input.
 
 <PreviewBox
-	height="140px"
-	children='<!DOCTYPE html>
+  height="140px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -217,8 +217,8 @@ Here is an example of how to use validation classes to have a dynamic input.
 
 ```html title="index.html"
 <div class="input-wrapper floating-label">
-	<input required id="password" type="password" placeholder="Enter new password" />
-	<label for="password" class="form-label">Enter new password</label>
+  <input required id="password" type="password" placeholder="Enter new password" />
+  <label for="password" class="form-label">Enter new password</label>
 </div>
 <p class="help-text size-sm">Password length should be more than 8 chars with letters.</p>
 ```
@@ -230,24 +230,24 @@ const elem_help = document.querySelector(".help-text");
 
 // check on keyup
 elem_password.addEventListener("keyup", function () {
-	// should have length of eight chars
-	if (elem_password.value.length >= 8) {
-		// should have at least one letter
-		if (/[a-zA-Z]/.test(elem_password.value)) {
-			elem_wrapper.classList.remove("invalid", "warning");
-			elem_wrapper.classList.add("valid");
-			elem_help.innerText = "You chose the perfect password!";
-		} else {
-			elem_wrapper.classList.remove("invalid", "valid");
-			elem_wrapper.classList.add("warning");
-			elem_help.innerText = "You can add some letters as well!";
-		}
-	} else {
-		// invalid if does not have 8 chars length and letter
-		elem_wrapper.classList.remove("valid", "warning");
-		elem_wrapper.classList.add("invalid");
-		elem_help.innerText = "Password length should be more than 8 chars.";
-	}
+  // should have length of eight chars
+  if (elem_password.value.length >= 8) {
+    // should have at least one letter
+    if (/[a-zA-Z]/.test(elem_password.value)) {
+      elem_wrapper.classList.remove("invalid", "warning");
+      elem_wrapper.classList.add("valid");
+      elem_help.innerText = "You chose the perfect password!";
+    } else {
+      elem_wrapper.classList.remove("invalid", "valid");
+      elem_wrapper.classList.add("warning");
+      elem_help.innerText = "You can add some letters as well!";
+    }
+  } else {
+    // invalid if does not have 8 chars length and letter
+    elem_wrapper.classList.remove("valid", "warning");
+    elem_wrapper.classList.add("invalid");
+    elem_help.innerText = "Password length should be more than 8 chars.";
+  }
 });
 ```
 
@@ -260,8 +260,8 @@ You do not need to add anything inside the show password button element but it i
 :::
 
 <PreviewBox
-	height="150px"
-	children='
+  height="150px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -286,8 +286,8 @@ You do not need to add anything inside the show password button element but it i
 ```html {4} title="index.html"
 <label for="password" class="form-label">New password</label>
 <div class="input-wrapper">
-	<input required id="password" type="password" placeholder="Enter new password" />
-	<button class="show-password-button" aria-label="Show password"></button>
+  <input required id="password" type="password" placeholder="Enter new password" />
+  <button class="show-password-button" aria-label="Show password"></button>
 </div>
 ```
 
@@ -315,8 +315,8 @@ To change the input size use [size setter classes](/docs/helpers/size-setters).
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
 
 <PreviewBox
-	height="520px"
-	children='
+  height="520px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -350,23 +350,23 @@ These classes just set a `font-size` property so it is possible to change it you
 
 ```html title="index.html"
 <div class="size-xs">
-	<label for="my-datetime-input-sm" class="form-label">Make an appointment</label>
-	<input id="my-datetime-input-sm" type="datetime-local" placeholder="Make an appointment" />
+  <label for="my-datetime-input-sm" class="form-label">Make an appointment</label>
+  <input id="my-datetime-input-sm" type="datetime-local" placeholder="Make an appointment" />
 </div>
 
 <div class="size-md">
-	<label for="my-datetime-input-md" class="form-label">Make an appointment</label>
-	<input id="my-datetime-input-md" type="datetime-local" placeholder="Make an appointment" />
+  <label for="my-datetime-input-md" class="form-label">Make an appointment</label>
+  <input id="my-datetime-input-md" type="datetime-local" placeholder="Make an appointment" />
 </div>
 
 <div class="size-lg">
-	<label for="my-datetime-input-lg" class="form-label">Make an appointment</label>
-	<input id="my-datetime-input-lg" type="datetime-local" placeholder="Make an appointment" />
+  <label for="my-datetime-input-lg" class="form-label">Make an appointment</label>
+  <input id="my-datetime-input-lg" type="datetime-local" placeholder="Make an appointment" />
 </div>
 
 <div class="size-3x">
-	<label for="my-datetime-input-3x" class="form-label">Make an appointment</label>
-	<input id="my-datetime-input-3x" type="datetime-local" placeholder="Make an appointment" />
+  <label for="my-datetime-input-3x" class="form-label">Make an appointment</label>
+  <input id="my-datetime-input-3x" type="datetime-local" placeholder="Make an appointment" />
 </div>
 ```
 
@@ -431,8 +431,8 @@ There are helper classes for styling inputs, first read about [color setter clas
 <input class="style-orange" id="your-name" type="text" placeholder="Write something..." />
 <!-- Password -->
 <div class="input-wrapper toggle-password">
-	<input class="style-dark" id="password" type="password" placeholder="Write something..." />
-	<button class="show-password-button style-dark" aria-label="Show password"></button>
+  <input class="style-dark" id="password" type="password" placeholder="Write something..." />
+  <button class="show-password-button style-dark" aria-label="Show password"></button>
 </div>
 <!-- Buttons -->
 <input type="reset" class="style-red-light" value="Reset" />
@@ -455,8 +455,8 @@ There are CSS variables for customizing form inputs:
 Here is an example of these variables usage:
 
 <PreviewBox
-	height="140px"
-	children='<!DOCTYPE html>
+  height="140px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />

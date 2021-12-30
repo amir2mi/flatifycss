@@ -79,22 +79,22 @@ To create a simple dropdown, we need a [button](docs/components/buttons/button) 
 
 ```html title="index.html"
 <div class="dropdown-wrapper">
-	<!-- a button to toggle show/hide of dropdown -->
-	<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
-		Dropdown at bottom
-	</button>
-	<!-- dropdown: in this case a menu -->
-	<ul class="dropdown menu-items-wrapper" aria-labelledby="my-dropdown-toggle">
-		<li class="menu-item heading">My Account</li>
-		<li class="menu-item"><a href="#">Sign up</a></li>
-		<li class="menu-item"><a href="#">Login</a></li>
-		<li role="separator" class="menu-item separator"></li>
-		<li class="menu-item"><a href="#">About us</a></li>
-		<li class="menu-item"><a href="#">Contribute</a></li>
-		<li class="menu-item"><a href="#">Rate it!</a></li>
-		<!-- dropdown arrow which is optional -->
-		<li aria-hidden="true"><span class="pointer-arrow"></span></li>
-	</ul>
+  <!-- a button to toggle show/hide of dropdown -->
+  <button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+    Dropdown at bottom
+  </button>
+  <!-- dropdown: in this case a menu -->
+  <ul class="dropdown menu-items-wrapper" aria-labelledby="my-dropdown-toggle">
+    <li class="menu-item heading">My Account</li>
+    <li class="menu-item"><a href="#">Sign up</a></li>
+    <li class="menu-item"><a href="#">Login</a></li>
+    <li role="separator" class="menu-item separator"></li>
+    <li class="menu-item"><a href="#">About us</a></li>
+    <li class="menu-item"><a href="#">Contribute</a></li>
+    <li class="menu-item"><a href="#">Rate it!</a></li>
+    <!-- dropdown arrow which is optional -->
+    <li aria-hidden="true"><span class="pointer-arrow"></span></li>
+  </ul>
 </div>
 ```
 
@@ -201,31 +201,31 @@ We call them dropdown but they can come from left, right, or top as well. To set
 
 ```html {3,10,17,24} title="index.html"
 <div class="dropdown-wrapper">
-	<button ...></button>
-	<ul ... data-dropdown-direction="bottom">
-		...
-	</ul>
+  <button ...></button>
+  <ul ... data-dropdown-direction="bottom">
+    ...
+  </ul>
 </div>
 
 <div class="dropdown-wrapper">
-	<button ...></button>
-	<ul ... data-dropdown-direction="left">
-		...
-	</ul>
+  <button ...></button>
+  <ul ... data-dropdown-direction="left">
+    ...
+  </ul>
 </div>
 
 <div class="dropdown-wrapper">
-	<button ...></button>
-	<ul ... data-dropdown-direction="top">
-		...
-	</ul>
+  <button ...></button>
+  <ul ... data-dropdown-direction="top">
+    ...
+  </ul>
 </div>
 
 <div class="dropdown-wrapper">
-	<button ...></button>
-	<ul ... data-dropdown-direction="right">
-		...
-	</ul>
+  <button ...></button>
+  <ul ... data-dropdown-direction="right">
+    ...
+  </ul>
 </div>
 ```
 
@@ -353,22 +353,22 @@ You might set `data-dropdown-auto-close` to `false` and handle dropdown manually
 
 ```html title="dropdown-close-button.html"
 <div class="dropdown-wrapper">
-	<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
-		Close button
-	</button>
-	<ul class="dropdown menu-items-wrapper" aria-labelledby="my-dropdown-toggle" data-dropdown-auto-close="false">
-		<li class="position-absolute place-top place-right">
-			<button
-				class="close-dropdown close-button size-xs"
-				style="margin: 1.2em 0.64em"
-				aria-label="Close dropdown"
-			></button>
-		</li>
-		<li class="menu-item heading">My Account</li>
-		<li class="menu-item"><a>Sign up</a></li>
-		<li class="menu-item"><a>Login</a></li>
-		<li aria-hidden="true"><span class="pointer-arrow"></span></li>
-	</ul>
+  <button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button" aria-expanded="false">
+    Close button
+  </button>
+  <ul class="dropdown menu-items-wrapper" aria-labelledby="my-dropdown-toggle" data-dropdown-auto-close="false">
+    <li class="position-absolute place-top place-right">
+      <button
+        class="close-dropdown close-button size-xs"
+        style="margin: 1.2em 0.64em"
+        aria-label="Close dropdown"
+      ></button>
+    </li>
+    <li class="menu-item heading">My Account</li>
+    <li class="menu-item"><a>Sign up</a></li>
+    <li class="menu-item"><a>Login</a></li>
+    <li aria-hidden="true"><span class="pointer-arrow"></span></li>
+  </ul>
 </div>
 ```
 
@@ -377,8 +377,8 @@ You might set `data-dropdown-auto-close` to `false` and handle dropdown manually
 This is common for dropdowns to be opened by an arrow button that is stuck with a button, they are called split buttons. It is simply doable with [buttons](/docs/components/buttons/button) and [button group](/docs/components/buttons/button-group).
 
 <PreviewBox
-	height="250px"
-	children='
+  height="250px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -563,15 +563,15 @@ Do not add color setter classes to `.dropdown-wrapper`, inside the wrapper there
 
 ```html {2,5} title="index.html"
 <div class="dropdown-wrapper">
-	<button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button style-green" aria-expanded="false">
-		Large
-	</button>
-	<ul class="dropdown menu-items-wrapper style-green-light" aria-labelledby="my-dropdown-toggle">
-		<li class="menu-item heading">My Account</li>
-		<li class="menu-item"><a>Sign up</a></li>
-		<li class="menu-item"><a>Login</a></li>
-		<li aria-hidden="true"><span class="pointer-arrow"></span></li>
-	</ul>
+  <button id="my-dropdown-toggle" class="button dropdown-toggle arrow-button style-green" aria-expanded="false">
+    Large
+  </button>
+  <ul class="dropdown menu-items-wrapper style-green-light" aria-labelledby="my-dropdown-toggle">
+    <li class="menu-item heading">My Account</li>
+    <li class="menu-item"><a>Sign up</a></li>
+    <li class="menu-item"><a>Login</a></li>
+    <li aria-hidden="true"><span class="pointer-arrow"></span></li>
+  </ul>
 </div>
 ```
 
@@ -676,42 +676,42 @@ It is possible to change colors, animations duration, or change the whole animat
 
 ```css title="style.css"
 @keyframes my-dropdown-show-animation {
-	from {
-		opacity: 0;
-		transform: scale(1.2) rotate(90deg);
-	}
-	to {
-		opacity: 1;
-		transform: scale(1) rotate(0);
-	}
+  from {
+    opacity: 0;
+    transform: scale(1.2) rotate(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
 }
 
 @keyframes my-dropdown-hide-animation {
-	from {
-		transform: scale(1);
-	}
-	50% {
-		transform: scale(1.2);
-	}
-	to {
-		transform: scale(0);
-	}
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(0);
+  }
 }
 
 .my-custom-dropdown {
-	/* dropdown */
-	--flatify__dropdown-animation-show: my-dropdown-show-animation 500ms ease;
-	--flatify__dropdown-animation-hide: my-dropdown-hide-animation 500ms ease;
-	/* submenu */
-	--flatify__submenu-bg-color: #d8334a;
-	--flatify__submenu-txt-color: #f5f7fa;
-	--flatify__submenu-border-color: #bf263c;
-	/* submenu items */
-	--flatify__submenu-item-bg-color: #bf263c;
-	--flatify__submenu-item-txt-color: #f5f7fa;
-	--flatify__submenu-item-bg-color__hover: #a0d468;
-	--flatify__submenu-item-bg-color__focus: #ffce54;
-	--flatify__submenu-item-txt-color__hover: #3c3b3d;
-	--flatify__submenu-item-txt-color__focus: #bf263c;
+  /* dropdown */
+  --flatify__dropdown-animation-show: my-dropdown-show-animation 500ms ease;
+  --flatify__dropdown-animation-hide: my-dropdown-hide-animation 500ms ease;
+  /* submenu */
+  --flatify__submenu-bg-color: #d8334a;
+  --flatify__submenu-txt-color: #f5f7fa;
+  --flatify__submenu-border-color: #bf263c;
+  /* submenu items */
+  --flatify__submenu-item-bg-color: #bf263c;
+  --flatify__submenu-item-txt-color: #f5f7fa;
+  --flatify__submenu-item-bg-color__hover: #a0d468;
+  --flatify__submenu-item-bg-color__focus: #ffce54;
+  --flatify__submenu-item-txt-color__hover: #3c3b3d;
+  --flatify__submenu-item-txt-color__focus: #bf263c;
 }
 ```

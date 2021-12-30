@@ -124,8 +124,8 @@ You can add the `.floating` class to the `.close-button` for having a floating b
 :::
 
 <PreviewBox
-	height="240px"
-	children='
+  height="240px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -158,21 +158,21 @@ You can add the `.floating` class to the `.close-button` for having a floating b
 
 ```html {2,11} title="index.html"
 <div class="alert" role="alert">
-	<button class="close-button" aria-label="Close"></button>
+  <button class="close-button" aria-label="Close"></button>
 
-	<p>
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
-		malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-	</p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+    erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+  </p>
 </div>
 
 <div class="alert" role="alert">
-	<button class="close-button floating" aria-label="Close"></button>
+  <button class="close-button floating" aria-label="Close"></button>
 
-	<p>
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
-		malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-	</p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+    erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+  </p>
 </div>
 ```
 
@@ -181,8 +181,8 @@ You can add the `.floating` class to the `.close-button` for having a floating b
 It is possible to have an SVG as an icon for alert just add `.has-icon` to the alert and put SVG inside a div with `.alert-svg` class before message.
 
 <PreviewBox
-	height="540px"
-	children='
+  height="540px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -390,20 +390,20 @@ To change alert remove animation duration you need to change `$ALERT_REMOVE_ANIM
 ```css title="style.css"
 /* Define the custom animation */
 @keyframes my-custom-animation {
-	from {
-		opacity: 1;
-		transform: scale(1);
-	}
-	to {
-		opacity: 0;
-		transform: scale(0.5) rotate(0.5turn);
-	}
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.5) rotate(0.5turn);
+  }
 }
 
 .my-alert {
-	--flatify__alert-bg-color: #a0cecb;
-	--flatify__alert-txt-color: #434a54;
-	--flatify__alert-border-color: #a0cecb;
-	--flatify__alert-animation-remove: my-custom-animation 0.4s ease;
+  --flatify__alert-bg-color: #a0cecb;
+  --flatify__alert-txt-color: #434a54;
+  --flatify__alert-border-color: #a0cecb;
+  --flatify__alert-animation-remove: my-custom-animation 0.4s ease;
 }
 ```

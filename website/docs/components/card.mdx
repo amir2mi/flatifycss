@@ -12,8 +12,8 @@ Each card has a header, body, and footer, it can be vertical or horizontal based
 The card is displayed vertically by default, just add the necessary part and, voilà! we have a vertical card.
 
 <PreviewBox
-	height="420px"
-	children='
+  height="420px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -75,33 +75,33 @@ So we have `<header>` HTML tag for our the card header and `<footer>` HTML tag f
 
 ```html title="index.html"
 <article class="card" style="max-width: 320px">
-	<header class="card-header">
-		<div class="card-badges">
-			<a href="#" class="badge style-green">Sundays</a>
-			<a href="#" class="badge style-accent">Cards</a>
-		</div>
+  <header class="card-header">
+    <div class="card-badges">
+      <a href="#" class="badge style-green">Sundays</a>
+      <a href="#" class="badge style-accent">Cards</a>
+    </div>
 
-		<img class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
-		<h2 class="card-title">Hello, I am a new card</h2>
-	</header>
+    <img class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
+    <h2 class="card-title">Hello, I am a new card</h2>
+  </header>
 
-	<div class="card-body">
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
-		malesuada erat ut turpis.
-	</div>
+  <div class="card-body">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+    erat ut turpis.
+  </div>
 
-	<footer class="card-footer">
-		<div class="button-group">
-			<button class="button bordered style-light-light" aria-label="Like">
-				<!-- Like svg ... -->
-			</button>
-			<button class="button bordered style-light-light" aria-label="Share">
-				<!-- Share svg ... -->
-			</button>
-		</div>
+  <footer class="card-footer">
+    <div class="button-group">
+      <button class="button bordered style-light-light" aria-label="Like">
+        <!-- Like svg ... -->
+      </button>
+      <button class="button bordered style-light-light" aria-label="Share">
+        <!-- Share svg ... -->
+      </button>
+    </div>
 
-		<a href="#" class="button style-accent push-right">Read more</a>
-	</footer>
+    <a href="#" class="button style-accent push-right">Read more</a>
+  </footer>
 </article>
 ```
 
@@ -114,8 +114,8 @@ It is suggested to set a fixed height or maximum height for the card with the `.
 :::
 
 <PreviewBox
-	height="275px"
-	children='
+  height="275px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -174,33 +174,33 @@ It is suggested to set a fixed height or maximum height for the card with the `.
 
 ```html title="index.html"
 <article class="card horizontal" style="max-width: 500px;">
-	<header class="card-header">
-		<div class="card-badges">
-			<a href="#" class="badge style-green">Sundays</a>
-			<a href="#" class="badge style-accent">Cards</a>
-		</div>
-		<img style="height: 200px" class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
-	</header>
-	<div class="card-right">
-		<div class="card-body">
-			<h2 class="card-title">Hello, I am a new card</h2>
-			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
-			malesuada erat ut turpis.
-		</div>
+  <header class="card-header">
+    <div class="card-badges">
+      <a href="#" class="badge style-green">Sundays</a>
+      <a href="#" class="badge style-accent">Cards</a>
+    </div>
+    <img style="height: 200px" class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
+  </header>
+  <div class="card-right">
+    <div class="card-body">
+      <h2 class="card-title">Hello, I am a new card</h2>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+      malesuada erat ut turpis.
+    </div>
 
-		<footer class="card-footer">
-			<div class="button-group">
-				<button class="button bordered style-light-light" aria-label="Like">
-					<!-- Like svg ... -->
-				</button>
-				<button class="button bordered style-light-light" aria-label="Share">
-					<!-- Share svg ... -->
-				</button>
-			</div>
+    <footer class="card-footer">
+      <div class="button-group">
+        <button class="button bordered style-light-light" aria-label="Like">
+          <!-- Like svg ... -->
+        </button>
+        <button class="button bordered style-light-light" aria-label="Share">
+          <!-- Share svg ... -->
+        </button>
+      </div>
 
-			<a href="#" class="button style-accent push-right">Read more</a>
-		</footer>
-	</div>
+      <a href="#" class="button style-accent push-right">Read more</a>
+    </footer>
+  </div>
 </article>
 ```
 
@@ -210,8 +210,8 @@ To change the card size use [size setter classes](/docs/helpers/size-setters).
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
 
 <PreviewBox
-	height="330px"
-	children='
+  height="330px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -280,8 +280,8 @@ You can use [color setter helpr classes](/docs/helpers/color-setters) or change 
 Here is an example of how to use the variables:
 
 <PreviewBox
-	height="420px"
-	children='
+  height="420px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -331,17 +331,17 @@ Here is an example of how to use the variables:
 
 ```css title="style.css"
 .my-custom-card {
-	--flatify__card-txt-color: #e6e9ed;
-	--flatify__card-bg-color: #d8334a;
-	--flatify__card-border-color: #bf263c;
+  --flatify__card-txt-color: #e6e9ed;
+  --flatify__card-bg-color: #d8334a;
+  --flatify__card-border-color: #bf263c;
 }
 ```
 
 We can go further and move the title over the image and use [overlay layer](/docs/helpers/overlay-layer) for clarifying the title:
 
 <PreviewBox
-	height="320px"
-	children='
+  height="320px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -395,42 +395,42 @@ We can go further and move the title over the image and use [overlay layer](/doc
 
 ```html title="index.html"
 <article class="card my-custom-card" style="max-width: 320px">
-	<header class="card-header overlay-layer">
-		<div class="card-badges">
-			<a href="#" class="badge style-dark-light">Sundays</a>
-			<a href="#" class="badge style-dark-light">Cards</a>
-		</div>
-		<img class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
-		<h2 class="card-title">Hello, I am a new card</h2>
-	</header>
-	<div class="card-body">
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
-		malesuada erat ut turpis.
-	</div>
+  <header class="card-header overlay-layer">
+    <div class="card-badges">
+      <a href="#" class="badge style-dark-light">Sundays</a>
+      <a href="#" class="badge style-dark-light">Cards</a>
+    </div>
+    <img class="card-image" src="https://picsum.photos/200/300" alt="Card image" />
+    <h2 class="card-title">Hello, I am a new card</h2>
+  </header>
+  <div class="card-body">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+    erat ut turpis.
+  </div>
 </article>
 ```
 
 ```css title="style.css"
 .my-custom-card {
-	--flatify__card-txt-color: #e6e9ed;
-	--flatify__card-bg-color: #323133;
-	--flatify__card-border-color: #434a54;
-	--flatify__overlay-layer-bg-color: linear-gradient(
-		40deg,
-		rgba(255, 255, 255, 0.18) 50%,
-		rgba(255, 255, 255, 0.08) 50%
-	);
-	--flatify__overlay-layer-backdrop-filter: blur(5px) brightness(0.75) contrast(0.75);
-	--flatify__overlay-layer-priority: 0;
+  --flatify__card-txt-color: #e6e9ed;
+  --flatify__card-bg-color: #323133;
+  --flatify__card-border-color: #434a54;
+  --flatify__overlay-layer-bg-color: linear-gradient(
+    40deg,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.08) 50%
+  );
+  --flatify__overlay-layer-backdrop-filter: blur(5px) brightness(0.75) contrast(0.75);
+  --flatify__overlay-layer-priority: 0;
 }
 
 .my-custom-card .card-header {
-	margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .my-custom-card .card-title {
-	position: absolute;
-	bottom: 0.25em;
-	left: 0.75em;
+  position: absolute;
+  bottom: 0.25em;
+  left: 0.75em;
 }
 ```

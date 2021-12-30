@@ -11,8 +11,8 @@ Tables allow web developers to arrange data into rows and columns, with FlatifyC
 First, create a simple HTML table, then add the `.bordered` class to the table:
 
 <PreviewBox
-	height="360px"
-	children='
+  height="360px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -75,49 +75,49 @@ First, create a simple HTML table, then add the `.bordered` class to the table:
 
 ```html {1} title="index.html"
 <table class="bordered">
-	<caption>
-		The list of students
-	</caption>
-	<thead>
-		<tr>
-			<th>Student</th>
-			<th>Study time</th>
-			<th>Homework</th>
-			<th>Total grade</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Alan</td>
-			<td>6</td>
-			<td>9/10</td>
-			<td>95</td>
-		</tr>
-		<tr>
-			<td>Carlos</td>
-			<td>2</td>
-			<td>7/10</td>
-			<td>72</td>
-		</tr>
-		<tr>
-			<td>Kim</td>
-			<td>4</td>
-			<td>7/10</td>
-			<td>88</td>
-		</tr>
-		<tr>
-			<td>Pat</td>
-			<td>2</td>
-			<td>4/10</td>
-			<td>60</td>
-		</tr>
-		<tr>
-			<td>Thomas</td>
-			<td>5</td>
-			<td>10/10</td>
-			<td>98</td>
-		</tr>
-	</tbody>
+  <caption>
+    The list of students
+  </caption>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Study time</th>
+      <th>Homework</th>
+      <th>Total grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alan</td>
+      <td>6</td>
+      <td>9/10</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <td>Carlos</td>
+      <td>2</td>
+      <td>7/10</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>Kim</td>
+      <td>4</td>
+      <td>7/10</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <td>Pat</td>
+      <td>2</td>
+      <td>4/10</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <td>Thomas</td>
+      <td>5</td>
+      <td>10/10</td>
+      <td>98</td>
+    </tr>
+  </tbody>
 </table>
 ```
 
@@ -126,8 +126,8 @@ First, create a simple HTML table, then add the `.bordered` class to the table:
 A striped table has **different odd rows** for helping readers to know which row they are looking at. To have a striped style add the `.striped` class to the table.
 
 <PreviewBox
-	height="310px"
-	children='
+  height="310px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -187,7 +187,7 @@ A striped table has **different odd rows** for helping readers to know which row
 
 ```html {1} title="index.html"
 <table class="striped">
-	...
+  ...
 </table>
 ```
 
@@ -196,8 +196,8 @@ A striped table has **different odd rows** for helping readers to know which row
 By default, tables are vertical however for small screens and other use cases, we might need to have a horizontal table, it is possible with adding the ` horizontal` class to the table:
 
 <PreviewBox
-	height="235px"
-	children='
+  height="235px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -257,7 +257,7 @@ By default, tables are vertical however for small screens and other use cases, w
 
 ```html {1} title="index.html"
 <table class="bordered horizontal">
-	...
+  ...
 </table>
 ```
 
@@ -266,8 +266,8 @@ By default, tables are vertical however for small screens and other use cases, w
 By adding the `.text-center` class to the table, texts will be centered.
 
 <PreviewBox
-	height="310px"
-	children='
+  height="310px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -327,7 +327,7 @@ By adding the `.text-center` class to the table, texts will be centered.
 
 ```html {1} title="index.html"
 <table class="striped text-centered">
-	...
+  ...
 </table>
 ```
 
@@ -336,8 +336,8 @@ By adding the `.text-center` class to the table, texts will be centered.
 With helper classes we can have specific table items with various background and colors, [See here](/docs/helpers/color-setters), is the list of helper classes. for styling elements based on CSS background and color properties. For example, lets show which student was better and who needs help:
 
 <PreviewBox
-	height="325px"
-	children='
+  height="325px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -397,48 +397,48 @@ With helper classes we can have specific table items with various background and
 
 ```html {22,34,40} title="index.html"
 <table class="bordered horizontal">
-	<table class="bordered striped">
-		<thead>
-			<tr>
-				<th>Student</th>
-				<th>Study time</th>
-				<th>Homework</th>
-				<th>Total grade</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Alan</td>
-				<td>6</td>
-				<td>9/10</td>
-				<td>95</td>
-			</tr>
-			<tr>
-				<td>Carlos</td>
-				<td>2</td>
-				<td>7/10</td>
-				<td class="style-warning">72</td>
-			</tr>
-			<tr>
-				<td>Kim</td>
-				<td>4</td>
-				<td>7/10</td>
-				<td>88</td>
-			</tr>
-			<tr>
-				<td>Pat</td>
-				<td>2</td>
-				<td>4/10</td>
-				<td class="style-danger">60</td>
-			</tr>
-			<tr>
-				<td>Thomas</td>
-				<td>5</td>
-				<td>10/10</td>
-				<td class="style-success">98</td>
-			</tr>
-		</tbody>
-	</table>
+  <table class="bordered striped">
+    <thead>
+      <tr>
+        <th>Student</th>
+        <th>Study time</th>
+        <th>Homework</th>
+        <th>Total grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Alan</td>
+        <td>6</td>
+        <td>9/10</td>
+        <td>95</td>
+      </tr>
+      <tr>
+        <td>Carlos</td>
+        <td>2</td>
+        <td>7/10</td>
+        <td class="style-warning">72</td>
+      </tr>
+      <tr>
+        <td>Kim</td>
+        <td>4</td>
+        <td>7/10</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Pat</td>
+        <td>2</td>
+        <td>4/10</td>
+        <td class="style-danger">60</td>
+      </tr>
+      <tr>
+        <td>Thomas</td>
+        <td>5</td>
+        <td>10/10</td>
+        <td class="style-success">98</td>
+      </tr>
+    </tbody>
+  </table>
 </table>
 ```
 
@@ -531,16 +531,16 @@ Let's apply them in an example:
 
 ```html {1} title="index.html"
 <table class="my-table bordered striped">
-	...
+  ...
 </table>
 ```
 
 ```css title="style.css"
 .my-table {
-	--flatify__table-border-color: #e0c341;
-	--flatify__table-bg-color: #967adc;
-	--flatify__table-bg-color-dark: #6a50a7;
-	--flatify__table-bg-color-darker: #4d3a79;
-	--flatify__table-txt-color: #fff;
+  --flatify__table-border-color: #e0c341;
+  --flatify__table-bg-color: #967adc;
+  --flatify__table-bg-color-dark: #6a50a7;
+  --flatify__table-bg-color-darker: #4d3a79;
+  --flatify__table-txt-color: #fff;
 }
 ```

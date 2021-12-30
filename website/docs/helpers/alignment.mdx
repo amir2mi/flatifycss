@@ -29,8 +29,8 @@ without flex parent do nothing.
 `.flex-center-y` [row] Alignment for Y axis.
 
 <PreviewBox
-	height="265px"
-	children='<!DOCTYPE html>
+  height="265px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -83,21 +83,21 @@ without flex parent do nothing.
 
 ```html title="index.html"
 <div class="flex-center style-light">
-	<div class="style-red"></div>
-	<div class="style-green"></div>
-	<div class="style-blue"></div>
+  <div class="style-red"></div>
+  <div class="style-green"></div>
+  <div class="style-blue"></div>
 </div>
 
 <div class="flex-center-x style-light">
-	<div class="style-red"></div>
-	<div class="style-green"></div>
-	<div class="style-blue"></div>
+  <div class="style-red"></div>
+  <div class="style-green"></div>
+  <div class="style-blue"></div>
 </div>
 
 <div class="flex-center-y style-light">
-	<div class="style-red"></div>
-	<div class="style-green"></div>
-	<div class="style-blue"></div>
+  <div class="style-red"></div>
+  <div class="style-green"></div>
+  <div class="style-blue"></div>
 </div>
 ```
 
@@ -108,8 +108,8 @@ without flex parent do nothing.
 `.flex-column-center-y` [column] Alignment for Y axis.
 
 <PreviewBox
-	height="265px"
-	children='<!DOCTYPE html>
+  height="265px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -161,21 +161,21 @@ without flex parent do nothing.
 
 ```html title="index.html"
 <div class="flex-column-center style-light">
-	<div class="style-red"></div>
-	<div class="style-green"></div>
-	<div class="style-blue"></div>
+  <div class="style-red"></div>
+  <div class="style-green"></div>
+  <div class="style-blue"></div>
 </div>
 
 <div class="flex-column-center-x style-light">
-	<div class="style-red"></div>
-	<div class="style-green"></div>
-	<div class="style-blue"></div>
+  <div class="style-red"></div>
+  <div class="style-green"></div>
+  <div class="style-blue"></div>
 </div>
 
 <div class="flex-column-center-y style-light">
-	<div class="style-red"></div>
-	<div class="style-green"></div>
-	<div class="style-blue"></div>
+  <div class="style-red"></div>
+  <div class="style-green"></div>
+  <div class="style-blue"></div>
 </div>
 ```
 
@@ -198,8 +198,8 @@ without flex parent do nothing.
 With margin you can center an element one horizontal line.
 
 <PreviewBox
-	height="265px"
-	children='<!DOCTYPE html>
+  height="265px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -245,15 +245,15 @@ With margin you can center an element one horizontal line.
 
 ```html title="index.html"
 <div class="style-light">
-	<div class="push-left style-red"></div>
+  <div class="push-left style-red"></div>
 </div>
 
 <div class="style-light">
-	<div class="push-center style-green"></div>
+  <div class="push-center style-green"></div>
 </div>
 
 <div class="style-light">
-	<div class="push-right style-blue"></div>
+  <div class="push-right style-blue"></div>
 </div>
 ```
 
@@ -331,29 +331,30 @@ Let see what is the better way:
 
 ```html title="index.html"
 <div class="style-light position-relative">
-	<div class="position-absolute place-top place-left style-blue"></div>
-	<div class="position-absolute place-top place-expand-x margin-xa style-blue"></div>
-	<div class="position-absolute place-top place-right style-blue"></div>
+  <div class="position-absolute place-top place-left style-blue"></div>
+  <div class="position-absolute place-top place-expand-x margin-xa style-blue"></div>
+  <div class="position-absolute place-top place-right style-blue"></div>
 
-	<div class="position-absolute place-expand-y place-left margin-ya style-red"></div>
-	<div class="position-absolute place-expand margin-auto style-red"></div>
-	<div class="position-absolute place-expand-y place-right margin-ya style-red"></div>
+  <div class="position-absolute place-expand-y place-left margin-ya style-red"></div>
+  <div class="position-absolute place-expand margin-auto style-red"></div>
+  <div class="position-absolute place-expand-y place-right margin-ya style-red"></div>
 
-	<div class="position-absolute place-bottom place-left style-green"></div>
-	<div class="position-absolute place-bottom place-expand-x margin-xa style-green"></div>
-	<div class="position-absolute place-bottom place-right style-green"></div>
+  <div class="position-absolute place-bottom place-left style-green"></div>
+  <div class="position-absolute place-bottom place-expand-x margin-xa style-green"></div>
+  <div class="position-absolute place-bottom place-right style-green"></div>
 </div>
 ```
 
 ## Sticky & Fixed
+
 Sticky and fixed positions have their helper classes. The main use case for these classes is related to nav bar component.
 
 `.sticky-top`  
 `.sticky-bottom`  
 `.sticky-left`  
-`.sticky-right`  
+`.sticky-right`
 
 `.fixed-top`  
 `.fixed-bottom`  
 `.fixed-left`  
-`.fixed-right`  
+`.fixed-right`

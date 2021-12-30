@@ -15,8 +15,8 @@ Create an element with the `.loading` class, it is a three-dot loader.
 Dots loading provide three dots with order for being shown, note that you can change the inital scale of dots value, so instead of zome out we can have zoom in! We will talk about customizing later.
 
 <PreviewBox
-	height="110px"
-	children='
+  height="110px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -46,8 +46,8 @@ Dots loading provide three dots with order for being shown, note that you can ch
 To pause the loading use `.pause-animation` also by adding the `.stop-animation` class, the loading animation will be stopped.
 
 <PreviewBox
-	height="110px"
-	children='
+  height="110px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -75,8 +75,8 @@ To pause the loading use `.pause-animation` also by adding the `.stop-animation`
 Spinners are another kind of loadings, add `.spinner` class to an element to have a spinner loading. Spinners also support animation state changer classes like `.pause-animation` and `.stop-animation`.
 
 <PreviewBox
-	height="110px"
-	children='
+  height="110px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -192,8 +192,8 @@ Imagine you use the loading component inside a button and expect when data is fe
 
 ```html {1,3} title="index.html"
 <button class="button overlay-layer size-lg style-dark">
-	Toggle me!
-	<span class="loading"></span>
+  Toggle me!
+  <span class="loading"></span>
 </button>
 ```
 
@@ -210,8 +210,8 @@ To change the loading component size use [size setter classes](/docs/helpers/siz
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
 
 <PreviewBox
-	height="270px"
-	children='
+  height="270px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -274,8 +274,8 @@ By default loading component use element or its parent text color, so instead of
 :::
 
 <PreviewBox
-	height="230px"
-	children='
+  height="230px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -350,8 +350,8 @@ Here is a list of loading component CSS variables to customize it.
 `--flatify__loading-spinner-animation-duration`
 
 <PreviewBox
-	height="180px"
-	children='
+  height="180px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -413,29 +413,29 @@ Here is a list of loading component CSS variables to customize it.
 ```css title="style.css"
 /*  Custom Dots loadings */
 .my-dots-loading-1 {
-	--flatify__loading-color: #48cfad;
-	--flatify__loading-dot-width: 1em;
-	--flatify__loading-dot-height: 0.5em;
-	--flatify__loading-dot-animation-start-scale: 0;
-	--flatify__loading-dot-animation-duration: 0.75s;
+  --flatify__loading-color: #48cfad;
+  --flatify__loading-dot-width: 1em;
+  --flatify__loading-dot-height: 0.5em;
+  --flatify__loading-dot-animation-start-scale: 0;
+  --flatify__loading-dot-animation-duration: 0.75s;
 }
 
 .my-dots-loading-2 {
-	--flatify__loading-color: #fc6e51;
-	--flatify__loading-dot-width: 0.5em;
-	--flatify__loading-dot-height: 2em;
-	--flatify__loading-dot-animation-start-scale: 2;
-	--flatify__loading-dot-animation-duration: 2s;
+  --flatify__loading-color: #fc6e51;
+  --flatify__loading-dot-width: 0.5em;
+  --flatify__loading-dot-height: 2em;
+  --flatify__loading-dot-animation-start-scale: 2;
+  --flatify__loading-dot-animation-duration: 2s;
 }
 
 /* Custom spinner loadings */
 .my-spinner-loading-1 {
-	--flatify__loading-color: #6a50a7;
-	--flatify__loading-spinner-animation-duration: 2s;
+  --flatify__loading-color: #6a50a7;
+  --flatify__loading-spinner-animation-duration: 2s;
 }
 
 .my-spinner-loading-2 {
-	--flatify__loading-color: #aa8e69;
-	--flatify__loading-spinner-animation-duration: 0.35s;
+  --flatify__loading-color: #aa8e69;
+  --flatify__loading-spinner-animation-duration: 0.35s;
 }
 ```

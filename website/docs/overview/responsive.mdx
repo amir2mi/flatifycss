@@ -10,12 +10,12 @@ First read about [customization](/docs/overview/customization). Responsive break
 
 ```scss title="_config.scss"
 $RESPONSIVE_BREAKPOINTS: (
-	xs: 575.98px,
-	sm: 576px,
-	md: 768px,
-	lg: 992px,
-	xl: 1200px,
-	xxl: 1400px,
+  xs: 575.98px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
 ) !default;
 ```
 
@@ -62,11 +62,11 @@ The example below indicates how to use the mixins to make conditions for respons
 
 ```scss title="custom-style.scss"
 body {
-	padding: 50px;
+  padding: 50px;
 
-	@include break-sm {
-		padding: 10px;
-	}
+  @include break-sm {
+    padding: 10px;
+  }
 }
 ```
 
@@ -74,13 +74,13 @@ What will be compiled is:
 
 ```css title="custom-style.css"
 body {
-	padding: 50px;
+  padding: 50px;
 }
 
 /* Small breakpoint */
 @media screen and (min-width: 576px) and (max-width: 767px) {
-	body {
-		padding: 10px;
-	}
+  body {
+    padding: 10px;
+  }
 }
 ```

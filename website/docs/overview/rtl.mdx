@@ -10,11 +10,11 @@ With Sass we decide values based on the `$IS_LTR` variable, for example:
 
 ```scss
 body {
-	@if $IS_LTR {
-		direction: ltr;
-	} @else {
-		direction: rtl;
-	}
+  @if $IS_LTR {
+    direction: ltr;
+  } @else {
+    direction: rtl;
+  }
 }
 ```
 
@@ -22,7 +22,7 @@ The snippet above will be compiled to (Left to right):
 
 ```css
 body {
-	direction: ltr;
+  direction: ltr;
 }
 ```
 
@@ -30,7 +30,7 @@ and for (Right to left):
 
 ```css
 body {
-	direction: rtl;
+  direction: rtl;
 }
 ```
 

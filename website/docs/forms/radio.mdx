@@ -46,21 +46,21 @@ There are `.valid`, `.warning` and `.invalid` classes for validation. You can ad
 
 ```html title="index.html"
 <label class="radio-wrapper">
-	<input disabled type="radio" name="choices" />
-	<span class="check"></span>
-	Choice 1
+  <input disabled type="radio" name="choices" />
+  <span class="check"></span>
+  Choice 1
 </label>
 
 <label class="radio-wrapper">
-	<input type="radio" checked name="choices" />
-	<span class="check"></span>
-	Choice 2
+  <input type="radio" checked name="choices" />
+  <span class="check"></span>
+  Choice 2
 </label>
 
 <label class="radio-wrapper">
-	<input type="radio" name="choices" />
-	<span class="check"></span>
-	Choice 3
+  <input type="radio" name="choices" />
+  <span class="check"></span>
+  Choice 3
 </label>
 ```
 
@@ -70,8 +70,8 @@ To change the radio size use [size setter classes](/docs/helpers/size-setters).
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS. Do not forget to add class to the wrapper to change label size as well.
 
 <PreviewBox
-	height="250px"
-	children='<!DOCTYPE html>
+  height="250px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -107,27 +107,27 @@ These classes just set a `font-size` property so it is possible to change it you
 
 ```html title="index.html"
 <label class="radio-wrapper size-xs">
-	<input type="radio" name="choices" />
-	<span class="check"></span>
-	Choice 1
+  <input type="radio" name="choices" />
+  <span class="check"></span>
+  Choice 1
 </label>
 
 <label class="radio-wrapper size-md">
-	<input type="radio" name="choices" />
-	<span class="check"></span>
-	Choice 2
+  <input type="radio" name="choices" />
+  <span class="check"></span>
+  Choice 2
 </label>
 
 <label class="radio-wrapper size-2x">
-	<input type="radio" name="choices" />
-	<span class="check"></span>
-	Choice 3
+  <input type="radio" name="choices" />
+  <span class="check"></span>
+  Choice 3
 </label>
 
 <label class="radio-wrapper size-3x">
-	<input type="radio" checked name="choices" />
-	<span class="check"></span>
-	Choice 4
+  <input type="radio" checked name="choices" />
+  <span class="check"></span>
+  Choice 4
 </label>
 ```
 
@@ -195,8 +195,8 @@ There are CSS variables for customizing radios:
 Here is an example of these variables usage:
 
 <PreviewBox
-	height="160px"
-	children='<!DOCTYPE html>
+  height="160px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -239,13 +239,13 @@ Here is an example of these variables usage:
 
 ```css title="style.css"
 .radio-wrapper {
-	--flatify__form-element-accent-color: #37bc9b;
-	--flatify__form-element-bg-color: #ffce54;
-	--flatify__form-element-txt-color: #434a54;
-	--flatify__form-element-border-color: #e0c341;
-	--flatify__form-element-border-color__focus: #f6bb42;
-	--flatify__form-element-border-color__valid: #5d9cec;
-	--flatify__form-element-border-color__warning: #8067b7;
-	--flatify__form-element-border-color__invalid: #bf263c;
+  --flatify__form-element-accent-color: #37bc9b;
+  --flatify__form-element-bg-color: #ffce54;
+  --flatify__form-element-txt-color: #434a54;
+  --flatify__form-element-border-color: #e0c341;
+  --flatify__form-element-border-color__focus: #f6bb42;
+  --flatify__form-element-border-color__valid: #5d9cec;
+  --flatify__form-element-border-color__warning: #8067b7;
+  --flatify__form-element-border-color__invalid: #bf263c;
 }
 ```

@@ -11,8 +11,8 @@ The navigation bar contains links, brand logo, and search bar typically. Flatify
 Just add `.menu-items-wrapper` and `.navbar` classes to an element. Inside this element can be links or other components, In this example you will see [search bar](/docs/components/search-bar) as well.
 
 <PreviewBox
-	height="110px"
-	children='
+  height="110px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -53,27 +53,27 @@ Just add `.menu-items-wrapper` and `.navbar` classes to an element. Inside this 
 
 ```html {1} title="index.html"
 <nav class="menu-items-wrapper navbar">
-	<ul class="links">
-		<li class="menu-item active">
-			<a href="#">Home</a>
-		</li>
-		<li class="menu-item">
-			<a href="#">Articles</a>
-		</li>
-		<li class="menu-item">
-			<a href="#">Photos</a>
-		</li>
-		<li class="menu-item">
-			<a href="#">Videos</a>
-		</li>
-		<li class="menu-item">
-			<a href="#">About us</a>
-		</li>
-	</ul>
-	<div class="search-bar push-right">
-		<input type="search" class="style-light" placeholder="Search something..." />
-		<button class="search-button" aria-label="Search"></button>
-	</div>
+  <ul class="links">
+    <li class="menu-item active">
+      <a href="#">Home</a>
+    </li>
+    <li class="menu-item">
+      <a href="#">Articles</a>
+    </li>
+    <li class="menu-item">
+      <a href="#">Photos</a>
+    </li>
+    <li class="menu-item">
+      <a href="#">Videos</a>
+    </li>
+    <li class="menu-item">
+      <a href="#">About us</a>
+    </li>
+  </ul>
+  <div class="search-bar push-right">
+    <input type="search" class="style-light" placeholder="Search something..." />
+    <button class="search-button" aria-label="Search"></button>
+  </div>
 </nav>
 ```
 
@@ -86,8 +86,8 @@ Generally, submenus in the navigation bar will be displayed on hover/focus howev
 Here is an example of [submenu](/docs/components/menu#submenu) and [dropdown](/docs/components/dropdown). Navigation bar submenu will be displayed when you hover/focus its parents.
 
 <PreviewBox
-	height="300px"
-	children='
+  height="300px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -144,43 +144,41 @@ Here is an example of [submenu](/docs/components/menu#submenu) and [dropdown](/d
 
 ```html title="index.html"
 <nav class="menu-items-wrapper navbar">
-	<ul class="links">
-		<li class="menu-item"><a href="#">Articles</a></li>
-		<li class="menu-item"><a href="#">Photos</a></li>
-		<li class="menu-item dropdown-wrapper">
-			<button class="dropdown-toggle arrow-button" id="defaultDropdown" aria-expanded="false">
-				With dropdown
-			</button>
-			<ul class="dropdown menu-items-wrapper" aria-labelledby="defaultDropdown">
-				<li class="menu-item"><a href="#">Item 1</a></li>
-				<li class="menu-item"><a href="#">Item 2</a></li>
-				<li class="menu-item"><a href="#">Item 3</a></li>
-				<li class="menu-item"><a href="#">Item 4</a></li>
-				<li class="menu-item"><a href="#">Item 5</a></li>
-				<li><span class="pointer-arrow"></span></li>
-			</ul>
-		</li>
-		<li class="menu-item">
-			<a href="#" class="arrow-button">With submenu</a>
-			<!-- level 2 -->
-			<ul class="submenu menu-items-wrapper arrow-top">
-				<li class="menu-item"><a href="#">Item 1</a></li>
-				<li class="menu-item"><a href="#">Item 2</a></li>
-				<li class="menu-item"><a href="#">Item 3</a></li>
-				<li class="menu-item arrow-button arrow-right">
-					<a href="#">Item 4</a>
-					<!-- level 3 -->
-					<ul class="submenu menu-items-wrapper arrow-left">
-						<li class="menu-item"><a href="#">Item 1</a></li>
-						<li class="menu-item"><a href="#">Item 2</a></li>
-						<li class="menu-item"><a href="#">Item 3</a></li>
-						<li class="menu-item"><a href="#">Item 4</a></li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-		<li class="menu-item disabled"><a>About Us</a></li>
-	</ul>
+  <ul class="links">
+    <li class="menu-item"><a href="#">Articles</a></li>
+    <li class="menu-item"><a href="#">Photos</a></li>
+    <li class="menu-item dropdown-wrapper">
+      <button class="dropdown-toggle arrow-button" id="defaultDropdown" aria-expanded="false">With dropdown</button>
+      <ul class="dropdown menu-items-wrapper" aria-labelledby="defaultDropdown">
+        <li class="menu-item"><a href="#">Item 1</a></li>
+        <li class="menu-item"><a href="#">Item 2</a></li>
+        <li class="menu-item"><a href="#">Item 3</a></li>
+        <li class="menu-item"><a href="#">Item 4</a></li>
+        <li class="menu-item"><a href="#">Item 5</a></li>
+        <li><span class="pointer-arrow"></span></li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <a href="#" class="arrow-button">With submenu</a>
+      <!-- level 2 -->
+      <ul class="submenu menu-items-wrapper arrow-top">
+        <li class="menu-item"><a href="#">Item 1</a></li>
+        <li class="menu-item"><a href="#">Item 2</a></li>
+        <li class="menu-item"><a href="#">Item 3</a></li>
+        <li class="menu-item arrow-button arrow-right">
+          <a href="#">Item 4</a>
+          <!-- level 3 -->
+          <ul class="submenu menu-items-wrapper arrow-left">
+            <li class="menu-item"><a href="#">Item 1</a></li>
+            <li class="menu-item"><a href="#">Item 2</a></li>
+            <li class="menu-item"><a href="#">Item 3</a></li>
+            <li class="menu-item"><a href="#">Item 4</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="menu-item disabled"><a>About Us</a></li>
+  </ul>
 </nav>
 ```
 
@@ -189,8 +187,8 @@ Here is an example of [submenu](/docs/components/menu#submenu) and [dropdown](/d
 It is possible to have a logo in the navigation bar with the `.navbar-logo` class. It takes care of height and fits the image to have the desired result you want.
 
 <PreviewBox
-	height="110px"
-	children='
+  height="110px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -230,12 +228,12 @@ It is possible to have a logo in the navigation bar with the `.navbar-logo` clas
 
 ```html {2-4} title="index.html"
 <nav class="menu-items-wrapper navbar">
-	<a class="navbar-logo" href="#">
-		<img src="URL" alt="logo" />
-	</a>
-	<ul class="links">
-		...
-	</ul>
+  <a class="navbar-logo" href="#">
+    <img src="URL" alt="logo" />
+  </a>
+  <ul class="links">
+    ...
+  </ul>
 </nav>
 ```
 
@@ -246,8 +244,8 @@ Fixed classes: `.fixed-top` `.fixed-bottom` `.fixed-left` `.fixed-right`
 Sticky classes: `.sticky-top` `.sticky-bottom` `.sticky-left` `.sticky-right`
 
 <PreviewBox
-	height="320px"
-	children='
+  height="320px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -358,10 +356,10 @@ Sometimes it is possible to have a long navigation bar (especially if you use th
 `.scrollable-y`
 
 <PreviewBox
-	height="110px"
-	limitWidth="420px"
-	disableFullscreen="true"
-	children='
+  height="110px"
+  limitWidth="420px"
+  disableFullscreen="true"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -403,9 +401,9 @@ scrollable navigation bar.
 
 ```html {1} title="index.html"
 <nav class="menu-items-wrapper navbar scrollable-x">
-	<ul class="links">
-		...
-	</ul>
+  <ul class="links">
+    ...
+  </ul>
 </nav>
 ```
 
@@ -415,8 +413,8 @@ To change the navigation bar size use [size setter classes](/docs/helpers/size-s
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
 
 <PreviewBox
-	height="300px"
-	children='
+  height="300px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -505,8 +503,8 @@ These classes just set a `font-size` property so it is possible to change it you
 There are helper classes for styling navigation bar, first read about [color setter classes](/docs/helpers/color-setters).
 
 <PreviewBox
-	height="400px"
-	children='
+  height="400px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>

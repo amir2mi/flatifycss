@@ -16,8 +16,8 @@ There are `.valid`, `.warning` and `.invalid` classes for validation. You can ad
 All toggles can be checked.
 
 <PreviewBox
-	height="190px"
-	children='<!DOCTYPE html>
+  height="190px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -53,21 +53,21 @@ All toggles can be checked.
 
 ```html title="index.html"
 <label class="toggle-wrapper">
-	<input type="checkbox" name="the-toggle" role="switch" checked />
-	<span class="check"></span>
-	High contrast text
+  <input type="checkbox" name="the-toggle" role="switch" checked />
+  <span class="check"></span>
+  High contrast text
 </label>
 
 <label class="toggle-wrapper">
-	<input type="checkbox" name="the-toggle" role="switch" />
-	<span class="check"></span>
-	Night light
+  <input type="checkbox" name="the-toggle" role="switch" />
+  <span class="check"></span>
+  Night light
 </label>
 
 <label class="toggle-wrapper">
-	<input type="checkbox" name="the-toggle" role="switch" />
-	<span class="check"></span>
-	Color correction
+  <input type="checkbox" name="the-toggle" role="switch" />
+  <span class="check"></span>
+  Color correction
 </label>
 ```
 
@@ -76,8 +76,8 @@ All toggles can be checked.
 One of them can be checked, note that radios' name attribute should be the same.
 
 <PreviewBox
-	height="180px"
-	children='<!DOCTYPE html>
+  height="180px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -113,26 +113,26 @@ One of them can be checked, note that radios' name attribute should be the same.
 
 ```html {2,8} title="index.html"
 <label class="toggle-wrapper heart size-lg">
-	<input type="radio" name="the-toggle" role="switch" checked />
-	<span class="check"></span>
-	<!-- SVG -->
+  <input type="radio" name="the-toggle" role="switch" checked />
+  <span class="check"></span>
+  <!-- SVG -->
 </label>
 <label class="toggle-wrapper brain size-lg">
-	<!-- SVG -->
-	<input type="radio" name="the-toggle" role="switch" />
-	<span class="check"></span>
+  <!-- SVG -->
+  <input type="radio" name="the-toggle" role="switch" />
+  <span class="check"></span>
 </label>
 ```
 
 ```css title="style.css"
 .toggle-wrapper svg {
-	width: 2em;
-	height: 2em;
-	fill: #809cb6;
+  width: 2em;
+  height: 2em;
+  fill: #809cb6;
 }
 
 .brain .check {
-	margin-left: 0.5em;
+  margin-left: 0.5em;
 }
 ```
 
@@ -142,8 +142,8 @@ To change the toggle switch size use [size setter classes](/docs/helpers/size-se
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS. Do not forget to add class to the wrapper to change label size as well.
 
 <PreviewBox
-	height="250px"
-	children='<!DOCTYPE html>
+  height="250px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -179,27 +179,27 @@ These classes just set a `font-size` property so it is possible to change it you
 
 ```html title="index.html"
 <label class="toggle-wrapper size-xs">
-	<input type="checkbox" name="the-toggle" role="switch" checked />
-	<span class="check"></span>
-	High contrast text
+  <input type="checkbox" name="the-toggle" role="switch" checked />
+  <span class="check"></span>
+  High contrast text
 </label>
 
 <label class="toggle-wrapper">
-	<input type="checkbox" name="the-toggle" role="switch" checked />
-	<span class="check"></span>
-	High contrast text
+  <input type="checkbox" name="the-toggle" role="switch" checked />
+  <span class="check"></span>
+  High contrast text
 </label>
 
 <label class="toggle-wrapper size-2x">
-	<input type="checkbox" name="the-toggle" role="switch" checked />
-	<span class="check"></span>
-	High contrast text
+  <input type="checkbox" name="the-toggle" role="switch" checked />
+  <span class="check"></span>
+  High contrast text
 </label>
 
 <label class="toggle-wrapper size-3x">
-	<input type="checkbox" name="the-toggle" role="switch" checked />
-	<span class="check"></span>
-	High contrast text
+  <input type="checkbox" name="the-toggle" role="switch" checked />
+  <span class="check"></span>
+  High contrast text
 </label>
 ```
 
@@ -219,8 +219,8 @@ There are CSS variables for customizing radios:
 Here is an example of these variables usage:
 
 <PreviewBox
-	height="160px"
-	children='<!DOCTYPE html>
+  height="160px"
+  children='<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -263,13 +263,13 @@ Here is an example of these variables usage:
 
 ```css title="style.css"
 .toggle-wrapper {
-	--flatify__form-element-accent-color: #37bc9b;
-	--flatify__form-element-bg-color: #ffce54;
-	--flatify__form-element-txt-color: #434a54;
-	--flatify__form-element-border-color: #e0c341;
-	--flatify__form-element-border-color__focus: #f6bb42;
-	--flatify__form-element-border-color__valid: #5d9cec;
-	--flatify__form-element-border-color__warning: #8067b7;
-	--flatify__form-element-border-color__invalid: #bf263c;
+  --flatify__form-element-accent-color: #37bc9b;
+  --flatify__form-element-bg-color: #ffce54;
+  --flatify__form-element-txt-color: #434a54;
+  --flatify__form-element-border-color: #e0c341;
+  --flatify__form-element-border-color__focus: #f6bb42;
+  --flatify__form-element-border-color__valid: #5d9cec;
+  --flatify__form-element-border-color__warning: #8067b7;
+  --flatify__form-element-border-color__invalid: #bf263c;
 }
 ```

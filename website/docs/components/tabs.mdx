@@ -11,8 +11,8 @@ With Tabs we can have different layers of content in the same place, users can c
 Each tabs component is wrapped with `.tabs-wrapper` (which is not necessary), there is a header and content area. Inside the header area buttons are represented, they have target tab panel selectors that are inside the content area.
 
 <PreviewBox
-	height="310px"
-	children='
+  height="310px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -59,24 +59,24 @@ Try to apply guides for a perfect tab component, first read [W3C Working Groups 
 
 ```html title="index.html"
 <div class="tabs-wrapper">
-	<div class="tabs-header" role="tablist">
-		<button role="tab" class="tab-button active" aria-controls="panel-kafka" aria-selected="true">Kafka</button>
-		<button role="tab" class="tab-button" aria-controls="panel-werther" aria-selected="false">Werther</button>
-		<button
-			role="tab"
-			class="tab-button"
-			aria-controls="panel-cicero"
-			data-tab-target=".cicero-tab-panel"
-			aria-selected="false"
-		>
-			Cicero
-		</button>
-	</div>
-	<div class="tabs-content">
-		<div id="panel-kafka" class="tab-panel show">1 ...</div>
-		<div id="panel-werther" class="tab-panel">2 ...</div>
-		<div id="panel-cicero" class="tab-panel cicero-tab-panel">3 ...</div>
-	</div>
+  <div class="tabs-header" role="tablist">
+    <button role="tab" class="tab-button active" aria-controls="panel-kafka" aria-selected="true">Kafka</button>
+    <button role="tab" class="tab-button" aria-controls="panel-werther" aria-selected="false">Werther</button>
+    <button
+      role="tab"
+      class="tab-button"
+      aria-controls="panel-cicero"
+      data-tab-target=".cicero-tab-panel"
+      aria-selected="false"
+    >
+      Cicero
+    </button>
+  </div>
+  <div class="tabs-content">
+    <div id="panel-kafka" class="tab-panel show">1 ...</div>
+    <div id="panel-werther" class="tab-panel">2 ...</div>
+    <div id="panel-cicero" class="tab-panel cicero-tab-panel">3 ...</div>
+  </div>
 </div>
 ```
 
@@ -92,8 +92,8 @@ On the other hand, `aria-controls="my-panel"` is an HTML attribute for accessibi
 You can add `.line-at-top` class to the `.tabs-header` to change tab indicator line from bottom to top.
 
 <PreviewBox
-	height="310px"
-	children='
+  height="310px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -405,14 +405,14 @@ The examples above has the same HTML for different types, **the only point is th
 For [reduced motion users](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion), all animations will be fade in/out.
 
 <div class="flex-center comparison-gifs">
-	<figure>
-		<img src="/flatifycss/img/docs/tabs/original-tab-animation.gif" />
-		<figcaption>Original</figcaption>
-	</figure>
-	<figure>
-		<img src="/flatifycss/img/docs/tabs/reduced-motion-tab-animation.gif" />
-		<figcaption>Reduced motion</figcaption>
-	</figure>
+  <figure>
+    <img src="/flatifycss/img/docs/tabs/original-tab-animation.gif" />
+    <figcaption>Original</figcaption>
+  </figure>
+  <figure>
+    <img src="/flatifycss/img/docs/tabs/reduced-motion-tab-animation.gif" />
+    <figcaption>Reduced motion</figcaption>
+  </figure>
 </div>
 :::
 
@@ -422,8 +422,8 @@ To change tabs size use [size setter classes](/docs/helpers/size-setters).
 These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
 
 <PreviewBox
-	height="510px"
-	children='
+  height="510px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -523,8 +523,8 @@ These classes just set a `font-size` property so it is possible to change it you
 There are helper classes for styling elements like tabs, first read about [color setter classes](/docs/helpers/color-setters). Note that you should add classes to the `.tabs-wrapper` or `.tabs-header` and `.tabs-content` separately.
 
 <PreviewBox
-	height="500px"
-	children='
+  height="500px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -636,8 +636,8 @@ and also animation CSS variables as [we talked about them above](#animations):
 `--flatify__tab-animation-hide`
 
 <PreviewBox
-	height="200px"
-	children='
+  height="200px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>

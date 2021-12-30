@@ -6,14 +6,13 @@ import PreviewBox from "../../src/components/preview-box";
 
 Modal, pop-up box, bottom sheet, off-canvas, anything can be related to this component, we generally call it **modal**. There are different types of modals with different sizes and styles that come with FlatifyCSS, which we will cover with practical examples on this page.
 
-
 ## A simple modal
 
 To have a simple modal you need to load FlatifyCSS, JavaScript file into your page. There must an element to call the modal and open it. Here is an example:
 
 <PreviewBox
-	height="250px"
-	children='
+  height="250px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -83,9 +82,9 @@ Note that modals are keyboard friendly, since pressing <kbd>ESC</kbd> will hide 
 
 To create a button that closes modal, you can use [close button component](/docs/components/buttons/close-button). There are two ways to make the connection between the modal and close button:
 
--   Close button should be children of modal, in other words it should be inside `.modal`.
-    <p class="size-lg">or</p>
--   Close button should have `data-modal-target` HTML attribute which specifies modal by its selector, like the open modal button.
+- Close button should be children of modal, in other words it should be inside `.modal`.
+  <p class="size-lg">or</p>
+- Close button should have `data-modal-target` HTML attribute which specifies modal by its selector, like the open modal button.
 
 ```html
 <button type="button" class="close-modal close-button" data-modal-target=".my-modal" aria-label="Close"></button>
@@ -97,22 +96,17 @@ Modals can have their custom HTML, however by default there is a predefined stru
 
 ```html {1,8,14,15} title="index.html"
 <div class="modal my-modal" tabindex="-1" aria-labelledby="my-modal-title">
-	<div class="modal-content">
-		<div class="modal-header">
-			<h5 class="modal-title" id="my-modal-title">Here is an example</h5>
-			<button
-				type="button"
-				class="close-modal close-button"
-				data-modal-target=".my-modal"
-				aria-label="Close"
-			></button>
-		</div>
-		<div class="modal-body">...</div>
-		<div class="modal-footer">
-			<button class="button size-sm style-danger close-modal">Close</button>
-			<button class="button size-sm style-info close-modal">Confirm</button>
-		</div>
-	</div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+      <button type="button" class="close-modal close-button" data-modal-target=".my-modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">...</div>
+    <div class="modal-footer">
+      <button class="button size-sm style-danger close-modal">Close</button>
+      <button class="button size-sm style-info close-modal">Confirm</button>
+    </div>
+  </div>
 </div>
 ```
 
@@ -121,8 +115,8 @@ Modals can have their custom HTML, however by default there is a predefined stru
 By default if users click outside of the modal, aka "backdrop", the modal will be closed, however, if you add `.required` class to the `.modal` element it will not treat this way anymore, in other words, the modal will be closed only when user click related `.close-button`.
 
 <PreviewBox
-	height="250px"
-	children='
+  height="250px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -187,8 +181,8 @@ You can use [width & height setter helper classes](/docs/helpers/width-and-heigh
 :::
 
 <PreviewBox
-	height="250px"
-	children='
+  height="250px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -331,8 +325,8 @@ You can use [width & height setter helper classes](/docs/helpers/width-and-heigh
 To have modal with borders add `.bordered` class to the `.modal` element.
 
 <PreviewBox
-	height="250px"
-	children='
+  height="250px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -386,8 +380,8 @@ To have modal with borders add `.bordered` class to the `.modal` element.
 To change the button size use [size setter classes](/docs/helpers/size-setters). Modals also support two special classes `.modal-lg` and `.modal-sm`, these classes specially modify max-width besides font size.
 
 <PreviewBox
-	height="250px"
-	children='
+  height="250px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -516,8 +510,8 @@ To change the button size use [size setter classes](/docs/helpers/size-setters).
 There are helper classes for styling elements like modal, first read about [color setter classes](/docs/helpers/color-setters) then check examples below you can add them to `.modal` class.
 
 <PreviewBox
-	height="250px"
-	children='
+  height="250px"
+  children='
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -663,7 +657,7 @@ Instead of using color setter classes you can customize it with predefined CSS v
 `--flatify__modal-txt-color`  
 `--flatify__modal-border-color`  
 `--flatify__modal-animation-show-duration`  
-`--flatify__modal-animation-hide-duration`  
+`--flatify__modal-animation-hide-duration`
 
 <PreviewBox
 	height="250px"
@@ -729,12 +723,12 @@ There is also a CSS variable called `--flatify__modal-backdrop-color`, it just c
 
 ```css title="style.css"
 body {
-	--flatify__modal-backdrop-color: #8e8271;
+  --flatify__modal-backdrop-color: #8e8271;
 }
 
 .my-modal {
-	--flatify__modal-bg-color: #aa8e69;
-	--flatify__modal-txt-color: #f5f7fa;
-	--flatify__modal-border-color: #ffce54;
+  --flatify__modal-bg-color: #aa8e69;
+  --flatify__modal-txt-color: #f5f7fa;
+  --flatify__modal-border-color: #ffce54;
 }
 ```
