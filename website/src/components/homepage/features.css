@@ -1,6 +1,5 @@
 .homepage-features {
   overflow: hidden;
-  max-width: 50em;
   padding: 0 1em;
   margin: 0 auto 5em;
 }
@@ -14,7 +13,7 @@
 }
 
 @media screen and (max-width: 575px) {
-  .homepage-features{
+  .homepage-features {
     padding-top: 1em;
   }
   .feature-item {
@@ -81,7 +80,33 @@
   0% {
     border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
   }
-  100% {
+  50% {
     border-radius: 40% 60%;
   }
+}
+
+/* Vertical */
+.vertical-features {
+  max-width: 50em;
+}
+
+/* Horizontal */
+.horizontal-features {
+  max-width: 62em;
+  flex-direction: row;
+}
+
+.horizontal-features .feature-item {
+  padding: 0 1em;
+  flex-direction: column !important;
+}
+
+.horizontal-features .feature-item svg {
+  width: 12em;
+  height: 12em;
+}
+
+.feature-item:nth-child(2) .feature-media:before,
+.feature-item:nth-child(2) .feature-media:after {
+  animation-direction: reverse;
 }

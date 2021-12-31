@@ -3,7 +3,7 @@ import "./features.css";
 
 export default function HomepageFeatures({ items, isSmall }) {
   return (
-    <div className={`homepage-features flex-column-center${isSmall ? "horizontal-features" : "vertical-features"}`}>
+    <div className={`homepage-features flex-column-center ${isSmall ? "horizontal-features" : "vertical-features"}`}>
       {items.map((item, i) => (
         <div
           style={item.style}

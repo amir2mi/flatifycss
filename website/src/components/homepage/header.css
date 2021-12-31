@@ -38,7 +38,7 @@
 }
 
 .homepage-container {
-  max-width: 980px;
+  max-width: 62em;
   padding: 0 1em;
   margin: 0 auto;
 }
@@ -95,8 +95,13 @@
   background: #76cff9;
   border: 1.1em solid #1da0de;
   border-radius: 1em;
-  animation: logo-spin linear 5s infinite;
   transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animated-logo:after {
+    animation: logo-spin linear 5s infinite;
+  }
 }
 
 @keyframes logo-spin {

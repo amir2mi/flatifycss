@@ -3,10 +3,14 @@ title: Introduction
 sidebar_position: 1
 ---
 
+import PreviewBox from "../src/components/preview-box";
+import HomepageFeatures from "../src/components/homepage/features";
+import { features_horizontal } from "../src/data/features-list";
+
 <p className="size-lg weight-medium">
   FlatifyCSS is the web modern and minimalist flat design library inspired by the
-  <a href="https://design.duolingo.com/" rel="nofollow" target="_blank">&nbsp;
-    Duolingo design system
+  <a href="https://design.duolingo.com/" rel="nofollow" target="_blank">
+    &nbsp; Duolingo design system
   </a>. It respects accessibility and comes with the web's most common components.
 </p>
 
@@ -14,20 +18,7 @@ sidebar_position: 1
 
 When we talk about flat design, you might think about the creepy palette and some old-fashioned web trends, but no, flat design is a wide term and in this case for FlatifyCSS, there are some principles that shape it clearly you will understand it easily.
 
-<div class="flex-center" style={{ marginBottom: 50 }}>
-  <div class="flex-column-center">
-    <img src="/flatifycss/img/docs/intro/blur.png" />
-    1- No blurred shadows
-  </div>
-  <div class="flex-column-center">
-    <img src="/flatifycss/img/docs/intro/border.png" />
-    2- Borders are cool
-  </div>
-  <div class="flex-column-center">
-    <img src="/flatifycss/img/docs/intro/roundness.png" />
-    3- Round but not much
-  </div>
-</div>
+<HomepageFeatures items={features_horizontal} isSmall={true} />
 
 ## Download
 
