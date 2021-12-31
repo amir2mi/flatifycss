@@ -1,0 +1,112 @@
+---
+title: Typography
+---
+
+## Typefaces
+
+FlatifyCSS uses [Nunito](https://fonts.google.com/specimen/Nunito) typeface by Vernon Adams for its default typography. For code the default is [Fira Code](https://fonts.google.com/specimen/Fira+Code).  
+However these typefaces are not included in the FlatifyCSS package.
+You can add them in your web page using the following code:
+
+```html title="index.html"
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito:wght@400;600;700&display=swap"
+  rel="stylesheet"
+/>
+```
+
+or import it in your CSS file:
+
+```css title="style.css"
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito:wght@400;600;700&display=swap");
+```
+
+## Configuring typography
+
+Inside the `_config.scss` there is a section for typography configuration.
+
+### Font size
+
+FlatifyCSS set the main font size as the `:root` property, but it depends on the screen size. So there are two variables to set minimum and maximum font sizes inside `_config.scss`:
+
+```scss title="_config.scss"
+$MIN_FONT_SIZE: 14; // must be without unit
+$MAX_FONT_SIZE: 16; // must be without unit
+```
+
+Based on this fluid font size you can use the `em` unit to have the responsive font size and elements, also using `em` as a unit for elements property gives you better control of the element size, you do not have to change every property to change the element size, just change the `font-size` property for the element wrapper, this is how [size setter helper classes](/docs/helpers/size-setters) work.
+
+### Font family
+
+There are Sass variables to change the font family for different elements:
+
+```scss title="_config.scss"
+$PRIMARY_FONT_FAMILY: "Nunito", sans-serif;
+$HEADING_FONT_FAMILY: $PRIMARY_FONT_FAMILY;
+$CODE_FONT_FAMILY: "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+```
+
+you can also change them as CSS variables:
+
+```css title="style.css"
+--flatify__primary-font-family: "Nunito", sans-serif;
+--flatify__heading-font-family: var(--flatify__primary-font-family);
+--flatify__code-font-family: "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+```
+
+### Font size
+
+There are [helper classes](/docs/helpers/size-setters) to change the size of elements, they change the font size based on their size, you can change them to your own sizes:
+
+```scss title="_config.scss"
+$FONT_SIZE_LIST: (
+  xs: 0.75em,
+  sm: 0.9em,
+  md: 1em,
+  lg: 1.25em,
+  2x: 1.5em,
+  3x: 2.2em,
+  4x: 2.5em,
+  5x: 3.14em,
+);
+```
+
+### Font weight
+
+You can change default font weights based on the typeface your are using:
+
+```scss title="_config.scss"
+$MEDIUM_FONT_WEIGHT: 600;
+$BOLD_FONT_WEIGHT: 700;
+$EXTRA_BOLD_FONT_WEIGHT: 900;
+$HEADING_FONT_WEIGHT: bold;
+```
+
+or change their CSS variables:
+
+```css title="style.css"
+--flatify__medium-font-weight: 600;
+--flatify__bold-font-weight: 700;
+--flatify__extra-bold-font-weight: 900;
+--flatify__heading-font-weight: bold;
+```
+
+### Line height
+
+Based on the element line height will be different, you can default line heights with these variables:
+
+```scss title="_config.scss"
+$BASE_LINE_HEIGHT: 1.5;
+$SMALL_LINE_HEIGHT: 1.2;
+$LARGE_LINE_HEIGHT: 1.8;
+```
+
+or change their CSS variables:
+
+```css title="style.css"
+--flatify__base-line-height: 1.5;
+--flatify__small-line-height: 1.2;
+--flatify__large-line-height: 1.8;
+```

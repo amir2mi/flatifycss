@@ -277,9 +277,9 @@ $TAB_SHOW_ANIMATION_DURATION: 300ms !default;
 $TAB_HIDE_ANIMATION_DURATION: 200ms !default;
 
 // *** Typography: font size, font family, line height
-$MAX_FONT_SIZE: 16 !default; // must be without unit
 $MIN_FONT_SIZE: 14 !default; // must be without unit
-$PRIMARY_FONT_FAMILY: "Nunito", sans-serif;
+$MAX_FONT_SIZE: 16 !default; // must be without unit
+$PRIMARY_FONT_FAMILY: "Nunito", sans-serif !default;
 $HEADING_FONT_FAMILY: $PRIMARY_FONT_FAMILY !default;
 $CODE_FONT_FAMILY: "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
@@ -296,13 +296,13 @@ $FONT_SIZE_LIST: (
   5x: 3.14em,
 ) !default;
 
-$BASE_LINE_HEIGHT: 1.5 !default;
-$SMALL_LINE_HEIGHT: 1.2 !default;
-$LARGE_LINE_HEIGHT: 1.8 !default;
-
 $MEDIUM_FONT_WEIGHT: 600 !default;
 $BOLD_FONT_WEIGHT: 700 !default;
 $EXTRA_BOLD_FONT_WEIGHT: 900 !default;
+
+$BASE_LINE_HEIGHT: 1.5 !default;
+$SMALL_LINE_HEIGHT: 1.2 !default;
+$LARGE_LINE_HEIGHT: 1.8 !default;
 
 $BODY_TEXT_ALIGN: initial !default;
 

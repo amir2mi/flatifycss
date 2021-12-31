@@ -16,8 +16,6 @@ export default function HomepageHeader() {
       })
         .then((response) => response.json())
         .then((data) => (data ? setStableVersion(data[0].tag_name.replace("v", "")) : null));
-
-      console.log(stableVersion);
     }
     fetchData();
   }, []);
@@ -32,7 +30,7 @@ export default function HomepageHeader() {
 
       <Link
         to="docs/intro"
-        className={`get-started-button button bordered size-2x${isDarkTheme ? " style-dark" : " style-light"}`}
+        className={`get-started-button button bordered size-2x ${isDarkTheme ? "style-dark" : "style-light"}`}
       >
         Get Started
       </Link>

@@ -121,4 +121,10 @@
   .contribute-icons {
     font-size: 0.5em;
   }
+  .contribute-texts .flex-center {
+    flex-direction: column;
+  }
+  .featured-button{
+    margin-top: 1em;
+  }
 }
