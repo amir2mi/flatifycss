@@ -17,9 +17,11 @@
   padding: 12em 1em;
   background: var(--flatify__bg-color);
 }
+
 html[data-theme="light"] .homepage-header {
-  background: #FCFDFD !important;
+  background: #fcfdfd !important;
 }
+
 .homepage-title {
   font-size: 5em;
   font-weight: bold;

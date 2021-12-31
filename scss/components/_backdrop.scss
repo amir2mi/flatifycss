@@ -1,5 +1,9 @@
 :root {
-  --#{$CSS_VAR_PFX}modal-backdrop-color: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}backdrop-color: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}backdrop-opacity: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}backdrop-filter: var(--#{$CSS_VAR_PFX}txt-color);
+
+  --#{$CSS_VAR_PFX}modal-backdrop-color: var(--#{$CSS_VAR_PFX}backdrop-color);
 }
 
 .backdrop-layer {
@@ -10,8 +14,9 @@
   display: none;
   width: 100%;
   height: 100%;
-  background: var(--#{$CSS_VAR_PFX}txt-color);
+  background: var(--#{$CSS_VAR_PFX}backdrop-color);
   opacity: var(--#{$CSS_VAR_PFX}backdrop-opacity);
+  backdrop-filter: var(--#{$CSS_VAR_PFX}backdrop-filter);
 
   &.show {
     display: block;
@@ -24,6 +29,6 @@
 
   &.modal-backdrop {
     z-index: $ZINDEX_MODAL_BACKDROP;
-    background: var(--#{$CSS_VAR_PFX}modal-backdrop-color);
+    --#{$CSS_VAR_PFX}backdrop-color: var(--#{$CSS_VAR_PFX}modal-backdrop-color);
   }
 }
