@@ -22,6 +22,27 @@ const features = [
 	},
 ];
 
+const features_horiz = [
+	{
+		title: "Components",
+		desc: "Whitespace plays a big role and borders result in the layout that is clean at the users' first sight.",
+		className: "feature-1",
+		svg: svg.eyesight,
+	},
+	{
+		title: "Forms",
+		desc: "Whitespace plays a big role and borders result in the layout that is clean at the users' first sight.",
+		className: "feature-1",
+		svg: svg.eyesight,
+	},
+	{
+		title: "Helpers",
+		desc: "Whitespace plays a big role and borders result in the layout that is clean at the users' first sight.",
+		className: "feature-1",
+		svg: svg.eyesight,
+	},
+]
+
 export default function Home() {
 	const { siteConfig } = useDocusaurusContext();
 	return (
@@ -32,6 +53,7 @@ export default function Home() {
 			<HomepageHeader />
 			<main>
 				<HomepageFeatures items={features} />
+				<HomepageFeatures items={features_horiz} isSmall={true}/>
 				<HomepageQuickInstall />
 				<HomepageContribute />
 			</main>
