@@ -18,20 +18,20 @@ export const features = [
 export const features_horizontal = [
   {
     title: "Components",
-    desc: "Whitespace plays a big role and borders result in the layout that is clean at the users' first sight.",
+    desc: "The most used patterns, highly composable and customizable.",
     className: "feature-1",
     svg: svg.components,
   },
   {
     title: "Helpers",
-    desc: "Whitespace plays a big role and borders result in the layout that is clean at the users' first sight.",
+    desc: "Immutable and reusable classes to speed the development process up.",
     className: "feature-1",
     svg: svg.helpers,
   },
   {
-    title: "Form",
-    desc: "Whitespace plays a big role and borders result in the layout that is clean at the users' first sight.",
+    title: "Forms",
+    desc: "Custom and native elements to create modern forms.",
     className: "feature-1",
-    svg: svg.form,
+    svg: svg.forms,
   },
 ];

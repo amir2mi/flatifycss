@@ -21,7 +21,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .homepage-contribute:after{
+  .homepage-contribute:after {
     bottom: -10%;
   }
   .homepage-contribute:after,
@@ -96,6 +96,11 @@
   margin: 0 auto;
 }
 
+@media screen and (min-width: 1200px) {
+  .homepage-contribute .featured-button {
+    font-size: 1.85em !important;
+  }
+}
 @media screen and (min-width: 768px) and (max-width: 1200px) {
   .contribute-icons {
     font-size: 0.85em;

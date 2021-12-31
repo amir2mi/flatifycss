@@ -3,12 +3,14 @@
 }
 .quick-install-codes pre {
   user-select: all;
+  border-radius: var(--flatify__border-radius) !important;
 }
 pre {
   scrollbar-width: thin;
 }
 
 .quick-start-img {
+  width: 50%;
   padding-right: 3em;
 }
 
@@ -37,5 +39,38 @@ pre {
 
   .quick-start-img {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .quick-start-star:not(.star-down) {
+    animation: floating-star-up ease-in-out 6s infinite reverse;
+  }
+
+  .reverse-star {
+    animation-direction: reverse !important;
+    animation-duration: 8s !important;
+  }
+
+  .quick-start-star.star-down {
+    animation: floating-star-down ease-in-out 7s infinite reverse;
+  }
+}
+
+@keyframes floating-star-up {
+  0% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-0.08em) rotate(3deg);
+  }
+}
+
+@keyframes floating-star-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.08em) scale(0.98);
   }
 }

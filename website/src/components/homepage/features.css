@@ -110,3 +110,16 @@
 .feature-item:nth-child(2) .feature-media:after {
   animation-direction: reverse;
 }
+
+@media screen and (max-width: 767px) {
+  .horizontal-features {
+    flex-wrap: wrap;
+  }
+
+  .horizontal-features .feature-item {
+    text-align: center;
+    width: 50%;
+    flex-grow: 1;
+    font-size: 0.85em;
+  }
+}
