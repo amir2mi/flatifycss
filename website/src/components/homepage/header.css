@@ -118,7 +118,7 @@ html[data-theme="light"] .homepage-header {
 }
 
 html[data-theme="light"] .animated-logo {
-  filter: contrast(120%) opacity(50%);
+  filter: contrast(120%) opacity(35%);
 }
 
 html[data-theme="dark"] .animated-logo {
