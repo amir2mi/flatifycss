@@ -34,9 +34,9 @@ export default function HomepageHeader() {
       >
         Get Started
       </Link>
-      <p className="opacity-60">
+      <a style={{display: "block"}} href="https://github.com/amir2mi/flatifycss/releases" rel="nofollow" target="_blank" className={`size-sm opacity-60 ${isDarkTheme ? "color-light" : "color-dark-light"}`}>
         {stableVersion && <span className="anim-fade-in"> Last stable release: {stableVersion}</span>}
-      </p>
+      </a>
     </div>
   );
 }
