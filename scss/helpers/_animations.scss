@@ -49,6 +49,14 @@
   animation: flatify-fade-out 0.3s ease !important;
 }
 
+.anim-hue {
+  animation: flatify-hue 15s ease infinite !important;
+}
+
+.anim-hue-min {
+  animation: flatify-hue-min 5s ease infinite !important;
+}
+
 // A simple fade out animation,
 // it is a great choice for reduced-motion situations in [a11y.scss]
 @keyframes flatify-fade-in {
@@ -360,6 +368,37 @@
   }
   100% {
     transform: scaleY(1);
+  }
+}
+
+// hue rotation
+@keyframes flatify-hue {
+  0% {
+    filter: hue-rotate(0);
+  }
+  33.33% {
+    filter: hue-rotate(360deg);
+  }
+  66.66% {
+    filter: hue-rotate(-360deg);
+  }
+  100% {
+    filter: hue-rotate(0);
+  }
+}
+
+@keyframes flatify-hue-min {
+  0% {
+    filter: hue-rotate(0);
+  }
+  33.33% {
+    filter: hue-rotate(45deg);
+  }
+  66.66% {
+    filter: hue-rotate(-45deg);
+  }
+  100% {
+    filter: hue-rotate(0);
   }
 }
 

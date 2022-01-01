@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 0.9.7-12
+ * FlatifyCSS version 1.0.3-0
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -873,7 +873,7 @@ th {
   --flatify__alert-border-color: var(--flatify__bg-color-darker);
   --flatify__alert-animation-remove-duration: 350ms;
   --flatify__alert-animation-remove: flatify-alert-will-be-removed
-  	var(--flatify__alert-animation-remove-duration) ease;
+    var(--flatify__alert-animation-remove-duration) ease;
 }
 
 .alert {
@@ -971,7 +971,10 @@ th {
 }
 
 :root {
-  --flatify__modal-backdrop-color: var(--flatify__txt-color);
+  --flatify__backdrop-color: var(--flatify__txt-color);
+  --flatify__backdrop-opacity: var(--flatify__txt-color);
+  --flatify__backdrop-filter: var(--flatify__txt-color);
+  --flatify__modal-backdrop-color: var(--flatify__backdrop-color);
 }
 
 .backdrop-layer {
@@ -982,8 +985,9 @@ th {
   display: none;
   width: 100%;
   height: 100%;
-  background: var(--flatify__txt-color);
+  background: var(--flatify__backdrop-color);
   opacity: var(--flatify__backdrop-opacity);
+  backdrop-filter: var(--flatify__backdrop-filter);
 }
 .backdrop-layer.show {
   display: block;
@@ -994,7 +998,7 @@ th {
 }
 .backdrop-layer.modal-backdrop {
   z-index: 1030;
-  background: var(--flatify__modal-backdrop-color);
+  --flatify__backdrop-color: var(--flatify__modal-backdrop-color);
 }
 
 :root {
@@ -1313,6 +1317,198 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 }
 
 :root {
+  --flatify__firework-color-main: var(--flatify__color-blue-primary);
+  --flatify__firework-color-center-top-bottom: var(--flatify__color-blue-primary);
+  --flatify__firework-color-center-left-right: var(--flatify__color-blue-primary);
+  --flatify__firework-color-left-top-bottom: var(--flatify__color-purple-primary);
+  --flatify__firework-color-right-top-bottom: var(--flatify__color-purple-primary);
+  --flatify__firework-animation-delay: 0s;
+  --flatify__firework-animation-duration: 4s;
+  --flatify__firework-animation-iteration-count: infinite;
+}
+
+.fireworks {
+  position: relative;
+  width: 2.5em;
+  height: 2em;
+  background: transparent;
+  animation: flatify-firework ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
+}
+.fireworks:before,
+.fireworks .spark:before,
+.fireworks .spark:after {
+  content: " ";
+  position: absolute;
+  height: 0.25em;
+  border-radius: 50em;
+  background: var(--flatify__firework-color-main);
+}
+.fireworks:before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0.25em;
+  margin: auto;
+  animation: flatify-firework-main ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count) both;
+}
+.fireworks .spark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: flatify-firework-sparks ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count) both;
+}
+.fireworks .spark:nth-child(1):before, .fireworks .spark:nth-child(1):after, .fireworks .spark:nth-child(2):before, .fireworks .spark:nth-child(2):after {
+  top: 0;
+  bottom: 0;
+  width: 1.5em;
+  margin: auto;
+}
+.fireworks .spark:nth-child(1):before, .fireworks .spark:nth-child(2):before {
+  left: -0.25em;
+  animation: flatify-firework-spark-left ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
+}
+.fireworks .spark:nth-child(1):after, .fireworks .spark:nth-child(2):after {
+  right: -0.25em;
+  animation: flatify-firework-spark-right ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
+}
+.fireworks .spark:nth-child(1) {
+  --flatify__firework-color-main: var(--flatify__firework-color-center-left-right);
+}
+.fireworks .spark:nth-child(2) {
+  --flatify__firework-color-main: var(--flatify__firework-color-center-top-bottom);
+  transform: rotate(90deg);
+}
+.fireworks .spark:nth-child(3), .fireworks .spark:nth-child(4) {
+  left: 0;
+}
+.fireworks .spark:nth-child(3):before, .fireworks .spark:nth-child(3):after, .fireworks .spark:nth-child(4):before, .fireworks .spark:nth-child(4):after {
+  width: 0.75em;
+}
+.fireworks .spark:nth-child(3):before, .fireworks .spark:nth-child(4):before {
+  top: 0;
+  transform: rotate(45deg);
+  animation: flatify-firework-spark-corner-top ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
+}
+.fireworks .spark:nth-child(3):after, .fireworks .spark:nth-child(4):after {
+  bottom: 0;
+  transform: rotate(-45deg);
+  animation: flatify-firework-spark-corner-bottom ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
+}
+.fireworks .spark:nth-child(3) {
+  --flatify__firework-color-main: var(--flatify__firework-color-left-top-bottom);
+}
+.fireworks .spark:nth-child(4) {
+  --flatify__firework-color-main: var(--flatify__firework-color-right-top-bottom);
+  transform: rotate(180deg);
+}
+
+@keyframes flatify-firework {
+  0%, 20% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-0.5em);
+  }
+  80%, 100% {
+    transform: translateY(1em);
+  }
+}
+@keyframes flatify-firework-main {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(1em);
+  }
+  5% {
+    opacity: 1;
+    transform: scale(0, 6) translateY(1em);
+  }
+  26% {
+    transform: scaleY(2) translateY(0);
+  }
+  30% {
+    transform: scale(9) translateY(0);
+  }
+  40%, 100% {
+    transform: scale(0) translateY(0);
+  }
+}
+@keyframes flatify-firework-sparks {
+  0%, 30% {
+    clip-path: circle(0 at center);
+    opacity: 0;
+  }
+  38% {
+    clip-path: circle(100% at center);
+    opacity: 1;
+  }
+  65%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes flatify-firework-spark-corner-top {
+  0%, 30% {
+    opacity: 1;
+    clip-path: circle(100% at left);
+    transform: scale(1) translate(0) rotate(45deg);
+  }
+  40% {
+    clip-path: circle(100% at left);
+  }
+  60%, 100% {
+    opacity: 0;
+    clip-path: circle(0 at left);
+    transform: scale(1.5) translate(-0.5em, -0.25em) rotate(45deg);
+  }
+}
+@keyframes flatify-firework-spark-corner-bottom {
+  0%, 30% {
+    opacity: 1;
+    clip-path: circle(100% at left);
+    transform: scale(1) translate(0) rotate(-45deg);
+  }
+  40% {
+    clip-path: circle(100% at left);
+  }
+  60%, 100% {
+    opacity: 0;
+    clip-path: circle(0 at left);
+    transform: scale(1.5) translate(-0.5em, 0.25em) rotate(-45deg);
+  }
+}
+@keyframes flatify-firework-spark-left {
+  0%, 30% {
+    opacity: 1;
+    clip-path: circle(100% at left);
+    transform: scale(1) translate(0);
+  }
+  40% {
+    clip-path: circle(100% at left);
+  }
+  60%, 100% {
+    opacity: 0;
+    clip-path: circle(0 at left);
+    transform: scaleX(2) translate(-0.5em);
+  }
+}
+@keyframes flatify-firework-spark-right {
+  0%, 30% {
+    opacity: 1;
+    clip-path: circle(100% at right);
+    transform: scale(1) translate(0);
+  }
+  40% {
+    clip-path: circle(100% at right);
+  }
+  60%, 100% {
+    opacity: 0;
+    clip-path: circle(0 at right);
+    transform: scaleX(2) translate(0.5em);
+  }
+}
+:root {
   --flatify__card-txt-color: var(--flatify__txt-color);
   --flatify__card-bg-color: var(--flatify__bg-color);
   --flatify__card-border-color: var(--flatify__bg-color-darker);
@@ -1331,6 +1527,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   color: var(--flatify__local-txt-color);
   background: var(--flatify__local-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  box-shadow: 0 0.125em 0 var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
 .card:not(.horizontal) {
@@ -1420,7 +1617,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   --flatify__submenu-animation-show-duration: 350ms;
   --flatify__submenu-animation-show-delay: 200ms;
   --flatify__submenu-animation-show: flatify-dropdown-show var(--flatify__submenu-animation-show-duration)
-  	var(--flatify__submenu-animation-show-delay) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+    var(--flatify__submenu-animation-show-delay) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .menu-items-wrapper {
@@ -1672,10 +1869,10 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 :root {
   --flatify__dropdown-animation-show-duration: 300ms;
   --flatify__dropdown-animation-hide-duration: 200ms;
-  --flatify__dropdown-animation-show: flatify-dropdown-show
-  	var(--flatify__dropdown-animation-show-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44);
-  --flatify__dropdown-animation-hide: flatify-dropdown-hide
-  	var(--flatify__dropdown-animation-hide-duration) cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+  --flatify__dropdown-animation-show: flatify-dropdown-show var(--flatify__dropdown-animation-show-duration)
+    cubic-bezier(0.52, 0.42, 0.44, 1.44);
+  --flatify__dropdown-animation-hide: flatify-dropdown-hide var(--flatify__dropdown-animation-hide-duration)
+    cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .dropdown-wrapper {
@@ -1700,6 +1897,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 
 .popover .dropdown {
   font-size: 0.9em;
+  z-index: 1060;
 }
 
 :root {
@@ -1709,25 +1907,25 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   --flatify__modal-animation-show-duration: 350ms;
   --flatify__modal-animation-hide-duration: 250ms;
   --flatify__modal-animation-default-show: flatify-blow-in var(--flatify__modal-animation-show-duration)
-  	cubic-bezier(0.52, 0.42, 0.44, 1.44);
+    cubic-bezier(0.52, 0.42, 0.44, 1.44);
   --flatify__modal-animation-default-hide: flatify-blow-out var(--flatify__modal-animation-hide-duration)
-  	cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+    cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
   --flatify__modal-animation-top-show: flatify-slide-down-in var(--flatify__modal-animation-show-duration)
-  	ease;
-  --flatify__modal-animation-top-hide: flatify-slide-down-out
-  	var(--flatify__modal-animation-hide-duration) ease both;
-  --flatify__modal-animation-bottom-show: flatify-slide-up-in
-  	var(--flatify__modal-animation-show-duration) ease;
-  --flatify__modal-animation-bottom-hide: flatify-slide-up-out
-  	var(--flatify__modal-animation-hide-duration) ease both;
-  --flatify__modal-animation-left-show: flatify-slide-right-in
-  	var(--flatify__modal-animation-show-duration) ease;
+    ease;
+  --flatify__modal-animation-top-hide: flatify-slide-down-out var(--flatify__modal-animation-hide-duration)
+    ease both;
+  --flatify__modal-animation-bottom-show: flatify-slide-up-in var(--flatify__modal-animation-show-duration)
+    ease;
+  --flatify__modal-animation-bottom-hide: flatify-slide-up-out var(--flatify__modal-animation-hide-duration)
+    ease both;
+  --flatify__modal-animation-left-show: flatify-slide-right-in var(--flatify__modal-animation-show-duration)
+    ease;
   --flatify__modal-animation-left-hide: flatify-slide-right-out
-  	var(--flatify__modal-animation-hide-duration) ease both;
-  --flatify__modal-animation-right-show: flatify-slide-left-in
-  	var(--flatify__modal-animation-show-duration) ease;
+    var(--flatify__modal-animation-hide-duration) ease both;
+  --flatify__modal-animation-right-show: flatify-slide-left-in var(--flatify__modal-animation-show-duration)
+    ease;
   --flatify__modal-animation-right-hide: flatify-slide-left-out
-  	var(--flatify__modal-animation-hide-duration) ease both;
+    var(--flatify__modal-animation-hide-duration) ease both;
 }
 
 .modal {
@@ -2047,7 +2245,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   --flatify__tab-animation-hide-duration: 200ms;
   --flatify__tab-animation-show: flatify-blow-in var(--flatify__tab-animation-show-duration) ease;
   --flatify__tab-animation-hide: flatify-blow-out var(--flatify__tab-animation-hide-duration)
-  	cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
+    cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
 .tabs-wrapper[class*=style-],
@@ -2262,19 +2460,19 @@ textarea[class*=style-]:not(.default), select[class*=style-]:not(.default), inpu
   border-color: var(--flatify__form-element-border-color) !important;
   --flatify__form-element-border-color: var(--flatify__form-element-border-color__invalid) !important;
   --flatify__form-element-border-color__focus: var(
-  	--flatify__form-element-border-color__invalid
+    --flatify__form-element-border-color__invalid
   ) !important;
 }
 textarea:focus:invalid:not(.default), select:focus:invalid:not(.default), input:focus:invalid:not(.default) {
   --flatify__form-element-border-color__focus: var(
-  	--flatify__form-element-border-color__invalid
+    --flatify__form-element-border-color__invalid
   ) !important;
 }
 .input-wrapper.warning textarea:not(.default), .input-wrapper.warning select:not(.default), .input-wrapper.warning input:not(.default), textarea.warning:not(.default), select.warning:not(.default), input.warning:not(.default) {
   border-color: var(--flatify__form-element-border-color) !important;
   --flatify__form-element-border-color: var(--flatify__form-element-border-color__warning) !important;
   --flatify__form-element-border-color__focus: var(
-  	--flatify__form-element-border-color__warning
+    --flatify__form-element-border-color__warning
   ) !important;
 }
 .input-wrapper.valid textarea:not(.default), .input-wrapper.valid select:not(.default), .input-wrapper.valid input:not(.default), textarea.valid:not(.default), select.valid:not(.default), input.valid:not(.default) {
@@ -2761,6 +2959,14 @@ textarea:not(.default) {
   animation: flatify-fade-out 0.3s ease !important;
 }
 
+.anim-hue {
+  animation: flatify-hue 15s ease infinite !important;
+}
+
+.anim-hue-min {
+  animation: flatify-hue-min 5s ease infinite !important;
+}
+
 @keyframes flatify-fade-in {
   from {
     opacity: 0;
@@ -3027,6 +3233,34 @@ textarea:not(.default) {
   }
   100% {
     transform: scaleY(1);
+  }
+}
+@keyframes flatify-hue {
+  0% {
+    filter: hue-rotate(0);
+  }
+  33.33% {
+    filter: hue-rotate(360deg);
+  }
+  66.66% {
+    filter: hue-rotate(-360deg);
+  }
+  100% {
+    filter: hue-rotate(0);
+  }
+}
+@keyframes flatify-hue-min {
+  0% {
+    filter: hue-rotate(0);
+  }
+  33.33% {
+    filter: hue-rotate(45deg);
+  }
+  66.66% {
+    filter: hue-rotate(-45deg);
+  }
+  100% {
+    filter: hue-rotate(0);
   }
 }
 @keyframes flatify-loading-dot-first {

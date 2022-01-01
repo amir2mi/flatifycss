@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.2
+ * FlatifyCSS version 1.0.3-0
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -1319,7 +1319,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   --flatify__firework-color-center-left-right: var(--flatify__color-blue-primary);
   --flatify__firework-color-left-top-bottom: var(--flatify__color-purple-primary);
   --flatify__firework-color-right-top-bottom: var(--flatify__color-purple-primary);
-  --flatify__firework-animation-delay: 0;
+  --flatify__firework-animation-delay: 0s;
   --flatify__firework-animation-duration: 4s;
   --flatify__firework-animation-iteration-count: infinite;
 }
@@ -2956,6 +2956,14 @@ textarea:not(.default) {
   animation: flatify-fade-out 0.3s ease !important;
 }
 
+.anim-hue {
+  animation: flatify-hue 15s ease infinite !important;
+}
+
+.anim-hue-min {
+  animation: flatify-hue-min 5s ease infinite !important;
+}
+
 @keyframes flatify-fade-in {
   from {
     opacity: 0;
@@ -3222,6 +3230,34 @@ textarea:not(.default) {
   }
   100% {
     transform: scaleY(1);
+  }
+}
+@keyframes flatify-hue {
+  0% {
+    filter: hue-rotate(0);
+  }
+  33.33% {
+    filter: hue-rotate(360deg);
+  }
+  66.66% {
+    filter: hue-rotate(-360deg);
+  }
+  100% {
+    filter: hue-rotate(0);
+  }
+}
+@keyframes flatify-hue-min {
+  0% {
+    filter: hue-rotate(0);
+  }
+  33.33% {
+    filter: hue-rotate(45deg);
+  }
+  66.66% {
+    filter: hue-rotate(-45deg);
+  }
+  100% {
+    filter: hue-rotate(0);
   }
 }
 @keyframes flatify-loading-dot-first {
