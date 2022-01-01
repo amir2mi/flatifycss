@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-2
+ * FlatifyCSS version 1.0.3-4
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -1148,11 +1148,50 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   filter: contrast(85%) brightness(85%) opacity(70%) !important;
   transform: translateY(calc(var(--flatify__border-width) * 1.38));
 }
+.button svg {
+  fill: currentColor;
+}
 
 .link-button {
   padding: 0.75em 0.85em;
   background: transparent;
   border: none;
+}
+
+:root {
+  --flatify__two-layer-button-animation-show: flatify-blow-in 0.25s 0.2s ease-in-out;
+}
+
+.two-layer-button {
+  --flatify__overlay-layer-priority: 0;
+  --flatify__overlay-layer-opacity: 0;
+}
+.two-layer-button .secondary-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 0.32em;
+  opacity: 0;
+}
+.two-layer-button .secondary-text svg {
+  width: 1.4em;
+}
+.two-layer-button:before,
+.two-layer-button .secondary-text {
+  transition: all var(--flatify__simple-transition) 0.1s;
+}
+.two-layer-button:hover:before, .two-layer-button:focus:before {
+  --flatify__overlay-layer-opacity: 1;
+}
+.two-layer-button:hover .secondary-text, .two-layer-button:focus .secondary-text {
+  opacity: 1;
+  animation: var(--flatify__two-layer-button-animation-show);
+  animation-fill-mode: both;
 }
 
 .hamburger {
@@ -2110,7 +2149,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   animation: flatify-loading-dot-third var(--flatify__loading-dot-animation-duration) infinite;
 }
 
-.overlay-layer > .spinner, .overlay-layer > .loading {
+.overlay-layer > .spinner, .two-layer-button > .spinner, .overlay-layer > .loading, .two-layer-button > .loading {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -2119,10 +2158,10 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   z-index: 12;
   margin: auto;
 }
-.overlay-layer > .loading {
+.overlay-layer > .loading, .two-layer-button > .loading {
   left: calc(var(--flatify__loading-dot-width) * -4);
 }
-.overlay-layer.button > .spinner {
+.overlay-layer.button > .spinner, .button.two-layer-button > .spinner {
   font-size: 0.9em;
 }
 
@@ -4043,11 +4082,11 @@ textarea:not(.default) {
   --flatify__overlay-layer-backdrop-filter: none;
 }
 
-.overlay-layer {
+.overlay-layer, .two-layer-button {
   --flatify__local-bg-color: var(--flatify__overlay-layer-bg-color);
   position: relative;
 }
-.overlay-layer:before {
+.overlay-layer:before, .two-layer-button:before {
   content: " ";
   position: absolute;
   top: 0;
@@ -4166,6 +4205,9 @@ body .tab-panel.show {
   }
   body .menu-item:focus-within > .submenu, body .menu-item:hover > .submenu {
     animation-name: flatify-fade-in !important;
+  }
+  body .two-layer-button {
+    --flatify__two-layer-button-animation-show: flatify-fade-in 0.3s ease-in-out !important;
   }
   body .loading {
     animation: flatify-fade-in-out 2s infinite !important;

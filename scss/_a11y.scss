@@ -24,11 +24,16 @@
         animation-name: flatify-fade-in !important;
       }
     }
+
     .menu-item {
       &:focus-within > .submenu,
       &:hover > .submenu {
         animation-name: flatify-fade-in !important;
       }
+    }
+
+    .two-layer-button {
+      --#{$CSS_VAR_PFX}two-layer-button-animation-show: flatify-fade-in 0.3s ease-in-out !important;
     }
 
     // Fade in out like a fresh breath
@@ -41,6 +46,7 @@
         animation: none !important;
       }
     }
+
     .progress-bar:before {
       filter: opacity(60%);
       animation: flatify-fade-in-out 3s infinite !important;

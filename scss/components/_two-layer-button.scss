@@ -1,0 +1,44 @@
+:root {
+  --#{$CSS_VAR_PFX}two-layer-button-animation-show: flatify-blow-in 0.25s 0.2s ease-in-out;
+}
+
+.two-layer-button {
+  @extend .overlay-layer;
+  --#{$CSS_VAR_PFX}overlay-layer-priority: 0;
+  --#{$CSS_VAR_PFX}overlay-layer-opacity: 0;
+
+  .secondary-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 0.32em;
+    opacity: 0;
+
+    svg {
+      width: 1.4em;
+    }
+  }
+
+  &:before,
+  .secondary-text {
+    transition: all var(--#{$CSS_VAR_PFX}simple-transition) 0.1s;
+  }
+
+  &:hover,
+  &:focus {
+    &:before {
+      --#{$CSS_VAR_PFX}overlay-layer-opacity: 1;
+    }
+
+    .secondary-text {
+      opacity: 1;
+      animation: var(--#{$CSS_VAR_PFX}two-layer-button-animation-show);
+      animation-fill-mode: both;
+    }
+  }
+}

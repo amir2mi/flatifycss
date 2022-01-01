@@ -134,6 +134,10 @@
     filter: contrast(85%) brightness(85%) opacity(70%) !important;
     transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
   }
+
+  svg {
+    fill: currentColor;
+  }
 }
 
 .link-button {

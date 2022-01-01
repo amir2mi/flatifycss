@@ -50,6 +50,45 @@ This element does not have meaning for assistive technologies and it is just a f
 [Read more about `aria-hidden`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute).
 :::
 
+## Simple
+
+You can add the `.simple` class to the `.fireworks`, it will remove the main glow effect.
+
+<PreviewBox
+  height="200px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Fireworks</title>
+	</head>
+	<body>
+        <div class="flex-center" style="padding-top: 3em">
+			<div class="fireworks simple" aria-hidden="true">
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+            </div>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="fireworks simple" aria-hidden="true">
+  <span class="spark"></span>
+  <span class="spark"></span>
+  <span class="spark"></span>
+  <span class="spark"></span>
+</div>
+```
+
 ## Sizes
 
 To change the fireworks size use [size setter classes](/docs/helpers/size-setters).
@@ -129,7 +168,9 @@ The example below shows how to use this variables:
 		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
 		<title>Fireworks</title>
         <style>
-            .my-custom-fireworks{
+            .my-custom-fireworks-1,
+            .my-custom-fireworks-2,
+            .my-custom-fireworks-3{
                 --flatify__firework-color-main: #FFCE54;
                 --flatify__firework-color-center-top-bottom: #FC6E51;
                 --flatify__firework-color-center-left-right: #F6BB42;
@@ -137,11 +178,32 @@ The example below shows how to use this variables:
                 --flatify__firework-color-right-top-bottom: #EC87C0;
                 --flatify__firework-animation-duration: 2s;
             }
+            .my-custom-fireworks-1{
+                --flatify__firework-animation-delay: 200ms;
+            }
+            .my-custom-fireworks-2{
+                --flatify__firework-animation-delay: 400ms;
+            }
+            .my-custom-fireworks-3{
+                --flatify__firework-animation-delay: 600ms;
+            }
         </style>
 	</head>
 	<body>
-        <div class="flex-center" style="padding-top: 3em;">
-			<div class="fireworks my-custom-fireworks" aria-hidden="true">
+        <div class="flex-center" style="padding-top: 3em; gap: 4em">
+			<div class="fireworks my-custom-fireworks-1" aria-hidden="true">
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+            </div>
+            <div class="fireworks my-custom-fireworks-2" aria-hidden="true">
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+            </div>
+            <div class="fireworks my-custom-fireworks-3" aria-hidden="true">
                 <span class="spark"></span>
                 <span class="spark"></span>
                 <span class="spark"></span>
@@ -154,22 +216,33 @@ The example below shows how to use this variables:
 />
 
 ```html title="index.html"
-<div class="fireworks my-custom-fireworks" aria-hidden="true">
-  <span class="spark"></span>
-  <span class="spark"></span>
-  <span class="spark"></span>
-  <span class="spark"></span>
-</div>
+<div class="fireworks my-custom-fireworks-1" aria-hidden="true">...</div>
+<div class="fireworks my-custom-fireworks-2" aria-hidden="true">...</div>
+<div class="fireworks my-custom-fireworks-3" aria-hidden="true">...</div>
 ```
 
 ```css title="style.css"
-.my-custom-fireworks {
+.my-custom-fireworks-1,
+.my-custom-fireworks-2,
+.my-custom-fireworks-3 {
   --flatify__firework-color-main: #ffce54;
   --flatify__firework-color-center-top-bottom: #fc6e51;
   --flatify__firework-color-center-left-right: #f6bb42;
   --flatify__firework-color-left-top-bottom: #2ecc71;
   --flatify__firework-color-right-top-bottom: #ec87c0;
   --flatify__firework-animation-duration: 2s;
+}
+
+.my-custom-fireworks-1 {
+  --flatify__firework-animation-delay: 200ms;
+}
+
+.my-custom-fireworks-2 {
+  --flatify__firework-animation-delay: 400ms;
+}
+
+.my-custom-fireworks-3 {
+  --flatify__firework-animation-delay: 600ms;
 }
 ```
 
