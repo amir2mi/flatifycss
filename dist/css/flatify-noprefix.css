@@ -1520,6 +1520,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   color: var(--flatify__local-txt-color);
   background: var(--flatify__local-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  box-shadow: 0 0.125em 0 var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
 .card:not(.horizontal) {
