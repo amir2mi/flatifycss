@@ -35,9 +35,6 @@ html:not(.docs-version-current) .footer {
   --ifm-footer-background-color: var(--flatify__bg-color);
 }
 
-html[data-theme="light"] {
-  background: #FCFDFD !important;
-}
 html[data-theme="dark"] {
   --docus-bd: 2px solid #2e4051;
   --ifm-background-surface-color: #141f23;

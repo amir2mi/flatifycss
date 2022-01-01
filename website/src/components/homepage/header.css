@@ -18,10 +18,6 @@
   background: var(--flatify__bg-color);
 }
 
-html[data-theme="light"] .homepage-header {
-  background: #fcfdfd !important;
-}
-
 .homepage-title {
   font-size: 5em;
   font-weight: bold;
