@@ -1319,13 +1319,17 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   --flatify__firework-color-center-left-right: var(--flatify__color-blue-primary);
   --flatify__firework-color-left-top-bottom: var(--flatify__color-purple-primary);
   --flatify__firework-color-right-top-bottom: var(--flatify__color-purple-primary);
+  --flatify__firework-animation-delay: 0;
+  --flatify__firework-animation-duration: 4s;
+  --flatify__firework-animation-iteration-count: infinite;
 }
 
 .fireworks {
   position: relative;
   width: 2.5em;
   height: 2em;
-  animation: flatify-firework ease-in-out 4s infinite;
+  background: transparent;
+  animation: flatify-firework ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
 }
 .fireworks:before,
 .fireworks .spark:before,
@@ -1343,7 +1347,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   right: 0;
   width: 0.25em;
   margin: auto;
-  animation: flatify-firework-main ease-in-out 4s infinite;
+  animation: flatify-firework-main ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count) both;
 }
 .fireworks .spark {
   position: absolute;
@@ -1351,7 +1355,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   left: 0;
   width: 100%;
   height: 100%;
-  animation: flatify-firework-sparks ease-in-out 4s infinite;
+  animation: flatify-firework-sparks ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count) both;
 }
 .fireworks .spark:nth-child(1):before, .fireworks .spark:nth-child(1):after, .fireworks .spark:nth-child(2):before, .fireworks .spark:nth-child(2):after {
   top: 0;
@@ -1361,17 +1365,17 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 }
 .fireworks .spark:nth-child(1):before, .fireworks .spark:nth-child(2):before {
   left: -0.25em;
-  animation: flatify-firework-spark-left ease-in-out 4s infinite;
+  animation: flatify-firework-spark-left ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
 }
 .fireworks .spark:nth-child(1):after, .fireworks .spark:nth-child(2):after {
   right: -0.25em;
-  animation: flatify-firework-spark-right ease-in-out 4s infinite;
+  animation: flatify-firework-spark-right ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
 }
 .fireworks .spark:nth-child(1) {
-  --flatify__firework-color-main: var(--flatify__firework-color-center-top-bottom);
+  --flatify__firework-color-main: var(--flatify__firework-color-center-left-right);
 }
 .fireworks .spark:nth-child(2) {
-  --flatify__firework-color-main: var(--flatify__firework-color-center-left-right);
+  --flatify__firework-color-main: var(--flatify__firework-color-center-top-bottom);
   transform: rotate(90deg);
 }
 .fireworks .spark:nth-child(3), .fireworks .spark:nth-child(4) {
@@ -1383,12 +1387,12 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .fireworks .spark:nth-child(3):before, .fireworks .spark:nth-child(4):before {
   top: 0;
   transform: rotate(45deg);
-  animation: flatify-firework-spark-corner-top ease-in-out 4s infinite;
+  animation: flatify-firework-spark-corner-top ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
 }
 .fireworks .spark:nth-child(3):after, .fireworks .spark:nth-child(4):after {
   bottom: 0;
   transform: rotate(-45deg);
-  animation: flatify-firework-spark-corner-bottom ease-in-out 4s infinite;
+  animation: flatify-firework-spark-corner-bottom ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
 }
 .fireworks .spark:nth-child(3) {
   --flatify__firework-color-main: var(--flatify__firework-color-left-top-bottom);
@@ -1416,7 +1420,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   }
   5% {
     opacity: 1;
-    transform: scale(0, 4) translateY(1em);
+    transform: scale(0, 6) translateY(1em);
   }
   26% {
     transform: scaleY(2) translateY(0);
@@ -1433,7 +1437,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
     clip-path: circle(0 at center);
     opacity: 0;
   }
-  40% {
+  38% {
     clip-path: circle(100% at center);
     opacity: 1;
   }

@@ -4,14 +4,18 @@
   --#{$CSS_VAR_PFX}firework-color-center-left-right: var(--#{$CSS_VAR_PFX}color-blue-primary);
   --#{$CSS_VAR_PFX}firework-color-left-top-bottom: var(--#{$CSS_VAR_PFX}color-purple-primary);
   --#{$CSS_VAR_PFX}firework-color-right-top-bottom: var(--#{$CSS_VAR_PFX}color-purple-primary);
+  --#{$CSS_VAR_PFX}firework-animation-delay: 0;
+  --#{$CSS_VAR_PFX}firework-animation-duration: 4s;
+  --#{$CSS_VAR_PFX}firework-animation-iteration-count: infinite;
 }
 
 .fireworks {
   position: relative;
   width: 2.5em;
   height: 2em;
-  //   background: #eee;
-  animation: flatify-firework ease-in-out 4s infinite;
+  background: transparent;
+  animation: flatify-firework ease-in-out var(--#{$CSS_VAR_PFX}firework-animation-duration)
+    var(--#{$CSS_VAR_PFX}firework-animation-delay) var(--#{$CSS_VAR_PFX}firework-animation-iteration-count);
 
   &:before,
   .spark:before,
@@ -30,7 +34,8 @@
     right: 0;
     width: 0.25em;
     margin: auto;
-    animation: flatify-firework-main ease-in-out 4s infinite;
+    animation: flatify-firework-main ease-in-out var(--#{$CSS_VAR_PFX}firework-animation-duration)
+      var(--#{$CSS_VAR_PFX}firework-animation-delay) var(--#{$CSS_VAR_PFX}firework-animation-iteration-count) both;
   }
 
   .spark {
@@ -39,7 +44,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    animation: flatify-firework-sparks ease-in-out 4s infinite;
+    animation: flatify-firework-sparks ease-in-out var(--#{$CSS_VAR_PFX}firework-animation-duration)
+      var(--#{$CSS_VAR_PFX}firework-animation-delay) var(--#{$CSS_VAR_PFX}firework-animation-iteration-count) both;
 
     // left-right & top-bottom
     &:nth-child(1),
@@ -54,19 +60,21 @@
 
       &:before {
         left: -0.25em;
-        animation: flatify-firework-spark-left ease-in-out 4s infinite;
+        animation: flatify-firework-spark-left ease-in-out var(--#{$CSS_VAR_PFX}firework-animation-duration)
+          var(--#{$CSS_VAR_PFX}firework-animation-delay) var(--#{$CSS_VAR_PFX}firework-animation-iteration-count);
       }
       &:after {
         right: -0.25em;
-        animation: flatify-firework-spark-right ease-in-out 4s infinite;
+        animation: flatify-firework-spark-right ease-in-out var(--#{$CSS_VAR_PFX}firework-animation-duration)
+          var(--#{$CSS_VAR_PFX}firework-animation-delay) var(--#{$CSS_VAR_PFX}firework-animation-iteration-count);
       }
     }
 
     &:nth-child(1) {
-      --#{$CSS_VAR_PFX}firework-color-main: var(--#{$CSS_VAR_PFX}firework-color-center-top-bottom);
+      --#{$CSS_VAR_PFX}firework-color-main: var(--#{$CSS_VAR_PFX}firework-color-center-left-right);
     }
     &:nth-child(2) {
-      --#{$CSS_VAR_PFX}firework-color-main: var(--#{$CSS_VAR_PFX}firework-color-center-left-right);
+      --#{$CSS_VAR_PFX}firework-color-main: var(--#{$CSS_VAR_PFX}firework-color-center-top-bottom);
       transform: rotate(90deg);
     }
 
@@ -83,12 +91,14 @@
       &:before {
         top: 0;
         transform: rotate(45deg);
-        animation: flatify-firework-spark-corner-top ease-in-out 4s infinite;
+        animation: flatify-firework-spark-corner-top ease-in-out var(--#{$CSS_VAR_PFX}firework-animation-duration)
+          var(--#{$CSS_VAR_PFX}firework-animation-delay) var(--#{$CSS_VAR_PFX}firework-animation-iteration-count);
       }
       &:after {
         bottom: 0;
         transform: rotate(-45deg);
-        animation: flatify-firework-spark-corner-bottom ease-in-out 4s infinite;
+        animation: flatify-firework-spark-corner-bottom ease-in-out var(--#{$CSS_VAR_PFX}firework-animation-duration)
+          var(--#{$CSS_VAR_PFX}firework-animation-delay) var(--#{$CSS_VAR_PFX}firework-animation-iteration-count);
       }
     }
 
@@ -123,7 +133,7 @@
   }
   5% {
     opacity: 1;
-    transform: scale(0, 4) translateY(1em);
+    transform: scale(0, 6) translateY(1em);
   }
   26% {
     transform: scaleY(2) translateY(0);
@@ -143,7 +153,7 @@
     clip-path: circle(0 at center);
     opacity: 0;
   }
-  40% {
+  38% {
     clip-path: circle(100% at center);
     opacity: 1;
   }
