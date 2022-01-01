@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-4
+ * FlatifyCSS version 1.0.3-5
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -1268,7 +1268,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   opacity: 0;
 }
 .two-layer-button .secondary-text svg {
-  width: 1.4em;
+  width: 1.75em;
 }
 .two-layer-button:before,
 .two-layer-button .secondary-text {

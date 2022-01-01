@@ -1,3 +1,53 @@
 ---
 title: Two layer button
 ---
+
+import PreviewBox from "../../../src/components/preview-box";
+
+This is a kind of button that uses the [overlay layer](/docs/helpers/overlay-layer) concept, and shows secondary text on hover/focus.
+
+Here is an example:
+
+<PreviewBox
+  height="120px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Two layer button</title>
+	</head>
+	<body>
+        <div class="flex-center">
+			<button class="button two-layer-button style-orange size-lg">
+                I am a button
+                <span class="secondary-text">Hello dear</span>
+            </button>
+            <button class="button two-layer-button style-green size-lg">
+                Buy me a coffee
+                <span class="secondary-text">
+                    <svg viewBox="100 50 450 450">
+                        <g>
+                        <path d="m456.4 218.4h-280v110.27c-0.0625 22.309 4.2969 44.406 12.836 65.016 8.5352 20.609 21.074 39.32 36.895 55.047l4.9297 4.9297h148.29l4.9297-4.9297c26.02-25.891 42.875-59.574 47.992-95.926h24.133c24.012 0 46.195-12.809 58.199-33.602 12.004-20.789 12.004-46.406 0-67.199s-34.188-33.602-58.199-33.602zm-56 110.27c0.097656 33.77-12.445 66.352-35.168 91.336h-120.06c-22.719-24.984-35.266-57.566-35.168-91.336v-76.664h190.4zm56-9.4648h-22.398v-67.199h22.398c12.004 0 23.098 6.4023 29.102 16.801 6 10.395 6 23.203 0 33.598-6.0039 10.398-17.098 16.801-29.102 16.801z"/>
+                        <path d="m282.8 106.4h33.602v67.199h-33.602z"/>
+                        <path d="m361.2 106.4h33.602v67.199h-33.602z"/>
+                        <path d="m204.4 106.4h33.602v67.199h-33.602z"/>
+                        </g>
+                    </svg>
+                </span>
+            </button>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<button class="button two-layer-button style-orange size-lg">
+  I am a button
+  <span class="secondary-text">Hello dear</span>
+</button>
+```
