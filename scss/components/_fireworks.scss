@@ -28,7 +28,7 @@
     background: var(--#{$CSS_VAR_PFX}firework-color-main);
   }
 
-  &:before {
+  &:not(.simple):before {
     top: 0;
     bottom: 0;
     left: 0;
