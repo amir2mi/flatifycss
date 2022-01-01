@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-0
+ * FlatifyCSS version 1.0.3-1
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -981,7 +981,7 @@ th {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1030;
   display: none;
   width: 100%;
   height: 100%;
@@ -1329,6 +1329,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 
 .fireworks {
   position: relative;
+  z-index: 1025;
   width: 2.5em;
   height: 2em;
   background: transparent;
@@ -1409,11 +1410,11 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   0%, 20% {
     transform: translateY(0);
   }
-  35% {
-    transform: translateY(-0.5em);
+  40% {
+    transform: translateY(-1em);
   }
   80%, 100% {
-    transform: translateY(1em);
+    transform: translateY(0.5em);
   }
 }
 @keyframes flatify-firework-main {

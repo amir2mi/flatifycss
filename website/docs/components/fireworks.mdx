@@ -1,0 +1,100 @@
+---
+title: Fireworks
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Fireworks is a minimal component to express something is done successfully.
+
+## A simple fireworks example
+
+It is simply a wrapper `.fireworks` with three `.spark` inside.
+
+<PreviewBox
+  height="200px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Fireworks</title>
+	</head>
+	<body>
+        <div class="flex-center" style="padding-top: 2em">
+			<div class="fireworks" aria-hidden="true">
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+            </div>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="fireworks" aria-hidden="true">
+  <span class="spark"></span>
+  <span class="spark"></span>
+  <span class="spark"></span>
+  <span class="spark"></span>
+</div>
+```
+
+:::info Accessibility matters!
+This element does not have meaning for assistive technologies and it is just a fancy ornate, thus we should hide it from the accessibility tree by setting `aria-hidden="true"`.  
+[Read more about `aria-hidden`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute).
+:::
+
+## Sizes
+
+To change the fireworks size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+
+<PreviewBox
+  height="350px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Fireworks</title>
+	</head>
+	<body>
+        <div class="flex-center" style="padding-top: 5em; gap: 5em;">
+			<div class="fireworks size-xs" aria-hidden="true">
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+            </div>
+            <div class="fireworks size-lg" aria-hidden="true">
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+            </div>
+        	<div class="fireworks size-3x" aria-hidden="true">
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+                <span class="spark"></span>
+            </div>
+		</div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="fireworks size-xs" aria-hidden="true">...</div>
+<div class="fireworks size-lg" aria-hidden="true">...</div>
+<div class="fireworks size-3x" aria-hidden="true">...</div>
+```
