@@ -6,6 +6,7 @@
   @extend .overlay-layer;
   --#{$CSS_VAR_PFX}overlay-layer-priority: 0;
   --#{$CSS_VAR_PFX}overlay-layer-opacity: 0;
+  overflow: hidden;
 
   .secondary-text {
     position: absolute;

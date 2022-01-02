@@ -17,7 +17,7 @@ Search by Graphik Designz from the Noun Project
 Check by James Kocsis from the Noun Project
 Heart by BomSymbols from NounProject.com
 Share by shaurya from NounProject.com
-Coffee by Gregor Cresnar from NounProject.com
+Coffee by Adrien Coquet from NounProject.com
 
 ### Flaticon
 
