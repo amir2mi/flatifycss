@@ -1,5 +1,5 @@
 :root {
-  --#{$CSS_VAR_PFX}backdrop-priority: $ZINDEX_BACKDROP;
+  --#{$CSS_VAR_PFX}backdrop-priority: #{$ZINDEX_BACKDROP};
   --#{$CSS_VAR_PFX}backdrop-color: var(--#{$CSS_VAR_PFX}txt-color);
   --#{$CSS_VAR_PFX}backdrop-opacity: 0.5;
   --#{$CSS_VAR_PFX}backdrop-filter: none;
@@ -29,7 +29,7 @@
   }
 
   &.modal-backdrop {
-    z-index: $ZINDEX_MODAL_BACKDROP;
+    --#{$CSS_VAR_PFX}backdrop-priority: #{$ZINDEX_MODAL_BACKDROP};
     --#{$CSS_VAR_PFX}backdrop-color: var(--#{$CSS_VAR_PFX}modal-backdrop-color);
   }
 }
