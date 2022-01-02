@@ -1,4 +1,5 @@
 :root {
+  --#{$CSS_VAR_PFX}backdrop-priority: $ZINDEX_BACKDROP;
   --#{$CSS_VAR_PFX}backdrop-color: var(--#{$CSS_VAR_PFX}txt-color);
   --#{$CSS_VAR_PFX}backdrop-opacity: 0.5;
   --#{$CSS_VAR_PFX}backdrop-filter: none;
@@ -10,7 +11,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: $ZINDEX_BACKDROP; // default z-index
+  z-index: var(--#{$CSS_VAR_PFX}backdrop-priority); // default z-index
   display: none;
   width: 100%;
   height: 100%;
