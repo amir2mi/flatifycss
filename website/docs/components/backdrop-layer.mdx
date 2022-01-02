@@ -2,4 +2,99 @@
 title: Backdrop layer
 ---
 
-To show that some components are over others backdrop layer is a pratical choice.
+import PreviewBox from "../../src/components/preview-box";
+
+To show that some components are over others, the backdrop layer is the component that helps you, the real example for this component is the [modal component](/docs/components/modal) which shows a backdrop layer when modal is open.
+
+## A simple backdrop layer
+
+Backdrops are simple despite being customizable, note that they are hidden by default to activate a backdrop layer you should add the `.show` class. here is an example of a backdrop layer:
+
+<PreviewBox
+  height="200px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Backdrop layer</title>
+	</head>
+	<body>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+        <button class="button">Click me</button>
+        <div class="backdrop-layer show"></div>
+	</body>
+</html>
+'
+/>
+
+```html {6} title="index.html"
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+erat ut turpis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+Nullam malesuada erat ut turpis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat
+mattis eros. Nullam malesuada erat ut turpis.
+<button class="button">Click me</button>
+<div class="backdrop-layer show"></div>
+```
+
+:::info
+Elements that have a higher `z-index` than the backdrop layer will be shown on top of it. The default `z-index` for the backdrop layer is `1030`, but you can change it by changing the `--flatify__backdrop-priority` CSS variable.
+:::
+
+## Customization
+
+Here is the list of CSS variables that can be customized for the backdrop layer:
+
+`--flatify__backdrop-priority` defautlt: 1030  
+`--flatify__backdrop-color`  
+`--flatify__backdrop-opacity` defautlt: 0.5  
+`--flatify__backdrop-filter`
+
+For example you use `--flatify__backdrop-filter` to set blur effect which is a common effect for backdrops nowadays:
+
+<PreviewBox
+  height="200px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Backdrop layer</title>
+        <style>
+            .my-backdrop{
+                --flatify__backdrop-color: #2aba667a;
+                --flatify__backdrop-opacity: 1;
+                --flatify__backdrop-filter: blur(3px);
+            }
+        </style>
+	</head>
+	<body>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+        <button class="button">Click me</button>
+        <div class="backdrop-layer my-backdrop show"></div>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="backdrop-layer my-backdrop show"></div>
+```
+
+```css title="index.css"
+.my-backdrop {
+  --flatify__backdrop-color: #2aba667a;
+  --flatify__backdrop-opacity: 1;
+  --flatify__backdrop-filter: blur(3px);
+}
+```

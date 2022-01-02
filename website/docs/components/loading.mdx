@@ -198,7 +198,7 @@ Imagine you use the loading component inside a button and expect when data is fe
 ```
 
 In the first example on click, there is just a loading component inside the button, so button width and height change based on it, which means layout shifts and it is the bad user experience we were talking about.  
-Otherwise second example use [overlay layer helper class](/docs/helpers/overlay-layer), adds `.overlay-layer` class to the button and appends `<span class="loading"></span>` inside button next to the button text.
+Otherwise second example uses [overlay layer helper class](/docs/helpers/overlay-layer), adds `.overlay-layer` class to the button and appends `<span class="loading"></span>` inside button next to the button text.
 
 :::success How it works
 Technically overlay layer creates an overlay element with CSS `::before` that comes over and hides button content and just shows the loading element, it will prevent unwanted layout shifts and changes will be done smoothly!
