@@ -1,5 +1,6 @@
 ---
 title: Customization
+sidebar_position: 9
 ---
 
 If you read about [development tools](/docs/overview/development) you will find out that you can use Sass, so it is possible to customize the basic styles of FlatifyCSS.
@@ -10,7 +11,22 @@ The first level of customization happens in the `_config.scss` file, in this fil
 
 Take a look at [the config file](https://github.com/amir2mi/flatifycss/blob/master/scss/_config.scss) to see how it works.
 Variables in this file are categorized by their type, general, design, colors, motion, typography, and icons.
-So you can change their value and see how the changes affect the generated CSS and frontend.
+So you can change their value and see how the changes affect the generated CSS and frontend.  
+
+For example here is the list of variables that are defined for `z-index`:
+
+```scss title="_config.scss"
+$ZINDEX_DROPDOWN: 1000;
+$ZINDEX_STICKY: 1010;
+$ZINDEX_FIXED: 1020;
+$ZINDEX_FIREWORKS: 1025;
+$ZINDEX_BACKDROP: 1030;
+$ZINDEX_MODAL_BACKDROP: 1030;
+$ZINDEX_MODAL: 1040;
+$ZINDEX_POPOVER: 1060;
+```
+
+You can change their value based on the number of the `z-index` you use in your project.
 
 ## CSS
 

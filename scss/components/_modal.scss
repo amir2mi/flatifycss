@@ -58,6 +58,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}loc
   color: var(--#{$CSS_VAR_PFX}modal-txt-color);
   background: var(--#{$CSS_VAR_PFX}modal-bg-color);
   border: $modal-border;
+  box-shadow: inset 0 -0.125em 0 var(--#{$CSS_VAR_PFX}local-border-color);
   border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
   &.modal-sm {
@@ -195,7 +196,7 @@ $modal-border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}loc
 
 .modal-body {
   flex-grow: 1; // fill the space when height is 100%
-  padding: 1.25em;
+  padding: 0.75em 1.25em;
 }
 
 .modal-footer {
