@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-8
+ * FlatifyCSS version 1.0.3-10
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -988,8 +988,8 @@ th {
 
 :root {
   --flatify__backdrop-color: var(--flatify__txt-color);
-  --flatify__backdrop-opacity: var(--flatify__txt-color);
-  --flatify__backdrop-filter: var(--flatify__txt-color);
+  --flatify__backdrop-opacity: 0.5;
+  --flatify__backdrop-filter: none;
   --flatify__modal-backdrop-color: var(--flatify__backdrop-color);
 }
 

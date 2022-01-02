@@ -96,12 +96,14 @@
   margin: 0 auto;
 }
 
-.contribute-button {
-  --flatify__two-layer-button-animation-show: flatify-slide-up-in 0.3s 0.1s;
-}
+@media (prefers-reduced-motion: no-preference) {
+  .contribute-button {
+    --flatify__two-layer-button-animation-show: flatify-slide-up-in 0.3s 0.1s;
+  }
 
-.donate-button {
-  --flatify__two-layer-button-animation-show: flatify-slide-down-in 0.3s 0.1s;
+  .donate-button {
+    --flatify__two-layer-button-animation-show: flatify-slide-down-in 0.3s 0.1s;
+  }
 }
 
 @media screen and (min-width: 1200px) {
