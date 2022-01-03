@@ -3,7 +3,18 @@ title: Accessibility
 sidebar_position: 7
 ---
 
+import Picture from "../../src/components/picture";
+
 FlatifyCSS respects accessibility. For documentation, attributes like `aria-` are included with examples and there is always a note for accessibilty.
+
+## Assistive technologies
+
+Where content changes dynamically, for example when you open a modal, JavaScript automatically will change the necessary `aria-` HTML attribute and the screen reader will announce the changes.  
+Also, documentation gives a helpful overview of how to use the `aria-` attributes where it is needed.
+
+## Keyboard friendly
+
+Users who prefer keyboard to navigate are important, so FlatifyCSS considers them and optimize [`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) for styles.
 
 ## Reduced motion
 
@@ -29,6 +40,136 @@ No transition is necessary for reduced motion so we reset FlatifyCSS defined tra
 
 ### Animations
 
-<img width="100" style={{ float: "right" }} src="/flatifycss/img/docs/a11y/loading-reduced-motion.gif" />
+<img
+  width="100"
+  style={{ float: "right" }}
+  src="/flatifycss/img/docs/a11y/loading-reduced-motion.gif"
+  alt="Optimized reduced motion for loading component"
+/>
 
 We use `flatify-fade-in`, `flatify-fade-in-out` and `flatify-fade-out` animations instead of primary, also it is a good practice to limit animation steps for complex animations like what we do for [spinner loadings](/docs/components/loading):
+
+## Visual disabilities
+
+The [palette](/docs/overview/colors) is wide enough to handle basic functionalities, it is up to you to consider using [the best practices for color-blind users](https://www.smashingmagazine.com/2016/06/improving-color-accessibility-for-color-blind-users/) while designing.
+
+### Color blindness simulation
+
+Firefox has a great [accessibility panel](https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector/Simulation) that simulates [diffrent types of color blindness](https://www.color-blindness.com/types-of-color-blindness/), you can easily check contrast issues and fix them besides other helpful tools like keyboard and text labels checker.
+
+<Picture
+  spacing="1.5em"
+  background="white"
+  src="/flatifycss/img/docs/a11y/color-normal.jpg"
+  alt="Visual disabilities - Normal"
+  desc="Normal"
+/>
+<Picture
+  spacing="1.5em"
+  background="white"
+  src="/flatifycss/img/docs/a11y/color-no-red.jpg"
+  alt="Visual disabilities - No red color"
+  desc="No red color (Protanopia)"
+/>
+<Picture
+  spacing="1.5em"
+  background="white"
+  src="/flatifycss/img/docs/a11y/color-no-green.jpg"
+  alt="Visual disabilities - No green color"
+  desc="No green color (Deuteranopia)"
+/>
+<Picture
+  spacing="1.5em"
+  background="white"
+  src="/flatifycss/img/docs/a11y/color-no-blue.jpg"
+  alt="Visual disabilities - No blue color"
+  desc="No blue color (Tritanopia)"
+/>
+<Picture
+  spacing="1.5em"
+  background="white"
+  src="/flatifycss/img/docs/a11y/no-color.jpg"
+  alt="Visual disabilities - No color"
+  desc="No color"
+/>
+<Picture
+  spacing="1.5em"
+  background="white"
+  src="/flatifycss/img/docs/a11y/color-contrast-loss.jpg"
+  alt="Visual disabilities - Constrast loss"
+  desc="Constrast loss"
+/>
+
+### High contrast
+
+FlatifyCSS colors contrast is not scored 100% you can create a special version for people with contrast loss issues (high contrast) by tweaking some percents. For example, here is the blue color variables inside `_config.scss` file:
+
+```scss title="_config.scss"
+$BLUE: #1cb0f6;
+$BLUE_LIGHT: tint($BLUE, 40%);
+$BLUE_DARK: shade($BLUE, 15%);
+$BLUE_DARKER: shade($BLUE, 50%);
+```
+
+And what is looks like:
+
+<img
+  style={{ marginBottom: 20 }}
+  width="250"
+  src="/flatifycss/img/docs/a11y/default-contrast.png"
+  alt="Default contrast button"
+/>
+
+First with [Coolors](https://coolors.co/1cb0f6), find the base color shades then choose the darker shade of it and increase the `shade()` and `tint()` value as percent.
+
+```scss title="_config.scss"
+$BLUE: #0884bd;
+$BLUE_LIGHT: tint($BLUE, 60%);
+$BLUE_DARK: shade($BLUE, 50%);
+$BLUE_DARKER: shade($BLUE, 70%);
+```
+
+The result will be:
+
+<img
+  style={{ marginBottom: 20 }}
+  width="250"
+  src="/flatifycss/img/docs/a11y/high-contrast.png"
+  alt="High contrast button"
+/>
+
+### Anchors
+
+By default FlatifyCSS anchors and [link buttons](/docs/components/buttons/button#buttons-priority) do not have borders because of designerish reasons, but if your audience is specific or you want to have a more accessible website you can change anchors basic styles with the `_config.scss` file.  
+Default styles for anchors are these:
+
+```scss title="_config.scss"
+// color
+$LINK_COLOR: $ACCENT_COLOR;
+$LINK_COLOR_HOVER: $ACCENT_COLOR_LIGHT;
+$LINK_COLOR_FOCUS: $ACCENT_COLOR_DARK;
+// text-decoration
+$LINK_DECORATION: none;
+$LINK_DECORATION_HOVER: underline 0.125em currentColor;
+$LINK_DECORATION_FOCUS: none;
+```
+
+A typical link for a user with the contrast loss issue will be hard to find:
+
+<Picture spacing="1.5em" src="/flatifycss/img/docs/a11y/link-default.png" alt="Default link" />
+
+Nonetheless, we can customize links `color` and `text-decoration` to be more accessible: 
+
+```scss title="_config.scss"
+// color
+$LINK_COLOR: $ACCENT_COLOR_DARK;
+$LINK_COLOR_HOVER: $ACCENT_COLOR;
+$LINK_COLOR_FOCUS: $ACCENT_COLOR_LIGHT;
+// text-decoration
+$LINK_DECORATION: underline 0.125em currentColor;
+$LINK_DECORATION_HOVER: underline 0.125em currentColor;
+$LINK_DECORATION_FOCUS: underline 0.125em currentColor;
+```
+
+The result is:
+<Picture spacing="1.5em" src="/flatifycss/img/docs/a11y/link-custom.png" alt="Custom link" />

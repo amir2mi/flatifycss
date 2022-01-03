@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-17
+ * FlatifyCSS version 1.0.3-18
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -1276,10 +1276,10 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .two-layer-button .secondary-text {
   transition: all var(--flatify__simple-transition) 0.1s;
 }
-.two-layer-button:hover:before, .two-layer-button:focus:before {
+.two-layer-button:hover:before, .two-layer-button:focus-visible:before {
   --flatify__overlay-layer-opacity: 1;
 }
-.two-layer-button:hover .secondary-text, .two-layer-button:focus .secondary-text {
+.two-layer-button:hover .secondary-text, .two-layer-button:focus-visible .secondary-text {
   opacity: 1;
   -webkit-animation: var(--flatify__two-layer-button-animation-show);
           animation: var(--flatify__two-layer-button-animation-show);
