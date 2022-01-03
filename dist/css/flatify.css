@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-16
+ * FlatifyCSS version 1.0.3-17
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -1285,6 +1285,37 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
           animation: var(--flatify__two-layer-button-animation-show);
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
+}
+
+.add-button {
+  position: relative;
+  width: 1.2em;
+  height: 1.2em;
+  background: transparent;
+  border: none;
+}
+.add-button:before, .add-button:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: max(2px, 0.18em);
+  margin: auto;
+  background: currentColor;
+  border-radius: var(--flatify__border-radius);
+  will-change: transform;
+  transition: transform var(--flatify__simple-transition);
+}
+.add-button:not(.active):before {
+  transform: rotate(90deg);
+}
+.add-button.active:before {
+  transform: rotate(0);
+}
+.add-button.active:after {
+  transform: rotate(-180deg);
 }
 
 .hamburger {

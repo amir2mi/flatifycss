@@ -1,0 +1,38 @@
+.add-button {
+  position: relative;
+  width: 1.2em;
+  height: 1.2em;
+  background: transparent;
+  border: none;
+
+  &:before,
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: max(2px, 0.18em);
+    margin: auto;
+    background: currentColor;
+    border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+    will-change: transform;
+    transition: transform var(--#{$CSS_VAR_PFX}simple-transition);
+  }
+
+  &:not(.active) {
+    &:before {
+      transform: rotate(90deg);
+    }
+  }
+
+  &.active {
+    &:before {
+      transform: rotate(0);
+    }
+    &:after {
+      transform: rotate(-180deg);
+    }
+  }
+}
