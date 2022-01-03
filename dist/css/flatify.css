@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-15
+ * FlatifyCSS version 1.0.3-16
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -1289,8 +1289,8 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 
 .hamburger {
   position: relative;
-  width: 2em;
-  height: 2em;
+  width: 1.2em;
+  height: 1.2em;
   background: transparent;
   border: none;
 }
@@ -1298,18 +1298,18 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   content: " ";
   position: absolute;
   left: 0;
-  height: 0.25em;
+  height: max(2px, 0.18em);
   background: currentColor;
   border-radius: var(--flatify__border-radius);
   will-change: width, transform;
   transition: transform var(--flatify__simple-transition), width var(--flatify__simple-transition);
 }
 .hamburger:not(.active):before {
-  top: 0.5em;
+  top: 0.25em;
   width: 100%;
 }
 .hamburger:not(.active):after {
-  bottom: 0.5em;
+  bottom: 0.25em;
   width: 75%;
 }
 .hamburger:not(.active):hover:before, .hamburger:not(.active):focus:before {
