@@ -19,7 +19,7 @@
     transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
   }
 
-  // the arrow should space when there is text
+  // the arrow should have a side space when there is text
   &:not(:empty) {
     &:after {
       @if $IS_LTR {
@@ -30,6 +30,7 @@
     }
   }
 
+  // default is bottom arrow
   &.arrow-flip:after {
     transform: rotate(180deg);
   }
