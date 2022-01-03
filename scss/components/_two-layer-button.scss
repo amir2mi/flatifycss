@@ -31,7 +31,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     &:before {
       --#{$CSS_VAR_PFX}overlay-layer-opacity: 1;
     }
