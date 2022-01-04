@@ -20,12 +20,15 @@
     border-radius: 1em;
 
     .accordion-item {
-      --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}accordion-txt-color);
-      --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}accordion-bg-color);
-      --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}accordion-border-color);
       color: var(--#{$CSS_VAR_PFX}local-txt-color);
       background: var(--#{$CSS_VAR_PFX}local-bg-color);
       border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+      
+      &[class*="style-"] {
+        --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}accordion-txt-color);
+        --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}accordion-bg-color);
+        --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}accordion-border-color);
+      }
 
       &:last-child {
         box-shadow: inset 0 -0.125em 0 var(--#{$CSS_VAR_PFX}local-border-color);

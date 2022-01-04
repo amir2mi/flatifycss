@@ -156,7 +156,16 @@ Or set custom animations:
 `--flatify__tab-animation-hide`
 
 :::danger Do not use `none` for animations!
-Never use `none` for these kinds of animations, because FlatifyCSS JavaScript listens to [animationend event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationend_event), so if you set `none` there won't be an animation, it means `animationend` is not going to be triggered. If you want to disable an animation just set `animation-duration` to `0s`.
+Never use `none` for these kinds of animations, because FlatifyCSS JavaScript listens to [animationend event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationend_event), so if you set `none` there won't be an animation, it means `animationend` is not going to be triggered. If you want to disable an animation just set `animation-duration` to `0s`.  
+The example could be:
+
+```css title="style.css"
+.no-animation-accordion {
+  --flatify__tab-animation-show: flatify-fade-in 0s;
+  --flatify__tab-animation-hide: flatify-fade-out 0s;
+}
+```
+
 :::
 
 ### Animations example
