@@ -1,0 +1,32 @@
+%dark-mode {
+  // lighter primary colors
+  @each $name, $colors in $PALETTE {
+    $color: map-get($colors, "primary");
+    --#{$CSS_VAR_PFX + 'color-' + $name + "-" + 'primary'}: #{tint($color, 15%)};
+  }
+
+  // increase brightness
+  --#{$CSS_VAR_PFX}hover-brightness: 110%;
+
+  // Background color
+  --#{$CSS_VAR_PFX}bg-color: #10191c !important;
+  --#{$CSS_VAR_PFX}bg-color-dark: #141f23 !important;
+  --#{$CSS_VAR_PFX}bg-color-darker: #263b43 !important;
+  --#{$CSS_VAR_PFX}bg-color-darkest: #385661 !important;
+  --#{$CSS_VAR_PFX}color-light-light: #141f23 !important;
+  --#{$CSS_VAR_PFX}color-light-primary: #10191c !important;
+  --#{$CSS_VAR_PFX}color-light-dark: #263b43 !important;
+
+  // Text color
+  --#{$CSS_VAR_PFX}txt-color: #f1f4f7;
+  --#{$CSS_VAR_PFX}txt-color-dark: #ced9e3;
+  --#{$CSS_VAR_PFX}txt-color-darker: #809cb6;
+  --#{$CSS_VAR_PFX}txt-color-inverted: #141f23;
+  --#{$CSS_VAR_PFX}color-dark-light: #f1f4f7;
+  --#{$CSS_VAR_PFX}color-dark-primary: #ced9e3;
+  --#{$CSS_VAR_PFX}color-dark-dark: #809cb6;
+}
+
+// html.dark {
+//   @extend %dark-mode;
+// }

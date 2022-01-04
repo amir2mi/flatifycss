@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-29
+ * FlatifyCSS version 1.0.3-30
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -8,6 +8,7 @@
 :root {
   --flatify__border-width: max(2px, 0.18em);
   --flatify__border-radius: 1em;
+  --flatify__hover-brightness: 95%;
   --flatify__backdrop-opacity: 0.35;
   --flatify__max-font-size: 16;
   --flatify__min-font-size: 14;
@@ -1200,11 +1201,11 @@ input[type=file]:not(.static):not(.default)::file-selector-button, .button:not(.
   outline: none !important;
 }
 .radio-button:focus + input[type=file]:not(.default)::file-selector-button, .radio-button:focus + .button, input[type=file]:not(.static):hover:not(.default)::file-selector-button, .button:not(.static):hover {
-  filter: brightness(92%);
+  filter: brightness(var(--flatify__hover-brightness));
 }
 .checkbox-button:checked + input[type=file]:not(.default)::file-selector-button, .checkbox-button:checked + .button, .radio-button:checked + input[type=file]:not(.default)::file-selector-button, .radio-button:checked + .button, input.active[type=file]:not(.default)::file-selector-button, .active.button, input[type=file]:not(.static):focus-visible:not(.default)::file-selector-button, .button:not(.static):focus-visible, input[type=file]:not(.static):active:not(.default)::file-selector-button, .button:not(.static):active {
   box-shadow: inset 0 0 0 var(--flatify__button-border-color);
-  filter: brightness(92%);
+  filter: brightness(var(--flatify__hover-brightness));
   transform: translateY(calc(var(--flatify__border-width) * 1.38));
 }
 input.outline[type=file]:not(.default)::file-selector-button, .outline.button {
@@ -1742,7 +1743,6 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .card .card-body {
   hyphens: auto;
   height: 100%;
-  filter: opacity(0.75);
 }
 .card .card-footer {
   display: flex;
@@ -2609,8 +2609,8 @@ textarea:not(.default), select:not(.default), input:not(.default) {
   will-change: filter;
   transition: all var(--flatify__simple-transition);
 }
-textarea:hover:not(.default), select:hover:not(.default), input:hover:not(.default), textarea:focus:not(.default), select:focus:not(.default), input:focus:not(.default) {
-  filter: brightness(96%);
+textarea:hover:not(:focus):not(.default), select:hover:not(:focus):not(.default), input:hover:not(:focus):not(.default) {
+  filter: brightness(var(--flatify__hover-brightness));
 }
 textarea:focus:not(.default), select:focus:not(.default), input:focus:not(.default) {
   border-color: var(--flatify__form-element-border-color__focus) !important;
@@ -2675,7 +2675,7 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
 .radio-wrapper:focus-within .check,
 .toggle-wrapper:hover .check,
 .toggle-wrapper:focus-within .check {
-  filter: brightness(95%);
+  filter: brightness(var(--flatify__hover-brightness));
 }
 .checkbox-wrapper.valid .check,
 .radio-wrapper.valid .check,
@@ -2888,7 +2888,7 @@ input[type=file]:not(.default)::file-selector-button {
   font-size: 0.9em;
   color: inherit;
   background: inherit !important;
-  filter: brightness(92%);
+  filter: brightness(var(--flatify__hover-brightness));
   vertical-align: baseline;
   margin: 0 0 0 0.75em;
 }
@@ -3001,10 +3001,10 @@ input[type=range]:not(.default)::-webkit-slider-thumb {
   transition: all var(--flatify__simple-transition);
 }
 input[type=range]:not(.default):hover::-moz-range-thumb {
-  filter: brightness(90%);
+  filter: brightness(var(--flatify__hover-brightness));
 }
 input[type=range]:not(.default):hover::-webkit-slider-thumb {
-  filter: brightness(90%);
+  filter: brightness(var(--flatify__hover-brightness));
 }
 @media (prefers-reduced-motion: no-preference) {
   input[type=range]:not(.default):active::-moz-range-thumb {
@@ -3016,11 +3016,11 @@ input[type=range]:not(.default):hover::-webkit-slider-thumb {
 }
 input[type=range]:not(.default):focus::-moz-range-thumb {
   border-color: var(--flatify__form-element-border-color__focus);
-  filter: brightness(90%);
+  filter: brightness(var(--flatify__hover-brightness));
 }
 input[type=range]:not(.default):focus::-webkit-slider-thumb {
   border-color: var(--flatify__form-element-border-color__focus);
-  filter: brightness(90%);
+  filter: brightness(var(--flatify__hover-brightness));
 }
 
 select:not(.default) {
@@ -4368,18 +4368,13 @@ body .tab-panel.show {
   }
 
   @keyframes flatify-pulse {
-    0% {
+    0%, 100% {
       transform: scale(1.25);
       opacity: 0.2;
     }
     40% {
       transform: scale(1.25);
       opacity: 0.5;
-    }
-    100% {
-      opacity: 0;
-      transform: scale(1.25);
-      opacity: 0.2;
     }
   }
 }

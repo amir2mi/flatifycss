@@ -39,7 +39,7 @@
 
   .radio-button:focus + &,
   &:not(.static):hover {
-    filter: brightness(92%);
+    filter: brightness(var(--#{$CSS_VAR_PFX}hover-brightness));
   }
 
   // active state
@@ -49,7 +49,7 @@
   &:not(.static):focus-visible,
   &:not(.static):active {
     box-shadow: inset 0 0 0 var(--#{$CSS_VAR_PFX}button-border-color);
-    filter: brightness(92%);
+    filter: brightness(var(--#{$CSS_VAR_PFX}hover-brightness));
     transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
   }
 

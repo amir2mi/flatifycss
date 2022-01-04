@@ -90,9 +90,8 @@
   will-change: filter;
   transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
-  &:hover,
-  &:focus {
-    filter: brightness(96%);
+  &:hover:not(:focus) {
+    filter: brightness(var(--#{$CSS_VAR_PFX}hover-brightness));
   }
 
   &:focus {
@@ -172,7 +171,7 @@
   &:hover,
   &:focus-within {
     .check {
-      filter: brightness(95%);
+      filter: brightness(var(--#{$CSS_VAR_PFX}hover-brightness));
     }
   }
 

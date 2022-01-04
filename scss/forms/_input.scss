@@ -214,7 +214,7 @@ input[type="file"]:not(.default) {
     font-size: 0.9em;
     color: inherit;
     background: inherit !important;
-    filter: brightness(92%);
+    filter: brightness(var(--#{$CSS_VAR_PFX}hover-brightness));
     vertical-align: baseline;
 
     @if $IS_LTR {

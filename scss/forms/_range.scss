@@ -45,11 +45,11 @@ input[type="range"]:not(.default) {
   }
 
   &:hover::-moz-range-thumb {
-    filter: brightness(90%);
+    filter: brightness(var(--#{$CSS_VAR_PFX}hover-brightness));
   }
 
   &:hover::-webkit-slider-thumb {
-    filter: brightness(90%);
+    filter: brightness(var(--#{$CSS_VAR_PFX}hover-brightness));
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -64,11 +64,11 @@ input[type="range"]:not(.default) {
 
   &:focus::-moz-range-thumb {
     border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__focus);
-    filter: brightness(90%);
+    filter: brightness(var(--#{$CSS_VAR_PFX}hover-brightness));
   }
 
   &:focus::-webkit-slider-thumb {
     border-color: var(--#{$CSS_VAR_PFX}form-element-border-color__focus);
-    filter: brightness(90%);
+    filter: brightness(var(--#{$CSS_VAR_PFX}hover-brightness));
   }
 }

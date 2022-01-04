@@ -75,18 +75,14 @@
 
   // Custom pulse animation
   @keyframes flatify-pulse {
-    0% {
+    0%,
+    100% {
       transform: scale(1.25);
       opacity: 0.2;
     }
     40% {
       transform: scale(1.25);
       opacity: 0.5;
-    }
-    100% {
-      opacity: 0;
-      transform: scale(1.25);
-      opacity: 0.2;
     }
   }
 }
