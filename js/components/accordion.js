@@ -32,9 +32,20 @@ function openAccordionItem(item) {
   collapse && collapse.classList.remove("modal-will-be-hidden");
   toggle && toggle.setAttribute("aria-expanded", "true");
 
-  // set accordion item body height to accordion-collapse
+  // set accordion item body height to accordion-collapse then remove it
   const height = item.querySelector(".accordion-body").offsetHeight;
-  collapse.style.height = `${height}px`;
+
+  requestAnimationFrame(function () {
+    collapse.style.height = 0;
+
+    requestAnimationFrame(function () {
+      collapse.style.height = `${height}px`;
+    });
+  });
+
+  setTimeout(() => {
+    collapse.style.removeProperty("height");
+  }, 200);
 }
 
 /**
@@ -53,12 +64,22 @@ function closeAccordionItem(item) {
   $(body).once("animationend", () => {
     if (collapse.classList.contains("modal-will-be-shown")) return;
 
-    collapse.style.height = 0;
-    collapse && collapse.classList.remove("modal-will-be-hidden");
+    const height = item.querySelector(".accordion-body").offsetHeight;
 
-    item.classList.remove("active");
-    addButton && addButton.classList.remove("active");
-    toggle && toggle.setAttribute("aria-expanded", "false");
+    requestAnimationFrame(function () {
+      collapse.style.height = `${height}px`;
+
+      requestAnimationFrame(function () {
+        collapse.style.height = 0;
+      });
+    });
+
+    setTimeout(() => {
+      collapse && collapse.classList.remove("modal-will-be-hidden");
+      addButton && addButton.classList.remove("active");
+      toggle && toggle.setAttribute("aria-expanded", "false");
+      item.classList.remove("active");
+    }, 200);
   });
 }
 

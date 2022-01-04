@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-19
+ * FlatifyCSS version 1.0.3-20
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -911,6 +911,10 @@ th {
   border-radius: var(--flatify__border-radius);
 }
 
+.accordion-item:not(.active) .accordion-collapse {
+  display: none;
+}
+
 .accordion-header {
   font-size: 1em;
   padding: 1em;
@@ -935,27 +939,22 @@ th {
 
 .accordion-collapse {
   overflow: hidden;
-  height: 0;
   padding: 0;
   margin: 0;
-  transition: height var(--flatify__simple-transition);
+  will-change: height;
+  transition: height 0.2s ease-in-out;
 }
 
 .accordion-body {
   padding: 1em;
 }
 
-.active .accordion-collapse {
-  height: auto;
-}
-
 .modal-will-be-shown .accordion-body {
   animation: var(--flatify__accordion-animation-show) both;
 }
 
-.accordion-item:not(.active) .accordion-body,
 .modal-will-be-hidden .accordion-body {
-  animation: var(--flatify__accordion-animation-hide) both;
+  animation: var(--flatify__accordion-animation-hide) forwards;
 }
 
 :root {

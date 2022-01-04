@@ -51,10 +51,18 @@
         addButton && addButton.classList.add("active");
         collapse && collapse.classList.add("modal-will-be-shown");
         collapse && collapse.classList.remove("modal-will-be-hidden");
-        toggle && toggle.setAttribute("aria-expanded", "true"); // set accordion item body height to accordion-collapse
+        toggle && toggle.setAttribute("aria-expanded", "true"); // set accordion item body height to accordion-collapse then remove it
 
         const height = item.querySelector(".accordion-body").offsetHeight;
-        collapse.style.height = "".concat(height, "px");
+        requestAnimationFrame(function () {
+          collapse.style.height = 0;
+          requestAnimationFrame(function () {
+            collapse.style.height = "".concat(height, "px");
+          });
+        });
+        setTimeout(() => {
+          collapse.style.removeProperty("height");
+        }, 200);
       }
       /**
        * Close given accordion item
@@ -73,11 +81,19 @@
         /* ["default"] */
         .Z)(body).once("animationend", () => {
           if (collapse.classList.contains("modal-will-be-shown")) return;
-          collapse.style.height = 0;
-          collapse && collapse.classList.remove("modal-will-be-hidden");
-          item.classList.remove("active");
-          addButton && addButton.classList.remove("active");
-          toggle && toggle.setAttribute("aria-expanded", "false");
+          const height = item.querySelector(".accordion-body").offsetHeight;
+          requestAnimationFrame(function () {
+            collapse.style.height = "".concat(height, "px");
+            requestAnimationFrame(function () {
+              collapse.style.height = 0;
+            });
+          });
+          setTimeout(() => {
+            collapse && collapse.classList.remove("modal-will-be-hidden");
+            addButton && addButton.classList.remove("active");
+            toggle && toggle.setAttribute("aria-expanded", "false");
+            item.classList.remove("active");
+          }, 200);
         });
       }
 
@@ -667,7 +683,7 @@
 
       var _helpers_truncate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(291);
       /*!
-       * FlatifyCSS version 1.0.3-19
+       * FlatifyCSS version 1.0.3-20
        * Modern flat design framework for the web — inspired by Duolingo design system.
        * Copyright 2021-2022 The FlatifyCSS Authors
        * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
