@@ -15,6 +15,10 @@
       --#{$CSS_VAR_PFX}bouncing-transition: 0s !important;
     }
 
+    .accordion-collapse {
+      transition: none !important;
+    }
+
     // Fade instead of custom animations
     // Fade In
     .dropdown,

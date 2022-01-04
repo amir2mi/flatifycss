@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-26
+ * FlatifyCSS version 1.0.3-27
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -903,6 +903,7 @@ th {
   border-radius: 1em;
 }
 .accordion.bordered .accordion-item {
+  overflow: hidden;
   color: var(--flatify__local-txt-color);
   background: var(--flatify__local-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
@@ -4996,6 +4997,9 @@ body ::after {
     --flatify__simple-transition: 0s !important;
     --flatify__long-transition: 0s !important;
     --flatify__bouncing-transition: 0s !important;
+  }
+  body .accordion-collapse {
+    transition: none !important;
   }
   body .dropdown.show,
 body .modal.show,
