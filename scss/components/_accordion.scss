@@ -2,8 +2,12 @@
   --#{$CSS_VAR_PFX}accordion-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
   --#{$CSS_VAR_PFX}accordion-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
   --#{$CSS_VAR_PFX}accordion-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
-  --#{$CSS_VAR_PFX}accordion-animation-show: flatify-fade-in 0.3s 0.1s ease-in-out;
-  --#{$CSS_VAR_PFX}accordion-animation-hide: flatify-fade-out 0.2s ease-in-out;
+
+  --#{$CSS_VAR_PFX}accordion-animation-show-duration: 0.3s;
+  --#{$CSS_VAR_PFX}accordion-animation-hide-duration: 0.2s;
+  --#{$CSS_VAR_PFX}accordion-animation-show: flatify-fade-in var(--#{$CSS_VAR_PFX}accordion-animation-show-duration)
+    0.1s ease-in-out;
+  --#{$CSS_VAR_PFX}accordion-animation-hide: flatify-fade-out var(--#{$CSS_VAR_PFX}accordion-animation-hide) ease-in-out;
 }
 
 .accordion {
@@ -23,7 +27,7 @@
       color: var(--#{$CSS_VAR_PFX}local-txt-color);
       background: var(--#{$CSS_VAR_PFX}local-bg-color);
       border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-      
+
       &[class*="style-"] {
         --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}accordion-txt-color);
         --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}accordion-bg-color);

@@ -316,124 +316,6 @@ As we call it "accordion" there must not be more than one item expanded item at 
 <div class="accordion bordered expendable">...</div>
 ```
 
-## Accordion animations
-
-There are two types of animation for each accordion item: Show and hide. The show animation is triggered when the item is expanded and the hide animation is triggered when the item is collapsed.  
-Here is the CSS variables to change them:
-
-`--flatify__accordion-animation-show`  
-`--flatify__accordion-animation-hide`
-
-The default animation is set to fade in and fade out, [the predefined animations](/docs/helpers/animation) of FlatifyCSS.
-
-Here is an example of changing the animations:
-
-<PreviewBox
-  height="310px"
-  children='
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
-		<title>Accordion</title>
-		<style>
-			.accordion{
-				max-width: 820px;
-				margin: 0 auto;
-			}
-			.my-custom-animation{
-				--flatify__accordion-animation-show: flatify-blow-in 0.5s 0.2s;
-				--flatify__accordion-animation-hide: flatify-blow-out 0.5s;
-			}
-		</style>
-        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
-    </head>
-    <body class="flex-column-center">
-		<div class="accordion bordered my-custom-animation">
-			<div class="accordion-item">
-				<h2 class="accordion-header">
-				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-1">
-					Lorem ipsum dolor sit amet
-					<span class="add-button"></span>
-				</button>
-				</h2>
-				<div id="accordion-1" class="accordion-collapse">
-				<div class="accordion-body">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias architecto quae tenetur voluptatum ipsa,
-					esse doloremque numquam accusantium pariatur facere sunt earum aut iure deserunt id illum ipsam repudiandae
-					non?
-				</div>
-				</div>
-			</div>
-			<div class="accordion-item">
-				<h2 class="accordion-header">
-				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-2">
-					Far far away
-					<span class="add-button"></span>
-				</button>
-				</h2>
-				<div id="accordion-2" class="accordion-collapse">
-				<div class="accordion-body">
-					Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-					blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-					ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
-					paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful
-					Pointing has no control about the blind texts it is an almost unorthographic life One day however a small
-					line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-					advised her not to do
-				</div>
-				</div>
-			</div>
-			<div class="accordion-item">
-				<h2 class="accordion-header">
-				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-2">
-					The Sorrows of Young Werther
-					<span class="add-button"></span>
-				</button>
-				</h2>
-				<div id="accordion-2" class="accordion-collapse">
-				<div class="accordion-body">
-					<h3 class="size-lg">Book I</h3>
-					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I
-					enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for
-					the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere
-					tranquil existence, that I neglect my talents.
-				</div>
-				</div>
-			</div>
-    	</div>
-    </body>
-</html>
-'
-/>
-
-```html title="index.html"
-<div class="accordion bordered my-custom-animation">...</div>
-```
-
-```css title="style.css"
-.my-custom-animation {
-  --flatify__accordion-animation-show: flatify-blow-in 0.5s 0.2s;
-  --flatify__accordion-animation-hide: flatify-blow-out 0.5s;
-}
-```
-
-:::danger Do not use `none` for animations!
-Never use `none` for these kinds of animations, because FlatifyCSS JavaScript listens to [animationend event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationend_event), so if you set `none` there won't be an animation, it means `animationend` is not going to be triggered. If you want to disable an animation just set `animation-duration` to `0s`.  
-The example could be:
-
-```css title="style.css"
-.no-animation-accordion {
-  --flatify__accordion-animation-show: flatify-fade-in 0s;
-  --flatify__accordion-animation-hide: flatify-fade-out 0s;
-}
-```
-
-:::
-
 ## Sizes
 
 To change the accordion size use [size setter classes](/docs/helpers/size-setters).
@@ -765,7 +647,222 @@ There are helper classes for styling elements like accordions, first read about 
 />
 
 ```html title="index.html"
-<div class="accordion bordered size-sm">...</div>
-<div class="accordion bordered size-lg">...</div>
-<div class="accordion bordered size-2x">...</div>
+<!-- style the whole accordion -->
+<div class="accordion bordered style-dark">...</div>
+
+<!-- style each accordion item -->
+<div class="accordion bordered">
+  <div class="accordion-item style-red">...</div>
+  <div class="accordion-item style-orange">...</div>
+  <div class="accordion-item style-yellow">...</div>
+</div>
 ```
+
+## Animations
+
+There are two types of animation for each accordion item: Show and hide. The show animation is triggered when the item is expanded and the hide animation is triggered when the item is collapsed.  
+Here is the CSS variables to change them:
+
+`--flatify__accordion-animation-show`  
+`--flatify__accordion-animation-hide`
+
+The default animation is set to fade in and fade out, [the predefined animations](/docs/helpers/animation) of FlatifyCSS.
+
+Here is an example of changing the animations:
+
+<PreviewBox
+  height="310px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Accordion</title>
+		<style>
+			.accordion{
+				max-width: 820px;
+				margin: 0 auto;
+			}
+			.my-custom-animation{
+				--flatify__accordion-animation-show: flatify-blow-in 0.5s 0.2s;
+				--flatify__accordion-animation-hide: flatify-blow-out 0.5s;
+			}
+		</style>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-column-center">
+		<div class="accordion bordered my-custom-animation">
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-1">
+					Lorem ipsum dolor sit amet
+					<span class="add-button"></span>
+				</button>
+				</h2>
+				<div id="accordion-1" class="accordion-collapse">
+				<div class="accordion-body">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias architecto quae tenetur voluptatum ipsa,
+					esse doloremque numquam accusantium pariatur facere sunt earum aut iure deserunt id illum ipsam repudiandae
+					non?
+				</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-2">
+					Far far away
+					<span class="add-button"></span>
+				</button>
+				</h2>
+				<div id="accordion-2" class="accordion-collapse">
+				<div class="accordion-body">
+					Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+					blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+					ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
+					paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful
+					Pointing has no control about the blind texts it is an almost unorthographic life One day however a small
+					line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
+					advised her not to do
+				</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-2">
+					The Sorrows of Young Werther
+					<span class="add-button"></span>
+				</button>
+				</h2>
+				<div id="accordion-2" class="accordion-collapse">
+				<div class="accordion-body">
+					<h3 class="size-lg">Book I</h3>
+					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I
+					enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for
+					the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere
+					tranquil existence, that I neglect my talents.
+				</div>
+				</div>
+			</div>
+    	</div>
+    </body>
+</html>
+'
+/>
+
+```html title="index.html"
+<div class="accordion bordered my-custom-animation">...</div>
+```
+
+```css title="style.css"
+.my-custom-animation {
+  --flatify__accordion-animation-show: flatify-blow-in 0.5s 0.2s;
+  --flatify__accordion-animation-hide: flatify-blow-out 0.5s;
+}
+```
+
+:::danger Do not use `none` for animations!
+Never use `none` for these kinds of animations, because FlatifyCSS JavaScript listens to [animationend event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/animationend_event), so if you set `none` there won't be an animation, it means `animationend` is not going to be triggered. If you want to disable an animation just set `animation-duration` to `0s`.  
+The example could be:
+
+```css title="style.css"
+.no-animation-accordion {
+  --flatify__accordion-animation-show: flatify-fade-in 0s;
+  --flatify__accordion-animation-hide: flatify-fade-out 0s;
+}
+```
+
+:::
+
+## Customization
+
+More than customizing animations there are CSS variables to change the base colors of accordions:
+
+`--flatify__accordion-txt-color`  
+`--flatify__accordion-bg-color`  
+`--flatify__accordion-border-color`
+
+<PreviewBox
+  height="250px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Accordion</title>
+		<style>
+			.accordion{
+				max-width: 820px;
+				margin: 1em auto 0;
+			}
+			.custom-accordion{
+				--flatify__accordion-txt-color: #F5F7FA;
+				--flatify__accordion-bg-color: #AA8E69;
+				--flatify__accordion-border-color: #F6BB42;
+			}
+		</style>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-column-center">
+		<div class="accordion bordered custom-accordion">
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-1">
+					Lorem ipsum dolor sit amet
+					<span class="add-button"></span>
+				</button>
+				</h2>
+				<div id="accordion-1" class="accordion-collapse">
+				<div class="accordion-body">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias architecto quae tenetur voluptatum ipsa,
+					esse doloremque numquam accusantium pariatur facere sunt earum aut iure deserunt id illum ipsam repudiandae
+					non?
+				</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-2">
+					Far far away
+					<span class="add-button"></span>
+				</button>
+				</h2>
+				<div id="accordion-2" class="accordion-collapse">
+				<div class="accordion-body">
+					Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+					blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+					ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
+					paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful
+					Pointing has no control about the blind texts it is an almost unorthographic life One day however a small
+					line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
+					advised her not to do
+				</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-2">
+					The Sorrows of Young Werther
+					<span class="add-button"></span>
+				</button>
+				</h2>
+				<div id="accordion-2" class="accordion-collapse">
+				<div class="accordion-body">
+					<h3 class="size-lg">Book I</h3>
+					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I
+					enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for
+					the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere
+					tranquil existence, that I neglect my talents.
+				</div>
+				</div>
+			</div>
+    	</div>
+    </body>
+</html>
+'
+/>
