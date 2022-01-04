@@ -1,0 +1,83 @@
+---
+title: Accordion
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Accordions are vertically collapsible components that contain content inside, they come in handy for a lot of situations as an example the list of FAQ or small screen devices submenus.
+
+## A simple accordion
+
+To create an accordion check the below example out, you need to create an exact structure that can be customized easily.
+
+<PreviewBox
+  height="310px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Tabs</title>
+        <script src="https://raw.githack.com/amir2mi/flatifycss/master/dist/js/flatify-min.js"></script>
+    </head>
+    <body class="flex-column-center">
+		<div class="accordion">
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-1">
+					Lorem ipsum dolor sit amet
+					<span class="add-button"></span>
+				</button>
+				</h2>
+				<div id="accordion-1" class="accordion-collapse">
+				<div class="accordion-body">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias architecto quae tenetur voluptatum ipsa,
+					esse doloremque numquam accusantium pariatur facere sunt earum aut iure deserunt id illum ipsam repudiandae
+					non?
+				</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-2">
+					Far far away
+					<span class="add-button"></span>
+				</button>
+				</h2>
+				<div id="accordion-2" class="accordion-collapse">
+				<div class="accordion-body">
+					Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+					blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+					ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
+					paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful
+					Pointing has no control about the blind texts it is an almost unorthographic life One day however a small
+					line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
+					advised her not to do
+				</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+				<button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-2">
+					The Sorrows of Young Werther
+					<span class="add-button"></span>
+				</button>
+				</h2>
+				<div id="accordion-2" class="accordion-collapse">
+				<div class="accordion-body">
+					<h3 class="size-lg">Book I</h3>
+					A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I
+					enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for
+					the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere
+					tranquil existence, that I neglect my talents.
+				</div>
+				</div>
+			</div>
+    	</div>
+    </body>
+</html>
+'
+/>

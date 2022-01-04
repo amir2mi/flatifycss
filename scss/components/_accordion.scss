@@ -12,6 +12,7 @@
   --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}accordion-border-color);
   display: flex;
   flex-direction: column;
+  width: 100%;
   color: var(--#{$CSS_VAR_PFX}local-txt-color);
   background: var(--#{$CSS_VAR_PFX}local-bg-color);
 
