@@ -683,7 +683,7 @@
 
       var _helpers_truncate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(291);
       /*!
-       * FlatifyCSS version 1.0.3-27
+       * FlatifyCSS version 1.0.3-29
        * Modern flat design framework for the web — inspired by Duolingo design system.
        * Copyright 2021-2022 The FlatifyCSS Authors
        * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -751,31 +751,17 @@
         (0, _utils_vent__WEBPACK_IMPORTED_MODULE_0__
         /* ["default"] */
         .Z)(document).on("click", ".toggle-truncate", function (e) {
-          let text;
-
           if (e.target.classList.contains("truncate")) {
             // if truncate class was added directly to the element
-            text = e.target;
+            e.target.classList.toggle("show-text");
           } else {
             // if there is a target that should be truncated
             const target = e.target.getAttribute("data-truncation-target");
-
-            if (target && document.querySelector(target)) {
-              text = document.querySelector(target);
-            } else {
-              // if target was not found
-              return (0, _utils_logger__WEBPACK_IMPORTED_MODULE_1__
-              /* ["default"] */
-              .Z)("error", "No target found for truncation, try to add or edit 'data-truncation-target' attribute of '.toggle-truncate'");
-            }
-          }
-
-          if (text.classList.contains("show-text")) {
-            // remove class to truncate text
-            text.classList.remove("show-text");
-          } else {
-            // add class to show full text
-            text.classList.add("show-text");
+            const texts = document.querySelectorAll(target);
+            if (!texts.length) return (0, _utils_logger__WEBPACK_IMPORTED_MODULE_1__
+            /* ["default"] */
+            .Z)("error", "No target found for '".concat(target, "' to be truncated"));
+            texts.forEach(text => text.classList.toggle("show-text"));
           }
         });
       });
