@@ -7,7 +7,8 @@
   --#{$CSS_VAR_PFX}accordion-animation-hide-duration: 0.2s;
   --#{$CSS_VAR_PFX}accordion-animation-show: flatify-fade-in var(--#{$CSS_VAR_PFX}accordion-animation-show-duration)
     0.1s ease-in-out;
-  --#{$CSS_VAR_PFX}accordion-animation-hide: flatify-fade-out var(--#{$CSS_VAR_PFX}accordion-animation-hide) ease-in-out;
+  --#{$CSS_VAR_PFX}accordion-animation-hide: flatify-fade-out var(--#{$CSS_VAR_PFX}accordion-animation-hide-duration)
+    ease-in-out;
 }
 
 .accordion {
