@@ -1,5 +1,6 @@
 .add-button {
   position: relative;
+  display: inline-block;
   width: 1.2em;
   height: 1.2em;
   background: transparent;
@@ -13,7 +14,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: max(2px, 0.18em);
+    height: max(3px, 0.18em);
     margin: auto;
     background: currentColor;
     border-radius: var(--#{$CSS_VAR_PFX}border-radius);
@@ -26,7 +27,7 @@
       transform: rotate(90deg);
     }
   }
-  
+
   &.active {
     &:before {
       transform: rotate(0);

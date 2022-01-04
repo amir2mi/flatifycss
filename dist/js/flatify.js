@@ -10,6 +10,98 @@
 
   var __webpack_modules__ = {
     /***/
+    24:
+    /***/
+    function (__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
+      /* harmony import */
+      var _utils_vent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(641);
+      /* harmony import */
+
+
+      var _utils_logger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(235);
+      /**
+       * Open given accordion item and if the accordion is not "expendable", close others
+       * @param {Object} item
+       */
+
+
+      function openAccordionItem(item) {
+        // get the [.accordion] which wraps accordion items
+        const accordion = item.closest(".accordion");
+        if (!accordion) return (0, _utils_logger__WEBPACK_IMPORTED_MODULE_1__
+        /* ["default"] */
+        .Z)("error", "Accordion item is not inside '.accordion'"); // "expendable" means there can be more than one active accordion item
+        // if it is not "expendable", first close all accordion items inside parent
+
+        if (!accordion.classList.contains("expendable")) {
+          const items = accordion.querySelectorAll(".accordion-item");
+          if (!items) return (0, _utils_logger__WEBPACK_IMPORTED_MODULE_1__
+          /* ["default"] */
+          .Z)("error", "There is no accordion item inside '.accordion'"); // hide each item
+
+          items.forEach(item => {
+            closeAccordionItem(item);
+          });
+        }
+
+        const toggle = item.querySelector(".accordion-toggle");
+        const collapse = item.querySelector(".accordion-collapse");
+        const addButton = toggle.querySelector(".add-button");
+        item.classList.add("active");
+        addButton && addButton.classList.add("active");
+        collapse && collapse.classList.add("modal-will-be-shown");
+        collapse && collapse.classList.remove("modal-will-be-hidden");
+        toggle && toggle.setAttribute("aria-expanded", "true"); // set accordion item body height to accordion-collapse
+
+        const height = item.querySelector(".accordion-body").offsetHeight;
+        collapse.style.height = "".concat(height, "px");
+      }
+      /**
+       * Close given accordion item
+       * @param {Object} item
+       */
+
+
+      function closeAccordionItem(item) {
+        const toggle = item.querySelector(".accordion-toggle");
+        const collapse = item.querySelector(".accordion-collapse");
+        const body = item.querySelector(".accordion-body");
+        const addButton = toggle.querySelector(".add-button");
+        collapse && collapse.classList.add("modal-will-be-hidden");
+        collapse && collapse.classList.remove("modal-will-be-shown");
+        (0, _utils_vent__WEBPACK_IMPORTED_MODULE_0__
+        /* ["default"] */
+        .Z)(body).once("animationend", () => {
+          if (collapse.classList.contains("modal-will-be-shown")) return;
+          collapse.style.height = 0;
+          collapse && collapse.classList.remove("modal-will-be-hidden");
+          item.classList.remove("active");
+          addButton && addButton.classList.remove("active");
+          toggle && toggle.setAttribute("aria-expanded", "false");
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        (0, _utils_vent__WEBPACK_IMPORTED_MODULE_0__
+        /* ["default"] */
+        .Z)(document).on("click", ".accordion-toggle", function () {
+          // get the current accordion item
+          const accordionItem = this.closest(".accordion-item");
+          if (!accordionItem) return (0, _utils_logger__WEBPACK_IMPORTED_MODULE_1__
+          /* ["default"] */
+          .Z)("error", "Accordion toggle button should be inside '.accordion-item'");
+
+          if (accordionItem.classList.contains("active")) {
+            closeAccordionItem(accordionItem);
+          } else {
+            openAccordionItem(accordionItem);
+          }
+        });
+      });
+      /***/
+    },
+
+    /***/
     2:
     /***/
     function (__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
@@ -27,7 +119,10 @@
         .Z)(document).on("click", ".close-button", function () {
           const wrapper = this.closest(".alert"); // return if close button does not have wrapper with [.alert] class
 
-          if (!wrapper) return; // add animation class to remove the alert
+          if (!wrapper) return (0, _utils_logger__WEBPACK_IMPORTED_MODULE_1__
+          /* ["default"] */
+          .Z)("error", "Alert close button should be inside '.alert'");
+          ; // add animation class to remove the alert
 
           wrapper.classList.add("alert-will-be-removed"); // after delay remove alert from DOM
 
@@ -546,29 +641,33 @@
     /***/
     function (__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
       /* harmony import */
-      var _components_alert__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+      var _components_accordion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
       /* harmony import */
 
 
-      var _components_dropdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(82);
+      var _components_alert__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
       /* harmony import */
 
 
-      var _components_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(619);
+      var _components_dropdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(82);
       /* harmony import */
 
 
-      var _components_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(752);
+      var _components_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(619);
       /* harmony import */
 
 
-      var _forms_show_password_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(277);
+      var _components_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(752);
       /* harmony import */
 
 
-      var _helpers_truncate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(291);
+      var _forms_show_password_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(277);
+      /* harmony import */
+
+
+      var _helpers_truncate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(291);
       /*!
-       * FlatifyCSS version 1.0.3-18
+       * FlatifyCSS version 1.0.3-19
        * Modern flat design framework for the web — inspired by Duolingo design system.
        * Copyright 2021-2022 The FlatifyCSS Authors
        * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -1289,6 +1388,10 @@
   /******/
   // This entry module is referenced by other modules so it can't be inlined
 
+  /******/
+
+
+  __webpack_require__(24);
   /******/
 
 

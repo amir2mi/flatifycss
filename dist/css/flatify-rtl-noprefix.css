@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-18
+ * FlatifyCSS version 1.0.3-19
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -868,6 +868,97 @@ th {
 }
 
 :root {
+  --flatify__accordion-txt-color: var(--flatify__txt-color);
+  --flatify__accordion-bg-color: var(--flatify__bg-color);
+  --flatify__accordion-border-color: var(--flatify__bg-color-darker);
+  --flatify__accordion-animation-show: flatify-fade-in 0.3s 0.1s ease-in-out;
+  --flatify__accordion-animation-hide: flatify-fade-out 0.2s ease-in-out;
+}
+
+.accordion {
+  --flatify__local-txt-color: var(--flatify__accordion-txt-color);
+  --flatify__local-bg-color: var(--flatify__accordion-bg-color);
+  --flatify__local-border-color: var(--flatify__accordion-border-color);
+  display: flex;
+  flex-direction: column;
+  color: var(--flatify__local-txt-color);
+  background: var(--flatify__local-bg-color);
+}
+.accordion.bordered {
+  border-radius: 1em;
+}
+.accordion.bordered .accordion-item {
+  --flatify__local-txt-color: var(--flatify__accordion-txt-color);
+  --flatify__local-bg-color: var(--flatify__accordion-bg-color);
+  --flatify__local-border-color: var(--flatify__accordion-border-color);
+  color: var(--flatify__local-txt-color);
+  background: var(--flatify__local-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+}
+.accordion.bordered .accordion-item:last-child {
+  box-shadow: inset 0 -0.125em 0 var(--flatify__local-border-color);
+}
+.accordion.bordered .accordion-item:not(.active) .accordion-header, .accordion.bordered .accordion-item:not(:last-child) {
+  border-bottom: none;
+}
+.accordion.bordered .accordion-item:first-child:not(:last-child) {
+  border-radius: var(--flatify__border-radius) var(--flatify__border-radius) 0 0;
+}
+.accordion.bordered .accordion-item:last-child:not(:first-child) {
+  border-radius: 0 0 var(--flatify__border-radius) var(--flatify__border-radius);
+}
+.accordion.bordered .accordion-item:first-child:last-child {
+  border-radius: var(--flatify__border-radius);
+}
+
+.accordion-header {
+  font-size: 1em;
+  padding: 1em;
+  margin: 0;
+  border-bottom: var(--flatify__border-width) solid var(--flatify__local-border-color);
+}
+.accordion-header .accordion-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: initial;
+  width: 100%;
+  height: 100%;
+  color: currentColor;
+  background: transparent;
+  border: none;
+}
+.accordion-header .add-button {
+  font-size: 0.75em;
+  opacity: 0.75;
+}
+
+.accordion-collapse {
+  overflow: hidden;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  transition: height var(--flatify__simple-transition);
+}
+
+.accordion-body {
+  padding: 1em;
+}
+
+.active .accordion-collapse {
+  height: auto;
+}
+
+.modal-will-be-shown .accordion-body {
+  animation: var(--flatify__accordion-animation-show) both;
+}
+
+.accordion-item:not(.active) .accordion-body,
+.modal-will-be-hidden .accordion-body {
+  animation: var(--flatify__accordion-animation-hide) both;
+}
+
+:root {
   --flatify__alert-bg-color: var(--flatify__bg-color-dark);
   --flatify__alert-txt-color: var(--flatify__txt-color);
   --flatify__alert-border-color: var(--flatify__bg-color-darker);
@@ -1201,6 +1292,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 
 .add-button {
   position: relative;
+  display: inline-block;
   width: 1.2em;
   height: 1.2em;
   background: transparent;
@@ -1213,7 +1305,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   bottom: 0;
   left: 0;
   right: 0;
-  height: max(2px, 0.18em);
+  height: max(3px, 0.18em);
   margin: auto;
   background: currentColor;
   border-radius: var(--flatify__border-radius);
@@ -1241,7 +1333,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   content: " ";
   position: absolute;
   left: 0;
-  height: max(2px, 0.18em);
+  height: max(3px, 0.18em);
   background: currentColor;
   border-radius: var(--flatify__border-radius);
   will-change: width, transform;
@@ -1600,7 +1692,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   color: var(--flatify__local-txt-color);
   background: var(--flatify__local-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
-  box-shadow: 0 0.125em 0 var(--flatify__local-border-color);
+  box-shadow: inset 0 -0.125em 0 var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
 .card:not(.horizontal) {

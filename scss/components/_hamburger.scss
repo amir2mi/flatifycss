@@ -10,7 +10,7 @@
     content: " ";
     position: absolute;
     left: 0;
-    height: max(2px,0.18em);
+    height: max(3px, 0.18em);
     background: currentColor;
     border-radius: var(--#{$CSS_VAR_PFX}border-radius);
     will-change: width, transform;

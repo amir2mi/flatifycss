@@ -1,0 +1,108 @@
+:root {
+  --#{$CSS_VAR_PFX}accordion-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}accordion-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+  --#{$CSS_VAR_PFX}accordion-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+  --#{$CSS_VAR_PFX}accordion-animation-show: flatify-fade-in 0.3s 0.1s ease-in-out;
+  --#{$CSS_VAR_PFX}accordion-animation-hide: flatify-fade-out 0.2s ease-in-out;
+}
+
+.accordion {
+  --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}accordion-txt-color);
+  --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}accordion-bg-color);
+  --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}accordion-border-color);
+  display: flex;
+  flex-direction: column;
+  color: var(--#{$CSS_VAR_PFX}local-txt-color);
+  background: var(--#{$CSS_VAR_PFX}local-bg-color);
+
+  &.bordered {
+    border-radius: 1em;
+
+    .accordion-item {
+      --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}accordion-txt-color);
+      --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}accordion-bg-color);
+      --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}accordion-border-color);
+      color: var(--#{$CSS_VAR_PFX}local-txt-color);
+      background: var(--#{$CSS_VAR_PFX}local-bg-color);
+      border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+
+      &:last-child {
+        box-shadow: inset 0 -0.125em 0 var(--#{$CSS_VAR_PFX}local-border-color);
+      }
+
+      &:not(.active) .accordion-header,
+      &:not(:last-child) {
+        border-bottom: none;
+      }
+
+      &:first-child:not(:last-child) {
+        border-radius: var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0 0;
+      }
+
+      &:last-child:not(:first-child) {
+        border-radius: 0 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius);
+      }
+
+      // if there is just one accordion item round it
+      &:first-child:last-child {
+        border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+      }
+    }
+  }
+}
+
+.accordion-header {
+  font-size: 1em;
+  padding: 1em;
+  margin: 0;
+  border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+
+  .accordion-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: initial;
+    width: 100%;
+    height: 100%;
+    color: currentColor;
+    background: transparent;
+    border: none;
+  }
+
+  .add-button {
+    font-size: 0.75em;
+    opacity: 0.75;
+  }
+}
+
+.accordion-collapse {
+  overflow: hidden;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  transition: height var(--#{$CSS_VAR_PFX}simple-transition);
+
+}
+
+.accordion-body {
+  padding: 1em;
+}
+
+.active {
+  .accordion-collapse {
+    height: auto;
+  }
+}
+
+.modal-will-be-shown {
+  .accordion-body {
+    animation: var(--#{$CSS_VAR_PFX}accordion-animation-show) both;
+  }
+}
+
+.accordion-item:not(.active),
+.modal-will-be-hidden {
+  .accordion-body {
+    animation: var(--#{$CSS_VAR_PFX}accordion-animation-hide) both;
+  }
+}
