@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.0.3-25
+ * FlatifyCSS version 1.0.3-26
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -4007,10 +4007,10 @@ textarea:not(.default) {
   0% {
     filter: hue-rotate(0);
   }
-  33.33% {
+  40% {
     filter: hue-rotate(360deg);
   }
-  66.66% {
+  80% {
     filter: hue-rotate(-360deg);
   }
   100% {
@@ -4021,10 +4021,10 @@ textarea:not(.default) {
   0% {
     filter: hue-rotate(0);
   }
-  33.33% {
+  40% {
     filter: hue-rotate(360deg);
   }
-  66.66% {
+  80% {
     filter: hue-rotate(-360deg);
   }
   100% {
@@ -4035,10 +4035,10 @@ textarea:not(.default) {
   0% {
     filter: hue-rotate(0);
   }
-  33.33% {
+  40% {
     filter: hue-rotate(45deg);
   }
-  66.66% {
+  80% {
     filter: hue-rotate(-45deg);
   }
   100% {
@@ -4049,10 +4049,10 @@ textarea:not(.default) {
   0% {
     filter: hue-rotate(0);
   }
-  33.33% {
+  40% {
     filter: hue-rotate(45deg);
   }
-  66.66% {
+  80% {
     filter: hue-rotate(-45deg);
   }
   100% {

@@ -376,10 +376,10 @@
   0% {
     filter: hue-rotate(0);
   }
-  33.33% {
+  40% {
     filter: hue-rotate(360deg);
   }
-  66.66% {
+  80% {
     filter: hue-rotate(-360deg);
   }
   100% {
@@ -391,10 +391,11 @@
   0% {
     filter: hue-rotate(0);
   }
-  33.33% {
+ 
+  40% {
     filter: hue-rotate(45deg);
   }
-  66.66% {
+  80% {
     filter: hue-rotate(-45deg);
   }
   100% {
