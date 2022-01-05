@@ -10,7 +10,7 @@
       content: " ";
       position: absolute;
       top: 0.7em;
-      left: 0.16em;
+      left: 0.15em;
       z-index: 1;
       width: 0.5em;
       height: 0.22em;
@@ -22,13 +22,13 @@
     }
 
     &:after {
-      top: 0.52em;
+      top: 0.55em;
       left: 0.3em;
       width: 0.9em;
       height: 0.22em;
       background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
       clip-path: circle(200% at bottom);
-      transform: rotate(-55deg);
+      transform: rotate(-50deg);
       transition: clip-path linear 0.5s 0.1s;
     }
   }

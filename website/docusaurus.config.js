@@ -11,10 +11,10 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  url: "https://amir2mi.github.io",
-  baseUrl: "/flatifycss/",
-  organizationName: "amir2mi", // Usually your GitHub org/user name.
-  projectName: "flatifycss", // Usually your repo name.
+  url: "https://flatifycss.com",
+  baseUrl: "/",
+  // organizationName: "amir2mi", // Usually your GitHub org/user name.
+  // projectName: "flatifycss", // Usually your repo name.
   trailingSlash: false,
 
   presets: [

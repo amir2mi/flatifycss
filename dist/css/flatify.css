@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.1.0
+ * FlatifyCSS version 1.1.1-0
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -3213,7 +3213,7 @@ input[type=button].button {
   content: " ";
   position: absolute;
   top: 0.7em;
-  left: 0.16em;
+  left: 0.15em;
   z-index: 1;
   width: 0.5em;
   height: 0.22em;
@@ -3225,14 +3225,14 @@ input[type=button].button {
           animation: flatify-fade-in 0.35s;
 }
 .checkbox-wrapper input:checked:not(:indeterminate) + .check:after {
-  top: 0.52em;
+  top: 0.55em;
   left: 0.3em;
   width: 0.9em;
   height: 0.22em;
   background: var(--flatify__form-element-border-color__valid);
   -webkit-clip-path: circle(200% at bottom);
           clip-path: circle(200% at bottom);
-  transform: rotate(-55deg);
+  transform: rotate(-50deg);
   transition: -webkit-clip-path linear 0.5s 0.1s;
   transition: clip-path linear 0.5s 0.1s;
   transition: clip-path linear 0.5s 0.1s, -webkit-clip-path linear 0.5s 0.1s;
