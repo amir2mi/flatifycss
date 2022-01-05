@@ -1,10 +1,8 @@
 import React from "react";
-import useThemeContext from "@theme/hooks/useThemeContext";
 import svg from "../svg";
 import "./contribute.css";
 
 export default function HomepageContribute() {
-  const { isDarkTheme } = useThemeContext();
 
   return (
     <div className="homepage-contribute">
@@ -15,7 +13,7 @@ export default function HomepageContribute() {
           <a
             href="https://github.com/amir2mi/flatifycss"
             target="_blank"
-            className={`button two-layer-button size-2x featured-button contribute-button ${isDarkTheme ? "style-dark" : "style-light"}`}
+            className={`button two-layer-button size-2x featured-button contribute-button style-light`}
           >
             Contribute
             <span className="secondary-text">{svg.github}</span>
