@@ -110,6 +110,26 @@ Modals can have their custom HTML, however by default there is a predefined stru
 </div>
 ```
 
+The final modal will be like this:
+
+```html title="index.html"
+<button class="button open-modal" data-modal-target=".my-modal">Display The Modal</button>
+
+<div class="modal my-modal" tabindex="-1" aria-labelledby="my-modal-title">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+      <button type="button" class="close-modal close-button" data-modal-target=".my-modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">...</div>
+    <div class="modal-footer">
+      <button class="button size-sm style-danger close-modal">Close</button>
+      <button class="button size-sm style-info close-modal">Confirm</button>
+    </div>
+  </div>
+</div>
+```
+
 ## Required action
 
 By default if users click outside of the modal, aka "backdrop", the modal will be closed, however, if you add `.required` class to the `.modal` element it will not treat this way anymore, in other words, the modal will be closed only when user click related `.close-button`.
