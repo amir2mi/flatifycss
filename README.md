@@ -106,7 +106,7 @@ Note that FlatifyCSS needs [Popperjs](https://popper.js.org/) for dropdowns and 
 
 ## Development
 
-FlatifyCSS get compiled to CSS & JavaScript using Gulp. To use Gulp, we need to install it globally with `npm i gulp-cli -g`, then run `npm install` in the root directory of FlatifyCSS.  
+FlatifyCSS gets compiled to CSS & JavaScript using Gulp. To use Gulp, we need to install it globally with `npm i gulp-cli -g`, then run `npm install` in the root directory of FlatifyCSS.  
 If everything is okay, we can run `gulp` in the root directory to compile the stylesheet and JavaScript file, read more about FlatifyCSS's Gulp tasks [here](https://amir2mi.github.io/flatifycss/docs/overview/development#gulp).
 
 ## Support
