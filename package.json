@@ -1,46 +1,46 @@
 {
-	"name": "flatifycss",
-	"version": "1.1.1-0",
-	"description": "Modern flat design framework for the web — inspired by Duolingo design system.",
-	"main": "index.html",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/amir2mi/flatifycss.git"
-	},
-	"keywords": [
-		"css",
-		"duolingo",
-		"flat",
-		"flat-design",
-		"front-end"
-	],
-	"author": "Amir M. Mohamadi",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/amir2mi/FlatifyCSS/issues"
-	},
-	"homepage": "https://amir2mi.github.io/flatifycss/",
-	"dependencies": {},
-	"devDependencies": {
-		"@babel/core": "^7.16.0",
-		"@babel/preset-env": "^7.16.4",
-		"autoprefixer": "^10.3.7",
-		"cssnano": "^5.0.8",
-		"gulp": "^4.0.2",
-		"gulp-babel": "^8.0.0",
-		"gulp-bump": "^3.2.0",
-		"gulp-concat": "^2.6.1",
-		"gulp-git": "^2.10.1",
-		"gulp-noop": "^1.0.1",
-		"gulp-postcss": "^9.0.1",
-		"gulp-rename": "^2.0.0",
-		"gulp-sass": "^5.0.0",
-		"gulp-sourcemaps": "^3.0.0",
-		"gulp-uglify": "^3.0.2",
-		"postcss": "^8.4.4",
-		"sass": "^1.43.4",
-		"webpack": "^5.65.0",
-		"webpack-stream": "^7.0.0",
-		"yargs": "^17.3.0"
-	}
+  "name": "flatifycss",
+  "version": "1.1.1-0",
+  "description": "Modern flat design framework for the web — inspired by Duolingo design system.",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amir2mi/flatifycss.git"
+  },
+  "keywords": [
+    "css",
+    "duolingo",
+    "flat",
+    "flat-design",
+    "front-end"
+  ],
+  "author": "Amir M. Mohamadi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amir2mi/FlatifyCSS/issues"
+  },
+  "homepage": "https://flatifycss.com/",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "autoprefixer": "^10.3.7",
+    "cssnano": "^5.0.8",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-bump": "^3.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-git": "^2.10.1",
+    "gulp-noop": "^1.0.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "postcss": "^8.4.4",
+    "sass": "^1.43.4",
+    "webpack": "^5.65.0",
+    "webpack-stream": "^7.0.0",
+    "yargs": "^17.3.0"
+  }
 }

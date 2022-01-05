@@ -15,7 +15,7 @@
     Getting started
   </a>
 &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;   
-  <a target="_blank" href="https://amir2mi.github.io/flatifycss/">
+  <a target="_blank" href="https://flatifycss.com/">
     Homepage
   </a>
 &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;   
@@ -47,7 +47,10 @@ Here is [jsDelivr](https://www.jsdelivr.com/), you can add FlatifyCSS just with 
 
 ```html
 <!-- CSS -->
-<link href="https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css" rel="stylesheet" crossorigin="anonymous"
+<link
+  href="https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css"
+  rel="stylesheet"
+  crossorigin="anonymous"
 />
 
 <!-- JavaScript : Popperjs + FlatifyCSS -->
@@ -102,10 +105,11 @@ Note that FlatifyCSS needs [Popperjs](https://popper.js.org/) for dropdowns and 
 `flatify-min.js`
 
 ## Development
+
 FlatifyCSS get compiled to CSS & JavaScript using Gulp. To use Gulp, we need to install it globally with `npm i gulp-cli -g`, then run `npm install` in the root directory of FlatifyCSS.  
 If everything is okay, we can run `gulp` in the root directory to compile the stylesheet and JavaScript file, read more about FlatifyCSS's Gulp tasks [here](https://amir2mi.github.io/flatifycss/docs/overview/development#gulp).
 
-
 ## Support
+
 We appreciate your contribution it is the best way you can help us, however if you want you can buy a coffee!
 <a href="https://www.buymeacoffee.com/amir2mi" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
