@@ -123,7 +123,7 @@ html[data-theme="dark"] .style-light {
   --flatify__button-border-color: #1e2a35 !important;
 }
 
-html[data-theme="dark"] .color-dark{
+html[data-theme="dark"] .color-dark {
   --flatify__color-dark-primary: #f1f4f7;
 }
 html[data-theme="dark"] .animated-logo {
