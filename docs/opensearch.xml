@@ -4,8 +4,8 @@
   <ShortName>FlatifyCSS</ShortName>
   <Description>Search FlatifyCSS</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://amir2mi.github.io/flatifycss/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://amir2mi.github.io/flatifycss/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://amir2mi.github.io/flatifycss/opensearch.xml" />
-  <moz:SearchForm>https://amir2mi.github.io/flatifycss/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://flatifycss.com/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://flatifycss.com/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://flatifycss.com/opensearch.xml" />
+  <moz:SearchForm>https://flatifycss.com/</moz:SearchForm>
 </OpenSearchDescription>
