@@ -10,9 +10,15 @@ Here is an example of a dark mode selector:
 html.dark {
   @extend %dark-mode;
 }
-// or
-html[data-theme="dark"] {
-  @extend %dark-mode;
+```
+
+or you can detect automatically if users prefer dark theme with [CSS `@media` feature](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme):
+
+```scss title="style.scss"
+@media (prefers-color-scheme: dark) {
+  :root {
+    @extend %dark-mode;
+  }
 }
 ```
 
