@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Intro to FlatifyCSS - Modern flat design framework for the web","permalink":"/blog/intro-to-flatifycss-modern-flat-design-framework-for-the-web"},{"title":"Hello World!","permalink":"/blog/hello-world"}]}')}}]);
