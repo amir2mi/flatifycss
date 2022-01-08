@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.1.2-1
+ * FlatifyCSS version 1.1.2-2
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -3884,6 +3884,37 @@ textarea:not(.default) {
 
 .color-dark-light {
   color: var(--flatify__color-dark-light) !important;
+}
+
+.container-xs {
+  max-width: 575px;
+}
+
+.container-sm {
+  max-width: 576px;
+}
+
+.container-md {
+  max-width: 768px;
+}
+
+.container-lg {
+  max-width: 992px;
+}
+
+.container-xl {
+  max-width: 1200px;
+}
+
+.container-xxl {
+  max-width: 1400px;
+}
+
+[class*=container-] {
+  padding-left: 0.64em;
+  padding-right: 0.64em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .opacity-0 {

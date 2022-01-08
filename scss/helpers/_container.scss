@@ -1,0 +1,17 @@
+@use "sass:math";
+
+@each $name, $value in $RESPONSIVE_BREAKPOINTS {
+  .container-#{$name} {
+    max-width: math.floor($value);
+  }
+}
+
+[class*="container-"] {
+  padding-left: 0.64em;
+  padding-right: 0.64em;
+
+  @if $CENTERED_CONTAINERS {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
