@@ -1,9 +1,9 @@
 ---
-title: Night mode
+title: Dark mode
 sidebar_position: 8.5
 ---
 
-If you use Sass to develop, there is a predefined placeholder selector for night mode, this file is in `/scss/helpers/_night.scss`, in this file the `%dark-mode` selector is defined you can create your selectors by extending it.  
+If you use Sass to develop, there is a predefined placeholder selector for dark mode, this file is in `/scss/helpers/_dark-mode.scss`, in this file the `%dark-mode` selector is defined you can create your selectors by extending it.  
 Here is an example of a dark mode selector:
 
 ```scss title="style.scss"
@@ -22,5 +22,5 @@ or you can detect automatically if users prefer dark theme with [CSS `@media` fe
 }
 ```
 
-Now if the `<html>` tag has the `.dark` class or `data-theme="dark"` attribute, the dark mode will be applied.  
+Now if the `<html>` tag has the `.dark` class or the user prefers to have a dark theme, the dark mode will be applied.  
 Note that you should extend this selector as `<html>` tag because it changes CSS variables that are defined as the `:root`.
