@@ -41,6 +41,11 @@
   background: var(--#{$CSS_VAR_PFX}tab-bg-color);
   border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}tab-border-color);
 
+  @include break-xs() {
+    font-size: 0.9em;
+    padding: 0;
+  }
+
   .tab-button {
     position: relative;
     text-align: center;

@@ -193,7 +193,8 @@
   .check {
     position: relative;
     display: inline-block;
-    width: 1.5em;
+    min-width: 1.5em;
+    max-width: 1.5em;
     height: 1.5em;
     background: var(--#{$CSS_VAR_PFX}form-element-bg-color);
     border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}form-element-border-color);

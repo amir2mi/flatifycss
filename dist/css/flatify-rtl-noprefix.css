@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.1.1-0
+ * FlatifyCSS version 1.1.2-0
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -739,6 +739,9 @@ table td,
 table th {
   padding: 0.75em 1em;
   background: var(--flatify__table-bg-color);
+}
+table thead {
+  word-break: break-word;
 }
 table thead td,
 table thead th {
@@ -2455,6 +2458,12 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   background: var(--flatify__tab-bg-color);
   border-bottom: var(--flatify__border-width) solid var(--flatify__tab-border-color);
 }
+@media screen and (max-width: 575.98px) {
+  .tabs-header {
+    font-size: 0.9em;
+    padding: 0;
+  }
+}
 .tabs-header .tab-button {
   position: relative;
   text-align: center;
@@ -2702,7 +2711,8 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
 .toggle-wrapper .check {
   position: relative;
   display: inline-block;
-  width: 1.5em;
+  min-width: 1.5em;
+  max-width: 1.5em;
   height: 1.5em;
   background: var(--flatify__form-element-bg-color);
   border: var(--flatify__border-width) solid var(--flatify__form-element-border-color);

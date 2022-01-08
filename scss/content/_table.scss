@@ -23,6 +23,8 @@ table {
   }
 
   thead {
+    word-break: break-word;
+    
     td,
     th {
       background: var(--#{$CSS_VAR_PFX}table-bg-color-dark);

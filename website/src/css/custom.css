@@ -227,6 +227,7 @@ div[class*="toggleTrack_"],
 
 .preview-box-wrapper {
   position: relative;
+  max-width: 100%;
 }
 
 .preview-box-wrapper {
@@ -367,6 +368,16 @@ div[class*="toggleTrack_"],
   text-align: center;
   font-size: 0.8em;
   margin-top: 0.25em;
+}
+@media screen and (max-width: 575px) {
+  .comparison-gifs {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .pagination-nav__label {
+    white-space: nowrap;
+    font-size: 0.9em;
+  }
 }
 .menu__list .menu__list {
   border-left: var(--docus-bd);
