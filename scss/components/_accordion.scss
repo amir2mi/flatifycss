@@ -5,9 +5,9 @@
 
   --#{$CSS_VAR_PFX}accordion-animation-show-duration: #{$ACCORDION_SHOW_ANIMATION_DURATION};
   --#{$CSS_VAR_PFX}accordion-animation-hide-duration: #{$ACCORDION_HIDE_ANIMATION_DURATION};
-  --#{$CSS_VAR_PFX}accordion-animation-show: flatify-fade-in var(--#{$CSS_VAR_PFX}accordion-animation-show-duration)
+  --#{$CSS_VAR_PFX}accordion-animation-show: flatify-blow-in var(--#{$CSS_VAR_PFX}accordion-animation-show-duration)
     0.1s ease-in-out;
-  --#{$CSS_VAR_PFX}accordion-animation-hide: flatify-fade-out var(--#{$CSS_VAR_PFX}accordion-animation-hide-duration)
+  --#{$CSS_VAR_PFX}accordion-animation-hide: flatify-blow-out var(--#{$CSS_VAR_PFX}accordion-animation-hide-duration)
     ease-in-out;
 }
 
