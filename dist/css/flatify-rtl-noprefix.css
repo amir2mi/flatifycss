@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.1.2-9
+ * FlatifyCSS version 1.1.3-0
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -3897,10 +3897,6 @@ textarea:not(.default) {
 
 .color-dark-light {
   color: var(--flatify__color-dark-light) !important;
-}
-
-.container-xs {
-  max-width: 575px;
 }
 
 .container-sm {
