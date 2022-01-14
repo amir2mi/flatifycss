@@ -69,12 +69,12 @@ const config = {
       },
       algolia: {
         // If Algolia did not provide you any appId, use 'BH4D9OD16A'
-        appId: "BH4D9OD16A",
+        appId: "KVX24QMELQ",
 
         // Public API key: it is safe to commit it
-        apiKey: "YOUR_SEARCH_API_KEY",
+        apiKey: "a38b9f9487cdede5e1cf7097a5b4e5a3",
 
-        indexName: "YOUR_INDEX_NAME",
+        indexName: "flatifycss",
 
         // Optional: see doc section below
         contextualSearch: true,
