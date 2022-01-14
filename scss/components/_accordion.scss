@@ -113,3 +113,17 @@
     animation: var(--#{$CSS_VAR_PFX}accordion-animation-hide) forwards;
   }
 }
+
+.fade-animation {
+  .modal-will-be-shown {
+    .accordion-body {
+      animation: flatify-fade-in var(--#{$CSS_VAR_PFX}accordion-animation-show-duration) 0.1s ease-in-out;
+    }
+  }
+
+  .modal-will-be-hidden {
+    .accordion-body {
+      animation: flatify-fade-out var(--#{$CSS_VAR_PFX}accordion-animation-hide-duration) ease-in-out both;
+    }
+  }
+}
