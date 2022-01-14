@@ -29,7 +29,7 @@
 
 @mixin break-sm-max() {
   $sm-bp: map-get($RESPONSIVE_BREAKPOINTS, "sm");
-  @media screen and (max-width: $sm-bp) {
+  @media screen and (max-width: ($sm-bp - 0.02px)) {
     @content;
   }
 }
@@ -51,7 +51,7 @@
 
 @mixin break-md-max() {
   $md-bp: map-get($RESPONSIVE_BREAKPOINTS, "md");
-  @media screen and (max-width: $md-bp) {
+  @media screen and (max-width: ($md-bp - 0.02px)) {
     @content;
   }
 }
@@ -73,7 +73,7 @@
 
 @mixin break-lg-max() {
   $lg-bp: map-get($RESPONSIVE_BREAKPOINTS, "lg");
-  @media screen and (max-width: $lg-bp) {
+  @media screen and (max-width: ($lg-bp - 0.02px)) {
     @content;
   }
 }
@@ -95,7 +95,7 @@
 
 @mixin break-xl-max() {
   $xl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xl");
-  @media screen and (max-width: $xl-bp) {
+  @media screen and (max-width:  ($xl-bp - 0.02px)) {
     @content;
   }
 }
@@ -109,7 +109,7 @@
 
 @mixin break-xxl-max() {
   $xxl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xxl");
-  @media screen and(max-width: $xxl-bp) {
+  @media screen and(max-width: ($xxl-bp - 0.02px)) {
     @content;
   }
 }
