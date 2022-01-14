@@ -3896,10 +3896,6 @@ textarea:not(.default) {
   color: var(--flatify__color-dark-light) !important;
 }
 
-.container-xs {
-  max-width: 575px;
-}
-
 .container-sm {
   max-width: 576px;
 }
