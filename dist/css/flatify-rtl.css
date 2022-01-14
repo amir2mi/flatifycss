@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.1.2-4
+ * FlatifyCSS version 1.1.2-5
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -888,8 +888,8 @@ th {
   --flatify__accordion-txt-color: var(--flatify__txt-color);
   --flatify__accordion-bg-color: var(--flatify__bg-color);
   --flatify__accordion-border-color: var(--flatify__bg-color-darker);
-  --flatify__accordion-animation-show-duration: 0.3s;
-  --flatify__accordion-animation-hide-duration: 0.2s;
+  --flatify__accordion-animation-show-duration: 300ms;
+  --flatify__accordion-animation-hide-duration: 200ms;
   --flatify__accordion-animation-show: flatify-fade-in var(--flatify__accordion-animation-show-duration)
     0.1s ease-in-out;
   --flatify__accordion-animation-hide: flatify-fade-out var(--flatify__accordion-animation-hide-duration)
@@ -2679,8 +2679,8 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   --flatify__tab-border-color: var(--flatify__bg-color-darker);
   --flatify__tab-animation-show-duration: 300ms;
   --flatify__tab-animation-hide-duration: 200ms;
-  --flatify__tab-animation-show: flatify-blow-in var(--flatify__tab-animation-show-duration) ease;
-  --flatify__tab-animation-hide: flatify-blow-out var(--flatify__tab-animation-hide-duration)
+  --flatify__tab-animation-show: flatify-fade-in var(--flatify__tab-animation-show-duration) ease;
+  --flatify__tab-animation-hide: flatify-fade-out var(--flatify__tab-animation-hide-duration)
     cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
@@ -2702,8 +2702,11 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   margin: 1em 0;
   color: var(--flatify__tab-txt-color);
   background: var(--flatify__tab-bg-color);
-  border: var(--flatify__border-width) solid var(--flatify__tab-border-color);
   border-radius: var(--flatify__border-radius);
+}
+.tabs-wrapper.bordered {
+  border: var(--flatify__border-width) solid var(--flatify__tab-border-color);
+  box-shadow: 0 0.125em 0 var(--flatify__tab-border-color);
 }
 
 .tabs-header {

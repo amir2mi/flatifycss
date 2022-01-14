@@ -5,8 +5,8 @@
 
   --#{$CSS_VAR_PFX}tab-animation-show-duration: #{$TAB_SHOW_ANIMATION_DURATION};
   --#{$CSS_VAR_PFX}tab-animation-hide-duration: #{$TAB_HIDE_ANIMATION_DURATION};
-  --#{$CSS_VAR_PFX}tab-animation-show: flatify-blow-in var(--#{$CSS_VAR_PFX}tab-animation-show-duration) ease;
-  --#{$CSS_VAR_PFX}tab-animation-hide: flatify-blow-out var(--#{$CSS_VAR_PFX}tab-animation-hide-duration)
+  --#{$CSS_VAR_PFX}tab-animation-show: flatify-fade-in var(--#{$CSS_VAR_PFX}tab-animation-show-duration) ease;
+  --#{$CSS_VAR_PFX}tab-animation-hide: flatify-fade-out var(--#{$CSS_VAR_PFX}tab-animation-hide-duration)
     cubic-bezier(0.52, 0.42, 0.44, 1.44) both;
 }
 
@@ -28,8 +28,12 @@
   margin: 1em 0;
   color: var(--#{$CSS_VAR_PFX}tab-txt-color);
   background: var(--#{$CSS_VAR_PFX}tab-bg-color);
-  border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}tab-border-color);
   border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+
+  &.bordered {
+    border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}tab-border-color);
+    box-shadow: 0 0.125em 0 var(--#{$CSS_VAR_PFX}tab-border-color);
+  }
 }
 
 .tabs-header {

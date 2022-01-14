@@ -3,8 +3,8 @@
   --#{$CSS_VAR_PFX}accordion-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
   --#{$CSS_VAR_PFX}accordion-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 
-  --#{$CSS_VAR_PFX}accordion-animation-show-duration: 0.3s;
-  --#{$CSS_VAR_PFX}accordion-animation-hide-duration: 0.2s;
+  --#{$CSS_VAR_PFX}accordion-animation-show-duration: #{$ACCORDION_SHOW_ANIMATION_DURATION};
+  --#{$CSS_VAR_PFX}accordion-animation-hide-duration: #{$ACCORDION_HIDE_ANIMATION_DURATION};
   --#{$CSS_VAR_PFX}accordion-animation-show: flatify-fade-in var(--#{$CSS_VAR_PFX}accordion-animation-show-duration)
     0.1s ease-in-out;
   --#{$CSS_VAR_PFX}accordion-animation-hide: flatify-fade-out var(--#{$CSS_VAR_PFX}accordion-animation-hide-duration)
