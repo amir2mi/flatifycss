@@ -4,6 +4,8 @@ title: Badges
 
 import PreviewBox from "../../src/components/preview-box";
 
+## Badges
+
 Use badges to show numbers, texts, or just as an icon to get user attention, badges get their size from parent font size either you can set a specific size.
 
 <PreviewBox
@@ -57,6 +59,8 @@ Use badges to show numbers, texts, or just as an icon to get user attention, bad
   <span class="badge style-red edge-round-sm">+999</span>
 </p>
 ```
+
+## Overlay badges
 
 Here is an example of badge over button:
 
@@ -123,5 +127,64 @@ Here is an example of badge over button:
   position: absolute;
   top: -2px;
   right: -2px;
+}
+```
+
+## Customization
+
+These are CSS variables for badges that you can use to customize the default colors or create new kind of badge:
+
+`--flatify__badge-txt-color`  
+`--flatify__badge-bg-color`
+
+<PreviewBox
+	height="140px"
+	children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css" />
+		<title>Badges</title>
+		<style>
+			.custom-badge{
+				--flatify__badge-txt-color: #fff;
+				--flatify__badge-bg-color: linear-gradient(to right, #8a2387, #e94057, #f27121);	
+    		}
+    	</style>
+    </head>
+    <body>
+        <p>
+            You have got new messages!
+    		<span class="badge custom-badge">+1</span>
+    	</p>
+    	<p>
+            You have got new messages!
+    		<span class="badge custom-badge anim-hue">+1</span>
+    	</p>
+    </body>
+
+</html>
+'
+/>
+
+```html title="index.html"
+<p>
+  You have got new messages!
+  <span class="badge custom-badge">+1</span>
+</p>
+
+<p>
+  You have got new messages!
+  <span class="badge custom-badge anim-hue">+1</span>
+</p>
+```
+
+```css title="style.css"
+.custom-badge {
+  --flatify__badge-txt-color: #fff;
+  --flatify__badge-bg-color: linear-gradient(to right, #8a2387, #e94057, #f27121);
 }
 ```

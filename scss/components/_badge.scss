@@ -16,7 +16,7 @@
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  color: var(--#{$CSS_VAR_PFX}txt-color-inverted);
-  background: var(--#{$CSS_VAR_PFX}color-accent-primary);
+  color: var(--#{$CSS_VAR_PFX}badge-txt-color);
+  background: var(--#{$CSS_VAR_PFX}badge-bg-color);
   border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 }
