@@ -1,3 +1,8 @@
+:root {
+  --#{$CSS_VAR_PFX}badge-txt-color: var(--#{$CSS_VAR_PFX}txt-color-inverted);
+  --#{$CSS_VAR_PFX}badge-bg-color: var(--#{$CSS_VAR_PFX}color-accent-primary);
+}
+
 .badge {
   user-select: none;
   display: inline-block;
@@ -11,5 +16,7 @@
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
+  color: var(--#{$CSS_VAR_PFX}txt-color-inverted);
+  background: var(--#{$CSS_VAR_PFX}color-accent-primary);
   border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 }

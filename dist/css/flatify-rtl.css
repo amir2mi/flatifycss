@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.1.5-1
+ * FlatifyCSS version 1.1.5-2
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -1081,6 +1081,11 @@ th {
   filter: brightness(95%);
 }
 
+:root {
+  --flatify__badge-txt-color: var(--flatify__txt-color-inverted);
+  --flatify__badge-bg-color: var(--flatify__color-accent-primary);
+}
+
 .badge {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1096,6 +1101,8 @@ th {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
+  color: var(--flatify__txt-color-inverted);
+  background: var(--flatify__color-accent-primary);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
 }
 
