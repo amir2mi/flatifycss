@@ -49,6 +49,11 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    scrollbar-width: thin;
+
+    .tab-button {
+      white-space: nowrap;
+    }
   }
 
   @include break-xs() {
@@ -108,6 +113,10 @@
       &:before {
         background: var(--#{$CSS_VAR_PFX}color-accent-primary);
       }
+    }
+
+    .badge {
+      vertical-align: middle;
     }
   }
 
