@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.1.5-3
+ * FlatifyCSS version 1.1.6-0
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -354,6 +354,7 @@ pre {
   padding: 1em;
   margin-top: 0;
   margin-bottom: 1em;
+  background: var(--flatify__txt-color);
   background: var(--flatify__bg-color-dark);
   border: var(--flatify__border-width) solid var(--flatify__bg-color-darker);
   border-radius: var(--flatify__border-radius);
@@ -2802,6 +2803,8 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
 }
 .input-wrapper input {
   width: 100%;
+}
+.input-wrapper.valid, .input-wrapper.invalid, .input-wrapper.warning, .input-wrapper.toggle-password {
   padding-left: 3em;
 }
 .input-wrapper.toggle-password input, .input-wrapper.invalid input, .input-wrapper.warning input, .input-wrapper.valid input {
