@@ -277,6 +277,7 @@ pre {
   padding: 1em;
   margin-top: 0;
   margin-bottom: 1em;
+  background: var(--#{$CSS_VAR_PFX}txt-color);
   background: var(--#{$CSS_VAR_PFX}bg-color-dark);
   border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}bg-color-darker);
   border-radius: var(--#{$CSS_VAR_PFX}border-radius);
