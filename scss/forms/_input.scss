@@ -8,17 +8,6 @@
     width: 100%;
   }
 
-  &.valid,
-  &.invalid,
-  &.warning,
-  &.toggle-password {
-    @if $IS_LTR {
-      padding-right: 3em;
-    } @else {
-      padding-left: 3em;
-    }
-  }
-
   &.toggle-password,
   &.invalid,
   &.warning,
