@@ -39,6 +39,8 @@
   }
 
   .item-icon {
+    opacity: 0.75;
+    
     @if $IS_LTR {
       margin-right: 0.5em;
     } @else {
@@ -48,6 +50,7 @@
     svg {
       width: 3em;
       height: 3em;
+      fill: currentColor;
     }
   }
 
