@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.1.7-0
+ * FlatifyCSS version 1.1.10-1
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -359,7 +359,7 @@ pre {
   padding: 1em;
   margin-top: 0;
   margin-bottom: 1em;
-  background: var(--flatify__txt-color);
+  color: var(--flatify__txt-color);
   background: var(--flatify__bg-color-dark);
   border: var(--flatify__border-width) solid var(--flatify__bg-color-darker);
   border-radius: var(--flatify__border-radius);
@@ -374,6 +374,7 @@ code {
   font-size: 0.85em;
   word-wrap: break-word;
   padding: 0.18em 0.32em;
+  color: var(--flatify__txt-color);
   background: var(--flatify__bg-color-dark);
   border: var(--flatify__border-width) solid var(--flatify__bg-color-darker);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
@@ -2799,6 +2800,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 }
 .tabs-header .tab-button .badge {
   vertical-align: middle;
+  margin-right: 0.5em;
 }
 .tabs-header.line-at-top .tab-button:before {
   bottom: unset;
@@ -3442,6 +3444,68 @@ select option {
 textarea:not(.default) {
   font-size: 1em;
   transition: border-color var(--flatify__simple-transition), filter var(--flatify__simple-transition);
+}
+
+:root {
+  --flatify__item-group-bg-color: var(--flatify__bg-color);
+  --flatify__item-group-txt-color: var(--flatify__txt-color);
+}
+
+.items-group {
+  --flatify__local-txt-color: var(--flatify__item-group-txt-color);
+  --flatify__local-bg-color: var(--flatify__item-group-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--flatify__local-txt-color);
+  background: var(--flatify__local-bg-color);
+}
+.items-group .item-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.125em 0.5em;
+  border: none;
+  background: var(--flatify__local-bg-color);
+  border-radius: calc(var(--flatify__border-radius) * 0.65);
+  transition: all var(--flatify__simple-transition);
+}
+.items-group .item-button:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+.items-group .item-button:focus-visible, .items-group .item-button:hover {
+  filter: brightness(var(--flatify__hover-brightness));
+}
+.items-group .item-button.active {
+  color: var(--flatify__txt-color-inverted);
+  background: var(--flatify__color-accent-primary);
+}
+.items-group .item-icon {
+  margin-left: 0.5em;
+}
+.items-group .item-icon svg {
+  width: 3em;
+  height: 3em;
+}
+.items-group .item-text {
+  width: 100%;
+  text-align: right;
+}
+.items-group .item-title,
+.items-group .item-subtitle {
+  line-height: 1;
+}
+.items-group .item-title {
+  font-size: 1.125em;
+  margin: 0.5em 0;
+}
+.items-group .item-title + .item-subtitle {
+  margin: 0 0 0.64em;
+}
+.items-group .item-subtitle {
+  font-size: 0.9em;
+  opacity: 0.65;
 }
 
 .no-transition {

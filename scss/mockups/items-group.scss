@@ -1,0 +1,82 @@
+:root {
+  --#{$CSS_VAR_PFX}item-group-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+  --#{$CSS_VAR_PFX}item-group-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+}
+
+.items-group {
+  --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}item-group-txt-color);
+  --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}item-group-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--#{$CSS_VAR_PFX}local-txt-color);
+  background: var(--#{$CSS_VAR_PFX}local-bg-color);
+
+  .item-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.125em 0.5em;
+    border: none;
+    background: var(--#{$CSS_VAR_PFX}local-bg-color);
+    border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.65);
+    transition: all var(--#{$CSS_VAR_PFX}simple-transition);
+
+    &:not(:last-child) {
+      margin-bottom: 0.5em;
+    }
+
+    &:focus-visible,
+    &:hover {
+      filter: brightness(var(--#{$CSS_VAR_PFX}hover-brightness));
+    }
+
+    &.active {
+      color: var(--#{$CSS_VAR_PFX}txt-color-inverted);
+      background: var(--#{$CSS_VAR_PFX}color-accent-primary);
+    }
+  }
+
+  .item-icon {
+    @if $IS_LTR {
+      margin-right: 0.5em;
+    } @else {
+      margin-left: 0.5em;
+    }
+
+    svg {
+      width: 3em;
+      height: 3em;
+    }
+  }
+
+  .item-text {
+    width: 100%;
+
+    @if $IS_LTR {
+      text-align: left;
+    } @else {
+      text-align: right;
+    }
+  }
+
+  .item-title,
+  .item-subtitle {
+    line-height: 1;
+  }
+
+  .item-title {
+    font-size: 1.125em;
+    margin: 0.5em 0;
+
+    & + .item-subtitle {
+      margin: 0 0 0.64em;
+    }
+  }
+
+  .item-subtitle {
+    font-size: 0.9em;
+    opacity: 0.65;
+  }
+}
