@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.1.10-2
+ * FlatifyCSS version 1.1.10-3
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -3147,6 +3147,7 @@ textarea:not(.default) {
   width: 100%;
   padding: 0.125em 0.5em;
   border: none;
+  color: var(--flatify__local-txt-color);
   background: var(--flatify__local-bg-color);
   border-radius: calc(var(--flatify__border-radius) * 0.65);
   transition: all var(--flatify__simple-transition);

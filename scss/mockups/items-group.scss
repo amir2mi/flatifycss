@@ -19,6 +19,7 @@
     width: 100%;
     padding: 0.125em 0.5em;
     border: none;
+    color: var(--#{$CSS_VAR_PFX}local-txt-color);
     background: var(--#{$CSS_VAR_PFX}local-bg-color);
     border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.65);
     transition: all var(--#{$CSS_VAR_PFX}simple-transition);
@@ -40,7 +41,7 @@
 
   .item-icon {
     opacity: 0.75;
-    
+
     @if $IS_LTR {
       margin-right: 0.5em;
     } @else {
