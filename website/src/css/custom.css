@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito:wght@400;600;700&display=swap");
-@import url("https://raw.githack.com/amir2mi/FlatifyCSS/master/dist/css/flatify-min.css");
+@import url("https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css");
 
 /**
  * Any CSS included here will be global. The classic template
