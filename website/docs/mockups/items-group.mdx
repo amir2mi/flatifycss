@@ -337,3 +337,23 @@ There are helper classes for styling elements, first read about [color setter cl
 	</body>
 </html>'
 />
+
+```html title="index.html"
+<!-- First example: Styling the wrapper -->
+<div class="items-group style-dark">...</div>
+
+<!-- Second example: Styling each item -->
+<div class="items-group">
+  <button class="item-button style-pink">...</button>
+  <button class="item-button style-purple">...</button>
+  <button class="item-button style-green">...</button>
+  <button class="item-button style-orange">...</button>
+</div>
+```
+
+## Customization
+
+Use CSS variables for customization, they can be set as `:root` for all buttons default style or just for a specific selector.
+
+`--flatify__item-group-bg-color`  
+`--flatify__item-group-txt-color`
