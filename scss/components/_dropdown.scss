@@ -11,13 +11,18 @@
 .dropdown-wrapper {
   position: relative;
   display: inline-block;
+
+  &:not(.free-size) {
+    .dropdown {
+      width: 110%;
+    }
+  }
 }
 
 .dropdown {
   position: absolute;
   z-index: $ZINDEX_DROPDOWN;
   display: none;
-  width: 110%;
   will-change: top, bottom, left, right;
 
   &.show {
