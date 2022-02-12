@@ -270,7 +270,7 @@
 
     &.heading {
       font-weight: var(--#{$CSS_VAR_PFX}medium-font-weight);
-      padding: 0.75em;
+      padding: 1em 0.75em 0.5em;
       color: var(--#{$CSS_VAR_PFX}submenu-txt-color) !important;
       background: var(--#{$CSS_VAR_PFX}submenu-bg-color) !important;
     }
