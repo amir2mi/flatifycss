@@ -182,6 +182,7 @@ strong {
   font-weight: var(--#{$CSS_VAR_PFX}bold-font-weight);
 }
 
+.mark,
 mark {
   color: var(--#{$CSS_VAR_PFX}txt-color-dark);
 
