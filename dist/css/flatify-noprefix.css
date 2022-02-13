@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.2.0
+ * FlatifyCSS version 1.2.1
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -275,27 +275,32 @@ strong {
   font-weight: var(--flatify__bold-font-weight);
 }
 
+.mark,
 mark {
   color: var(--flatify__txt-color-dark);
 }
+.mark:not(.inline),
 mark:not(.inline) {
   border-radius: calc(var(--flatify__border-radius) * 0.38);
   padding: 0 0.32em;
   background: var(--flatify__color-yellow-light);
 }
+.mark.inline,
 mark.inline {
   --flatify__local-bg-color: var(--flatify__color-yellow-light);
+  isolation: isolate;
   position: relative;
   white-space: nowrap;
   margin: 0 0.32em;
   background: transparent !important;
 }
+.mark.inline:before,
 mark.inline:before {
   content: " ";
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
   width: 100%;
   height: 100%;
   background: var(--flatify__local-bg-color);
@@ -1989,7 +1994,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .dropdown .menu-item.heading,
 .menu-items-wrapper .submenu .menu-item.heading {
   font-weight: var(--flatify__medium-font-weight);
-  padding: 0.75em;
+  padding: 1em 0.75em 0.5em;
   color: var(--flatify__submenu-txt-color) !important;
   background: var(--flatify__submenu-bg-color) !important;
 }
@@ -3168,6 +3173,7 @@ textarea:not(.default) {
 .items-group .item-icon svg {
   width: 3em;
   height: 3em;
+  padding: 0.32em;
   fill: currentColor;
 }
 .items-group .item-text {
