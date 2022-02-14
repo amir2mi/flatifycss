@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.2.1
+ * FlatifyCSS version 1.2.2
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -3042,6 +3042,15 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
   border: var(--flatify__border-width) solid var(--flatify__form-element-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
   transition: all var(--flatify__simple-transition);
+}
+.checkbox-wrapper .check.after-label,
+.radio-wrapper .check.after-label,
+.toggle-wrapper .check.after-label {
+  margin-left: 0.5em;
+}
+.checkbox-wrapper .check:not(.after-label),
+.radio-wrapper .check:not(.after-label),
+.toggle-wrapper .check:not(.after-label) {
   margin-right: 0.5em;
 }
 .checkbox-wrapper .check:after,

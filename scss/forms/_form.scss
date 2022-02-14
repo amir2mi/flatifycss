@@ -201,10 +201,20 @@
     border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
     transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
-    @if $IS_LTR {
-      margin-right: 0.5em;
-    } @else {
-      margin-left: 0.5em;
+    &.after-label {
+      @if $IS_LTR {
+        margin-left: 0.5em;
+      } @else {
+        margin-right: 0.5em;
+      }
+    }
+
+    &:not(.after-label) {
+      @if $IS_LTR {
+        margin-right: 0.5em;
+      } @else {
+        margin-left: 0.5em;
+      }
     }
 
     &:after {
