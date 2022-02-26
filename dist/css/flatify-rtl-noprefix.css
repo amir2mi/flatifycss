@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.1.10-4
+ * FlatifyCSS version 1.2.4-2
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -278,21 +278,26 @@ strong {
   font-weight: var(--flatify__bold-font-weight);
 }
 
+.mark,
 mark {
   color: var(--flatify__txt-color-dark);
 }
+.mark:not(.inline),
 mark:not(.inline) {
   border-radius: calc(var(--flatify__border-radius) * 0.38);
   padding: 0 0.32em;
   background: var(--flatify__color-yellow-light);
 }
+.mark.inline,
 mark.inline {
   --flatify__local-bg-color: var(--flatify__color-yellow-light);
+  isolation: isolate;
   position: relative;
   white-space: nowrap;
   margin: 0 0.32em;
   background: transparent !important;
 }
+.mark.inline:before,
 mark.inline:before {
   content: " ";
   position: absolute;
@@ -1992,7 +1997,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .dropdown .menu-item.heading,
 .menu-items-wrapper .submenu .menu-item.heading {
   font-weight: var(--flatify__medium-font-weight);
-  padding: 0.75em;
+  padding: 1em 0.75em 0.5em;
   color: var(--flatify__submenu-txt-color) !important;
   background: var(--flatify__submenu-bg-color) !important;
 }
@@ -2488,6 +2493,12 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 .tabs-header.scrollable .tab-button {
   white-space: nowrap;
 }
+.tabs-header.scrollable:not(.line-at-top) .tab-button:before {
+  bottom: 0;
+}
+.tabs-header.scrollable.line-at-top .tab-button:before {
+  top: 0;
+}
 @media screen and (max-width: 575.98px) {
   .tabs-header {
     font-size: 0.9em;
@@ -2504,7 +2515,8 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   height: 100%;
   padding: 0.75em 1.5em;
   margin: 0 0.38em;
-  color: inherit;
+  text-decoration: none !important;
+  color: inherit !important;
   background: transparent;
   border: none;
   outline: none;
@@ -2533,7 +2545,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   transform: scaleY(0);
 }
 .tabs-header .tab-button.active {
-  color: var(--flatify__color-accent-primary);
+  color: var(--flatify__color-accent-primary) !important;
   opacity: 1;
 }
 .tabs-header .tab-button.active:before {
@@ -2752,6 +2764,15 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
   border: var(--flatify__border-width) solid var(--flatify__form-element-border-color);
   border-radius: calc(var(--flatify__border-radius) * 0.5);
   transition: all var(--flatify__simple-transition);
+}
+.checkbox-wrapper .check.after-label,
+.radio-wrapper .check.after-label,
+.toggle-wrapper .check.after-label {
+  margin-right: 0.5em;
+}
+.checkbox-wrapper .check:not(.after-label),
+.radio-wrapper .check:not(.after-label),
+.toggle-wrapper .check:not(.after-label) {
   margin-left: 0.5em;
 }
 .checkbox-wrapper .check:after,
@@ -3171,6 +3192,7 @@ textarea:not(.default) {
 .items-group .item-icon svg {
   width: 3em;
   height: 3em;
+  padding: 0.32em;
   fill: currentColor;
 }
 .items-group .item-text {

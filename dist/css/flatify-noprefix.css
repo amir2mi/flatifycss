@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.2.3
+ * FlatifyCSS version 1.2.4
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -2489,6 +2489,9 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 }
 .tabs-header.scrollable .tab-button {
   white-space: nowrap;
+}
+.tabs-header.scrollable:not(.line-at-top) .tab-button:before {
+  bottom: 0;
 }
 @media screen and (max-width: 575.98px) {
   .tabs-header {

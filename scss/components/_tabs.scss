@@ -54,6 +54,13 @@
     .tab-button {
       white-space: nowrap;
     }
+
+    // because of the scrollbar they should stick to beginning of the container
+    &:not(.line-at-top) {
+      .tab-button:before {
+        bottom: 0;
+      }
+    }
   }
 
   @include break-xs() {
