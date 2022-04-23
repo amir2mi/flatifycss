@@ -150,7 +150,12 @@ address {
 // *** Lists
 ol,
 ul {
-  padding-left: 2em;
+  @if $IS_LTR {
+    padding-left: 2em;
+  }
+  else {
+    padding-right: 2em;
+  }
 }
 
 ol,

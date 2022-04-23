@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="file:///home/amir2mi/Projects/flatifycss/dist/css/flatify-noprefix.css" />
+    <title>Test FC</title>
+    <!-- <script src="https://unpkg.com/@popperjs/core@2"></script> -->
+    <script src="file:///home/amir2mi/Projects/flatifycss/dist/js/flatify.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito:wght@400;600;700&display=swap");
+
+      body {
+        padding: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="menu-items-wrapper navbar fixed-top scrollabl style-light-light">
+      <a class="navbar-logo" href="#"><img src="file:///home/amir2mi/Projects/fc-assets/logo.png" alt="logo" /> </a>
+      <ul class="links">
+        <li class="menu-item active"><a href="#">Home</a></li>
+        <li class="menu-item"><a href="#">Articles</a></li>
+        <li class="menu-item"><a href="#">Photos</a></li>
+        <li class="menu-item dropdown-wrapper">
+          <button class="dropdown-toggle arrow-button" id="defaultDropdown" aria-expanded="false">Open dropdown</button>
+          <ul class="dropdown menu-items-wrapper" aria-labelledby="defaultDropdown">
+            <li class="menu-item"><a href="#">Item 1</a></li>
+            <li class="menu-item"><a href="#">Item 2</a></li>
+            <li class="menu-item"><a href="#">Item 3</a></li>
+            <li class="menu-item"><a href="#">Item 4</a></li>
+            <li class="menu-item"><a href="#">Item 5</a></li>
+            <li><span class="pointer-arrow"></span></li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="arrow-button">Videos</a>
+          <ul class="submenu menu-items-wrapper arrow-top" aria-labelledby="defaultDropdown">
+            <li class="menu-item"><a href="#">Item 1</a></li>
+            <li class="menu-item"><a href="#">Item 2</a></li>
+            <li class="menu-item"><a href="#">Item 3</a></li>
+            <li class="menu-item"><a href="#">Item 4</a></li>
+            <li class="menu-item arrow-button arrow-right">
+              <a href="#">Item 5</a>
+              <ul class="submenu menu-items-wrapper arrow-left" aria-labelledby="defaultDropdown">
+                <li class="menu-item arrow-button arrow-right">
+                  <a href="#">Item 1</a>
+                  <ul class="submenu menu-items-wrapper arrow-left" aria-labelledby="defaultDropdown">
+                    <li class="menu-item"><a href="#">Item 1</a></li>
+                    <li class="menu-item arrow-button arrow-right">
+                      <a href="#">Item 2</a>
+                      <ul class="submenu menu-items-wrapper arrow-left" aria-labelledby="defaultDropdown">
+                        <li class="menu-item"><a href="#">Item 1</a></li>
+                        <li class="menu-item"><a href="#">Item 2</a></li>
+                        <li class="menu-item"><a href="#">Item 3</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item arrow-button arrow-right">
+                  <a href="#">Item 1</a>
+                  <ul class="submenu menu-items-wrapper arrow-left" aria-labelledby="defaultDropdown">
+                    <li class="menu-item"><a href="#">Item 1</a></li>
+
+                    <li class="menu-item"><a href="#">Item 2</a></li>
+                    <li class="menu-item arrow-button arrow-right">
+                      <a href="#">Item 2</a>
+                      <ul class="submenu menu-items-wrapper arrow-left" aria-labelledby="defaultDropdown">
+                        <li class="menu-item"><a href="#">Item 1</a></li>
+                        <li class="menu-item"><a href="#">Item 2</a></li>
+                        <li class="menu-item"><a href="#">Item 3</a></li>
+                      </ul>
+                    </li>
+                    <li class="menu-item"><a href="#">Item 4</a></li>
+                    <li class="menu-item"><a href="#">Item 5</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item"><a href="#">Item 3</a></li>
+                <li class="menu-item"><a href="#">Item 4</a></li>
+                <li class="menu-item"><a href="#">Item 5</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item disabled"><a>About Us</a></li>
+      </ul>
+      <div class="search-bar push-right">
+        <input type="search" class="style-light" placeholder="Search something..." />
+        <button class="search-button" aria-label="Search"></button>
+      </div>
+    </nav>
+
+    <label class="toggle-wrapper size-xs">
+      <input type="checkbox" name="the-toggle" role="switch" checked />
+      <span class="check"></span>
+      High contrast text
+    </label>
+
+    <label class="toggle-wrapper">
+      <input type="checkbox" name="the-toggle" role="switch" checked />
+      <span class="check"></span>
+      High contrast text
+    </label>
+
+    <label class="toggle-wrapper size-2x">
+      <input type="checkbox" name="the-toggle" role="switch" checked />
+      <span class="check"></span>
+      High contrast text
+    </label>
+
+    <label class="toggle-wrapper size-3x">
+      <input type="checkbox" name="the-toggle" role="switch" checked />
+      <span class="check anim-hue-min"></span>
+      High contrast text
+    </label>
+    <label class="checkbox-wrapper size-3x">
+      <input type="checkbox" name="the-toggle" checked />
+      <span class="check anim-hue"></span>
+      High contrast text
+    </label>
+    <label class="checkbox-wrapper">
+      <input type="checkbox" name="the-toggle" checked />
+      <span class="check"></span>
+      High contrast text
+    </label>
+    <label class="radio-wrapper">
+      <input type="checkbox" name="the-toggle" checked />
+      <span class="check"></span>
+      High contrast text
+    </label>
+    <br />
+    <br />
+
+    <button class="button open-modal" data-modal-target=".my-modal">Display The Modal</button>
+
+    <div class="modal my-modal modal-left height-100p" tabindex="-1" aria-labelledby="my-modal-title">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+          <button
+            type="button"
+            class="close-modal close-button"
+            data-modal-target=".my-modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">...</div>
+        <div class="modal-footer">
+          <button class="button size-sm style-danger close-modal">Close</button>
+          <button class="button size-sm style-info close-modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <p class="truncate toggle-truncate show-text">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+      malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo
+      eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+    </p>
+
+    <p class="truncate my-truncated-text">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+      malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo
+      eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+    </p>
+    <p class="truncate my-truncated-text">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+      malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo
+      eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
+    </p>
+
+    <button class="button toggle-truncate" data-truncation-target=".my-truncated-text">Toggle truncate</button>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-1">
+            Lorem ipsum dolor sit amet
+            <span class="add-button"></span>
+          </button>
+        </h2>
+        <div id="accordion-1" class="accordion-collapse">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias architecto quae tenetur voluptatum ipsa,
+            esse doloremque numquam accusantium pariatur facere sunt earum aut iure deserunt id illum ipsam repudiandae
+            non?
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-2">
+            Far far away
+            <span class="add-button"></span>
+          </button>
+        </h2>
+        <div id="accordion-2" class="accordion-collapse">
+          <div class="accordion-body">
+            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+            blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+            ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
+            paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful
+            Pointing has no control about the blind texts it is an almost unorthographic life One day however a small
+            line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
+            advised her not to do
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-2">
+            The Sorrows of Young Werther
+            <span class="add-button"></span>
+          </button>
+        </h2>
+        <div id="accordion-2" class="accordion-collapse">
+          <div class="accordion-body">
+            <h3 class="size-lg">Book I</h3>
+            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I
+            enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for
+            the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere
+            tranquil existence, that I neglect my talents.
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="accordion expendable bordered style-dark">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-1">
+            The accordion title
+            <span class="add-button"></span>
+          </button>
+        </h2>
+        <div id="accordion-1" class="accordion-collapse">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias architecto quae tenetur voluptatum ipsa,
+            esse doloremque numquam accusantium pariatur facere sunt earum aut iure deserunt id illum ipsam repudiandae
+            non?
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-toggle" aria-expanded="false" aria-controls="accordion-2">
+            The accordion title
+            <span class="add-button"></span>
+          </button>
+        </h2>
+        <div id="accordion-2" class="accordion-collapse">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias architecto quae tenetur voluptatum ipsa,
+            esse doloremque numquam accusantium pariatur facere sunt earum aut iure deserunt id illum ipsam repudiandae
+            non?
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <button class="button style-light two-layer-button size-lg">
+      Hello, this is a button
+      <span class="secondary-text">
+        <svg xmlns="http://www.w3.org/2000/svg" x="10" y="0" viewBox="-5 -5 110 110">
+          <path
+            d="M41.4 81.8c-10.8 0-20.9-4.2-28.6-11.8S1 52.2 1 41.4s4.2-20.9 11.8-28.6C20.5 5.2 30.6 1 41.4 1S62.3 5.2 70 12.8s11.8 17.8 11.8 28.6S77.6 62.3 70 70c-7.7 7.6-17.8 11.8-28.6 11.8zm0-68.4c-7.5 0-14.5 2.9-19.8 8.2s-8.2 12.3-8.2 19.8 2.9 14.5 8.2 19.8 12.3 8.2 19.8 8.2 14.5-2.9 19.8-8.2c5.3-5.3 8.2-12.3 8.2-19.8s-2.9-14.5-8.2-19.8-12.3-8.2-19.8-8.2z"
+          ></path>
+          <path
+            d="M92.8 99c-1.6 0-3.2-.6-4.4-1.8l-25-25c-2.4-2.4-2.4-6.4 0-8.8 2.4-2.4 6.4-2.4 8.8 0l25 25c2.4 2.4 2.4 6.4 0 8.8-1.2 1.2-2.8 1.8-4.4 1.8z"
+          ></path>
+        </svg>
+      </span>
+    </button>
+
+    <button class="button style-light two-layer-button size-lg">
+      Hello, this is a button
+      <span class="secondary-text">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 125">
+          <path
+            d="M24.503 12.412C13.732 12.412 5 21.144 5 31.916c0 10.771 8.732 19.502 19.503 19.502.232 0 6.279-.034 6.279-.034-.153 10.869-7.646 19.99-17.738 22.613a55.73 55.73 0 01-2.123.473A6.572 6.572 0 005 81.008c0 3.288 2.422 6.003 5.574 6.485.033.006.066.008.099.016.151.02.304.035.458.045.074.004.145.021.22.021 0 0 .789.025 1.05.004 1.165-.098 1.529-.246 2.281-.404 16.618-3.49 29.156-18.187 29.315-35.791h.01V31.829l-.005.004c-.045-10.733-8.755-19.421-19.499-19.421zM94.995 31.833c-.045-10.732-8.756-19.42-19.499-19.42-10.771 0-19.503 8.732-19.503 19.503s8.732 19.502 19.503 19.502c.231 0 6.278-.034 6.278-.034-.152 10.869-7.646 19.99-17.737 22.613-.68.176-2.103.471-2.123.473a6.572 6.572 0 00-5.921 6.538c0 3.288 2.422 6.003 5.574 6.485.032.006.065.008.099.016.15.02.303.035.457.045.074.004.145.021.221.021 0 0 .788.025 1.049.004 1.166-.098 1.53-.246 2.282-.404 16.618-3.49 29.156-18.187 29.315-35.791H95V31.829l-.005.004z"
+          ></path>
+        </svg>
+      </span>
+    </button>
+
+    <br />
+    <br />
+
+    <button class="add-button" aria-label="add"></button>
+    <button class="add-button active" aria-label="remove"></button>
+
+    <br />
+    <br />
+
+    <div class="button-group">
+      <button class="button style-light two-layer-button size-lg">
+        this is a button
+        <span class="secondary-text">Yellow</span>
+      </button>
+
+      <!-- <div class="backdrop-layer show"></div> -->
+      <button class="button arrow-button" aria-label="Arrow button"></button>
+      <button class="button arrow-button arrow-top" aria-label="Arrow button"></button>
+      <button class="button arrow-button arrow-left" aria-label="Arrow button"></button>
+      <button class="button arrow-button arrow-right" aria-label="Arrow button"></button>
+
+      <button class="button style-light two-layer-button size-lg">
+        Hello a button
+        <span class="secondary-text">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 100 125">
+            <path
+              d="M24.503 12.412C13.732 12.412 5 21.144 5 31.916c0 10.771 8.732 19.502 19.503 19.502.232 0 6.279-.034 6.279-.034-.153 10.869-7.646 19.99-17.738 22.613a55.73 55.73 0 01-2.123.473A6.572 6.572 0 005 81.008c0 3.288 2.422 6.003 5.574 6.485.033.006.066.008.099.016.151.02.304.035.458.045.074.004.145.021.22.021 0 0 .789.025 1.05.004 1.165-.098 1.529-.246 2.281-.404 16.618-3.49 29.156-18.187 29.315-35.791h.01V31.829l-.005.004c-.045-10.733-8.755-19.421-19.499-19.421zM94.995 31.833c-.045-10.732-8.756-19.42-19.499-19.42-10.771 0-19.503 8.732-19.503 19.503s8.732 19.502 19.503 19.502c.231 0 6.278-.034 6.278-.034-.152 10.869-7.646 19.99-17.737 22.613-.68.176-2.103.471-2.123.473a6.572 6.572 0 00-5.921 6.538c0 3.288 2.422 6.003 5.574 6.485.032.006.065.008.099.016.15.02.303.035.457.045.074.004.145.021.221.021 0 0 .788.025 1.049.004 1.166-.098 1.53-.246 2.282-.404 16.618-3.49 29.156-18.187 29.315-35.791H95V31.829l-.005.004z"
+            ></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+    <br />
+    <br />
+
+    <div class="items-group">
+      <button class="item-button">
+        <div class="item-icon"></div>
+        <div class="item-text">
+          <p class="item-title">First item</p>
+          <p class="item-subtitle">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </button>
+      <button class="item-button">
+        <div class="item-icon"></div>
+        <div class="item-text">
+          <p class="item-title">First item</p>
+          <p class="item-subtitle">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </button>
+      <button class="item-button active">
+        <div class="item-icon"></div>
+        <div class="item-text">
+          <p class="item-title">First item</p>
+          <p class="item-subtitle">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </button>
+      <button class="item-button">
+        <div class="item-icon"></div>
+        <div class="item-text">
+          <p class="item-title">First item</p>
+          <p class="item-subtitle">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </button>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="fireworks" aria-hidden="true">
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+    </div>
+    <br />
+    <br />
+    <div class="fireworks simple" aria-hidden="true">
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+      <span class="spark"></span>
+    </div>
+    <br />
+    <br />
+    <section class="cards-area">
+      <article class="card">
+        <header class="card-header">
+          <div class="card-badges">
+            <span class="badge style-red">Hello</span>
+            <span class="badge style-accent pulse">Wow</span>
+          </div>
+          <img class="card-image" src="https://picsum.photos/200/300" alt="Hello" />
+          <h2 class="card-title">Hello, I am a new card</h2>
+        </header>
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+          malesuada erat ut turpis.
+        </div>
+        <footer class="card-footer">
+          <div class="button-group">
+            <button class="button style-red-light">Like</button>
+            <button class="button style-green-light">Share</button>
+            <button class="button style-orange-light">Report</button>
+          </div>
+          <button class="button style-accent push-right">Read more</button>
+        </footer>
+      </article>
+      <article class="card horizontal">
+        <header class="card-header">
+          <div class="card-badges">
+            <span class="badge style-red">Hello</span>
+            <span class="badge style-accent pulse">Wow</span>
+          </div>
+          <img class="card-image" src="https://picsum.photos/200/300" alt="Hello" />
+        </header>
+        <div class="card-right">
+          <div class="card-body">
+            <h2 class="card-title">Hello, I am a new card</h2>
+
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+            malesuada erat ut turpis.
+          </div>
+          <footer class="card-footer">
+            <div class="button-group">
+              <button class="button style-red-light">Like</button>
+              <button class="button style-green-light">Share</button>
+              <button class="button style-orange-light">Report</button>
+            </div>
+            <button class="button style-accent push-right">Read more</button>
+          </footer>
+        </div>
+      </article>
+    </section>
+
+    <button class="hamburger active" aria-label="Open menu"></button>
+    <button class="hamburger" aria-label="Open menu"></button>
+
+    <div class="progress">
+      <div
+        class="progress-bar width-25p"
+        role="progressbar"
+        aria-valuenow="0"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+
+    <div class="progress processing style-yellow-light">
+      <div class="progress-bar width-50p" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        20
+      </div>
+    </div>
+
+    <div class="progress processing style-yellow">
+      <div class="progress-bar width-75p" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        20
+      </div>
+    </div>
+
+    <div class="progress processing style-red bordered">
+      <div
+        class="progress-bar width-10p"
+        role="progressbar"
+        aria-valuenow="0"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+
+    <div class="progress processing style-green">
+      <div
+        class="progress-bar width-15p"
+        role="progressbar"
+        aria-valuenow="0"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+
+    <div class="progress processing">
+      <div class="progress-bar width-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        25%
+      </div>
+    </div>
+
+    <select name="" id="">
+      <option value="1">Test</option>
+      <option value="2">Journal</option>
+      <option value="3">Travel</option>
+      <option value="4">Fight</option>
+    </select>
+
+    <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+      <ol class="breadcrumb style-red">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="location">Data</li>
+      </ol>
+    </nav>
+
+    <div class="tabs-wrapper bordered">
+      <div class="tabs-header scrollable" role="tablist">
+        <a
+          href="#"
+          role="tab"
+          class="tab-button active"
+          data-tab-target="#tab-kafka"
+          aria-controls="tab-kafka"
+          aria-selected="true"
+        >
+          Kafka
+        </a>
+        <button role="tab" class="tab-button" aria-controls="tab-werther" aria-selected="false">Werther</button>
+        <button role="tab" class="tab-button" aria-controls="tab-cicero" aria-selected="false">Cicero</button>
+        <button role="tab" class="tab-button" aria-controls="tab-cicero" aria-selected="false">Cicero</button>
+        <button role="tab" class="tab-button" aria-controls="tab-cicero" aria-selected="false">Cicero</button>
+        <button role="tab" class="tab-button" aria-controls="tab-cicero" aria-selected="false">Cicero</button>
+        <button role="tab" class="tab-button" aria-controls="tab-cicero" aria-selected="false">Cicero</button>
+        <button role="tab" class="tab-button" aria-controls="tab-cicero" aria-selected="false">Cicero</button>
+      </div>
+      <div class="tabs-content">
+        <div id="tab-kafka" class="tab-panel show">
+          <label for="password" class="form-label">New password</label>
+          <div class="input-wrapper">
+            <input required id="password" type="password" placeholder="Enter new password" />
+            <button class="show-password-button" aria-label="Show password"></button>
+          </div>
+          One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a
+          horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown
+          belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and
+          seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him,
+          waved about helplessly as he looked. "What is happened to me?" he thought. It was not a dream. His room, a
+          proper human room although a little too small, lay peacefully between its four familiar walls.
+        </div>
+        <div id="tab-werther" class="tab-panel">
+          A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy
+          with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss
+          of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil
+          existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment;
+          and yet I feel that I never was a greater artist than now.
+        </div>
+        <div id="tab-cicero" class="tab-panel">
+          But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I
+          will give you a complete account of the system, and expound the actual teachings of the great explorer of the
+          truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it
+          is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that
+          are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself,
+          because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some
+          great pleasure.
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-wrapper">
+      <div class="tabs-header">
+        <button id="first-tab-button" class="tab-button active" data-tab-target="#tab-first-1">First</button>
+        <button id="second-tab-button" class="tab-button" data-tab-target="#tab-second-1">Second</button>
+        <button id="third-tab-button" class="tab-button" data-tab-target="#tab-third-1">
+          Third <span class="badge">256</span>
+        </button>
+      </div>
+      <div class="tabs-content fade-animation">
+        <div id="tab-first-1" class="tab-panel show" role="tabpanel" aria-labelledby="first-tab-button">
+          First Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec
+          nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim
+          pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a,
+          ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas
+          auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+          porttitor, facilisis luctus, metus.
+        </div>
+        <div id="tab-second-1" class="tab-panel" role="tabpanel" aria-labelledby="second-tab-button">
+          Second Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec
+          nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim
+          pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a,
+          ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas
+          auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+          porttitor, facilisis luctus, metus.
+        </div>
+        <div id="tab-third-1" class="tab-panel" role="tabpanel" aria-labelledby="third-tab-button">
+          Third Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec
+          nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim
+          pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a,
+          ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas
+          auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+          porttitor, facilisis luctus, metus.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+      malesuada erat ut turpis.tooltip
+      <div class="dropdown-wrapper popover">
+        <b id="my-popover-toggle" class="dropdown-toggle" aria-expanded="false"> Click me! </b>
+        <div class="dropdown" aria-labelledby="my-popover-toggle">
+          Hello world!
+          <span aria-hidden="true" class="pointer-arrow" style="position: absolute; left: 93px"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-wrapper style-red">
+      <div class="tabs-header line-at-top">
+        <button id="first-tab-button" class="tab-button active" data-tab-target="#tab-first">First</button>
+        <button id="second-tab-button" class="tab-button" data-tab-target="#tab-second">Second</button>
+        <button id="third-tab-button" class="tab-button" data-tab-target="#tab-third">Third</button>
+      </div>
+      <div class="tabs-content slide-animation">
+        <div id="tab-first" class="tab-panel show" aria-labelledby="first-tab-button">
+          First Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec
+          nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim
+          pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a,
+          ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas
+          auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+          porttitor, facilisis luctus, metus.
+        </div>
+        <div id="tab-second" class="tab-panel" aria-labelledby="second-tab-button">
+          Second Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec
+          nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim
+          pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a,
+          ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas
+          auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+          porttitor, facilisis luctus, metus.
+        </div>
+        <div id="tab-third" class="tab-panel" aria-labelledby="third-tab-button">
+          Third Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec
+          nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim
+          pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a,
+          ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas
+          auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+          porttitor, facilisis luctus, metus.
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-wrapper">
+      <div class="tabs-header flex-center" role="tablist">
+        <button role="tab" id="first-tab-button" class="tab-button" data-tab-target="#tab-first-2">First</button>
+        <button role="tab" id="second-tab-button" class="tab-button" data-tab-target="#tab-second-2">Second</button>
+        <button role="tab" id="third-tab-button" class="tab-button" data-tab-target="#tab-third-2">Third</button>
+      </div>
+      <div class="tabs-content">
+        <div id="tab-first-2" class="tab-panel" aria-labelledby="first-tab-button">
+          First Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec
+          nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim
+          pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a,
+          ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas
+          auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+          porttitor, facilisis luctus, metus.
+        </div>
+        <div id="tab-second-2" class="tab-panel" aria-labelledby="second-tab-button">
+          Second Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec
+          nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim
+          pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a,
+          ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas
+          auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+          porttitor, facilisis luctus, metus.
+        </div>
+        <div id="tab-third-2" class="tab-panel" aria-labelledby="third-tab-button">
+          Third Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec
+          nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim
+          pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a,
+          ultricies in, diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas
+          auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+          porttitor, facilisis luctus, metus.
+        </div>
+      </div>
+    </div>
+
+    <span class="loading color-pink-light"></span>
+    <span class="loading style-red"></span>
+    <span class="loading"></span>
+    <button class="button style-blue overlay-layer static"><span class="loading"></span>Check me!</button>
+    <button class="button style-blue overlay-layer"><span class="loading"></span>Check me!</button>
+    <button class="button style-blue overlay-layer"><span class="spinner"></span>Check me!</button>
+    <!-- Button trigger modal -->
+    <button class="button open-modal style-light-light" data-modal-target=".my-modal-sm">Show it!</button>
+    <button class="button open-modal style-light-light" data-modal-target=".my-modal-sm">Show it!</button>
+
+    <span class="spinner style-pink size-3x"></span>
+    <span class="spinner"></span>
+    <span class="spinner style-red"></span>
+    <span class="spinner color-red"></span>
+
+    <div class="button-group">
+      <a href="#" class="button">1</a>
+      <a href="#" class="button active">2</a>
+      <a href="#" class="button">3</a>
+      <span class="button static">...</span>
+      <a href="#" class="button">97</a>
+      <a href="#" class="button">98</a>
+      <a href="#" class="button">99</a>
+    </div>
+
+    <!-- Modal .required -->
+    <div
+      class="modal my-modal-sm modal-center modal-sm required"
+      tabindex="-1"
+      aria-modal="false"
+      aria-labelledby="my-modal-title"
+    >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="my-modal-title">Modal title</h5>
+          <button type="button" class="close-modal close-button" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+        <button class="button open-modal" data-modal-target=".my-modal">Open another modal</button>
+      </div>
+    </div>
+
+    <blockquote class="no-icon">test</blockquote>
+
+    <!-- Button trigger modal -->
+    <button class="button open-modal" data-modal-target=".my-modal">Show it!</button>
+
+    <!-- Modal .required -->
+    <div
+      class="modal bordered my-modal modal-top modal-lg required"
+      tabindex="-1"
+      aria-modal="false"
+      aria-labelledby="my-modal-title"
+    >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="my-modal-title">Modal title</h5>
+          <button
+            type="button"
+            class="close-modal close-button"
+            data-modal-target=".my-modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+          malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec
+          justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque
+          felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in,
+          diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu
+          vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+          luctus, metus.
+        </div>
+        <div class="modal-footer">
+          <button class="button size-sm style-danger close-modal">Close</button>
+          <button class="button size-sm style-success">Understood</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <button class="button open-modal" data-modal-target=".my-modal-left-full">Show it!</button>
+
+    <!-- Modal .required -->
+    <div
+      class="modal bordered my-modal-left-full modal-left height-100p"
+      tabindex="-1"
+      aria-modal="false"
+      aria-labelledby="my-modal-title"
+    >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="my-modal-title">Modal title</h5>
+          <button
+            type="button"
+            class="close-modal close-button"
+            data-modal-target=".my-modal-left-full"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+          malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec
+          justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque
+          felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in,
+          diam. Sed arcu. Cras consequat. Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu
+          vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+          luctus, metus.
+        </div>
+        <div class="modal-footer">
+          <button class="button size-sm style-danger close-modal">Close</button>
+          <button class="button size-sm style-success">Understood</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="button open-modal style-red" data-modal-target=".my-modal-red">Red modal</button>
+    <p class="opacity-50">By clicking the fullscreen button examine this example with more space.</p>
+    <div class="modal style-red bordered my-modal-red" aria-labelledby="my-modal-title">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="my-modal-title">Here is an example</h5>
+          <button type="button" class="close-modal close-button" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+          malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec
+          justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque
+          felis.
+        </div>
+        <div class="modal-footer">
+          <button class="button size-sm style-red-light bordered close-modal">Close</button>
+          <button class="button size-sm style-dark bordered close-modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <ul class="menu-items-wrapper flex-center">
+      <li class="menu-item"><a href="#">Item 1</a></li>
+      <li class="menu-item"><a href="#">Item 2</a></li>
+      <li class="menu-item"><a href="#">Item 3</a></li>
+      <li class="menu-item"><a href="#">Item 4</a></li>
+      <li class="menu-item"><a href="#">Item 5</a></li>
+    </ul>
+
+    <div class="dropdown-wrapper size-xs">
+      <button class="button dropdown-toggle arrow-button arrow-right" id="defaultDropdown" aria-expanded="false">
+        Open dropdown
+      </button>
+      <ul
+        class="dropdown menu-items-wrapper"
+        aria-labelledby="defaultDropdown"
+        data-dropdown-auto-close="inside"
+        data-dropdown-direction="left"
+      >
+        <li class="menu-item"><a href="#">Item 1</a></li>
+        <li class="menu-item"><a href="#">Item 2</a></li>
+        <li class="menu-item"><a href="#">Item 3</a></li>
+        <li class="menu-item"><a href="#">Item 4</a></li>
+        <li class="menu-item"><a href="#">Item 5</a></li>
+        <li><span class="pointer-arrow"></span></li>
+      </ul>
+    </div>
+
+    <div class="dropdown-wrapper my-custom-dropdown push-right" style="display: table">
+      <button class="button dropdown-toggle arrow-button arrow-left" id="defaultDropdown" aria-expanded="false">
+        Open dropdown
+      </button>
+      <ul
+        class="dropdown at-top"
+        aria-labelledby="defaultDropdown"
+        data-dropdown-auto-close="outside"
+        data-dropdown-direction="right"
+      >
+        <li class="menu-item heading">My Account</li>
+        <li class="menu-item"><a href="#">Sign up</a></li>
+        <li class="menu-item"><a href="#">Login</a></li>
+        <li role="separator" class="menu-item separator"></li>
+        <li class="menu-item"><a href="#">About us</a></li>
+        <li class="menu-item"><a href="#">Contribute</a></li>
+        <li class="menu-item"><a href="#">Rate it!</a></li>
+        <li><span class="pointer-arrow"></span></li>
+      </ul>
+    </div>
+
+    <div class="dropdown-wrapper size-lg">
+      <div class="button-group">
+        <button class="button style-pink bordered">My button</button>
+        <button
+          class="button style-pink bordered dropdown-toggle arrow-button arrow-top"
+          id="defaultDropdown"
+          aria-expanded="false"
+          aria-label="Open dropdown"
+        ></button>
+      </div>
+      <ul
+        class="dropdown menu-items-wrapper style-pink"
+        aria-labelledby="defaultDropdown"
+        data-dropdown-auto-close="false"
+        data-dropdown-direction="top"
+      >
+        <li class="menu-item"><a href="#">Item 1</a></li>
+        <li class="menu-item"><a href="#">Item 2</a></li>
+        <li class="menu-item"><a href="#">Item 3</a></li>
+        <li class="menu-item separator"></li>
+        <li class="menu-item"><a href="#">Item 4</a></li>
+        <li class="menu-item"><a href="#">Item 5</a></li>
+        <li><span class="pointer-arrow"></span></li>
+        <li><button class="close-dropdown close-button" aria-label="Close"></button></li>
+      </ul>
+    </div>
+
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum deserunt atque nesciunt ipsam eius qui,
+      labore dolore quas facere vero fugiat id repellat rerum libero tempora. Saepe hic praesentium pariatur? Maxime rem
+      est ipsam harum et explicabo, maiores perferendis blanditiis iusto repellendus saepe sed enim atque asperiores
+      facilis, nam laudantium repellat ipsum molestiae ipsa mollitia omnis aperiam qui? Beatae, ipsam? Cumque enim,
+      numquam reprehenderit cupiditate perspiciatis exercitationem vel, deserunt ipsam doloribus expedita quae nostrum
+      nihil animi modi molestias ratione debitis minima nesciunt. Dolor impedit voluptatibus rem amet deleniti a maxime.
+      Nostrum magni modi pariatur cumque, error soluta nulla ab. Explicabo in quisquam expedita atque distinctio saepe
+      laudantium quasi officia porro nulla quos est harum, illum esse odio culpa commodi iure. Repellendus nulla velit
+      est quae necessitatibus unde, voluptatem quam maxime maiores. In repellat aliquam ab voluptate aliquid magnam
+      assumenda officiis? Esse quae qui alias mollitia cupiditate, amet perspiciatis debitis veniam!
+    </p>
+
+    <div class="button-group">
+      <button class="button">Click Here</button>
+      <button class="button style-success">Click Here</button>
+      <button class="button style-info active">Click Here</button>
+      <button class="button style-warning">Click Here</button>
+      <button class="button style-danger">Click Here</button>
+    </div>
+
+    <button class="button close-button" aria-label="Close"></button>
+    <button class="button close-button size-lg" aria-label="Close"></button>
+    <button class="button close-button size-2x" aria-label="Close"></button>
+
+    <input type="file" />
+    <br />
+    <br />
+    <div class="button-group">
+      <button class="button bordered">Click Here</button>
+      <button class="button bordered style-success">Click Here</button>
+      <button class="button bordered style-info active">Click Here</button>
+      <button class="button bordered style-warning">Click Here</button>
+      <button class="button bordered style-danger">Click Here</button>
+    </div>
+
+    <br />
+    <br />
+    <div class="alert" role="alert">
+      <button class="close-button default" aria-label="Close"></button>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+        malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+      </p>
+    </div>
+
+    <div class="alert" role="alert">
+      <button class="close-button default floating" aria-label="Close"></button>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+        malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+      </p>
+    </div>
+
+    <button class="button style-red">Hello World!</button>
+    <button class="button style-red-light">Hello World!</button>
+    <button class="button style-yellow">Hello World!</button>
+    <button class="button style-yellow-light">Hello World!</button>
+    <button class="button style-green">Hello World!</button>
+    <button class="button style-green-light">Hello World!</button>
+    <button class="button style-dark">Hello World!</button>
+    <button class="button style-dark-light">Hello World!</button>
+    <button class="button style-light">Hello World!</button>
+    <button class="button style-light-light">Hello World!</button>
+    <button class="button style-pink">Hello World!</button>
+    <button class="button style-pink-light">Hello World!</button>
+    <br />
+    <br />
+    <br />
+    <button class="button style-red bordered">Hello World!</button>
+    <button class="button style-red-light bordered">Hello World!</button>
+    <button class="button style-yellow bordered">Hello World!</button>
+    <button class="button style-yellow-light bordered">Hello World!</button>
+    <button class="button style-green bordered">Hello World!</button>
+    <button class="button style-green-light bordered">Hello World!</button>
+    <button class="button style-dark bordered">Hello World!</button>
+    <button class="button style-dark-light bordered">Hello World!</button>
+    <button class="button style-light bordered">Hello World!</button>
+    <button class="button style-light-light bordered">Hello World!</button>
+    <button class="button style-pink bordered">Hello World!</button>
+    <button class="button style-pink-light bordered">Hello World!</button>
+    <br />
+    <br />
+    <br />
+    <button class="button style-red outline">Hello World!</button>
+    <button class="button style-red-light outline">Hello World!</button>
+    <button class="button style-yellow outline">Hello World!</button>
+    <button class="button style-yellow-light outline">Hello World!</button>
+    <button class="button style-green outline">Hello World!</button>
+    <button class="button style-green-light outline">Hello World!</button>
+    <button class="button style-dark outline">Hello World!</button>
+    <button class="button style-dark-light outline">Hello World!</button>
+    <button class="button style-light outline">Hello World!</button>
+    <button class="button style-light-light outline">Hello World!</button>
+    <button class="button style-pink outline">Hello World!</button>
+    <button class="button style-pink-light outline">Hello World!</button>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="flex-center">
+      <button class="button style-success">Hello</button>
+      <button class="button style-success-light">Hello</button>
+      <button class="button style-info">Hello</button>
+      <button class="button style-info-light">Hello</button>
+      <button class="button style-yellow">Hello</button>
+      <button class="button style-yellow-light">Hello</button>
+      <button class="button style-warning">Hello</button>
+      <button class="button style-warning-light">Hello</button>
+      <button class="button style-danger">Hello</button>
+      <button class="button style-danger-light">Hello</button>
+    </div>
+    <div class="flex-center">
+      <button class="button style-success bordered">Hello</button>
+      <button class="button style-success-light bordered">Hello</button>
+      <button class="button style-info bordered">Hello</button>
+      <button class="button style-info-light bordered">Hello</button>
+      <button class="button style-yellow bordered">Hello</button>
+      <button class="button style-yellow-light bordered">Hello</button>
+      <button class="button style-warning bordered">Hello</button>
+      <button class="button style-warning-light bordered">Hello</button>
+      <button class="button style-danger bordered">Hello</button>
+      <button class="button style-danger-light bordered">Hello</button>
+    </div>
+    <div class="flex-center">
+      <button class="button style-success outline">Hello</button>
+      <button class="button style-success-light outline">Hello</button>
+      <button class="button style-info outline">Hello</button>
+      <button class="button style-info-light outline">Hello</button>
+      <button class="button style-yellow outline">Hello</button>
+      <button class="button style-yellow-light outline">Hello</button>
+      <button class="button style-warning outline">Hello</button>
+      <button class="button style-warning-light outline">Hello</button>
+      <button class="button style-danger outline">Hello</button>
+      <button class="button style-danger-light outline">Hello</button>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <p>
+      Lorem ipsum dolor sit, amet <a href="#">consectetur</a> adipisicing elit. Quidem error doloribus, ea voluptate
+      perspiciatis omnis, nulla cum molestiae dolore rem iste <a href="#">aliquam explicabo</a> porro mollitia eaque
+      perferendis eum laudantium <a href="#">voluptatibus</a>?
+    </p>
+  </body>
+</html>
