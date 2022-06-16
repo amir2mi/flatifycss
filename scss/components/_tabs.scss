@@ -147,9 +147,12 @@
 
 .tabs-content {
   overflow: hidden;
-  padding: 1em;
   color: var(--#{$CSS_VAR_PFX}tab-txt-color);
   background: var(--#{$CSS_VAR_PFX}tab-bg-color);
+
+  .tab-panel {
+    padding: 1em;
+  }
 
   .tab-panel:not(.show) {
     display: none !important;
