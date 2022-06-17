@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.2.8
+ * FlatifyCSS version 1.2.9
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -938,6 +938,8 @@ th {
   font-size: 1em;
   padding: 1em;
   margin: 0;
+}
+.accordion-header:not(.active), :not(.active) .accordion-header {
   border-bottom: var(--flatify__border-width) solid var(--flatify__local-border-color);
 }
 .accordion-header .accordion-toggle {
