@@ -70,7 +70,11 @@
   font-size: 1em;
   padding: 1em;
   margin: 0;
-  border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+
+  &:not(.active),
+  :not(.active) & {
+    border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+  }
 
   .accordion-toggle {
     display: flex;
