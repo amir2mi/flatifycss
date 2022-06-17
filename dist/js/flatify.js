@@ -49,8 +49,8 @@
         const addButton = toggle.querySelector(".add-button");
         item.classList.add("active");
         addButton && addButton.classList.add("active");
-        collapse && collapse.classList.add("modal-will-be-shown");
-        collapse && collapse.classList.remove("modal-will-be-hidden");
+        collapse && collapse.classList.add("accordion-will-be-shown");
+        collapse && collapse.classList.remove("accordion-will-be-hidden");
         toggle && toggle.setAttribute("aria-expanded", "true"); // set accordion item body height to accordion-collapse then remove it
 
         const height = item.querySelector(".accordion-body").offsetHeight;
@@ -75,12 +75,12 @@
         const collapse = item.querySelector(".accordion-collapse");
         const body = item.querySelector(".accordion-body");
         const addButton = toggle.querySelector(".add-button");
-        collapse && collapse.classList.add("modal-will-be-hidden");
-        collapse && collapse.classList.remove("modal-will-be-shown");
+        collapse && collapse.classList.add("accordion-will-be-hidden");
+        collapse && collapse.classList.remove("accordion-will-be-shown");
         (0, _utils_vent__WEBPACK_IMPORTED_MODULE_0__
         /* ["default"] */
         .Z)(body).once("animationend", () => {
-          if (collapse.classList.contains("modal-will-be-shown")) return;
+          if (collapse.classList.contains("accordion-will-be-shown")) return;
           const height = item.querySelector(".accordion-body").offsetHeight;
           requestAnimationFrame(function () {
             collapse.style.height = "".concat(height, "px");
@@ -89,7 +89,7 @@
             });
           });
           setTimeout(() => {
-            collapse && collapse.classList.remove("modal-will-be-hidden");
+            collapse && collapse.classList.remove("accordion-will-be-hidden");
             addButton && addButton.classList.remove("active");
             toggle && toggle.setAttribute("aria-expanded", "false");
             item.classList.remove("active");
@@ -683,7 +683,7 @@
 
       var _helpers_truncate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(291);
       /*!
-       * FlatifyCSS version 1.2.7
+       * FlatifyCSS version 1.2.8
        * Modern flat design framework for the web — inspired by Duolingo design system.
        * Copyright 2021-2022 The FlatifyCSS Authors
        * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
