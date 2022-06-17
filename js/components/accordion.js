@@ -22,11 +22,13 @@ function openAccordionItem(item) {
     });
   }
 
+  const header = item.querySelector(".accordion-header");
   const toggle = item.querySelector(".accordion-toggle");
   const collapse = item.querySelector(".accordion-collapse");
   const addButton = toggle.querySelector(".add-button");
 
   item.classList.add("active");
+  header.classList.add("active");
   addButton && addButton.classList.add("active");
   collapse && collapse.classList.add("accordion-will-be-shown");
   collapse && collapse.classList.remove("accordion-will-be-hidden");
@@ -53,6 +55,7 @@ function openAccordionItem(item) {
  * @param {Object} item
  */
 function closeAccordionItem(item) {
+  const header = item.querySelector(".accordion-header");
   const toggle = item.querySelector(".accordion-toggle");
   const collapse = item.querySelector(".accordion-collapse");
   const body = item.querySelector(".accordion-body");
@@ -77,6 +80,7 @@ function closeAccordionItem(item) {
     setTimeout(() => {
       collapse && collapse.classList.remove("accordion-will-be-hidden");
       addButton && addButton.classList.remove("active");
+      header && header.classList.remove("active");
       toggle && toggle.setAttribute("aria-expanded", "false");
       item.classList.remove("active");
     }, 200);
