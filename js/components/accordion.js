@@ -28,8 +28,8 @@ function openAccordionItem(item) {
 
   item.classList.add("active");
   addButton && addButton.classList.add("active");
-  collapse && collapse.classList.add("modal-will-be-shown");
-  collapse && collapse.classList.remove("modal-will-be-hidden");
+  collapse && collapse.classList.add("accordion-will-be-shown");
+  collapse && collapse.classList.remove("accordion-will-be-hidden");
   toggle && toggle.setAttribute("aria-expanded", "true");
 
   // set accordion item body height to accordion-collapse then remove it
@@ -58,11 +58,11 @@ function closeAccordionItem(item) {
   const body = item.querySelector(".accordion-body");
   const addButton = toggle.querySelector(".add-button");
 
-  collapse && collapse.classList.add("modal-will-be-hidden");
-  collapse && collapse.classList.remove("modal-will-be-shown");
+  collapse && collapse.classList.add("accordion-will-be-hidden");
+  collapse && collapse.classList.remove("accordion-will-be-shown");
 
   $(body).once("animationend", () => {
-    if (collapse.classList.contains("modal-will-be-shown")) return;
+    if (collapse.classList.contains("accordion-will-be-shown")) return;
 
     const height = item.querySelector(".accordion-body").offsetHeight;
 
@@ -75,7 +75,7 @@ function closeAccordionItem(item) {
     });
 
     setTimeout(() => {
-      collapse && collapse.classList.remove("modal-will-be-hidden");
+      collapse && collapse.classList.remove("accordion-will-be-hidden");
       addButton && addButton.classList.remove("active");
       toggle && toggle.setAttribute("aria-expanded", "false");
       item.classList.remove("active");
