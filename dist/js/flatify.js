@@ -44,10 +44,12 @@
           });
         }
 
+        const header = item.querySelector(".accordion-header");
         const toggle = item.querySelector(".accordion-toggle");
         const collapse = item.querySelector(".accordion-collapse");
         const addButton = toggle.querySelector(".add-button");
         item.classList.add("active");
+        header.classList.add("active");
         addButton && addButton.classList.add("active");
         collapse && collapse.classList.add("accordion-will-be-shown");
         collapse && collapse.classList.remove("accordion-will-be-hidden");
@@ -71,6 +73,7 @@
 
 
       function closeAccordionItem(item) {
+        const header = item.querySelector(".accordion-header");
         const toggle = item.querySelector(".accordion-toggle");
         const collapse = item.querySelector(".accordion-collapse");
         const body = item.querySelector(".accordion-body");
@@ -91,6 +94,7 @@
           setTimeout(() => {
             collapse && collapse.classList.remove("accordion-will-be-hidden");
             addButton && addButton.classList.remove("active");
+            header && header.classList.remove("active");
             toggle && toggle.setAttribute("aria-expanded", "false");
             item.classList.remove("active");
           }, 200);
@@ -683,7 +687,7 @@
 
       var _helpers_truncate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(291);
       /*!
-       * FlatifyCSS version 1.2.9
+       * FlatifyCSS version 1.2.11
        * Modern flat design framework for the web — inspired by Duolingo design system.
        * Copyright 2021-2022 The FlatifyCSS Authors
        * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
