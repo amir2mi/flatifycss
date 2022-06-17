@@ -71,7 +71,7 @@
   padding: 1em;
   margin: 0;
 
-  &:not(.active) {
+  &.active {
     border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
   }
 
