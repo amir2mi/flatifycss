@@ -25,7 +25,7 @@
   border: none;
   border-radius: var(--#{$CSS_VAR_PFX}border-radius);
   box-shadow: 0 calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38) 0 var(--#{$CSS_VAR_PFX}button-border-color);
-  // filter affect box-shadow width, so it should be set as default to prevent bugs on hover
+  // filter affects box-shadow width, so it should be set as default to prevent bugs on hover
   filter: brightness(100%);
   will-change: transform, filter;
   // !important to replace input transition
@@ -145,4 +145,18 @@
   padding: 0.75em 0.85em;
   background: transparent;
   border: none;
+}
+
+// reset default button styles
+button.no-style {
+  padding: 0 0.38em;
+  margin: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: currentColor;
+  background: transparent;
+  border: none;
+  outline: none;
 }
