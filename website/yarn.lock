@@ -3632,10 +3632,8 @@ events@^3.2.0:
   resolved "https://registry.npmjs.org/events/-/events-3.3.0.tgz"
 
 eventsource@^1.0.7:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/eventsource/-/eventsource-1.1.0.tgz"
-  dependencies:
-    original "^1.0.0"
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/eventsource/-/eventsource-1.1.2.tgz#bc75ae1c60209e7cb1541231980460343eaea7c2"
 
 execa@^1.0.0:
   version "1.0.0"
@@ -5670,12 +5668,6 @@ opn@^5.5.0:
   resolved "https://registry.npmjs.org/opn/-/opn-5.5.0.tgz"
   dependencies:
     is-wsl "^1.1.0"
-
-original@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/original/-/original-1.0.2.tgz"
-  dependencies:
-    url-parse "^1.4.3"
 
 p-cancelable@^1.0.0:
   version "1.1.0"
@@ -7762,7 +7754,7 @@ url-parse-lax@^3.0.0:
   dependencies:
     prepend-http "^2.0.0"
 
-url-parse@^1.4.3, url-parse@^1.5.3:
+url-parse@^1.5.3:
   version "1.5.10"
   resolved "https://registry.npmjs.org/url-parse/-/url-parse-1.5.10.tgz"
   dependencies:
