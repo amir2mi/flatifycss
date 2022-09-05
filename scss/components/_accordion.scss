@@ -68,7 +68,6 @@
 
 .accordion-header {
   font-size: 1em;
-  padding: 1em;
   margin: 0;
 
   &.active {
@@ -82,6 +81,7 @@
     text-align: initial;
     width: 100%;
     height: 100%;
+    padding: 1em;
     color: currentColor;
     background: transparent;
     border: none;
