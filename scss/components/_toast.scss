@@ -1,0 +1,86 @@
+:root {
+  --#{$CSS_VAR_PFX}toast-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}toast-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+  --#{$CSS_VAR_PFX}toast-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+  --#{$CSS_VAR_PFX}toast-inner-space: 2.5em;
+  --#{$CSS_VAR_PFX}toast-animation-show: flatify-slide-up-in-min ease 0.3s;
+  --#{$CSS_VAR_PFX}toast-animation-hide: flatify-slide-down-out-min ease 0.3s both;
+}
+
+.toast-wrapper {
+  position: fixed;
+  width: 20em;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  z-index: $ZINDEX_TOAST;
+
+  &.bottom {
+    flex-direction: column-reverse;
+    bottom: var(--#{$CSS_VAR_PFX}toast-inner-space);
+  }
+  &.top {
+    flex-direction: column;
+    top: var(--#{$CSS_VAR_PFX}toast-inner-space);
+  }
+  &.left {
+    left: var(--#{$CSS_VAR_PFX}toast-inner-space);
+  }
+  &.right {
+    right: var(--#{$CSS_VAR_PFX}toast-inner-space);
+  }
+  &.center {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  @include break-xs() {
+    &.left,
+    &.right {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    --#{$CSS_VAR_PFX}toast-inner-space: 0.5em;
+    width: calc(100% - 1em);
+  }
+}
+
+.toast {
+  --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}toast-txt-color);
+  --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}toast-bg-color);
+  --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}toast-border-color);
+  position: relative;
+  width: 100%;
+  padding: 0.75em;
+  margin: 0.25em 0;
+  color: var(--#{$CSS_VAR_PFX}local-txt-color);
+  background: var(--#{$CSS_VAR_PFX}local-bg-color);
+  border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+  box-shadow: inset 0 -0.125em 0 var(--#{$CSS_VAR_PFX}local-border-color);
+  border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+
+  &:not(.toast-will-be-removed) {
+    animation: var(--#{$CSS_VAR_PFX}toast-animation-show);
+  }
+
+  &.toast-will-be-removed {
+    animation: var(--#{$CSS_VAR_PFX}toast-animation-hide);
+  }
+
+  .close-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    @if $IS_LTR {
+      right: 0.25em;
+    }
+    else {
+      left: 0.25em;
+    }
+    font-size: 0.85em;
+    margin: auto 0;
+    background: var(--#{$CSS_VAR_PFX}local-bg-color);
+  }
+}
