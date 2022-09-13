@@ -284,8 +284,8 @@ $TAB_SHOW_ANIMATION_DURATION: 300ms !default;
 $TAB_HIDE_ANIMATION_DURATION: 200ms !default;
 
 // *** Typography: font size, font family, line height
-$MIN_FONT_SIZE: 14 !default; // must be without unit
-$MAX_FONT_SIZE: 16 !default; // must be without unit
+$MIN_FONT_SIZE: 85% !default; // must be percent
+$MAX_FONT_SIZE: 100% !default; // must be percent
 $PRIMARY_FONT_FAMILY: "Nunito", sans-serif !default;
 $HEADING_FONT_FAMILY: $PRIMARY_FONT_FAMILY !default;
 $CODE_FONT_FAMILY: "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;

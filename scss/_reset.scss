@@ -24,17 +24,17 @@
 // *** Root
 :root {
   @include break-xs {
-    font-size: var(--#{$CSS_VAR_PFX}min-font-size-with-unit);
+    font-size: var(--#{$CSS_VAR_PFX}min-font-size);
   }
 
   $sm-bp: map-get($RESPONSIVE_BREAKPOINTS, "sm");
   $xl-bp: map-get($RESPONSIVE_BREAKPOINTS, "xl");
   @media (min-width: $sm-bp) and (max-width: $xl-bp) {
-    font-size: #{"calc( var(--#{$CSS_VAR_PFX}min-font-size-with-unit) + ( var(--#{$CSS_VAR_PFX}max-font-size) - var(--#{$CSS_VAR_PFX}min-font-size) ) * ( ( 100vw - #{$sm-bp} ) / ( #{math.div($xl-bp,1px)} - #{math.div($sm-bp,1px)} ) ) )"};
+    font-size: #{"calc( var(--#{$CSS_VAR_PFX}min-font-size) + ( var(--#{$CSS_VAR_PFX}max-font-size) - var(--#{$CSS_VAR_PFX}min-font-size) ) * ( ( 100vw - #{$sm-bp} ) / ( #{math.div($xl-bp,1px)} - #{math.div($sm-bp,1px)} ) ) )"};
   }
 
   @include break-xl-min {
-    font-size: var(--#{$CSS_VAR_PFX}max-font-size-with-unit);
+    font-size: var(--#{$CSS_VAR_PFX}max-font-size);
   }
 
   @if $SUPPORT_SMOOTH_SCROLL {
