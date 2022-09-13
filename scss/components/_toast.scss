@@ -51,9 +51,10 @@
   --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}toast-txt-color);
   --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}toast-bg-color);
   --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}toast-border-color);
+  overflow: hidden;
   position: relative;
   width: 100%;
-  padding: 0.75em;
+  padding: 0.9em;
   margin: 0.25em 0;
   color: var(--#{$CSS_VAR_PFX}local-txt-color);
   background: var(--#{$CSS_VAR_PFX}local-bg-color);
@@ -69,6 +70,27 @@
     animation: var(--#{$CSS_VAR_PFX}toast-animation-hide);
   }
 
+  &:hover {
+    .close-button {
+      transition-delay: 0.15s;
+      transform: scale(1);
+    }
+  }
+
+  .toast-svg {
+    display: inline-block;
+    width: 2em;
+    max-height: 2em;
+    @if $IS_LTR {
+      margin-right: 0.32em;
+    }
+    else {
+      margin-left: 0.32em;
+    }
+    fill: currentColor;
+    opacity: 0.75;
+  }
+
   .close-button {
     position: absolute;
     top: 0;
@@ -82,5 +104,7 @@
     font-size: 0.85em;
     margin: auto 0;
     background: var(--#{$CSS_VAR_PFX}local-bg-color);
+    box-shadow: 0 0 0.32em 0.32em var(--#{$CSS_VAR_PFX}local-bg-color);
+    transform: scale(0);
   }
 }
