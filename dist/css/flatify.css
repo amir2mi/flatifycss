@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.2.13
+ * FlatifyCSS version 1.3.0
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -10,10 +10,8 @@
   --flatify__border-radius: 1em;
   --flatify__hover-brightness: 95%;
   --flatify__backdrop-opacity: 0.35;
-  --flatify__max-font-size: 16;
-  --flatify__min-font-size: 14;
-  --flatify__max-font-size-with-unit: 16px;
-  --flatify__min-font-size-with-unit: 14px;
+  --flatify__max-font-size: 100%;
+  --flatify__min-font-size: 85%;
   --flatify__primary-font-family: Nunito, sans-serif;
   --flatify__heading-font-family: Nunito, sans-serif;
   --flatify__code-font-family: Fira Code, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
@@ -131,17 +129,17 @@
 
 @media screen and (max-width: 575.98px) {
   :root {
-    font-size: var(--flatify__min-font-size-with-unit);
+    font-size: var(--flatify__min-font-size);
   }
 }
 @media (min-width: 576px) and (max-width: 1200px) {
   :root {
-    font-size: calc( var(--flatify__min-font-size-with-unit) + ( var(--flatify__max-font-size) - var(--flatify__min-font-size) ) * ( ( 100vw - 576px ) / ( 1200 - 576 ) ) );
+    font-size: calc( var(--flatify__min-font-size) + ( var(--flatify__max-font-size) - var(--flatify__min-font-size) ) * ( ( 100vw - 576px ) / ( 1200 - 576 ) ) );
   }
 }
 @media screen and (min-width: 1200px) {
   :root {
-    font-size: var(--flatify__max-font-size-with-unit);
+    font-size: var(--flatify__max-font-size);
   }
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -949,7 +947,6 @@ th {
 
 .accordion-header {
   font-size: 1em;
-  padding: 1em;
   margin: 0;
 }
 .accordion-header.active {
@@ -962,6 +959,7 @@ th {
   text-align: initial;
   width: 100%;
   height: 100%;
+  padding: 1em;
   color: currentColor;
   background: transparent;
   border: none;
@@ -1378,6 +1376,21 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   padding: 0.75em 0.85em;
   background: transparent;
   border: none;
+}
+
+button.no-style {
+  padding: 0 0.38em;
+  margin: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: currentColor;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  transform: none;
 }
 
 :root {
@@ -2872,6 +2885,107 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
 }
 
 :root {
+  --flatify__toast-txt-color: var(--flatify__txt-color);
+  --flatify__toast-bg-color: var(--flatify__bg-color);
+  --flatify__toast-border-color: var(--flatify__bg-color-darker);
+  --flatify__toast-inner-space: 2.5em;
+  --flatify__toast-animation-show: flatify-slide-up-in-min ease 0.3s;
+  --flatify__toast-animation-hide: flatify-slide-down-out-min ease 0.3s both;
+}
+
+.toast-wrapper {
+  position: fixed;
+  width: 20em;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  z-index: 1100;
+}
+.toast-wrapper.bottom {
+  flex-direction: column-reverse;
+  bottom: var(--flatify__toast-inner-space);
+}
+.toast-wrapper.top {
+  flex-direction: column;
+  top: var(--flatify__toast-inner-space);
+}
+.toast-wrapper.left {
+  left: var(--flatify__toast-inner-space);
+}
+.toast-wrapper.right {
+  right: var(--flatify__toast-inner-space);
+}
+.toast-wrapper.center {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+@media screen and (max-width: 575.98px) {
+  .toast-wrapper {
+    --flatify__toast-inner-space: 0.5em;
+    width: calc(100% - 1em);
+  }
+  .toast-wrapper.left, .toast-wrapper.right {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+.toast {
+  --flatify__local-txt-color: var(--flatify__toast-txt-color);
+  --flatify__local-bg-color: var(--flatify__toast-bg-color);
+  --flatify__local-border-color: var(--flatify__toast-border-color);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 0.9em;
+  margin: 0.25em 0;
+  color: var(--flatify__local-txt-color);
+  background: var(--flatify__local-bg-color);
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  box-shadow: inset 0 -0.125em 0 var(--flatify__local-border-color);
+  border-radius: var(--flatify__border-radius);
+}
+.toast:not(.toast-will-be-removed) {
+  -webkit-animation: var(--flatify__toast-animation-show);
+          animation: var(--flatify__toast-animation-show);
+}
+.toast.toast-will-be-removed {
+  -webkit-animation: var(--flatify__toast-animation-hide);
+          animation: var(--flatify__toast-animation-hide);
+}
+.toast:hover .close-button {
+  transition-delay: 0.15s;
+  transform: scale(1);
+}
+.toast .toast-svg {
+  display: inline-block;
+  width: 2em;
+  max-height: 2em;
+  margin-right: 0.32em;
+  fill: currentColor;
+  opacity: 0.75;
+}
+.toast .toast-svg else {
+  margin-left: 0.32em;
+}
+.toast .close-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0.25em;
+  font-size: 0.85em;
+  margin: auto 0;
+  background: var(--flatify__local-bg-color);
+  box-shadow: 0 0 0.32em 0.32em var(--flatify__local-bg-color);
+  transform: scale(0);
+}
+.toast .close-button else {
+  left: 0.25em;
+}
+
+:root {
   --flatify__form-element-accent-color: var(--flatify__color-accent-primary);
   --flatify__form-element-bg-color: var(--flatify__bg-color-dark);
   --flatify__form-element-txt-color: var(--flatify__txt-color);
@@ -3434,6 +3548,9 @@ select option {
   background: var(--flatify__form-element-bg-color);
 }
 
+.toggle-wrapper:hover .check:after {
+  transform: translateX(0.3em);
+}
 .toggle-wrapper .check {
   min-width: 3em;
   width: 3em;
@@ -3839,6 +3956,26 @@ textarea:not(.default) {
     transform: translateY(0);
   }
 }
+@-webkit-keyframes flatify-slide-up-in-min {
+  from {
+    opacity: 0;
+    transform: translateY(3em) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes flatify-slide-up-in-min {
+  from {
+    opacity: 0;
+    transform: translateY(3em) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @-webkit-keyframes flatify-slide-up-out {
   from {
     transform: translateY(0);
@@ -3887,6 +4024,26 @@ textarea:not(.default) {
     transform: translateY(-100%) scale(0.95);
   }
 }
+@-webkit-keyframes flatify-slide-down-out-min {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-3em) scale(0.95);
+  }
+}
+@keyframes flatify-slide-down-out-min {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-3em) scale(0.95);
+  }
+}
 @-webkit-keyframes flatify-slide-left-in {
   from {
     transform: translateX(100%) scale(0.95);
@@ -3906,7 +4063,7 @@ textarea:not(.default) {
 @-webkit-keyframes flatify-slide-left-in-min {
   from {
     opacity: 0;
-    transform: translateX(15em);
+    transform: translateX(3em);
   }
   to {
     opacity: 1;
@@ -3916,7 +4073,7 @@ textarea:not(.default) {
 @keyframes flatify-slide-left-in-min {
   from {
     opacity: 0;
-    transform: translateX(15em);
+    transform: translateX(3em);
   }
   to {
     opacity: 1;
@@ -3946,7 +4103,7 @@ textarea:not(.default) {
   }
   to {
     opacity: 0;
-    transform: translateX(15em);
+    transform: translateX(3em);
   }
 }
 @keyframes flatify-slide-left-out-min {
@@ -3956,7 +4113,7 @@ textarea:not(.default) {
   }
   to {
     opacity: 0;
-    transform: translateX(15em);
+    transform: translateX(3em);
   }
 }
 @-webkit-keyframes flatify-slide-right-in {
@@ -3978,7 +4135,7 @@ textarea:not(.default) {
 @-webkit-keyframes flatify-slide-right-in-min {
   from {
     opacity: 0;
-    transform: translateX(-15em);
+    transform: translateX(-3em);
   }
   to {
     opacity: 1;
@@ -3988,7 +4145,7 @@ textarea:not(.default) {
 @keyframes flatify-slide-right-in-min {
   from {
     opacity: 0;
-    transform: translateX(-15em);
+    transform: translateX(-3em);
   }
   to {
     opacity: 1;
@@ -4018,7 +4175,7 @@ textarea:not(.default) {
   }
   to {
     opacity: 0;
-    transform: translateX(-15em);
+    transform: translateX(-3em);
   }
 }
 @keyframes flatify-slide-right-out-min {
@@ -4028,7 +4185,7 @@ textarea:not(.default) {
   }
   to {
     opacity: 0;
-    transform: translateX(-15em);
+    transform: translateX(-3em);
   }
 }
 @-webkit-keyframes flatify-alert-will-be-removed {
