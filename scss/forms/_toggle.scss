@@ -1,4 +1,10 @@
 .toggle-wrapper {
+  &:hover {
+    .check:after {
+      transform: translateX(0.3em);
+    }
+  }
+
   .check {
     // force minimum width for limited space cases
     min-width: 3em;
