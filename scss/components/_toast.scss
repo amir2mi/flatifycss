@@ -3,8 +3,8 @@
   --#{$CSS_VAR_PFX}toast-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
   --#{$CSS_VAR_PFX}toast-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
   --#{$CSS_VAR_PFX}toast-inner-space: 2.5em;
-  --#{$CSS_VAR_PFX}toast-animation-show: flatify-slide-up-in-min ease 0.3s;
-  --#{$CSS_VAR_PFX}toast-animation-hide: flatify-slide-down-out-min ease 0.3s both;
+  --#{$CSS_VAR_PFX}toast-animation-show: flatify-slide-up-in-min ease 0.2s;
+  --#{$CSS_VAR_PFX}toast-animation-hide: flatify-slide-down-out-min ease 0.2s both;
 }
 
 .toast-wrapper {
@@ -62,7 +62,7 @@
   box-shadow: inset 0 -0.125em 0 var(--#{$CSS_VAR_PFX}local-border-color);
   border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
-  &:not(.toast-will-be-removed) {
+  &.show {
     animation: var(--#{$CSS_VAR_PFX}toast-animation-show);
   }
 

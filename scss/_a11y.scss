@@ -23,7 +23,8 @@
     // Fade In
     .dropdown,
     .modal,
-    .tab-panel {
+    .tab-panel,
+    .toast {
       &.show {
         animation-name: flatify-fade-in !important;
       }
@@ -58,6 +59,7 @@
 
     // Fade Out
     .show {
+      &.toast-will-be-removed,
       &.alert-will-be-removed,
       &.dropdown-will-be-hidden,
       &.modal-will-be-hidden,
