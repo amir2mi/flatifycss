@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.3.2
+ * FlatifyCSS version 1.3.3
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -2947,7 +2947,7 @@ button.no-style {
   box-shadow: inset 0 -0.125em 0 var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
-.toast.show {
+.toast:not(.toast-will-be-removed) {
   -webkit-animation: var(--flatify__toast-animation-show);
           animation: var(--flatify__toast-animation-show);
 }
@@ -5326,8 +5326,7 @@ body ::after {
   }
   body .dropdown.show,
 body .modal.show,
-body .tab-panel.show,
-body .toast.show {
+body .tab-panel.show {
     -webkit-animation-name: flatify-fade-in !important;
             animation-name: flatify-fade-in !important;
   }
@@ -5337,6 +5336,14 @@ body .toast.show {
   }
   body .two-layer-button {
     --flatify__two-layer-button-animation-show: flatify-fade-in 0.3s ease-in-out !important;
+  }
+  body .toast:not(.toast-will-be-removed) {
+    -webkit-animation-name: flatify-fade-in !important;
+            animation-name: flatify-fade-in !important;
+  }
+  body .toast.toast-will-be-removed {
+    -webkit-animation-name: flatify-fade-out !important;
+            animation-name: flatify-fade-out !important;
   }
   body .loading {
     -webkit-animation: flatify-fade-in-out 2s infinite !important;
@@ -5352,7 +5359,7 @@ body .toast.show {
     -webkit-animation: flatify-fade-in-out 3s infinite !important;
             animation: flatify-fade-in-out 3s infinite !important;
   }
-  body .show.toast-will-be-removed, body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden, body .show.tab-will-be-hidden {
+  body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden, body .show.tab-will-be-hidden {
     -webkit-animation-name: flatify-fade-out !important;
             animation-name: flatify-fade-out !important;
   }
