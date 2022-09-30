@@ -23,8 +23,7 @@
     // Fade In
     .dropdown,
     .modal,
-    .tab-panel,
-    .toast {
+    .tab-panel {
       &.show {
         animation-name: flatify-fade-in !important;
       }
@@ -39,6 +38,16 @@
 
     .two-layer-button {
       --#{$CSS_VAR_PFX}two-layer-button-animation-show: flatify-fade-in 0.3s ease-in-out !important;
+    }
+
+    // toast fade in/out
+    .toast {
+      &:not(.toast-will-be-removed) {
+        animation-name: flatify-fade-in !important;
+      }
+      &.toast-will-be-removed {
+        animation-name: flatify-fade-out !important;
+      }
     }
 
     // Fade in out like a fresh breath
@@ -59,7 +68,6 @@
 
     // Fade Out
     .show {
-      &.toast-will-be-removed,
       &.alert-will-be-removed,
       &.dropdown-will-be-hidden,
       &.modal-will-be-hidden,

@@ -2677,7 +2677,7 @@ button.no-style {
   box-shadow: inset 0 -0.125em 0 var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
-.toast.show {
+.toast:not(.toast-will-be-removed) {
   animation: var(--flatify__toast-animation-show);
 }
 .toast.toast-will-be-removed {
@@ -4635,8 +4635,7 @@ body ::after {
   }
   body .dropdown.show,
 body .modal.show,
-body .tab-panel.show,
-body .toast.show {
+body .tab-panel.show {
     animation-name: flatify-fade-in !important;
   }
   body .menu-item:focus-within > .submenu, body .menu-item:hover > .submenu {
@@ -4644,6 +4643,12 @@ body .toast.show {
   }
   body .two-layer-button {
     --flatify__two-layer-button-animation-show: flatify-fade-in 0.3s ease-in-out !important;
+  }
+  body .toast:not(.toast-will-be-removed) {
+    animation-name: flatify-fade-in !important;
+  }
+  body .toast.toast-will-be-removed {
+    animation-name: flatify-fade-out !important;
   }
   body .loading {
     animation: flatify-fade-in-out 2s infinite !important;
@@ -4656,7 +4661,7 @@ body .toast.show {
     filter: opacity(60%);
     animation: flatify-fade-in-out 3s infinite !important;
   }
-  body .show.toast-will-be-removed, body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden, body .show.tab-will-be-hidden {
+  body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden, body .show.tab-will-be-hidden {
     animation-name: flatify-fade-out !important;
   }
   body .spinner:before {
