@@ -1,6 +1,6 @@
 .toggle-wrapper {
-  &:hover {
-    .check:after {
+  &:hover:not(:focus-within) {
+    input:not(:disabled) + .check:after {
       transform: translateX(0.3em);
     }
   }
@@ -32,9 +32,9 @@
   input:checked + .check {
     &:after {
       @if $IS_LTR {
-        transform: translateX(1.4em);
+        transform: translateX(1.4em) !important;
       } @else {
-        transform: translateX(-1.4em);
+        transform: translateX(-1.4em) !important;
       }
       background: var(--#{$CSS_VAR_PFX}form-element-accent-color);
     }
@@ -47,15 +47,24 @@
         transition: all 0.1s 0.05s;
       }
 
+      input:disabled {
+        &:not(:checked) + .check:after {
+          transform: scale(1) !important;
+        }
+        &:checked + .check:after {
+          transform: scale(1) translateX(1.4em) !important;
+        }
+      }
+
       input:not(:checked) + .check:after {
-        transform: scaleX(1.2) scaleY(0.7);
+        transform: scaleX(1.2) scaleY(0.7) !important;
       }
 
       input:checked + .check:after {
         @if $IS_LTR {
-          transform: translateX(1.2em) scaleY(0.7) scaleX(1.4);
+          transform: translateX(1.2em) scaleY(0.7) scaleX(1.4) !important;
         } @else {
-          transform: translateX(-1.2em) scaleY(0.7) scaleX(1.4);
+          transform: translateX(-1.2em) scaleY(0.7) scaleX(1.4) !important;
         }
       }
     }
