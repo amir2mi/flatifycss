@@ -3,8 +3,12 @@
   --#{$CSS_VAR_PFX}toast-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
   --#{$CSS_VAR_PFX}toast-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
   --#{$CSS_VAR_PFX}toast-inner-space: 2.5em;
-  --#{$CSS_VAR_PFX}toast-animation-show: flatify-slide-up-in-min ease 0.2s;
-  --#{$CSS_VAR_PFX}toast-animation-hide: flatify-slide-down-out-min ease 0.2s both;
+  --#{$CSS_VAR_PFX}toast-animation-show-duration: #{$TOAST_SHOW_ANIMATION_DURATION};
+  --#{$CSS_VAR_PFX}toast-animation-hide-duration: #{$TOAST_HIDE_ANIMATION_DURATION};
+  --#{$CSS_VAR_PFX}toast-animation-show: flatify-slide-up-in-min var(--#{$CSS_VAR_PFX}toast-animation-show-duration)
+    ease;
+  --#{$CSS_VAR_PFX}toast-animation-hide: flatify-slide-down-out-min var(--#{$CSS_VAR_PFX}toast-animation-hide-duration)
+    ease both;
 }
 
 .toast-wrapper {
