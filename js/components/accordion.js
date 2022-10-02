@@ -30,7 +30,7 @@ function openAccordionItem(item) {
   item.classList.add("active");
   header.classList.add("active");
   addButton && addButton.classList.add("active");
-  collapse && collapse.classList.add("accordion-will-be-shown");
+  collapse && collapse.classList.add("show");
   collapse && collapse.classList.remove("accordion-will-be-hidden");
   toggle && toggle.setAttribute("aria-expanded", "true");
 
@@ -62,10 +62,10 @@ function closeAccordionItem(item) {
   const addButton = toggle.querySelector(".add-button");
 
   collapse && collapse.classList.add("accordion-will-be-hidden");
-  collapse && collapse.classList.remove("accordion-will-be-shown");
+  collapse && collapse.classList.remove("show");
 
   $(body).once("animationend", () => {
-    if (collapse.classList.contains("accordion-will-be-shown")) return;
+    if (collapse.classList.contains("show")) return;
 
     const height = item.querySelector(".accordion-body").offsetHeight;
 

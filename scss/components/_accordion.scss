@@ -60,6 +60,7 @@
     }
   }
 }
+
 .accordion-item:not(.active) {
   .accordion-collapse {
     display: none;
@@ -99,26 +100,22 @@
   margin: 0;
   will-change: height;
   transition: height 0.2s ease-in-out;
+
+  &.show .accordion-body {
+    animation: var(--#{$CSS_VAR_PFX}accordion-animation-show) both;
+  }
+
+  &.accordion-will-be-hidden .accordion-body {
+    animation: var(--#{$CSS_VAR_PFX}accordion-animation-hide) forwards;
+  }
 }
 
 .accordion-body {
   padding: 1em;
 }
 
-.accordion-will-be-shown {
-  .accordion-body {
-    animation: var(--#{$CSS_VAR_PFX}accordion-animation-show) both;
-  }
-}
-
-.accordion-will-be-hidden {
-  .accordion-body {
-    animation: var(--#{$CSS_VAR_PFX}accordion-animation-hide) forwards;
-  }
-}
-
 .fade-animation {
-  .accordion-will-be-shown {
+  .show {
     .accordion-body {
       animation: flatify-fade-in var(--#{$CSS_VAR_PFX}accordion-animation-show-duration) 0.1s ease-in-out both;
     }
