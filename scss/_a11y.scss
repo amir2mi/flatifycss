@@ -15,10 +15,6 @@
       --#{$CSS_VAR_PFX}bouncing-transition: 0s !important;
     }
 
-    .accordion-collapse {
-      transition: none !important;
-    }
-
     // Fade instead of custom animations
     // Fade In
     .dropdown,
@@ -40,12 +36,34 @@
       --#{$CSS_VAR_PFX}two-layer-button-animation-show: flatify-fade-in 0.3s ease-in-out !important;
     }
 
+    // accordion fade in/out
+    .accordion-collapse {
+      transition: none !important;
+
+      &.show .accordion-body {
+        animation-name: flatify-fade-in !important;
+      }
+      &.accordion-will-be-hidden .accordion-body {
+        animation-name: flatify-fade-out !important;
+      }
+    }
+
     // toast fade in/out
     .toast {
       &:not(.toast-will-be-removed) {
         animation-name: flatify-fade-in !important;
       }
       &.toast-will-be-removed {
+        animation-name: flatify-fade-out !important;
+      }
+    }
+
+    // alert fade in/out
+    .alert {
+      &:not(.alert-will-be-removed) {
+        animation-name: flatify-fade-in !important;
+      }
+      &.alert-will-be-removed {
         animation-name: flatify-fade-out !important;
       }
     }
@@ -68,7 +86,6 @@
 
     // Fade Out
     .show {
-      &.alert-will-be-removed,
       &.dropdown-will-be-hidden,
       &.modal-will-be-hidden,
       &.tab-will-be-hidden {
