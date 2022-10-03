@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.3.3
+ * FlatifyCSS version 1.3.4
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -976,22 +976,20 @@ th {
   will-change: height;
   transition: height 0.2s ease-in-out;
 }
+.accordion-collapse.show .accordion-body {
+  -webkit-animation: var(--flatify__accordion-animation-show) both;
+          animation: var(--flatify__accordion-animation-show) both;
+}
+.accordion-collapse.accordion-will-be-hidden .accordion-body {
+  -webkit-animation: var(--flatify__accordion-animation-hide) forwards;
+          animation: var(--flatify__accordion-animation-hide) forwards;
+}
 
 .accordion-body {
   padding: 1em;
 }
 
-.accordion-will-be-shown .accordion-body {
-  -webkit-animation: var(--flatify__accordion-animation-show) both;
-          animation: var(--flatify__accordion-animation-show) both;
-}
-
-.accordion-will-be-hidden .accordion-body {
-  -webkit-animation: var(--flatify__accordion-animation-hide) forwards;
-          animation: var(--flatify__accordion-animation-hide) forwards;
-}
-
-.fade-animation .accordion-will-be-shown .accordion-body {
+.fade-animation .show .accordion-body {
   -webkit-animation: flatify-fade-in var(--flatify__accordion-animation-show-duration) 0.1s ease-in-out both;
           animation: flatify-fade-in var(--flatify__accordion-animation-show-duration) 0.1s ease-in-out both;
 }
@@ -1004,9 +1002,11 @@ th {
   --flatify__alert-bg-color: var(--flatify__bg-color-dark);
   --flatify__alert-txt-color: var(--flatify__txt-color);
   --flatify__alert-border-color: var(--flatify__bg-color-darker);
-  --flatify__alert-animation-remove-duration: 350ms;
-  --flatify__alert-animation-remove: flatify-alert-will-be-removed
-    var(--flatify__alert-animation-remove-duration) ease;
+  --flatify__alert-animation-show-duration: 200ms;
+  --flatify__alert-animation-hide-duration: 300ms;
+  --flatify__alert-animation-show: flatify-blow-in var(--flatify__alert-animation-show-duration) ease;
+  --flatify__alert-animation-hide: flatify-alert-will-be-removed
+    var(--flatify__alert-animation-hide-duration) ease;
 }
 
 .alert {
@@ -1022,9 +1022,13 @@ th {
   border: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius);
 }
+.alert:not(.alert-will-be-removed) {
+  -webkit-animation: var(--flatify__alert-animation-show) both;
+          animation: var(--flatify__alert-animation-show) both;
+}
 .alert.alert-will-be-removed {
-  -webkit-animation: var(--flatify__alert-animation-remove) both;
-          animation: var(--flatify__alert-animation-remove) both;
+  -webkit-animation: var(--flatify__alert-animation-hide) both;
+          animation: var(--flatify__alert-animation-hide) both;
 }
 .alert:hover .close-button.floating {
   transform: scale(1);
@@ -1390,7 +1394,7 @@ button.no-style {
   border: none;
   outline: none;
   box-shadow: none;
-  transform: none;
+  transform: none !important;
 }
 
 :root {
@@ -2889,8 +2893,12 @@ button.no-style {
   --flatify__toast-bg-color: var(--flatify__bg-color);
   --flatify__toast-border-color: var(--flatify__bg-color-darker);
   --flatify__toast-inner-space: 2.5em;
-  --flatify__toast-animation-show: flatify-slide-up-in-min ease 0.2s;
-  --flatify__toast-animation-hide: flatify-slide-down-out-min ease 0.2s both;
+  --flatify__toast-animation-show-duration: 300ms;
+  --flatify__toast-animation-hide-duration: 200ms;
+  --flatify__toast-animation-show: flatify-slide-up-in-min var(--flatify__toast-animation-show-duration)
+    ease;
+  --flatify__toast-animation-hide: flatify-slide-down-out-min var(--flatify__toast-animation-hide-duration)
+    ease both;
 }
 
 .toast-wrapper {
@@ -3548,7 +3556,7 @@ select option {
   background: var(--flatify__form-element-bg-color);
 }
 
-.toggle-wrapper:hover .check:after {
+.toggle-wrapper:hover:not(:focus-within) input:not(:disabled) + .check:after {
   transform: translateX(0.3em);
 }
 .toggle-wrapper .check {
@@ -3567,18 +3575,24 @@ select option {
   transition: all var(--flatify__bouncing-transition);
 }
 .toggle-wrapper input:checked + .check:after {
-  transform: translateX(1.4em);
+  transform: translateX(1.4em) !important;
   background: var(--flatify__form-element-accent-color);
 }
 @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .toggle-wrapper:active .check:after {
     transition: all 0.1s 0.05s;
   }
+  .toggle-wrapper:active input:disabled:not(:checked) + .check:after {
+    transform: scale(1) !important;
+  }
+  .toggle-wrapper:active input:disabled:checked + .check:after {
+    transform: scale(1) translateX(1.4em) !important;
+  }
   .toggle-wrapper:active input:not(:checked) + .check:after {
-    transform: scaleX(1.2) scaleY(0.7);
+    transform: scaleX(1.2) scaleY(0.7) !important;
   }
   .toggle-wrapper:active input:checked + .check:after {
-    transform: translateX(1.2em) scaleY(0.7) scaleX(1.4);
+    transform: translateX(1.2em) scaleY(0.7) scaleX(1.4) !important;
   }
 }
 
@@ -5321,9 +5335,6 @@ body ::after {
     --flatify__long-transition: 0s !important;
     --flatify__bouncing-transition: 0s !important;
   }
-  body .accordion-collapse {
-    transition: none !important;
-  }
   body .dropdown.show,
 body .modal.show,
 body .tab-panel.show {
@@ -5337,11 +5348,30 @@ body .tab-panel.show {
   body .two-layer-button {
     --flatify__two-layer-button-animation-show: flatify-fade-in 0.3s ease-in-out !important;
   }
+  body .accordion-collapse {
+    transition: none !important;
+  }
+  body .accordion-collapse.show .accordion-body {
+    -webkit-animation-name: flatify-fade-in !important;
+            animation-name: flatify-fade-in !important;
+  }
+  body .accordion-collapse.accordion-will-be-hidden .accordion-body {
+    -webkit-animation-name: flatify-fade-out !important;
+            animation-name: flatify-fade-out !important;
+  }
   body .toast:not(.toast-will-be-removed) {
     -webkit-animation-name: flatify-fade-in !important;
             animation-name: flatify-fade-in !important;
   }
   body .toast.toast-will-be-removed {
+    -webkit-animation-name: flatify-fade-out !important;
+            animation-name: flatify-fade-out !important;
+  }
+  body .alert:not(.alert-will-be-removed) {
+    -webkit-animation-name: flatify-fade-in !important;
+            animation-name: flatify-fade-in !important;
+  }
+  body .alert.alert-will-be-removed {
     -webkit-animation-name: flatify-fade-out !important;
             animation-name: flatify-fade-out !important;
   }
@@ -5359,7 +5389,7 @@ body .tab-panel.show {
     -webkit-animation: flatify-fade-in-out 3s infinite !important;
             animation: flatify-fade-in-out 3s infinite !important;
   }
-  body .show.alert-will-be-removed, body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden, body .show.tab-will-be-hidden {
+  body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden, body .show.tab-will-be-hidden {
     -webkit-animation-name: flatify-fade-out !important;
             animation-name: flatify-fade-out !important;
   }
