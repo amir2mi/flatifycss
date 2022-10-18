@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.3.4
+ * FlatifyCSS version 1.4.0
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -1153,19 +1153,19 @@ th {
 }
 
 :root {
-  --flatify__breadcrumb-txt-color: var(--flatify__txt-color);
-  --flatify__breadcrumb-bg-color: var(--flatify__bg-color);
-  --flatify__breadcrumb-border-color: var(--flatify__bg-color-darker);
+  --flatify__breadcrumbs-txt-color: var(--flatify__txt-color);
+  --flatify__breadcrumbs-bg-color: var(--flatify__bg-color);
+  --flatify__breadcrumbs-border-color: var(--flatify__bg-color-darker);
 }
 
-.breadcrumb-wrapper {
+.breadcrumbs-wrapper {
   width: 100%;
 }
 
-.breadcrumb {
-  --flatify__local-txt-color: var(--flatify__breadcrumb-txt-color);
-  --flatify__local-bg-color: var(--flatify__breadcrumb-bg-color);
-  --flatify__local-border-color: var(--flatify__breadcrumb-border-color);
+.breadcrumbs {
+  --flatify__local-txt-color: var(--flatify__breadcrumbs-txt-color);
+  --flatify__local-bg-color: var(--flatify__breadcrumbs-bg-color);
+  --flatify__local-border-color: var(--flatify__breadcrumbs-border-color);
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
@@ -1174,10 +1174,10 @@ th {
   margin: 0.5em 0;
   border-radius: var(--flatify__border-radius);
 }
-.breadcrumb[class*=style-] {
+.breadcrumbs[class*=style-] {
   background: transparent !important;
 }
-.breadcrumb .breadcrumb-item {
+.breadcrumbs .crumb {
   overflow: hidden;
   position: relative;
   white-space: nowrap;
@@ -1189,10 +1189,10 @@ th {
   border-bottom: var(--flatify__border-width) solid;
   border-color: var(--flatify__local-border-color);
 }
-.breadcrumb .breadcrumb-item:not(:first-child) {
+.breadcrumbs .crumb:not(:first-child) {
   padding-left: 3em;
 }
-.breadcrumb .breadcrumb-item:not(:first-child):before {
+.breadcrumbs .crumb:not(:first-child):before {
   content: " ";
   position: absolute;
   top: 0;
@@ -1208,17 +1208,17 @@ th {
   transform: rotate(45deg);
   transition: transform var(--flatify__simple-transition);
 }
-.breadcrumb .breadcrumb-item:first-child {
+.breadcrumbs .crumb:first-child {
   padding-left: 2em;
   border-left: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
 }
-.breadcrumb .breadcrumb-item:last-child {
+.breadcrumbs .crumb:last-child {
   padding-right: 2em;
   border-right: var(--flatify__border-width) solid var(--flatify__local-border-color);
   border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
 }
-.breadcrumb .breadcrumb-item:hover:before, .breadcrumb .breadcrumb-item:focus-within:before {
+.breadcrumbs .crumb:hover:before, .breadcrumbs .crumb:focus-within:before {
   transform: rotate(45deg) scale(1.15);
 }
 
