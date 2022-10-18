@@ -5,19 +5,21 @@
 }
 
 .breadcrumbs-wrapper {
-  width: 100%;
-}
-
-.breadcrumbs {
   --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}breadcrumbs-txt-color);
   --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}breadcrumbs-bg-color);
   --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}breadcrumbs-border-color);
+  width: 100%;
+  border: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
+  border-radius: var(--#{$CSS_VAR_PFX}border-radius);
+}
+
+.breadcrumbs {
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
   list-style: none;
   padding: 0;
-  margin: 0.5em 0;
+  margin: 0;
   border-radius: var(--#{$CSS_VAR_PFX}border-radius);
 
   &[class*="style-"] {
@@ -32,8 +34,6 @@
     padding: 0.64em 1em;
     color: var(--#{$CSS_VAR_PFX}local-txt-color);
     background: var(--#{$CSS_VAR_PFX}local-bg-color);
-    border-top: var(--#{$CSS_VAR_PFX}border-width) solid;
-    border-bottom: var(--#{$CSS_VAR_PFX}border-width) solid;
     border-color: var(--#{$CSS_VAR_PFX}local-border-color);
 
     &:not(:first-child) {
@@ -68,24 +68,16 @@
     &:first-child {
       @if $IS_LTR {
         padding-left: 2em;
-        border-left: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-        border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
       } @else {
         padding-right: 2em;
-        border-right: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-        border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
       }
     }
 
     &:last-child {
       @if $IS_LTR {
         padding-right: 2em;
-        border-right: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-        border-radius: 0 var(--#{$CSS_VAR_PFX}border-radius) var(--#{$CSS_VAR_PFX}border-radius) 0;
       } @else {
         padding-left: 2em;
-        border-left: var(--#{$CSS_VAR_PFX}border-width) solid var(--#{$CSS_VAR_PFX}local-border-color);
-        border-radius: var(--#{$CSS_VAR_PFX}border-radius) 0 0 var(--#{$CSS_VAR_PFX}border-radius);
       }
     }
 
