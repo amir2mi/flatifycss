@@ -111,5 +111,4 @@ If everything is okay, we can run `gulp` in the root directory to compile the st
 
 ## Support
 
-We appreciate your contribution it is the best way you can help us, however if you want you can buy a coffee!
-<a width="200" height="55" href="https://www.buymeacoffee.com/amir2mi" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 55px !important;width: 200px !important;" ></a>
+We appreciate your contribution it is the best way you can help us, however if you want you can [buy a coffee](https://www.buymeacoffee.com/amir2mi)!
