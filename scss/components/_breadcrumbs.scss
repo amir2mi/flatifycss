@@ -1,17 +1,17 @@
 :root {
-  --#{$CSS_VAR_PFX}breadcrumb-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
-  --#{$CSS_VAR_PFX}breadcrumb-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
-  --#{$CSS_VAR_PFX}breadcrumb-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
+  --#{$CSS_VAR_PFX}breadcrumbs-txt-color: var(--#{$CSS_VAR_PFX}txt-color);
+  --#{$CSS_VAR_PFX}breadcrumbs-bg-color: var(--#{$CSS_VAR_PFX}bg-color);
+  --#{$CSS_VAR_PFX}breadcrumbs-border-color: var(--#{$CSS_VAR_PFX}bg-color-darker);
 }
 
-.breadcrumb-wrapper {
+.breadcrumbs-wrapper {
   width: 100%;
 }
 
-.breadcrumb {
-  --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}breadcrumb-txt-color);
-  --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}breadcrumb-bg-color);
-  --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}breadcrumb-border-color);
+.breadcrumbs {
+  --#{$CSS_VAR_PFX}local-txt-color: var(--#{$CSS_VAR_PFX}breadcrumbs-txt-color);
+  --#{$CSS_VAR_PFX}local-bg-color: var(--#{$CSS_VAR_PFX}breadcrumbs-bg-color);
+  --#{$CSS_VAR_PFX}local-border-color: var(--#{$CSS_VAR_PFX}breadcrumbs-border-color);
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
@@ -24,7 +24,7 @@
     background: transparent !important;
   }
 
-  .breadcrumb-item {
+  .crumb {
     overflow: hidden;
     position: relative;
     white-space: nowrap;

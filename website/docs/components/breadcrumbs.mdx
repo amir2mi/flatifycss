@@ -1,0 +1,299 @@
+---
+title: Breadcrumbs
+---
+
+import PreviewBox from "../../src/components/preview-box";
+
+Breadcrumbs are a necessary part of any website they determine where users are so they can navigate.  
+It is easy to create one just add `.breadcrumbs` class and create children with `.crumb`, here is an example:
+
+<PreviewBox
+  height="110px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css" />
+		<title>Breadcrumbs</title>
+	</head>
+	<body class="flex-center">
+        <nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+			<ol class="breadcrumbs">
+				<li class="crumb"><a href="#">Home</a></li>
+				<li class="crumb"><a href="#">Tutorials</a></li>
+				<li class="crumb"><a href="#">Videos</a></li>
+				<li class="crumb active" aria-current="location">How to create videos</li>
+			</ol>
+		</nav>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<nav class="breadcrumbs-wrapper" aria-label="breadcrumbs">
+  <ol class="breadcrumbs">
+    <li class="crumb"><a href="#">Home</a></li>
+    <li class="crumb"><a href="#">Tutorials</a></li>
+    <li class="crumb"><a href="#">Videos</a></li>
+    <li class="crumb active" aria-current="location">How to create videos</li>
+  </ol>
+</nav>
+```
+
+:::success Accesibility matters!
+Always add [`aria-current="location"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current) for the last breadcrumbs item, it determines it is the current page which helps screen reader users a lot.
+:::
+
+## Scrollable overflow
+
+When there are a lot of breadcrumbs items which overflow, breadcrumbs will be scrollable instead of breaking to new line, although it will be better to set scroll position to the end with JavaScript.
+
+<PreviewBox
+  height="120px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css" />
+		<title>Breadcrumbs</title>
+	</head>
+	<body class="flex-column-center">
+        <nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+			<ol class="breadcrumbs">
+				<li class="crumb"><a href="#">Home</a></li>
+				<li class="crumb"><a href="#">Tutorials</a></li>
+				<li class="crumb"><a href="#">Free</a></li>
+				<li class="crumb"><a href="#">Web</a></li>
+				<li class="crumb"><a href="#">Front-end</a></li>
+				<li class="crumb"><a href="#">Basics</a></li>
+				<li class="crumb"><a href="#">Videos</a></li>
+				<li class="crumb active" aria-current="location">How to become a web developer in one week and create awesome websites with no pain?</li>
+			</ol>
+		</nav>
+	</body>
+</html>
+'
+/>
+
+## Sizes
+
+To change the breadcrumbs size use [size setter classes](/docs/helpers/size-setters).
+These classes just set a `font-size` property so it is possible to change it yourself by writing custom CSS.
+
+<PreviewBox
+  height="275px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css" />
+		<title>Breadcrumbs</title>
+	</head>
+	<body class="flex-column-center">
+        <nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+			<ol class="breadcrumbs size-xs">
+				<li class="crumb"><a href="#">Home</a></li>
+				<li class="crumb"><a href="#">Tutorials</a></li>
+				<li class="crumb"><a href="#">Videos</a></li>
+				<li class="crumb active" aria-current="location">How to create videos</li>
+			</ol>
+		</nav>
+        <nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+			<ol class="breadcrumbs size-md">
+				<li class="crumb"><a href="#">Home</a></li>
+				<li class="crumb"><a href="#">Tutorials</a></li>
+				<li class="crumb"><a href="#">Videos</a></li>
+				<li class="crumb active" aria-current="location">How to create videos</li>
+			</ol>
+		</nav>
+        <nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+			<ol class="breadcrumbs size-2x">
+				<li class="crumb"><a href="#">Home</a></li>
+				<li class="crumb"><a href="#">Tutorials</a></li>
+				<li class="crumb"><a href="#">Videos</a></li>
+				<li class="crumb active" aria-current="location">How to create videos</li>
+			</ol>
+		</nav>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+  <ol class="breadcrumbs size-xs">
+    ...
+  </ol>
+</nav>
+
+<nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+  <ol class="breadcrumbs size-md">
+    ...
+  </ol>
+</nav>
+
+<nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+  <ol class="breadcrumbs size-2x">
+    ...
+  </ol>
+</nav>
+```
+
+## Colors
+
+There are helper classes for styling elements like breadcrumbs, first read about [color setter classes](/docs/helpers/color-setters) for having button with diffrent background and text color.
+
+<PreviewBox
+  height="290px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css" />
+		<title>Breadcrumbs</title>
+	</head>
+	<body class="flex-column-center">
+        <nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+			<ol class="breadcrumbs style-dark">
+				<li class="crumb"><a href="#">Home</a></li>
+				<li class="crumb"><a href="#">Tutorials</a></li>
+				<li class="crumb"><a href="#">Videos</a></li>
+				<li class="crumb active" aria-current="location">How to create videos</li>
+			</ol>
+		</nav>
+        <nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+			<ol class="breadcrumbs style-blue">
+				<li class="crumb"><a href="#">Home</a></li>
+				<li class="crumb"><a href="#">Tutorials</a></li>
+				<li class="crumb"><a href="#">Videos</a></li>
+				<li class="crumb active" aria-current="location">How to create videos</li>
+			</ol>
+		</nav>
+        <nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+			<ol class="breadcrumbs style-orange">
+				<li class="crumb"><a href="#">Home</a></li>
+				<li class="crumb"><a href="#">Tutorials</a></li>
+				<li class="crumb"><a href="#">Videos</a></li>
+				<li class="crumb active" aria-current="location">How to create videos</li>
+			</ol>
+		</nav>
+           <nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+			<ol class="breadcrumbs style-yellow">
+				<li class="crumb"><a href="#">Home</a></li>
+				<li class="crumb"><a href="#">Tutorials</a></li>
+				<li class="crumb"><a href="#">Videos</a></li>
+				<li class="crumb active" aria-current="location">How to create videos</li>
+			</ol>
+		</nav>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+  <ol class="breadcrumbs style-dark">
+    ...
+  </ol>
+</nav>
+
+<nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+  <ol class="breadcrumbs style-blue">
+    ...
+  </ol>
+</nav>
+
+<nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+  <ol class="breadcrumbs style-orange">
+    ...
+  </ol>
+</nav>
+
+<nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+  <ol class="breadcrumbs style-yellow">
+    ...
+  </ol>
+</nav>
+```
+
+## Customization
+
+Each breadcrumbs has these CSS variables for customization, they can be set as `:root` for all breadcrumbs default style or just for a specific selector.
+
+`--flatify__breadcrumb-txt-color`  
+`--flatify__breadcrumb-bg-color`  
+`--flatify__breadcrumb-border-color`
+
+<PreviewBox
+  height="110px"
+  children='
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatifycss/dist/css/flatify.min.css" />
+		<title>Breadcrumbs</title>
+        <style>
+            .my-custom-breadcrumbs{
+                --flatify__breadcrumb-txt-color: #F5F7FA;
+                --flatify__breadcrumb-bg-color: #AA8E69;
+                --flatify__breadcrumb-border-color: #BAA286;
+                --flatify__link-color: #FFCE54;
+                --flatify__link-color__hover: #F6BB42;
+                --flatify__link-color__focus: #A0D468;
+            }
+        </style>
+	</head>
+	<body class="flex-center">
+        <nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+			<ol class="breadcrumbs my-custom-breadcrumbs">
+				<li class="crumb"><a href="#">Home</a></li>
+				<li class="crumb"><a href="#">Tutorials</a></li>
+				<li class="crumb"><a href="#">Videos</a></li>
+				<li class="crumb active" aria-current="location">How to create videos</li>
+			</ol>
+		</nav>
+	</body>
+</html>
+'
+/>
+
+```html title="index.html"
+<nav class="breadcrumbs-wrapper" aria-label="It is a breadcrumbs">
+  <ol class="breadcrumbs my-custom-breadcrumbs">
+    <li class="crumb"><a href="#">Home</a></li>
+    <li class="crumb"><a href="#">Tutorials</a></li>
+    <li class="crumb"><a href="#">Videos</a></li>
+    <li class="crumb active" aria-current="location">How to create videos</li>
+  </ol>
+</nav>
+```
+
+```css title="style.css"
+.my-custom-breadcrumbs {
+  /* custom breadcrumbs colors */
+  --flatify__breadcrumb-txt-color: #f5f7fa;
+  --flatify__breadcrumb-bg-color: #aa8e69;
+  --flatify__breadcrumb-border-color: #baa286;
+
+  /* custom breadcrumbs links */
+  --flatify__link-color: #ffce54;
+  --flatify__link-color__hover: #f6bb42;
+  --flatify__link-color__focus: #a0d468;
+}
+```
