@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.4.0
+ * FlatifyCSS version 1.4.1
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -977,12 +977,10 @@ th {
   transition: height 0.2s ease-in-out;
 }
 .accordion-collapse.show .accordion-body {
-  -webkit-animation: var(--flatify__accordion-animation-show) both;
-          animation: var(--flatify__accordion-animation-show) both;
+  animation: var(--flatify__accordion-animation-show) both;
 }
 .accordion-collapse.accordion-will-be-hidden .accordion-body {
-  -webkit-animation: var(--flatify__accordion-animation-hide) forwards;
-          animation: var(--flatify__accordion-animation-hide) forwards;
+  animation: var(--flatify__accordion-animation-hide) forwards;
 }
 
 .accordion-body {
@@ -990,12 +988,10 @@ th {
 }
 
 .fade-animation .show .accordion-body {
-  -webkit-animation: flatify-fade-in var(--flatify__accordion-animation-show-duration) 0.1s ease-in-out both;
-          animation: flatify-fade-in var(--flatify__accordion-animation-show-duration) 0.1s ease-in-out both;
+  animation: flatify-fade-in var(--flatify__accordion-animation-show-duration) 0.1s ease-in-out both;
 }
 .fade-animation .accordion-will-be-hidden .accordion-body {
-  -webkit-animation: flatify-fade-out var(--flatify__accordion-animation-hide-duration) ease-in-out both;
-          animation: flatify-fade-out var(--flatify__accordion-animation-hide-duration) ease-in-out both;
+  animation: flatify-fade-out var(--flatify__accordion-animation-hide-duration) ease-in-out both;
 }
 
 :root {
@@ -1023,12 +1019,10 @@ th {
   border-radius: var(--flatify__border-radius);
 }
 .alert:not(.alert-will-be-removed) {
-  -webkit-animation: var(--flatify__alert-animation-show) both;
-          animation: var(--flatify__alert-animation-show) both;
+  animation: var(--flatify__alert-animation-show) both;
 }
 .alert.alert-will-be-removed {
-  -webkit-animation: var(--flatify__alert-animation-hide) both;
-          animation: var(--flatify__alert-animation-hide) both;
+  animation: var(--flatify__alert-animation-hide) both;
 }
 .alert:hover .close-button.floating {
   transform: scale(1);
@@ -1140,12 +1134,10 @@ th {
 }
 .backdrop-layer.show {
   display: block;
-  -webkit-animation: flatify-backdrop-fade-in var(--flatify__modal-animation-show-duration);
-          animation: flatify-backdrop-fade-in var(--flatify__modal-animation-show-duration);
+  animation: flatify-backdrop-fade-in var(--flatify__modal-animation-show-duration);
 }
 .backdrop-layer.backdrop-will-be-removed {
-  -webkit-animation: flatify-fade-out var(--flatify__modal-animation-hide-duration) both;
-          animation: flatify-fade-out var(--flatify__modal-animation-hide-duration) both;
+  animation: flatify-fade-out var(--flatify__modal-animation-hide-duration) both;
 }
 .backdrop-layer.modal-backdrop {
   --flatify__backdrop-priority: 1030;
@@ -1159,19 +1151,21 @@ th {
 }
 
 .breadcrumbs-wrapper {
-  width: 100%;
-}
-
-.breadcrumbs {
   --flatify__local-txt-color: var(--flatify__breadcrumbs-txt-color);
   --flatify__local-bg-color: var(--flatify__breadcrumbs-bg-color);
   --flatify__local-border-color: var(--flatify__breadcrumbs-border-color);
+  width: 100%;
+  border: var(--flatify__border-width) solid var(--flatify__local-border-color);
+  border-radius: var(--flatify__border-radius);
+}
+
+.breadcrumbs {
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
   list-style: none;
   padding: 0;
-  margin: 0.5em 0;
+  margin: 0;
   border-radius: var(--flatify__border-radius);
 }
 .breadcrumbs[class*=style-] {
@@ -1185,8 +1179,6 @@ th {
   padding: 0.64em 1em;
   color: var(--flatify__local-txt-color);
   background: var(--flatify__local-bg-color);
-  border-top: var(--flatify__border-width) solid;
-  border-bottom: var(--flatify__border-width) solid;
   border-color: var(--flatify__local-border-color);
 }
 .breadcrumbs .crumb:not(:first-child) {
@@ -1210,13 +1202,9 @@ th {
 }
 .breadcrumbs .crumb:first-child {
   padding-left: 2em;
-  border-left: var(--flatify__border-width) solid var(--flatify__local-border-color);
-  border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
 }
 .breadcrumbs .crumb:last-child {
   padding-right: 2em;
-  border-right: var(--flatify__border-width) solid var(--flatify__local-border-color);
-  border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
 }
 .breadcrumbs .crumb:hover:before, .breadcrumbs .crumb:focus-within:before {
   transform: rotate(45deg) scale(1.15);
@@ -1430,10 +1418,8 @@ button.no-style {
 }
 .two-layer-button:hover .secondary-text, .two-layer-button:focus-visible .secondary-text {
   opacity: 1;
-  -webkit-animation: var(--flatify__two-layer-button-animation-show);
-          animation: var(--flatify__two-layer-button-animation-show);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation: var(--flatify__two-layer-button-animation-show);
+  animation-fill-mode: both;
 }
 
 .add-button {
@@ -1504,8 +1490,7 @@ button.no-style {
   bottom: 0;
   width: 100%;
   margin: auto 0;
-  -webkit-animation: flatify-fade-in 0.25s ease-in-out;
-          animation: flatify-fade-in 0.25s ease-in-out;
+  animation: flatify-fade-in 0.25s ease-in-out;
 }
 .hamburger.active:before {
   transform: rotate(45deg);
@@ -1644,8 +1629,7 @@ button.no-style {
   width: 2.5em;
   height: 2em;
   background: transparent;
-  -webkit-animation: flatify-firework ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
-          animation: flatify-firework ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
+  animation: flatify-firework ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
 }
 .fireworks:before,
 .fireworks .spark:before,
@@ -1663,8 +1647,7 @@ button.no-style {
   right: 0;
   width: 0.25em;
   margin: auto;
-  -webkit-animation: flatify-firework-main ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count) both;
-          animation: flatify-firework-main ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count) both;
+  animation: flatify-firework-main ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count) both;
 }
 .fireworks .spark {
   position: absolute;
@@ -1672,8 +1655,7 @@ button.no-style {
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-animation: flatify-firework-sparks ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count) both;
-          animation: flatify-firework-sparks ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count) both;
+  animation: flatify-firework-sparks ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count) both;
 }
 .fireworks .spark:nth-child(1):before, .fireworks .spark:nth-child(1):after, .fireworks .spark:nth-child(2):before, .fireworks .spark:nth-child(2):after {
   top: 0;
@@ -1683,13 +1665,11 @@ button.no-style {
 }
 .fireworks .spark:nth-child(1):before, .fireworks .spark:nth-child(2):before {
   left: -0.25em;
-  -webkit-animation: flatify-firework-spark-left ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
-          animation: flatify-firework-spark-left ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
+  animation: flatify-firework-spark-left ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
 }
 .fireworks .spark:nth-child(1):after, .fireworks .spark:nth-child(2):after {
   right: -0.25em;
-  -webkit-animation: flatify-firework-spark-right ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
-          animation: flatify-firework-spark-right ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
+  animation: flatify-firework-spark-right ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
 }
 .fireworks .spark:nth-child(1) {
   --flatify__firework-color-main: var(--flatify__firework-color-center-left-right);
@@ -1707,14 +1687,12 @@ button.no-style {
 .fireworks .spark:nth-child(3):before, .fireworks .spark:nth-child(4):before {
   top: 0;
   transform: rotate(45deg);
-  -webkit-animation: flatify-firework-spark-corner-top ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
-          animation: flatify-firework-spark-corner-top ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
+  animation: flatify-firework-spark-corner-top ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
 }
 .fireworks .spark:nth-child(3):after, .fireworks .spark:nth-child(4):after {
   bottom: 0;
   transform: rotate(-45deg);
-  -webkit-animation: flatify-firework-spark-corner-bottom ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
-          animation: flatify-firework-spark-corner-bottom ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
+  animation: flatify-firework-spark-corner-bottom ease-in-out var(--flatify__firework-animation-duration) var(--flatify__firework-animation-delay) var(--flatify__firework-animation-iteration-count);
 }
 .fireworks .spark:nth-child(3) {
   --flatify__firework-color-main: var(--flatify__firework-color-left-top-bottom);
@@ -1722,18 +1700,6 @@ button.no-style {
 .fireworks .spark:nth-child(4) {
   --flatify__firework-color-main: var(--flatify__firework-color-right-top-bottom);
   transform: rotate(180deg);
-}
-
-@-webkit-keyframes flatify-firework {
-  0%, 20% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-1em);
-  }
-  80%, 100% {
-    transform: translateY(0.5em);
-  }
 }
 
 @keyframes flatify-firework {
@@ -1745,25 +1711,6 @@ button.no-style {
   }
   80%, 100% {
     transform: translateY(0.5em);
-  }
-}
-@-webkit-keyframes flatify-firework-main {
-  0% {
-    opacity: 0;
-    transform: scale(0) translateY(1em);
-  }
-  5% {
-    opacity: 1;
-    transform: scale(0, 6) translateY(1em);
-  }
-  26% {
-    transform: scaleY(2) translateY(0);
-  }
-  30% {
-    transform: scale(9) translateY(0);
-  }
-  40%, 100% {
-    transform: scale(0) translateY(0);
   }
 }
 @keyframes flatify-firework-main {
@@ -1785,21 +1732,6 @@ button.no-style {
     transform: scale(0) translateY(0);
   }
 }
-@-webkit-keyframes flatify-firework-sparks {
-  0%, 30% {
-    -webkit-clip-path: circle(0 at center);
-            clip-path: circle(0 at center);
-    opacity: 0;
-  }
-  38% {
-    -webkit-clip-path: circle(100% at center);
-            clip-path: circle(100% at center);
-    opacity: 1;
-  }
-  65%, 100% {
-    opacity: 0;
-  }
-}
 @keyframes flatify-firework-sparks {
   0%, 30% {
     -webkit-clip-path: circle(0 at center);
@@ -1813,24 +1745,6 @@ button.no-style {
   }
   65%, 100% {
     opacity: 0;
-  }
-}
-@-webkit-keyframes flatify-firework-spark-corner-top {
-  0%, 30% {
-    opacity: 1;
-    -webkit-clip-path: circle(100% at left);
-            clip-path: circle(100% at left);
-    transform: scale(1) translate(0) rotate(45deg);
-  }
-  40% {
-    -webkit-clip-path: circle(100% at left);
-            clip-path: circle(100% at left);
-  }
-  60%, 100% {
-    opacity: 0;
-    -webkit-clip-path: circle(0 at left);
-            clip-path: circle(0 at left);
-    transform: scale(1.5) translate(-0.5em, -0.25em) rotate(45deg);
   }
 }
 @keyframes flatify-firework-spark-corner-top {
@@ -1851,24 +1765,6 @@ button.no-style {
     transform: scale(1.5) translate(-0.5em, -0.25em) rotate(45deg);
   }
 }
-@-webkit-keyframes flatify-firework-spark-corner-bottom {
-  0%, 30% {
-    opacity: 1;
-    -webkit-clip-path: circle(100% at left);
-            clip-path: circle(100% at left);
-    transform: scale(1) translate(0) rotate(-45deg);
-  }
-  40% {
-    -webkit-clip-path: circle(100% at left);
-            clip-path: circle(100% at left);
-  }
-  60%, 100% {
-    opacity: 0;
-    -webkit-clip-path: circle(0 at left);
-            clip-path: circle(0 at left);
-    transform: scale(1.5) translate(-0.5em, 0.25em) rotate(-45deg);
-  }
-}
 @keyframes flatify-firework-spark-corner-bottom {
   0%, 30% {
     opacity: 1;
@@ -1887,24 +1783,6 @@ button.no-style {
     transform: scale(1.5) translate(-0.5em, 0.25em) rotate(-45deg);
   }
 }
-@-webkit-keyframes flatify-firework-spark-left {
-  0%, 30% {
-    opacity: 1;
-    -webkit-clip-path: circle(100% at left);
-            clip-path: circle(100% at left);
-    transform: scale(1) translate(0);
-  }
-  40% {
-    -webkit-clip-path: circle(100% at left);
-            clip-path: circle(100% at left);
-  }
-  60%, 100% {
-    opacity: 0;
-    -webkit-clip-path: circle(0 at left);
-            clip-path: circle(0 at left);
-    transform: scaleX(2) translate(-0.5em);
-  }
-}
 @keyframes flatify-firework-spark-left {
   0%, 30% {
     opacity: 1;
@@ -1921,24 +1799,6 @@ button.no-style {
     -webkit-clip-path: circle(0 at left);
             clip-path: circle(0 at left);
     transform: scaleX(2) translate(-0.5em);
-  }
-}
-@-webkit-keyframes flatify-firework-spark-right {
-  0%, 30% {
-    opacity: 1;
-    -webkit-clip-path: circle(100% at right);
-            clip-path: circle(100% at right);
-    transform: scale(1) translate(0);
-  }
-  40% {
-    -webkit-clip-path: circle(100% at right);
-            clip-path: circle(100% at right);
-  }
-  60%, 100% {
-    opacity: 0;
-    -webkit-clip-path: circle(0 at right);
-            clip-path: circle(0 at right);
-    transform: scaleX(2) translate(0.5em);
   }
 }
 @keyframes flatify-firework-spark-right {
@@ -2116,8 +1976,7 @@ button.no-style {
 }
 .menu-items-wrapper.navbar .links .menu-item:focus-within > .submenu, .menu-items-wrapper.navbar .links .menu-item:hover > .submenu {
   display: block;
-  -webkit-animation: var(--flatify__submenu-animation-show);
-          animation: var(--flatify__submenu-animation-show);
+  animation: var(--flatify__submenu-animation-show);
 }
 .menu-items-wrapper.navbar .links .menu-item .submenu {
   position: absolute;
@@ -2346,12 +2205,10 @@ button.no-style {
 }
 .dropdown.show {
   display: block;
-  -webkit-animation: var(--flatify__dropdown-animation-show);
-          animation: var(--flatify__dropdown-animation-show);
+  animation: var(--flatify__dropdown-animation-show);
 }
 .dropdown.dropdown-will-be-hidden {
-  -webkit-animation: var(--flatify__dropdown-animation-hide);
-          animation: var(--flatify__dropdown-animation-hide);
+  animation: var(--flatify__dropdown-animation-hide);
 }
 
 .popover .dropdown {
@@ -2419,12 +2276,10 @@ button.no-style {
 }
 .modal.show {
   display: block;
-  -webkit-animation: var(--flatify__modal-animation-default-show);
-          animation: var(--flatify__modal-animation-default-show);
+  animation: var(--flatify__modal-animation-default-show);
 }
 .modal.modal-will-be-hidden {
-  -webkit-animation: var(--flatify__modal-animation-default-hide);
-          animation: var(--flatify__modal-animation-default-hide);
+  animation: var(--flatify__modal-animation-default-hide);
 }
 .modal.modal-center {
   top: 0;
@@ -2443,12 +2298,10 @@ button.no-style {
   border-radius: 0 0 var(--flatify__border-radius) var(--flatify__border-radius);
 }
 .modal.modal-top.show {
-  -webkit-animation: var(--flatify__modal-animation-top-show);
-          animation: var(--flatify__modal-animation-top-show);
+  animation: var(--flatify__modal-animation-top-show);
 }
 .modal.modal-top.modal-will-be-hidden {
-  -webkit-animation: var(--flatify__modal-animation-top-hide);
-          animation: var(--flatify__modal-animation-top-hide);
+  animation: var(--flatify__modal-animation-top-hide);
 }
 .modal.modal-bottom {
   top: unset;
@@ -2461,12 +2314,10 @@ button.no-style {
   border-radius: var(--flatify__border-radius) var(--flatify__border-radius) 0 0;
 }
 .modal.modal-bottom.show {
-  -webkit-animation: var(--flatify__modal-animation-bottom-show);
-          animation: var(--flatify__modal-animation-bottom-show);
+  animation: var(--flatify__modal-animation-bottom-show);
 }
 .modal.modal-bottom.modal-will-be-hidden {
-  -webkit-animation: var(--flatify__modal-animation-bottom-hide);
-          animation: var(--flatify__modal-animation-bottom-hide);
+  animation: var(--flatify__modal-animation-bottom-hide);
 }
 .modal.modal-left {
   right: unset;
@@ -2479,12 +2330,10 @@ button.no-style {
   border-radius: 0 var(--flatify__border-radius) var(--flatify__border-radius) 0;
 }
 .modal.modal-left.show {
-  -webkit-animation: var(--flatify__modal-animation-left-show);
-          animation: var(--flatify__modal-animation-left-show);
+  animation: var(--flatify__modal-animation-left-show);
 }
 .modal.modal-left.modal-will-be-hidden {
-  -webkit-animation: var(--flatify__modal-animation-left-hide);
-          animation: var(--flatify__modal-animation-left-hide);
+  animation: var(--flatify__modal-animation-left-hide);
 }
 .modal.modal-right {
   left: unset;
@@ -2497,12 +2346,10 @@ button.no-style {
   border-radius: var(--flatify__border-radius) 0 0 var(--flatify__border-radius);
 }
 .modal.modal-right.show {
-  -webkit-animation: var(--flatify__modal-animation-right-show);
-          animation: var(--flatify__modal-animation-right-show);
+  animation: var(--flatify__modal-animation-right-show);
 }
 .modal.modal-right.modal-will-be-hidden {
-  -webkit-animation: var(--flatify__modal-animation-right-hide);
-          animation: var(--flatify__modal-animation-right-hide);
+  animation: var(--flatify__modal-animation-right-hide);
 }
 .modal.bordered .modal-header {
   border-bottom: var(--flatify__border-width) solid var(--flatify__local-border-color);
@@ -2569,8 +2416,7 @@ button.no-style {
 .loading {
   position: relative;
   margin-right: calc(var(--flatify__loading-dot-width) * 4);
-  -webkit-animation: flatify-loading-dot-first var(--flatify__loading-dot-animation-duration) infinite;
-          animation: flatify-loading-dot-first var(--flatify__loading-dot-animation-duration) infinite;
+  animation: flatify-loading-dot-first var(--flatify__loading-dot-animation-duration) infinite;
 }
 .loading.stop-animation:before, .loading.stop-animation:after, .loading.stop-animation {
   opacity: 1 !important;
@@ -2581,13 +2427,11 @@ button.no-style {
 }
 .loading:before {
   left: calc(var(--flatify__loading-dot-width) * 2);
-  -webkit-animation: flatify-loading-dot-second var(--flatify__loading-dot-animation-duration) infinite;
-          animation: flatify-loading-dot-second var(--flatify__loading-dot-animation-duration) infinite;
+  animation: flatify-loading-dot-second var(--flatify__loading-dot-animation-duration) infinite;
 }
 .loading:after {
   left: calc(var(--flatify__loading-dot-width) * 4);
-  -webkit-animation: flatify-loading-dot-third var(--flatify__loading-dot-animation-duration) infinite;
-          animation: flatify-loading-dot-third var(--flatify__loading-dot-animation-duration) infinite;
+  animation: flatify-loading-dot-third var(--flatify__loading-dot-animation-duration) infinite;
 }
 
 .overlay-layer > .spinner, .two-layer-button > .spinner, .overlay-layer > .loading, .two-layer-button > .loading {
@@ -2626,8 +2470,7 @@ button.no-style {
   border: 0.25em solid var(--flatify__local-txt-color);
   border-left-color: transparent;
   border-radius: 50em;
-  -webkit-animation: flatify-spin var(--flatify__loading-spinner-animation-duration) linear infinite;
-          animation: flatify-spin var(--flatify__loading-spinner-animation-duration) linear infinite;
+  animation: flatify-spin var(--flatify__loading-spinner-animation-duration) linear infinite;
 }
 
 :root {
@@ -2687,8 +2530,7 @@ button.no-style {
   width: 100%;
   height: 110%;
   background: var(--flatify__color-accent-light);
-  -webkit-animation: flatify-processing linear var(--flatify__progress-animation-duration) infinite;
-          animation: flatify-processing linear var(--flatify__progress-animation-duration) infinite;
+  animation: flatify-processing linear var(--flatify__progress-animation-duration) infinite;
 }
 
 .search-bar {
@@ -2851,41 +2693,32 @@ button.no-style {
   display: none !important;
 }
 .tabs-content.no-animation .tab-panel {
-  -webkit-animation-duration: 0s !important;
-          animation-duration: 0s !important;
+  animation-duration: 0s !important;
 }
 .tabs-content.slide-animation .tab-panel.show.slide-left {
-  -webkit-animation: flatify-slide-left-in-min var(--flatify__tab-animation-show-duration) ease;
-          animation: flatify-slide-left-in-min var(--flatify__tab-animation-show-duration) ease;
+  animation: flatify-slide-left-in-min var(--flatify__tab-animation-show-duration) ease;
 }
 .tabs-content.slide-animation .tab-panel.show.slide-left.tab-will-be-hidden {
-  -webkit-animation: flatify-slide-left-out-min var(--flatify__tab-animation-hide-duration) ease;
-          animation: flatify-slide-left-out-min var(--flatify__tab-animation-hide-duration) ease;
+  animation: flatify-slide-left-out-min var(--flatify__tab-animation-hide-duration) ease;
 }
 .tabs-content.slide-animation .tab-panel.show.slide-right {
-  -webkit-animation: flatify-slide-right-in-min var(--flatify__tab-animation-show-duration) ease;
-          animation: flatify-slide-right-in-min var(--flatify__tab-animation-show-duration) ease;
+  animation: flatify-slide-right-in-min var(--flatify__tab-animation-show-duration) ease;
 }
 .tabs-content.slide-animation .tab-panel.show.slide-right.tab-will-be-hidden {
-  -webkit-animation: flatify-slide-right-out-min var(--flatify__tab-animation-hide-duration) ease;
-          animation: flatify-slide-right-out-min var(--flatify__tab-animation-hide-duration) ease;
+  animation: flatify-slide-right-out-min var(--flatify__tab-animation-hide-duration) ease;
 }
 .tabs-content.fade-animation .tab-panel.show {
-  -webkit-animation: flatify-fade-in var(--flatify__tab-animation-show-duration) ease;
-          animation: flatify-fade-in var(--flatify__tab-animation-show-duration) ease;
+  animation: flatify-fade-in var(--flatify__tab-animation-show-duration) ease;
 }
 .tabs-content.fade-animation .tab-panel.show.tab-will-be-hidden {
-  -webkit-animation: flatify-fade-out var(--flatify__tab-animation-hide-duration) ease;
-          animation: flatify-fade-out var(--flatify__tab-animation-hide-duration) ease;
+  animation: flatify-fade-out var(--flatify__tab-animation-hide-duration) ease;
 }
 
 .tab-panel.show {
-  -webkit-animation: var(--flatify__tab-animation-show);
-          animation: var(--flatify__tab-animation-show);
+  animation: var(--flatify__tab-animation-show);
 }
 .tab-panel.show.tab-will-be-hidden {
-  -webkit-animation: var(--flatify__tab-animation-hide);
-          animation: var(--flatify__tab-animation-hide);
+  animation: var(--flatify__tab-animation-hide);
 }
 
 :root {
@@ -2956,12 +2789,10 @@ button.no-style {
   border-radius: var(--flatify__border-radius);
 }
 .toast:not(.toast-will-be-removed) {
-  -webkit-animation: var(--flatify__toast-animation-show);
-          animation: var(--flatify__toast-animation-show);
+  animation: var(--flatify__toast-animation-show);
 }
 .toast.toast-will-be-removed {
-  -webkit-animation: var(--flatify__toast-animation-hide);
-          animation: var(--flatify__toast-animation-hide);
+  animation: var(--flatify__toast-animation-hide);
 }
 .toast:hover .close-button {
   transition-delay: 0.15s;
@@ -3268,8 +3099,7 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
   background: var(--flatify__form-element-border-color__warning);
 }
 .input-wrapper.warning:focus-within:after {
-  -webkit-animation: flatify-fade-out 1s infinite;
-          animation: flatify-fade-out 1s infinite;
+  animation: flatify-fade-out 1s infinite;
 }
 .input-wrapper.valid:before {
   content: " ";
@@ -3280,8 +3110,7 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
   margin: auto 0;
   border-radius: var(--flatify__border-radius);
   transition: all var(--flatify__simple-transition);
-  -webkit-animation: flatify-fade-in 0.35s;
-          animation: flatify-fade-in 0.35s;
+  animation: flatify-fade-in 0.35s;
   right: 1.75em;
   width: 0.64em;
   height: 0.25em;
@@ -3349,8 +3178,7 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
 }
 @media (prefers-reduced-motion: no-preference) {
   .input-wrapper.visible-password .show-password-button:not(:active):before {
-    -webkit-animation: flatify-eye-blink 7s infinite;
-            animation: flatify-eye-blink 7s infinite;
+    animation: flatify-eye-blink 7s infinite;
   }
 }
 
@@ -3413,8 +3241,7 @@ input[type=button].button {
   border-radius: var(--flatify__border-radius);
   transition: all var(--flatify__simple-transition);
   transform: rotate(45deg);
-  -webkit-animation: flatify-fade-in 0.35s;
-          animation: flatify-fade-in 0.35s;
+  animation: flatify-fade-in 0.35s;
 }
 .checkbox-wrapper input:checked:not(:indeterminate) + .check:after {
   top: 0.55em;
@@ -3446,8 +3273,7 @@ input[type=button].button {
   transition: -webkit-clip-path linear 0.4s 0.1s;
   transition: clip-path linear 0.4s 0.1s;
   transition: clip-path linear 0.4s 0.1s, -webkit-clip-path linear 0.4s 0.1s;
-  -webkit-animation: flatify-grow-x 0.2s both;
-          animation: flatify-grow-x 0.2s both;
+  animation: flatify-grow-x 0.2s both;
 }
 
 .radio-wrapper .check:after {
@@ -3462,8 +3288,7 @@ input[type=button].button {
 }
 .radio-wrapper input:checked + .check:after {
   background: var(--flatify__form-element-border-color__valid);
-  -webkit-animation: flatify-grow 0.25s cubic-bezier(0.85, -0.57, 0.36, 1.72) both;
-          animation: flatify-grow 0.25s cubic-bezier(0.85, -0.57, 0.36, 1.72) both;
+  animation: flatify-grow 0.25s cubic-bezier(0.85, -0.57, 0.36, 1.72) both;
 }
 
 input[type=range]:not(.default) {
@@ -3672,78 +3497,57 @@ textarea:not(.default) {
 }
 
 .no-animation {
-  -webkit-animation-duration: 0s !important;
-          animation-duration: 0s !important;
+  animation-duration: 0s !important;
 }
 
 .play-animation:before,
 .play-animation:after,
 .play-animation {
-  -webkit-animation-play-state: running !important;
-          animation-play-state: running !important;
+  animation-play-state: running !important;
 }
 
 .pause-animation:before,
 .pause-animation:after,
 .pause-animation {
-  -webkit-animation-play-state: paused !important;
-          animation-play-state: paused !important;
+  animation-play-state: paused !important;
 }
 
 .stop-animation:before,
 .stop-animation:after,
 .stop-animation {
-  -webkit-animation: none !important;
-          animation: none !important;
+  animation: none !important;
 }
 
 .anim-spin {
-  -webkit-animation: flatify-spin 0.75s linear infinite !important;
-          animation: flatify-spin 0.75s linear infinite !important;
+  animation: flatify-spin 0.75s linear infinite !important;
 }
 
 .anim-heart {
-  -webkit-animation: flatify-heart 1s ease infinite !important;
-          animation: flatify-heart 1s ease infinite !important;
+  animation: flatify-heart 1s ease infinite !important;
 }
 
 .anim-required {
-  -webkit-animation: flatify-heart 1s ease 2 !important;
-          animation: flatify-heart 1s ease 2 !important;
+  animation: flatify-heart 1s ease 2 !important;
 }
 
 .anim-pulse {
-  -webkit-animation: flatify-pulse ease 1.5s !important;
-          animation: flatify-pulse ease 1.5s !important;
+  animation: flatify-pulse ease 1.5s !important;
 }
 
 .anim-fade-in {
-  -webkit-animation: flatify-fade-in 0.3s ease !important;
-          animation: flatify-fade-in 0.3s ease !important;
+  animation: flatify-fade-in 0.3s ease !important;
 }
 
 .anim-fade-out {
-  -webkit-animation: flatify-fade-out 0.3s ease !important;
-          animation: flatify-fade-out 0.3s ease !important;
+  animation: flatify-fade-out 0.3s ease !important;
 }
 
 .anim-hue {
-  -webkit-animation: flatify-hue 15s ease infinite !important;
-          animation: flatify-hue 15s ease infinite !important;
+  animation: flatify-hue 15s ease infinite !important;
 }
 
 .anim-hue-min {
-  -webkit-animation: flatify-hue-min 5s ease infinite !important;
-          animation: flatify-hue-min 5s ease infinite !important;
-}
-
-@-webkit-keyframes flatify-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: flatify-hue-min 5s ease infinite !important;
 }
 
 @keyframes flatify-fade-in {
@@ -3752,17 +3556,6 @@ textarea:not(.default) {
   }
   to {
     opacity: 1;
-  }
-}
-@-webkit-keyframes flatify-fade-in-out {
-  from {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
   }
 }
 @keyframes flatify-fade-in-out {
@@ -3776,14 +3569,6 @@ textarea:not(.default) {
     opacity: 0;
   }
 }
-@-webkit-keyframes flatify-backdrop-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: var(--flatify__backdrop-opacity);
-  }
-}
 @keyframes flatify-backdrop-fade-in {
   from {
     opacity: 0;
@@ -3792,22 +3577,9 @@ textarea:not(.default) {
     opacity: var(--flatify__backdrop-opacity);
   }
 }
-@-webkit-keyframes flatify-fade-out {
-  to {
-    opacity: 0;
-  }
-}
 @keyframes flatify-fade-out {
   to {
     opacity: 0;
-  }
-}
-@-webkit-keyframes flatify-grow {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
   }
 }
 @keyframes flatify-grow {
@@ -3818,14 +3590,6 @@ textarea:not(.default) {
     transform: scale(1);
   }
 }
-@-webkit-keyframes flatify-grow-x {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
 @keyframes flatify-grow-x {
   from {
     transform: scaleX(0);
@@ -3834,30 +3598,12 @@ textarea:not(.default) {
     transform: scaleX(1);
   }
 }
-@-webkit-keyframes flatify-grow-y {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
 @keyframes flatify-grow-y {
   from {
     transform: scaleY(0);
   }
   to {
     transform: scaleY(1);
-  }
-}
-@-webkit-keyframes flatify-processing {
-  from {
-    opacity: 0.85;
-    transform: scaleX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: scaleX(1);
   }
 }
 @keyframes flatify-processing {
@@ -3870,16 +3616,6 @@ textarea:not(.default) {
     transform: scaleX(1);
   }
 }
-@-webkit-keyframes flatify-blow-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 @keyframes flatify-blow-in {
   0% {
     opacity: 0;
@@ -3890,16 +3626,6 @@ textarea:not(.default) {
     transform: scale(1);
   }
 }
-@-webkit-keyframes flatify-blow-out {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-}
 @keyframes flatify-blow-out {
   0% {
     opacity: 1;
@@ -3908,20 +3634,6 @@ textarea:not(.default) {
   100% {
     opacity: 0;
     transform: scale(0.95);
-  }
-}
-@-webkit-keyframes flatify-heart {
-  0% {
-    transform: scale(1);
-  }
-  65% {
-    transform: scale(1.05);
-  }
-  80% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
   }
 }
 @keyframes flatify-heart {
@@ -3938,14 +3650,6 @@ textarea:not(.default) {
     transform: scale(1);
   }
 }
-@-webkit-keyframes flatify-spin {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
 @keyframes flatify-spin {
   from {
     transform: rotate(0);
@@ -3954,29 +3658,11 @@ textarea:not(.default) {
     transform: rotate(1turn);
   }
 }
-@-webkit-keyframes flatify-slide-up-in {
-  from {
-    transform: translateY(100%) scale(0.95);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
 @keyframes flatify-slide-up-in {
   from {
     transform: translateY(100%) scale(0.95);
   }
   to {
-    transform: translateY(0);
-  }
-}
-@-webkit-keyframes flatify-slide-up-in-min {
-  from {
-    opacity: 0;
-    transform: translateY(3em) scale(0.95);
-  }
-  to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
@@ -3990,28 +3676,12 @@ textarea:not(.default) {
     transform: translateY(0);
   }
 }
-@-webkit-keyframes flatify-slide-up-out {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(100%) scale(0.95);
-  }
-}
 @keyframes flatify-slide-up-out {
   from {
     transform: translateY(0);
   }
   to {
     transform: translateY(100%) scale(0.95);
-  }
-}
-@-webkit-keyframes flatify-slide-down-in {
-  from {
-    transform: translateY(-100%) scale(0.95);
-  }
-  to {
-    transform: translateY(0);
   }
 }
 @keyframes flatify-slide-down-in {
@@ -4022,30 +3692,12 @@ textarea:not(.default) {
     transform: translateY(0);
   }
 }
-@-webkit-keyframes flatify-slide-down-out {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-100%) scale(0.95);
-  }
-}
 @keyframes flatify-slide-down-out {
   from {
     transform: translateY(0);
   }
   to {
     transform: translateY(-100%) scale(0.95);
-  }
-}
-@-webkit-keyframes flatify-slide-down-out-min {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-3em) scale(0.95);
   }
 }
 @keyframes flatify-slide-down-out-min {
@@ -4058,29 +3710,11 @@ textarea:not(.default) {
     transform: translateY(-3em) scale(0.95);
   }
 }
-@-webkit-keyframes flatify-slide-left-in {
-  from {
-    transform: translateX(100%) scale(0.95);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
 @keyframes flatify-slide-left-in {
   from {
     transform: translateX(100%) scale(0.95);
   }
   to {
-    transform: translateX(0);
-  }
-}
-@-webkit-keyframes flatify-slide-left-in-min {
-  from {
-    opacity: 0;
-    transform: translateX(3em);
-  }
-  to {
-    opacity: 1;
     transform: translateX(0);
   }
 }
@@ -4094,30 +3728,12 @@ textarea:not(.default) {
     transform: translateX(0);
   }
 }
-@-webkit-keyframes flatify-slide-left-out {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%) scale(0.95);
-  }
-}
 @keyframes flatify-slide-left-out {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(100%) scale(0.95);
-  }
-}
-@-webkit-keyframes flatify-slide-left-out-min {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(3em);
   }
 }
 @keyframes flatify-slide-left-out-min {
@@ -4130,29 +3746,11 @@ textarea:not(.default) {
     transform: translateX(3em);
   }
 }
-@-webkit-keyframes flatify-slide-right-in {
-  from {
-    transform: translateX(-100%) scale(0.95);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
 @keyframes flatify-slide-right-in {
   from {
     transform: translateX(-100%) scale(0.95);
   }
   to {
-    transform: translateX(0);
-  }
-}
-@-webkit-keyframes flatify-slide-right-in-min {
-  from {
-    opacity: 0;
-    transform: translateX(-3em);
-  }
-  to {
-    opacity: 1;
     transform: translateX(0);
   }
 }
@@ -4166,30 +3764,12 @@ textarea:not(.default) {
     transform: translateX(0);
   }
 }
-@-webkit-keyframes flatify-slide-right-out {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%) scale(0.95);
-  }
-}
 @keyframes flatify-slide-right-out {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-100%) scale(0.95);
-  }
-}
-@-webkit-keyframes flatify-slide-right-out-min {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-3em);
   }
 }
 @keyframes flatify-slide-right-out-min {
@@ -4202,16 +3782,6 @@ textarea:not(.default) {
     transform: translateX(-3em);
   }
 }
-@-webkit-keyframes flatify-alert-will-be-removed {
-  85% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-    transform-origin: top right;
-    transform: scale(0.92) rotate(-0.5deg);
-  }
-}
 @keyframes flatify-alert-will-be-removed {
   85% {
     opacity: 0;
@@ -4220,16 +3790,6 @@ textarea:not(.default) {
     opacity: 0;
     transform-origin: top right;
     transform: scale(0.92) rotate(-0.5deg);
-  }
-}
-@-webkit-keyframes flatify-dropdown-show {
-  from {
-    opacity: 0;
-    transform: scale(0.9) rotate(3deg);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 @keyframes flatify-dropdown-show {
@@ -4242,16 +3802,6 @@ textarea:not(.default) {
     transform: scale(1);
   }
 }
-@-webkit-keyframes flatify-dropdown-hide {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-}
 @keyframes flatify-dropdown-hide {
   from {
     opacity: 1;
@@ -4262,15 +3812,6 @@ textarea:not(.default) {
     transform: scale(0.85);
   }
 }
-@-webkit-keyframes flatify-pulse {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.75);
-  }
-}
 @keyframes flatify-pulse {
   0% {
     transform: scale(1);
@@ -4278,23 +3819,6 @@ textarea:not(.default) {
   100% {
     opacity: 0;
     transform: scale(1.75);
-  }
-}
-@-webkit-keyframes flatify-eye-blink {
-  0% {
-    transform: scaleY(1);
-  }
-  40% {
-    transform: scaleY(1);
-  }
-  42% {
-    transform: scaleY(0.3);
-  }
-  45% {
-    transform: scaleY(1);
-  }
-  100% {
-    transform: scaleY(1);
   }
 }
 @keyframes flatify-eye-blink {
@@ -4314,20 +3838,6 @@ textarea:not(.default) {
     transform: scaleY(1);
   }
 }
-@-webkit-keyframes flatify-hue {
-  0% {
-    filter: hue-rotate(0);
-  }
-  40% {
-    filter: hue-rotate(360deg);
-  }
-  80% {
-    filter: hue-rotate(-360deg);
-  }
-  100% {
-    filter: hue-rotate(0);
-  }
-}
 @keyframes flatify-hue {
   0% {
     filter: hue-rotate(0);
@@ -4337,20 +3847,6 @@ textarea:not(.default) {
   }
   80% {
     filter: hue-rotate(-360deg);
-  }
-  100% {
-    filter: hue-rotate(0);
-  }
-}
-@-webkit-keyframes flatify-hue-min {
-  0% {
-    filter: hue-rotate(0);
-  }
-  40% {
-    filter: hue-rotate(45deg);
-  }
-  80% {
-    filter: hue-rotate(-45deg);
   }
   100% {
     filter: hue-rotate(0);
@@ -4370,22 +3866,6 @@ textarea:not(.default) {
     filter: hue-rotate(0);
   }
 }
-@-webkit-keyframes flatify-loading-dot-first {
-  0% {
-    opacity: 0;
-    transform: scale(var(--flatify__loading-dot-animation-start-scale)) translateX(-0.25em);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 @keyframes flatify-loading-dot-first {
   0% {
     opacity: 0;
@@ -4402,32 +3882,12 @@ textarea:not(.default) {
     opacity: 0;
   }
 }
-@-webkit-keyframes flatify-loading-dot-second {
-  0%, 25% {
-    opacity: 0;
-    transform: scale(var(--flatify__loading-dot-animation-start-scale));
-  }
-  65%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 @keyframes flatify-loading-dot-second {
   0%, 25% {
     opacity: 0;
     transform: scale(var(--flatify__loading-dot-animation-start-scale));
   }
   65%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@-webkit-keyframes flatify-loading-dot-third {
-  0%, 45% {
-    opacity: 0;
-    transform: scale(var(--flatify__loading-dot-animation-start-scale)) translateX(0.25em);
-  }
-  85%, 100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -5252,8 +4712,7 @@ textarea:not(.default) {
   background: inherit;
   border-radius: inherit;
   will-change: opacity, transform;
-  -webkit-animation: flatify-pulse 1s infinite;
-          animation: flatify-pulse 1s infinite;
+  animation: flatify-pulse 1s infinite;
 }
 
 .text-filled {
@@ -5338,12 +4797,10 @@ body ::after {
   body .dropdown.show,
 body .modal.show,
 body .tab-panel.show {
-    -webkit-animation-name: flatify-fade-in !important;
-            animation-name: flatify-fade-in !important;
+    animation-name: flatify-fade-in !important;
   }
   body .menu-item:focus-within > .submenu, body .menu-item:hover > .submenu {
-    -webkit-animation-name: flatify-fade-in !important;
-            animation-name: flatify-fade-in !important;
+    animation-name: flatify-fade-in !important;
   }
   body .two-layer-button {
     --flatify__two-layer-button-animation-show: flatify-fade-in 0.3s ease-in-out !important;
@@ -5352,63 +4809,40 @@ body .tab-panel.show {
     transition: none !important;
   }
   body .accordion-collapse.show .accordion-body {
-    -webkit-animation-name: flatify-fade-in !important;
-            animation-name: flatify-fade-in !important;
+    animation-name: flatify-fade-in !important;
   }
   body .accordion-collapse.accordion-will-be-hidden .accordion-body {
-    -webkit-animation-name: flatify-fade-out !important;
-            animation-name: flatify-fade-out !important;
+    animation-name: flatify-fade-out !important;
   }
   body .toast:not(.toast-will-be-removed) {
-    -webkit-animation-name: flatify-fade-in !important;
-            animation-name: flatify-fade-in !important;
+    animation-name: flatify-fade-in !important;
   }
   body .toast.toast-will-be-removed {
-    -webkit-animation-name: flatify-fade-out !important;
-            animation-name: flatify-fade-out !important;
+    animation-name: flatify-fade-out !important;
   }
   body .alert:not(.alert-will-be-removed) {
-    -webkit-animation-name: flatify-fade-in !important;
-            animation-name: flatify-fade-in !important;
+    animation-name: flatify-fade-in !important;
   }
   body .alert.alert-will-be-removed {
-    -webkit-animation-name: flatify-fade-out !important;
-            animation-name: flatify-fade-out !important;
+    animation-name: flatify-fade-out !important;
   }
   body .loading {
-    -webkit-animation: flatify-fade-in-out 2s infinite !important;
-            animation: flatify-fade-in-out 2s infinite !important;
+    animation: flatify-fade-in-out 2s infinite !important;
   }
   body .loading:before, body .loading:after {
     opacity: 1 !important;
-    -webkit-animation: none !important;
-            animation: none !important;
+    animation: none !important;
   }
   body .progress-bar:before {
     filter: opacity(60%);
-    -webkit-animation: flatify-fade-in-out 3s infinite !important;
-            animation: flatify-fade-in-out 3s infinite !important;
+    animation: flatify-fade-in-out 3s infinite !important;
   }
   body .show.dropdown-will-be-hidden, body .show.modal-will-be-hidden, body .show.tab-will-be-hidden {
-    -webkit-animation-name: flatify-fade-out !important;
-            animation-name: flatify-fade-out !important;
+    animation-name: flatify-fade-out !important;
   }
   body .spinner:before {
-    -webkit-animation-timing-function: steps(4, end) !important;
-            animation-timing-function: steps(4, end) !important;
-    -webkit-animation-duration: 2s !important;
-            animation-duration: 2s !important;
-  }
-
-  @-webkit-keyframes flatify-pulse {
-    0%, 100% {
-      transform: scale(1.25);
-      opacity: 0.2;
-    }
-    40% {
-      transform: scale(1.25);
-      opacity: 0.5;
-    }
+    animation-timing-function: steps(4, end) !important;
+    animation-duration: 2s !important;
   }
 
   @keyframes flatify-pulse {

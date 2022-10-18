@@ -1,6 +1,6 @@
 {
   "name": "flatifycss",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Modern flat design framework for the web — inspired by Duolingo design system.",
   "main": "index.html",
   "repository": {
@@ -20,7 +20,6 @@
     "url": "https://github.com/amir2mi/FlatifyCSS/issues"
   },
   "homepage": "https://flatifycss.com/",
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
