@@ -37,7 +37,7 @@
 [![JS Gzip size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/js/flatify-min.js?label=JS%20Gzip&compression=gzip)](https://github.com/amir2mi/flatifycss/blob/master/dist/js/flatify-min.js)
 [![JS Brotli size](https://img.badgesize.io/https:/raw.githubusercontent.com/amir2mi/flatifycss/master/dist/js/flatify-min.js?label=JS%20Brotli&compression=brotli)](https://github.com/amir2mi/flatifycss/blob/master/dist/js/flatify-min.js)
 
-# Getting stated
+# Getting started
 
 FlatifyCSS is available for users in many ways, you can install it using package managers, directly from CDN, or even downloading [the lastest project archive](https://github.com/amir2mi/flatifycss/archive/master.zip).
 
