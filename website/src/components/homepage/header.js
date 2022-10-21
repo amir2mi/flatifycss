@@ -26,13 +26,23 @@ export default function HomepageHeader() {
       </p>
       <span aria-hidden={true} className="animated-logo"></span>
 
-      <Link
-        to="docs/intro"
-        className={`get-started-button button bordered size-2x style-light`}
-      >
+      <Link to="docs/intro" className={`get-started-button button bordered size-2x style-light`}>
         Get Started
       </Link>
-      <a style={{display: "block"}} href="https://github.com/amir2mi/flatifycss/releases" rel="nofollow" target="_blank" className={`size-sm opacity-60 color-dark`}>
+      <a
+        href="https://react.flatifycss.com"
+        target="_blank"
+        className={`get-started-button button bordered size-2x style-blue`}
+      >
+        React FlatifyCSS
+      </a>
+      <a
+        style={{ display: "block" }}
+        href="https://github.com/amir2mi/flatifycss/releases"
+        rel="nofollow"
+        target="_blank"
+        className={`size-sm opacity-60 color-dark`}
+      >
         {stableVersion && <span className="anim-fade-in"> Last stable release: {stableVersion}</span>}
       </a>
     </div>
