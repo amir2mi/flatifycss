@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.4.1
+ * FlatifyCSS version 1.5.0
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -711,7 +711,7 @@ kbd {
   border-radius: calc(var(--flatify__border-radius) * 0.5);
   box-shadow: inset 0 -0.125em 0 var(--flatify__local-border-color);
   will-change: transform;
-  transition: all var(--flatify__simple-transition);
+  transition: all var(--flatify__simple-transition) 0.15s;
 }
 kbd:hover {
   box-shadow: inset 0 0 0 var(--flatify__local-border-color);
@@ -1067,6 +1067,8 @@ th {
 .alert .alert-svg svg {
   width: 2em;
   height: 2em;
+}
+.alert .alert-svg svg:not([fill=none]) {
   fill: currentColor;
 }
 .alert.style-light-light .alert-svg {
@@ -1274,7 +1276,7 @@ input.disabled[type=file]:not(.default)::file-selector-button, .disabled.button,
   filter: contrast(85%) brightness(85%) opacity(70%) !important;
   transform: translateY(calc(var(--flatify__border-width) * 1.38));
 }
-.button svg {
+.button svg:not([fill=none]) {
   fill: currentColor;
 }
 
@@ -2695,11 +2697,13 @@ button.no-style {
   width: 2em;
   max-height: 2em;
   margin-right: 0.32em;
-  fill: currentColor;
   opacity: 0.75;
 }
 .toast .toast-svg else {
   margin-left: 0.32em;
+}
+.toast .toast-svg:not([fill=none]) {
+  fill: currentColor;
 }
 .toast .close-button {
   position: absolute;
@@ -3318,6 +3322,8 @@ textarea:not(.default) {
   width: 3em;
   height: 3em;
   padding: 0.32em;
+}
+.items-group .item-icon svg:not([fill=none]) {
   fill: currentColor;
 }
 .items-group .item-text {
@@ -3664,7 +3670,7 @@ textarea:not(.default) {
   0% {
     transform: scale(1);
   }
-  100% {
+  60%, 100% {
     opacity: 0;
     transform: scale(1.75);
   }
@@ -4558,7 +4564,7 @@ textarea:not(.default) {
   background: inherit;
   border-radius: inherit;
   will-change: opacity, transform;
-  animation: flatify-pulse 1s infinite;
+  animation: flatify-pulse 1.4s infinite;
 }
 
 .text-filled {
