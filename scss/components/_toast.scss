@@ -91,8 +91,11 @@
     else {
       margin-left: 0.32em;
     }
-    fill: currentColor;
     opacity: 0.75;
+
+    &:not([fill="none"]) {
+      fill: currentColor;
+    }
   }
 
   .close-button {

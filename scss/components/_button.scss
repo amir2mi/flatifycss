@@ -135,7 +135,7 @@
     transform: translateY(calc(var(--#{$CSS_VAR_PFX}border-width) * 1.38));
   }
 
-  svg {
+  svg:not([fill="none"]) {
     fill: currentColor;
   }
 }
