@@ -24,3 +24,32 @@ or you can detect automatically if users prefer dark theme with [CSS `@media` fe
 
 Now if the `<html>` tag has the `.dark` class or the user prefers to have a dark theme, the dark mode will be applied.  
 Note that you should extend this selector as `<html>` tag because it changes CSS variables that are defined as the `:root`.
+
+Simply by extending, it will change some CSS variables for dark mode state. Like this:
+
+```css title="style.scss"
+@media (prefers-color-scheme: dark) {
+  :root {
+    // Increase brightness
+    --flatify__hover-brightness: 110%;
+
+    // Background color
+    --flatify__bg-color: #10191c !important;
+    --flatify__bg-color-dark: #141f23 !important;
+    --flatify__bg-color-darker: #263b43 !important;
+    --flatify__bg-color-darkest: #385661 !important;
+    --flatify__color-light-light: #141f23 !important;
+    --flatify__color-light-primary: #10191c !important;
+    --flatify__color-light-dark: #263b43 !important;
+
+    // Text color
+    --flatify__txt-color: #f1f4f7;
+    --flatify__txt-color-dark: #ced9e3;
+    --flatify__txt-color-darker: #809cb6;
+    --flatify__txt-color-inverted: #141f23;
+    --flatify__color-dark-light: #f1f4f7;
+    --flatify__color-dark-primary: #ced9e3;
+    --flatify__color-dark-dark: #809cb6;
+  }
+}
+```
