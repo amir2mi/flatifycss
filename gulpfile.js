@@ -178,11 +178,16 @@ exports.default = series(
 // Release
 exports.release = series(
   bumpVersionRelease,
-  // css
+  // css - ltr
   mainSassTask__noprefix,
   mainSassTask__prefixed,
   mainSassTask__minified__noprefix,
   mainSassTask__minified__prefixed,
+  // css - rtl
+  mainSassTask_rtl__noprefix,
+  mainSassTask_rtl__prefixed,
+  mainSassTask_rtl__minified__noprefix,
+  mainSassTask_rtl__minified__prefixed,
   // js
   mainJsTask_production,
   mainJsTask__minified_production
