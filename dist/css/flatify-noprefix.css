@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.5.1
+ * FlatifyCSS version 1.5.2
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -243,10 +243,6 @@ address {
 ol,
 ul {
   padding-left: 2em;
-}
-ol else,
-ul else {
-  padding-right: 2em;
 }
 
 ol,
@@ -2699,9 +2695,6 @@ button.no-style {
   margin-right: 0.32em;
   opacity: 0.75;
 }
-.toast .toast-svg else {
-  margin-left: 0.32em;
-}
 .toast .toast-svg:not([fill=none]) {
   fill: currentColor;
 }
@@ -2715,9 +2708,6 @@ button.no-style {
   background: var(--flatify__local-bg-color);
   box-shadow: 0 0 0.32em 0.32em var(--flatify__local-bg-color);
   transform: scale(0);
-}
-.toast .close-button else {
-  left: 0.25em;
 }
 
 :root {
