@@ -87,8 +87,7 @@
     max-height: 2em;
     @if $IS_LTR {
       margin-right: 0.32em;
-    }
-    else {
+    } @else {
       margin-left: 0.32em;
     }
     opacity: 0.75;
@@ -104,8 +103,7 @@
     bottom: 0;
     @if $IS_LTR {
       right: 0.25em;
-    }
-    else {
+    } @else {
       left: 0.25em;
     }
     font-size: 0.85em;
