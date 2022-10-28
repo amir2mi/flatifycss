@@ -12,7 +12,7 @@
 
 <p align="center">
   <a target="_blank" href="https://amir2mi.github.io/flatifycss/docs/intro">
-    Getting started
+    Getting Started
   </a>
 &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;   
   <a target="_blank" href="https://flatifycss.com/">
@@ -25,6 +25,10 @@
 &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;   
   <a target="_blank" href="https://github.com/amir2mi/flatifycss/issues">
     Issues
+  </a>
+&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;   
+  <a target="_blank" href="https://react.flatifycss.com/">
+    React Components
   </a>
 </p>
 
