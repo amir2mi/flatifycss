@@ -1,7 +1,11 @@
 .toggle-wrapper {
   &:hover:not(:focus-within) {
     input:not(:disabled) + .check:after {
-      transform: translateX(0.3em);
+      @if $IS_LTR {
+        transform: translateX(0.3em);
+      } @else {
+        transform: translateX(-0.3em);
+      }
     }
   }
 
