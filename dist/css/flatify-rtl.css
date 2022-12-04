@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * FlatifyCSS version 1.5.2
+ * FlatifyCSS version 1.5.3
  * Modern flat design framework for the web — inspired by Duolingo design system. 
  * Copyright 2021-2022 The FlatifyCSS Authors
  * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -3047,7 +3047,7 @@ textarea.disabled:not(.default), select.disabled:not(.default), input.disabled:n
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 .radio-button,
