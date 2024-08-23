@@ -56,8 +56,6 @@
         position: absolute;
         top: 0;
         inset-inline-start: 0;
-        transform-origin: inline-start;
-
         width: 100%;
         // 110% because of FireFox bug
         height: 110%;
@@ -67,4 +65,14 @@
       }
     }
   }
+}
+
+:dir(ltr) .progress.processing .progress-bar:before,
+.ltr .progress.processing .progress-bar:before {
+  transform-origin: left;
+}
+
+:dir(rtl) .progress.processing .progress-bar:before,
+.rtl .progress.processing .progress-bar:before {
+  transform-origin: right;
 }

@@ -51,7 +51,6 @@
     opacity: 0.8;
     will-change: opacity, transform;
     transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
-    transform-origin: inline-start top;
     inset-inline-start: 1em;
   }
 
@@ -61,6 +60,16 @@
       bottom: unset;
     }
   }
+}
+
+:dir(ltr) .floating-label .form-label,
+.ltr .floating-label .form-label {
+  transform-origin: left top;
+}
+
+:dir(rtl) .floating-label .form-label,
+.rtl .floating-label .form-label {
+  transform-origin: right top;
 }
 
 %form-element {
