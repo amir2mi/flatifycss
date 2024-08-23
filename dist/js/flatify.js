@@ -687,7 +687,7 @@
 
       var _helpers_truncate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(291);
       /*!
-       * FlatifyCSS version 1.5.4-4
+       * FlatifyCSS version 2.0.0
        * Modern flat design framework for the web — inspired by Duolingo design system.
        * Copyright 2021-2022 The FlatifyCSS Authors
        * Licensed under MIT (https://github.com/amir2mi/flatifycss/blob/master/LICENSE)
@@ -1421,10 +1421,6 @@
   /******/
 
 
-  __webpack_require__(291);
-  /******/
-
-
   __webpack_require__(238);
   /******/
 
@@ -1433,7 +1429,11 @@
   /******/
 
 
-  var __webpack_exports__ = __webpack_require__(641);
+  __webpack_require__(641);
+  /******/
+
+
+  var __webpack_exports__ = __webpack_require__(291);
   /******/
 
   /******/
