@@ -3,36 +3,34 @@ title: Right to left
 sidebar_position: 8
 ---
 
-FlatifyCSS supports the right to left languages, we provide files with the `-rtl` suffix. on [development page](/docs/overview/development) we have disgusted how files are compiled. if you run `gulp` or `gulp release` you will get the RTL files, **however `gulp watch` does not compile files to RTL**.
+FlatifyCSS supports the right to left layout, it is done by using `inline` featuers of CSS therefore elements are automatically positioned based on the document `direction`.
 
-There is a file called `flatify-rtl.scss` it is just the main file but `$IS_LTR` is set to `FALSE` so we will get the RTL version of the files.
+Here are the list of CSS properties that is used to dynamically position elements based on `direction`:
 
-With Sass we decide values based on the `$IS_LTR` variable, for example:
+- [`margin-inline`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline)
+- [`padding-inline`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline)
+- [`border-inline`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline)
+- [`border-start-start-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-start-start-radius)
+- [`border-start-end-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-start-end-radius)
+- [`border-end-start-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-end-start-radius)
+- [`border-end-end-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-end-end-radius)
+- [`float: inline-start/inline-end`](https://developer.mozilla.org/en-US/docs/Web/CSS/float#syntax)
+- [`float: inline-start/inline-end`](https://developer.mozilla.org/en-US/docs/Web/CSS/float#syntax)
+
+For some cases like `transform` there is not inline option, the `:dir(rtl/ltr)` CSS pseudo-class will be a saviour here.
+
+This is one example of the usage:
 
 ```scss
-body {
-  @if $IS_LTR {
-    direction: ltr;
-  } @else {
-    direction: rtl;
-  }
+&:dir(rtl) .inline:before,
+.rtl &.inline:before {
+  transform: rotate(3deg) scale(1.1, 1.2) skew(10deg);
+}
+
+&:dir(ltr) .inline:before,
+.ltr &.inline:before {
+  transform: rotate(-3deg) scale(1.1, 1.2) skew(-10deg);
 }
 ```
 
-The snippet above will be compiled to (Left to right):
-
-```css
-body {
-  direction: ltr;
-}
-```
-
-and for (Right to left):
-
-```css
-body {
-  direction: rtl;
-}
-```
-
-So you can extend features for both LTR and RTL with this condition easily.
+For backward compatibility also the `.ltr` and `.rtl` classes are added.

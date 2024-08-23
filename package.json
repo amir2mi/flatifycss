@@ -1,11 +1,16 @@
 {
   "name": "flatifycss",
-  "version": "1.5.3",
+  "version": "1.5.4-0",
   "description": "Modern flat design framework for the web — inspired by Duolingo design system.",
   "main": "index.html",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amir2mi/flatifycss.git"
+  },
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch",
+    "release": "gulp release"
   },
   "keywords": [
     "css",

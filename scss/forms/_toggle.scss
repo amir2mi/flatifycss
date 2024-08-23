@@ -1,14 +1,4 @@
 .toggle-wrapper {
-  &:hover:not(:focus-within) {
-    input:not(:disabled) + .check:after {
-      @if $IS_LTR {
-        transform: translateX(0.3em);
-      } @else {
-        transform: translateX(-0.3em);
-      }
-    }
-  }
-
   .check {
     // force minimum width for limited space cases
     min-width: 3em;
@@ -17,13 +7,7 @@
     &:after {
       top: 0;
       bottom: 0;
-
-      @if $IS_LTR {
-        left: 0.18em;
-      } @else {
-        right: 0.18em;
-      }
-
+      inset-inline-start: 0.18em;
       width: 0.9em;
       height: 0.9em;
       margin: auto 0;
@@ -35,11 +19,6 @@
 
   input:checked + .check {
     &:after {
-      @if $IS_LTR {
-        transform: translateX(1.4em) !important;
-      } @else {
-        transform: translateX(-1.4em) !important;
-      }
       background: var(--#{$CSS_VAR_PFX}form-element-accent-color);
     }
   }
@@ -65,12 +44,31 @@
       }
 
       input:checked + .check:after {
-        @if $IS_LTR {
+        &:dir(ltr) {
           transform: translateX(1.2em) scaleY(0.7) scaleX(1.4) !important;
-        } @else {
+        }
+        &:dir(rtl) {
           transform: translateX(-1.2em) scaleY(0.7) scaleX(1.4) !important;
         }
       }
     }
   }
+}
+
+:dir(ltr) .toggle-wrapper:hover:not(:focus-within) input:not(:disabled) + .check:after,
+.ltr .toggle-wrapper:hover:not(:focus-within) input:not(:disabled) + .check:after {
+  transform: translateX(0.3em);
+}
+:dir(rtl) .toggle-wrapper:hover:not(:focus-within) input:not(:disabled) + .check:after,
+.rtl .toggle-wrapper:hover:not(:focus-within) input:not(:disabled) + .check:after {
+  transform: translateX(-0.3em);
+}
+
+:dir(ltr) .toggle-wrapper input:checked + .check:after,
+.ltr .toggle-wrapper input:checked + .check:after {
+  transform: translateX(1.4em) !important;
+}
+:dir(rtl) .toggle-wrapper input:checked + .check:after,
+.rtl .toggle-wrapper input:checked + .check:after {
+  transform: translateX(-1.4em) !important;
 }

@@ -42,10 +42,6 @@
       scroll-behavior: smooth;
     }
   }
-
-  @if not $IS_LTR {
-    direction: rtl;
-  }
 }
 
 // *** Body
@@ -150,11 +146,7 @@ address {
 // *** Lists
 ol,
 ul {
-  @if $IS_LTR {
-    padding-left: 2em;
-  } @else {
-    padding-right: 2em;
-  }
+  padding-inline-start: 2em;
 }
 
 ol,
@@ -215,15 +207,18 @@ mark {
       background: var(--#{$CSS_VAR_PFX}local-bg-color);
       border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.38);
       opacity: 0.9;
-
-      @if $IS_LTR {
-        transform: rotate(-3deg) scale(1.1, 1.2) skew(-10deg);
-      } @else {
-        transform: rotate(3deg) scale(1.1, 1.2) skew(10deg);
-      }
     }
   }
 
+  &:dir(rtl) .inline:before,
+  .rtl &.inline:before {
+    transform: rotate(3deg) scale(1.1, 1.2) skew(10deg);
+  }
+
+  &:dir(ltr) .inline:before,
+  .ltr &.inline:before {
+    transform: rotate(-3deg) scale(1.1, 1.2) skew(-10deg);
+  }
   // color: var(--#{$CSS_VAR_PFX}txt-color-inverted);
 }
 

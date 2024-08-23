@@ -22,11 +22,7 @@
   // the arrow should have a side space when there is text
   &:not(:empty) {
     &:after {
-      @if $IS_LTR {
-        margin-left: 0.32em;
-      } @else {
-        margin-right: 0.32em;
-      }
+      margin-inline-start: 0.32em;
     }
   }
 

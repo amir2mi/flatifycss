@@ -55,13 +55,8 @@
         content: " ";
         position: absolute;
         top: 0;
-        @if $IS_LTR {
-          left: 0;
-          transform-origin: left;
-        } @else {
-          right: 0;
-          transform-origin: right;
-        }
+        inset-inline-start: 0;
+        transform-origin: inline-start;
 
         width: 100%;
         // 110% because of FireFox bug

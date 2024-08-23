@@ -24,7 +24,7 @@ table {
 
   thead {
     word-break: break-word;
-    
+
     td,
     th {
       background: var(--#{$CSS_VAR_PFX}table-bg-color-dark);
@@ -47,18 +47,10 @@ table {
 
     td,
     th {
-      @if $IS_LTR {
-        border-left: $table_border;
+      border-inline-start: $table_border;
 
-        &:last-child {
-          border-right: $table_border;
-        }
-      } @else {
-        border-right: $table_border;
-
-        &:last-child {
-          border-left: $table_border;
-        }
+      &:last-child {
+        border-inline-end: $table_border;
       }
     }
 
@@ -81,11 +73,7 @@ table {
       white-space: nowrap;
     }
     thead {
-      @if $IS_LTR {
-        float: left;
-      } @else {
-        float: right;
-      }
+      float: inline-start;
 
       td,
       th {
@@ -110,29 +98,17 @@ table {
       thead {
         tr {
           display: block;
-          @if $IS_LTR {
-            border-right: $table_border;
-          } @else {
-            border-left: $table_border;
-          }
+          border-inline-end: $table_border;
         }
         td,
         th {
-          @if $IS_LTR {
-            border-left: $table_border;
-          } @else {
-            border-right: $table_border;
-          }
+          border-inline-start: $table_border;
         }
       }
       tbody {
         th,
         td {
-          @if $IS_LTR {
-            border-right: $table_border;
-          } @else {
-            border-left: $table_border;
-          }
+          border-inline-end: $table_border;
         }
       }
       td,
@@ -145,50 +121,25 @@ table {
     }
 
     // horizontal border radius
-    @if $IS_LTR {
-      thead tr {
-        th,
-        td {
-          &:first-child {
-            border-top-left-radius: $table_radius;
-          }
-          &:last-child {
-            border-bottom-left-radius: $table_radius;
-          }
+    thead tr {
+      th,
+      td {
+        &:first-child {
+          border-start-start-radius: var(--#{$CSS_VAR_PFX}table-radius);
+        }
+        &:last-child {
+          border-start-end-radius: var(--#{$CSS_VAR_PFX}table-radius);
         }
       }
-      tbody tr:last-child {
-        th,
-        td {
-          &:first-child {
-            border-top-right-radius: $table_radius;
-          }
-          &:last-child {
-            border-bottom-right-radius: $table_radius;
-          }
+    }
+    tbody tr:last-child {
+      th,
+      td {
+        &:first-child {
+          border-end-start-radius: var(--#{$CSS_VAR_PFX}table-radius);
         }
-      }
-    } @else {
-      thead tr {
-        th,
-        td {
-          &:first-child {
-            border-top-right-radius: $table_radius;
-          }
-          &:last-child {
-            border-bottom-right-radius: $table_radius;
-          }
-        }
-      }
-      tbody tr:last-child {
-        th,
-        td {
-          &:first-child {
-            border-top-left-radius: $table_radius;
-          }
-          &:last-child {
-            border-bottom-left-radius: $table_radius;
-          }
+        &:last-child {
+          border-end-end-radius: var(--#{$CSS_VAR_PFX}table-radius);
         }
       }
     }
@@ -196,42 +147,21 @@ table {
 
   // vertical border radius
   &:not(.horizontal) {
-    @if $IS_LTR {
-      tr:last-child {
-        th {
-          &:first-child {
-            border-top-left-radius: $table_radius;
-          }
-          &:last-child {
-            border-top-right-radius: $table_radius;
-          }
+    tr:last-child {
+      th {
+        &:first-child {
+          border-start-start-radius: var(--#{$CSS_VAR_PFX}table-radius);
         }
-        td {
-          &:first-child {
-            border-bottom-left-radius: $table_radius;
-          }
-          &:last-child {
-            border-bottom-right-radius: $table_radius;
-          }
+        &:last-child {
+          border-start-end-radius: var(--#{$CSS_VAR_PFX}table-radius);
         }
       }
-    } @else {
-      tr:last-child {
-        th {
-          &:first-child {
-            border-top-right-radius: $table_radius;
-          }
-          &:last-child {
-            border-top-left-radius: $table_radius;
-          }
+      td {
+        &:first-child {
+          border-end-start-radius: var(--#{$CSS_VAR_PFX}table-radius);
         }
-        td {
-          &:first-child {
-            border-bottom-right-radius: $table_radius;
-          }
-          &:last-child {
-            border-bottom-left-radius: $table_radius;
-          }
+        &:last-child {
+          border-end-end-radius: var(--#{$CSS_VAR_PFX}table-radius);
         }
       }
     }

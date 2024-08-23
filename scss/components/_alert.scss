@@ -39,24 +39,13 @@
   .close-button {
     position: relative;
     top: -0.38em;
-
-    @if $IS_LTR {
-      float: right;
-      right: -0.38em;
-    } @else {
-      float: left;
-      left: -0.38em;
-    }
+    float: inline-end;
+    inset-inline-end: -0.38em;
 
     &.floating {
       position: absolute;
       top: 0.75em;
-
-      @if $IS_LTR {
-        right: 0.75em;
-      } @else {
-        left: 0.75em;
-      }
+      inset-inline-end: 0.75em;
 
       background: transparent !important;
       transform: scale(0);
@@ -86,13 +75,8 @@
   }
 
   &.has-icon {
-    @if $IS_LTR {
-      padding-left: 2.75em;
-      margin-left: 1.5em;
-    } @else {
-      padding-right: 2.75em;
-      margin-right: 1.5em;
-    }
+    padding-inline-start: 2.75em;
+    margin-inline-start: 1.5em;
   }
 
   .alert-svg {
@@ -102,13 +86,7 @@
     top: 0;
     bottom: 0;
     filter: brightness(115%);
-
-    @if $IS_LTR {
-      left: -1.4em;
-    } @else {
-      right: -1.4em;
-    }
-
+    inset-inline-start: -1.4em;
     padding: 0.5em;
     color: inherit;
     background: var(--#{$CSS_VAR_PFX}local-bg-color);

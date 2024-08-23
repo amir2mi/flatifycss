@@ -125,12 +125,7 @@
 
     .badge {
       vertical-align: middle;
-
-      @if $IS_LTR {
-        margin-left: 0.5em;
-      } @else {
-        margin-right: 0.5em;
-      }
+      margin-inline-start: 0.5em;
     }
   }
 

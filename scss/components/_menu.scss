@@ -95,22 +95,14 @@
         .submenu {
           position: absolute;
           top: 100%;
-          @if $IS_LTR {
-            left: 0.5em;
-          } @else {
-            right: 0.5em;
-          }
+          inset-inline-start: 0.5em;
           z-index: 10;
           display: none;
 
           // second level or more
           .submenu {
             top: -50%;
-            @if $IS_LTR {
-              left: 115%;
-            } @else {
-              right: 115%;
-            }
+            inset-inline-start: 115%;
 
             // this a middleman to preserve connection between parent menu item
             // and its children list on hover
@@ -118,11 +110,7 @@
               content: " ";
               position: absolute;
               top: 0.64em;
-              @if $IS_LTR {
-                left: -3.6em;
-              } @else {
-                right: -3.6em;
-              }
+              inset-inline-start: -3.6em;
               width: 4em;
               min-height: 4em;
               // it will block other submenus
@@ -137,15 +125,10 @@
 
     .navbar-logo {
       height: 3em;
+      margin-inline-end: 0.64em;
 
       img {
         height: 100%;
-      }
-
-      @if $IS_LTR {
-        margin-right: 0.64em;
-      } @else {
-        margin-left: 0.64em;
       }
     }
   }
@@ -261,11 +244,7 @@
 
     // additional space for menu item arrow
     &.arrow-button:after {
-      @if $IS_LTR {
-        margin-right: 0.75em;
-      } @else {
-        margin-left: 0.75em;
-      }
+      margin-inline-end: 0.75em;
     }
 
     &.heading {
@@ -328,11 +307,7 @@
 
   &.arrow-top:before,
   &.arrow-bottom:before {
-    @if $IS_LTR {
-      left: 2em;
-    } @else {
-      right: 2em;
-    }
+    inset-inline-start: 2em;
   }
   &.arrow-left:before,
   &.arrow-right:before {

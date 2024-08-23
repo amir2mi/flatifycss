@@ -54,8 +54,8 @@ It is also possible to create the high-contrast version of FlatifyCSS for those 
 
 ### Support for right to left layouts
 
-FlatifyCSS comes with files prefixed as `-rtl.css` built especially for the right to left languages like Arabic, Persian, Hebrew, etc.
-You can also extend the right to left styles by using the `flatify-rtl.scss` file and conditional statements. [Read more about RTL layouts](https://flatifycss.com/docs/overview/rtl)
+FlatifyCSS supports the RTL layout perfectly, it uses CSS inline positioning properties that gives the layout ability to be RTL/LTR based on the document `direction`.
+[Read more about RTL layouts](https://flatifycss.com/docs/overview/rtl)
 
 ### Practical set of components
 

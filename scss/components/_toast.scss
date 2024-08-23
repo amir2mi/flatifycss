@@ -85,11 +85,7 @@
     display: inline-block;
     width: 2em;
     max-height: 2em;
-    @if $IS_LTR {
-      margin-right: 0.32em;
-    } @else {
-      margin-left: 0.32em;
-    }
+    margin-inline-end: 0.32em;
     opacity: 0.75;
 
     &:not([fill="none"]) {
@@ -101,11 +97,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    @if $IS_LTR {
-      right: 0.25em;
-    } @else {
-      left: 0.25em;
-    }
+    inset-inline-end: 0.25em;
     font-size: 0.85em;
     margin: auto 0;
     background: var(--#{$CSS_VAR_PFX}local-bg-color);

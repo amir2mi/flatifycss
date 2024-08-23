@@ -41,12 +41,7 @@
 
   .item-icon {
     opacity: 0.75;
-
-    @if $IS_LTR {
-      margin-right: 0.5em;
-    } @else {
-      margin-left: 0.5em;
-    }
+    margin-inline-end: 0.5em;
 
     svg {
       width: 3em;
@@ -61,12 +56,7 @@
 
   .item-text {
     width: 100%;
-
-    @if $IS_LTR {
-      text-align: left;
-    } @else {
-      text-align: right;
-    }
+    text-align: start;
   }
 
   .item-title,

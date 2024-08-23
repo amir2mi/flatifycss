@@ -25,11 +25,7 @@
     width: 20em;
 
     .card-badges {
-      @if $IS_LTR {
-        right: 0.5em;
-      } @else {
-        left: 0.5em;
-      }
+      inset-inline-end: 0.5em;
     }
   }
 
@@ -40,11 +36,7 @@
       width: 40%;
 
       .card-badges {
-        @if $IS_LTR {
-          left: 0.5em;
-        } @else {
-          right: 0.5em;
-        }
+        inset-inline-start: 0.5em;
       }
     }
 

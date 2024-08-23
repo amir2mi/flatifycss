@@ -6,20 +6,10 @@ select:not(.default) {
   appearance: none;
   min-width: 15em;
   max-width: 100%;
-
-  @if $IS_LTR {
-    padding-right: 2.5em;
-  } @else {
-    padding-left: 2.5em;
-  }
-
+  padding-inline-end: 2.5em;
   background-image: var(--#{$CSS_VAR_PFX}select-icon);
   background-repeat: no-repeat;
-  @if $IS_LTR {
-    background-position: right 0.64em center;
-  } @else {
-    background-position: left 0.64em center;
-  }
+  background-position: inline-end 0.64em center;
 
   &[multiple] {
     // hide default scroll when there is no overflow

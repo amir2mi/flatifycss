@@ -11,12 +11,8 @@ blockquote {
   border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
   border-style: solid;
   border-color: var(--#{$CSS_VAR_PFX}blockquote-accent-color);
-
-  @if $IS_LTR {
-    border-width: 0 0 0 0.5em;
-  } @else {
-    border-width: 0 0.5em 0 0;
-  }
+  border-width: 0;
+  border-inline-start-width: 0.5em;
 
   &:not(.no-icon):before {
     content: " ";
@@ -33,30 +29,17 @@ blockquote {
     font-size: 1em;
     line-height: var(--#{$CSS_VAR_PFX}large-line-height);
     padding: 0.75em 1.25em;
-
-    @if $IS_LTR {
-      border-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
-        var(--#{$CSS_VAR_PFX}border-radius)
-        var(--#{$CSS_VAR_PFX}border-radius)
-        calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
-    } @else {
-      border-radius: var(--#{$CSS_VAR_PFX}border-radius)
-        calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
-        calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5)
-        var(--#{$CSS_VAR_PFX}border-radius);
-    }
+    border-start-start-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
+    border-start-end-radius: var(--#{$CSS_VAR_PFX}border-radius);
+    border-end-end-radius: var(--#{$CSS_VAR_PFX}border-radius);
+    border-end-start-radius: calc(var(--#{$CSS_VAR_PFX}border-radius) * 0.5);
 
     &:before {
       // blockquote icon
       top: 1em;
       width: 7em;
       height: 7em;
-
-      @if $IS_LTR {
-        left: 1em;
-      } @else {
-        right: 1em;
-      }
+      inset-inline-start: 1em;
     }
   }
 

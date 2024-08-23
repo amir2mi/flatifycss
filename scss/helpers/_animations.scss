@@ -323,14 +323,7 @@
   }
   100% {
     opacity: 0;
-
-    @if $IS_LTR {
-      transform-origin: top right;
-      transform: scale(0.92) rotate(-0.5deg);
-    } @else {
-      transform-origin: top left;
-      transform: scale(0.92) rotate(0.5deg);
-    }
+    transform: scale(0.92);
   }
 }
 
@@ -338,11 +331,7 @@
 @keyframes flatify-dropdown-show {
   from {
     opacity: 0;
-    @if $IS_LTR {
-      transform: scale(0.9) rotate(3deg);
-    } @else {
-      transform: scale(0.9) rotate(-3deg);
-    }
+    transform: scale(0.9);
   }
   to {
     opacity: 1;

@@ -15,20 +15,12 @@
   }
 
   &.inline:not(:first-child) {
-    @if $IS_LTR {
-      margin-left: 0.38em;
-    } @else {
-      margin-right: 0.38em;
-    }
+    margin-inline-start: 0.38em;
   }
 
   &:not(.inline) {
     display: block;
-    @if $IS_LTR {
-      margin-left: 0.38em;
-    } @else {
-      margin-right: 0.38em;
-    }
+    margin-inline-start: 0.38em;
   }
 }
 
@@ -59,14 +51,8 @@
     opacity: 0.8;
     will-change: opacity, transform;
     transition: all var(--#{$CSS_VAR_PFX}bouncing-transition);
-
-    @if $IS_LTR {
-      transform-origin: top left;
-      left: 1em;
-    } @else {
-      transform-origin: top right;
-      right: 1em;
-    }
+    transform-origin: inline-start top;
+    inset-inline-start: 1em;
   }
 
   &.is-textarea {
@@ -202,19 +188,11 @@
     transition: all var(--#{$CSS_VAR_PFX}simple-transition);
 
     &.after-label {
-      @if $IS_LTR {
-        margin-left: 0.5em;
-      } @else {
-        margin-right: 0.5em;
-      }
+      margin-inline-start: 0.5em;
     }
 
     &:not(.after-label) {
-      @if $IS_LTR {
-        margin-right: 0.5em;
-      } @else {
-        margin-left: 0.5em;
-      }
+      margin-inline-end: 0.5em;
     }
 
     &:after {

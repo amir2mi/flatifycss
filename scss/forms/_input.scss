@@ -13,11 +13,7 @@
   &.warning,
   &.valid {
     input {
-      @if $IS_LTR {
-        padding-right: 3.5em;
-      } @else {
-        padding-left: 3.5em;
-      }
+      padding-inline-end: 3.5em;
     }
 
     &:after {
@@ -34,12 +30,7 @@
 
   &.invalid {
     &:after {
-      @if $IS_LTR {
-        right: 1.35em;
-      } @else {
-        left: 1.35em;
-      }
-
+      inset-inline-end: 1.35em;
       width: 1em;
       height: 0.25em;
       background: var(--#{$CSS_VAR_PFX}form-element-border-color__invalid);
@@ -48,12 +39,7 @@
 
   &.warning {
     &:after {
-      @if $IS_LTR {
-        right: 1.55em;
-      } @else {
-        left: 1.55em;
-      }
-
+      inset-inline-end: 1.55em;
       width: 0.5em;
       height: 0.5em;
       background: var(--#{$CSS_VAR_PFX}form-element-border-color__warning);
@@ -71,19 +57,13 @@
       top: 0.45em;
       bottom: 0;
       z-index: 1;
+      inset-inline-end: 1.75em;
       margin: auto 0;
       border-radius: var(--#{$CSS_VAR_PFX}border-radius);
       transition: all var(--#{$CSS_VAR_PFX}simple-transition);
       // This animation will be played on state change because invalid or warning
       // does not have [::before] so it will get flashed without this animation, that is bad.
       animation: flatify-fade-in 0.35s;
-
-      @if $IS_LTR {
-        right: 1.75em;
-      } @else {
-        left: 0.8em;
-      }
-
       width: 0.64em;
       height: 0.25em;
       background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
@@ -91,12 +71,7 @@
     }
 
     &:after {
-      @if $IS_LTR {
-        right: 1em;
-      } @else {
-        left: 1em;
-      }
-
+      inset-inline-end: 1em;
       width: 1.2em;
       height: 0.25em;
       background: var(--#{$CSS_VAR_PFX}form-element-border-color__valid);
@@ -108,13 +83,9 @@
     position: absolute;
     top: 0;
     bottom: 0;
+    inset-inline-end: 0.5em;
     // should be over [.input-wrapper] ::before and ::after
     z-index: 3;
-    @if $IS_LTR {
-      right: 0.5em;
-    } @else {
-      left: 0.5em;
-    }
     font-size: 1em;
     width: 2.5em;
     height: 2.5em;
@@ -148,13 +119,9 @@
     &:after {
       content: " ";
       position: absolute;
-      @if $IS_LTR {
-        right: 0.5em;
-      } @else {
-        left: 0.5em;
-      }
       top: 0;
       bottom: 0;
+      inset-inline-end: 0.5em;
       z-index: 1;
       width: 1.5em;
       height: 0.18em;
@@ -210,12 +177,9 @@ input[type="file"]:not(.default) {
     background: inherit !important;
     filter: brightness(var(--#{$CSS_VAR_PFX}hover-brightness));
     vertical-align: baseline;
-
-    @if $IS_LTR {
-      margin: 0 0.75em 0 0;
-    } @else {
-      margin: 0 0 0 0.75em;
-    }
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-end: 0.75em;
   }
 }
 

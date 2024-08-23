@@ -43,11 +43,15 @@
 
 # Getting started
 
-FlatifyCSS is available for users in many ways, you can install it using package managers, directly from CDN, or even downloading [the lastest project archive](https://github.com/amir2mi/flatifycss/archive/master.zip).
+You can use FlatifyCSS in several ways:
+
+- Install it using package managers
+- Load it directly from a CDN
+- Download the [latest project files](https://github.com/amir2mi/flatifycss/archive/master.zip)
 
 ## CDN
 
-Here is [jsDelivr](https://www.jsdelivr.com/), you can add FlatifyCSS just with a single line of code:
+You can add FlatifyCSS using [jsDelivr](https://www.jsdelivr.com/) with these lines of code:
 
 ```html
 <!-- CSS -->
@@ -64,7 +68,7 @@ Here is [jsDelivr](https://www.jsdelivr.com/), you can add FlatifyCSS just with 
 
 ## Package managers
 
-You can include FlatifyCSS in your project with npm, yarn or composer:
+You can include FlatifyCSS in your project using npm, yarn, or composer:
 
 ### npm
 
@@ -78,6 +82,12 @@ npm install flatifycss
 yarn add flatifycss
 ```
 
+### Bun
+
+```bash
+bun add flatifycss
+```
+
 ### Composer
 
 ```bash
@@ -86,33 +96,41 @@ composer require amir2mi/flatifycss
 
 ## Contents
 
-After installing FlatifyCSS with package managers or downloading the archive file there is a folder called `/dist`, where compiled CSS, JS and their map files are there, inside this folder these files are provided:
+After installing FlatifyCSS or downloading the archive file, you'll find a `/dist` folder with compiled CSS, JS, and their map files:
 
 ### CSS
 
-CSS files come with some options, files with `-noprefix` suffix, do not have [PostCSS Autoprefixer](https://github.com/postcss/autoprefixer), while `-min` means this file is minified and `-rtl` is the special file for languages like Arabic, Persian, Hebrew, etc which direction is right to left.
+CSS files come in different versions:
 
-`flatify.css`  
-`flatify-min.css`  
-`flatify-noprefix.css`  
-`flatify-noprefix-min.css`  
-`flatify-rtl.css`  
-`flatify-rtl-min.css`  
-`flatify-rtl-noprefix.css`  
-`flatify-rtl-noprefix-min.css`
+- Files with `-noprefix` don't use [PostCSS Autoprefixer](https://github.com/postcss/autoprefixer)
+- Files with `-min` are minified
+
+Available CSS files:
+
+- `flatify.css`
+- `flatify-min.css`
+- `flatify-noprefix.css`
+- `flatify-noprefix-min.css`
 
 ### JS
 
-Note that FlatifyCSS needs [Popperjs](https://popper.js.org/) for dropdowns and popovers, but this library is not included inside the JavaScript file of FlatifyCSS, so it is up to you to include it inside your webpage.
+Note: FlatifyCSS needs [Popperjs](https://popper.js.org/) for dropdowns and popovers. This library isn't included in FlatifyCSS's JavaScript file, so you need to add it to your webpage separately.
 
-`flatify.js`  
-`flatify-min.js`
+Available JS files:
+
+- `flatify.js`
+- `flatify-min.js`
 
 ## Development
 
-FlatifyCSS gets compiled to CSS & JavaScript using Gulp. To use Gulp, we need to install it globally with `npm i gulp-cli -g`, then run `npm install` in the root directory of FlatifyCSS.  
-If everything is okay, we can run `gulp` in the root directory to compile the stylesheet and JavaScript file, read more about FlatifyCSS's Gulp tasks [here](https://amir2mi.github.io/flatifycss/docs/overview/development#gulp).
+To develop FlatifyCSS:
+
+1. Install Gulp globally: `npm i gulp-cli -g`
+2. Run `npm install` in the root directory of FlatifyCSS
+3. Run `gulp` in the root directory to compile the stylesheet and JavaScript file
+
+For more information about FlatifyCSS's Gulp tasks, [read here](https://amir2mi.github.io/flatifycss/docs/overview/development#gulp).
 
 ## Support
 
-We appreciate your contribution it is the best way you can help us, however if you want you can [buy a coffee](https://www.buymeacoffee.com/amir2mi)!
+The best way to support us is by contributing to the project. If you'd like to do more, you can [buy us a coffee](https://www.buymeacoffee.com/amir2mi)!

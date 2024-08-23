@@ -1,6 +1,5 @@
 // Initial modules
 const distFileName = "flatify";
-const distFileNameRTL = "flatify-rtl";
 const bumpVersionFiles = ["./package.json", "./scss/flatify.scss", "./js/flatify.js"];
 
 const { src, dest, watch, series, parallel } = require("gulp");
@@ -25,7 +24,6 @@ const webpack = require("webpack-stream");
 const files = {
   sassFiles: "scss/**/*.scss", // for watch task
   sassMain: "scss/flatify.scss",
-  sassMainRTL: "scss/flatify-rtl.scss",
   jsMain: "js/**/*js",
 };
 
@@ -129,16 +127,10 @@ function watchTask(filesArr, tasksArr) {
 }
 
 // SASS tasks
-// LTR
 const mainSassTask__noprefix = () => sassTask(files.sassMain, distFileName, false, false); // dev
 const mainSassTask__prefixed = () => sassTask(files.sassMain, distFileName, false, true);
 const mainSassTask__minified__noprefix = () => sassTask(files.sassMain, distFileName, true, false);
 const mainSassTask__minified__prefixed = () => sassTask(files.sassMain, distFileName, true, true); // production
-// RTL
-const mainSassTask_rtl__noprefix = () => sassTask(files.sassMainRTL, distFileNameRTL, false, false);
-const mainSassTask_rtl__prefixed = () => sassTask(files.sassMainRTL, distFileNameRTL, false, true);
-const mainSassTask_rtl__minified__noprefix = () => sassTask(files.sassMainRTL, distFileNameRTL, true, false);
-const mainSassTask_rtl__minified__prefixed = () => sassTask(files.sassMainRTL, distFileNameRTL, true, true);
 
 // JavaScript tasks
 const mainJsTask_dev = () => jsTask(files.jsMain, distFileName, false, false);
@@ -160,17 +152,12 @@ exports.watch = series(parallel(mainSassTask__noprefix, mainJsTask_dev), default
 // Default
 exports.default = series(
   bumpVersionDefault,
-  // css - ltr
+  // CSS
   mainSassTask__noprefix,
   mainSassTask__prefixed,
   mainSassTask__minified__noprefix,
   mainSassTask__minified__prefixed,
-  // css - rtl
-  mainSassTask_rtl__noprefix,
-  mainSassTask_rtl__prefixed,
-  mainSassTask_rtl__minified__noprefix,
-  mainSassTask_rtl__minified__prefixed,
-  // js
+  // JS
   mainJsTask_production,
   mainJsTask__minified_production
 );
@@ -178,17 +165,12 @@ exports.default = series(
 // Release
 exports.release = series(
   bumpVersionRelease,
-  // css - ltr
+  // CSS
   mainSassTask__noprefix,
   mainSassTask__prefixed,
   mainSassTask__minified__noprefix,
   mainSassTask__minified__prefixed,
-  // css - rtl
-  mainSassTask_rtl__noprefix,
-  mainSassTask_rtl__prefixed,
-  mainSassTask_rtl__minified__noprefix,
-  mainSassTask_rtl__minified__prefixed,
-  // js
+  // JS
   mainJsTask_production,
   mainJsTask__minified_production
   // commitAll
